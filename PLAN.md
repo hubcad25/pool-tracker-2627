@@ -171,4 +171,13 @@ priors copiés, table d'ids (les 192 joueurs repêchés sont tous associés), nt
 compteur d'échecs, workflow quotidien, tests (pytest + ruff).
 Repo, secrets et ntfy en place. `fetch_league` validé sur la vraie ligue : slots 3=F, 4=D, 5=G, 8=IR ;
 l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. Phase 1 codée : `pipeline/rules.py` (statut, date de retour, activation IR avec drop selon la ROS du prior),
-29 tests. Scénarios fictifs : `--scenario activation|status` ou `workflow_dispatch`. Mode shadow sur `test`.
+29 tests. Scénarios fictifs : `--scenario activation|status` ou `workflow_dispatch`. Mode shadow sur `test`
+(notif fictive reçue sur le cell le 2026-10-02). Passer `PIPELINE_TARGET=prod` vers le 16 octobre si le shadow est concluant.
+
+**Prochaine étape : phase 2 (modèle ROS + backtest).** Points de départ :
+- Le code va dans `model/` (le même en backtest et en prod) et `backtest/`. Le cache MoneyPuck historique va dans
+  `backtest/cache/` (gitignoré).
+- Le prior du backtest est Marcel seulement, sans correction vers le consensus. On garde le plus simple qui gagne.
+- En production, la ROS remplacera `rules.ros()` (aujourd'hui le prior seul), utilisée par la suggestion de drop.
+- Les ids MoneyPuck sont des ids NHL : passer par `data/id_map.csv` (`ids.resolved`).
+- Les anciens projets `~/code/hockey/predict_points_season` et `predict_points_dynamic` sont à consulter au début de la phase.
