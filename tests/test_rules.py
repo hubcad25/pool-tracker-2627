@@ -122,7 +122,17 @@ def test_activation_suggere_le_drop_au_plus_faible_ros_de_la_meme_position():
     assert e.kind == "activation"
     # 70 matchs restants au rythme du prior : Nichushkin 50/82 → 43, Boeser 60/82 → 51 (intervalle ×0,8-1,2).
     # Hughes (D) n'est pas candidat.
-    assert e.message == "Jarvis activable → drop Nichushkin (ROS 43, 34-51) plutôt que Boeser (ROS 51, 41-61)"
+    assert e.message == ("Jarvis activable. Meilleures options de drop :\n"
+                         "1. Nichushkin : ROS 43 (34-51)\n"
+                         "2. Boeser : ROS 51 (41-61)")
+
+
+def test_activation_liste_au_plus_trois_options_de_drop():
+    extra = [player(5, "Marco Rossi", team="CHI"), player(6, "Gavin McKenna", team="CHI")]
+    priors = PRIORS | {5: {"sim_mean": 70, "gp": 82}, 6: {"sim_mean": 90, "gp": 82}}
+    [e] = evaluate(BASE + extra, changed(1, status="ACTIVE", injury=None, ret=None) + extra, priors=priors)
+    lines = e.message.splitlines()
+    assert lines[1:] == ["1. Nichushkin : ROS 43 (34-51)", "2. Boeser : ROS 51 (41-61)", "3. Rossi : ROS 60 (48-72)"]
 
 
 def test_activation_la_ros_tient_compte_du_debut_de_saison():
@@ -130,7 +140,7 @@ def test_activation_la_ros_tient_compte_du_debut_de_saison():
     obs = {"gp": 20, "g": 10, "a": 10, "ixg": 10, "sog": 50, "on_goals": 30, "on_sog": 300}
     priors = PRIORS | {2: PRIORS[2] | {"obs": obs}}
     [e] = evaluate(BASE, changed(1, status="ACTIVE", injury=None, ret=None), priors=priors)
-    assert e.message.startswith("Jarvis activable → drop Boeser (ROS 51")
+    assert e.message.splitlines()[1].startswith("1. Boeser : ROS 51")
 
 
 def test_activation_un_candidat_blesse_perd_ses_matchs_manques():
@@ -140,12 +150,12 @@ def test_activation_un_candidat_blesse_perd_ses_matchs_manques():
     next(p for p in prev if p["espn_id"] == 3).update(injury_status="OUT", expected_return="2026-12-09")
     [e] = evaluate(prev, cur)
     # Boeser manque 30 matchs : 60/82 × 40 → 29, maintenant sous Nichushkin
-    assert e.message.startswith("Jarvis activable → drop Boeser (ROS 29")
+    assert e.message.splitlines()[1].startswith("1. Boeser : ROS 29")
 
 
 def test_activation_un_joueur_sans_prior_passe_en_premier():
     [e] = evaluate(BASE, changed(1, status="ACTIVE"), priors={3: PRIORS[3]})
-    assert "drop Nichushkin (ROS ?)" in e.message
+    assert e.message.splitlines()[1] == "1. Nichushkin : ROS ?"
 
 
 def test_dtd_dans_le_slot_ir_est_activable():

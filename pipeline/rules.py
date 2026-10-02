@@ -20,6 +20,7 @@ MONTHS = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept"
 # Statuts qui ne permettent plus de rester dans un slot IR
 ACTIVABLE = {"ACTIVE", "DAY_TO_DAY"}
 RETURN_SHIFT_MIN_GAMES = 3
+DROP_OPTIONS = 3
 
 
 def my_roster(league: dict | None, team_id: int) -> dict[int, dict]:
@@ -126,13 +127,13 @@ def ros(player: dict, prior: dict | None, schedule: list[dict], today: date) -> 
 
 def _fmt_ros(player: dict, r: tuple | None) -> str:
     if r is None:
-        return f"{_short_name(player)} (ROS ?)"
-    return f"{_short_name(player)} (ROS {r[0]:.0f}, {r[1]:.0f}-{r[2]:.0f})"
+        return f"{_short_name(player)} : ROS ?"
+    return f"{_short_name(player)} : ROS {r[0]:.0f} ({r[1]:.0f}-{r[2]:.0f})"
 
 
 def activations(prev: dict[int, dict], cur: dict[int, dict], schedule: list[dict], priors: dict[int, dict],
                 today: date) -> list[Event]:
-    """Un joueur de mon slot IR n'y est plus admissible → suggérer le drop parmi ceux de sa position."""
+    """Un joueur de mon slot IR n'y est plus admissible → les meilleures options de drop à sa position."""
     out = []
     for espn_id, p in cur.items():
         old = prev.get(espn_id)
@@ -144,9 +145,8 @@ def activations(prev: dict[int, dict], cur: dict[int, dict], schedule: list[dict
                         key=lambda cr: -1 if cr[1] is None else cr[1][0])
         msg = f"{_short_name(p)} activable"
         if ranked:
-            msg += f" → drop {_fmt_ros(*ranked[0])}"
-        if len(ranked) > 1:
-            msg += f" plutôt que {_fmt_ros(*ranked[1])}"
+            msg += ". Meilleures options de drop :" + "".join(
+                f"\n{i}. {_fmt_ros(*cr)}" for i, cr in enumerate(ranked[:DROP_OPTIONS], 1))
         out.append(Event("activation", f"activation:{espn_id}:{today.isoformat()}", msg, HIGH))
     return out
 

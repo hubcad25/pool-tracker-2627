@@ -74,8 +74,9 @@ Au plus **une notif par exécution** (les événements sont regroupés). Chaque 
 1. **Statut d'un joueur de mon équipe** (ACTIVE ↔ DTD/OUT/IR/SUSPENSION), avec le nombre de matchs manqués calculé
    à partir du calendrier. Ex. : « Jarvis → IR (épaule), retour ~24 oct, manque 9 matchs ».
 2. **Date de retour modifiée** de ≥ 3 matchs pour un de mes joueurs.
-3. **Activation possible d'un joueur IR** → suggestion de drop parmi mes F, avec la ROS et l'intervalle.
-   Ex. : « Jarvis activable → drop Nichushkin (ROS 31, 22-40) plutôt que Boeser (ROS 36, 27-45) ».
+3. **Activation possible d'un joueur IR** → les 3 meilleures options de drop à sa position, avec la ROS et l'intervalle.
+   Ex. : « Jarvis activable. Meilleures options de drop : 1. Nichushkin : ROS 31 (22-40) 2. Boeser : ROS 36 (27-45) … »
+   (une option par ligne).
 4. **Alerte FA (priorité max, son distinct).** Elle tient compte de la **valeur d'option du dernier move** :
    elle part seulement si le gain ROS dépasse ce qu'on peut espérer garder en réserve pour une future
    blessure grave sur mon équipe. Le seuil baisse à mesure que la saison avance. Attendu : 0 à 2 alertes dans toute l'année.
