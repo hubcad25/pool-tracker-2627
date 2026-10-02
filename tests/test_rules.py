@@ -63,6 +63,21 @@ def test_matchs_manques_selon_le_calendrier():
     assert rules.games_missed(p, SCHEDULE, TODAY) == 7
 
 
+def test_matchs_restants_moins_la_blessure_connue():
+    p = player(9, "X", status="OUT", ret=(TODAY + timedelta(days=14)).isoformat())
+    assert rules.games_left(p, SCHEDULE, TODAY) == 70 - 7
+
+
+def test_matchs_restants_sans_date_de_retour_selon_le_statut():
+    p = player(9, "X", status="INJURY_RESERVE")
+    assert rules.games_missed(p, SCHEDULE, TODAY) is None
+    assert rules.games_left(p, SCHEDULE, TODAY) == 70 - rules.UNKNOWN_RETURN_GAMES["INJURY_RESERVE"]
+
+
+def test_matchs_restants_d_un_joueur_actif_sans_date():
+    assert rules.games_left(player(9, "X"), SCHEDULE, TODAY) == 70
+
+
 def test_blessure_d_un_joueur_actif():
     cur = changed(2, status="INJURY_RESERVE", injury="Knee", ret="2026-10-30")
     [e] = evaluate(BASE, cur)

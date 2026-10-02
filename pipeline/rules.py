@@ -20,6 +20,9 @@ MONTHS = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept"
 # Statuts qui ne permettent plus de rester dans un slot IR
 ACTIVABLE = {"ACTIVE", "DAY_TO_DAY"}
 RETURN_SHIFT_MIN_GAMES = 3
+# Blessé sans date de retour : matchs manqués en moyenne par les blessés datés du même statut
+# (ESPN, 2026-10-02 : 75 IR, 9 OUT, 3 suspensions). La moyenne et non la médiane : la ROS est une espérance.
+UNKNOWN_RETURN_GAMES = {"INJURY_RESERVE": 9, "OUT": 4, "SUSPENSION": 5}
 DROP_OPTIONS = 3
 
 
@@ -115,8 +118,12 @@ def ros_params() -> dict:
 
 
 def games_left(player: dict, schedule: list[dict], today: date) -> int:
-    """Matchs restants de son équipe, moins ceux qu'il manquera pour une blessure connue."""
-    return max(_team_games(player, schedule, today) - (games_missed(player, schedule, today) or 0), 0)
+    """Matchs restants de son équipe, moins ceux qu'il manquera pour une blessure connue
+    (estimés selon son statut quand la date de retour est inconnue)."""
+    missed = games_missed(player, schedule, today)
+    if missed is None:
+        missed = UNKNOWN_RETURN_GAMES.get(player["injury_status"], 0)
+    return max(_team_games(player, schedule, today) - missed, 0)
 
 
 def ros(player: dict, prior: dict | None, schedule: list[dict], today: date) -> tuple[float, float, float] | None:
