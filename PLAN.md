@@ -178,7 +178,9 @@ l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. P
 
 Phase 2 faite (2026-10-02) : `model/ros.py`, `backtest/` (`fetch.py` → cache, `run.py` → `model/params.json`
 et `backtest/report.md`). Résultat hors échantillon (une saison de côté) : le mélange bat nettement le prior seul et
-l'observé seul ; l'ajustement pour la chance gagne un peu, mais à chaque coupure → retenu (k = 25, w = 0,3 F / 0,4 D).
+l'observé seul ; l'ajustement pour la chance gagne un peu, mais à chaque coupure → retenu (F : k = 25, w = 0,4 ;
+D : k = 20, w = 0,5). Finition et sh% des coéquipiers de carrière régressés vers la moyenne avec le poids GP / (GP + m),
+m = 400 (F) / 800 (D) : même un vétéran de 246 GP ne garde que ~38 % (F) de son écart à la moyenne. Recrue = finisseur moyen.
 Candidat 5 (rôle) non codé. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
 (calibrés à 80 % dans chaque tranche ; sans doute un peu larges en prod, où le consensus est meilleur que Marcel).
 `rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2023-26, figés).

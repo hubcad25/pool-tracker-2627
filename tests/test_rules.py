@@ -35,7 +35,8 @@ BASE = [
 ]
 PRIORS = {2: {"sim_mean": 50, "gp": 82}, 3: {"sim_mean": 60, "gp": 82}, 4: {"sim_mean": 80, "gp": 82}}
 QUANTILES = {"rates": [0], "games": [0], "q10": [[0.8]], "q90": [[1.2]]}
-PARAMS = {pos: {"k": 30, "w": 0.0, "quantiles": QUANTILES} for pos in ("F", "D")}
+PARAMS = {pos: {"k": 30, "w": 0.0, "m": 100, "quantiles": QUANTILES} for pos in ("F", "D")} \
+    | {"league_teammate_sh": 0.09}
 
 
 @pytest.fixture(autouse=True)

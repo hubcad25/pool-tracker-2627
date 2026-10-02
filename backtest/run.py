@@ -5,12 +5,12 @@ et backtest/report.md.
 
 Candidats (tous des cas particuliers de model.ros.rate) :
 1. prior seulement (k infini)   2. observé seulement (k = 0)
-3. mélange prior + observé (k optimisé, w = 0)   4. mélange avec observé ajusté pour la chance (k et w optimisés)
+3. mélange prior + observé (k optimisé, w = 0)   4. mélange avec observé ajusté pour la chance (k, w et m optimisés)
 
 Le prior est un Marcel (pas de projections préseason historiques). Les recrues (aucun match dans les
 3 saisons précédentes) sont exclues : en production, le consensus leur donne un vrai prior.
 Le modèle ne prédit pas les blessures : on évalue le rythme sur les matchs réellement joués après la coupure.
-k et w sont choisis par validation croisée « une saison de côté ».
+k, w et m sont choisis par validation croisée « une saison de côté ».
 """
 import csv
 import itertools
@@ -29,6 +29,7 @@ GAME_BUCKETS = [0, 20, 40, 60]          # tranches de GP restants pour les inter
 RATE_BUCKETS = [0, 0.3, 0.5, 0.7]       # tranches de rythme prédit (P/GP) pour les intervalles
 K_GRID = [0, 5, 10, 15, 20, 25, 30, 40, 50, 60, 80, 100, 130, 160, 200]
 W_GRID = [i / 10 for i in range(11)]
+M_GRID = [0, 50, 100, 200, 400, 800, 1600, 10**6]   # GP de carrière pour peser autant que la moyenne de la ligue
 TOP = 250
 REPORT = Path(__file__).resolve().parent / "report.md"
 STAT_KEYS = ("gp", "g", "a", "ixg", "sog", "on_goals", "on_sog")
@@ -121,19 +122,27 @@ def fit_age(rows: list[dict]) -> tuple[float, float]:
 
 # --- évaluation ---------------------------------------------------------------------------------
 
-def predict(rows: list[dict], k: float | None, w: float) -> list[float]:
-    """k = None : prior seulement."""
+def predict(rows: list[dict], k: float | None, w: float, m: float) -> list[float]:
+    """k = None : prior seulement. Les points « sans chance » sont précalculés pour chaque m (r["luck"])."""
     if k is None:
         return [r["prior"] for r in rows]
-    return [ros.rate(r["prior"], r["obs"], r["career"], k, w) for r in rows]
+    return [ros.rate(r["prior"], r["obs"], r["luck"] and r["luck"][m], k, w) for r in rows]
 
 
 def sse(rows, preds) -> float:
     return sum(r["gp_left"] * (p - r["rate_left"]) ** 2 for r, p in zip(rows, preds, strict=True))
 
 
-def fit(rows: list[dict], ws: list[float]) -> tuple[float, float]:
-    return min(itertools.product(K_GRID, ws), key=lambda kw: sse(rows, predict(rows, *kw)))
+def fit(rows: list[dict], ws: list[float], ms: list[float]) -> tuple[float, float, float]:
+    return min(itertools.product(K_GRID, ws, ms), key=lambda kwm: sse(rows, predict(rows, *kwm)))
+
+
+def league_teammate_sh() -> float:
+    """sh% des coéquipiers sur la glace, toute la ligue, saisons des résumés en cache."""
+    seasons = load_summaries().values()
+    goals = sum(s["on_goals"] - s["g"] for season in seasons for s in season.values())
+    shots = sum(s["on_sog"] - s["sog"] for season in seasons for s in season.values())
+    return goals / shots
 
 
 def pair_accuracy(rows: list[dict], preds: list[float]) -> float:
@@ -183,7 +192,7 @@ CANDIDATES = {"1. prior": "prior", "2. observé": "obs", "3. mélange": "blend",
 
 
 def cross_validate(rows: list[dict]) -> dict[str, list[float]]:
-    """Prédictions hors échantillon : k et w estimés sur les 3 autres saisons."""
+    """Prédictions hors échantillon : k, w et m estimés sur les 3 autres saisons."""
     preds = {name: [0.0] * len(rows) for name in CANDIDATES}
     index = {id(r): i for i, r in enumerate(rows)}
     for season in BACKTEST_SEASONS:
@@ -191,10 +200,10 @@ def cross_validate(rows: list[dict]) -> dict[str, list[float]]:
         for pos in ("F", "D"):
             train = [r for r in rows if r["season"] != season and r["pos"] == pos]
             sub = [r for r in test if r["pos"] == pos]
-            fitted = {"1. prior": (None, 0.0), "2. observé": (0, 0.0),
-                      "3. mélange": fit(train, [0.0]), "4. mélange + chance": fit(train, W_GRID)}
-            for name, (k, w) in fitted.items():
-                for r, p in zip(sub, predict(sub, k, w), strict=True):
+            fitted = {"1. prior": (None, 0.0, 0), "2. observé": (0, 0.0, 0),
+                      "3. mélange": fit(train, [0.0], [0]), "4. mélange + chance": fit(train, W_GRID, M_GRID)}
+            for name, kwm in fitted.items():
+                for r, p in zip(sub, predict(sub, *kwm), strict=True):
                     preds[name][index[id(r)]] = p
     return preds
 
@@ -204,7 +213,11 @@ def main() -> None:
     slope, peak = fit_age(rows)
     for r in rows:
         r["prior"] = ros.marcel_rate(r["history"], r["age"], slope, peak)
-    print(f"{len(rows)} lignes ; âge : pente {slope}, pic {peak}")
+    league_sh = league_teammate_sh()
+    for r in rows:
+        r["luck"] = {m: ros.luck_adjusted_points(r["obs"], r["career"], m, league_sh) for m in M_GRID} \
+            if r["obs"]["gp"] else None
+    print(f"{len(rows)} lignes ; âge : pente {slope}, pic {peak} ; sh% des coéquipiers de la ligue {league_sh:.4f}")
 
     preds = cross_validate(rows)
     lines = ["# Backtest du rythme ROS", "",
@@ -212,7 +225,7 @@ def main() -> None:
              f"{max(BACKTEST_SEASONS) - 1999}, coupures après {', '.join(map(str, CUTOFFS))} matchs d'équipe, "
              f"{len(rows)} lignes (joueur × coupure, ≥ {MIN_GAMES_LEFT} matchs joués ensuite). "
              f"Prior Marcel 5/4/3 pondéré par les GP, âge : × (1 + {slope} × ({peak} − âge)).",
-             "Hors échantillon : k et w estimés sans la saison évaluée.", "",
+             "Hors échantillon : k, w et m estimés sans la saison évaluée.", "",
              "Erreur : RMSE du P/GP ROS pondérée par les GP restants. Ordre : % de paires du top 250 "
              "(selon le prior) où le meilleur rythme ROS est bien prédit.", ""]
 
@@ -232,21 +245,21 @@ def main() -> None:
 
     # Paramètres finaux : tout l'échantillon, par position ; intervalles sur les prédictions hors échantillon
     best = "4. mélange + chance"
-    params = {"age_slope": slope, "age_peak": peak}
+    params = {"age_slope": slope, "age_peak": peak, "league_teammate_sh": round(league_sh, 5)}
     lines += ["", "## Paramètres retenus", "",
-              "| position | k | w | couverture 80 % : " + " | ".join(f"≥ {b} P/GP" for b in RATE_BUCKETS) + " |",
-              "|---|---|---|" + "---|" * len(RATE_BUCKETS)]
+              "| position | k | w | m | couverture 80 % : " + " | ".join(f"≥ {b} P/GP" for b in RATE_BUCKETS) + " |",
+              "|---|---|---|---|" + "---|" * len(RATE_BUCKETS)]
     for pos in ("F", "D"):
         sub = [(r, x) for r, x in zip(rows, preds[best], strict=True) if r["pos"] == pos]
         sub_rows, sub_preds = (list(t) for t in zip(*sub, strict=True))
-        k, w = fit(sub_rows, W_GRID)
+        k, w, m = fit(sub_rows, W_GRID, M_GRID)
         q = quantiles(sub_rows, sub_preds)
-        params[pos] = {"k": k, "w": w, "quantiles": q}
+        params[pos] = {"k": k, "w": w, "m": m, "quantiles": q}
         cells = []
         for lo, hi in zip(RATE_BUCKETS, [*RATE_BUCKETS[1:], 99], strict=True):
             sel = [(r, x) for r, x in zip(sub_rows, sub_preds, strict=True) if lo <= x < hi]
             cells.append(f"{coverage(*(list(t) for t in zip(*sel, strict=True)), q):.1%}")
-        lines.append(f"| {pos} | {k} | {w} | " + " | ".join(cells) + " |")
+        lines.append(f"| {pos} | {k} | {w} | {m} | " + " | ".join(cells) + " |")
 
     ros.PARAMS_PATH.write_text(json.dumps(params, indent=1) + "\n")
     REPORT.write_text("\n".join(lines) + "\n")
