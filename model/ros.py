@@ -29,7 +29,7 @@ def _f(x: str | None) -> float:
 def from_moneypuck(row: dict) -> dict:
     """Ligne MoneyPuck (résumé de saison ou match, situation « all ») → stats du modèle."""
     g, a = _f(row["I_F_goals"]), _f(row["I_F_primaryAssists"]) + _f(row["I_F_secondaryAssists"])
-    return {"gp": _f(row.get("games_played", "1")), "g": g, "a": a, "points": g + a,
+    return {"gp": _f(row.get("games_played", "1")), "g": g, "a": a, "points": g + a, "toi": _f(row["icetime"]),
             "ixg": _f(row["I_F_xGoals"]), "sog": _f(row["I_F_shotsOnGoal"]),
             "on_goals": _f(row["OnIce_F_goals"]), "on_sog": _f(row["OnIce_F_shotsOnGoal"])}
 

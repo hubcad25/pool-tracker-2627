@@ -13,6 +13,9 @@ Erreur : RMSE du P/GP ROS pondérée par les GP restants. Ordre : % de paires du
 | 2. observé | 0.2163 | 74.2% |
 | 3. mélange | 0.1541 | 77.0% |
 | 4. mélange + chance | 0.1527 | 77.1% |
+| 5. + rôle observé (saison) | 0.1516 | 77.2% |
+| 5b. + rôle récent (5 derniers matchs) | 0.1515 | 77.3% |
+| 6. + rôle parfait (plafond) | 0.1370 | 79.6% |
 
 ## RMSE P/GP par coupure
 
@@ -22,6 +25,9 @@ Erreur : RMSE du P/GP ROS pondérée par les GP restants. Ordre : % de paires du
 | 2. observé | 0.2607 | 0.2102 | 0.1867 | 0.1795 | 0.1980 |
 | 3. mélange | 0.1497 | 0.1473 | 0.1505 | 0.1572 | 0.1876 |
 | 4. mélange + chance | 0.1483 | 0.1459 | 0.1493 | 0.1554 | 0.1863 |
+| 5. + rôle observé (saison) | 0.1475 | 0.1447 | 0.1482 | 0.1539 | 0.1852 |
+| 5b. + rôle récent (5 derniers matchs) | 0.1478 | 0.1448 | 0.1476 | 0.1536 | 0.1846 |
+| 6. + rôle parfait (plafond) | 0.1281 | 0.1298 | 0.1350 | 0.1426 | 0.1758 |
 
 ## Paramètres retenus
 

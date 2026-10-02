@@ -6,6 +6,7 @@ et backtest/report.md.
 Candidats (tous des cas particuliers de model.ros.rate) :
 1. prior seulement (k infini)   2. observé seulement (k = 0)
 3. mélange prior + observé (k optimisé, w = 0)   4. mélange avec observé ajusté pour la chance (k, w et m optimisés)
+5, 5b, 6. le 4 avec un prior ajusté au rôle (TOI hors PP et PP) : observé, récent, parfait. Non retenus (ADR 0001).
 
 Le prior est un Marcel (pas de projections préseason historiques). Les recrues (aucun match dans les
 3 saisons précédentes) sont exclues : en production, le consensus leur donne un vrai prior.
@@ -20,7 +21,7 @@ from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
-from backtest.fetch import BACKTEST_SEASONS, CACHE, summary_path
+from backtest.fetch import BACKTEST_SEASONS, CACHE, GAMES_DIR, summary_path
 from model import ros
 
 CUTOFFS = (10, 20, 30, 41, 60)          # matchs d'équipe joués
@@ -32,15 +33,34 @@ W_GRID = [i / 10 for i in range(11)]
 M_GRID = [0, 50, 100, 200, 400, 800, 1600, 10**6]   # GP de carrière pour peser autant que la moyenne de la ligue
 TOP = 250
 REPORT = Path(__file__).resolve().parent / "report.md"
-STAT_KEYS = ("gp", "g", "a", "ixg", "sog", "on_goals", "on_sog")
+STAT_KEYS = ("gp", "g", "a", "ixg", "sog", "on_goals", "on_sog", "toi", "pp_toi")
+RECENT_GAMES = 5                                       # « rôle récent » : substitut des trios DailyFaceoff
+B_EV_GRID = [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08]          # P/GP par minute de plus par match, hors PP
+B_PP_GRID = [0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.2]     # idem, en avantage numérique
 
 
 def pos_group(pos: str) -> str:
     return "D" if pos.upper().startswith("D") else "F"
 
 
+def _with_pp(rows: list[dict], key: str) -> dict[str, dict]:
+    """Ligne « all » de chaque clé, avec le TOI en avantage numérique (ligne 5on4) dans `pp_toi`."""
+    out, pp = {}, {}
+    for r in rows:
+        if r["situation"] == "all":
+            out[r[key]] = r
+        elif r["situation"] == "5on4":
+            pp[r[key]] = float(r["icetime"] or 0)
+    return {k: r | {"pp_toi": pp.get(k, 0.0)} for k, r in out.items()}
+
+
+def _stats(r: dict) -> dict:
+    return ros.from_moneypuck(r) | {"pp_toi": r["pp_toi"]}
+
+
 def load_summaries() -> dict[int, dict[str, dict]]:
-    return {season: {r["playerId"]: ros.from_moneypuck(r) for r in csv.DictReader(summary_path(season).open())}
+    return {season: {pid: _stats(r) for pid, r in _with_pp(list(csv.DictReader(summary_path(season).open())),
+                                                            "playerId").items()}
             for season in range(min(BACKTEST_SEASONS) - 3, max(BACKTEST_SEASONS))}
 
 
@@ -51,13 +71,11 @@ def load_birthdates() -> dict[str, date]:
 
 def load_games(season: int) -> dict[str, list[dict]]:
     """Matchs de la saison par joueur, triés par date."""
-    out = defaultdict(list)
-    for path in (CACHE / "games").glob("*.csv"):
-        for r in csv.DictReader(path.open()):
-            if int(r["season"]) == season:
-                out[r["playerId"]].append(r)
-    for rows in out.values():
-        rows.sort(key=lambda r: r["gameDate"])
+    out = {}
+    for path in GAMES_DIR.glob("*.csv"):
+        rows = [r for r in csv.DictReader(path.open()) if int(r["season"]) == season]
+        if rows:
+            out[path.stem] = sorted(_with_pp(rows, "gameId").values(), key=lambda r: r["gameDate"])
     return out
 
 
@@ -75,7 +93,7 @@ def cutoff_dates(games: dict[str, list[dict]]) -> dict[int, str]:
 
 
 def _sum(rows: list[dict]) -> dict:
-    stats = [ros.from_moneypuck(r) for r in rows]
+    stats = [_stats(r) for r in rows]
     return {k: sum(st[k] for st in stats) for k in (*STAT_KEYS, "points")}
 
 
@@ -98,10 +116,23 @@ def build_rows() -> list[dict]:
                 after = _sum([r for r in player_games if r["gameDate"] > day])
                 if after["gp"] < MIN_GAMES_LEFT:
                     continue
+                obs = _sum(before)
                 rows.append({"season": season, "cutoff": n, "player": pid, "pos": pos, "age": age,
-                             "history": history, "career": career, "obs": _sum(before),
-                             "gp_left": after["gp"], "rate_left": after["points"] / after["gp"]})
+                             "history": history, "career": career, "obs": obs,
+                             "gp_left": after["gp"], "rate_left": after["points"] / after["gp"],
+                             "toi_left": after["toi"] / after["gp"],
+                             "role_ref": _role(history[0] if history[0]["gp"] >= 20 else career),
+                             "role_now": _role(obs), "role_recent": _role(_sum(before[-RECENT_GAMES:])),
+                             "role_future": _role(after)})
     return rows
+
+
+def _role(s: dict) -> dict | None:
+    """TOI par match, en minutes : hors PP (`ev`) et en avantage numérique (`pp`)."""
+    if not s.get("gp"):
+        return None
+    pp = s["pp_toi"] / s["gp"] / 60
+    return {"ev": s["toi"] / s["gp"] / 60 - pp, "pp": pp}
 
 
 # --- prior Marcel -------------------------------------------------------------------------------
@@ -122,11 +153,25 @@ def fit_age(rows: list[dict]) -> tuple[float, float]:
 
 # --- évaluation ---------------------------------------------------------------------------------
 
-def predict(rows: list[dict], k: float | None, w: float, m: float) -> list[float]:
-    """k = None : prior seulement. Les points « sans chance » sont précalculés pour chaque m (r["luck"])."""
+def role_prior(prior: float, role: dict | None, ref: dict | None, b_ev: float, b_pp: float) -> float:
+    """Candidats 5-6 (non retenus, voir docs/adr/0001) : prior ajusté au rôle, + b_ev par minute de plus
+    par match hors PP, + b_pp par minute de plus en PP.
+
+    role, ref : {"ev": min/match hors PP, "pp": min/match en avantage numérique}, cette saison et l'an passé.
+    """
+    if not role or not ref:
+        return prior
+    return max(prior + b_ev * (role["ev"] - ref["ev"]) + b_pp * (role["pp"] - ref["pp"]), 0.0)
+
+
+def predict(rows: list[dict], k: float | None, w: float, m: float, b_ev: float = 0, b_pp: float = 0,
+            role: str = "role_now") -> list[float]:
+    """k = None : prior seulement. Les points « sans chance » sont précalculés pour chaque m (r["luck"]).
+    role : TOI utilisé pour ajuster le prior (« role_now » observé, « role_future » le vrai reste de saison)."""
     if k is None:
         return [r["prior"] for r in rows]
-    return [ros.rate(r["prior"], r["obs"], r["luck"] and r["luck"][m], k, w) for r in rows]
+    return [ros.rate(role_prior(r["prior"], r[role], r["role_ref"], b_ev, b_pp),
+                     r["obs"], r["luck"] and r["luck"][m], k, w) for r in rows]
 
 
 def sse(rows, preds) -> float:
@@ -135,6 +180,12 @@ def sse(rows, preds) -> float:
 
 def fit(rows: list[dict], ws: list[float], ms: list[float]) -> tuple[float, float, float]:
     return min(itertools.product(K_GRID, ws, ms), key=lambda kwm: sse(rows, predict(rows, *kwm)))
+
+
+def fit_role(rows: list[dict], k: float, w: float, m: float, role: str) -> tuple[float, float, float, float, float]:
+    b = min(itertools.product(B_EV_GRID, B_PP_GRID),
+            key=lambda b: sse(rows, predict(rows, k, w, m, *b, role=role)))
+    return k, w, m, *b
 
 
 def league_teammate_sh() -> float:
@@ -188,7 +239,8 @@ def coverage(rows, preds, q) -> float:
     return inside / len(rows)
 
 
-CANDIDATES = {"1. prior": "prior", "2. observé": "obs", "3. mélange": "blend", "4. mélange + chance": "luck"}
+CANDIDATES = ["1. prior", "2. observé", "3. mélange", "4. mélange + chance", "5. + rôle observé (saison)",
+              "5b. + rôle récent (5 derniers matchs)", "6. + rôle parfait (plafond)"]
 
 
 def cross_validate(rows: list[dict]) -> dict[str, list[float]]:
@@ -200,10 +252,14 @@ def cross_validate(rows: list[dict]) -> dict[str, list[float]]:
         for pos in ("F", "D"):
             train = [r for r in rows if r["season"] != season and r["pos"] == pos]
             sub = [r for r in test if r["pos"] == pos]
-            fitted = {"1. prior": (None, 0.0, 0), "2. observé": (0, 0.0, 0),
-                      "3. mélange": fit(train, [0.0], [0]), "4. mélange + chance": fit(train, W_GRID, M_GRID)}
-            for name, kwm in fitted.items():
-                for r, p in zip(sub, predict(sub, *kwm), strict=True):
+            luck = fit(train, W_GRID, M_GRID)
+            fitted = {"1. prior": ((None, 0.0, 0), "role_now"), "2. observé": ((0, 0.0, 0), "role_now"),
+                      "3. mélange": (fit(train, [0.0], [0]), "role_now"), "4. mélange + chance": (luck, "role_now"),
+                      "5. + rôle observé (saison)": (fit_role(train, *luck, "role_now"), "role_now"),
+                      "5b. + rôle récent (5 derniers matchs)": (fit_role(train, *luck, "role_recent"), "role_recent"),
+                      "6. + rôle parfait (plafond)": (fit_role(train, *luck, "role_future"), "role_future")}
+            for name, (params, role) in fitted.items():
+                for r, p in zip(sub, predict(sub, *params, role=role), strict=True):
                     preds[name][index[id(r)]] = p
     return preds
 

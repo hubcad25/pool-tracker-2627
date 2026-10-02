@@ -102,12 +102,13 @@ Déduplication : un fichier d'état des alertes déjà envoyées, avec la clé (
 4. Le même mélange, avec un observé **ajusté pour la chance** : G remplacés par un mélange ixG / sh% de carrière,
    A pondérées par oiSH% carrière / oiSH% actuel
 5. Le modèle 4 plus des signaux de rôle (variation du TOI et du PP TOI vs le prior) : un vrai changement de rôle
-   doit faire bouger la projection plus vite que la chance
+   doit faire bouger la projection plus vite que la chance. **Testé, non retenu** (gain de 0,7 %, DailyFaceoff
+   compris) : voir `docs/adr/0001-pas-de-role-dans-la-ros.md`
 
 **Piste à valider (pas codée)** : sh% attendu des coéquipiers selon les vrais trios. Aujourd'hui, une recrue est comparée
 au sh% de la ligue : McKenna sur un trio avec Nylander et Tavares (~11-12 % attendu) verrait ses passes réduites à tort
 (× ~0,83). Même biais pour un vétéran qui monte sur le premier trio. Correctif : le sh% de carrière de ses coéquipiers de
-trio (DailyFaceoff), régressé comme le reste. Effet estimé : ~1 point de ROS (w = 0,4, dilué par k). À garder seulement
+trio (DailyFaceoff, retiré du pipeline : voir ADR 0001), régressé comme le reste. Effet estimé : ~1 point de ROS (w = 0,4, dilué par k). À garder seulement
 si le backtest (trios historiques de MoneyPuck) montre un gain pour les joueurs avec peu de GP de carrière.
 
 **GP restants** = matchs restants de l'équipe − matchs manqués pour blessure connue (pas de blessures futures).
@@ -188,7 +189,7 @@ et `backtest/report.md`). Résultat hors échantillon (une saison de côté) : l
 l'observé seul ; l'ajustement pour la chance gagne un peu, mais à chaque coupure → retenu (F : k = 25, w = 0,4 ;
 D : k = 20, w = 0,5). Finition et sh% des coéquipiers de carrière régressés vers la moyenne avec le poids GP / (GP + m),
 m = 400 (F) / 800 (D) : même un vétéran de 246 GP ne garde que ~38 % (F) de son écart à la moyenne. Recrue = finisseur moyen.
-Candidat 5 (rôle) non codé. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
+Candidat 5 (rôle : TOI, PP, DailyFaceoff) testé et écarté, voir `docs/adr/0001-pas-de-role-dans-la-ros.md`. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
 (calibrés à 80 % dans chaque tranche ; sans doute un peu larges en prod, où le consensus est meilleur que Marcel).
 `rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2023-26, figés).
 Notif d'activation : top 3 des options de drop, une par ligne. Alertes de santé : MoneyPuck en panne 2 jours de suite,
