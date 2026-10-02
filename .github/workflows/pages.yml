@@ -8,7 +8,7 @@ on:
     types: [completed]
   push:
     branches: [main]
-    paths: ["app/**", ".github/workflows/pages.yml"]
+    paths: ["app/**", "data/dashboard.json", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
