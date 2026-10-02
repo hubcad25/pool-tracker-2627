@@ -2,12 +2,14 @@
 
 uv run python -m pipeline.main                  # dry-run : imprime la notif sans l'envoyer
 uv run python -m pipeline.main --send --target prod
+uv run python -m pipeline.main --scenario activation --send   # notif fictive, ne touche à aucun état
 """
 import argparse
+import copy
 import json
-from datetime import date
+from datetime import date, timedelta
 
-from pipeline import config, events, ids, notify, snapshot
+from pipeline import config, events, ids, notify, rules, snapshot
 from pipeline.http import AuthError
 from pipeline.sources import espn, nhl
 
@@ -44,8 +46,48 @@ def run(day: date) -> list[events.Event]:
     )
     out += events.unmatched_ids(ids.missing(id_map, rostered))
 
-    # Phase 1 : règles de statut / date de retour / activation IR (diff avec snapshot.previous_day)
+    schedule = fetch_schedule()
+    prev_day = snapshot.previous_day(day)
+    prev_league = snapshot.read(prev_day, "league") if prev_day else None
+    out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors_by_espn(id_map), day)
     return out
+
+
+def fetch_schedule() -> list[dict]:
+    """Calendrier de la saison, aussi gardé dans data/ (sans l'état des matchs, pour des diffs propres)."""
+    schedule = [{k: g[k] for k in ("game_id", "date", "team")} for g in nhl.fetch_schedule()]
+    (config.ROOT / "data" / "schedule.json").write_text(json.dumps(schedule, indent=0) + "\n")
+    return schedule
+
+
+def priors_by_espn(id_map: dict[int, dict]) -> dict[int, dict]:
+    priors = {p["player_id"]: p for p in json.loads((config.PRIORS_DIR / "priors.json").read_text())}
+    return {espn_id: priors[r["canonical_id"]] for espn_id, r in id_map.items()
+            if r.get("canonical_id") in priors}
+
+
+SCENARIOS = ("activation", "status")
+
+
+def run_scenario(name: str, day: date) -> list[events.Event]:
+    """Applique un changement fictif à la ligue du jour et passe les vraies règles dessus.
+
+    Rien n'est écrit (ni snapshot, ni état de déduplication) : on peut le relancer à volonté.
+    """
+    league = espn.fetch_league()
+    fake = copy.deepcopy(league)
+    mine = rules.my_roster(fake, config.MY_TEAM_ID)
+    if name == "activation":
+        target = next(p for p in mine.values() if p["slot"] == "IR")
+        target.update(injury_status="ACTIVE", injury_type=None, expected_return=None)
+    else:
+        target = next(p for p in mine.values() if p["slot"] == "F" and p["injury_status"] == "ACTIVE")
+        target.update(injury_status="INJURY_RESERVE", injury_type="Upper Body",
+                      expected_return=(day + timedelta(days=21)).isoformat())
+    schedule = [{k: g[k] for k in ("game_id", "date", "team")} for g in nhl.fetch_schedule()]
+    id_map = ids.resolved(ids.read_map(ids.ID_MAP))
+    evts = rules.evaluate(league, fake, config.MY_TEAM_ID, schedule, priors_by_espn(id_map), day)
+    return [events.Event(e.kind, e.key, f"[SCÉNARIO] {e.message}", e.priority) for e in evts]
 
 
 def _health(ok: bool) -> int:
@@ -59,8 +101,14 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--send", action="store_true", help="envoyer réellement la notif (sinon dry-run)")
     parser.add_argument("--target", choices=["test", "prod"], default="test")
+    parser.add_argument("--scenario", choices=SCENARIOS)
     args = parser.parse_args()
     config.load_dotenv()
+
+    if args.scenario:
+        notify.send(run_scenario(args.scenario, config.today()), target=args.target,
+                    dry_run=not args.send, record=False)
+        return
 
     try:
         evts = run(config.today())

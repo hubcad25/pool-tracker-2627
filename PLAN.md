@@ -170,4 +170,5 @@ tests/           scénarios de notifs
 priors copiés, table d'ids (les 192 joueurs repêchés sont tous associés), ntfy avec déduplication et dry-run,
 compteur d'échecs, workflow quotidien, tests (pytest + ruff).
 Repo, secrets et ntfy en place. `fetch_league` validé sur la vraie ligue : slots 3=F, 4=D, 5=G, 8=IR ;
-l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. Prochaine étape : phase 1.
+l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. Phase 1 codée : `pipeline/rules.py` (statut, date de retour, activation IR avec drop selon la ROS du prior),
+29 tests. Scénarios fictifs : `--scenario activation|status` ou `workflow_dispatch`. Mode shadow sur `test`.

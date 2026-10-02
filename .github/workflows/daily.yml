@@ -14,6 +14,11 @@ on:
         description: "Envoyer la notif (sinon dry-run dans les logs)"
         type: boolean
         default: true
+      scenario:
+        description: "Scénario fictif (n'écrit aucun état)"
+        type: choice
+        options: [aucun, activation, status]
+        default: aucun
 
 permissions:
   contents: write
@@ -41,7 +46,12 @@ jobs:
           # Mode shadow : le cron envoie sur `test` tant que PIPELINE_TARGET n'est pas mis à `prod`
           TARGET: ${{ inputs.target || vars.PIPELINE_TARGET || 'test' }}
           SEND: ${{ github.event_name == 'schedule' || inputs.send }}
-        run: uv run python -m pipeline.main --target "$TARGET" $([ "$SEND" = "true" ] && echo --send)
+          SCENARIO: ${{ inputs.scenario || 'aucun' }}
+        run: |
+          args=(--target "$TARGET")
+          [ "$SEND" = "true" ] && args+=(--send)
+          [ "$SCENARIO" != "aucun" ] && args+=(--scenario "$SCENARIO")
+          uv run python -m pipeline.main "${args[@]}"
 
       # Toujours commiter : snapshots, table d'ids et compteur d'échecs (ce commit garde aussi le cron actif)
       - name: Commit data

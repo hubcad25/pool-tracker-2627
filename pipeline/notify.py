@@ -7,6 +7,8 @@ from pipeline import config
 from pipeline.events import Event
 
 SENT = config.STATE_DIR / "sent.json"
+TITLES = {"status": "Blessure", "return_date": "Date de retour", "activation": "Activation IR",
+          "fa_alert": "Alerte FA", "digest": "Digest de la semaine", "health": "Santé de la pipeline"}
 
 
 def load_sent() -> set[str]:
@@ -29,9 +31,9 @@ def compose(events: list[Event]) -> dict | None:
     if not events:
         return None
     events = sorted(events, key=lambda e: -e.priority)
-    title = events[0].message.split(" : ")[0] if len(events) == 1 else f"Pool : {len(events)} événements"
+    title = TITLES.get(events[0].kind, "Pool") if len(events) == 1 else f"Pool : {len(events)} événements"
     return {
-        "title": title[:80],
+        "title": title,
         "message": "\n".join(f"• {e.message}" for e in events),
         "priority": events[0].priority,
         "click": config.DASHBOARD_URL,
@@ -39,9 +41,12 @@ def compose(events: list[Event]) -> dict | None:
     }
 
 
-def send(events: list[Event], *, target: str = "test", dry_run: bool = True) -> dict | None:
-    """Filtre les événements déjà envoyés, regroupe le reste en une notif et l'envoie (ou l'imprime)."""
-    sent = load_sent()
+def send(events: list[Event], *, target: str = "test", dry_run: bool = True, record: bool = True) -> dict | None:
+    """Filtre les événements déjà envoyés, regroupe le reste en une notif et l'envoie (ou l'imprime).
+
+    record=False (scénarios) : ni filtrage ni enregistrement des clés.
+    """
+    sent = load_sent() if record else set()
     new = [e for e in events if e.key not in sent]
     payload = compose(new)
     if payload is None:
@@ -53,5 +58,6 @@ def send(events: list[Event], *, target: str = "test", dry_run: bool = True) -> 
     if not topic:
         raise RuntimeError(f"NTFY_TOPIC_{target.upper()} manquant")
     requests.post("https://ntfy.sh/", json={"topic": topic, **payload}, timeout=30).raise_for_status()
-    save_sent(sent | {e.key for e in new})
+    if record:
+        save_sent(sent | {e.key for e in new})
     return payload
