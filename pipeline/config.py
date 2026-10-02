@@ -10,6 +10,7 @@ STATE_DIR = ROOT / "data" / "state"
 
 LEAGUE_ID = 1213664531
 MY_TEAM_ID = 5
+FA_MOVES = 3              # signatures de FA permises pour la saison
 ESPN_SEASON = 2027        # ESPN identifie la saison par l'année de fin
 NHL_SEASON = "20262027"
 MONEYPUCK_SEASON = 2026   # MoneyPuck l'identifie par l'année de début

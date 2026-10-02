@@ -195,4 +195,11 @@ Candidat 5 (rôle : TOI, PP, DailyFaceoff) testé et écarté, voir `docs/adr/00
 Notif d'activation : top 3 des options de drop, une par ligne. Alertes de santé : MoneyPuck en panne 2 jours de suite,
 et échec du workflow hors du pipeline (dépendances, tests, commit) via une étape `if: failure()`.
 
-**Prochaine étape : phase 3 (dashboard).**
+Phase 3 faite (2026-10-02) : `pipeline/dashboard.py` écrit `data/dashboard.json` (tout est calculé en Python),
+la PWA `app/` (Vite/React, thème du projet de draft) l'affiche sur https://hubcad25.github.io/pool-tracker-2627/,
+redéployée par `pages.yml` après chaque job quotidienne. Onglets : Équipe (bande préseason ramenée au même nombre
+de matchs que le total final projeté), Blessures (toute la ligue), FA (gain de ROS vs mon pire joueur), Ligue
+(points ESPN + ROS du meilleur alignement, P(1er) simulée). La saison compte **84 matchs** et a commencé le 29 sept.
+Limites connues : un blessé sans date de retour a une ROS pleine ; la P(1er) suppose des joueurs indépendants.
+
+**Prochaine étape : phase 4 (alertes FA avec valeur d'option, digest hebdo).**

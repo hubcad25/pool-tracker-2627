@@ -1,16 +1,21 @@
 import { useEffect, useState } from 'react'
-import { BandScale } from './components/Band'
-import PlayerCard from './components/PlayerCard'
 import { shortDate } from './format'
-import type { Dashboard, Player } from './types'
+import FreeAgents from './tabs/FreeAgents'
+import Injuries from './tabs/Injuries'
+import Standings from './tabs/Standings'
+import Team from './tabs/Team'
+import type { Dashboard } from './types'
 
-const GROUPS: { slot: Player['slot']; label: string }[] = [
-  { slot: 'F', label: 'Attaquants' },
-  { slot: 'D', label: 'Défenseurs' },
-  { slot: 'G', label: 'Gardien' },
-  { slot: 'IR', label: 'Réserve (IR)' },
-]
-const TICK = 25
+// L'onglet vit dans l'URL (#fa) : une notif peut ouvrir directement le bon
+const TABS = [
+  { id: 'equipe', label: 'Équipe' },
+  { id: 'blessures', label: 'Blessures' },
+  { id: 'fa', label: 'FA' },
+  { id: 'ligue', label: 'Ligue' },
+] as const
+type Tab = (typeof TABS)[number]['id']
+
+const fromHash = (): Tab => TABS.find((t) => `#${t.id}` === location.hash)?.id ?? 'equipe'
 
 function daysOld(iso: string) {
   const today = new Date()
@@ -22,6 +27,7 @@ function daysOld(iso: string) {
 export default function App() {
   const [data, setData] = useState<Dashboard | null>(null)
   const [error, setError] = useState(false)
+  const [tab, setTab] = useState<Tab>(fromHash)
 
   useEffect(() => {
     fetch('dashboard.json', { cache: 'no-cache' })
@@ -30,56 +36,54 @@ export default function App() {
       .catch(() => setError(true))
   }, [])
 
+  useEffect(() => {
+    const onHash = () => setTab(fromHash())
+    addEventListener('hashchange', onHash)
+    return () => removeEventListener('hashchange', onHash)
+  }, [])
+
+  useEffect(() => scrollTo(0, 0), [tab])
+
   if (error) return <main className="app"><p className="empty">Impossible de charger les données.</p></main>
   if (!data) return <main className="app" />
 
-  // Échelle commune à toute l'équipe : les cartes se comparent d'un coup d'œil
-  const top = Math.max(TICK, ...data.players.flatMap((p) => [p.final?.p90 ?? 0, p.prior?.p90 ?? 0]))
-  const max = Math.ceil(top / TICK) * TICK
-  const ticks = Array.from({ length: max / TICK + 1 }, (_, i) => i * TICK)
   const age = daysOld(data.day)
+  const missing = <p className="empty">Pas encore de données (prochaine exécution du pipeline).</p>
 
   return (
-    <main className="app">
-      <header className="top">
-        <div>
-          <p className="top-league">HABS FOR THE CUP</p>
-          <h1 className="top-team">{data.team?.name ?? 'Mon équipe'}</h1>
-        </div>
-        <p className={`top-day${age > 1 ? ' is-stale' : ''}`}>
-          {age > 1 ? `Données vieilles de ${age} jours` : `Données du ${shortDate(data.day)}`}
-        </p>
-      </header>
+    <>
+      <main className="app">
+        <header className="top">
+          <div>
+            <p className="top-league">HABS FOR THE CUP</p>
+            <h1 className="top-team">{data.team?.name ?? 'Mon équipe'}</h1>
+          </div>
+          <p className={`top-day${age > 1 ? ' is-stale' : ''}`}>
+            {age > 1 ? `Données vieilles de ${age} jours` : `Données du ${shortDate(data.day)}`}
+          </p>
+        </header>
 
-      {data.alerts.length > 0 && (
-        <section className="alerts">
-          {data.alerts.map((a, i) => (
-            <p key={i} className="alert">{a.message}</p>
-          ))}
-        </section>
-      )}
-
-      <div className="legend">
-        <span><i className="lg-prior" /> Préseason p10–p90</span>
-        <span><i className="lg-points" /> Points acquis</span>
-        <span><i className="lg-final" /> Total projeté p10–p90</span>
-      </div>
-
-      {GROUPS.map(({ slot, label }) => {
-        const players = data.players.filter((p) => p.slot === slot)
-        if (!players.length) return null
-        return (
-          <section key={slot} className="group">
-            <div className="group-head">
-              <h2>{label}</h2>
-              <BandScale max={max} ticks={ticks} />
-            </div>
-            {players.map((p) => (
-              <PlayerCard key={p.espn_id} player={p} max={max} ticks={ticks} />
+        {data.alerts.length > 0 && (
+          <section className="alerts">
+            {data.alerts.map((a, i) => (
+              <p key={i} className="alert">{a.message}</p>
             ))}
           </section>
-        )
-      })}
-    </main>
+        )}
+
+        {tab === 'equipe' && <Team players={data.players} />}
+        {tab === 'blessures' && (data.injuries ? <Injuries injuries={data.injuries} /> : missing)}
+        {tab === 'fa' && (data.free_agents ? <FreeAgents fa={data.free_agents} /> : missing)}
+        {tab === 'ligue' && (data.standings?.length ? <Standings rows={data.standings} /> : missing)}
+      </main>
+
+      <nav className="tabs">
+        {TABS.map((t) => (
+          <a key={t.id} href={`#${t.id}`} className={t.id === tab ? 'is-active' : undefined}>
+            {t.label}
+          </a>
+        ))}
+      </nav>
+    </>
   )
 }

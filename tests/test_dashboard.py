@@ -103,3 +103,64 @@ def test_les_alertes_du_jour_sont_reprises():
 def test_sans_ligue_le_dashboard_est_vide():
     data = dashboard.build(None, MY_TEAM, SCHEDULE, {}, TODAY, [])
     assert (data["team"], data["players"]) == (None, [])
+
+
+def two_teams(mine, other, points=(20, 10), acquisitions=2):
+    return {"teams": [
+        {"team_id": MY_TEAM, "abbrev": "HC25", "name": "hubcad25", "points": points[0], "acquisitions": acquisitions,
+         "roster": list(mine)},
+        {"team_id": 1, "abbrev": "GSP", "name": "GSP", "points": points[1], "roster": list(other)},
+    ]}
+
+
+OTHER = [player(20, "Martin Necas", team="COL", status="OUT", injury="Knee", ret="2026-10-20"),
+         player(21, "Cale Makar", pos="D", team="COL", status="DAY_TO_DAY", injury="Lower Body", ret="2026-10-10")]
+
+
+def test_blessures_de_la_ligue_les_miennes_d_abord_et_sans_dtd_qui_ne_manque_rien():
+    priors = {1: PRIOR, 20: PRIOR | {"sim_mean": 90}}
+    out = dashboard.injuries(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, priors, TODAY)
+    assert [(i["name"], i["owner"], i["mine"]) for i in out] == [("Seth Jarvis", "HC25", True),
+                                                                 ("Martin Necas", "GSP", False)]
+    assert out[1]["games_missed"] == 5
+
+
+FREE = [player(30, "Bon FA", team="CAR"), player(31, "FA moyen", team="CHI"), player(2, "Valeri Nichushkin")]
+
+
+def test_fa_classes_par_ros_avec_le_gain_vs_mon_pire_joueur():
+    priors = {2: PRIOR | {"sim_mean": 50}, 3: PRIOR, 30: PRIOR | {"sim_mean": 55}, 31: PRIOR | {"sim_mean": 40}}
+    fa = dashboard.free_agents(two_teams(BASE, OTHER), MY_TEAM, FREE, SCHEDULE, priors, TODAY)
+    assert fa["moves_left"] == 1
+    assert fa["worst"]["F"]["name"] == "Valeri Nichushkin"
+    # Nichushkin est à moi : il n'est pas un FA
+    assert [(f["name"], f["gain"]) for f in fa["players"]["F"]] == [("Bon FA", 4.3), ("FA moyen", -8.6)]
+
+
+def test_fa_mon_joueur_a_l_ir_n_est_pas_mon_pire():
+    priors = {1: PRIOR | {"sim_mean": 1}, 2: PRIOR, 3: PRIOR}
+    fa = dashboard.free_agents(two_teams(BASE, OTHER), MY_TEAM, [], SCHEDULE, priors, TODAY)
+    assert fa["worst"]["F"]["name"] != "Seth Jarvis"
+
+
+def test_classement_points_actuels_plus_ros_de_l_alignement():
+    priors = {i: PRIOR for i in (1, 2, 3, 4, 20, 21)}
+    rows = dashboard.standings(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, priors, TODAY)
+    mine = next(r for r in rows if r["mine"])
+    assert mine["ros"] == pytest.approx(60 / 82 * (70 - 7) + 60 / 82 * 70 * 3, abs=0.2)
+    assert mine["final"] == pytest.approx(20 + mine["ros"], abs=0.1)
+    assert sum(r["p_first"] for r in rows) == pytest.approx(1)
+    # 4 joueurs contre 2 : je suis presque sûr de finir 1er
+    assert rows[0]["mine"] and mine["p_first"] > 0.99
+
+
+def test_classement_seulement_10_attaquants_et_5_defenseurs():
+    many = [player(100 + i, f"F{i}") for i in range(12)]
+    priors = {100 + i: PRIOR for i in range(12)}
+    rows = dashboard.standings(two_teams(many, []), MY_TEAM, SCHEDULE, priors, TODAY)
+    assert next(r for r in rows if r["mine"])["ros"] == pytest.approx(60 / 82 * 70 * 10, abs=0.5)
+
+
+def test_build_complet_avec_la_ligue():
+    data = dashboard.build(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, {2: PRIOR}, TODAY, [], FREE)
+    assert {"injuries", "free_agents", "standings"} <= data.keys()

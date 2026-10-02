@@ -59,7 +59,8 @@ def run(day: date) -> list[events.Event]:
     priors = priors_by_espn(id_map, season or {})
     out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors, day)
     # Sans la ligue du jour (cookies), le dashboard garde les rosters de la veille
-    dashboard.write(dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out))
+    dashboard.write(dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out,
+                                    players))
     return out
 
 

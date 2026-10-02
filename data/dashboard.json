@@ -693,5 +693,536 @@
    "luck": null,
    "verdict": "petit_echantillon"
   }
+ ],
+ "injuries": [
+  {
+   "espn_id": 5149125,
+   "name": "Connor Bedard",
+   "pos": "C",
+   "team": "CHI",
+   "owner": "HC25",
+   "mine": true,
+   "status": "INJURY_RESERVE",
+   "type": "Shoulder",
+   "expected_return": "2026-11-07",
+   "out_for_season": false,
+   "games_missed": 15,
+   "ros": {
+    "mean": 71.7,
+    "p10": 55.2,
+    "p90": 87.8
+   }
+  },
+  {
+   "espn_id": 4697396,
+   "name": "Seth Jarvis",
+   "pos": "RW",
+   "team": "CAR",
+   "owner": "HC25",
+   "mine": true,
+   "status": "INJURY_RESERVE",
+   "type": "Shoulder",
+   "expected_return": "2026-10-24",
+   "out_for_season": false,
+   "games_missed": 11,
+   "ros": {
+    "mean": 66.3,
+    "p10": 51.1,
+    "p90": 81.2
+   }
+  },
+  {
+   "espn_id": 3114755,
+   "name": "Dylan Larkin",
+   "pos": "C",
+   "team": "DET",
+   "owner": "VFTH",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Upper Body",
+   "expected_return": "2026-10-06",
+   "out_for_season": false,
+   "games_missed": 2,
+   "ros": {
+    "mean": 70.4,
+    "p10": 54.2,
+    "p90": 86.2
+   }
+  },
+  {
+   "espn_id": 3899946,
+   "name": "Mathew Barzal",
+   "pos": "C",
+   "team": "NYI",
+   "owner": "RICo",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Knee",
+   "expected_return": "2026-10-06",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 69.6,
+    "p10": 53.7,
+    "p90": 85.3
+   }
+  },
+  {
+   "espn_id": 5509,
+   "name": "Zach Hyman",
+   "pos": "RW",
+   "team": "EDM",
+   "owner": "IGm",
+   "mine": false,
+   "status": "OUT",
+   "type": "Undisclosed",
+   "expected_return": "2026-10-17",
+   "out_for_season": false,
+   "games_missed": 5,
+   "ros": {
+    "mean": 56.9,
+    "p10": 43.9,
+    "p90": 69.7
+   }
+  },
+  {
+   "espn_id": 2562624,
+   "name": "Ryan Nugent-Hopkins",
+   "pos": "C",
+   "team": "EDM",
+   "owner": "VFTH",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Lower Body",
+   "expected_return": "2026-10-13",
+   "out_for_season": false,
+   "games_missed": 3,
+   "ros": {
+    "mean": 56.7,
+    "p10": 43.7,
+    "p90": 69.4
+   }
+  },
+  {
+   "espn_id": 3988803,
+   "name": "Charlie McAvoy",
+   "pos": "D",
+   "team": "BOS",
+   "owner": "AC",
+   "mine": false,
+   "status": "SUSPENSION",
+   "type": "Suspension",
+   "expected_return": "2026-10-13",
+   "out_for_season": false,
+   "games_missed": 5,
+   "ros": {
+    "mean": 55.4,
+    "p10": 39.1,
+    "p90": 78.4
+   }
+  },
+  {
+   "espn_id": 5161,
+   "name": "Matt Duchene",
+   "pos": "C",
+   "team": "DAL",
+   "owner": "IGm",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Lower Body",
+   "expected_return": "2026-10-25",
+   "out_for_season": false,
+   "games_missed": 10,
+   "ros": {
+    "mean": 52.8,
+    "p10": 40.7,
+    "p90": 64.7
+   }
+  }
+ ],
+ "free_agents": {
+  "moves_left": 1,
+  "worst": {
+   "F": {
+    "espn_id": 4697382,
+    "name": "Alexis Lafreniere",
+    "ros": {
+     "mean": 55.1,
+     "p10": 37.2,
+     "p90": 76.3
+    }
+   },
+   "D": {
+    "espn_id": 3025662,
+    "name": "Shayne Gostisbehere",
+    "ros": {
+     "mean": 57.9,
+     "p10": 39.3,
+     "p90": 77.3
+    }
+   }
+  },
+  "players": {
+   "F": [
+    {
+     "espn_id": 2591155,
+     "name": "Bryan Rust",
+     "pos": "RW",
+     "team": "PIT",
+     "status": "INJURY_RESERVE",
+     "pct_owned": 80.5,
+     "ros": {
+      "mean": 69.4,
+      "p10": 53.5,
+      "p90": 85.0
+     },
+     "gain": 14.3
+    },
+    {
+     "espn_id": 3114743,
+     "name": "Kevin Fiala",
+     "pos": "LW",
+     "team": "LA",
+     "status": "INJURY_RESERVE",
+     "pct_owned": 62.3,
+     "ros": {
+      "mean": 58.6,
+      "p10": 45.2,
+      "p90": 71.8
+     },
+     "gain": 3.5
+    },
+    {
+     "espn_id": 5831,
+     "name": "Mikael Granlund",
+     "pos": "C",
+     "team": "ANA",
+     "status": "ACTIVE",
+     "pct_owned": 62.07,
+     "ros": {
+      "mean": 58.4,
+      "p10": 39.4,
+      "p90": 80.9
+     },
+     "gain": 3.3
+    },
+    {
+     "espn_id": 5560,
+     "name": "Mats Zuccarello",
+     "pos": "RW",
+     "team": "LA",
+     "status": "ACTIVE",
+     "pct_owned": 25.48,
+     "ros": {
+      "mean": 57.3,
+      "p10": 38.7,
+      "p90": 79.4
+     },
+     "gain": 2.2
+    },
+    {
+     "espn_id": 3120307,
+     "name": "Viktor Arvidsson",
+     "pos": "RW",
+     "team": "DET",
+     "status": "ACTIVE",
+     "pct_owned": 10.82,
+     "ros": {
+      "mean": 56.2,
+      "p10": 38.0,
+      "p90": 77.9
+     },
+     "gain": 1.1
+    },
+    {
+     "espn_id": 3852,
+     "name": "Brad Marchand",
+     "pos": "LW",
+     "team": "FLA",
+     "status": "INJURY_RESERVE",
+     "pct_owned": 70.02,
+     "ros": {
+      "mean": 56.0,
+      "p10": 43.2,
+      "p90": 68.6
+     },
+     "gain": 0.9
+    },
+    {
+     "espn_id": 3042050,
+     "name": "Artturi Lehkonen",
+     "pos": "LW",
+     "team": "COL",
+     "status": "ACTIVE",
+     "pct_owned": 36.7,
+     "ros": {
+      "mean": 55.1,
+      "p10": 37.2,
+      "p90": 76.2
+     },
+     "gain": 0.0
+    },
+    {
+     "espn_id": 4272192,
+     "name": "Mason Marchment",
+     "pos": "LW",
+     "team": "SJ",
+     "status": "ACTIVE",
+     "pct_owned": 18.56,
+     "ros": {
+      "mean": 54.7,
+      "p10": 36.9,
+      "p90": 75.7
+     },
+     "gain": -0.4
+    },
+    {
+     "espn_id": 4874718,
+     "name": "Mason McTavish",
+     "pos": "C",
+     "team": "STL",
+     "status": "ACTIVE",
+     "pct_owned": 15.71,
+     "ros": {
+      "mean": 54.3,
+      "p10": 36.6,
+      "p90": 75.1
+     },
+     "gain": -0.8
+    },
+    {
+     "espn_id": 2555315,
+     "name": "Charlie Coyle",
+     "pos": "C",
+     "team": "CBJ",
+     "status": "ACTIVE",
+     "pct_owned": 57.85,
+     "ros": {
+      "mean": 52.9,
+      "p10": 35.7,
+      "p90": 73.2
+     },
+     "gain": -2.2
+    }
+   ],
+   "D": [
+    {
+     "espn_id": 4697449,
+     "name": "Brock Faber",
+     "pos": "D",
+     "team": "MIN",
+     "status": "INJURY_RESERVE",
+     "pct_owned": 87.65,
+     "ros": {
+      "mean": 43.2,
+      "p10": 29.4,
+      "p90": 57.7
+     },
+     "gain": -14.7
+    },
+    {
+     "espn_id": 3652964,
+     "name": "Noah Hanifin",
+     "pos": "D",
+     "team": "VGK",
+     "status": "ACTIVE",
+     "pct_owned": 75.47,
+     "ros": {
+      "mean": 36.9,
+      "p10": 23.5,
+      "p90": 52.2
+     },
+     "gain": -21.0
+    },
+    {
+     "espn_id": 4915344,
+     "name": "Simon Nemec",
+     "pos": "D",
+     "team": "CGY",
+     "status": "ACTIVE",
+     "pct_owned": 10.06,
+     "ros": {
+      "mean": 36.4,
+      "p10": 23.1,
+      "p90": 51.4
+     },
+     "gain": -21.5
+    },
+    {
+     "espn_id": 5746,
+     "name": "Justin Faulk",
+     "pos": "D",
+     "team": "DET",
+     "status": "ACTIVE",
+     "pct_owned": 77.13,
+     "ros": {
+      "mean": 35.8,
+      "p10": 22.8,
+      "p90": 50.6
+     },
+     "gain": -22.1
+    },
+    {
+     "espn_id": 5080154,
+     "name": "Pavel Mintyukov",
+     "pos": "D",
+     "team": "ANA",
+     "status": "ACTIVE",
+     "pct_owned": 2.03,
+     "ros": {
+      "mean": 34.6,
+      "p10": 22.0,
+      "p90": 48.9
+     },
+     "gain": -23.3
+    }
+   ]
+  }
+ },
+ "standings": [
+  {
+   "team_id": 5,
+   "abbrev": "HC25",
+   "name": "hubcad25",
+   "mine": true,
+   "points": 20.0,
+   "ros": 1079.9,
+   "final": 1099.9,
+   "p10": 1021.1,
+   "p90": 1178.7,
+   "p_first": 0.671
+  },
+  {
+   "team_id": 1,
+   "abbrev": "GSP",
+   "name": "GSP",
+   "mine": false,
+   "points": 12.0,
+   "ros": 1016.5,
+   "final": 1028.5,
+   "p10": 958.4,
+   "p90": 1098.6,
+   "p_first": 0.125
+  },
+  {
+   "team_id": 7,
+   "abbrev": "VFTH",
+   "name": "Vincenzo for the win",
+   "mine": false,
+   "points": 3.0,
+   "ros": 1013.8,
+   "final": 1016.8,
+   "p10": 945.9,
+   "p90": 1087.7,
+   "p_first": 0.091
+  },
+  {
+   "team_id": 12,
+   "abbrev": "RICo",
+   "name": "Rico",
+   "mine": false,
+   "points": 4.0,
+   "ros": 993.3,
+   "final": 997.3,
+   "p10": 928.1,
+   "p90": 1066.5,
+   "p_first": 0.047
+  },
+  {
+   "team_id": 9,
+   "abbrev": "LLT",
+   "name": "Laurent's Lucrative Team",
+   "mine": false,
+   "points": 12.0,
+   "ros": 972.3,
+   "final": 984.3,
+   "p10": 913.4,
+   "p90": 1055.2,
+   "p_first": 0.034
+  },
+  {
+   "team_id": 4,
+   "abbrev": "NWA",
+   "name": "NWA",
+   "mine": false,
+   "points": 11.0,
+   "ros": 957.9,
+   "final": 968.9,
+   "p10": 895.7,
+   "p90": 1042.1,
+   "p_first": 0.024
+  },
+  {
+   "team_id": 3,
+   "abbrev": "AC",
+   "name": "Cuzo",
+   "mine": false,
+   "points": 7.0,
+   "ros": 935.7,
+   "final": 942.7,
+   "p10": 875.6,
+   "p90": 1009.8,
+   "p_first": 0.004
+  },
+  {
+   "team_id": 11,
+   "abbrev": "GFF",
+   "name": "Gucci Flip Flops",
+   "mine": false,
+   "points": 3.0,
+   "ros": 923.0,
+   "final": 926.0,
+   "p10": 851.6,
+   "p90": 1000.4,
+   "p_first": 0.003
+  },
+  {
+   "team_id": 10,
+   "abbrev": "IGm",
+   "name": "Yan The Man",
+   "mine": false,
+   "points": 7.0,
+   "ros": 894.6,
+   "final": 901.6,
+   "p10": 836.3,
+   "p90": 966.9,
+   "p_first": 0.0
+  },
+  {
+   "team_id": 2,
+   "abbrev": "EMs",
+   "name": "Estrie Monsters",
+   "mine": false,
+   "points": 0,
+   "ros": 877.5,
+   "final": 877.5,
+   "p10": 811.8,
+   "p90": 943.2,
+   "p_first": 0.0
+  },
+  {
+   "team_id": 6,
+   "abbrev": "POGo",
+   "name": "POGO",
+   "mine": false,
+   "points": 6.0,
+   "ros": 858.2,
+   "final": 864.2,
+   "p10": 801.4,
+   "p90": 927.0,
+   "p_first": 0.0
+  },
+  {
+   "team_id": 8,
+   "abbrev": "Nl",
+   "name": "Nickla",
+   "mine": false,
+   "points": 4.0,
+   "ros": 856.6,
+   "final": 860.6,
+   "p10": 800.8,
+   "p90": 920.4,
+   "p_first": 0.0
+  }
  ]
 }

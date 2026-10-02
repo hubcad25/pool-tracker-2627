@@ -77,6 +77,9 @@ def fetch_league() -> dict:
             "team_id": t["id"],
             "abbrev": t.get("abbrev"),
             "name": t.get("name") or f"{t.get('location', '')} {t.get('nickname', '')}".strip(),
+            "points": t.get("points"),
+            # Signatures de FA de la saison (les moves sont limités)
+            "acquisitions": t.get("transactionCounter", {}).get("acquisitions"),
             "roster": roster,
         })
     # L'API de la ligue donne le statut mais pas les détails (type, date de retour) : on les prend du public

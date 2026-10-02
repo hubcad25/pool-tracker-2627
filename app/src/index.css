@@ -25,7 +25,8 @@ p {
 .app {
   max-width: 640px;
   margin: 0 auto;
-  padding: max(16px, env(safe-area-inset-top)) 16px 48px;
+  /* Place pour la barre d'onglets en bas */
+  padding: max(16px, env(safe-area-inset-top)) 16px calc(72px + env(safe-area-inset-bottom));
 }
 
 .empty {
@@ -140,19 +141,19 @@ p {
   margin-top: 18px;
 }
 
-.group-head {
-  display: grid;
-  grid-template-columns: 1fr;
-  margin-bottom: 4px;
-}
-
-.group-head h2 {
+.group-title {
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--text-dim);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+}
+
+.group-note {
+  font-size: 12px;
+  color: var(--text-faint);
+  margin-bottom: 6px;
 }
 
 /* Cartes */
@@ -359,4 +360,164 @@ p {
   grid-column: 1 / -1;
   font-size: 12px;
   color: var(--text-dim);
+}
+
+/* Barre d'onglets */
+.tabs {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  background: var(--surface-1);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 10;
+}
+
+.tabs a {
+  flex: 1;
+  max-width: 160px;
+  padding: 14px 0 15px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-decoration: none;
+  border-top: 2px solid transparent;
+  margin-top: -1px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabs a.is-active {
+  color: var(--text);
+  border-top-color: var(--accent);
+}
+
+/* Listes (blessures, FA, ligue) */
+.rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+}
+
+.row + .row {
+  border-top: 1px solid var(--border-soft);
+}
+
+.row-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.row-name {
+  font-weight: 600;
+}
+
+.row-meta {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.row-meta b {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.row-injury {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--danger);
+}
+
+.row-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.row-value {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.row-value small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-faint);
+}
+
+.row-sub {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.row-gain {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
+.row-gain.is-good {
+  color: var(--good);
+}
+
+.fa-moves {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+/* Ligue */
+.standing.is-mine {
+  background: var(--surface-2);
+}
+
+.standing.is-mine .row-name {
+  font-weight: 750;
+}
+
+.standing-rank {
+  width: 18px;
+  font-size: 13px;
+  color: var(--text-faint);
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.standing-range {
+  position: relative;
+  height: 10px;
+  margin-top: 4px;
+}
+
+.standing-interval {
+  position: absolute;
+  top: 4px;
+  height: 2px;
+  background: var(--text-faint);
+}
+
+.standing-mean {
+  position: absolute;
+  top: 1px;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  background: var(--text);
+  transform: rotate(45deg);
 }

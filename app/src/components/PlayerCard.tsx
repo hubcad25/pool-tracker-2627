@@ -1,23 +1,13 @@
 import { useState } from 'react'
-import { dec, int, lastName, minutes, pct, shortDate, signed } from '../format'
-import type { Injury, Player } from '../types'
+import { dec, injuryText, int, lastName, minutes, pct, signed } from '../format'
+import type { Player } from '../types'
 import Band, { standing } from './Band'
-
-const STATUS: Record<string, string> = { DAY_TO_DAY: 'DTD', OUT: 'OUT', INJURY_RESERVE: 'IR', SUSPENSION: 'Suspendu' }
 
 const VERDICT_LABEL = {
   malchanceux: 'Malchanceux',
   chanceux: 'Chanceux',
   conforme: 'Conforme',
   petit_echantillon: 'Échantillon trop petit (< 10 matchs)',
-}
-
-function injuryText(i: Injury) {
-  const status = STATUS[i.status] ?? i.status
-  if (i.out_for_season) return `${status} · saison terminée`
-  if (!i.expected_return) return `${status} · retour inconnu`
-  const missed = i.games_missed ? ` · manque ${i.games_missed} m.` : ''
-  return `${status} · retour ~${shortDate(i.expected_return)}${missed}`
 }
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
