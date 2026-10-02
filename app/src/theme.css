@@ -1,0 +1,84 @@
+/* Thème repris de fantasy_projections_2627/app/src/index.css (mêmes variables). */
+:root {
+  color-scheme: light;
+  --surface-0: #e8eaed;
+  --surface-1: #f7f8f9;
+  --surface-2: #eceef1;
+  --surface-3: #dfe2e6;
+  --border-soft: #e4e6e9;
+  --border: #d3d7dc;
+  --border-strong: #59616b;
+  --shadow-soft: 0 1px 2px rgba(31, 35, 40, 0.06), 0 1px 3px rgba(31, 35, 40, 0.04);
+  --text: #1f2328;
+  --text-dim: #5b636d;
+  --text-faint: #939aa3;
+  --accent: #2b3036;
+  --accent-contrast: #f7f8f9;
+  --danger: #9e2a2e;
+  --good: #3a6445;
+  --gold: #8a6510;
+  --gold-wash: rgba(214, 162, 30, 0.17);
+  --gold-wash-strong: rgba(214, 162, 30, 0.28);
+  --radius: 3px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --bg: var(--surface-0);
+  --panel: var(--surface-1);
+  --panel-alt: var(--surface-2);
+  --accent-2: var(--accent); /* legacy alias */
+
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --surface-0: #151719;
+    --surface-1: #1d2023;
+    --surface-2: #25292d;
+    --surface-3: #30353a;
+    --border-soft: #292d32;
+    --border: #363b41;
+    --border-strong: #98a0a9;
+    --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+    --text: #d9dde2;
+    --text-dim: #9aa2ab;
+    --text-faint: #666e77;
+    --accent: #d9dde2;
+    --accent-contrast: #1d2023;
+    --danger: #de7a7c;
+    --good: #8fbf98;
+    --gold: #d9b24f;
+    --gold-wash: rgba(217, 178, 79, 0.13);
+    --gold-wash-strong: rgba(217, 178, 79, 0.22);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --surface-0: #151719;
+  --surface-1: #1d2023;
+  --surface-2: #25292d;
+  --surface-3: #30353a;
+  --border-soft: #292d32;
+  --border: #363b41;
+  --border-strong: #98a0a9;
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --text: #d9dde2;
+  --text-dim: #9aa2ab;
+  --text-faint: #666e77;
+  --accent: #d9dde2;
+  --accent-contrast: #1d2023;
+  --danger: #de7a7c;
+  --good: #8fbf98;
+  --gold: #d9b24f;
+  --gold-wash: rgba(217, 178, 79, 0.13);
+  --gold-wash-strong: rgba(217, 178, 79, 0.22);
+}
+

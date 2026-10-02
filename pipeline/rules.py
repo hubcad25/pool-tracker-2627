@@ -114,15 +114,19 @@ def ros_params() -> dict:
     return model_ros.load_params()
 
 
+def games_left(player: dict, schedule: list[dict], today: date) -> int:
+    """Matchs restants de son équipe, moins ceux qu'il manquera pour une blessure connue."""
+    return max(_team_games(player, schedule, today) - (games_missed(player, schedule, today) or 0), 0)
+
+
 def ros(player: dict, prior: dict | None, schedule: list[dict], today: date) -> tuple[float, float, float] | None:
     """ROS (moyenne, p10, p90). `prior` : le prior préseason, avec les stats de la saison (`obs`) et
     les totaux de carrière (`career`) quand on les a. Pas de ROS pour les gardiens."""
     pos = pos_group(player["pos"])
     if not prior or not prior.get("gp") or pos == "G":
         return None
-    games = max(_team_games(player, schedule, today) - (games_missed(player, schedule, today) or 0), 0)
-    return model_ros.ros(prior["sim_mean"] / prior["gp"], prior.get("obs"), prior.get("career"), games, pos,
-                         ros_params())
+    return model_ros.ros(prior["sim_mean"] / prior["gp"], prior.get("obs"), prior.get("career"),
+                         games_left(player, schedule, today), pos, ros_params())
 
 
 def _fmt_ros(player: dict, r: tuple | None) -> str:

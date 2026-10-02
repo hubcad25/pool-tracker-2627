@@ -1,0 +1,362 @@
+/* Mise en page. Couleurs : uniquement les variables de theme.css.
+   La couleur ne sert qu'à signaler : --gold = action possible, --good / --danger = verdicts et écarts. */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.num {
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: max(16px, env(safe-area-inset-top)) 16px 48px;
+}
+
+.empty {
+  color: var(--text-dim);
+  padding: 32px 0;
+}
+
+/* En-tête */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.top-league {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.top-team {
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+
+.top-day {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: right;
+}
+
+.top-day.is-stale {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* Alertes du jour : la seule zone dorée */
+.alerts {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.alert {
+  padding: 10px 12px;
+  background: var(--gold-wash);
+  border: 1px solid var(--gold);
+  border-left-width: 4px;
+  border-radius: var(--radius);
+  white-space: pre-line;
+  font-weight: 500;
+}
+
+/* Légende */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend i {
+  display: inline-block;
+  position: relative;
+}
+
+.lg-prior {
+  width: 16px;
+  height: 8px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.lg-points {
+  width: 16px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.lg-final {
+  width: 18px;
+  height: 2px;
+  background: var(--text-faint);
+}
+
+.lg-final::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background: var(--text);
+  transform: rotate(45deg);
+}
+
+/* Groupes */
+.group {
+  margin-top: 18px;
+}
+
+.group-head {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 4px;
+}
+
+.group-head h2 {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 2px;
+}
+
+/* Cartes */
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  padding: 10px 12px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card.is-open {
+  border-color: var(--border);
+}
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.card-who {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+  min-width: 0;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.card-meta {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.card-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.card-final {
+  font-size: 22px;
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.card-final.is-above {
+  color: var(--good);
+}
+
+.card-final.is-below {
+  color: var(--danger);
+}
+
+.card-final.is-none {
+  color: var(--text-faint);
+}
+
+.card-now {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: var(--radius);
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.chip.is-malchanceux {
+  color: var(--good);
+}
+
+.chip.is-chanceux,
+.chip.is-injury {
+  color: var(--danger);
+}
+
+/* Bande */
+.band {
+  position: relative;
+  height: 20px;
+}
+
+.band-tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border-soft);
+}
+
+.band-prior {
+  position: absolute;
+  top: 2px;
+  height: 10px;
+  background: var(--surface-3);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.band-prior-mid {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text-faint);
+}
+
+.band-points {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 0 2px 2px 0;
+}
+
+.band-interval {
+  position: absolute;
+  top: 6px;
+  height: 2px;
+  background: var(--text-faint);
+}
+
+.band-final {
+  position: absolute;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  background: var(--text);
+  box-shadow: 0 0 0 2px var(--surface-1);
+  transform: rotate(45deg);
+}
+
+.band-final.is-above {
+  background: var(--good);
+}
+
+.band-final.is-below {
+  background: var(--danger);
+}
+
+.band-scale {
+  position: relative;
+  height: 14px;
+  margin: 0 13px;
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.band-scale span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+/* Détail */
+.card-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px 14px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.stat-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stat-sub {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.card-verdict {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: var(--text-dim);
+}

@@ -12,7 +12,7 @@ from datetime import date, timedelta
 import requests
 
 from model import ros
-from pipeline import config, events, ids, notify, rules, snapshot
+from pipeline import config, dashboard, events, ids, notify, rules, snapshot
 from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
@@ -56,8 +56,10 @@ def run(day: date) -> list[events.Event]:
     schedule = fetch_schedule()
     prev_day = snapshot.previous_day(day)
     prev_league = snapshot.read(prev_day, "league") if prev_day else None
-    out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors_by_espn(id_map, season or {}),
-                          day)
+    priors = priors_by_espn(id_map, season or {})
+    out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors, day)
+    # Sans la ligue du jour (cookies), le dashboard garde les rosters de la veille
+    dashboard.write(dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out))
     return out
 
 

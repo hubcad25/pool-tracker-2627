@@ -1,0 +1,46 @@
+name: pages
+
+# Après chaque job quotidienne (nouveau data/dashboard.json) et à chaque changement de l'app.
+# Le push du bot avec GITHUB_TOKEN ne déclenche pas d'autre workflow : d'où workflow_run.
+on:
+  workflow_run:
+    workflows: [daily]
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ["app/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      # main et non le commit qui a lancé daily : le commit de données vient après
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - run: npm ci && npm run build
+        working-directory: app
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
