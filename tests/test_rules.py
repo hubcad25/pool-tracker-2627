@@ -2,6 +2,8 @@
 import copy
 from datetime import date, timedelta
 
+import pytest
+
 from pipeline import rules
 
 TODAY = date(2026, 10, 10)
@@ -31,8 +33,14 @@ BASE = [
     player(3, "Brock Boeser", team="VAN"),
     player(4, "Quinn Hughes", pos="D", team="VAN"),
 ]
-PRIORS = {2: {"sim_mean": 50, "q10": 40, "q90": 60}, 3: {"sim_mean": 60, "q10": 50, "q90": 70},
-          4: {"sim_mean": 80, "q10": 70, "q90": 90}}
+PRIORS = {2: {"sim_mean": 50, "gp": 82}, 3: {"sim_mean": 60, "gp": 82}, 4: {"sim_mean": 80, "gp": 82}}
+QUANTILES = {"rates": [0], "games": [0], "q10": [[0.8]], "q90": [[1.2]]}
+PARAMS = {pos: {"k": 30, "w": 0.0, "quantiles": QUANTILES} for pos in ("F", "D")}
+
+
+@pytest.fixture(autouse=True)
+def params(monkeypatch):
+    monkeypatch.setattr(rules, "ros_params", lambda: PARAMS)
 
 
 def evaluate(prev, cur, priors=PRIORS):
@@ -111,8 +119,17 @@ def test_ne_notifie_pas_un_petit_decalage_de_date():
 def test_activation_suggere_le_drop_au_plus_faible_ros_de_la_meme_position():
     [e] = evaluate(BASE, changed(1, status="ACTIVE", injury=None, ret=None))
     assert e.kind == "activation"
-    # 70 matchs restants / 82 : Nichushkin 50 → 43, Boeser 60 → 51. Hughes (D) n'est pas candidat.
-    assert e.message == "Jarvis activable → drop Nichushkin (ROS 43, 34-51) plutôt que Boeser (ROS 51, 43-60)"
+    # 70 matchs restants au rythme du prior : Nichushkin 50/82 → 43, Boeser 60/82 → 51 (intervalle ×0,8-1,2).
+    # Hughes (D) n'est pas candidat.
+    assert e.message == "Jarvis activable → drop Nichushkin (ROS 43, 34-51) plutôt que Boeser (ROS 51, 41-61)"
+
+
+def test_activation_la_ros_tient_compte_du_debut_de_saison():
+    # Nichushkin : 20 points en 20 matchs → (30 × 0,61 + 20) / 50 = 0,77 P/GP, il passe devant Boeser (0,73)
+    obs = {"gp": 20, "g": 10, "a": 10, "ixg": 10, "sog": 50, "on_goals": 30, "on_sog": 300}
+    priors = PRIORS | {2: PRIORS[2] | {"obs": obs}}
+    [e] = evaluate(BASE, changed(1, status="ACTIVE", injury=None, ret=None), priors=priors)
+    assert e.message.startswith("Jarvis activable → drop Boeser (ROS 51")
 
 
 def test_activation_un_candidat_blesse_perd_ses_matchs_manques():
@@ -121,7 +138,7 @@ def test_activation_un_candidat_blesse_perd_ses_matchs_manques():
     prev = copy.deepcopy(BASE)
     next(p for p in prev if p["espn_id"] == 3).update(injury_status="OUT", expected_return="2026-12-09")
     [e] = evaluate(prev, cur)
-    # Boeser manque 30 matchs : 60 × 40/82 → 29, maintenant sous Nichushkin
+    # Boeser manque 30 matchs : 60/82 × 40 → 29, maintenant sous Nichushkin
     assert e.message.startswith("Jarvis activable → drop Boeser (ROS 29")
 
 

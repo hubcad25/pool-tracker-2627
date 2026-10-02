@@ -9,9 +9,12 @@ import copy
 import json
 from datetime import date, timedelta
 
+import requests
+
+from model import ros
 from pipeline import config, events, ids, notify, rules, snapshot
 from pipeline.http import AuthError
-from pipeline.sources import espn, nhl
+from pipeline.sources import espn, moneypuck, nhl
 
 HEALTH = config.STATE_DIR / "health.json"
 FAILURES_BEFORE_ALERT = 2
@@ -61,9 +64,25 @@ def fetch_schedule() -> list[dict]:
 
 
 def priors_by_espn(id_map: dict[int, dict]) -> dict[int, dict]:
+    """Prior préseason de chaque joueur, avec ses stats de la saison (`obs`) et de carrière (`career`) pour la ROS."""
     priors = {p["player_id"]: p for p in json.loads((config.PRIORS_DIR / "priors.json").read_text())}
-    return {espn_id: priors[r["canonical_id"]] for espn_id, r in id_map.items()
-            if r.get("canonical_id") in priors}
+    season, career = season_stats(), ros.load_career()
+    out = {}
+    for espn_id, r in id_map.items():
+        if r.get("canonical_id") in priors:
+            nhl_id = int(r["nhl_id"]) if r.get("nhl_id") else None
+            out[espn_id] = priors[r["canonical_id"]] | {"obs": season.get(nhl_id), "career": career.get(nhl_id)}
+    return out
+
+
+def season_stats() -> dict[int, dict]:
+    """Stats MoneyPuck de la saison par nhl_id. En cas de panne, la ROS se rabat sur le prior."""
+    try:
+        rows = moneypuck.fetch_season_summary()
+    except requests.RequestException as e:
+        print(f"MoneyPuck indisponible ({e}) : ROS sur le prior seulement")
+        return {}
+    return {int(r["playerId"]): ros.from_moneypuck(r) for r in rows if r["situation"] == "all"}
 
 
 SCENARIOS = ("activation", "status")

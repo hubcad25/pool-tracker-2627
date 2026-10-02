@@ -3,7 +3,9 @@
 Chaque règle compare le snapshot de la veille à celui du jour. Pas de snapshot la veille → pas d'événement.
 """
 from datetime import date
+from functools import cache
 
+from model import ros as model_ros
 from pipeline.events import HIGH, Event
 from pipeline.ids import ESPN_TO_NHL_TEAM, pos_group
 
@@ -18,7 +20,6 @@ MONTHS = ["janv", "févr", "mars", "avr", "mai", "juin", "juil", "août", "sept"
 # Statuts qui ne permettent plus de rester dans un slot IR
 ACTIVABLE = {"ACTIVE", "DAY_TO_DAY"}
 RETURN_SHIFT_MIN_GAMES = 3
-SEASON_GAMES = 82
 
 
 def my_roster(league: dict | None, team_id: int) -> dict[int, dict]:
@@ -107,13 +108,20 @@ def return_date_changes(prev: dict[int, dict], cur: dict[int, dict], schedule: l
     return out
 
 
+@cache
+def ros_params() -> dict:
+    return model_ros.load_params()
+
+
 def ros(player: dict, prior: dict | None, schedule: list[dict], today: date) -> tuple[float, float, float] | None:
-    """ROS (moyenne, p10, p90) tirée du prior seulement, en attendant le modèle de la phase 2."""
-    if not prior:
+    """ROS (moyenne, p10, p90). `prior` : le prior préseason, avec les stats de la saison (`obs`) et
+    les totaux de carrière (`career`) quand on les a. Pas de ROS pour les gardiens."""
+    pos = pos_group(player["pos"])
+    if not prior or not prior.get("gp") or pos == "G":
         return None
-    games = _team_games(player, schedule, today) - (games_missed(player, schedule, today) or 0)
-    scale = max(games, 0) / SEASON_GAMES
-    return prior["sim_mean"] * scale, prior["q10"] * scale, prior["q90"] * scale
+    games = max(_team_games(player, schedule, today) - (games_missed(player, schedule, today) or 0), 0)
+    return model_ros.ros(prior["sim_mean"] / prior["gp"], prior.get("obs"), prior.get("career"), games, pos,
+                         ros_params())
 
 
 def _fmt_ros(player: dict, r: tuple | None) -> str:

@@ -24,7 +24,10 @@ sur Android + dashboard mobile (performance vs projection, indicateurs de chance
 | Dashboard | PWA React/Vite, déployée sur GitHub Pages |
 | Langage | Python pour la pipeline **et** le modèle ROS (le même code sert au backtest et en production). R reste correct pour l'exploration et les graphiques. |
 | Ids des joueurs | `data/id_map.csv` complétée automatiquement chaque jour (nom + alias, départagé par équipe puis position ; recherche NHL pour les blessés absents des rosters). Corrections à la main dans `data/id_overrides.csv`. Notif si un joueur de la ligue n'a pas d'association |
-| Prior du backtest | Marcel seulement, sans correction de l'écart Marcel / consensus. On garde la ROS simple |
+| Prior du backtest | Marcel seulement (5/4/3 pondéré par les GP, + âge), sans correction de l'écart Marcel / consensus. Recrues exclues du backtest (en prod, le consensus leur donne un prior) |
+| Rythme prior en prod | `sim_mean / gp`, où `gp` = médiane des GP projetés par les sources (ajouté à `priors.json`) |
+| Blessures futures | **Pas modélisées.** GP restants = matchs restants de l'équipe − matchs manqués pour blessure connue |
+| Gardiens | Exclus de la ROS |
 | Lien avec le projet de draft | copie unique et figée des distributions préseason + alias de noms dans `priors/`. Aucune dépendance vivante. |
 
 ## Sources (vérifiées le 2026-10-02)
@@ -100,11 +103,10 @@ Déduplication : un fichier d'état des alertes déjà envoyées, avec la clé (
 5. Le modèle 4 plus des signaux de rôle (variation du TOI et du PP TOI vs le prior) : un vrai changement de rôle
    doit faire bouger la projection plus vite que la chance
 
-**GP restants** = matchs restants de l'équipe − matchs manqués pour blessure connue − taux de blessures futures
-(calibré sur l'historique).
+**GP restants** = matchs restants de l'équipe − matchs manqués pour blessure connue (pas de blessures futures).
 
 **Backtest :**
-- Saisons 2021-22 à 2025-26. Coupures après 10, 20, 30, 41 et 60 matchs d'équipe. Cible : les points réels du reste de la saison.
+- Saisons 2022-23 à 2025-26. Coupures après 10, 20, 30, 41 et 60 matchs d'équipe. Cible : les points réels du reste de la saison.
 - Métriques :
   - erreur sur le P/GP ROS ;
   - **précision de l'ordre** : sur des paires de joueurs du top 250, est-ce qu'on prédit le bon gagnant ? (c'est la décision trade/drop) ;
@@ -174,10 +176,11 @@ l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. P
 29 tests. Scénarios fictifs : `--scenario activation|status` ou `workflow_dispatch`. Mode shadow sur `test`
 (notif fictive reçue sur le cell le 2026-10-02). Passer `PIPELINE_TARGET=prod` vers le 16 octobre si le shadow est concluant.
 
-**Prochaine étape : phase 2 (modèle ROS + backtest).** Points de départ :
-- Le code va dans `model/` (le même en backtest et en prod) et `backtest/`. Le cache MoneyPuck historique va dans
-  `backtest/cache/` (gitignoré).
-- Le prior du backtest est Marcel seulement, sans correction vers le consensus. On garde le plus simple qui gagne.
-- En production, la ROS remplacera `rules.ros()` (aujourd'hui le prior seul), utilisée par la suggestion de drop.
-- Les ids MoneyPuck sont des ids NHL : passer par `data/id_map.csv` (`ids.resolved`).
-- Les anciens projets `~/code/hockey/predict_points_season` et `predict_points_dynamic` sont à consulter au début de la phase.
+Phase 2 faite (2026-10-02) : `model/ros.py`, `backtest/` (`fetch.py` → cache, `run.py` → `model/params.json`
+et `backtest/report.md`). Résultat hors échantillon (une saison de côté) : le mélange bat nettement le prior seul et
+l'observé seul ; l'ajustement pour la chance gagne un peu, mais à chaque coupure → retenu (k = 25, w = 0,3 F / 0,4 D).
+Candidat 5 (rôle) non codé. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
+(calibrés à 80 % dans chaque tranche ; sans doute un peu larges en prod, où le consensus est meilleur que Marcel).
+`rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2023-26, figés).
+
+**Prochaine étape : phase 3 (dashboard).**
