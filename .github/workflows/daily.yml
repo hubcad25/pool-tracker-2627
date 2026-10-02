@@ -38,6 +38,7 @@ jobs:
       - run: uv run pytest -q
 
       - name: Pipeline
+        id: pipeline
         env:
           ESPN_S2: ${{ secrets.ESPN_S2 }}
           SWID: ${{ secrets.SWID }}
@@ -62,3 +63,14 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "data: $(TZ=America/Toronto date +%F)"
           git push
+
+      # Échec hors du script Python (uv sync, tests, commit) : le pipeline gère lui-même ses propres échecs
+      - name: Alerte d'échec
+        if: failure() && steps.pipeline.outcome != 'failure'
+        env:
+          TOPIC: ${{ (inputs.target || vars.PIPELINE_TARGET || 'test') == 'prod' && secrets.NTFY_TOPIC_PROD || secrets.NTFY_TOPIC_TEST }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          jq -n --arg topic "$TOPIC" --arg click "$RUN_URL" '{topic: $topic, title: "Santé du pipeline",
+            message: "Workflow daily en échec avant ou après le pipeline (dépendances, tests ou commit).",
+            priority: 4, click: $click}' | curl -sS --fail -d @- https://ntfy.sh/

@@ -1,4 +1,4 @@
-"""Événements produits par la pipeline. Chaque règle de notification retourne une liste d'Event."""
+"""Événements produits par le pipeline. Chaque règle de notification retourne une liste d'Event."""
 from dataclasses import dataclass
 
 # Priorités ntfy : 3 = normale, 4 = haute, 5 = max (son distinct, réservé aux alertes FA)
@@ -28,4 +28,9 @@ def cookies_expired() -> Event:
 
 
 def repeated_failures(n: int) -> Event:
-    return Event("health", "failures", f"La pipeline a échoué {n} fois de suite. Voir GitHub Actions.", HIGH)
+    return Event("health", "failures", f"Le pipeline a échoué {n} fois de suite. Voir GitHub Actions.", HIGH)
+
+
+def moneypuck_down() -> Event:
+    return Event("health", "moneypuck_down",
+                 "MoneyPuck indisponible depuis 2 jours : la ROS ignore les stats de la saison.", HIGH)

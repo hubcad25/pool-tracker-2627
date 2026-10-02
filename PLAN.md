@@ -22,7 +22,7 @@ sur Android + dashboard mobile (performance vs projection, indicateurs de chance
 | Runner | GitHub Actions, **1 exécution par jour vers midi** (cron `0 16 * * *` UTC, donc 12 h en heure d'été et 11 h l'hiver) |
 | Notifs | ntfy (app Android), topic au nom aléatoire, deux topics : `test` et `prod` |
 | Dashboard | PWA React/Vite, déployée sur GitHub Pages |
-| Langage | Python pour la pipeline **et** le modèle ROS (le même code sert au backtest et en production). R reste correct pour l'exploration et les graphiques. |
+| Langage | Python pour le pipeline **et** le modèle ROS (le même code sert au backtest et en production). R reste correct pour l'exploration et les graphiques. |
 | Ids des joueurs | `data/id_map.csv` complétée automatiquement chaque jour (nom + alias, départagé par équipe puis position ; recherche NHL pour les blessés absents des rosters). Corrections à la main dans `data/id_overrides.csv`. Notif si un joueur de la ligue n'a pas d'association |
 | Prior du backtest | Marcel seulement (5/4/3 pondéré par les GP, + âge), sans correction de l'écart Marcel / consensus. Recrues exclues du backtest (en prod, le consensus leur donne un prior) |
 | Rythme prior en prod | `sim_mean / gp`, où `gp` = médiane des GP projetés par les sources (ajouté à `priors.json`) |
@@ -55,7 +55,7 @@ pour une correction à la main (`data/id_overrides.csv`).
 (`sortPercOwned`), sinon `filterIds`. Les rosters NHL `current` omettent les blessés : on se rabat sur
 `search.d3.nhle.com`. Les calendriers NHL incluent la préseason (`gameType` 1), donc on filtre sur `gameType == 2`.
 
-## Pipeline quotidienne
+## Pipeline quotidien
 
 ```
 fetch (ESPN public + ligue, NHL, MoneyPuck)
@@ -104,6 +104,12 @@ Déduplication : un fichier d'état des alertes déjà envoyées, avec la clé (
 5. Le modèle 4 plus des signaux de rôle (variation du TOI et du PP TOI vs le prior) : un vrai changement de rôle
    doit faire bouger la projection plus vite que la chance
 
+**Piste à valider (pas codée)** : sh% attendu des coéquipiers selon les vrais trios. Aujourd'hui, une recrue est comparée
+au sh% de la ligue : McKenna sur un trio avec Nylander et Tavares (~11-12 % attendu) verrait ses passes réduites à tort
+(× ~0,83). Même biais pour un vétéran qui monte sur le premier trio. Correctif : le sh% de carrière de ses coéquipiers de
+trio (DailyFaceoff), régressé comme le reste. Effet estimé : ~1 point de ROS (w = 0,4, dilué par k). À garder seulement
+si le backtest (trios historiques de MoneyPuck) montre un gain pour les joueurs avec peu de GP de carrière.
+
 **GP restants** = matchs restants de l'équipe − matchs manqués pour blessure connue (pas de blessures futures).
 
 **Backtest :**
@@ -137,7 +143,7 @@ et on vend l'inverse. La perception des autres poolers est approximée par les p
 
 1. **Tests unitaires du moteur de règles** (pytest) : des scénarios « snapshot d'hier / snapshot d'aujourd'hui » avec le message attendu.
    Chaque règle anti-slop a son test « ne doit **pas** notifier ».
-2. **Dry-run** : la pipeline imprime les notifs qu'elle aurait envoyées, sans rien envoyer
+2. **Dry-run** : le pipeline imprime les notifs qu'il aurait envoyées, sans rien envoyer
    (testable avec `espn_injuries_2026-10-01.csv` du projet de draft comme « hier »).
 3. **`workflow_dispatch`** (lançable depuis l'app GitHub sur le cell) : choix de la cible `test`/`prod` et injection
    d'un scénario fictif (« Bedard activable », « FA à fort gain ») pour voir la vraie notif sur Android.
@@ -185,5 +191,7 @@ m = 400 (F) / 800 (D) : même un vétéran de 246 GP ne garde que ~38 % (F) de s
 Candidat 5 (rôle) non codé. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
 (calibrés à 80 % dans chaque tranche ; sans doute un peu larges en prod, où le consensus est meilleur que Marcel).
 `rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2023-26, figés).
+Notif d'activation : top 3 des options de drop, une par ligne. Alertes de santé : MoneyPuck en panne 2 jours de suite,
+et échec du workflow hors du pipeline (dépendances, tests, commit) via une étape `if: failure()`.
 
 **Prochaine étape : phase 3 (dashboard).**

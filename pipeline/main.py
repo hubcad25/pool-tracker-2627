@@ -17,6 +17,7 @@ from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
 HEALTH = config.STATE_DIR / "health.json"
+MONEYPUCK_HEALTH = config.STATE_DIR / "moneypuck.json"
 FAILURES_BEFORE_ALERT = 2
 # Sous ce seuil, un joueur absent des rosters LNH est presque toujours un espoir de la AHL
 MIN_PCT_OWNED_SEARCH = 1.0
@@ -49,10 +50,14 @@ def run(day: date) -> list[events.Event]:
     )
     out += events.unmatched_ids(ids.missing(id_map, rostered))
 
+    season = season_stats()
+    out += moneypuck_health(season is not None)
+
     schedule = fetch_schedule()
     prev_day = snapshot.previous_day(day)
     prev_league = snapshot.read(prev_day, "league") if prev_day else None
-    out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors_by_espn(id_map), day)
+    out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors_by_espn(id_map, season or {}),
+                          day)
     return out
 
 
@@ -63,10 +68,10 @@ def fetch_schedule() -> list[dict]:
     return schedule
 
 
-def priors_by_espn(id_map: dict[int, dict]) -> dict[int, dict]:
+def priors_by_espn(id_map: dict[int, dict], season: dict[int, dict]) -> dict[int, dict]:
     """Prior préseason de chaque joueur, avec ses stats de la saison (`obs`) et de carrière (`career`) pour la ROS."""
     priors = {p["player_id"]: p for p in json.loads((config.PRIORS_DIR / "priors.json").read_text())}
-    season, career = season_stats(), ros.load_career()
+    career = ros.load_career()
     out = {}
     for espn_id, r in id_map.items():
         if r.get("canonical_id") in priors:
@@ -75,13 +80,13 @@ def priors_by_espn(id_map: dict[int, dict]) -> dict[int, dict]:
     return out
 
 
-def season_stats() -> dict[int, dict]:
-    """Stats MoneyPuck de la saison par nhl_id. En cas de panne, la ROS se rabat sur le prior."""
+def season_stats() -> dict[int, dict] | None:
+    """Stats MoneyPuck de la saison par nhl_id. None en cas de panne : la ROS se rabat alors sur le prior."""
     try:
         rows = moneypuck.fetch_season_summary()
     except requests.RequestException as e:
         print(f"MoneyPuck indisponible ({e}) : ROS sur le prior seulement")
-        return {}
+        return None
     return {int(r["playerId"]): ros.from_moneypuck(r) for r in rows if r["situation"] == "all"}
 
 
@@ -105,15 +110,30 @@ def run_scenario(name: str, day: date) -> list[events.Event]:
                       expected_return=(day + timedelta(days=21)).isoformat())
     schedule = [{k: g[k] for k in ("game_id", "date", "team")} for g in nhl.fetch_schedule()]
     id_map = ids.resolved(ids.read_map(ids.ID_MAP))
-    evts = rules.evaluate(league, fake, config.MY_TEAM_ID, schedule, priors_by_espn(id_map), day)
+    priors = priors_by_espn(id_map, season_stats() or {})
+    evts = rules.evaluate(league, fake, config.MY_TEAM_ID, schedule, priors, day)
     return [events.Event(e.kind, e.key, f"[SCÉNARIO] {e.message}", e.priority) for e in evts]
 
 
-def _health(ok: bool) -> int:
-    failures = 0 if ok else (json.loads(HEALTH.read_text())["failures"] + 1 if HEALTH.exists() else 1)
-    HEALTH.parent.mkdir(parents=True, exist_ok=True)
-    HEALTH.write_text(json.dumps({"failures": failures, "last_run": config.today().isoformat(), "ok": ok}) + "\n")
+def _streak(path, ok: bool) -> int:
+    """Échecs consécutifs, gardés dans data/state."""
+    failures = 0 if ok else (json.loads(path.read_text())["failures"] + 1 if path.exists() else 1)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps({"failures": failures, "last_run": config.today().isoformat(), "ok": ok}) + "\n")
     return failures
+
+
+def _source_health(path, ok: bool, event: events.Event) -> list[events.Event]:
+    """Une journée de panne d'une source passe ; à partir de deux, une notif (une seule, réarmée au retour)."""
+    if _streak(path, ok) >= FAILURES_BEFORE_ALERT:
+        return [event]
+    if ok:
+        notify.forget(event.key)
+    return []
+
+
+def moneypuck_health(ok: bool) -> list[events.Event]:
+    return _source_health(MONEYPUCK_HEALTH, ok, events.moneypuck_down())
 
 
 def main() -> None:
@@ -132,11 +152,11 @@ def main() -> None:
     try:
         evts = run(config.today())
     except Exception:
-        failures = _health(ok=False)
+        failures = _streak(HEALTH, ok=False)
         if failures == FAILURES_BEFORE_ALERT:
             notify.send([events.repeated_failures(failures)], target=args.target, dry_run=not args.send)
         raise
-    _health(ok=True)
+    _streak(HEALTH, ok=True)
     notify.forget("failures")
     notify.send(evts, target=args.target, dry_run=not args.send)
 

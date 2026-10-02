@@ -8,7 +8,7 @@ from pipeline.events import Event
 
 SENT = config.STATE_DIR / "sent.json"
 TITLES = {"status": "Blessure", "return_date": "Date de retour", "activation": "Activation IR",
-          "fa_alert": "Alerte FA", "digest": "Digest de la semaine", "health": "Santé de la pipeline"}
+          "fa_alert": "Alerte FA", "digest": "Digest de la semaine", "health": "Santé du pipeline"}
 
 
 def load_sent() -> set[str]:
