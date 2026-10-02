@@ -169,5 +169,5 @@ tests/           scénarios de notifs
 2026-10-02 : plan rédigé. Phase 0 en place : structure du repo, collecteurs ESPN / NHL / MoneyPuck,
 priors copiés, table d'ids (les 192 joueurs repêchés sont tous associés), ntfy avec déduplication et dry-run,
 compteur d'échecs, workflow quotidien, tests (pytest + ruff).
-Reste pour la phase 0 : créer le repo GitHub, ajouter les secrets, valider `fetch_league` avec les vrais cookies
-(dont le `lineupSlotId` des slots IR), installer ntfy sur Android.
+Repo, secrets et ntfy en place. `fetch_league` validé sur la vraie ligue : slots 3=F, 4=D, 5=G, 8=IR ;
+l'API de la ligue n'a pas la date de retour, on la prend de l'endpoint public. Prochaine étape : phase 1.

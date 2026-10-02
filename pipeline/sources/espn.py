@@ -9,6 +9,8 @@ PLAYERS_URL = f"{BASE}/segments/0/leaguedefaults/1?view=kona_playercard"
 LEAGUE_URL = f"{BASE}/segments/0/leagues/{config.LEAGUE_ID}"
 
 POSITIONS = {1: "C", 2: "LW", 3: "RW", 4: "D", 5: "G"}
+# lineupSlotId dans la ligue (vérifié le 2026-10-02 sur les rosters réels)
+SLOTS = {3: "F", 4: "D", 5: "G", 8: "IR"}
 
 
 def _pro_teams() -> dict[int, str]:
@@ -42,6 +44,13 @@ def fetch_players(limit: int = 1500) -> list[dict]:
     return rows
 
 
+def fetch_players_by_id(espn_ids: list[int]) -> list[dict]:
+    filt = {"players": {"filterIds": {"value": espn_ids}}}
+    d = get_json(PLAYERS_URL, headers={"X-Fantasy-Filter": json.dumps(filt)})
+    pro_teams = _pro_teams()
+    return [_player_row(e["player"], pro_teams) for e in d["players"]]
+
+
 def has_cookies() -> bool:
     return bool(config.env("ESPN_S2") and config.env("SWID"))
 
@@ -62,8 +71,7 @@ def fetch_league() -> dict:
         roster = []
         for e in t.get("roster", {}).get("entries", []):
             row = _player_row(e["playerPoolEntry"]["player"], pro_teams)
-            # TODO confirmer avec une vraie réponse quel lineupSlotId correspond à IR
-            row["slot_id"] = e.get("lineupSlotId")
+            row["slot"] = SLOTS.get(e.get("lineupSlotId"), str(e.get("lineupSlotId")))
             roster.append(row)
         teams.append({
             "team_id": t["id"],
@@ -71,6 +79,13 @@ def fetch_league() -> dict:
             "name": t.get("name") or f"{t.get('location', '')} {t.get('nickname', '')}".strip(),
             "roster": roster,
         })
+    # L'API de la ligue donne le statut mais pas les détails (type, date de retour) : on les prend du public
+    rostered = [p for t in teams for p in t["roster"]]
+    public = {p["espn_id"]: p for p in fetch_players_by_id([p["espn_id"] for p in rostered])}
+    for p in rostered:
+        if p["espn_id"] in public:
+            for k in ("injury_status", "injury_type", "expected_return", "out_for_season"):
+                p[k] = public[p["espn_id"]][k]
     return {"teams": teams, "settings": {"name": d.get("settings", {}).get("name")}}
 
 
