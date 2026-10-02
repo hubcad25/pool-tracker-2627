@@ -32,8 +32,11 @@ On n'a pas d'historique des trios DailyFaceoff.
 ## Décision
 
 - On garde le candidat 4. Aucun signal de rôle dans la ROS.
-- DailyFaceoff est retiré du pipeline (collecteur, snapshot, alerte de panne). Le code est dans l'historique git
-  (session du 2026-10-02, jamais commité dans `main`).
+- DailyFaceoff est retiré du pipeline (collecteur, snapshot, alerte de panne). Ce code n'a jamais été commité.
+  Pour le refaire : les données sont dans le JSON `__NEXT_DATA__` de
+  `dailyfaceoff.com/teams/{slug}/line-combinations` (`props.pageProps.combinations.players`, avec
+  `groupIdentifier` f1-f4, d1-d3, pp1, pp2) ; association aux ids NHL par nom, puis équipe, puis position
+  (`ids.match_nhl`).
 - Les candidats 5, 5b et 6 restent dans `backtest/run.py` et `backtest/report.md` pour la trace.
 
 ## Pourquoi
