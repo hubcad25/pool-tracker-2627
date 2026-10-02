@@ -1,0 +1,54 @@
+name: daily
+
+on:
+  schedule:
+    - cron: "0 16 * * *"   # 12 h (heure d'été) / 11 h (hiver) à Montréal
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "Topic ntfy"
+        type: choice
+        options: [test, prod]
+        default: test
+      send:
+        description: "Envoyer la notif (sinon dry-run dans les logs)"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run pytest -q
+
+      - name: Pipeline
+        env:
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          SWID: ${{ secrets.SWID }}
+          NTFY_TOPIC_TEST: ${{ secrets.NTFY_TOPIC_TEST }}
+          NTFY_TOPIC_PROD: ${{ secrets.NTFY_TOPIC_PROD }}
+          # Mode shadow : le cron envoie sur `test` tant que PIPELINE_TARGET n'est pas mis à `prod`
+          TARGET: ${{ inputs.target || vars.PIPELINE_TARGET || 'test' }}
+          SEND: ${{ github.event_name == 'schedule' || inputs.send }}
+        run: uv run python -m pipeline.main --target "$TARGET" $([ "$SEND" = "true" ] && echo --send)
+
+      # Toujours commiter : snapshots, table d'ids et compteur d'échecs (ce commit garde aussi le cron actif)
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "pool-tracker-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "data: $(TZ=America/Toronto date +%F)"
+          git push
