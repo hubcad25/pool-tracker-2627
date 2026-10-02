@@ -42,7 +42,11 @@ export default function App() {
     return () => removeEventListener('hashchange', onHash)
   }, [])
 
-  useEffect(() => scrollTo(0, 0), [tab])
+  // Accolades obligatoires : scrollTo retourne une Promise dans les Chrome récents, que React prendrait
+  // pour une fonction de nettoyage (écran vide au changement d'onglet)
+  useEffect(() => {
+    scrollTo(0, 0)
+  }, [tab])
 
   if (error) return <main className="app"><p className="empty">Impossible de charger les données.</p></main>
   if (!data) return <main className="app" />
