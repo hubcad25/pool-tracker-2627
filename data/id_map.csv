@@ -642,6 +642,7 @@ espn_id,nhl_id,canonical_id,name,method
 4226783,,,Radim Simek,unmatched
 4227208,,,Victor Antipin,unmatched
 4230583,,jan_rutta,Jan Rutta,unmatched
+4232871,,jaret_anderson_dolan,Jaret Anderson-Dolan,unmatched
 4233536,8480036,miro_heiskanen,Miro Heiskanen,name
 4233555,8480002,nico_hischier,Nico Hischier,name
 4233563,8480069,cale_makar,Cale Makar,name
@@ -905,6 +906,7 @@ espn_id,nhl_id,canonical_id,name,method
 4587946,,,Grant Hutton,unmatched
 4587949,,,Andrei  Chibisov,unmatched
 4587952,8481692,dustin_wolf,Dustin Wolf,name
+4587953,,,Mason Morelli,unmatched
 4587985,8480355,mark_kastelic,Mark Kastelic,name
 4587994,8480193,daniil_tarasov_(g),Daniil Tarasov,name
 4587996,8480893,kirill_marchenko,Kirill Marchenko,name
@@ -1012,6 +1014,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697790,,ronan_seeley,Ronan Seeley,unmatched
 4697791,,donovan_sebrango,Donovan Sebrango,unmatched
 4697820,8482460,matt_rempe,Matt Rempe,name
+4697822,,,Adam Raska,unmatched
 4697824,,mikael_pyyhtia,Mikael Pyyhtia,unmatched
 4697831,,isaak_phillips,Isaak Phillips,unmatched
 4711944,,,Alexei Melnichuk,unmatched
@@ -1103,6 +1106,7 @@ espn_id,nhl_id,canonical_id,name,method
 4894419,,tristen_nielsen,Tristen Nielsen,unmatched
 4894487,8482221,,Devon Levi,name
 4894618,,,James Malatesta,unmatched
+4894671,,,Daniil Misyul,unmatched
 4894702,,cole_reinhardt,Cole Reinhardt,unmatched
 4894703,8482447,,Leevi Merilainen,name
 4894726,8482807,ethan_del_mastro,Ethan Del Mastro,name
