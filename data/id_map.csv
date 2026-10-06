@@ -436,7 +436,7 @@ espn_id,nhl_id,canonical_id,name,method
 3115033,8477987,ryan_donato,Ryan Donato,name
 3115035,8477989,christian_dvorak,Christian Dvorak,name
 3115036,,,Brandon Halverson,unmatched
-3115546,,,Jonas Johansson,unmatched
+3115546,8477992,,Jonas Johansson,name
 3120307,8478042,viktor_arvidsson,Viktor Arvidsson,name
 3149603,8478047,michael_bunting,Michael Bunting,search:name
 3149612,8477810,joel_hanley,Joel Hanley,name
@@ -662,7 +662,7 @@ espn_id,nhl_id,canonical_id,name,method
 4233586,8480039,martin_necas,Martin Necas,name
 4233594,8480018,nick_suzuki,Nick Suzuki,name
 4233606,,erik_brannstrom,Erik Brannstrom,unmatched
-4233611,,juuso_valimaki,Juuso Valimaki,unmatched
+4233611,8479976,juuso_valimaki,Juuso Valimaki,name
 4233618,8480043,timothy_liljegren,Timothy Liljegren,name
 4233619,,urho_vaakanainen,Urho Vaakanainen,unmatched
 4233627,8480064,josh_norris,Josh Norris,name
@@ -993,6 +993,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697470,8482201,gage_goncalves,Gage Goncalves,name
 4697577,,,Artur Akhtyamov,unmatched
 4697579,,nils_aman,Nils Aman,unmatched
+4697648,8482459,,Tyrel Bauer,name
 4697654,,brett_berard,Brett Berard,unmatched
 4697664,,,Chase Bradley,unmatched
 4697678,,lukas_cormier,Lukas Cormier,unmatched
@@ -1123,6 +1124,7 @@ espn_id,nhl_id,canonical_id,name,method
 4894820,,daniil_miromanov,Daniil Miromanov,unmatched
 4894822,,,Logan Morrison,unmatched
 4894857,,,Hugo Alnefelt,unmatched
+4894860,,valtteri_puustinen,Valtteri Puustinen,unmatched
 4894928,8482751,ryan_winterton,Ryan Winterton,name
 4894996,,,Tristan Lennox,unmatched
 4895164,,,Billy Sweezey,unmatched
