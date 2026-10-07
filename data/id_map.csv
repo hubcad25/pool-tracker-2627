@@ -124,7 +124,7 @@ espn_id,nhl_id,canonical_id,name,method
 5511,8475799,nino_niederreiter,Nino Niederreiter,name
 5517,8475151,kyle_palmieri,Kyle Palmieri,name
 5524,8475717,,Calvin Pickard,name
-5526,,tyler_pitlick,Tyler Pitlick,unmatched
+5526,8475752,tyler_pitlick,Tyler Pitlick,name
 5540,,jeff_skinner,Jeff Skinner,unmatched
 5545,8475913,mark_stone,Mark Stone,name
 5550,8475726,tyler_toffoli,Tyler Toffoli,name
@@ -605,6 +605,7 @@ espn_id,nhl_id,canonical_id,name,method
 4063231,,,Tanner Fritz,unmatched
 4063240,8479359,beck_malenstyn,Beck Malenstyn,name
 4063257,,,Josh Currie,unmatched
+4063268,8479346,dillon_dube,Dillon Dube,name
 4063279,,nathan_bastian,Nathan Bastian,unmatched
 4063280,,jacob_moverare,Jacob Moverare,unmatched
 4063288,,,David Rittich,unmatched
@@ -1033,6 +1034,7 @@ espn_id,nhl_id,canonical_id,name,method
 4712146,8482055,drew_oconnor,Drew O'Connor,name
 4736758,8481551,,Colten Ellis,name
 4755677,,,Jasper Weatherby,unmatched
+4755684,8481538,,Judd Caulfield,name
 4755690,8481030,jack_st_ivany,Jack St. Ivany,name
 4755691,,marshall_warren,Marshall Warren,unmatched
 4755695,8480855,jack_mcbain,Jack McBain,name
@@ -1207,6 +1209,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080230,8483457,lane_hutson,Lane Hutson,name
 5080232,8483669,adam_sykora,Adam Sykora,name
 5101628,,marek_alscher,Marek Alscher,unmatched
+5102979,,jorian_donovan,Jorian Donovan,unmatched
 5103533,8483766,david_spacek,David Spacek,name
 5103534,,,Maksymilian Szuber,unmatched
 5103536,8483395,arshdeep_bains,Arshdeep Bains,name
@@ -1222,6 +1225,7 @@ espn_id,nhl_id,canonical_id,name,method
 5103714,,ivan_ivan,Ivan Ivan,unmatched
 5103725,,hunter_mcdonald,Hunter McDonald,unmatched
 5103787,,,Nick Cicek,unmatched
+5103808,8482806,,William Trudeau,name
 5103809,,justin_robidas,Justin Robidas,unmatched
 5103811,8482866,,Ville Ottavainen,name
 5103825,8483398,declan_carlile,Declan Carlile,name
@@ -1350,10 +1354,11 @@ espn_id,nhl_id,canonical_id,name,method
 5188554,,hunter_brzustewicz,Hunter Brzustewicz,unmatched
 5188570,,,Vyacheslav Buteyets,unmatched
 5188581,,,Carl Lindbom,unmatched
+5188582,8483679,,Anton Johansson,name
 5188591,8484152,luca_cagnoni,Luca Cagnoni,name
 5188599,8484471,emmitt_finnie,Emmitt Finnie,name
 5188609,,luca_pinelli,Luca Pinelli,unmatched
-5188613,,aydar_suniev,Aydar Suniev,unmatched
+5188613,8484234,aydar_suniev,Aydar Suniev,name
 5188640,,ty_mueller,Ty Mueller,unmatched
 5188656,,,Thomas Milic,unmatched
 5206628,8484801,macklin_celebrini,Macklin Celebrini,name
@@ -1493,6 +1498,7 @@ espn_id,nhl_id,canonical_id,name,method
 5342440,,,Keaton Verhoeff,unmatched
 5342529,8486067,gavin_mckenna,Gavin McKenna,name
 5342690,,,Oscar Hemming,unmatched
+5346852,8486189,vitali_pinchuk,Vitali Pinchuk,name
 5357746,,,Benjamin Rautiainen,unmatched
 5361653,8486087,,Chase Reid,search:name
 5361654,,,Carson Carels,unmatched
