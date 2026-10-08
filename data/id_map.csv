@@ -329,7 +329,7 @@ espn_id,nhl_id,canonical_id,name,method
 3042055,8477447,shea_theodore,Shea Theodore,name
 3042056,8477479,tyler_bertuzzi,Tyler Bertuzzi,name
 3042057,,,Eric Comrie,unmatched
-3042062,,jason_dickinson,Jason Dickinson,unmatched
+3042062,8477450,jason_dickinson,Jason Dickinson,name
 3042063,8477451,ryan_hartman,Ryan Hartman,name
 3042069,,,Spencer Martin,unmatched
 3042080,,john_hayden,John Hayden,unmatched
@@ -559,6 +559,7 @@ espn_id,nhl_id,canonical_id,name,method
 3942685,,,Ivan Fedotov,unmatched
 3942714,,,Sam Montembeault,search:unmatched
 3942747,,,Kenneth Appleby,unmatched
+3942809,,dominic_toninato,Dominic Toninato,unmatched
 3942866,8478465,,Guillaume Brisebois,name
 3942868,8478874,adam_gaudette,Adam Gaudette,name
 3942905,8478873,troy_terry,Troy Terry,search:name
@@ -1083,6 +1084,7 @@ espn_id,nhl_id,canonical_id,name,method
 4874741,8482713,mackie_samoskevich,Mackie Samoskevich,name
 4874743,,carson_lambos,Carson Lambos,unmatched
 4874744,8482742,zachary_lheureux,Zachary L'Heureux,name
+4874747,8482784,,Zach Dean,name
 4874748,8482733,logan_mailloux,Logan Mailloux,name
 4874749,8482700,nolan_allan,Nolan Allan,name
 4874863,8482803,olen_zellweger,Olen Zellweger,name
