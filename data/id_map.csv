@@ -342,7 +342,7 @@ espn_id,nhl_id,canonical_id,name,method
 3042095,8477416,oliver_bjorkstrand,Oliver Bjorkstrand,name
 3042103,,mason_geertsen,Mason Geertsen,unmatched
 3042109,8477424,juuse_saros,Juuse Saros,name
-3042110,,miles_wood,Miles Wood,unmatched
+3042110,8477425,miles_wood,Miles Wood,name
 3042111,8477426,nick_paul,Nick Paul,name
 3042114,8477429,andrew_copp,Andrew Copp,name
 3042122,,ryan_graves,Ryan Graves,unmatched
@@ -467,7 +467,7 @@ espn_id,nhl_id,canonical_id,name,method
 3151168,,william_lagesson,William Lagesson,unmatched
 3151187,8478010,brayden_point,Brayden Point,name
 3151297,8478048,igor_shesterkin,Igor Shesterkin,name
-3151322,,sam_lafferty,Sam Lafferty,unmatched
+3151322,8478043,sam_lafferty,Sam Lafferty,name
 3151325,,mark_friedman,Mark Friedman,unmatched
 3151341,,,Kaapo Kahkonen,unmatched
 3151741,8478046,danton_heinen,Danton Heinen,name
@@ -1199,6 +1199,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080202,,owen_beck,Owen Beck,unmatched
 5080203,,,Cam Lund,unmatched
 5080207,8483489,fraser_minten,Fraser Minten,name
+5080210,8483521,noah_warren,Noah Warren,name
 5080211,8483432,luca_del_bel_belluz,Luca Del Bel Belluz,name
 5080212,,seamus_casey,Seamus Casey,unmatched
 5080216,,hunter_haight,Hunter Haight,unmatched
@@ -1234,7 +1235,7 @@ espn_id,nhl_id,canonical_id,name,method
 5103873,,shane_lachance,Shane Lachance,unmatched
 5104158,,jacob_gaucher,Jacob Gaucher,unmatched
 5104190,,kenny_connors,Kenny Connors,unmatched
-5104200,,jared_wright,Jared Wright,unmatched
+5104200,8483756,jared_wright,Jared Wright,name
 5104209,,abram_wiebe,Abram Wiebe,unmatched
 5104219,,,Arsenii Sergeev,unmatched
 5104221,,cole_ohara,Cole O'Hara,unmatched
@@ -1380,7 +1381,7 @@ espn_id,nhl_id,canonical_id,name,method
 5216868,8484759,carter_yakemchuk,Carter Yakemchuk,name
 5216877,8484800,berkly_catton,Berkly Catton,name
 5216878,8484768,zayne_parekh,Zayne Parekh,name
-5216879,,,Anton Silaev,unmatched
+5216879,8484987,,Anton Silaev,name
 5216880,8484806,sam_dickinson,Sam Dickinson,name
 5216881,,jett_luchanko,Jett Luchanko,unmatched
 5216882,8484797,konsta_helenius,Konsta Helenius,name
