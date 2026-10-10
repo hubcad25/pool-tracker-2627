@@ -1,5 +1,5 @@
 {
- "day": "2026-10-09",
+ "day": "2026-10-10",
  "team": {
   "id": 5,
   "name": "hubcad25"
@@ -127,46 +127,6 @@
    "verdict": "petit_echantillon"
   },
   {
-   "espn_id": 4233583,
-   "name": "Gabriel Vilardi",
-   "pos": "RW",
-   "group": "F",
-   "team": "WPG",
-   "slot": "F",
-   "injury": null,
-   "gp": 4.0,
-   "g": 0.0,
-   "a": 2.0,
-   "points": 2.0,
-   "pace": 42.0,
-   "prior": {
-    "p10": 64.7,
-    "p50": 70.2,
-    "p90": 75.6
-   },
-   "ros": {
-    "mean": 63.9,
-    "p10": 49.3,
-    "p90": 78.3,
-    "games_left": 80
-   },
-   "final": {
-    "mean": 65.9,
-    "p10": 51.3,
-    "p90": 80.3
-   },
-   "luck": {
-    "expected_points": 2.7,
-    "sh": 0.0,
-    "sh_career": 0.199,
-    "g_minus_ixg": -1.3,
-    "oish": 0.154,
-    "oish_career": 0.122,
-    "toi": 15.7
-   },
-   "verdict": "petit_echantillon"
-  },
-  {
    "espn_id": 4697382,
    "name": "Alexis Lafreniere",
    "pos": "LW",
@@ -174,10 +134,10 @@
    "team": "NYR",
    "slot": "F",
    "injury": null,
-   "gp": 5.0,
-   "g": 3.0,
+   "gp": 6.0,
+   "g": 4.0,
    "a": 2.0,
-   "points": 5.0,
+   "points": 6.0,
    "pace": 84.0,
    "prior": {
     "p10": 55.7,
@@ -185,24 +145,64 @@
     "p90": 65.4
    },
    "ros": {
-    "mean": 59.7,
-    "p10": 46.0,
-    "p90": 73.1,
+    "mean": 59.2,
+    "p10": 45.7,
+    "p90": 72.6,
+    "games_left": 78
+   },
+   "final": {
+    "mean": 65.2,
+    "p10": 51.7,
+    "p90": 78.6
+   },
+   "luck": {
+    "expected_points": 4.8,
+    "sh": 0.333,
+    "sh_career": 0.129,
+    "g_minus_ixg": 1.1,
+    "oish": 0.111,
+    "oish_career": 0.109,
+    "toi": 19.1
+   },
+   "verdict": "petit_echantillon"
+  },
+  {
+   "espn_id": 4233583,
+   "name": "Gabriel Vilardi",
+   "pos": "RW",
+   "group": "F",
+   "team": "WPG",
+   "slot": "F",
+   "injury": null,
+   "gp": 5.0,
+   "g": 0.0,
+   "a": 2.0,
+   "points": 2.0,
+   "pace": 33.6,
+   "prior": {
+    "p10": 64.7,
+    "p50": 70.2,
+    "p90": 75.6
+   },
+   "ros": {
+    "mean": 61.8,
+    "p10": 47.6,
+    "p90": 75.7,
     "games_left": 79
    },
    "final": {
-    "mean": 64.7,
-    "p10": 51.0,
-    "p90": 78.1
+    "mean": 63.8,
+    "p10": 49.6,
+    "p90": 77.7
    },
    "luck": {
-    "expected_points": 4.1,
-    "sh": 0.273,
-    "sh_career": 0.129,
-    "g_minus_ixg": 0.5,
+    "expected_points": 3.5,
+    "sh": 0.0,
+    "sh_career": 0.199,
+    "g_minus_ixg": -1.8,
     "oish": 0.133,
-    "oish_career": 0.109,
-    "toi": 19.1
+    "oish_career": 0.122,
+    "toi": 16.3
    },
    "verdict": "petit_echantillon"
   },
@@ -294,35 +294,35 @@
    "team": "CBJ",
    "slot": "F",
    "injury": null,
-   "gp": 2.0,
+   "gp": 3.0,
    "g": 0.0,
    "a": 1.0,
    "points": 1.0,
-   "pace": 42.0,
+   "pace": 28.0,
    "prior": {
     "p10": 49.5,
     "p50": 58.9,
     "p90": 68.3
    },
    "ros": {
-    "mean": 55.4,
-    "p10": 37.4,
-    "p90": 76.8,
-    "games_left": 82
+    "mean": 55.2,
+    "p10": 37.2,
+    "p90": 76.4,
+    "games_left": 81
    },
    "final": {
-    "mean": 56.4,
-    "p10": 38.4,
-    "p90": 77.8
+    "mean": 56.2,
+    "p10": 38.2,
+    "p90": 77.4
    },
    "luck": {
-    "expected_points": 0.3,
+    "expected_points": 2.4,
     "sh": 0.0,
     "sh_career": 0.151,
-    "g_minus_ixg": -0.0,
-    "oish": 0.333,
+    "g_minus_ixg": -0.3,
+    "oish": 0.05,
     "oish_career": 0.114,
-    "toi": 16.3
+    "toi": 16.2
    },
    "verdict": "petit_echantillon"
   },
@@ -454,35 +454,35 @@
    "team": "NYR",
    "slot": "D",
    "injury": null,
-   "gp": 5.0,
+   "gp": 6.0,
    "g": 0.0,
    "a": 5.0,
    "points": 5.0,
-   "pace": 84.0,
+   "pace": 70.0,
    "prior": {
     "p10": 70.4,
     "p50": 76.4,
     "p90": 82.1
    },
    "ros": {
-    "mean": 71.3,
-    "p10": 50.4,
-    "p90": 100.9,
-    "games_left": 79
+    "mean": 68.3,
+    "p10": 48.3,
+    "p90": 96.7,
+    "games_left": 78
    },
    "final": {
-    "mean": 76.3,
-    "p10": 55.4,
-    "p90": 105.9
+    "mean": 73.3,
+    "p10": 53.3,
+    "p90": 101.7
    },
    "luck": {
-    "expected_points": 3.8,
+    "expected_points": 4.2,
     "sh": 0.0,
     "sh_career": 0.099,
     "g_minus_ixg": -0.8,
-    "oish": 0.173,
+    "oish": 0.152,
     "oish_career": 0.123,
-    "toi": 21.1
+    "toi": 21.5
    },
    "verdict": "petit_echantillon"
   },
@@ -574,10 +574,10 @@
    "team": "SEA",
    "slot": "D",
    "injury": null,
-   "gp": 4.0,
-   "g": 1.0,
+   "gp": 5.0,
+   "g": 2.0,
    "a": 3.0,
-   "points": 4.0,
+   "points": 5.0,
    "pace": 84.0,
    "prior": {
     "p10": 45.7,
@@ -585,22 +585,22 @@
     "p90": 53.9
    },
    "ros": {
-    "mean": 51.7,
-    "p10": 35.1,
-    "p90": 69.0,
-    "games_left": 80
+    "mean": 52.1,
+    "p10": 35.3,
+    "p90": 69.4,
+    "games_left": 79
    },
    "final": {
-    "mean": 55.7,
-    "p10": 39.1,
-    "p90": 73.0
+    "mean": 57.1,
+    "p10": 40.3,
+    "p90": 74.4
    },
    "luck": {
-    "expected_points": 3.3,
-    "sh": 0.25,
+    "expected_points": 4.3,
+    "sh": 0.333,
     "sh_career": 0.076,
-    "g_minus_ixg": 0.7,
-    "oish": 0.103,
+    "g_minus_ixg": 1.4,
+    "oish": 0.085,
     "oish_career": 0.118,
     "toi": 21.8
    },
@@ -740,6 +740,24 @@
    }
   },
   {
+   "espn_id": 3900169,
+   "name": "Travis Konecny",
+   "pos": "RW",
+   "team": "PHI",
+   "owner": "GSP",
+   "mine": false,
+   "status": "OUT",
+   "type": "Lower Body",
+   "expected_return": "2026-10-11",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 65.9,
+    "p10": 50.8,
+    "p90": 80.7
+   }
+  },
+  {
    "espn_id": 3899946,
    "name": "Mathew Barzal",
    "pos": "C",
@@ -748,31 +766,31 @@
    "mine": false,
    "status": "INJURY_RESERVE",
    "type": "Knee",
-   "expected_return": "2026-10-10",
+   "expected_return": "2026-10-17",
    "out_for_season": false,
-   "games_missed": 0,
+   "games_missed": 3,
    "ros": {
-    "mean": 67.9,
-    "p10": 52.4,
-    "p90": 83.2
+    "mean": 65.4,
+    "p10": 50.4,
+    "p90": 80.1
    }
   },
   {
-   "espn_id": 3042016,
-   "name": "Josh Morrissey",
-   "pos": "D",
-   "team": "WPG",
-   "owner": "GSP",
+   "espn_id": 5160,
+   "name": "John Tavares",
+   "pos": "C",
+   "team": "TOR",
+   "owner": "Nl",
    "mine": false,
    "status": "OUT",
-   "type": "Upper Body",
+   "type": "Personal",
    "expected_return": "2026-10-13",
    "out_for_season": false,
    "games_missed": 1,
    "ros": {
-    "mean": 59.4,
-    "p10": 42.0,
-    "p90": 84.0
+    "mean": 62.3,
+    "p10": 48.1,
+    "p90": 76.3
    }
   },
   {
@@ -866,13 +884,31 @@
    }
   },
   {
+   "espn_id": 5080157,
+   "name": "Frank Nazar",
+   "pos": "C",
+   "team": "CHI",
+   "owner": "POGo",
+   "mine": false,
+   "status": "SUSPENSION",
+   "type": "Suspension",
+   "expected_return": "2026-10-15",
+   "out_for_season": false,
+   "games_missed": 2,
+   "ros": {
+    "mean": 49.9,
+    "p10": 33.7,
+    "p90": 69.1
+   }
+  },
+  {
    "espn_id": 4874721,
    "name": "William Eklund",
    "pos": "LW",
    "team": "OTT",
    "owner": "IGm",
    "mine": false,
-   "status": "OUT",
+   "status": "INJURY_RESERVE",
    "type": "Ankle",
    "expected_return": "2027-01-02",
    "out_for_season": false,
@@ -900,9 +936,9 @@
     "espn_id": 3904189,
     "name": "Vince Dunn",
     "ros": {
-     "mean": 51.7,
-     "p10": 35.1,
-     "p90": 69.0
+     "mean": 52.1,
+     "p10": 35.3,
+     "p90": 69.4
     }
    }
   },
@@ -916,13 +952,13 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 78.63,
+     "pct_owned": 79.07,
      "ros": {
-      "mean": 67.3,
-      "p10": 51.9,
-      "p90": 82.4
+      "mean": 66.5,
+      "p10": 51.3,
+      "p90": 81.5
      },
-     "gain": 16.7
+     "gain": 15.9
     },
     {
      "espn_id": 5831,
@@ -932,13 +968,13 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 62.03,
+     "pct_owned": 62.86,
      "ros": {
-      "mean": 57.9,
-      "p10": 44.6,
-      "p90": 70.9
+      "mean": 59.0,
+      "p10": 45.5,
+      "p90": 72.3
      },
-     "gain": 7.3
+     "gain": 8.4
     },
     {
      "espn_id": 3120307,
@@ -948,13 +984,13 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 17.36,
+     "pct_owned": 23.57,
      "ros": {
-      "mean": 57.2,
-      "p10": 44.1,
-      "p90": 70.1
+      "mean": 56.9,
+      "p10": 43.9,
+      "p90": 69.7
      },
-     "gain": 6.6
+     "gain": 6.3
     },
     {
      "espn_id": 2562624,
@@ -964,29 +1000,13 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-10-13",
      "games_missed": 1,
-     "pct_owned": 48.81,
+     "pct_owned": 48.52,
      "ros": {
       "mean": 56.7,
       "p10": 43.7,
       "p90": 69.4
      },
      "gain": 6.1
-    },
-    {
-     "espn_id": 4697392,
-     "name": "Cole Perfetti",
-     "pos": "LW",
-     "team": "WPG",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 65.79,
-     "ros": {
-      "mean": 56.3,
-      "p10": 43.4,
-      "p90": 68.9
-     },
-     "gain": 5.7
     },
     {
      "espn_id": 3114743,
@@ -996,7 +1016,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-10-17",
      "games_missed": 2,
-     "pct_owned": 57.43,
+     "pct_owned": 57.15,
      "ros": {
       "mean": 55.7,
       "p10": 43.0,
@@ -1005,20 +1025,20 @@
      "gain": 5.1
     },
     {
-     "espn_id": 5560,
-     "name": "Mats Zuccarello",
-     "pos": "RW",
-     "team": "LA",
-     "status": "OUT",
-     "expected_return": "2026-10-17",
-     "games_missed": 2,
-     "pct_owned": 20.03,
+     "espn_id": 4697392,
+     "name": "Cole Perfetti",
+     "pos": "LW",
+     "team": "WPG",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 66.96,
      "ros": {
-      "mean": 53.3,
-      "p10": 36.0,
-      "p90": 73.8
+      "mean": 53.7,
+      "p10": 36.3,
+      "p90": 74.4
      },
-     "gain": 2.7
+     "gain": 3.1
     },
     {
      "espn_id": 4874718,
@@ -1028,7 +1048,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 16.26,
+     "pct_owned": 16.56,
      "ros": {
       "mean": 53.1,
       "p10": 35.8,
@@ -1037,20 +1057,20 @@
      "gain": 2.5
     },
     {
-     "espn_id": 5032,
-     "name": "Jordan Eberle",
+     "espn_id": 5560,
+     "name": "Mats Zuccarello",
      "pos": "RW",
-     "team": "SEA",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 40.74,
+     "team": "LA",
+     "status": "INJURY_RESERVE",
+     "expected_return": "2026-10-20",
+     "games_missed": 3,
+     "pct_owned": 18.55,
      "ros": {
-      "mean": 51.7,
-      "p10": 34.9,
-      "p90": 71.6
+      "mean": 52.6,
+      "p10": 35.5,
+      "p90": 72.9
      },
-     "gain": 1.1
+     "gain": 2.0
     },
     {
      "espn_id": 4565246,
@@ -1060,13 +1080,29 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 7.01,
+     "pct_owned": 7.27,
      "ros": {
       "mean": 51.3,
       "p10": 34.6,
       "p90": 71.0
      },
      "gain": 0.7
+    },
+    {
+     "espn_id": 4565255,
+     "name": "Shane Pinto",
+     "pos": "C",
+     "team": "OTT",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 15.21,
+     "ros": {
+      "mean": 50.2,
+      "p10": 33.9,
+      "p90": 69.6
+     },
+     "gain": -0.4
     }
    ],
    "D": [
@@ -1078,45 +1114,13 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-10-15",
      "games_missed": 3,
-     "pct_owned": 80.99,
+     "pct_owned": 80.43,
      "ros": {
       "mean": 43.2,
       "p10": 29.4,
       "p90": 57.7
      },
-     "gain": -8.5
-    },
-    {
-     "espn_id": 5746,
-     "name": "Justin Faulk",
-     "pos": "D",
-     "team": "DET",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 71.45,
-     "ros": {
-      "mean": 35.7,
-      "p10": 22.7,
-      "p90": 50.5
-     },
-     "gain": -16.0
-    },
-    {
-     "espn_id": 4697461,
-     "name": "Mason Lohrei",
-     "pos": "D",
-     "team": "BOS",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 1.06,
-     "ros": {
-      "mean": 34.5,
-      "p10": 21.9,
-      "p90": 48.7
-     },
-     "gain": -17.2
+     "gain": -8.9
     },
     {
      "espn_id": 3068087,
@@ -1126,13 +1130,45 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 2.68,
+     "pct_owned": 3.77,
      "ros": {
-      "mean": 33.5,
-      "p10": 21.3,
-      "p90": 47.3
+      "mean": 39.3,
+      "p10": 25.0,
+      "p90": 55.5
      },
-     "gain": -18.2
+     "gain": -12.8
+    },
+    {
+     "espn_id": 4697461,
+     "name": "Mason Lohrei",
+     "pos": "D",
+     "team": "BOS",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 1.17,
+     "ros": {
+      "mean": 34.5,
+      "p10": 21.9,
+      "p90": 48.7
+     },
+     "gain": -17.6
+    },
+    {
+     "espn_id": 5746,
+     "name": "Justin Faulk",
+     "pos": "D",
+     "team": "DET",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 71.11,
+     "ros": {
+      "mean": 34.0,
+      "p10": 21.6,
+      "p90": 48.0
+     },
+     "gain": -18.1
     },
     {
      "espn_id": 2558631,
@@ -1142,13 +1178,13 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 59.31,
+     "pct_owned": 58.77,
      "ros": {
       "mean": 32.9,
       "p10": 20.9,
       "p90": 46.5
      },
-     "gain": -18.8
+     "gain": -19.2
     }
    ]
   }
@@ -1159,83 +1195,83 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 56.0,
-   "ros": 1052.4,
-   "final": 1108.4,
-   "p10": 1029.3,
-   "p90": 1187.5,
-   "p_first": 0.71
+   "points": 58.0,
+   "ros": 1047.0,
+   "final": 1105.0,
+   "p10": 1026.3,
+   "p90": 1183.7,
+   "p_first": 0.717
   },
   {
    "team_id": 1,
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 55.0,
-   "ros": 985.2,
-   "final": 1040.2,
-   "p10": 971.8,
-   "p90": 1108.6,
-   "p_first": 0.147
+   "points": 56.0,
+   "ros": 975.1,
+   "final": 1031.1,
+   "p10": 963.4,
+   "p90": 1098.8,
+   "p_first": 0.126
   },
   {
    "team_id": 4,
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 51.0,
-   "ros": 947.7,
-   "final": 998.7,
-   "p10": 926.5,
-   "p90": 1070.9,
-   "p_first": 0.051
+   "points": 54.0,
+   "ros": 948.5,
+   "final": 1002.5,
+   "p10": 930.3,
+   "p90": 1074.7,
+   "p_first": 0.063
   },
   {
    "team_id": 12,
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 41.0,
-   "ros": 954.7,
-   "final": 995.7,
-   "p10": 927.7,
-   "p90": 1063.7,
-   "p_first": 0.038
+   "points": 43.0,
+   "ros": 948.0,
+   "final": 991.0,
+   "p10": 923.5,
+   "p90": 1058.5,
+   "p_first": 0.036
   },
   {
    "team_id": 7,
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 39.0,
-   "ros": 949.4,
-   "final": 988.4,
-   "p10": 919.6,
-   "p90": 1057.2,
-   "p_first": 0.032
+   "points": 43.0,
+   "ros": 942.9,
+   "final": 985.9,
+   "p10": 917.4,
+   "p90": 1054.4,
+   "p_first": 0.033
   },
   {
    "team_id": 9,
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 50.0,
-   "ros": 928.7,
-   "final": 978.7,
-   "p10": 911.4,
-   "p90": 1046.0,
-   "p_first": 0.019
+   "points": 51.0,
+   "ros": 926.3,
+   "final": 977.3,
+   "p10": 910.2,
+   "p90": 1044.4,
+   "p_first": 0.021
   },
   {
    "team_id": 3,
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 42.0,
-   "ros": 891.1,
-   "final": 933.1,
-   "p10": 866.3,
-   "p90": 999.9,
+   "points": 44.0,
+   "ros": 888.5,
+   "final": 932.5,
+   "p10": 866.0,
+   "p90": 999.0,
    "p_first": 0.002
   },
   {
@@ -1244,10 +1280,10 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 41.0,
-   "ros": 874.9,
-   "final": 915.9,
-   "p10": 846.8,
-   "p90": 985.0,
+   "ros": 868.9,
+   "final": 909.9,
+   "p10": 841.2,
+   "p90": 978.6,
    "p_first": 0.001
   },
   {
@@ -1255,11 +1291,11 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 44.0,
-   "ros": 852.4,
-   "final": 896.4,
+   "points": 46.0,
+   "ros": 850.2,
+   "final": 896.2,
    "p10": 833.2,
-   "p90": 959.6,
+   "p90": 959.2,
    "p_first": 0.0
   },
   {
@@ -1267,11 +1303,11 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 39.0,
-   "ros": 855.9,
-   "final": 894.9,
-   "p10": 828.3,
-   "p90": 961.5,
+   "points": 41.0,
+   "ros": 851.7,
+   "final": 892.7,
+   "p10": 826.5,
+   "p90": 958.9,
    "p_first": 0.0
   },
   {
@@ -1279,11 +1315,11 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 38.0,
-   "ros": 833.0,
-   "final": 871.0,
-   "p10": 810.8,
-   "p90": 931.2,
+   "points": 41.0,
+   "ros": 828.0,
+   "final": 869.0,
+   "p10": 809.1,
+   "p90": 928.9,
    "p_first": 0.0
   },
   {
@@ -1291,11 +1327,11 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 37.0,
-   "ros": 821.2,
-   "final": 858.2,
-   "p10": 795.7,
-   "p90": 920.7,
+   "points": 38.0,
+   "ros": 813.8,
+   "final": 851.8,
+   "p10": 789.9,
+   "p90": 913.7,
    "p_first": 0.0
   }
  ]

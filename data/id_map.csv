@@ -346,6 +346,7 @@ espn_id,nhl_id,canonical_id,name,method
 3042111,8477426,nick_paul,Nick Paul,name
 3042114,8477429,andrew_copp,Andrew Copp,name
 3042122,,ryan_graves,Ryan Graves,unmatched
+3042138,,tyler_motte,Tyler Motte,unmatched
 3042191,8477365,connor_clifton,Connor Clifton,name
 3042198,8477369,carson_soucy,Carson Soucy,name
 3042228,,,Joshua Brown,unmatched
@@ -479,6 +480,7 @@ espn_id,nhl_id,canonical_id,name,method
 3648002,8478403,jack_eichel,Jack Eichel,name
 3648008,8478542,evan_rodrigues,Evan Rodrigues,name
 3648015,8478421,aj_greer,A.J. Greer,name
+3648080,,,Kyle Criscuolo,unmatched
 3652598,8480113,alex_iafallo,Alex Iafallo,name
 3652623,,,Kasimir Kaskisuo,unmatched
 3652964,8478396,noah_hanifin,Noah Hanifin,name
@@ -599,6 +601,7 @@ espn_id,nhl_id,canonical_id,name,method
 4024998,8479351,sam_steel,Sam Steel,name
 4027020,,,Rasmus Asplund,unmatched
 4031645,8479619,michael_carcone,Michael Carcone,name
+4046937,,,Vadim Shipachyov,unmatched
 4046946,,,Michal Kempny,unmatched
 4062234,,matt_luff,Matt Luff,unmatched
 4062251,8479385,jordan_kyrou,Jordan Kyrou,name
@@ -638,6 +641,7 @@ espn_id,nhl_id,canonical_id,name,method
 4195214,,,Gavin Bayreuther,unmatched
 4196898,,,Shane Starrett,unmatched
 4196914,8479979,jake_oettinger,Jake Oettinger,name
+4196931,8480326,sheldon_dries,Sheldon Dries,name
 4196959,8480084,nick_desimone,Nick DeSimone,name
 4197009,8479520,brandon_duhaime,Brandon Duhaime,name
 4197014,,jacob_bryson,Jacob Bryson,unmatched
@@ -911,7 +915,7 @@ espn_id,nhl_id,canonical_id,name,method
 4587926,,,Nathan Smith,unmatched
 4587929,8480990,declan_chisholm,Declan Chisholm,name
 4587932,,,Joakim Nygard,unmatched
-4587933,,johnathan_kovacevic,Johnathan Kovacevic,unmatched
+4587933,8480192,johnathan_kovacevic,Johnathan Kovacevic,name
 4587943,8481656,aliaksei_protas,Aliaksei Protas,name
 4587946,,,Grant Hutton,unmatched
 4587949,,,Andrei  Chibisov,unmatched
@@ -977,6 +981,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697412,,brendan_brisson,Brendan Brisson,unmatched
 4697413,8482145,mavrik_bourque,Mavrik Bourque,name
 4697414,,ozzy_wiesblatt,Ozzy Wiesblatt,unmatched
+4697436,8482171,william_wallinder,William Wallinder,name
 4697438,8482175,jj_peterka,JJ Peterka,name
 4697441,8482118,sam_colangelo,Sam Colangelo,name
 4697442,8482177,marat_khusnutdinov,Marat Khusnutdinov,name
@@ -1394,6 +1399,7 @@ espn_id,nhl_id,canonical_id,name,method
 5216889,,,Michael Hage,unmatched
 5216890,,,Yegor Surin,unmatched
 5216891,8484859,stian_solberg,Stian Solberg,name
+5216892,8484786,,Cole Beaudoin,name
 5216893,,,Dean Letourneau,unmatched
 5216895,,,Liam Greentree,unmatched
 5216896,,,Marek Vanacker,unmatched
@@ -1418,6 +1424,7 @@ espn_id,nhl_id,canonical_id,name,method
 5216927,,,Leon Muggli,unmatched
 5216928,,,Leo Sahlin Wallenius,unmatched
 5216932,,,Carter George,unmatched
+5216933,,,Linus Eriksson,unmatched
 5216934,,,Spencer Gill,unmatched
 5216935,,,Evan Gardner,unmatched
 5216937,,,Jacob Battaglia,unmatched
