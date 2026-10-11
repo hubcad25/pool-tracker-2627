@@ -88,7 +88,7 @@ Au plus **une notif par exécution** (les événements sont regroupés). Chaque 
 
 **Notifs de soirée** (`pipeline/soiree.py`, workflow `soiree.yml` aux 30 min, demandées le 2026-10-11) : un rendez-vous
 fixe, à part des alertes. Les soirs de match seulement :
-- **avant** (1 h avant le premier match) : mes points attendus, ceux de mes rivaux, la moyenne de la ligue, mes joueurs qui jouent ;
+- **avant** (entre 15 et 5 min avant le premier match, visée 10 min : calculée jusqu'à 5 h plus tôt et programmée chez ntfy, puisque le cron GitHub peut avoir des heures de retard ; jamais après) : mes points attendus, ceux de mes rivaux, la moyenne de la ligue, mes joueurs qui jouent ;
 - **23 h** : bilan des matchs terminés (réel vs attendu, ce qui reste). Si tout est fini, c'est le bilan final ;
 - **6 h** (silencieuse) : bilan final de la veille et l'écart avec chaque rival avant → après.
 

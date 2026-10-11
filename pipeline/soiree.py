@@ -26,7 +26,12 @@ from pipeline.sources import espn, nhl
 
 RATES = config.ROOT / "data" / "rates.json"
 SENT = config.STATE_DIR / "soirees.json"
-BEFORE_FIRST_GAME = timedelta(minutes=60)
+# La notif « avant » part entre 15 et 5 min avant le premier match (visée : 10 min). Le cron GitHub peut prendre
+# des heures de retard : une exécution plus tôt (dès PREPARE_AHEAD) la calcule et ntfy la livre à l'heure.
+# Passé 5 min avant le match, rien ne part.
+PREPARE_AHEAD = timedelta(hours=5)
+DELIVER_BEFORE = timedelta(minutes=10)
+LATEST_BEFORE = timedelta(minutes=5)
 EVENING_HOUR = 23
 MORNING_HOURS = range(6, 12)
 RIVAL_DAYS = 7
@@ -70,10 +75,21 @@ def moment(now: datetime, today_games: list[dict], yesterday_games: list[dict],
         if done and not sent & {_key(day, "soir"), _key(day, "fin")}:
             return ("fin" if len(done) == len(today_games) else "soir"), day
         return None
-    first = min(datetime.fromisoformat(g["start"].replace("Z", "+00:00")) for g in today_games)
-    if now >= first - BEFORE_FIRST_GAME and not done and _key(day, "avant") not in sent:
+    first = first_start(today_games)
+    if first - PREPARE_AHEAD <= now < first - LATEST_BEFORE and _key(day, "avant") not in sent:
         return "avant", day
     return None
+
+
+def first_start(games: list[dict]) -> datetime:
+    return min(datetime.fromisoformat(g["start"].replace("Z", "+00:00")) for g in games)
+
+
+def delivery(now: datetime, games: list[dict]) -> datetime | None:
+    """Heure de livraison de la notif « avant » par ntfy (DELIVER_BEFORE avant le premier match), ou None :
+    tout de suite, quand on est déjà dans la fenêtre."""
+    at = first_start(games) - DELIVER_BEFORE
+    return at if at > now + timedelta(minutes=1) else None
 
 
 def _nhl_team(player: dict) -> str:
@@ -250,7 +266,8 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
             points |= nhl.fetch_points(g["game_id"])
     evt = build(*due, league, config.MY_TEAM_ID, rates, schedule, games, points, nhl_of,
                 morning=now.hour in MORNING_HOURS and due[1] < now.date())
-    notify.send([evt], target=target, dry_run=dry_run, record=forced is None, path=SENT)
+    at = delivery(now, games) if due[0] == "avant" and not forced else None
+    notify.send([evt], target=target, dry_run=dry_run, record=forced is None, path=SENT, at=at)
 
 
 def main() -> None:

@@ -24,16 +24,26 @@ NEXT = date(2026, 10, 11)
 
 # --- avant le premier match ---
 
-def test_avant_doit_notifier_dans_l_heure_avant_le_premier_match():
-    assert soiree.moment(at(18, 7), games(), [], set()) == ("avant", DAY)
+def test_avant_doit_etre_preparee_quelques_heures_avant_et_livree_10_min_avant_le_match():
+    assert soiree.moment(at(14, 7), games(), [], set()) == ("avant", DAY)
+    assert soiree.delivery(at(14, 7), games()) == at(18, 50)
 
 
-def test_avant_doit_notifier_si_le_premier_match_est_commence_mais_aucun_termine():
-    assert soiree.moment(at(19, 40), games(east="LIVE"), [], set()) == ("avant", DAY)
+def test_avant_doit_partir_tout_de_suite_entre_15_et_5_min_avant_le_match():
+    assert soiree.moment(at(18, 52), games(), [], set()) == ("avant", DAY)
+    assert soiree.delivery(at(18, 52), games()) is None
+
+
+def test_avant_ne_doit_pas_notifier_a_moins_de_5_min_du_match():
+    assert soiree.moment(at(18, 56), games(), [], set()) is None
+
+
+def test_avant_ne_doit_pas_notifier_une_fois_le_match_commence():
+    assert soiree.moment(at(19, 7), games(east="LIVE"), [], set()) is None
 
 
 def test_avant_ne_doit_pas_notifier_trop_tot():
-    assert soiree.moment(at(17, 37), games(), [], set()) is None
+    assert soiree.moment(at(13, 37), games(), [], set()) is None
 
 
 def test_avant_ne_doit_pas_notifier_deux_fois():
@@ -42,10 +52,6 @@ def test_avant_ne_doit_pas_notifier_deux_fois():
 
 def test_avant_ne_doit_pas_notifier_un_soir_sans_match():
     assert soiree.moment(at(18, 37), [], [], set()) is None
-
-
-def test_avant_ne_doit_pas_notifier_une_fois_un_match_termine():
-    assert soiree.moment(at(21, 37), games(east="OFF", west="LIVE"), [], set()) is None
 
 
 # --- 23 h ---

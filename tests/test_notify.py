@@ -1,3 +1,5 @@
+from datetime import UTC, datetime
+
 import pytest
 
 from pipeline import events, notify
@@ -54,3 +56,10 @@ def test_forget_rearme_l_alerte_cookies(posted):
     notify.forget("cookies_expired")
     notify.send([events.cookies_expired()], dry_run=False)
     assert len(posted) == 2
+
+
+def test_livraison_differee(posted):
+    notify.send([Event("soiree", "k", "x", title="t")], dry_run=False,
+                at=datetime(2026, 10, 10, 22, 50, tzinfo=UTC))
+    assert posted[0]["delay"] == "1791672600"
+    assert posted[0]["title"] == "t" and posted[0]["message"] == "x"

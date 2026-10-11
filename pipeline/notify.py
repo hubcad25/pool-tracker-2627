@@ -48,17 +48,20 @@ def compose(events: list[Event]) -> dict | None:
 
 
 def send(events: list[Event], *, target: str = "test", dry_run: bool = True, record: bool = True,
-         path=None) -> dict | None:
+         path=None, at=None) -> dict | None:
     """Filtre les événements déjà envoyés, regroupe le reste en une notif et l'envoie (ou l'imprime).
 
     record=False (scénarios) : ni filtrage ni enregistrement des clés. `path` : un autre fichier de clés
     (les notifs de soirée ont le leur, pour ne pas entrer en conflit avec la job quotidienne au push).
+    `at` : livraison différée (datetime) ; ntfy garde la notif et la livre à cette heure.
     """
     sent = load_sent(path) if record else set()
     new = [e for e in events if e.key not in sent]
     payload = compose(new)
     if payload is None:
         return None
+    if at is not None:
+        payload["delay"] = str(int(at.timestamp()))
     if dry_run:
         print(f"[dry-run → {target}]\n{json.dumps(payload, ensure_ascii=False, indent=2)}")
         return payload
