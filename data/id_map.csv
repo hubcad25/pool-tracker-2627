@@ -712,6 +712,7 @@ espn_id,nhl_id,canonical_id,name,method
 4271644,,,Jakub Jerabek,unmatched
 4271732,8480459,pius_suter,Pius Suter,name
 4271734,8480208,drake_batherson,Drake Batherson,name
+4271957,,,Henrik Haapala,unmatched
 4271998,8479324,ryan_lindgren,Ryan Lindgren,name
 4272008,,,Libor Sulak,unmatched
 4272040,,,Lucas Carlsson,unmatched
@@ -831,7 +832,7 @@ espn_id,nhl_id,canonical_id,name,method
 4419752,,josh_dunne,Josh Dunne,unmatched
 4419766,,reilly_walsh,Reilly Walsh,unmatched
 4419767,,,Jack Rathbone,unmatched
-4419778,,marshall_rifai,Marshall Rifai,unmatched
+4419778,8483546,marshall_rifai,Marshall Rifai,name
 4419815,,alex_steeves,Alex Steeves,unmatched
 4422415,8481624,ilya_mikheyev,Ilya Mikheyev,name
 4423398,,emil_bemstrom,Emil Bemstrom,unmatched
@@ -853,7 +854,7 @@ espn_id,nhl_id,canonical_id,name,method
 4565237,8481618,alex_newhook,Alex Newhook,name
 4565238,8481522,peyton_krebs,Peyton Krebs,name
 4565239,8481581,thomas_harley,Thomas Harley,name
-4565241,,ville_heinola,Ville Heinola,unmatched
+4565241,8481572,ville_heinola,Ville Heinola,name
 4565242,,sam_poulin,Sam Poulin,unmatched
 4565243,,tobias_bjornfot,Tobias Bjornfot,unmatched
 4565244,8481601,simon_holmstrom,Simon Holmstrom,name
@@ -1286,7 +1287,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149194,8484197,oliver_moore,Oliver Moore,name
 5149195,,,Eduard Sale,unmatched
 5149196,,charlie_stramel,Charlie Stramel,unmatched
-5149199,,oliver_bonk,Oliver Bonk,unmatched
+5149199,8484148,oliver_bonk,Oliver Bonk,name
 5149204,8484210,gabe_perreault,Gabe Perreault,name
 5149206,,tanner_molendyk,Tanner Molendyk,unmatched
 5149208,,otto_stenberg,Otto Stenberg,unmatched
@@ -1417,6 +1418,7 @@ espn_id,nhl_id,canonical_id,name,method
 5216918,8484873,cole_hutson,Cole Hutson,name
 5216919,,harrison_brunicke,Harrison Brunicke,unmatched
 5216920,,,Ryder Ritchie,unmatched
+5216921,,,Tanner Howe,unmatched
 5216922,,,Max Plante,unmatched
 5216924,,,Mikhail Yegorov,unmatched
 5216925,,,Nikita Artamonov,unmatched
@@ -1567,3 +1569,4 @@ espn_id,nhl_id,canonical_id,name,method
 5364136,,,Tomas Galvas,unmatched
 5364137,,,Yuri Ivanov,unmatched
 5364138,8486225,,Wiggo Sorensson,search:name
+5364139,,,Martin Psohlavec,unmatched
