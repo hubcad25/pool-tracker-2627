@@ -66,7 +66,13 @@ export default function PlayerCard({ player: p, max, ticks }: { player: Player; 
               sub="p10 · p50 · p90"
             />
           )}
-          {p.pace != null && <Stat label="Pace sur 84" value={int(p.pace)} sub={`${p.g} B · ${p.a} A`} />}
+          {p.pace != null && (
+            <Stat
+              label="Pace sur 84"
+              value={int(p.pace)}
+              sub={p.group === 'G' ? `${p.w ?? 0} V · ${p.otl ?? 0} DP · ${p.so ?? 0} BL` : `${p.g} B · ${p.a} A`}
+            />
+          )}
           {p.luck && (
             <>
               <Stat label="Points sans la chance" value={dec(p.luck.expected_points)} sub={`réels ${p.points}`} />

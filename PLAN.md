@@ -7,7 +7,9 @@ sur Android + dashboard mobile (performance vs projection, indicateurs de chance
 
 ## Contexte de la ligue
 
-- ESPN, ligue privée, `leagueId=1213664531`, 12 équipes, format League Manager, « Total Season Points » (G+A)
+- ESPN, ligue privée, `leagueId=1213664531`, 12 équipes, format League Manager, « Total Season Points » :
+  patineurs 1 par but et par passe ; **gardiens 2 par victoire, 1 par défaite en prolongation, 1 par blanchissage**
+  (passes des gardiens : 0). Vérifié le 2026-10-11 dans `scoringSettings` (statIds 13, 14, 1, 9, 7).
 - Alignement : 10 F, 5 D, 1 G, plus 2 slots IR
 - **Moves de FA : 3 pour la saison, 2 utilisés (Boeser, Nichushkin) → il en reste 1**
 - Trades : 10 pour la saison → c'est le levier principal
@@ -27,7 +29,7 @@ sur Android + dashboard mobile (performance vs projection, indicateurs de chance
 | Prior du backtest | Marcel seulement (5/4/3 pondéré par les GP, + âge), sans correction de l'écart Marcel / consensus. Recrues exclues du backtest (en prod, le consensus leur donne un prior) |
 | Rythme prior en prod | `sim_mean / gp`, où `gp` = médiane des GP projetés par les sources (ajouté à `priors.json`) |
 | Blessures futures | **Pas modélisées.** GP restants = matchs restants de l'équipe − matchs manqués pour blessure connue |
-| Gardiens | Exclus de la ROS |
+| Gardiens | **Inclus** (2026-10-11 ; exclus avant par erreur : la ligue leur donne 2 pts la victoire). ROS = rythme par match de son équipe × matchs restants ; rythme = (30 × prior + points de la saison) / (30 + matchs de l'équipe), prior = `sim_mean` / 84 de `priors.json`. Constantes dans `model/ros.py`, **pas backtestées** |
 | Lien avec le projet de draft | copie unique et figée des distributions préseason + alias de noms dans `priors/`. Aucune dépendance vivante. |
 
 ## Sources (vérifiées le 2026-10-02)
@@ -84,7 +86,17 @@ Au plus **une notif par exécution** (les événements sont regroupés). Chaque 
 5. **Digest hebdo (lundi)** : buy/sell et idées de trade, en une seule notif.
 6. **Santé** : 2 échecs consécutifs ou cookies expirés → une seule notif.
 
-**Jamais :** lignes de stats, « rien de neuf », DTD qui ne fait manquer aucun match, blessure dans une autre équipe
+**Notifs de soirée** (`pipeline/soiree.py`, workflow `soiree.yml` aux 30 min, demandées le 2026-10-11) : un rendez-vous
+fixe, à part des alertes. Les soirs de match seulement :
+- **avant** (1 h avant le premier match) : mes points attendus, ceux de mes rivaux, la moyenne de la ligue, mes joueurs qui jouent ;
+- **23 h** : bilan des matchs terminés (réel vs attendu, ce qui reste). Si tout est fini, c'est le bilan final ;
+- **6 h** (silencieuse) : bilan final de la veille et l'écart avec chaque rival avant → après.
+
+Attendu d'un patineur par match = ROS ÷ matchs restants (`data/rates.json`, écrit par la job quotidienne) ;
+gardien : 0,7 par match de son équipe. Rivaux : P(échanger nos rangs d'ici 7 jours) ≥ 10 %, points ~ Poisson.
+Points réels : boxscores LNH (vérifiés : les 12 équipes identiques à ESPN pour le 2026-10-10).
+
+**Jamais (alertes) :** lignes de stats, « rien de neuf », DTD qui ne fait manquer aucun match, blessure dans une autre équipe
 (sauf comme cible de trade, et seulement dans le digest).
 
 Déduplication : un fichier d'état des alertes déjà envoyées, avec la clé (joueur, type d'événement, valeur).

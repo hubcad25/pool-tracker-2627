@@ -12,6 +12,8 @@ uv run pytest -q && uv run ruff check .
 uv run python -m pipeline.main                         # dry-run local (lit .env : cookies ESPN + topics ntfy)
 uv run python -m pipeline.main --scenario activation   # notif fictive, n'écrit aucun état
 gh workflow run daily.yml -R hubcad25/pool-tracker-2627 -f target=test -f send=true -f scenario=aucun
+uv run python -m pipeline.soiree                       # dry-run de la notif de soirée due maintenant
+uv run python -m pipeline.soiree --moment fin --day 2026-10-10   # force avant|soir|fin (n'écrit aucun état)
 ```
 
 ## Conventions

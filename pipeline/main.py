@@ -12,7 +12,7 @@ from datetime import date, timedelta
 import requests
 
 from model import ros
-from pipeline import config, dashboard, events, ids, notify, rules, snapshot
+from pipeline import config, dashboard, events, ids, notify, rules, snapshot, soiree
 from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
@@ -21,6 +21,7 @@ MONEYPUCK_HEALTH = config.STATE_DIR / "moneypuck.json"
 FAILURES_BEFORE_ALERT = 2
 # Sous ce seuil, un joueur absent des rosters LNH est presque toujours un espoir de la AHL
 MIN_PCT_OWNED_SEARCH = 1.0
+NO_GOALIE_GAME = {"gp": 0, "gs": 0, "w": 0, "otl": 0, "so": 0, "points": 0}
 
 
 def run(day: date) -> list[events.Event]:
@@ -52,12 +53,15 @@ def run(day: date) -> list[events.Event]:
 
     season = season_stats()
     out += moneypuck_health(season is not None)
+    goalies = goalie_stats()
 
     schedule = fetch_schedule()
     prev_day = snapshot.previous_day(day)
     prev_league = snapshot.read(prev_day, "league") if prev_day else None
-    priors = priors_by_espn(id_map, season or {})
+    priors = priors_by_espn(id_map, season or {}, goalies)
     out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors, day)
+    soiree.write_rates(list(by_id.values()), lambda p: rules.ros(p, priors.get(p["espn_id"]), schedule, day),
+                       lambda p: rules.games_left(p, schedule, day))
     # Sans la ligue du jour (cookies), le dashboard garde les rosters de la veille
     dashboard.write(dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out,
                                     players))
@@ -71,16 +75,35 @@ def fetch_schedule() -> list[dict]:
     return schedule
 
 
-def priors_by_espn(id_map: dict[int, dict], season: dict[int, dict]) -> dict[int, dict]:
-    """Prior préseason de chaque joueur, avec ses stats de la saison (`obs`) et de carrière (`career`) pour la ROS."""
+def priors_by_espn(id_map: dict[int, dict], season: dict[int, dict],
+                   goalies: dict[int, dict] | None = None) -> dict[int, dict]:
+    """Prior préseason de chaque joueur, avec ses stats de la saison (`obs`) et de carrière (`career`) pour la ROS.
+
+    Gardiens : le prior est en points de pool pour la saison de son équipe (`gp` = 84 matchs d'équipe)
+    et `obs` vient de la LNH (MoneyPuck n'a que les patineurs)."""
     priors = {p["player_id"]: p for p in json.loads((config.PRIORS_DIR / "priors.json").read_text())}
     career = ros.load_career()
     out = {}
     for espn_id, r in id_map.items():
         if r.get("canonical_id") in priors:
             nhl_id = int(r["nhl_id"]) if r.get("nhl_id") else None
-            out[espn_id] = priors[r["canonical_id"]] | {"obs": season.get(nhl_id), "career": career.get(nhl_id)}
+            prior = priors[r["canonical_id"]]
+            if prior["position"] == "G":
+                # Absent des stats LNH = aucun match joué (sauf si la source est en panne : obs None)
+                obs = goalies.get(nhl_id, NO_GOALIE_GAME) if goalies else None
+                out[espn_id] = prior | {"gp": config.SEASON_GAMES, "obs": obs}
+            else:
+                out[espn_id] = prior | {"obs": season.get(nhl_id), "career": career.get(nhl_id)}
     return out
+
+
+def goalie_stats() -> dict[int, dict]:
+    """Stats LNH des gardiens par nhl_id. Vide en cas de panne : leur ROS se rabat sur le prior."""
+    try:
+        return nhl.fetch_goalie_stats()
+    except requests.RequestException as e:
+        print(f"Stats des gardiens indisponibles ({e}) : ROS des gardiens sur le prior seulement")
+        return {}
 
 
 def season_stats() -> dict[int, dict] | None:
@@ -113,7 +136,7 @@ def run_scenario(name: str, day: date) -> list[events.Event]:
                       expected_return=(day + timedelta(days=21)).isoformat())
     schedule = [{k: g[k] for k in ("game_id", "date", "team")} for g in nhl.fetch_schedule()]
     id_map = ids.resolved(ids.read_map(ids.ID_MAP))
-    priors = priors_by_espn(id_map, season_stats() or {})
+    priors = priors_by_espn(id_map, season_stats() or {}, goalie_stats())
     evts = rules.evaluate(league, fake, config.MY_TEAM_ID, schedule, priors, day)
     return [events.Event(e.kind, e.key, f"[SCÉNARIO] {e.message}", e.priority) for e in evts]
 

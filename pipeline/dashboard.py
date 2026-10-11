@@ -22,9 +22,9 @@ MIN_GP_VERDICT = 10
 # Écart minimal entre les points attendus (sans la chance) et les points réels pour un verdict
 LUCK_POINTS = 3.0
 SLOT_ORDER = {"F": 0, "D": 1, "G": 2, "IR": 3}
-SEASON_GAMES = 84         # depuis 2026-27
-LINEUP = {"F": 10, "D": 5}
-FA_SHOWN = {"F": 10, "D": 5}
+SEASON_GAMES = config.SEASON_GAMES
+LINEUP = {"F": 10, "D": 5, "G": 1}
+FA_SHOWN = {"F": 10, "D": 5, "G": 5}
 SIMULATIONS = 5000
 Z90 = 1.2816              # p90 d'une normale : l'intervalle p10-p90 fait 2 × Z90 écarts-types
 
@@ -81,13 +81,23 @@ def prior_band(prior: dict, games: float) -> dict:
 
 
 def card(player: dict, prior: dict | None, schedule: list[dict], today: date) -> dict:
+    """Gardien : `points` = points de pool (2 V + DP + BL), avec `w`, `otl`, `so` ; le pace et la bande
+    préseason se rapportent aux matchs de son équipe, puisque le prior inclut la part des départs."""
     pos = pos_group(player["pos"])
     obs = (prior or {}).get("obs")
     gp = obs["gp"] if obs else 0
-    g, a = (obs["g"], obs["a"]) if obs else (0, 0)
-    points = g + a
     r = rules.ros(player, prior, schedule, today)
     games_left = rules.games_left(player, schedule, today)
+    goalie = {}
+    if pos == "G":
+        g = a = 0
+        goalie = {k: (obs or {}).get(k, 0) for k in ("w", "otl", "so")}
+        points = (obs or {}).get("points", 0)
+        basis = rules.team_games_played(player, schedule, today)
+    else:
+        g, a = (obs["g"], obs["a"]) if obs else (0, 0)
+        points = g + a
+        basis = gp
     indicators = luck(obs, (prior or {}).get("career"), pos)
     injured = player["injury_status"] != "ACTIVE"
     return {
@@ -104,9 +114,9 @@ def card(player: dict, prior: dict | None, schedule: list[dict], today: date) ->
             "out_for_season": player.get("out_for_season", False),
             "games_missed": rules.games_missed(player, schedule, today),
         } if injured else None,
-        "gp": gp, "g": g, "a": a, "points": points,
-        "pace": _round(points / gp * SEASON_GAMES) if gp else None,
-        "prior": prior_band(prior, gp + games_left) if r else None,
+        "gp": gp, "g": g, "a": a, "points": points, **goalie,
+        "pace": _round(points / basis * SEASON_GAMES) if basis else None,
+        "prior": prior_band(prior, basis + games_left) if r else None,
         "ros": {"mean": _round(r[0]), "p10": _round(r[1]), "p90": _round(r[2]),
                 "games_left": games_left} if r else None,
         "final": {"mean": _round(points + r[0]), "p10": _round(points + r[1]), "p90": _round(points + r[2])}
@@ -172,8 +182,8 @@ def free_agents(league: dict, team_id: int, players: list[dict], schedule: list[
 
 def standings(league: dict, team_id: int, schedule: list[dict], priors: dict[int, dict], today: date,
               seed: int = 0) -> list[dict]:
-    """Total final projeté de chaque équipe : ses points + la ROS de son meilleur alignement (10 F, 5 D),
-    joueurs de l'IR compris (à leur retour, ils remplacent le pire). Gardiens ignorés.
+    """Total final projeté de chaque équipe : ses points + la ROS de son meilleur alignement (10 F, 5 D, 1 G),
+    joueurs de l'IR compris (à leur retour, ils remplacent le pire).
     P(1er) par simulation, chaque joueur ~ normale ajustée à son p10-p90, indépendants."""
     rows = []
     for team in league["teams"]:

@@ -1,7 +1,7 @@
 import { injuryText, int, lastName, signed } from '../format'
 import type { FreeAgents as FA } from '../types'
 
-const LABELS = { F: 'Attaquants', D: 'Défenseurs' } as const
+const LABELS = { F: 'Attaquants', D: 'Défenseurs', G: 'Gardiens' } as const
 
 export default function FreeAgents({ fa }: { fa: FA }) {
   return (
@@ -13,7 +13,7 @@ export default function FreeAgents({ fa }: { fa: FA }) {
       <p className="group-note">
         Gain = ROS du FA − ROS de mon pire joueur à la même position. Seuls les points à venir comptent.
       </p>
-      {(['F', 'D'] as const).map((pos) => {
+      {(['F', 'D', 'G'] as const).map((pos) => {
         const worst = fa.worst[pos]
         return (
           <section key={pos} className="group">
@@ -24,7 +24,7 @@ export default function FreeAgents({ fa }: { fa: FA }) {
               </p>
             )}
             <ul className="rows">
-              {fa.players[pos].map((f) => (
+              {(fa.players[pos] ?? []).map((f) => (
                 <li key={f.espn_id} className="row">
                   <div className="row-main">
                     <span className="row-name">{f.name}</span>

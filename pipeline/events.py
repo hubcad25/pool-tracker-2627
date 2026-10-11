@@ -1,16 +1,17 @@
 """Événements produits par le pipeline. Chaque règle de notification retourne une liste d'Event."""
 from dataclasses import dataclass
 
-# Priorités ntfy : 3 = normale, 4 = haute, 5 = max (son distinct, réservé aux alertes FA)
-NORMAL, HIGH, MAX = 3, 4, 5
+# Priorités ntfy : 2 = basse (sans son), 3 = normale, 4 = haute, 5 = max (son distinct, réservé aux alertes FA)
+LOW, NORMAL, HIGH, MAX = 2, 3, 4, 5
 
 
 @dataclass(frozen=True)
 class Event:
-    kind: str          # status, return_date, activation, fa_alert, digest, health
+    kind: str          # status, return_date, activation, fa_alert, digest, health, soiree
     key: str           # clé de déduplication : (joueur, type, valeur)
     message: str
     priority: int = NORMAL
+    title: str | None = None   # notif seule : ce titre, et le message tel quel (sans puce)
 
 
 def unmatched_ids(missing: list[dict]) -> list[Event]:

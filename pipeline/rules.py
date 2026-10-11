@@ -126,12 +126,24 @@ def games_left(player: dict, schedule: list[dict], today: date) -> int:
     return max(_team_games(player, schedule, today) - missed, 0)
 
 
+def team_games_played(player: dict, schedule: list[dict], today: date) -> int:
+    team = ESPN_TO_NHL_TEAM.get(player["pro_team"], player["pro_team"])
+    return sum(1 for g in schedule if g["team"] == team and g["date"] < today.isoformat())
+
+
 def ros(player: dict, prior: dict | None, schedule: list[dict], today: date) -> tuple[float, float, float] | None:
     """ROS (moyenne, p10, p90). `prior` : le prior préseason, avec les stats de la saison (`obs`) et
-    les totaux de carrière (`career`) quand on les a. Pas de ROS pour les gardiens."""
+    les totaux de carrière (`career`) quand on les a. Gardien : `gp` du prior = matchs de son équipe,
+    `obs` = ses stats de gardien (points de pool)."""
     pos = pos_group(player["pos"])
-    if not prior or not prior.get("gp") or pos == "G":
+    if not prior or not prior.get("gp"):
         return None
+    if pos == "G":
+        # Sans stats (source en panne) : le prior seul
+        obs = prior.get("obs")
+        return model_ros.goalie_ros(prior["sim_mean"] / prior["gp"], obs["points"] if obs else 0,
+                                    team_games_played(player, schedule, today) if obs else 0,
+                                    games_left(player, schedule, today))
     return model_ros.ros(prior["sim_mean"] / prior["gp"], prior.get("obs"), prior.get("career"),
                          games_left(player, schedule, today), pos, ros_params())
 

@@ -11,13 +11,15 @@ TITLES = {"status": "Blessure", "return_date": "Date de retour", "activation": "
           "fa_alert": "Alerte FA", "digest": "Digest de la semaine", "health": "Santé du pipeline"}
 
 
-def load_sent() -> set[str]:
-    return set(json.loads(SENT.read_text())) if SENT.exists() else set()
+def load_sent(path=None) -> set[str]:
+    path = path or SENT
+    return set(json.loads(path.read_text())) if path.exists() else set()
 
 
-def save_sent(keys: set[str]) -> None:
-    SENT.parent.mkdir(parents=True, exist_ok=True)
-    SENT.write_text(json.dumps(sorted(keys), indent=1) + "\n")
+def save_sent(keys: set[str], path=None) -> None:
+    path = path or SENT
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(sorted(keys), indent=1) + "\n")
 
 
 def forget(prefix: str) -> None:
@@ -31,22 +33,28 @@ def compose(events: list[Event]) -> dict | None:
     if not events:
         return None
     events = sorted(events, key=lambda e: -e.priority)
-    title = TITLES.get(events[0].kind, "Pool") if len(events) == 1 else f"Pool : {len(events)} événements"
+    if len(events) == 1 and events[0].title:
+        title, message = events[0].title, events[0].message
+    else:
+        title = TITLES.get(events[0].kind, "Pool") if len(events) == 1 else f"Pool : {len(events)} événements"
+        message = "\n".join(f"• {e.message}" for e in events)
     return {
         "title": title,
-        "message": "\n".join(f"• {e.message}" for e in events),
+        "message": message,
         "priority": events[0].priority,
         "click": config.DASHBOARD_URL,
         "actions": [{"action": "view", "label": "Dashboard", "url": config.DASHBOARD_URL}],
     }
 
 
-def send(events: list[Event], *, target: str = "test", dry_run: bool = True, record: bool = True) -> dict | None:
+def send(events: list[Event], *, target: str = "test", dry_run: bool = True, record: bool = True,
+         path=None) -> dict | None:
     """Filtre les événements déjà envoyés, regroupe le reste en une notif et l'envoie (ou l'imprime).
 
-    record=False (scénarios) : ni filtrage ni enregistrement des clés.
+    record=False (scénarios) : ni filtrage ni enregistrement des clés. `path` : un autre fichier de clés
+    (les notifs de soirée ont le leur, pour ne pas entrer en conflit avec la job quotidienne au push).
     """
-    sent = load_sent() if record else set()
+    sent = load_sent(path) if record else set()
     new = [e for e in events if e.key not in sent]
     payload = compose(new)
     if payload is None:
@@ -59,5 +67,5 @@ def send(events: list[Event], *, target: str = "test", dry_run: bool = True, rec
         raise RuntimeError(f"NTFY_TOPIC_{target.upper()} manquant")
     requests.post("https://ntfy.sh/", json={"topic": topic, **payload}, timeout=30).raise_for_status()
     if record:
-        save_sent(sent | {e.key for e in new})
+        save_sent(sent | {e.key for e in new}, path)
     return payload

@@ -101,3 +101,20 @@ def ros(prior: float, obs: dict | None, career: dict | None, games_left: float, 
     p = params[position]
     luck = luck_adjusted_points(obs, career, p["m"], params["league_teammate_sh"]) if obs else None
     return interval(rate(prior, obs, luck, p["k"], p["w"]), games_left, p["quantiles"])
+
+
+# Gardiens : pas de backtest (pas d'historique de prior), d'où des constantes simples et nommées.
+# Le rythme est en points de pool par match de SON ÉQUIPE : il inclut la part des départs.
+GOALIE_K = 30             # poids du prior, en matchs d'équipe (les résultats d'un gardien sont bruités)
+GOALIE_VAR_PER_GAME = 0.9 # variance des points d'un match d'équipe (0, 1, 2 ou 3 pts, ~65 % de départs)
+GOALIE_RATE_SD = 0.12     # incertitude sur le rythme lui-même (rôle, qualité de l'équipe)
+Z90 = 1.2816
+
+
+def goalie_ros(prior: float, points: float, team_games: int, games_left: float) -> tuple[float, float, float]:
+    """(moyenne, p10, p90) des points ROS d'un gardien. `points` : ses points de pool de la saison,
+    `team_games` : matchs joués par son équipe."""
+    r = (GOALIE_K * prior + points) / (GOALIE_K + team_games)
+    mean = r * games_left
+    sd = (games_left * GOALIE_VAR_PER_GAME + (GOALIE_RATE_SD * games_left) ** 2) ** 0.5
+    return mean, max(mean - Z90 * sd, 0.0), mean + Z90 * sd

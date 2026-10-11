@@ -14,6 +14,7 @@ FA_MOVES = 3              # signatures de FA permises pour la saison
 ESPN_SEASON = 2027        # ESPN identifie la saison par l'année de fin
 NHL_SEASON = "20262027"
 MONEYPUCK_SEASON = 2026   # MoneyPuck l'identifie par l'année de début
+SEASON_GAMES = 84         # depuis 2026-27
 
 TZ = ZoneInfo("America/Toronto")
 DASHBOARD_URL = "https://hubcad25.github.io/pool-tracker-2627/"

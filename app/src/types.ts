@@ -35,6 +35,10 @@ export type Player = {
   g: number
   a: number
   points: number
+  // Gardiens : points de pool = 2 V + DP + BL
+  w?: number
+  otl?: number
+  so?: number
   pace: number | null
   prior: Range | null
   ros: (Interval & { games_left: number }) | null
@@ -70,8 +74,9 @@ export type FreeAgent = {
 
 export type FreeAgents = {
   moves_left: number | null
-  worst: Partial<Record<'F' | 'D', { espn_id: number; name: string; ros: Interval }>>
-  players: Record<'F' | 'D', FreeAgent[]>
+  worst: Partial<Record<'F' | 'D' | 'G', { espn_id: number; name: string; ros: Interval }>>
+  // G absent des dashboards écrits avant l'ajout des gardiens
+  players: Record<'F' | 'D', FreeAgent[]> & { G?: FreeAgent[] }
 }
 
 export type Standing = {
