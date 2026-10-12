@@ -720,6 +720,7 @@ espn_id,nhl_id,canonical_id,name,method
 4272081,,dominik_shine,Dominik Shine,unmatched
 4272106,,,Samuel Laberge,unmatched
 4272107,,,Landon Bow,unmatched
+4272157,,,Frederik Tiffels,unmatched
 4272192,8478975,mason_marchment,Mason Marchment,name
 4272674,8479406,filip_gustavsson,Filip Gustavsson,search:name
 4272888,8480313,logan_thompson,Logan Thompson,name
@@ -1366,6 +1367,7 @@ espn_id,nhl_id,canonical_id,name,method
 5188582,8483679,,Anton Johansson,name
 5188591,8484152,luca_cagnoni,Luca Cagnoni,name
 5188599,8484471,emmitt_finnie,Emmitt Finnie,name
+5188608,8484154,,Jonathan Castagna,name
 5188609,,luca_pinelli,Luca Pinelli,unmatched
 5188613,8484234,aydar_suniev,Aydar Suniev,name
 5188640,,ty_mueller,Ty Mueller,unmatched
@@ -1430,6 +1432,7 @@ espn_id,nhl_id,canonical_id,name,method
 5216934,,,Spencer Gill,unmatched
 5216935,,,Evan Gardner,unmatched
 5216937,,,Jacob Battaglia,unmatched
+5216938,,,Nathan Villeneuve,unmatched
 5216939,,,Eemil Vinni,unmatched
 5229146,8484999,ilya_protas,Ilya Protas,name
 5229176,8484829,justin_hryckowian,Justin Hryckowian,name
