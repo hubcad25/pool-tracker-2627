@@ -94,6 +94,18 @@ def test_matin_ne_doit_pas_notifier_si_tous_les_matchs_ont_ete_reportes():
     assert soiree.moment(at(6, 7, NEXT), [], games("FUT", "FUT"), set()) is None
 
 
+def test_matin_doit_aussi_notifier_le_match_en_matinee_dans_la_meme_execution():
+    # Match à 13 h : à 9 h 27, le bilan de la veille et le « avant » sont dus tous les deux
+    matinee = [{"game_id": 3, "start": "2026-10-11T17:00:00Z", "teams": ["FLA", "BUF"], "state": "FUT"}]
+    assert soiree.all_due(at(9, 27, NEXT), matinee, games("OFF", "OFF"), set()) == [("fin", DAY), ("avant", NEXT)]
+
+
+def test_matin_ne_doit_rien_notifier_de_plus_si_tout_est_deja_parti():
+    matinee = [{"game_id": 3, "start": "2026-10-11T17:00:00Z", "teams": ["FLA", "BUF"], "state": "FUT"}]
+    sent = {"2026-10-10:fin", "2026-10-11:avant"}
+    assert soiree.all_due(at(9, 27, NEXT), matinee, games("OFF", "OFF"), sent) == []
+
+
 # --- calculs ---
 
 def player(espn_id, name, team, slot="F"):

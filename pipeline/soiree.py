@@ -81,6 +81,17 @@ def moment(now: datetime, today_games: list[dict], yesterday_games: list[dict],
     return None
 
 
+def all_due(now: datetime, today_games: list[dict], yesterday_games: list[dict],
+            sent: set[str]) -> list[tuple[str, date]]:
+    """Toutes les notifs dues à `now`. Le cron GitHub saute souvent des heures : une même exécution peut
+    devoir envoyer le « fin » d'hier et le « avant » d'aujourd'hui."""
+    dues = []
+    while (due := moment(now, today_games, yesterday_games, sent)) is not None:
+        dues.append(due)
+        sent = sent | {_key(due[1], due[0])}
+    return dues
+
+
 def first_start(games: list[dict]) -> datetime:
     return min(datetime.fromisoformat(g["start"].replace("Z", "+00:00")) for g in games)
 
@@ -243,15 +254,20 @@ def build(kind: str, day: date, league: dict, team_id: int, rates: dict[str, flo
 
 def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] | None = None) -> None:
     if forced:
-        due, games = forced, nhl.fetch_games(forced[1].isoformat())
-    else:
-        today_games = nhl.fetch_games(now.date().isoformat())
-        yesterday_games = nhl.fetch_games((now.date() - timedelta(days=1)).isoformat())
-        due = moment(now, today_games, yesterday_games, notify.load_sent(SENT))
-        if due is None:
-            print("Aucune notif de soirée due")
-            return
+        _send(now, forced, nhl.fetch_games(forced[1].isoformat()), target=target, dry_run=dry_run, forced=True)
+        return
+    today_games = nhl.fetch_games(now.date().isoformat())
+    yesterday_games = nhl.fetch_games((now.date() - timedelta(days=1)).isoformat())
+    dues = all_due(now, today_games, yesterday_games, notify.load_sent(SENT))
+    if not dues:
+        print("Aucune notif de soirée due")
+    for due in dues:
         games = today_games if due[1] == now.date() else yesterday_games
+        _send(now, due, games, target=target, dry_run=dry_run, forced=False)
+
+
+def _send(now: datetime, due: tuple[str, date], games: list[dict], *, target: str, dry_run: bool,
+          forced: bool) -> None:
     try:
         league = espn.fetch_league()
     except AuthError as e:
@@ -267,7 +283,7 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
     evt = build(*due, league, config.MY_TEAM_ID, rates, schedule, games, points, nhl_of,
                 morning=now.hour in MORNING_HOURS and due[1] < now.date())
     at = delivery(now, games) if due[0] == "avant" and not forced else None
-    notify.send([evt], target=target, dry_run=dry_run, record=forced is None, path=SENT, at=at)
+    notify.send([evt], target=target, dry_run=dry_run, record=not forced, path=SENT, at=at)
 
 
 def main() -> None:
