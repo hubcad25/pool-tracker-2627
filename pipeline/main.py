@@ -72,7 +72,7 @@ def run(day: date) -> list[events.Event]:
         today.write(today.build(day, league or prev_league, config.MY_TEAM_ID, rates, games,
                                 soiree.fetch_points(games), soiree.nhl_ids(), today.odds(data["standings"]),
                                 today.load_history(), datetime.now(config.TZ),
-                                contexte.load(day, schedule, save=True)))
+                                contexte.load(day, schedule, save=True), today.finals(data["standings"])))
     return out
 
 

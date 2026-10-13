@@ -113,7 +113,7 @@ export default function App() {
         )}
         {tab === 'blessures' && (data.injuries ? <Injuries injuries={data.injuries} teamIds={Object.fromEntries((data.standings ?? []).map((r) => [r.abbrev ?? '', r.team_id]))} /> : missing)}
         {tab === 'fa' && (data.free_agents ? <FreeAgents fa={data.free_agents} /> : missing)}
-        {tab === 'ligue' && (data.standings?.length ? <Standings rows={data.standings} /> : missing)}
+        {tab === 'ligue' && (data.standings?.length ? <Standings rows={data.standings} today={today ?? data.today ?? null} /> : missing)}
       </main>
 
       <nav className="tabs">

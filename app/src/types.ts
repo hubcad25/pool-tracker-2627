@@ -147,6 +147,9 @@ export type TodayTeam = {
   actual_tonight: number | null
   playing_tonight: number
   delta_p_first_per_point?: number | null
+  // Total final projeté le matin et son écart-type (absents des vieux today.json) : P(1er) en direct
+  final?: number | null
+  sd?: number | null
   // Joueurs de l'alignement qui jouent ce soir (absent des vieux today.json)
   players?: TonightPlayer[]
 }

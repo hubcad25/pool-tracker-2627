@@ -17,6 +17,17 @@ export type LiveGame = {
   clock: string | null
   /** Points de pool de chaque joueur du match, par nhl_id (gardiens : seulement une fois le match terminé) */
   points: Map<number, number>
+  /** Les buts du match, dans l'ordre (fusillade exclue) */
+  goals: Goal[]
+}
+
+export type Goal = {
+  period: string
+  time: string
+  strength: string
+  team: string
+  scorer: { id: number; name: string }
+  assists: { id: number; name: string }[]
 }
 
 export type Live = { games: Map<number, LiveGame>; at: Date | null; status: 'off' | 'ok' | 'error' }
@@ -27,7 +38,15 @@ type ScoreGame = {
   period?: number
   periodDescriptor?: { number: number; periodType: string }
   clock?: { secondsRemaining: number; inIntermission: boolean; timeRemaining: string }
-  goals?: { playerId: number; periodDescriptor?: { periodType: string }; assists?: { playerId: number }[] }[]
+  goals?: {
+    playerId: number
+    name?: { default: string }
+    teamAbbrev?: string
+    strength?: string
+    timeInPeriod?: string
+    periodDescriptor?: { number: number; periodType: string }
+    assists?: { playerId: number; name?: { default: string } }[]
+  }[]
 }
 
 type BoxPlayer = { playerId: number; goals?: number; assists?: number; toi?: string; decision?: string; goalsAgainst?: number }
@@ -84,6 +103,22 @@ export function pointsFromBoxscore(box: { playerByGameStats?: Record<string, Box
   return out
 }
 
+const periodName = (d?: { number: number; periodType: string }) =>
+  d?.periodType === 'OT' || (d?.number ?? 1) > 3 ? 'Prol.' : d?.number === 1 ? '1re' : `${d?.number ?? 1}e`
+
+function goalsOf(g: ScoreGame): Goal[] {
+  return (g.goals ?? [])
+    .filter((x) => x.periodDescriptor?.periodType !== 'SO')
+    .map((x) => ({
+      period: periodName(x.periodDescriptor),
+      time: x.timeInPeriod ?? '',
+      strength: x.strength ?? 'ev',
+      team: x.teamAbbrev ?? '',
+      scorer: { id: x.playerId, name: x.name?.default ?? '' },
+      assists: (x.assists ?? []).map((a) => ({ id: a.playerId, name: a.name?.default ?? '' })),
+    }))
+}
+
 const getJson = (path: string) =>
   fetch(`${PROXY}/${path}`, { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
 
@@ -128,7 +163,7 @@ export function useLive(t: Today | null): Live {
               if (!finals.current.has(g.id)) finals.current.set(g.id, pointsFromBoxscore(await getJson(`v1/gamecenter/${g.id}/boxscore`)))
               points = finals.current.get(g.id)!
             }
-            games.set(g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points })
+            games.set(g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points, goals: goalsOf(g) })
           }
           gamesRef.current = games
           if (!stopped) setLive({ games, at: new Date(), status: 'ok' })
@@ -155,6 +190,31 @@ export function useLive(t: Today | null): Live {
 }
 
 export const hasProxy = Boolean(PROXY)
+
+/** Feuille de match d'un joueur, d'après le boxscore LNH (patineur ou gardien) */
+export type BoxLine = {
+  toi?: string
+  sog?: number
+  plusMinus?: number
+  hits?: number
+  blockedShots?: number
+  shifts?: number
+  powerPlayGoals?: number
+  faceoffWinningPctg?: number
+  saves?: number
+  shotsAgainst?: number
+  goalsAgainst?: number
+  savePctg?: number
+  decision?: string
+}
+
+export async function fetchBoxLine(gameId: number, nhlId: number): Promise<BoxLine | null> {
+  const box: { playerByGameStats?: Record<string, Record<string, ({ playerId: number } & BoxLine)[]>> } =
+    await getJson(`v1/gamecenter/${gameId}/boxscore`)
+  for (const side of Object.values(box.playerByGameStats ?? {}))
+    for (const list of Object.values(side)) for (const p of list) if (p.playerId === nhlId) return p
+  return null
+}
 
 /** La soirée d'un joueur : réel, attendu, ce qui reste possible et ce qui est perdu */
 export type Night = { actual: number; expected: number; left: number; lost: number; state: GameState; clock: string | null }

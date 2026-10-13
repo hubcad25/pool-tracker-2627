@@ -312,7 +312,7 @@ def refresh(now: datetime, today_games: list[dict]) -> None:
         return
     data = today.build(now.date(), league, config.MY_TEAM_ID, json.loads(RATES.read_text()), today_games,
                        fetch_points(today_games), nhl_ids(), today.load_odds(), today.load_history(), now,
-                       contexte.load(now.date(), load_schedule()))
+                       contexte.load(now.date(), load_schedule()), today.load_finals())
     if current and current.get("date") == data["date"] and lineups(current) == lineups(data):
         print("Alignements inchangés")
         return
@@ -373,7 +373,7 @@ def _send(now: datetime, due: tuple[str, date], games: list[dict], *, target: st
     sent = notify.send([evt], target=target, dry_run=dry_run, record=not forced, path=SENT, at=at)
     if sent and not forced:
         today.write(today.build(due[1], league, config.MY_TEAM_ID, rates, games, points, nhl_of,
-                                today.load_odds(), today.load_history(), now, factors))
+                                today.load_odds(), today.load_history(), now, factors, today.load_finals()))
 
 
 def main() -> None:

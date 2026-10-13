@@ -1,9 +1,10 @@
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
-import { int, prob, signed } from '../format'
+import { dec, int, prob, signed } from '../format'
+import { teamNight, useLive } from '../live'
 import { teamColor, teamTint } from '../teams'
 import { teamLuckPhrase } from '../luck'
 import { arrow, tone, toneFill } from '../tone'
-import type { Standing } from '../types'
+import type { Standing, Today } from '../types'
 
 type Key = 'final' | 'p_first' | 'points' | 'ros' | 'name'
 const SORT: SortOption<Key>[] = [
@@ -23,16 +24,20 @@ const LUCK_SORT: SortOption<LuckKey>[] = [
 const at = (x: number, max: number) => `${(Math.max(0, x) / max) * 100}%`
 const name = (r: Standing) => r.name ?? r.abbrev ?? ''
 
-/** Points acquis (plein) + ROS (clair) et fourchette p10–p90 du total. */
-function SeasonBar({ r, max }: { r: Standing; max: number }) {
+/** Points acquis (plein) + ROS (clair) et fourchette p10–p90 du total. `tonight` : points encore attendus ce
+ *  soir (barre mince juste après les acquis, prise à même la ROS : elle les compte déjà). */
+function SeasonBar({ r, max, tonight }: { r: Standing; max: number; tonight: number }) {
   const lo = r.points + (r.ros_p10 ?? r.p10 - r.points)
   const hi = r.points + (r.ros_p90 ?? r.p90 - r.points)
+  const night = Math.min(tonight, r.ros)
   const label = `${int(r.points)} pts acquis + ROS ${int(r.ros)} = ${int(r.final)} (${int(lo)}–${int(hi)})`
+    + (night > 0.005 ? ` · ${dec(night)} pts encore attendus ce soir` : '')
   return (
     <div className="seasonbar" role="img" aria-label={label} title={label}>
       <div className="seasonbar-track">
         <span className="nightbar-seg" style={{ width: at(r.points, max), background: teamColor(r.team_id) }} />
-        <span className="nightbar-seg" style={{ width: at(r.ros, max), background: teamTint(r.team_id) }} />
+        {night > 0.005 && <span className="nightbar-seg seasonbar-tonight" style={{ width: at(night, max), background: teamColor(r.team_id) }} />}
+        <span className="nightbar-seg" style={{ width: at(r.ros - night, max), background: teamTint(r.team_id) }} />
       </div>
       <span className="seasonbar-range" style={{ left: at(lo, max), width: at(hi - lo, max) }} />
     </div>
@@ -89,8 +94,12 @@ function Luck({ rows }: { rows: Standing[] }) {
   )
 }
 
-export default function Standings({ rows }: { rows: Standing[] }) {
+export default function Standings({ rows, today }: { rows: Standing[]; today: Today | null }) {
   const [sort, setSort] = useSort('ligue', SORT)
+  // Ce soir : les attendus des matchs pas encore finis (en direct si possible) ; rien sans soirée
+  const live = useLive(today)
+  const tonight = new Map((today?.teams ?? []).map((r) => [r.team_id, teamNight(r, today!, live).left]))
+  const anyTonight = [...tonight.values()].some((x) => x > 0.005)
   const max = Math.max(...rows.map((r) => r.points + (r.ros_p90 ?? r.p90 - r.points)))
   const me = rows.find((r) => r.mine)
   const sorted = sortBy(rows, sort, (r, k) =>
@@ -104,6 +113,12 @@ export default function Standings({ rows }: { rows: Standing[] }) {
           <i className="lg-swatch" style={{ background: 'var(--text-dim)' }} /> points acquis +{' '}
           <i className="lg-swatch" style={{ background: 'color-mix(in oklab, var(--text-dim) 35%, var(--surface-1))' }} /> ROS =
           total estimé <i className="lg-range" /> fourchette.
+          {anyTonight && (
+            <>
+              {' '}<i className="lg-swatch is-tonight" style={{ background: 'var(--text-dim)' }} /> points encore attendus ce soir
+              (pris dans la ROS).
+            </>
+          )}
         </p>
         <SortBar options={SORT} sort={sort} onChange={setSort} />
         <ol className="rows standings">
@@ -120,7 +135,7 @@ export default function Standings({ rows }: { rows: Standing[] }) {
                     {int(r.points)} + ROS <b className="is-data">{int(r.ros)}</b> = <b>{int(r.final)}</b>
                     {gap != null && <> · {signed(gap, 0)} vs moi</>}
                   </span>
-                  <SeasonBar r={r} max={max} />
+                  <SeasonBar r={r} max={max} tonight={tonight.get(r.team_id) ?? 0} />
                 </div>
                 <div className="row-side">
                   <span className="row-value num">{prob(r.p_first)}</span>

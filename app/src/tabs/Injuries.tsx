@@ -1,3 +1,4 @@
+import TeamLogo from '../components/TeamLogo'
 import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
 import RosBar from '../components/RosBar'
@@ -23,7 +24,7 @@ function Row({ i, teamId, max }: { i: LeagueInjury; teamId?: number; max: number
         <div className="row-main">
           <span className="row-name">{i.name}</span>
           <span className="row-meta">
-            {i.pos} · {i.team}
+            {i.pos} · <TeamLogo team={i.team} />
             {!i.mine && i.owner && (
               <>
                 {' · '}

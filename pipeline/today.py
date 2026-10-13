@@ -5,7 +5,9 @@ matchs terminés). Les deux jobs poussent ce fichier : un fichier à part évite
 
 - Attendus : les mêmes que la notif « avant » (`soiree.night` : ROS ÷ matchs restants × facteur du match).
 - P(1er) et son delta par point : ceux du classement (`dashboard.standings`), relus par la job de soirée dans
-  le today.json précédent. Le delta est le même pour tous les joueurs d'une équipe ; menace = attendu × delta.
+  le today.json précédent. Idem pour le total final projeté du matin (`final`) et son écart-type (`sd`) : la PWA
+  recalcule la P(1er) en direct (total du matin − attendu ce soir + réel + encore possible).
+  Le delta est le même pour tous les joueurs d'une équipe ; menace = attendu × delta.
 - `teams[].players` : les joueurs de l'alignement de chaque équipe qui jouent ce soir (ids ESPN et LNH, match,
   attendu) : la PWA recalcule la soirée en direct à partir du pointage LNH (proxy `infra/aws/proxy_lnh.py`).
 - Historique de ma P(1er) : data/state/p_first.json, une valeur par jour, écrite par la job quotidienne.
@@ -43,6 +45,15 @@ def load_odds() -> dict[int, tuple[float | None, float | None]]:
     return odds(json.loads(PATH.read_text()).get("teams", [])) if PATH.exists() else {}
 
 
+def finals(rows: list[dict]) -> dict[int, tuple[float | None, float | None]]:
+    """team_id → (total final projeté du matin, son écart-type), depuis le classement ou un today.json."""
+    return {r["team_id"]: (r.get("final"), r.get("sd")) for r in rows}
+
+
+def load_finals() -> dict[int, tuple[float | None, float | None]]:
+    return finals(json.loads(PATH.read_text()).get("teams", [])) if PATH.exists() else {}
+
+
 def _when(team: str, games: list[dict]) -> dict | None:
     """Le match de ce soir d'une équipe LNH : début, adversaire (« @CGY » à l'étranger) et état."""
     for g in games:
@@ -69,17 +80,20 @@ LIVE_FIELDS = ("espn_id", "nhl_id", "name", "pos", "team", "game_id", "opp", "st
 def build(day: date, league: dict, team_id: int, rates: dict[str, float], games: list[dict],
           points: dict[int, tuple[int, str]], nhl_of: dict[int, int],
           team_odds: dict[int, tuple[float | None, float | None]], history: list[dict], now: datetime,
-          factors: dict[str, tuple[float, float]] | None = None) -> dict:
+          factors: dict[str, tuple[float, float]] | None = None,
+          team_finals: dict[int, tuple[float | None, float | None]] | None = None) -> dict:
     """`games` : nhl.fetch_games du jour ; `points` : points de pool des matchs terminés, par nhl_id ;
-    `factors` : contexte.factors du soir."""
+    `factors` : contexte.factors du soir ; `team_finals` : total final du matin et écart-type (cf. finals)."""
     started = any(g["state"] in soiree.DONE for g in games)
     teams, my_players, watch = [], [], []
     for t in league["teams"]:
         mine = t["team_id"] == team_id
         p_first, delta = team_odds.get(t["team_id"], (None, None))
+        final, sd = (team_finals or {}).get(t["team_id"], (None, None))
         n = soiree.night(t, rates, games, points, nhl_of, factors)
         teams.append({"team_id": t["team_id"], "abbrev": t.get("abbrev"), "name": t.get("name"), "mine": mine,
                       "points": t.get("points") or 0, "p_first": p_first, "delta_p_first_per_point": delta,
+                      "final": final, "sd": sd,
                       "expected_tonight": round(n["expected"], 1), "actual_tonight": n["actual"] if started else None,
                       "playing_tonight": len(n["players"]), "players": []})
         for p, rate in n["players"]:

@@ -133,3 +133,16 @@ def test_mes_joueurs_et_watch_ont_les_ids_du_match():
     t = build()
     assert (t["my_players"][0]["nhl_id"], t["my_players"][0]["game_id"]) == (101, 1)
     assert (t["watch"][0]["nhl_id"], t["watch"][0]["game_id"]) == (111, 2)
+
+
+def test_chaque_equipe_garde_son_total_final_du_matin_pour_la_p_premier_en_direct(tmp_path, monkeypatch):
+    monkeypatch.setattr(today, "PATH", tmp_path / "today.json")
+    finals = {5: (180.5, 9.1), 1: (175.0, 8.7), 2: (120.2, 7.0)}
+    t = today.build(DAY, LEAGUE, 5, RATES, games(), {}, NHL_OF, ODDS, [], NOW, team_finals=finals)
+    assert {r["team_id"]: (r["final"], r["sd"]) for r in t["teams"]} == finals
+    today.write(t)
+    assert today.load_finals() == finals
+
+
+def test_sans_totaux_du_matin_final_et_sd_sont_vides():
+    assert all((r["final"], r["sd"]) == (None, None) for r in build()["teams"])

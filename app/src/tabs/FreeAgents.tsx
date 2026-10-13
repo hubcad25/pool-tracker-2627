@@ -1,3 +1,4 @@
+import TeamLogo from '../components/TeamLogo'
 import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
 import RosBar from '../components/RosBar'
@@ -31,7 +32,7 @@ function Row({ f, max, worst }: { f: FreeAgent; max: number; worst?: { name: str
             {f.name} {chip && <span className={`chip is-${chip}`}>{chip === 'chanceux' ? 'Chanceux' : 'Malchanceux'}</span>}
           </span>
           <span className="row-meta">
-            {f.pos} · {f.team}
+            {f.pos} · <TeamLogo team={f.team} />
             {f.pct_owned != null && <> · {Math.round(f.pct_owned)} % ESPN</>}
             {f.gp != null && <> · {f.gp} GP</>}
           </span>

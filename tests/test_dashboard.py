@@ -197,6 +197,8 @@ def test_classement_points_actuels_plus_ros_de_l_alignement():
     assert mine["ros"] == pytest.approx(60 / 82 * (70 - 7) + 60 / 82 * 70 * 3, abs=0.2)
     assert mine["final"] == pytest.approx(20 + mine["ros"], abs=0.1)
     assert sum(r["p_first"] for r in rows) == pytest.approx(1)
+    # L'écart-type du total final (gardé pour la P(1er) en direct de la PWA) : p90 = final + Z90 × sd
+    assert mine["p90"] == pytest.approx(mine["final"] + dashboard.Z90 * mine["sd"], abs=0.1)
     # 4 joueurs contre 2 : je suis presque sûr de finir 1er
     assert rows[0]["mine"] and mine["p_first"] > 0.99
 

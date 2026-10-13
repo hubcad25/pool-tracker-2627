@@ -1,3 +1,4 @@
+import TeamLogo from './TeamLogo'
 import { useState } from 'react'
 import { dec, injuryText, int, lastName, minutes, pct, signed } from '../format'
 import { luckPhrase, percentileText, pts } from '../luck'
@@ -119,7 +120,7 @@ export default function PlayerCard({ player: p, max }: { player: Player; max: nu
         <div className="card-who">
           <span className="card-name">{lastName(p.name)}</span>
           <span className="card-meta">
-            {p.pos} · {p.team}
+            {p.pos} · <TeamLogo team={p.team} />
           </span>
           {chip && <span className={`chip is-${chip}`}>{CHIP[chip]}</span>}
           {p.injury && <span className="chip is-injury">{injuryText(p.injury)}</span>}

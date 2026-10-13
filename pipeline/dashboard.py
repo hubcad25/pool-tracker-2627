@@ -315,8 +315,8 @@ def standings(league: dict, team_id: int, schedule: list[dict], priors: dict[int
     me = next((i for i, r in enumerate(rows) if r["mine"]), None)
     deltas = p_first_deltas(means, sds, me) if me is not None else [None] * len(rows)
     for r, p, d in zip(rows, odds, deltas, strict=True):
-        sd = r.pop("sd")
-        r.update(p10=_round(r["final"] - Z90 * sd), p90=_round(r["final"] + Z90 * sd),
+        sd = r["sd"]
+        r.update(sd=_round(sd, 2), p10=_round(r["final"] - Z90 * sd), p90=_round(r["final"] + Z90 * sd),
                  ros_p10=_round(r["ros"] - Z90 * sd), ros_p90=_round(r["ros"] + Z90 * sd),
                  p_first=round(p, 3), delta_p_first_per_point=_round(d, 5))
     return sorted(rows, key=lambda r: -r["final"])

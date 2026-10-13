@@ -746,6 +746,13 @@ p {
   stroke-width: 2;
 }
 
+/* Point d'après les matchs de la veille, avant la mise à jour de midi */
+.spark-dot.is-provisional {
+  fill: var(--surface-1);
+  stroke: var(--text);
+  stroke-width: 1.5;
+}
+
 .spark-cap {
   display: flex;
   justify-content: space-between;
@@ -949,6 +956,15 @@ p {
   position: relative;
   height: 12px;
   margin-top: 5px;
+}
+
+.nightbar-seg.seasonbar-tonight {
+  height: 50%;
+  align-self: center;
+}
+
+.lg-swatch.is-tonight {
+  height: 4px;
 }
 
 .seasonbar-range {
@@ -1187,47 +1203,9 @@ p {
   margin: 0;
 }
 
-/* Aujourd'hui : saison + la soirée en zoom */
-.row.seasonline {
-  display: block;
-  padding: 6px 12px 7px;
-}
-
-.seasonline.is-mine {
-  background: var(--surface-2);
-  box-shadow: inset 3px 0 0 var(--team-1);
-}
-
-.seasonline-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.seasonline-name {
-  font-weight: 600;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.seasonline.is-mine .seasonline-name {
-  font-weight: 750;
-}
-
-.seasonline-rank {
-  display: inline-block;
-  min-width: 2.2em;
-  font-size: 11px;
-  color: var(--text-faint);
-}
-
-.seasonline-value {
-  flex-shrink: 0;
-  font-size: 12px;
-  color: var(--text-dim);
+/* Aujourd'hui : la saison sous la barre de la soirée */
+.season-meta {
+  margin-top: 3px;
 }
 
 .seasonline-move {
@@ -1284,6 +1262,10 @@ p {
   stroke-linecap: round;
 }
 
+.spark-seg.is-provisional {
+  stroke-dasharray: 3 4;
+}
+
 .spark-split {
   stroke: var(--text-faint);
   stroke-width: 1;
@@ -1293,4 +1275,186 @@ p {
 
 .spark.is-wide .spark-cap {
   position: relative;
+}
+
+/* Ligue : les attendus de ce soir collés sur les acquis */
+.seasonbar-track .nightbar-seg.seasonbar-tonight {
+  margin-left: -2px;
+}
+
+/* Aujourd'hui : un joueur se déplie pour montrer son match */
+.row.is-clickable {
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.row.is-open {
+  background: var(--surface-2);
+}
+
+.player-detail {
+  flex-basis: 100%;
+  padding: 6px 0 2px;
+  border-top: 1px dashed var(--border-soft);
+  font-size: 12px;
+  color: var(--text-dim);
+  cursor: auto;
+}
+
+.detail-line {
+  margin: 0 0 4px;
+}
+
+.detail-goals {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+}
+
+.detail-goals b {
+  color: var(--text);
+}
+
+.detail-fine {
+  color: var(--text-faint);
+}
+
+.detail-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 6px 10px;
+  margin: 0;
+}
+
+.detail-stats dt {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.detail-stats dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Aujourd'hui : chaque barre d'équipe a son étiquette (échelles différentes) */
+.labeled-bar {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.labeled-bar > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.bar-label {
+  flex-shrink: 0;
+  width: 3.6em;
+  margin-top: 5px;
+  font-size: 10px;
+  line-height: 12px;
+  color: var(--text-faint);
+}
+
+/* Aujourd'hui : sous la barre saison, les points maintenant et avec la projection, chacun à son endroit */
+.season-marks {
+  position: relative;
+  height: 14px;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.season-mark {
+  position: absolute;
+  top: 1px;
+  white-space: nowrap;
+  line-height: 12px;
+  padding-left: 2px;
+}
+
+.season-mark.is-end {
+  transform: translateX(-100%);
+  padding: 0 2px 0 0;
+}
+
+b.season-mark {
+  color: var(--text-dim);
+  font-weight: 650;
+}
+
+/* Sans espace entre les segments : les repères dessous tombent pile au bout */
+.ptsbar .nightbar-track {
+  gap: 0;
+}
+
+/* Aujourd'hui : le total de la soirée collé au bout de la barre « ce soir » (place réservée à droite) */
+.night-line {
+  padding-right: 7.2em;
+}
+
+.night-area {
+  position: relative;
+}
+
+.night-total {
+  position: absolute;
+  top: -3px;
+  padding-left: 6px;
+  white-space: nowrap;
+}
+
+.team-score {
+  line-height: 20px;
+}
+
+/* Aujourd'hui : les joueurs d'un pooler, dépliés sous sa ligne */
+.pooler-players {
+  flex-basis: 100%;
+  margin-top: 6px;
+  box-shadow: none;
+  cursor: auto;
+}
+
+/* P(1er) : axes discrets */
+.spark-grid {
+  stroke: var(--border-soft);
+  stroke-width: 1;
+}
+
+.spark-axis {
+  font-size: 9px;
+  fill: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.spark-tip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 10px));
+  display: flex;
+  flex-direction: column;
+  padding: 4px 7px;
+  font-size: 11px;
+  white-space: nowrap;
+  color: var(--text-dim);
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  box-shadow: var(--shadow-soft);
+  pointer-events: none;
+}
+
+.spark-tip b {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.team-logo img {
+  /* Les SVG de la LNH sont en 3:2 avec une marge autour du logo : on les grossit et on
+     rogne la marge par des marges négatives pour ne pas hausser la ligne */
+  height: 22px;
+  width: 33px;
+  margin: -6px -5px;
+  vertical-align: middle;
 }
