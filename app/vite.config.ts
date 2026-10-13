@@ -5,4 +5,6 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   base: '/pool-tracker-2627/',
   plugins: [react()],
+  // Le proxy LNH (infra/aws/proxy_lnh.py) n'accepte que le port 5173 : échouer plutôt que glisser sur 5174
+  server: { port: 5173, strictPort: true },
 })
