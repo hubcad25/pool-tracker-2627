@@ -39,15 +39,25 @@ export default function App() {
   const [tab, setTab] = useState<Tab>(fromHash)
   const [teamId, setTeamId] = useState<number | null>(teamFromHash)
 
+  // Relu à chaque retour au premier plan : une PWA reste ouverte en arrière-plan des heures
   useEffect(() => {
-    fetch('dashboard.json', { cache: 'no-cache' })
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
-      .then(setData)
-      .catch(() => setError(true))
-    fetch('today.json', { cache: 'no-cache' })
-      .then((r) => (r.ok ? r.json() : null))
-      .then(setToday)
-      .catch(() => {})
+    const load = () => {
+      fetch('dashboard.json', { cache: 'no-cache' })
+        .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+        .then((d) => {
+          setData(d)
+          setError(false)
+        })
+        .catch(() => setError(true))
+      fetch('today.json', { cache: 'no-cache' })
+        .then((r) => (r.ok ? r.json() : null))
+        .then(setToday)
+        .catch(() => {})
+    }
+    const onVisible = () => document.visibilityState === 'visible' && load()
+    load()
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
   }, [])
 
   useEffect(() => {
@@ -65,7 +75,7 @@ export default function App() {
     scrollTo(0, 0)
   }, [tab, teamId])
 
-  if (error) return <main className="app"><p className="empty">Impossible de charger les données.</p></main>
+  if (error && !data) return <main className="app"><p className="empty">Impossible de charger les données.</p></main>
   if (!data) return <main className="app" />
 
   const age = daysOld(data.day)
