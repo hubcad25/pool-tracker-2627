@@ -93,7 +93,10 @@ fixe, à part des alertes. Les soirs de match seulement :
 - **6 h** (silencieuse) : bilan final de la veille et l'écart avec chaque rival avant → après.
 
 Attendu d'un patineur par match = ROS ÷ matchs restants (`data/rates.json`, écrit par la job quotidienne) ;
-gardien : 0,7 par match de son équipe. Rivaux : P(échanger nos rangs d'ici 7 jours) ≥ 10 %, points ~ Poisson.
+gardien : 0,7 par match de son équipe. Les deux × le facteur du match (`pipeline/contexte.py`, 2026-10-13,
+backtest `backtest/soir.md`) : patineur (buts attendus de son équipe selon les cotes ESPN ÷ sa moyenne)^0,6 × 0,95
+en back-to-back ; gardien : points d'équipe attendus selon les cotes ÷ ceux de sa moyenne. Gain modeste mais
+stable (−0,3 % de déviance, facteurs ×0,9 à ×1,1). Main chaude (5 derniers matchs) : aucun effet, non retenue. Rivaux : P(échanger nos rangs d'ici 7 jours) ≥ 10 %, points ~ Poisson.
 Points réels : boxscores LNH (vérifiés : les 12 équipes identiques à ESPN pour le 2026-10-10).
 
 **Jamais (alertes) :** lignes de stats, « rien de neuf », DTD qui ne fait manquer aucun match, blessure dans une autre équipe
@@ -111,8 +114,9 @@ Déduplication : un fichier d'état des alertes déjà envoyées, avec la clé (
 1. Prior seulement
 2. Observé seulement
 3. Mélange prior + observé, avec un poids k optimisé selon les matchs joués
-4. Le même mélange, avec un observé **ajusté pour la chance** : G remplacés par un mélange ixG / sh% de carrière,
-   A pondérées par oiSH% carrière / oiSH% actuel
+4. Le même mélange, avec un observé **ajusté pour la chance** : G remplacés par ixG × finition (G / ixG) de carrière
+   depuis 2008-09, saison en cours comprise, régressée vers 1 ; A × buts attendus / réels des coéquipiers sur la glace
+   (OnIce_F_xGoals − ixG). Retenu au backtest du 2026-10-12 (avant : 3 saisons et sh% des coéquipiers de carrière)
 5. Le modèle 4 plus des signaux de rôle (variation du TOI et du PP TOI vs le prior) : un vrai changement de rôle
    doit faire bouger la projection plus vite que la chance. **Testé, non retenu** (gain de 0,7 %, DailyFaceoff
    compris) : voir `docs/adr/0001-pas-de-role-dans-la-ros.md`
@@ -203,7 +207,7 @@ D : k = 20, w = 0,5). Finition et sh% des coéquipiers de carrière régressés 
 m = 400 (F) / 800 (D) : même un vétéran de 246 GP ne garde que ~38 % (F) de son écart à la moyenne. Recrue = finisseur moyen.
 Candidat 5 (rôle : TOI, PP, DailyFaceoff) testé et écarté, voir `docs/adr/0001-pas-de-role-dans-la-ros.md`. Intervalles : quantiles des ratios réel / prédit par tranche de rythme et de GP restants
 (calibrés à 80 % dans chaque tranche ; sans doute un peu larges en prod, où le consensus est meilleur que Marcel).
-`rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2023-26, figés).
+`rules.ros()` utilise le modèle : stats MoneyPuck du jour + `priors/career.csv` (totaux 2008-26, figés).
 Notif d'activation : top 3 des options de drop, une par ligne. Alertes de santé : MoneyPuck en panne 2 jours de suite,
 et échec du workflow hors du pipeline (dépendances, tests, commit) via une étape `if: failure()`.
 
@@ -223,5 +227,11 @@ Dashboard v2 (2026-10-12) : la ROS (avec intervalle) devient la métrique princi
 Impact d'un point adverse = delta de ma P(1er) par point de son équipe ÷ le mien (« ≈ −0,3 de tes pts »). P(1er)
 calculée par intégrale (plus de simulation). Chance : centiles binomiaux (G vs xG ajusté, buts des coéquipiers), chance
 nette par joueur et par équipe, P(FA meilleur que mon pire joueur). Page Équipe pour les 12 équipes, listes triables.
-**En suspens** : backtest « carrière complète (+ saison en cours) » pour la finition et passes via le xG sur la glace
-(préférence : apprendre la finition pendant la saison) ; trios réels pour le sh% des coéquipiers.
+**En suspens** : trios réels pour le sh% des coéquipiers (moins utile depuis les passes via le xG sur la glace).
+
+Chance v2 (2026-10-12, `backtest/report.md`, section « finition et passes ») : finition sur la **carrière depuis
+2008-09 + la saison en cours** (C ; à égalité avec 3 saisons et meilleure que la carrière seule, retenue par
+préférence : la finition apprise en saison compte) ; passes × **buts attendus / réels des coéquipiers** (Y, gain net
+vs le sh% de carrière). RMSE 0,1527 → 0,1521 ; F : k = 25, w = 0,5, m = 400 ; D : k = 20, w = 0,7, m = 1600. Décroissance des vieilles saisons (0,8/an) testée : aucun gain.
+`priors/career.csv` régénéré (exception à « figé », autorisée) ; `params.json` n'a plus `league_teammate_sh`.
+Dashboard : centile `assists` = buts des coéquipiers vs leur xG sur la glace.

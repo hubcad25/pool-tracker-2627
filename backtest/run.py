@@ -7,6 +7,9 @@ Candidats (tous des cas particuliers de model.ros.rate) :
 1. prior seulement (k infini)   2. observé seulement (k = 0)
 3. mélange prior + observé (k optimisé, w = 0)   4. mélange avec observé ajusté pour la chance (k, w et m optimisés)
 5, 5b, 6. le 4 avec un prior ajusté au rôle (TOI hors PP et PP) : observé, récent, parfait. Non retenus (ADR 0001).
+Variantes de l'ajustement pour la chance du 4 (finition sur 3 saisons / la carrière / la carrière + la saison,
+passes via le sh% ou le xG des coéquipiers) : section à part du rapport. Retenue : carrière + saison, xG.
+Une décroissance des vieilles saisons (0,8 par an) a aussi été testée (2026-10-12) : aucun gain, non gardée.
 
 Le prior est un Marcel (pas de projections préseason historiques). Les recrues (aucun match dans les
 3 saisons précédentes) sont exclues : en production, le consensus leur donne un vrai prior.
@@ -16,12 +19,13 @@ k, w et m sont choisis par validation croisée « une saison de côté ».
 import csv
 import itertools
 import json
+import random
 import statistics
 from collections import defaultdict
 from datetime import date
 from pathlib import Path
 
-from backtest.fetch import BACKTEST_SEASONS, CACHE, GAMES_DIR, summary_path
+from backtest.fetch import BACKTEST_SEASONS, CACHE, GAMES_DIR, SUMMARY_SEASONS, summary_path
 from model import ros
 
 CUTOFFS = (10, 20, 30, 41, 60)          # matchs d'équipe joués
@@ -33,7 +37,7 @@ W_GRID = [i / 10 for i in range(11)]
 M_GRID = [0, 50, 100, 200, 400, 800, 1600, 10**6]   # GP de carrière pour peser autant que la moyenne de la ligue
 TOP = 250
 REPORT = Path(__file__).resolve().parent / "report.md"
-STAT_KEYS = ("gp", "g", "a", "ixg", "sog", "on_goals", "on_sog", "toi", "pp_toi")
+STAT_KEYS = ("gp", "g", "a", "ixg", "sog", "on_goals", "on_sog", "on_xg", "toi", "pp_toi")
 RECENT_GAMES = 5                                       # « rôle récent » : substitut des trios DailyFaceoff
 B_EV_GRID = [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.08]          # P/GP par minute de plus par match, hors PP
 B_PP_GRID = [0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.2]     # idem, en avantage numérique
@@ -61,7 +65,13 @@ def _stats(r: dict) -> dict:
 def load_summaries() -> dict[int, dict[str, dict]]:
     return {season: {pid: _stats(r) for pid, r in _with_pp(list(csv.DictReader(summary_path(season).open())),
                                                             "playerId").items()}
-            for season in range(min(BACKTEST_SEASONS) - 3, max(BACKTEST_SEASONS))}
+            for season in range(min(SUMMARY_SEASONS), max(BACKTEST_SEASONS))}
+
+
+def career_totals(summaries: dict[int, dict[str, dict]], pid: str, season: int) -> dict:
+    """Totaux de carrière avant `season` (depuis 2008-09)."""
+    past = [stats[pid] for s, stats in summaries.items() if s < season and pid in stats]
+    return {k: sum(h[k] for h in past) for k in STAT_KEYS}
 
 
 def load_birthdates() -> dict[str, date]:
@@ -108,7 +118,8 @@ def build_rows() -> list[dict]:
             history = [p.get(pid, {"points": 0.0, "gp": 0.0}) for p in past]
             if sum(h["gp"] for h in history) == 0:
                 continue    # recrue
-            career = {k: sum(h.get(k, 0.0) for h in history) for k in STAT_KEYS}
+            career3 = {k: sum(h.get(k, 0.0) for h in history) for k in STAT_KEYS}
+            careers = {"3 saisons": career3, "carrière": career_totals(summaries, pid, season)}
             age = (date(season, 10, 1) - born[pid]).days / 365.25 if pid in born else None
             pos = pos_group(player_games[0]["position"])
             for n, day in cutoff_dates(games).items():
@@ -118,10 +129,10 @@ def build_rows() -> list[dict]:
                     continue
                 obs = _sum(before)
                 rows.append({"season": season, "cutoff": n, "player": pid, "pos": pos, "age": age,
-                             "history": history, "career": career, "obs": obs,
+                             "history": history, "careers": careers, "obs": obs,
                              "gp_left": after["gp"], "rate_left": after["points"] / after["gp"],
                              "toi_left": after["toi"] / after["gp"],
-                             "role_ref": _role(history[0] if history[0]["gp"] >= 20 else career),
+                             "role_ref": _role(history[0] if history[0]["gp"] >= 20 else career3),
                              "role_now": _role(obs), "role_recent": _role(_sum(before[-RECENT_GAMES:])),
                              "role_future": _role(after)})
     return rows
@@ -190,7 +201,7 @@ def fit_role(rows: list[dict], k: float, w: float, m: float, role: str) -> tuple
 
 def league_teammate_sh() -> float:
     """sh% des coéquipiers sur la glace, toute la ligue, saisons des résumés en cache."""
-    seasons = load_summaries().values()
+    seasons = [s for season, s in load_summaries().items() if season >= min(BACKTEST_SEASONS) - 3]
     goals = sum(s["on_goals"] - s["g"] for season in seasons for s in season.values())
     shots = sum(s["on_sog"] - s["sog"] for season in seasons for s in season.values())
     return goals / shots
@@ -264,16 +275,107 @@ def cross_validate(rows: list[dict]) -> dict[str, list[float]]:
     return preds
 
 
+# --- variantes de l'ajustement pour la chance (candidat 4) -----------------------------------------
+
+# Finition : A = 3 saisons, B = carrière depuis 2008-09, C = carrière + saison en cours jusqu'à la coupure.
+# Passes : X = sh% des coéquipiers de carrière / de la saison, Y = buts attendus / réels des coéquipiers.
+VARIANTS = {"A·X (3 saisons, sh% des coéquipiers)": ("3 saisons", False, "X"),
+            "B·X (carrière, sh% des coéquipiers)": ("carrière", False, "X"),
+            "C·X (carrière + saison, sh% des coéquipiers)": ("carrière", True, "X"),
+            "A·Y (3 saisons, xG des coéquipiers)": ("3 saisons", False, "Y"),
+            "B·Y (carrière, xG des coéquipiers)": ("carrière", False, "Y"),
+            "C·Y (carrière + saison, xG des coéquipiers)": ("carrière", True, "Y")}
+RETAINED = "C·Y (carrière + saison, xG des coéquipiers)"   # = model.ros.luck_adjusted_points
+BOOTSTRAP = 300
+
+
+def variant_luck(obs: dict, careers: dict, m: float, variant: tuple, league_sh: float) -> float:
+    span, with_season, assists = variant
+    career = careers[span]
+    if assists == "Y":
+        a = ros.expected_assists(obs)
+    else:
+        weight = career["gp"] / (career["gp"] + m) if career["gp"] else 0.0
+        past_sh = league_sh
+        if weight and (sh := ros.teammate_sh(career)) is not None:
+            past_sh = weight * sh + (1 - weight) * league_sh
+        cur = ros.teammate_sh(obs)
+        a = obs["a"] * past_sh / cur if cur else obs["a"]
+    return obs["ixg"] * ros.finishing(career, obs if with_season else None, m) + a
+
+
+def luck_cv(rows: list[dict]) -> list[float]:
+    """Candidat 4 hors échantillon (k, w et m estimés sans la saison évaluée), avec les r["luck"] en place."""
+    preds = [0.0] * len(rows)
+    index = {id(r): i for i, r in enumerate(rows)}
+    for season, pos in itertools.product(BACKTEST_SEASONS, ("F", "D")):
+        train = [r for r in rows if r["season"] != season and r["pos"] == pos]
+        sub = [r for r in rows if r["season"] == season and r["pos"] == pos]
+        for r, p in zip(sub, predict(sub, *fit(train, W_GRID, M_GRID)), strict=True):
+            preds[index[id(r)]] = p
+    return preds
+
+
+def calibration(rows: list[dict], preds: list[float]) -> float:
+    """Couverture de l'intervalle 80 %, quantiles estimés par position sur ces prédictions."""
+    inside = 0
+    for pos in ("F", "D"):
+        sub = [(r, x) for r, x in zip(rows, preds, strict=True) if r["pos"] == pos]
+        sub_rows, sub_preds = (list(t) for t in zip(*sub, strict=True))
+        inside += coverage(sub_rows, sub_preds, quantiles(sub_rows, sub_preds)) * len(sub_rows)
+    return inside / len(rows)
+
+
+def bootstrap_diff(rows: list[dict], preds: list[float], ref: list[float]) -> tuple[float, float]:
+    """IC 90 % de RMSE(preds) − RMSE(ref), en rééchantillonnant les joueurs (toutes leurs lignes ensemble)."""
+    by = defaultdict(lambda: [0.0, 0.0, 0.0])    # joueur → [SSE preds, SSE ref, GP restants]
+    for r, p, q in zip(rows, preds, ref, strict=True):
+        t = by[r["player"]]
+        t[0] += r["gp_left"] * (p - r["rate_left"]) ** 2
+        t[1] += r["gp_left"] * (q - r["rate_left"]) ** 2
+        t[2] += r["gp_left"]
+    players, rng, diffs = list(by.values()), random.Random(1), []
+    for _ in range(BOOTSTRAP):
+        sample = rng.choices(players, k=len(players))
+        n = sum(t[2] for t in sample)
+        diffs.append((sum(t[0] for t in sample) / n) ** 0.5 - (sum(t[1] for t in sample) / n) ** 0.5)
+    q = statistics.quantiles(diffs, n=20)
+    return q[0], q[-1]
+
+
+def compare_variants(rows: list[dict], retained: list[float], league_sh: float) -> list[str]:
+    """Section du rapport : chaque variante hors échantillon, m ré-optimisé. Écrase r["luck"]."""
+    lines = ["", "## Ajustement pour la chance : finition et passes", "",
+             "Finition (G / ixG régressée avec GP / (GP + m)) : A = 3 saisons, B = carrière depuis 2008-09, "
+             "C = carrière + saison en cours jusqu'à la coupure. Passes : X = × sh% des coéquipiers de carrière "
+             "/ de la saison, Y = × buts attendus des coéquipiers sur la glace (OnIce_F_xGoals − ixG) / leurs buts.",
+             f"Δ : écart de RMSE avec la variante retenue, IC 90 % par bootstrap des joueurs ({BOOTSTRAP} tirages).",
+             "", "| variante | RMSE P/GP | Δ vs retenue (IC 90 %) | ordre | couverture 80 % | k, w, m (F) "
+             "| k, w, m (D) |",
+             "|---|---|---|---|---|---|---|"]
+    for name, variant in VARIANTS.items():
+        for r in rows:
+            r["luck"] = {m: variant_luck(r["obs"], r["careers"], m, variant, league_sh) for m in M_GRID} \
+                if r["obs"]["gp"] else None
+        preds = retained if name == RETAINED else luck_cv(rows)
+        lo, hi = bootstrap_diff(rows, preds, retained)
+        full = [", ".join(map(str, fit([r for r in rows if r["pos"] == pos], W_GRID, M_GRID))) for pos in ("F", "D")]
+        delta = "—" if name == RETAINED else f"{wrmse(rows, preds) - wrmse(rows, retained):+.5f} [{lo:+.5f}, {hi:+.5f}]"
+        lines.append(f"| {name} | {wrmse(rows, preds):.5f} | {delta} | {pair_accuracy(rows, preds):.2%} | "
+                     f"{calibration(rows, preds):.1%} | {full[0]} | {full[1]} |")
+        print(lines[-1], flush=True)
+    return lines
+
+
 def main() -> None:
     rows = build_rows()
     slope, peak = fit_age(rows)
     for r in rows:
         r["prior"] = ros.marcel_rate(r["history"], r["age"], slope, peak)
-    league_sh = league_teammate_sh()
     for r in rows:
-        r["luck"] = {m: ros.luck_adjusted_points(r["obs"], r["career"], m, league_sh) for m in M_GRID} \
+        r["luck"] = {m: ros.luck_adjusted_points(r["obs"], r["careers"]["carrière"], m) for m in M_GRID} \
             if r["obs"]["gp"] else None
-    print(f"{len(rows)} lignes ; âge : pente {slope}, pic {peak} ; sh% des coéquipiers de la ligue {league_sh:.4f}")
+    print(f"{len(rows)} lignes ; âge : pente {slope}, pic {peak}")
 
     preds = cross_validate(rows)
     lines = ["# Backtest du rythme ROS", "",
@@ -301,7 +403,7 @@ def main() -> None:
 
     # Paramètres finaux : tout l'échantillon, par position ; intervalles sur les prédictions hors échantillon
     best = "4. mélange + chance"
-    params = {"age_slope": slope, "age_peak": peak, "league_teammate_sh": round(league_sh, 5)}
+    params = {"age_slope": slope, "age_peak": peak}
     lines += ["", "## Paramètres retenus", "",
               "| position | k | w | m | couverture 80 % : " + " | ".join(f"≥ {b} P/GP" for b in RATE_BUCKETS) + " |",
               "|---|---|---|---|" + "---|" * len(RATE_BUCKETS)]
@@ -317,6 +419,7 @@ def main() -> None:
             cells.append(f"{coverage(*(list(t) for t in zip(*sel, strict=True)), q):.1%}")
         lines.append(f"| {pos} | {k} | {w} | {m} | " + " | ".join(cells) + " |")
 
+    lines += compare_variants(rows, preds[best], league_teammate_sh())
     ros.PARAMS_PATH.write_text(json.dumps(params, indent=1) + "\n")
     REPORT.write_text("\n".join(lines) + "\n")
     print("\n".join(lines))

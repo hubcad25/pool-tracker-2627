@@ -3,7 +3,7 @@
 Écrit par la job quotidienne, puis réécrit par chaque run de soirée qui envoie une notif (points réels des
 matchs terminés). Les deux jobs poussent ce fichier : un fichier à part évite les conflits sur dashboard.json.
 
-- Attendus : les mêmes que la notif « avant » (`soiree.night` : ROS ÷ matchs restants ; gardien 0,7).
+- Attendus : les mêmes que la notif « avant » (`soiree.night` : ROS ÷ matchs restants × facteur du match).
 - P(1er) et son delta par point : ceux du classement (`dashboard.standings`), relus par la job de soirée dans
   le today.json précédent. Le delta est le même pour tous les joueurs d'une équipe ; menace = attendu × delta.
 - `teams[].players` : les joueurs de l'alignement de chaque équipe qui jouent ce soir (ids ESPN et LNH, match,
@@ -68,14 +68,16 @@ LIVE_FIELDS = ("espn_id", "nhl_id", "name", "pos", "team", "game_id", "opp", "st
 
 def build(day: date, league: dict, team_id: int, rates: dict[str, float], games: list[dict],
           points: dict[int, tuple[int, str]], nhl_of: dict[int, int],
-          team_odds: dict[int, tuple[float | None, float | None]], history: list[dict], now: datetime) -> dict:
-    """`games` : nhl.fetch_games du jour ; `points` : points de pool des matchs terminés, par nhl_id."""
+          team_odds: dict[int, tuple[float | None, float | None]], history: list[dict], now: datetime,
+          factors: dict[str, tuple[float, float]] | None = None) -> dict:
+    """`games` : nhl.fetch_games du jour ; `points` : points de pool des matchs terminés, par nhl_id ;
+    `factors` : contexte.factors du soir."""
     started = any(g["state"] in soiree.DONE for g in games)
     teams, my_players, watch = [], [], []
     for t in league["teams"]:
         mine = t["team_id"] == team_id
         p_first, delta = team_odds.get(t["team_id"], (None, None))
-        n = soiree.night(t, rates, games, points, nhl_of)
+        n = soiree.night(t, rates, games, points, nhl_of, factors)
         teams.append({"team_id": t["team_id"], "abbrev": t.get("abbrev"), "name": t.get("name"), "mine": mine,
                       "points": t.get("points") or 0, "p_first": p_first, "delta_p_first_per_point": delta,
                       "expected_tonight": round(n["expected"], 1), "actual_tonight": n["actual"] if started else None,

@@ -130,6 +130,12 @@ def test_soiree_compte_les_matchs_termines_seulement_et_ignore_l_ir():
     assert [s[2] for s in n["scorers"]] == ["1+1", "victoire"]
 
 
+def test_soiree_applique_le_facteur_du_match_patineur_ou_gardien():
+    factors = {"TOR": (1.2, 0.5), "MTL": (2.0, 0.9)}
+    n = soiree.night(ME, RATES, games(), {}, NHL_OF, factors)
+    assert n["expected"] == pytest.approx(0.8 * 1.2 + soiree.GOALIE_RATE * 0.9 + 1.4)   # EDM : sans facteur
+
+
 def test_probabilite_de_depassement():
     assert soiree.swap_probability(0, 10, 10) == 1.0
     assert soiree.swap_probability(30, 10, 10) < 0.01

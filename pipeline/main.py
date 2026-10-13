@@ -12,7 +12,7 @@ from datetime import date, datetime, timedelta
 import requests
 
 from model import ros
-from pipeline import config, dashboard, events, ids, notify, rules, snapshot, soiree, today
+from pipeline import config, contexte, dashboard, events, ids, notify, rules, snapshot, soiree, today
 from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
@@ -71,7 +71,8 @@ def run(day: date) -> list[events.Event]:
         games = nhl.fetch_games(day.isoformat())
         today.write(today.build(day, league or prev_league, config.MY_TEAM_ID, rates, games,
                                 soiree.fetch_points(games), soiree.nhl_ids(), today.odds(data["standings"]),
-                                today.load_history(), datetime.now(config.TZ)))
+                                today.load_history(), datetime.now(config.TZ),
+                                contexte.load(day, schedule, save=True)))
     return out
 
 

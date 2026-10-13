@@ -35,8 +35,7 @@ BASE = [
 ]
 PRIORS = {2: {"sim_mean": 50, "gp": 82}, 3: {"sim_mean": 60, "gp": 82}, 4: {"sim_mean": 80, "gp": 82}}
 QUANTILES = {"rates": [0], "games": [0], "q10": [[0.8]], "q90": [[1.2]]}
-PARAMS = {pos: {"k": 30, "w": 0.0, "m": 100, "quantiles": QUANTILES} for pos in ("F", "D")} \
-    | {"league_teammate_sh": 0.09}
+PARAMS = {pos: {"k": 30, "w": 0.0, "m": 100, "quantiles": QUANTILES} for pos in ("F", "D")}
 
 
 @pytest.fixture(autouse=True)
@@ -152,7 +151,7 @@ def test_activation_liste_au_plus_trois_options_de_drop():
 
 def test_activation_la_ros_tient_compte_du_debut_de_saison():
     # Nichushkin : 20 points en 20 matchs → (30 × 0,61 + 20) / 50 = 0,77 P/GP, il passe devant Boeser (0,73)
-    obs = {"gp": 20, "g": 10, "a": 10, "ixg": 10, "sog": 50, "on_goals": 30, "on_sog": 300}
+    obs = {"gp": 20, "g": 10, "a": 10, "ixg": 10, "sog": 50, "on_goals": 30, "on_sog": 300, "on_xg": 30}
     priors = PRIORS | {2: PRIORS[2] | {"obs": obs}}
     [e] = evaluate(BASE, changed(1, status="ACTIVE", injury=None, ret=None), priors=priors)
     assert e.message.splitlines()[1].startswith("1. Boeser : ROS 51")

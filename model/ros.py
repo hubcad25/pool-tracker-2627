@@ -2,15 +2,14 @@
 
 Rythme = (k × prior + points observés) / (k + GP observés), avec des points observés en partie
 ajustés pour la chance (poids w) :
-- buts : ixG × finition de carrière (G / ixG) ;
-- passes : × sh% des coéquipiers sur la glace en carrière / sh% des coéquipiers cette saison.
-Les taux de carrière sont régressés vers la moyenne (finition 1, sh% des coéquipiers de la ligue) avec le poids
-GP / (GP + m) : une recrue est un finisseur moyen.
+- buts : ixG × finition (G / ixG) de carrière, saison en cours comprise, régressée vers 1 avec le poids
+  GP / (GP + m) : une recrue est un finisseur moyen, et la finition apprise en saison compte ;
+- passes : × buts attendus des coéquipiers sur la glace (xG sur la glace − ixG) / leurs buts réels.
 
-Les paramètres (k, w, m par position, quantiles des résidus, sh% des coéquipiers de la ligue) sont estimés
-par le backtest et lus dans model/params.json.
+Les paramètres (k, w, m par position, quantiles des résidus) sont estimés par le backtest et lus dans
+model/params.json.
 
-Stats attendues (dict) : gp, g, a, ixg, sog, on_goals, on_sog (situation « all »).
+Stats attendues (dict) : gp, g, a, ixg, sog, on_goals, on_sog, on_xg (situation « all »).
 """
 import csv
 import json
@@ -18,7 +17,7 @@ from bisect import bisect_right
 from pathlib import Path
 
 PARAMS_PATH = Path(__file__).resolve().parent / "params.json"
-CAREER_PATH = Path(__file__).resolve().parent.parent / "priors" / "career.csv"   # 2023-24 à 2025-26, figé
+CAREER_PATH = Path(__file__).resolve().parent.parent / "priors" / "career.csv"   # 2008-09 à 2025-26, figé
 MARCEL_WEIGHTS = (5, 4, 3)       # saison précédente d'abord
 
 
@@ -31,7 +30,8 @@ def from_moneypuck(row: dict) -> dict:
     g, a = _f(row["I_F_goals"]), _f(row["I_F_primaryAssists"]) + _f(row["I_F_secondaryAssists"])
     return {"gp": _f(row.get("games_played", "1")), "g": g, "a": a, "points": g + a, "toi": _f(row["icetime"]),
             "ixg": _f(row["I_F_xGoals"]), "sog": _f(row["I_F_shotsOnGoal"]),
-            "on_goals": _f(row["OnIce_F_goals"]), "on_sog": _f(row["OnIce_F_shotsOnGoal"])}
+            "on_goals": _f(row["OnIce_F_goals"]), "on_sog": _f(row["OnIce_F_shotsOnGoal"]),
+            "on_xg": _f(row["OnIce_F_xGoals"])}
 
 
 def load_career(path: Path = CAREER_PATH) -> dict[int, dict]:
@@ -55,26 +55,31 @@ def teammate_sh(s: dict) -> float | None:
     return (s["on_goals"] - s["g"]) / shots if shots > 0 else None
 
 
-def career_rates(career: dict | None, m: float, league_sh: float) -> tuple[float, float]:
-    """(finition G / ixG, sh% des coéquipiers) de carrière, régressés vers la moyenne (1 et le sh% de la ligue)
-    avec le poids GP / (GP + m)."""
-    weight = career["gp"] / (career["gp"] + m) if career and career["gp"] else 0.0
-    finishing, past_sh = 1.0, league_sh
-    if weight:
-        if career["ixg"] > 0:
-            finishing = weight * career["g"] / career["ixg"] + (1 - weight)
-        if (sh := teammate_sh(career)) is not None:
-            past_sh = weight * sh + (1 - weight) * league_sh
-    return finishing, past_sh
+def finishing(career: dict | None, obs: dict | None, m: float) -> float:
+    """Finition G / ixG de carrière, saison en cours (`obs`) comprise, régressée vers 1 avec le poids GP / (GP + m)."""
+    parts = [s for s in (career, obs) if s]
+    gp, g, ixg = (sum(s[k] for s in parts) for k in ("gp", "g", "ixg"))
+    if not gp or ixg <= 0:
+        return 1.0
+    weight = gp / (gp + m)
+    return weight * g / ixg + 1 - weight
 
 
-def luck_adjusted_points(obs: dict, career: dict | None, m: float, league_sh: float) -> float:
-    """Points observés si la finition et le sh% des coéquipiers avaient été ceux de la carrière,
-    régressés vers la moyenne selon les GP de carrière."""
-    finishing, past_sh = career_rates(career, m, league_sh)
-    cur_sh = teammate_sh(obs)
-    assists = obs["a"] * past_sh / cur_sh if cur_sh else obs["a"]
-    return obs["ixg"] * finishing + assists
+def teammate_goals(s: dict) -> tuple[float, float]:
+    """(buts réels, buts attendus) des coéquipiers quand le joueur est sur la glace (sans les siens)."""
+    return s["on_goals"] - s["g"], s["on_xg"] - s["ixg"]
+
+
+def expected_assists(obs: dict) -> float:
+    """Passes si les coéquipiers sur la glace avaient marqué autant que leurs buts attendus."""
+    goals, expected = teammate_goals(obs)
+    return obs["a"] * expected / goals if goals > 0 else obs["a"]
+
+
+def luck_adjusted_points(obs: dict, career: dict | None, m: float) -> float:
+    """Points observés avec la finition de carrière (saison comprise) et des coéquipiers qui marquent
+    autant que leurs buts attendus. `career` : totaux avant la saison en cours."""
+    return obs["ixg"] * finishing(career, obs, m) + expected_assists(obs)
 
 
 def rate(prior: float, obs: dict | None, luck_points: float | None, k: float, w: float) -> float:
@@ -106,7 +111,7 @@ def load_params(path: Path = PARAMS_PATH) -> dict:
 def ros(prior: float, obs: dict | None, career: dict | None, games_left: float, position: str,
         params: dict) -> tuple[float, float, float]:
     p = params[position]
-    luck = luck_adjusted_points(obs, career, p["m"], params["league_teammate_sh"]) if obs else None
+    luck = luck_adjusted_points(obs, career, p["m"]) if obs else None
     return interval(rate(prior, obs, luck, p["k"], p["w"]), games_left, p["quantiles"])
 
 

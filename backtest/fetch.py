@@ -1,38 +1,44 @@
 """Cache MoneyPuck historique pour le backtest (backtest/cache/, gitignoré).
 
-- Résumés de saison 2019-2025 : prior Marcel et taux de carrière.
+- Résumés de saison 2008-2025 : prior Marcel (3 saisons) et taux de carrière (toutes les saisons depuis 2008-09,
+  premier exercice de MoneyPuck ; mêmes totaux que le match par match, en 18 fichiers au lieu de ~1300).
 - Match par match des patineurs des saisons du backtest, réduit aux colonnes utiles.
 - Dates de naissance (API stats de la LNH) : ajustement pour l'âge de Marcel.
+- Matchs ESPN avec les cotes de chaque livre (victoire, total de buts) : backtest des points d'un soir.
 
     uv run python -m backtest.fetch
 """
 import csv
 import io
+import json
 import time
+from datetime import date, timedelta
 from pathlib import Path
 
 import requests
 
 from model.ros import CAREER_PATH
 from pipeline.http import get
+from pipeline.sources.espn import ODDS_URL, SCOREBOARD_URL, odds_book
 
 CACHE = Path(__file__).resolve().parent / "cache"
-GAMES_DIR = CACHE / "games_sit"
-SUMMARY_SEASONS = range(2019, 2026)    # MoneyPuck : année de début de saison
+GAMES_DIR = CACHE / "games_xg"     # avec OnIce_F_xGoals (games_sit : ancienne version, sans)
+SUMMARY_SEASONS = range(2008, 2026)    # MoneyPuck : année de début de saison
 BACKTEST_SEASONS = range(2022, 2026)   # 2022-23 à 2025-26
 SUMMARY_URL = "https://moneypuck.com/moneypuck/playerData/seasonSummary/{season}/regular/skaters.csv"
 BIOS_URL = ("https://api.nhle.com/stats/rest/en/skater/bios?limit=-1&cayenneExp="
             "seasonId={season}{end}%20and%20gameTypeId=2")
+ODDS_PATH = CACHE / "odds.jsonl"     # un match ESPN par ligne
 GAME_URL = "https://moneypuck.com/moneypuck/playerData/careers/gameByGame/regular/skaters/{nhl_id}.csv"
 
 SITUATIONS = {"all", "5on5", "5on4"}   # 5on4 : avantage numérique
 COLUMNS = ["playerId", "season", "name", "gameId", "playerTeam", "gameDate", "position", "situation", "icetime",
            "I_F_goals", "I_F_primaryAssists", "I_F_secondaryAssists", "I_F_xGoals", "I_F_shotsOnGoal",
-           "OnIce_F_goals", "OnIce_F_shotsOnGoal"]
+           "OnIce_F_goals", "OnIce_F_shotsOnGoal", "OnIce_F_xGoals"]
 # Totaux de carrière gardés pour l'ajustement pour la chance (clé du modèle → colonne MoneyPuck)
 CAREER = {"gp": ["games_played"], "g": ["I_F_goals"], "a": ["I_F_primaryAssists", "I_F_secondaryAssists"],
           "ixg": ["I_F_xGoals"], "sog": ["I_F_shotsOnGoal"], "on_goals": ["OnIce_F_goals"],
-          "on_sog": ["OnIce_F_shotsOnGoal"]}
+          "on_sog": ["OnIce_F_shotsOnGoal"], "on_xg": ["OnIce_F_xGoals"]}
 
 
 def _rows(text: str) -> list[dict]:
@@ -61,6 +67,7 @@ def fetch_summaries() -> None:
             rows = _rows(get(SUMMARY_URL.format(season=season)).text)
             _write(path, rows, list(rows[0]))
             print(f"résumé {season} : {len(rows)} patineurs")
+            time.sleep(2)
 
 
 def fetch_birthdates() -> None:
@@ -109,9 +116,10 @@ def fetch_games() -> None:
 
 
 def freeze_career(path: Path = CAREER_PATH) -> None:
-    """Totaux des 3 saisons avant 2026-27 (ajustement pour la chance en production). Fichier figé."""
+    """Totaux de carrière (2008-09 à 2025-26) pour l'ajustement pour la chance en production. Fichier figé :
+    régénéré le 2026-10-12 (carrière complète au lieu des 3 dernières saisons, exception autorisée)."""
     totals = {}
-    for season in range(max(SUMMARY_SEASONS) - 2, max(SUMMARY_SEASONS) + 1):
+    for season in SUMMARY_SEASONS:
         for r in csv.DictReader(summary_path(season).open()):
             if r["situation"] != "all":
                 continue
@@ -124,8 +132,39 @@ def freeze_career(path: Path = CAREER_PATH) -> None:
     print(f"carrière : {len(rows)} joueurs → {path}")
 
 
+def fetch_odds() -> None:
+    """Matchs de saison régulière des saisons du backtest, avec score et cotes (reprend là où il s'est arrêté)."""
+    done = set()
+    if ODDS_PATH.exists():
+        done = {r["day"] for r in map(json.loads, ODDS_PATH.open()) if r["espn_id"] is None}
+    with ODDS_PATH.open("a") as out:
+        for season in BACKTEST_SEASONS:
+            day = date(season, 10, 1)
+            while day < date(season + 1, 4, 25):
+                if day.isoformat() not in done:
+                    events = get(SCOREBOARD_URL.format(day=day.strftime("%Y%m%d"))).json().get("events", [])
+                    for e in events:
+                        if e["season"]["type"] != 2:
+                            continue
+                        side = {t["homeAway"]: t for t in e["competitions"][0]["competitors"]}
+                        items = get(ODDS_URL.format(id=e["id"])).json().get("items", [])
+                        out.write(json.dumps({
+                            "day": day.isoformat(), "espn_id": e["id"], "start": e["date"],
+                            "home": side["home"]["team"]["abbreviation"], "away": side["away"]["team"]["abbreviation"],
+                            "home_goals": int(side["home"].get("score") or 0),
+                            "away_goals": int(side["away"].get("score") or 0),
+                            "periods": e["competitions"][0].get("status", e.get("status", {})).get("period"),
+                            "books": [odds_book(i) for i in items]}) + "\n")
+                    out.write(json.dumps({"day": day.isoformat(), "espn_id": None}) + "\n")   # jour traité
+                    out.flush()
+                    if day.day == 1:
+                        print(f"cotes : {day}", flush=True)
+                day += timedelta(days=1)
+
+
 if __name__ == "__main__":
     CACHE.mkdir(exist_ok=True)
     fetch_summaries()
     fetch_birthdates()
     fetch_games()
+    fetch_odds()

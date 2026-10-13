@@ -4,7 +4,8 @@ Elles répondent à : combien de points devrais-je faire ce soir, et comment ça
 qui peuvent me dépasser (ou que je peux dépasser) cette semaine.
 
 - Points attendus d'un joueur pour un match de son équipe : sa ROS ÷ ses matchs restants (`data/rates.json`, écrit
-  par la job quotidienne). Pour un gardien, ça inclut sa part des départs (on ne sait pas qui commence).
+  par la job quotidienne), × le facteur du match de ce soir (cotes et back-to-back, `pipeline/contexte.py`).
+  Pour un gardien, ça inclut sa part des départs (on ne sait pas qui commence).
 - Rivaux : les équipes dont la probabilité d'échanger leur rang avec le mien d'ici RIVAL_DAYS jours dépasse
   RIVAL_P. Les points d'une équipe sur la période suivent une loi de Poisson (approchée par une normale).
 - Le bilan de 23 h ne compte que les matchs terminés. S'ils le sont tous, c'est le bilan final et le matin
@@ -21,7 +22,7 @@ import json
 import math
 from datetime import date, datetime, timedelta
 
-from pipeline import config, ids, notify, today
+from pipeline import config, contexte, ids, notify, today
 from pipeline.events import LOW, NORMAL, Event
 from pipeline.http import AuthError
 from pipeline.ids import ESPN_TO_NHL_TEAM
@@ -121,16 +122,22 @@ def _rate(player: dict, rates: dict[str, float]) -> float:
     return rates.get(str(player["espn_id"]), GOALIE_RATE if player["slot"] == "G" else 0.0)
 
 
+def tonight_rate(player: dict, rates: dict[str, float], factors: dict[str, tuple[float, float]] | None) -> float:
+    """Points attendus ce soir : rythme × facteur du match (patineur ou gardien, cf. contexte.factors)."""
+    skater, goalie = (factors or {}).get(_nhl_team(player), (1.0, 1.0))
+    return _rate(player, rates) * (goalie if player["slot"] == "G" else skater)
+
+
 def night(team: dict, rates: dict[str, float], games: list[dict], points: dict[int, tuple[int, str]],
-          nhl_of: dict[int, int]) -> dict:
+          nhl_of: dict[int, int], factors: dict[str, tuple[float, float]] | None = None) -> dict:
     """La soirée d'une équipe : points attendus (total, matchs terminés, matchs à venir) et points réels
-    dans les matchs terminés."""
+    dans les matchs terminés. `factors` : contexte.factors (sans : le rythme seul)."""
     state = {t: g["state"] for g in games for t in g["teams"]}
     out = {"expected": 0.0, "expected_done": 0.0, "expected_left": 0.0, "actual": 0, "players": [], "scorers": []}
     for p in _lineup(team):
         if _nhl_team(p) not in state:
             continue
-        rate = _rate(p, rates)
+        rate = tonight_rate(p, rates, factors)
         out["expected"] += rate
         out["players"].append((p, rate))
         if state[_nhl_team(p)] not in DONE:
@@ -210,10 +217,10 @@ def _hour(iso: str) -> str:
 def build(kind: str, day: date, league: dict, team_id: int, rates: dict[str, float], schedule: list[dict],
           games: list[dict], points: dict[int, tuple[int, str]], nhl_of: dict[int, int],
           morning: bool = False, odds: dict[int, tuple[float | None, float | None]] | None = None,
-          history: list[dict] | None = None) -> Event:
+          history: list[dict] | None = None, factors: dict[str, tuple[float, float]] | None = None) -> Event:
     """`odds` : team_id → (P(1er), delta de ma P(1er) par point), cf. today.load_odds ;
-    `history` : mes P(1er) passées (today.load_history)."""
-    nights = {t["team_id"]: night(t, rates, games, points, nhl_of) for t in league["teams"]}
+    `history` : mes P(1er) passées (today.load_history) ; `factors` : contexte.factors du soir."""
+    nights = {t["team_id"]: night(t, rates, games, points, nhl_of, factors) for t in league["teams"]}
     # Points de chaque équipe avant la soirée (ESPN compte déjà les matchs terminés)
     base = {t["team_id"]: (t.get("points") or 0) - nights[t["team_id"]]["actual"] for t in league["teams"]}
     me = nights[team_id]
@@ -304,7 +311,8 @@ def refresh(now: datetime, today_games: list[dict]) -> None:
         print(f"Ligue ESPN inaccessible ({e}) : alignements pas vérifiés")
         return
     data = today.build(now.date(), league, config.MY_TEAM_ID, json.loads(RATES.read_text()), today_games,
-                       fetch_points(today_games), nhl_ids(), today.load_odds(), today.load_history(), now)
+                       fetch_points(today_games), nhl_ids(), today.load_odds(), today.load_history(), now,
+                       contexte.load(now.date(), load_schedule()))
     if current and current.get("date") == data["date"] and lineups(current) == lineups(data):
         print("Alignements inchangés")
         return
@@ -326,6 +334,10 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
         _send(now, due, games, target=target, dry_run=dry_run, forced=False)
     if not dry_run:
         refresh(now, today_games)
+
+
+def load_schedule() -> list[dict]:
+    return json.loads((config.ROOT / "data" / "schedule.json").read_text())
 
 
 def nhl_ids() -> dict[int, int]:
@@ -350,17 +362,18 @@ def _send(now: datetime, due: tuple[str, date], games: list[dict], *, target: st
         print(f"Ligue ESPN inaccessible ({e}) : la job quotidienne s'en occupe")
         return
     rates = json.loads(RATES.read_text())
-    schedule = json.loads((config.ROOT / "data" / "schedule.json").read_text())
+    schedule = load_schedule()
     nhl_of = nhl_ids()
     points = fetch_points(games)
+    factors = contexte.load(due[1], schedule)
     evt = build(*due, league, config.MY_TEAM_ID, rates, schedule, games, points, nhl_of,
                 morning=now.hour in MORNING_HOURS and due[1] < now.date(), odds=today.load_odds(),
-                history=today.load_history())
+                history=today.load_history(), factors=factors)
     at = delivery(now, games) if due[0] == "avant" and not forced else None
     sent = notify.send([evt], target=target, dry_run=dry_run, record=not forced, path=SENT, at=at)
     if sent and not forced:
         today.write(today.build(due[1], league, config.MY_TEAM_ID, rates, games, points, nhl_of,
-                                today.load_odds(), today.load_history(), now))
+                                today.load_odds(), today.load_history(), now, factors))
 
 
 def main() -> None:

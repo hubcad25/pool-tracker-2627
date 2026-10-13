@@ -10,13 +10,13 @@ CAREER = {"gp": 1000, "g": 200, "a": 300, "ixg": 200, "sog": 2000, "on_goals": 1
 
 
 def obs(gp, g, a, ixg=None, sog=None, on_goals=None, on_sog=None):
-    """Par défaut, une saison identique à la carrière (aucune chance)."""
+    """Par défaut, une saison identique à la carrière (aucune chance) ; coéquipiers à 10 % attendus."""
     ixg = g if ixg is None else ixg
     sog = g * 10 if sog is None else sog
     on_sog = sog * 5 if on_sog is None else on_sog
     on_goals = g + (on_sog - sog) * 0.1 if on_goals is None else on_goals
     return {"gp": gp, "g": g, "a": a, "points": g + a, "toi": gp * 1080, "ixg": ixg, "sog": sog,
-            "on_goals": on_goals, "on_sog": on_sog}
+            "on_goals": on_goals, "on_sog": on_sog, "on_xg": ixg + (on_sog - sog) * 0.1}
 
 
 @pytest.fixture(autouse=True)
@@ -90,13 +90,18 @@ def test_centile_chanceux_quand_il_marque_bien_au_dessus_de_son_ixg():
     c = dashboard.card(BASE[1], PRIOR | {"obs": obs(20, 20, 5, ixg=10, sog=100), "career": CAREER},
                        SCHEDULE, TODAY)
     assert c["luck"]["goals"]["percentile"] > 0.9
-    assert c["luck"]["net_points"] == 10.0
+    # Finition de carrière, saison comprise : 220 G / 210 ixG → 10 × 220 / 210 buts attendus
+    assert c["luck"]["net_points"] == pytest.approx(25 - 5 - 10 * 220 / 210, abs=0.05)
 
 
 def test_centile_malchanceux_quand_ses_coequipiers_ne_marquent_pas():
+    # 10 buts des coéquipiers pour 40 attendus (xG sur la glace − ixG)
     c = dashboard.card(BASE[1], PRIOR | {"obs": obs(20, 10, 2, on_goals=20, on_sog=500), "career": CAREER},
                        SCHEDULE, TODAY)
-    assert c["luck"]["assists"]["percentile"] < 0.1
+    assists = c["luck"]["assists"]
+    assert (assists["obs_goals"], assists["expected_goals"]) == (10, 40.0)
+    assert assists["percentile"] < 0.1
+    assert c["luck"]["net_points"] < 0
 
 
 def test_centile_tient_compte_de_la_taille_de_l_echantillon():
@@ -258,7 +263,7 @@ def test_chance_d_equipe_sans_l_ir_ni_le_gardien():
     jarvis_ir = BASE[0]
     goalie = player(5, "Gardien", pos="G", slot="G")
     assert dashboard.team_luck({"roster": [jarvis_ir, goalie]}, {1: lucky, 5: lucky}) == 0
-    assert dashboard.team_luck({"roster": [BASE[1]]}, {2: lucky}) == pytest.approx(10, abs=0.1)
+    assert dashboard.team_luck({"roster": [BASE[1]]}, {2: lucky}) == pytest.approx(20 - 5 * 215 / 205 - 5, abs=0.05)
 
 
 def test_p_meilleur_normales_ajustees_aux_p10_p90():

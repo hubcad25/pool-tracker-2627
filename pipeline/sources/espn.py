@@ -1,12 +1,17 @@
-"""ESPN Fantasy : endpoint public (statuts de blessure) et API de la ligue (rosters, transactions)."""
+"""ESPN Fantasy : endpoint public (statuts de blessure) et API de la ligue (rosters, transactions).
+ESPN LNH (public) : les cotes des matchs d'un jour."""
 import json
 
 from pipeline import config
 from pipeline.http import get_json
+from pipeline.ids import ESPN_TO_NHL_TEAM
 
 BASE = f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/fhl/seasons/{config.ESPN_SEASON}"
 PLAYERS_URL = f"{BASE}/segments/0/leaguedefaults/1?view=kona_playercard"
 LEAGUE_URL = f"{BASE}/segments/0/leagues/{config.LEAGUE_ID}"
+
+SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates={day}"
+ODDS_URL = "https://sports.core.api.espn.com/v2/sports/hockey/leagues/nhl/events/{id}/competitions/{id}/odds"
 
 POSITIONS = {1: "C", 2: "LW", 3: "RW", 4: "D", 5: "G"}
 # lineupSlotId dans la ligue (vérifié le 2026-10-02 sur les rosters réels)
@@ -96,3 +101,33 @@ def fetch_league() -> dict:
 def fetch_transactions() -> list[dict]:
     d = get_json(f"{LEAGUE_URL}?view=mTransactions2", cookies=_cookies())
     return d.get("transactions", [])
+
+
+def odds_book(item: dict) -> dict:
+    """Cotes d'un livre (américaines ; None si absentes). Victoire : la fermeture, sinon la dernière cote
+    (avant 2023-24, ESPN n'a pas de fermeture)."""
+    def moneyline(side: str):
+        odds = item.get(side, {})
+        ml = odds.get("close", {}).get("moneyLine", {}).get("american")
+        if ml in (None, "", "OFF"):
+            return odds.get("moneyLine")
+        return float(ml.replace("EVEN", "100"))
+    return {"book": item["provider"]["name"], "home_ml": moneyline("homeTeamOdds"),
+            "away_ml": moneyline("awayTeamOdds"), "total": item.get("overUnder"), "over": item.get("overOdds"),
+            "under": item.get("underOdds")}
+
+
+def fetch_game_odds(day: str) -> list[dict]:
+    """Matchs de saison régulière du jour (AAAA-MM-JJ) : équipes (abréviations LNH), état (pre, in, post) et cotes
+    de chaque livre."""
+    events = get_json(SCOREBOARD_URL.format(day=day.replace("-", ""))).get("events", [])
+    out = []
+    for e in events:
+        if e["season"]["type"] != 2:
+            continue
+        side = {t["homeAway"]: t["team"]["abbreviation"] for t in e["competitions"][0]["competitors"]}
+        items = get_json(ODDS_URL.format(id=e["id"])).get("items", [])
+        out.append({"home": ESPN_TO_NHL_TEAM.get(side["home"], side["home"]),
+                    "away": ESPN_TO_NHL_TEAM.get(side["away"], side["away"]), "state": e["status"]["type"]["state"],
+                    "books": [odds_book(i) for i in items]})
+    return out

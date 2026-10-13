@@ -72,20 +72,21 @@ def _sh_luck(goals: float, shots: float, p: float) -> dict | None:
 
 
 def luck(obs: dict | None, career: dict | None, pos: str) -> dict | None:
-    """Indicateurs de chance de la saison. `expected` : les points avec la finition et le sh% des coéquipiers
-    de carrière (régressés vers la moyenne), comme dans la ROS mais sans le poids w.
+    """Indicateurs de chance de la saison. `expected` : les points avec la finition de carrière (saison comprise,
+    régressée vers 1) et des coéquipiers qui marquent leurs buts attendus, comme dans la ROS mais sans le poids w.
 
     Centiles (binomiale, mid-p) sur l'échantillon de la saison : `goals` sur ses tirs, au sh% attendu
-    ixG × finition de carrière / tirs ; `assists` sur les tirs de ses coéquipiers quand il est sur la glace,
-    au sh% des coéquipiers de carrière."""
+    ixG × finition / tirs ; `assists` : buts des coéquipiers quand il est sur la glace, sur leurs tirs,
+    au sh% attendu xG des coéquipiers / tirs."""
     if not obs or not obs["gp"] or pos == "G":
         return None
-    params = rules.ros_params()
-    m, league_sh = params[pos]["m"], params["league_teammate_sh"]
-    expected = model_ros.luck_adjusted_points(obs, career, m, league_sh)
-    finishing, team_sh = model_ros.career_rates(career, m, league_sh)
+    m = rules.ros_params()[pos]["m"]
+    expected = model_ros.luck_adjusted_points(obs, career, m)
+    finishing = model_ros.finishing(career, obs, m)
     goals = _sh_luck(obs["g"], obs["sog"], obs["ixg"] * finishing / obs["sog"]) if obs["sog"] else None
-    assists = _sh_luck(obs["on_goals"] - obs["g"], obs["on_sog"] - obs["sog"], team_sh)
+    team_goals, team_xg = model_ros.teammate_goals(obs)
+    team_shots = obs["on_sog"] - obs["sog"]
+    assists = _sh_luck(team_goals, team_shots, team_xg / team_shots) if team_shots > 0 else None
     if assists:
         assists["obs_goals"], assists["expected_goals"] = assists.pop("obs"), assists.pop("expected")
     return {

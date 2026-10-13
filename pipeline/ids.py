@@ -19,7 +19,7 @@ FIELDS = ["espn_id", "nhl_id", "canonical_id", "name", "method"]
 
 SUFFIXES = {"jr", "sr", "ii", "iii", "iv"}
 # Abréviations ESPN qui diffèrent de celles de la LNH
-ESPN_TO_NHL_TEAM = {"NJ": "NJD", "LA": "LAK", "SJ": "SJS", "TB": "TBL"}
+ESPN_TO_NHL_TEAM = {"NJ": "NJD", "LA": "LAK", "SJ": "SJS", "TB": "TBL", "UTAH": "UTA"}
 
 
 def normalize_name(name: str) -> str:
