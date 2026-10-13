@@ -62,8 +62,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --cached --quiet || git commit -m "data: $(TZ=America/Toronto date +%F)"
-          # La job de soirée peut avoir poussé son état entre-temps (fichiers distincts : rebase sans conflit)
-          git pull --rebase
+          # La job de soirée peut avoir poussé entre-temps. Seul data/today.json est écrit par les deux :
+          # en cas de conflit, la version de ce run gagne (pendant un rebase, --theirs = le commit rejoué)
+          git pull --rebase || { git checkout --theirs data/today.json && git add data/today.json \
+            && GIT_EDITOR=true git rebase --continue; }
           git push
 
       # Échec hors du script Python (uv sync, tests, commit) : le pipeline gère lui-même ses propres échecs

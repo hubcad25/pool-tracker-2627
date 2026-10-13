@@ -215,3 +215,13 @@ de matchs que le total final projeté), Blessures (toute la ligue), FA (gain de 
 Limites connues : un blessé sans date de retour a une ROS pleine ; la P(1er) suppose des joueurs indépendants.
 
 **Prochaine étape : phase 4 (alertes FA avec valeur d'option, digest hebdo).**
+
+Dashboard v2 (2026-10-12) : la ROS (avec intervalle) devient la métrique principale. Onglet **Aujourd'hui** par défaut
+(`data/today.json`, écrit par la job quotidienne et par chaque notif de soirée) : P(1er) et sa trace sur 10 jours
+(`data/state/p_first.json`), soirée de chaque équipe (fait / encore possible / perdu) en direct via le proxy LNH
+(Lambda `pool-tracker-proxy-lnh`, `infra/aws/proxy_lnh.py`, variable du repo `LNH_PROXY`), joueurs adverses à surveiller.
+Impact d'un point adverse = delta de ma P(1er) par point de son équipe ÷ le mien (« ≈ −0,3 de tes pts »). P(1er)
+calculée par intégrale (plus de simulation). Chance : centiles binomiaux (G vs xG ajusté, buts des coéquipiers), chance
+nette par joueur et par équipe, P(FA meilleur que mon pire joueur). Page Équipe pour les 12 équipes, listes triables.
+**En suspens** : backtest « carrière complète (+ saison en cours) » pour la finition et passes via le xG sur la glace
+(préférence : apprendre la finition pendant la saison) ; trios réels pour le sh% des coéquipiers.

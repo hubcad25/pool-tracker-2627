@@ -148,3 +148,23 @@ def test_bilan_final_avec_l_ecart_avant_et_apres():
     assert e.title == "Soirée : 2 pts (attendu 2,9)"
     # Avant la soirée : 58 contre 58 (ESPN compte déjà les points de la soirée)
     assert "GSP : 1 (1,0) · écart 0 → +1" in e.message
+
+
+def test_avant_doit_classer_les_rivaux_par_impact_en_equivalent_de_mes_points():
+    rival = {"team_id": 1, "abbrev": "GSP", "points": 59, "roster": [player(11, "Jack Eichel", "TOR")]}
+    loin = {"team_id": 2, "abbrev": "NWA", "points": 40, "roster": [player(12, "Jack Hughes", "EDM")]}
+    odds = {5: (0.75, 0.004), 1: (0.10, -0.002), 2: (0.01, -0.0002)}
+    history = [{"day": "2026-10-09", "p_first": 0.71}]
+    e = soiree.build("avant", DAY, {"teams": [ME, rival, loin]}, 5, RATES | {"11": 1.0, "12": 1.0}, [],
+                     games(), {}, NHL_OF, odds=odds, history=history)
+    assert "P(1er) 75 % (↑4)" in e.title
+    lines = e.message.split("\n")
+    assert lines[0] == "Toi : 2,9 att. · Draisaitl 1,4 · Lafrenière 0,8 · Greaves 0,7"
+    assert lines[1] == "GSP : 1,0 att. ≈ −0,5 de tes pts"
+    assert lines[2] == "NWA : 1,0 att. ≈ −0,1 de tes pts"
+    assert lines[3] == "À surveiller : Eichel (GSP) · Hughes (NWA)"
+
+
+def test_avant_ne_doit_pas_afficher_la_moyenne_de_la_ligue():
+    e = soiree.build("avant", DAY, {"teams": [ME]}, 5, RATES, [], games(), {}, NHL_OF)
+    assert "Moyenne" not in e.message and "P(1er)" not in e.title

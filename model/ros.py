@@ -55,9 +55,9 @@ def teammate_sh(s: dict) -> float | None:
     return (s["on_goals"] - s["g"]) / shots if shots > 0 else None
 
 
-def luck_adjusted_points(obs: dict, career: dict | None, m: float, league_sh: float) -> float:
-    """Points observés si la finition et le sh% des coéquipiers avaient été ceux de la carrière,
-    régressés vers la moyenne selon les GP de carrière."""
+def career_rates(career: dict | None, m: float, league_sh: float) -> tuple[float, float]:
+    """(finition G / ixG, sh% des coéquipiers) de carrière, régressés vers la moyenne (1 et le sh% de la ligue)
+    avec le poids GP / (GP + m)."""
     weight = career["gp"] / (career["gp"] + m) if career and career["gp"] else 0.0
     finishing, past_sh = 1.0, league_sh
     if weight:
@@ -65,6 +65,13 @@ def luck_adjusted_points(obs: dict, career: dict | None, m: float, league_sh: fl
             finishing = weight * career["g"] / career["ixg"] + (1 - weight)
         if (sh := teammate_sh(career)) is not None:
             past_sh = weight * sh + (1 - weight) * league_sh
+    return finishing, past_sh
+
+
+def luck_adjusted_points(obs: dict, career: dict | None, m: float, league_sh: float) -> float:
+    """Points observés si la finition et le sh% des coéquipiers avaient été ceux de la carrière,
+    régressés vers la moyenne selon les GP de carrière."""
+    finishing, past_sh = career_rates(career, m, league_sh)
     cur_sh = teammate_sh(obs)
     assists = obs["a"] * past_sh / cur_sh if cur_sh else obs["a"]
     return obs["ixg"] * finishing + assists

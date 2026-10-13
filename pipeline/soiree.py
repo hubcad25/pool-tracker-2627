@@ -9,6 +9,7 @@ qui peuvent me dépasser (ou que je peux dépasser) cette semaine.
   RIVAL_P. Les points d'une équipe sur la période suivent une loi de Poisson (approchée par une normale).
 - Le bilan de 23 h ne compte que les matchs terminés. S'ils le sont tous, c'est le bilan final et le matin
   n'envoie rien.
+- Chaque notif envoyée réécrit aussi data/today.json (la soirée dans la PWA, avec les points réels).
 
 uv run python -m pipeline.soiree                                   # dry-run de la notif due maintenant
 uv run python -m pipeline.soiree --moment fin --day 2026-10-10     # force une notif (rien n'est enregistré)
@@ -18,7 +19,7 @@ import json
 import math
 from datetime import date, datetime, timedelta
 
-from pipeline import config, ids, notify
+from pipeline import config, ids, notify, today
 from pipeline.events import LOW, NORMAL, Event
 from pipeline.http import AuthError
 from pipeline.ids import ESPN_TO_NHL_TEAM
@@ -37,6 +38,8 @@ MORNING_HOURS = range(6, 12)
 RIVAL_DAYS = 7
 RIVAL_P = 0.10
 MAX_RIVALS = 4
+RIVALS_SHOWN = 3      # notif « avant » : équipes les plus menaçantes ce soir
+WATCH_SHOWN = 3       # et joueurs adverses à surveiller
 DONE = {"OFF", "FINAL"}
 LINEUP_SLOTS = {"F", "D", "G"}
 # Gardien sans rythme (sans prior) : ~1,15 pt par match d'équipe (2 la victoire, 1 la défaite en prolongation
@@ -45,7 +48,7 @@ GOALIE_RATE = 0.7
 MOMENTS = ("avant", "soir", "fin")
 
 
-def write_rates(players: list[dict], ros, games_left) -> None:
+def write_rates(players: list[dict], ros, games_left) -> dict[str, float]:
     """Points attendus par match de chaque joueur qui a une ROS. `ros` et `games_left` : fonctions du joueur."""
     rates = {}
     for p in players:
@@ -53,6 +56,7 @@ def write_rates(players: list[dict], ros, games_left) -> None:
         if r and n:
             rates[str(p["espn_id"])] = round(r[0] / n, 4)
     RATES.write_text(json.dumps(rates, indent=0, sort_keys=True) + "\n")
+    return rates
 
 
 def _key(day: date, kind: str) -> str:
@@ -203,7 +207,10 @@ def _hour(iso: str) -> str:
 
 def build(kind: str, day: date, league: dict, team_id: int, rates: dict[str, float], schedule: list[dict],
           games: list[dict], points: dict[int, tuple[int, str]], nhl_of: dict[int, int],
-          morning: bool = False) -> Event:
+          morning: bool = False, odds: dict[int, tuple[float | None, float | None]] | None = None,
+          history: list[dict] | None = None) -> Event:
+    """`odds` : team_id → (P(1er), delta de ma P(1er) par point), cf. today.load_odds ;
+    `history` : mes P(1er) passées (today.load_history)."""
     nights = {t["team_id"]: night(t, rates, games, points, nhl_of) for t in league["teams"]}
     # Points de chaque équipe avant la soirée (ESPN compte déjà les matchs terminés)
     base = {t["team_id"]: (t.get("points") or 0) - nights[t["team_id"]]["actual"] for t in league["teams"]}
@@ -217,15 +224,34 @@ def build(kind: str, day: date, league: dict, team_id: int, rates: dict[str, flo
         when = "Ce soir" if datetime.fromisoformat(min(g["start"] for g in games).replace("Z", "+00:00")) \
             .astimezone(config.TZ).hour >= 17 else "Aujourd'hui"
         title = f"{when} : {len(games)} matchs, 1er à {_hour(min(g['start'] for g in games))}"
-        lines.append(f"Toi : {_n(me['expected'])} pts attendus ({len(me['players'])} joueurs)")
-        for t, p in close:
-            gap = base[team_id] - base[t["team_id"]]
-            verb = "te dépasser" if gap > 0 else "le dépasser" if gap < 0 else "prendre les devants"
-            lines.append(f"{t['abbrev']} ({_position(gap)}) : {_n(nights[t['team_id']]['expected'])}"
-                         f" · {round(p * 100)} % de {verb} d'ici {RIVAL_DAYS} j")
-        lines.append(f"Moyenne de la ligue : {_n(avg('expected'))}")
-        if me["players"]:
-            lines.append("Tes joueurs : " + ", ".join(_short(p) for p, _ in sorted(me["players"], key=lambda x: -x[1])))
+        odds = odds or {}
+        mine, my_delta = odds.get(team_id, (None, None))
+        if mine is not None:
+            title += f" · P(1er) {round(mine * 100)} %"
+            before = [h["p_first"] for h in (history or []) if h["day"] < day.isoformat()]
+            if before and (move := round((mine - before[-1]) * 100)):
+                title += f" ({'↑' if move > 0 else '↓'}{abs(move)})"
+        players = sorted(me["players"], key=lambda x: -x[1])
+        lines.append(f"Toi : {_n(me['expected'])} att." + (
+            " · " + " · ".join(f"{_short(p)} {_n(r)}" for p, r in players) if players else ""))
+        # Impact d'un point adverse en équivalent de mes points : delta de ma P(1er) par point de son équipe
+        # ÷ delta par point des miens. Sans ces deltas (pas de today.json), on garde les rivaux proches.
+        ratio = {tid: d / my_delta for tid, (_, d) in odds.items()
+                 if tid != team_id and d is not None and my_delta}
+        if ratio:
+            others = [t for t in league["teams"] if t["team_id"] in ratio]
+            threat = lambda t: nights[t["team_id"]]["expected"] * ratio[t["team_id"]]  # noqa: E731
+            for t in sorted(others, key=threat)[:RIVALS_SHOWN]:
+                lines.append(f"{t['abbrev']} : {_n(nights[t['team_id']]['expected'])} att."
+                             f" ≈ {_n(threat(t)).replace('-', '−')} de tes pts")
+            watch = sorted(((p, r * ratio[t["team_id"]], t) for t in others
+                            for p, r in nights[t["team_id"]]["players"]), key=lambda x: x[1])[:WATCH_SHOWN]
+            if watch:
+                lines.append("À surveiller : " + " · ".join(f"{_short(p)} ({t['abbrev']})" for p, _, t in watch))
+        else:
+            for t, _ in close:
+                lines.append(f"{t['abbrev']} ({_position(base[team_id] - base[t['team_id']])}) :"
+                             f" {_n(nights[t['team_id']]['expected'])} att.")
         return Event("soiree", _key(day, kind), "\n".join(lines), NORMAL, title)
 
     if kind == "soir":
@@ -266,6 +292,20 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
         _send(now, due, games, target=target, dry_run=dry_run, forced=False)
 
 
+def nhl_ids() -> dict[int, int]:
+    """espn_id → nhl_id, d'après data/id_map.csv et les corrections à la main."""
+    return {k: int(v["nhl_id"]) for k, v in ids.resolved(ids.read_map(ids.ID_MAP)).items() if v.get("nhl_id")}
+
+
+def fetch_points(games: list[dict]) -> dict[int, tuple[int, str]]:
+    """Points de pool par nhl_id dans les matchs terminés (boxscores LNH)."""
+    points = {}
+    for g in games:
+        if g["state"] in DONE:
+            points |= nhl.fetch_points(g["game_id"])
+    return points
+
+
 def _send(now: datetime, due: tuple[str, date], games: list[dict], *, target: str, dry_run: bool,
           forced: bool) -> None:
     try:
@@ -275,15 +315,16 @@ def _send(now: datetime, due: tuple[str, date], games: list[dict], *, target: st
         return
     rates = json.loads(RATES.read_text())
     schedule = json.loads((config.ROOT / "data" / "schedule.json").read_text())
-    nhl_of = {k: int(v["nhl_id"]) for k, v in ids.resolved(ids.read_map(ids.ID_MAP)).items() if v.get("nhl_id")}
-    points = {}
-    for g in games:
-        if g["state"] in DONE:
-            points |= nhl.fetch_points(g["game_id"])
+    nhl_of = nhl_ids()
+    points = fetch_points(games)
     evt = build(*due, league, config.MY_TEAM_ID, rates, schedule, games, points, nhl_of,
-                morning=now.hour in MORNING_HOURS and due[1] < now.date())
+                morning=now.hour in MORNING_HOURS and due[1] < now.date(), odds=today.load_odds(),
+                history=today.load_history())
     at = delivery(now, games) if due[0] == "avant" and not forced else None
-    notify.send([evt], target=target, dry_run=dry_run, record=not forced, path=SENT, at=at)
+    sent = notify.send([evt], target=target, dry_run=dry_run, record=not forced, path=SENT, at=at)
+    if sent and not forced:
+        today.write(today.build(due[1], league, config.MY_TEAM_ID, rates, games, points, nhl_of,
+                                today.load_odds(), today.load_history(), now))
 
 
 def main() -> None:

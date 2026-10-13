@@ -1,14 +1,15 @@
 name: pages
 
 # Après chaque job quotidienne (nouveau data/dashboard.json) et à chaque changement de l'app.
-# Le push du bot avec GITHUB_TOKEN ne déclenche pas d'autre workflow : d'où workflow_run.
+# Le push du bot avec GITHUB_TOKEN ne déclenche pas d'autre workflow : d'où workflow_run, et un
+# `gh workflow run` à la fin de la job de soirée quand elle a poussé data/today.json.
 on:
   workflow_run:
     workflows: [daily]
     types: [completed]
   push:
     branches: [main]
-    paths: ["app/**", "data/dashboard.json", ".github/workflows/pages.yml"]
+    paths: ["app/**", "data/dashboard.json", "data/today.json", ".github/workflows/pages.yml"]
   workflow_dispatch:
 
 permissions:
@@ -38,6 +39,9 @@ jobs:
           cache-dependency-path: app/package-lock.json
       - run: npm ci && npm run build
         working-directory: app
+        env:
+          # URL du proxy LNH (infra/aws/proxy_lnh.py) : variable du repo LNH_PROXY ; vide = pas de direct
+          VITE_LNH_PROXY: ${{ vars.LNH_PROXY }}
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

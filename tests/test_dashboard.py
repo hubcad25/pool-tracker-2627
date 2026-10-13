@@ -76,6 +76,48 @@ def test_verdict_conforme_quand_l_ecart_est_petit():
     assert c["verdict"] == "conforme"
 
 
+def test_centile_conforme_quand_la_saison_ressemble_a_la_carriere():
+    c = dashboard.card(BASE[1], PRIOR | {"obs": obs(20, 10, 10), "career": CAREER}, SCHEDULE, TODAY)
+    goals, assists = c["luck"]["goals"], c["luck"]["assists"]
+    assert (goals["obs"], goals["shots"], goals["sh_expected"]) == (10, 100, 0.1)
+    assert goals["percentile"] == pytest.approx(0.5, abs=0.05)
+    assert (assists["obs_goals"], assists["expected_goals"], assists["shots"]) == (40, 40.0, 400)
+    assert assists["percentile"] == pytest.approx(0.5, abs=0.05)
+    assert c["luck"]["net_points"] == 0.0
+
+
+def test_centile_chanceux_quand_il_marque_bien_au_dessus_de_son_ixg():
+    c = dashboard.card(BASE[1], PRIOR | {"obs": obs(20, 20, 5, ixg=10, sog=100), "career": CAREER},
+                       SCHEDULE, TODAY)
+    assert c["luck"]["goals"]["percentile"] > 0.9
+    assert c["luck"]["net_points"] == 10.0
+
+
+def test_centile_malchanceux_quand_ses_coequipiers_ne_marquent_pas():
+    c = dashboard.card(BASE[1], PRIOR | {"obs": obs(20, 10, 2, on_goals=20, on_sog=500), "career": CAREER},
+                       SCHEDULE, TODAY)
+    assert c["luck"]["assists"]["percentile"] < 0.1
+
+
+def test_centile_tient_compte_de_la_taille_de_l_echantillon():
+    # Le même sh% de 20 % (attendu 10 %) : peu probable sur 100 tirs, plausible sur 10
+    assert dashboard.percentile(20, 100, 0.1) > 0.99
+    assert 0.7 < dashboard.percentile(2, 10, 0.1) < 0.9
+
+
+def test_sans_tirs_pas_de_centile():
+    c = dashboard.card(BASE[1], PRIOR | {"obs": obs(2, 0, 1, sog=0, on_sog=0, on_goals=0), "career": CAREER},
+                       SCHEDULE, TODAY)
+    assert (c["luck"]["goals"], c["luck"]["assists"]) == (None, None)
+
+
+def test_bande_preseason_ramenee_aux_matchs_restants():
+    c = dashboard.card(BASE[1], PRIOR | {"obs": obs(10, 3, 3), "career": CAREER}, SCHEDULE, TODAY)
+    # 70 matchs restants : la bande de la ROS, pas celle du total final (10 + 70 matchs)
+    assert c["ros_prior"] == {"p10": 38.4, "p50": 51.2, "p90": 64.0}
+    assert c["prior"]["p50"] == pytest.approx(60 / 82 * 80, abs=0.1)
+
+
 def test_pas_de_verdict_de_chance_avant_10_matchs():
     c = dashboard.card(BASE[1], PRIOR | {"obs": obs(9, 0, 2, ixg=5), "career": CAREER}, SCHEDULE, TODAY)
     assert c["verdict"] == "petit_echantillon"
@@ -164,3 +206,103 @@ def test_classement_seulement_10_attaquants_et_5_defenseurs():
 def test_build_complet_avec_la_ligue():
     data = dashboard.build(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, {2: PRIOR}, TODAY, [], FREE)
     assert {"injuries", "free_agents", "standings"} <= data.keys()
+
+
+def test_classement_intervalle_de_la_ros_sans_les_points_acquis():
+    priors = {i: PRIOR for i in (1, 2, 3, 4, 20, 21)}
+    mine = next(r for r in dashboard.standings(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, priors, TODAY)
+                if r["mine"])
+    assert mine["ros_p10"] < mine["ros"] < mine["ros_p90"]
+    assert mine["ros_p90"] - mine["ros"] == pytest.approx(mine["p90"] - mine["final"], abs=0.1)
+
+
+def test_p_premier_analytique():
+    assert dashboard.first_place_odds([100, 100], [10, 10]) == pytest.approx([0.5, 0.5], abs=1e-6)
+    odds = dashboard.first_place_odds([110, 100, 90], [10, 10, 10])
+    assert sum(odds) == pytest.approx(1, abs=1e-6)
+    assert odds[0] > odds[1] > odds[2]
+
+
+def test_delta_de_p_premier_negatif_pour_un_rival_positif_pour_moi():
+    deltas = dashboard.p_first_deltas([100, 100, 90], [10, 10, 10], me=0)
+    assert deltas[0] > 0 and deltas[1] < 0 and deltas[2] < 0
+    # Le rival à égalité menace plus que celui qui est loin derrière
+    assert deltas[1] < deltas[2]
+    # Deux normales égales : dérivée φ(0) / √(10² + 10²) ≈ 0,028 par point
+    assert dashboard.p_first_deltas([100, 100], [10, 10], me=0)[0] == pytest.approx(0.0282, abs=0.001)
+
+
+def test_classement_delta_par_point_de_chaque_equipe():
+    priors = {i: PRIOR for i in (2, 3, 20)}
+    rows = dashboard.standings(two_teams(BASE, [player(20, "Martin Necas", team="COL")], points=(10, 10)),
+                               MY_TEAM, SCHEDULE, priors, TODAY)
+    by = {r["team_id"]: r for r in rows}
+    assert by[MY_TEAM]["delta_p_first_per_point"] > 0 > by[1]["delta_p_first_per_point"]
+
+
+def test_chance_d_equipe_somme_des_patineurs_de_l_alignement():
+    # Chanceux : +10 (voir test_centile_chanceux_...) ; malchanceux : 0 réel pour ~3 attendus
+    lucky = PRIOR | {"obs": obs(20, 15, 5, ixg=5), "career": CAREER}
+    unlucky = PRIOR | {"obs": obs(20, 0, 0, ixg=3, sog=30), "career": CAREER}
+    priors = {2: lucky, 3: unlucky, 4: lucky}
+    expected = sum(dashboard.luck(priors[i]["obs"], CAREER, "F" if i < 4 else "D")["net_points"] for i in (2, 3, 4))
+    roster = [*BASE, player(5, "Gardien", pos="G", slot="G")]
+    rows = dashboard.standings(two_teams(roster, []), MY_TEAM, SCHEDULE, priors | {5: lucky}, TODAY)
+    mine = next(r for r in rows if r["mine"])
+    assert mine["luck_points"] == pytest.approx(expected, abs=0.1)
+    assert next(r for r in rows if not r["mine"])["luck_points"] == 0
+
+
+def test_chance_d_equipe_sans_l_ir_ni_le_gardien():
+    lucky = PRIOR | {"obs": obs(20, 15, 5, ixg=5), "career": CAREER}
+    jarvis_ir = BASE[0]
+    goalie = player(5, "Gardien", pos="G", slot="G")
+    assert dashboard.team_luck({"roster": [jarvis_ir, goalie]}, {1: lucky, 5: lucky}) == 0
+    assert dashboard.team_luck({"roster": [BASE[1]]}, {2: lucky}) == pytest.approx(10, abs=0.1)
+
+
+def test_p_meilleur_normales_ajustees_aux_p10_p90():
+    a = {"mean": 30, "p10": 20, "p90": 40}
+    assert dashboard.p_better(a, a) == pytest.approx(0.5)
+    # σ = 10 / 1,2816 chacun ; écart 10 → z = 10 / (√2 × 7,80) ≈ 0,906
+    assert dashboard.p_better(a | {"mean": 40, "p10": 30, "p90": 50}, a) == pytest.approx(0.8176, abs=0.001)
+    assert dashboard.p_better(a, a | {"mean": 40, "p10": 30, "p90": 50}) == pytest.approx(0.1824, abs=0.001)
+
+
+def test_fa_avec_p_meilleur_et_chance_de_sa_saison():
+    lucky = PRIOR | {"sim_mean": 55, "obs": obs(20, 15, 5, ixg=5), "career": CAREER}
+    priors = {2: PRIOR | {"sim_mean": 50}, 3: PRIOR, 30: lucky, 31: PRIOR | {"sim_mean": 40}}
+    fa = dashboard.free_agents(two_teams(BASE, OTHER), MY_TEAM, FREE, SCHEDULE, priors, TODAY)
+    bon, moyen = fa["players"]["F"]
+    assert 0.5 < bon["p_better"] < 1 and 0 < moyen["p_better"] < 0.5
+    assert (bon["gp"], bon["points"], bon["verdict"]) == (20, 20, "chanceux")
+    assert bon["luck"]["net_points"] > 0
+    # Sans stats de la saison : pas de chance, échantillon vide
+    assert (moyen["gp"], moyen["luck"], moyen["verdict"]) == (0, None, "petit_echantillon")
+
+
+def test_fa_sans_pire_joueur_a_sa_position_pas_de_p_meilleur():
+    goalie = player(40, "Gardien FA", pos="G")
+    fa = dashboard.free_agents(two_teams(BASE, OTHER), MY_TEAM, [goalie], SCHEDULE, {40: PRIOR}, TODAY)
+    assert fa["players"]["G"][0]["p_better"] is None and fa["players"]["G"][0]["luck"] is None
+
+
+def test_blesses_avec_la_chance_de_leur_saison():
+    priors = {1: PRIOR | {"obs": obs(20, 0, 0, ixg=3, sog=30), "career": CAREER}, 20: PRIOR}
+    out = dashboard.injuries(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, priors, TODAY)
+    jarvis, necas = out
+    assert jarvis["luck"]["net_points"] < 0 and jarvis["verdict"] == "malchanceux"
+    assert (necas["luck"], necas["gp"]) == (None, 0)
+
+
+def test_cartes_de_toutes_les_equipes():
+    priors = {i: PRIOR for i in (1, 2, 3, 4, 20, 21)}
+    data = dashboard.build(two_teams(BASE, OTHER), MY_TEAM, SCHEDULE, priors, TODAY, [])
+    assert set(data["teams_players"]) == {str(MY_TEAM), "1"}
+    assert data["teams_players"][str(MY_TEAM)] == data["players"]
+    assert {c["name"] for c in data["teams_players"]["1"]} == {"Martin Necas", "Cale Makar"}
+    assert data["teams_players"]["1"][0].keys() == data["players"][0].keys()
+
+
+def test_sans_ligue_pas_de_cartes_d_equipes():
+    assert dashboard.build(None, MY_TEAM, SCHEDULE, {}, TODAY, [])["teams_players"] == {}

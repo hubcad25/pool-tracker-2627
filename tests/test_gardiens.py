@@ -1,4 +1,4 @@
-"""Gardiens : ROS en points de pool (2 V + DP + BL) par match de leur équipe."""
+"""Gardiens : ROS en points de pool (2 W + OTL + SO) par match de leur équipe."""
 from datetime import date, timedelta
 
 import pytest

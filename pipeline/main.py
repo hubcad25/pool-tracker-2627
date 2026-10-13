@@ -7,12 +7,12 @@ uv run python -m pipeline.main --scenario activation --send   # notif fictive, n
 import argparse
 import copy
 import json
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 
 import requests
 
 from model import ros
-from pipeline import config, dashboard, events, ids, notify, rules, snapshot, soiree
+from pipeline import config, dashboard, events, ids, notify, rules, snapshot, soiree, today
 from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
@@ -60,11 +60,18 @@ def run(day: date) -> list[events.Event]:
     prev_league = snapshot.read(prev_day, "league") if prev_day else None
     priors = priors_by_espn(id_map, season or {}, goalies)
     out += rules.evaluate(prev_league, league, config.MY_TEAM_ID, schedule, priors, day)
-    soiree.write_rates(list(by_id.values()), lambda p: rules.ros(p, priors.get(p["espn_id"]), schedule, day),
-                       lambda p: rules.games_left(p, schedule, day))
+    rates = soiree.write_rates(list(by_id.values()),
+                               lambda p: rules.ros(p, priors.get(p["espn_id"]), schedule, day),
+                               lambda p: rules.games_left(p, schedule, day))
     # Sans la ligue du jour (cookies), le dashboard garde les rosters de la veille
-    dashboard.write(dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out,
-                                    players))
+    data = dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out, players)
+    dashboard.write(data)
+    if data["standings"]:
+        today.record_p_first(day, next(r["p_first"] for r in data["standings"] if r["mine"]))
+        games = nhl.fetch_games(day.isoformat())
+        today.write(today.build(day, league or prev_league, config.MY_TEAM_ID, rates, games,
+                                soiree.fetch_points(games), soiree.nhl_ids(), today.odds(data["standings"]),
+                                today.load_history(), datetime.now(config.TZ)))
     return out
 
 

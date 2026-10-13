@@ -92,7 +92,7 @@ def fetch_points(game_id: int) -> dict[int, tuple[int, str]]:
 
 
 def fetch_goalie_stats() -> dict[int, dict]:
-    """Stats de la saison de chaque gardien, par nhl_id, avec ses points de pool (2 V + DP + BL)."""
+    """Stats de la saison de chaque gardien, par nhl_id, avec ses points de pool (2 W + OTL + SO)."""
     d = get_json("https://api.nhle.com/stats/rest/en/goalie/summary?limit=-1"
                  f"&cayenneExp=seasonId={config.NHL_SEASON}%20and%20gameTypeId={REGULAR_SEASON}")
     return {

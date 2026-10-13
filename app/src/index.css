@@ -112,12 +112,6 @@ p {
   border-radius: 2px;
 }
 
-.lg-points {
-  width: 16px;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 2px;
-}
 
 .lg-final {
   width: 18px;
@@ -211,14 +205,6 @@ p {
   line-height: 1.1;
 }
 
-.card-final.is-above {
-  color: var(--good);
-}
-
-.card-final.is-below {
-  color: var(--danger);
-}
-
 .card-final.is-none {
   color: var(--text-faint);
 }
@@ -237,19 +223,21 @@ p {
   white-space: nowrap;
 }
 
-.chip.is-malchanceux {
+/* Point de vue du propriétaire : la chance lui a rapporté (vert) ou coûté (rouge) */
+.chip.is-chanceux {
   color: var(--good);
 }
 
-.chip.is-chanceux,
+.chip.is-malchanceux,
 .chip.is-injury {
   color: var(--danger);
 }
 
-/* Bande */
+/* Bande de la carte : 0 → points faits → total estimé, sur l'échelle commune de l'équipe */
 .band {
   position: relative;
-  height: 20px;
+  height: 16px;
+  margin-top: 2px;
 }
 
 .band-tick {
@@ -258,59 +246,115 @@ p {
   bottom: 0;
   width: 1px;
   background: var(--border-soft);
+  opacity: 0.7;
 }
 
-.band-prior {
+.band-real,
+.band-ros {
   position: absolute;
-  top: 2px;
-  height: 10px;
-  background: var(--surface-3);
-  border: 1px solid var(--border);
+  top: 4px;
+  height: 8px;
+  left: 0;
+}
+
+.band-real {
+  background: var(--data);
+  border-radius: 0;
+}
+
+.band-ros {
+  background: color-mix(in oklab, var(--data) 30%, var(--surface-1));
+  border-radius: 0 4px 4px 0;
+  margin-left: 2px;
+}
+
+.band-range {
+  position: absolute;
+  top: 7px;
+  height: 2px;
+  background: var(--text-dim);
+}
+
+.band-range::before,
+.band-range::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1.5px;
+  height: 8px;
+  background: var(--text-dim);
+}
+
+.band-range::before {
+  left: 0;
+}
+
+.band-range::after {
+  right: 0;
+}
+
+/* Plus haut que la barre et 8 px au moins : visible à 360 px même pour 0,3 pt */
+.band-luck {
+  position: absolute;
+  top: 0;
+  height: 16px;
+  min-width: 8px;
   border-radius: 2px;
+  box-shadow: 0 0 0 1.5px var(--surface-1);
 }
 
-.band-prior-mid {
+.band-luck-mark {
   position: absolute;
-  top: -1px;
-  bottom: -1px;
+  top: 1px;
+  bottom: 1px;
   width: 2px;
   margin-left: -1px;
-  background: var(--text-faint);
-}
-
-.band-points {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 4px;
-  background: var(--accent);
-  border-radius: 0 2px 2px 0;
-}
-
-.band-interval {
-  position: absolute;
-  top: 6px;
-  height: 2px;
-  background: var(--text-faint);
-}
-
-.band-final {
-  position: absolute;
-  top: 3px;
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
   background: var(--text);
-  box-shadow: 0 0 0 2px var(--surface-1);
-  transform: rotate(45deg);
+  box-shadow: 0 0 0 1px var(--surface-1);
 }
 
-.band-final.is-above {
-  background: var(--good);
+
+.card-season {
+  flex-basis: 100%;
+  font-size: 12px;
 }
 
-.band-final.is-below {
-  background: var(--danger);
+.card-season.is-small {
+  opacity: 0.7;
+}
+
+.legend-line {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.legend-line i {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+}
+
+.lg-real {
+  width: 14px;
+  height: 8px;
+  background: var(--data);
+}
+
+.lg-ros {
+  width: 14px;
+  height: 8px;
+  background: color-mix(in oklab, var(--data) 30%, var(--surface-1));
+  border-radius: 0 3px 3px 0;
+}
+
+.lg-range {
+  width: 14px;
+  height: 8px;
+  border: 1.5px solid var(--text-dim);
+  border-top: 0;
+  border-bottom: 0;
+  background: linear-gradient(var(--text-dim), var(--text-dim)) center / 100% 2px no-repeat;
 }
 
 .band-scale {
@@ -379,9 +423,12 @@ p {
 .tabs a {
   flex: 1;
   max-width: 160px;
+  min-width: 0;
   padding: 14px 0 15px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
   font-weight: 600;
   color: var(--text-faint);
   text-decoration: none;
@@ -520,4 +567,704 @@ p {
   margin-left: -4px;
   background: var(--text);
   transform: rotate(45deg);
+}
+
+/* ROS dans l'en-tête de carte */
+.card-final small {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
+.card-range {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* Bloc chance (détail d'un joueur) */
+.luck {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.luck-head {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+/* Même code que les puces : chanceux = vendre (danger), malchanceux = garder/acheter (good) */
+.luck-head.is-chanceux {
+  color: var(--danger);
+}
+
+.luck-head.is-malchanceux {
+  color: var(--good);
+}
+
+.luck-sub,
+.luck-sh,
+.luck-small {
+  font-size: 12px;
+  color: var(--text-faint);
+}
+
+.luck-sub {
+  margin-top: -8px;
+}
+
+.luck-line {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.luck-line b {
+  font-weight: 600;
+}
+
+.gauge {
+  max-width: 280px;
+}
+
+.gauge-track {
+  position: relative;
+  height: 10px;
+  margin: 0 5px;
+}
+
+.gauge-track::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+  height: 2px;
+  background: var(--surface-3);
+  border-radius: 1px;
+}
+
+.gauge-mid {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--text-faint);
+}
+
+.gauge-dot {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: 0 0 0 2px var(--surface-1);
+}
+
+.gauge-dot.is-lucky {
+  background: var(--danger);
+}
+
+.gauge-dot.is-unlucky {
+  background: var(--good);
+}
+
+.gauge-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+/* Aujourd'hui */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-label {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.hero-value {
+  font-size: 32px;
+  font-weight: 650;
+  line-height: 1.1;
+}
+
+.hero-sub {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.is-good {
+  color: var(--good);
+}
+
+.is-bad {
+  color: var(--danger);
+}
+
+.spark {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.spark svg {
+  display: block;
+  overflow: visible;
+}
+
+.spark-line {
+  fill: none;
+  stroke: var(--text-dim);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.spark-hit {
+  fill: transparent;
+}
+
+.spark-dot {
+  fill: var(--text);
+  stroke: var(--surface-1);
+  stroke-width: 2;
+}
+
+.spark-cap {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.row-owner {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+}
+
+.foot {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Couleurs des données (tokens dans theme.css) : ROS et attendus en --data-text, écarts en --good / --danger
+   (toujours avec un signe ou une flèche), équipes du pool par une pastille à côté du nom (jamais le texte). */
+.is-data {
+  color: var(--data-text);
+}
+
+.row-value.is-small {
+  font-size: 14px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: 0;
+  flex-shrink: 0;
+}
+
+.row-fine {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.lg-swatch {
+  width: 14px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.lg-swatch.is-lost,
+.nightbar-seg.is-lost {
+  background: repeating-linear-gradient(45deg, var(--lost) 0 1.5px, transparent 1.5px 4px);
+  box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--lost) 50%, transparent);
+}
+
+.lg-tick {
+  width: 2px;
+  height: 12px;
+  background: var(--text);
+}
+
+/* Tri */
+.sortbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin: 2px 0 6px;
+}
+
+.sortbar-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-right: 2px;
+}
+
+.sortbar-opt {
+  font: inherit;
+  font-size: 12px;
+  padding: 4px 9px;
+  min-height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-1);
+  color: var(--text-dim);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sortbar-opt.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+}
+
+/* Barres de la soirée (même échelle pour toutes les équipes) */
+.nightbar {
+  position: relative;
+  height: 14px;
+  margin-top: 5px;
+}
+
+.nightbar.is-thin {
+  height: 10px;
+}
+
+.nightbar-track,
+.seasonbar-track {
+  display: flex;
+  gap: 2px;
+  height: 100%;
+}
+
+.nightbar-seg {
+  height: 100%;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.nightbar-seg:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.nightbar-expected {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text);
+  box-shadow: 0 0 0 1px var(--surface-1);
+}
+
+.tonight.is-mine,
+.luckrow.is-mine {
+  background: var(--surface-2);
+  box-shadow: inset 3px 0 0 var(--team-1);
+}
+
+.tonight.is-mine .row-name,
+.luckrow.is-mine .luckrow-name {
+  font-weight: 750;
+}
+
+.standing.is-mine {
+  box-shadow: inset 3px 0 0 var(--team-1);
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.live-status.is-on {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.live-status.is-off {
+  color: var(--text-faint);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--danger);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
+}
+
+.is-live {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* Ligue : saison + ROS */
+.seasonbar {
+  position: relative;
+  height: 12px;
+  margin-top: 5px;
+}
+
+.seasonbar-range {
+  position: absolute;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--text-dim);
+}
+
+.seasonbar-range::before,
+.seasonbar-range::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1.5px;
+  height: 8px;
+  background: var(--text-dim);
+}
+
+.seasonbar-range::before {
+  left: 0;
+}
+
+.seasonbar-range::after {
+  right: 0;
+}
+
+/* Ligue : chance par équipe (barres divergentes autour de 0) */
+.luckrow {
+  display: grid;
+  grid-template-columns: minmax(0, 9.5em) 1fr 4.2em;
+  align-items: center;
+  gap: 8px;
+}
+
+.luckrow-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.luckrow-value {
+  text-align: right;
+  font-weight: 650;
+}
+
+.diverge {
+  position: relative;
+  height: 12px;
+}
+
+.diverge-mid {
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: var(--text-faint);
+}
+
+.diverge-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--text-faint);
+}
+
+.diverge-bar.is-right {
+  border-radius: 0 4px 4px 0;
+}
+
+.diverge-bar.is-left {
+  border-radius: 4px 0 0 4px;
+}
+
+.diverge-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 4px;
+  padding: 0 12px 0 calc(9.5em + 20px);
+}
+
+
+.card-vs {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Lignes à plusieurs étages (FA, blessés) */
+.row.is-stacked {
+  display: block;
+}
+
+.row.is-stacked,
+.row.is-clickable {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.row-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.row.is-stacked .card-detail {
+  cursor: default;
+}
+
+/* ROS ◆ et fourchette sur une ligne (FA, blessés) */
+.rosbar {
+  position: relative;
+  height: 14px;
+  margin: 4px 0 2px;
+}
+
+.rosbar-axis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 6px;
+  height: 1px;
+  background: var(--border-soft);
+}
+
+.rosbar-interval {
+  position: absolute;
+  top: 6px;
+  height: 2px;
+  background: var(--data);
+  opacity: 0.55;
+}
+
+.rosbar-mean {
+  position: absolute;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  background: var(--data);
+  box-shadow: 0 0 0 2px var(--surface-1);
+  transform: rotate(45deg);
+}
+
+.rosbar-ref {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text);
+}
+
+.row-meta .is-data,
+.row-value .is-data,
+.row-sub .is-data {
+  color: var(--data-text);
+}
+
+.row.is-stacked > .row-meta {
+  display: block;
+}
+
+/* Rangée préseason sous la bande */
+.band-prior-row {
+  position: relative;
+  height: 8px;
+  margin-top: 1px;
+}
+
+.band-prior {
+  position: absolute;
+  top: 2px;
+  height: 4px;
+  background: color-mix(in oklab, var(--text-faint) 55%, var(--surface-1));
+  border-radius: 2px;
+}
+
+.band-prior-mid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--text-faint);
+}
+
+.lg-prior2 {
+  width: 14px;
+  height: 4px;
+  background: color-mix(in oklab, var(--text-faint) 55%, var(--surface-1));
+  border-radius: 2px;
+}
+
+.nightbar-seg.is-lost {
+  opacity: 0.6;
+}
+
+/* Nom d'équipe cliquable : ouvre sa page Équipe */
+.team-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.team-link:active {
+  opacity: 0.6;
+}
+
+.team-picker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.team-picker select {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-weight: 650;
+  font-size: 15px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-1);
+  color: var(--text);
+}
+
+.team-picker .swatch {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+}
+
+/* Aujourd'hui : saison + la soirée en zoom */
+.row.seasonline {
+  display: block;
+  padding: 6px 12px 7px;
+}
+
+.seasonline.is-mine {
+  background: var(--surface-2);
+  box-shadow: inset 3px 0 0 var(--team-1);
+}
+
+.seasonline-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.seasonline-name {
+  font-weight: 600;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.seasonline.is-mine .seasonline-name {
+  font-weight: 750;
+}
+
+.seasonline-rank {
+  display: inline-block;
+  min-width: 2.2em;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.seasonline-value {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.seasonline-move {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ptsbar {
+  position: relative;
+  height: 10px;
+  margin-top: 5px;
+}
+
+/* Acquis avant la soirée : la teinte de l'équipe, un peu effacée, pour que la soirée ressorte au bout */
+.nightbar-seg.ptsbar-base {
+  opacity: 0.55;
+}
+
+.luck-net {
+  font-weight: 650;
+}
+
+.luck-net.is-small {
+  opacity: 0.85;
+}
+
+.lg-luck-good,
+.lg-luck-bad {
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.lg-luck-good {
+  background: var(--good);
+}
+
+.lg-luck-bad {
+  background: var(--danger);
 }

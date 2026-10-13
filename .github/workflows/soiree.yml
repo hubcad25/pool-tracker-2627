@@ -24,6 +24,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # relancer pages.yml après un commit (un push avec GITHUB_TOKEN ne déclenche rien)
 
 concurrency:
   group: soiree
@@ -53,13 +54,23 @@ jobs:
           [ -n "$DAY" ] && args+=(--day "$DAY")
           uv run python -m pipeline.soiree "${args[@]}"
 
-      # Seul l'état des notifs envoyées change (data/state/soirees.json) : la job quotidienne n'y touche pas
+      # L'état des notifs envoyées (data/state/soirees.json, à la job de soirée seulement) et la soirée de la PWA
+      # (data/today.json, aussi écrit par la job quotidienne : en cas de conflit, la version de ce run gagne)
       - name: Commit état
+        id: commit
         run: |
           git config user.name "pool-tracker-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/state/soirees.json 2>/dev/null || true
+          git add data/state/soirees.json data/today.json 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "soirée: $(TZ=America/Toronto date '+%F %H:%M')"
-          git pull --rebase
+          git pull --rebase || { git checkout --theirs data/today.json && git add data/today.json \
+            && GIT_EDITOR=true git rebase --continue; }
           git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Redéployer la PWA
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main -R "${{ github.repository }}"

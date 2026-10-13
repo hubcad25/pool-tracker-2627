@@ -8,7 +8,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-15",
   "out_for_season": false,
-  "pct_owned": 99.49
+  "pct_owned": 99.45
  },
  {
   "espn_id": 5080145,
@@ -19,7 +19,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 96.96
+  "pct_owned": 96.92
  },
  {
   "espn_id": 3042016,
@@ -30,7 +30,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 94.55
+  "pct_owned": 94.51
  },
  {
   "espn_id": 5149125,
@@ -41,7 +41,7 @@
   "injury_type": "Shoulder",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 93.1
+  "pct_owned": 93.12
  },
  {
   "espn_id": 5509,
@@ -52,7 +52,7 @@
   "injury_type": "Undisclosed",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 92.33
+  "pct_owned": 92.32
  },
  {
   "espn_id": 4697386,
@@ -63,7 +63,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 90.93
+  "pct_owned": 90.87
  },
  {
   "espn_id": 4697396,
@@ -74,7 +74,7 @@
   "injury_type": "Shoulder",
   "expected_return": "2026-10-24",
   "out_for_season": false,
-  "pct_owned": 88.34
+  "pct_owned": 88.3
  },
  {
   "espn_id": 3020225,
@@ -85,7 +85,7 @@
   "injury_type": "Suspension",
   "expected_return": "2026-10-17",
   "out_for_season": false,
-  "pct_owned": 81.78
+  "pct_owned": 81.76
  },
  {
   "espn_id": 4697449,
@@ -96,7 +96,7 @@
   "injury_type": "Skull",
   "expected_return": "2026-10-15",
   "out_for_season": false,
-  "pct_owned": 79.0
+  "pct_owned": 78.92
  },
  {
   "espn_id": 3041970,
@@ -107,7 +107,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-11-27",
   "out_for_season": false,
-  "pct_owned": 78.72
+  "pct_owned": 78.65
  },
  {
   "espn_id": 3900169,
@@ -118,7 +118,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-17",
   "out_for_season": false,
-  "pct_owned": 75.2
+  "pct_owned": 75.05
  },
  {
   "espn_id": 3899946,
@@ -129,7 +129,7 @@
   "injury_type": "Knee",
   "expected_return": "2026-10-20",
   "out_for_season": false,
-  "pct_owned": 66.42
+  "pct_owned": 66.34
  },
  {
   "espn_id": 3852,
@@ -140,7 +140,7 @@
   "injury_type": "Leg",
   "expected_return": "2026-11-21",
   "out_for_season": false,
-  "pct_owned": 60.9
+  "pct_owned": 60.8
  },
  {
   "espn_id": 5216860,
@@ -151,7 +151,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-31",
   "out_for_season": false,
-  "pct_owned": 59.16
+  "pct_owned": 59.1
  },
  {
   "espn_id": 5161,
@@ -162,7 +162,7 @@
   "injury_type": "Abdomen",
   "expected_return": "2027-01-12",
   "out_for_season": false,
-  "pct_owned": 58.7
+  "pct_owned": 58.41
  },
  {
   "espn_id": 3114743,
@@ -173,7 +173,7 @@
   "injury_type": "Lower Leg",
   "expected_return": "2026-10-17",
   "out_for_season": false,
-  "pct_owned": 56.41
+  "pct_owned": 56.36
  },
  {
   "espn_id": 4272674,
@@ -184,7 +184,7 @@
   "injury_type": "Hip",
   "expected_return": "2026-11-01",
   "out_for_season": false,
-  "pct_owned": 55.01
+  "pct_owned": 54.94
  },
  {
   "espn_id": 3899939,
@@ -195,7 +195,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 48.68
+  "pct_owned": 48.6
  },
  {
   "espn_id": 2562624,
@@ -206,7 +206,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 48.17
+  "pct_owned": 48.14
  },
  {
   "espn_id": 4874721,
@@ -217,7 +217,7 @@
   "injury_type": "Ankle",
   "expected_return": "2027-01-02",
   "out_for_season": false,
-  "pct_owned": 40.21
+  "pct_owned": 40.07
  },
  {
   "espn_id": 3151297,
@@ -228,7 +228,7 @@
   "injury_type": "Knee",
   "expected_return": "2027-09-15",
   "out_for_season": true,
-  "pct_owned": 39.75
+  "pct_owned": 39.27
  },
  {
   "espn_id": 3654006,
@@ -239,7 +239,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-24",
   "out_for_season": false,
-  "pct_owned": 33.28
+  "pct_owned": 33.23
  },
  {
   "espn_id": 5560,
@@ -250,7 +250,7 @@
   "injury_type": "Undisclosed",
   "expected_return": "2026-10-20",
   "out_for_season": false,
-  "pct_owned": 16.5
+  "pct_owned": 16.44
  },
  {
   "espn_id": 4024833,
@@ -261,7 +261,7 @@
   "injury_type": "Illness",
   "expected_return": "2026-10-14",
   "out_for_season": false,
-  "pct_owned": 14.86
+  "pct_owned": 14.83
  },
  {
   "espn_id": 5080157,
@@ -272,7 +272,7 @@
   "injury_type": "Suspension",
   "expected_return": "2026-10-15",
   "out_for_season": false,
-  "pct_owned": 14.81
+  "pct_owned": 14.79
  },
  {
   "espn_id": 3942905,
@@ -283,7 +283,7 @@
   "injury_type": "Hip",
   "expected_return": "2026-11-21",
   "out_for_season": false,
-  "pct_owned": 11.53
+  "pct_owned": 11.52
  },
  {
   "espn_id": 3151096,
@@ -294,7 +294,7 @@
   "injury_type": "Undisclosed",
   "expected_return": "2026-11-02",
   "out_for_season": false,
-  "pct_owned": 9.33
+  "pct_owned": 9.3
  },
  {
   "espn_id": 3541,
@@ -305,7 +305,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 6.98
+  "pct_owned": 6.95
  },
  {
   "espn_id": 4874720,
@@ -316,7 +316,7 @@
   "injury_type": "Contract Dispute",
   "expected_return": "2026-10-31",
   "out_for_season": false,
-  "pct_owned": 5.49
+  "pct_owned": 5.48
  },
  {
   "espn_id": 2593315,
@@ -327,7 +327,7 @@
   "injury_type": "Abdomen",
   "expected_return": "2026-10-15",
   "out_for_season": false,
-  "pct_owned": 4.33
+  "pct_owned": 4.32
  },
  {
   "espn_id": 2517899,
@@ -338,7 +338,7 @@
   "injury_type": "Knee",
   "expected_return": "2026-12-30",
   "out_for_season": false,
-  "pct_owned": 4.05
+  "pct_owned": 4.04
  },
  {
   "espn_id": 2562606,
@@ -349,7 +349,7 @@
   "injury_type": "Hip",
   "expected_return": "2026-11-02",
   "out_for_season": false,
-  "pct_owned": 3.77
+  "pct_owned": 3.76
  },
  {
   "espn_id": 5080153,
@@ -437,7 +437,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 1.84
+  "pct_owned": 1.83
  },
  {
   "espn_id": 3151136,
@@ -448,7 +448,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 1.77
+  "pct_owned": 1.76
  },
  {
   "espn_id": 5592,
@@ -459,7 +459,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-19",
   "out_for_season": false,
-  "pct_owned": 1.39
+  "pct_owned": 1.38
  },
  {
   "espn_id": 4233668,
@@ -514,7 +514,7 @@
   "injury_type": "Upper Body",
   "expected_return": "2026-10-24",
   "out_for_season": false,
-  "pct_owned": 0.85
+  "pct_owned": 0.84
  },
  {
   "espn_id": 4063605,
@@ -525,18 +525,7 @@
   "injury_type": "Lower Body",
   "expected_return": "2026-10-22",
   "out_for_season": false,
-  "pct_owned": 0.78
- },
- {
-  "espn_id": 3025524,
-  "name": "Trevor van Riemsdyk",
-  "pos": "D",
-  "pro_team": "PIT",
-  "injury_status": "INJURY_RESERVE",
-  "injury_type": "Lower Body",
-  "expected_return": "2026-10-19",
-  "out_for_season": false,
-  "pct_owned": 0.68
+  "pct_owned": 0.77
  },
  {
   "espn_id": 3042014,
@@ -550,6 +539,17 @@
   "pct_owned": 0.68
  },
  {
+  "espn_id": 3025524,
+  "name": "Trevor van Riemsdyk",
+  "pos": "D",
+  "pro_team": "PIT",
+  "injury_status": "INJURY_RESERVE",
+  "injury_type": "Lower Body",
+  "expected_return": "2026-10-19",
+  "out_for_season": false,
+  "pct_owned": 0.67
+ },
+ {
   "espn_id": 5172,
   "name": "Marcus Foligno",
   "pos": "RW",
@@ -557,6 +557,17 @@
   "injury_status": "INJURY_RESERVE",
   "injury_type": "Lower Body",
   "expected_return": "2026-10-15",
+  "out_for_season": false,
+  "pct_owned": 0.63
+ },
+ {
+  "espn_id": 3942638,
+  "name": "Parker Wotherspoon",
+  "pos": "D",
+  "pro_team": "VGK",
+  "injury_status": "OUT",
+  "injury_type": "Upper Body",
+  "expected_return": "2026-10-20",
   "out_for_season": false,
   "pct_owned": 0.63
  },
@@ -569,7 +580,7 @@
   "injury_type": "Shoulder",
   "expected_return": "2026-11-30",
   "out_for_season": false,
-  "pct_owned": 0.63
+  "pct_owned": 0.62
  },
  {
   "espn_id": 3094261,
@@ -679,7 +690,7 @@
   "injury_type": "Undisclosed",
   "expected_return": "2026-10-13",
   "out_for_season": false,
-  "pct_owned": 0.24
+  "pct_owned": 0.23
  },
  {
   "espn_id": 4352804,
@@ -748,6 +759,17 @@
   "pct_owned": 0.13
  },
  {
+  "espn_id": 3041995,
+  "name": "J.T. Compher",
+  "pos": "C",
+  "pro_team": "DET",
+  "injury_status": "INJURY_RESERVE",
+  "injury_type": "Undisclosed",
+  "expected_return": "2026-10-13",
+  "out_for_season": false,
+  "pct_owned": 0.12
+ },
+ {
   "espn_id": 3042122,
   "name": "Ryan Graves",
   "pos": "D",
@@ -799,17 +821,6 @@
   "injury_status": "INJURY_RESERVE",
   "injury_type": "Upper Body",
   "expected_return": "2026-10-25",
-  "out_for_season": false,
-  "pct_owned": 0.11
- },
- {
-  "espn_id": 3041995,
-  "name": "J.T. Compher",
-  "pos": "C",
-  "pro_team": "DET",
-  "injury_status": "INJURY_RESERVE",
-  "injury_type": "Undisclosed",
-  "expected_return": "2026-10-13",
   "out_for_season": false,
   "pct_owned": 0.11
  },
@@ -900,6 +911,17 @@
   "expected_return": "2026-10-17",
   "out_for_season": false,
   "pct_owned": 0.08
+ },
+ {
+  "espn_id": 5174232,
+  "name": "Nikolas Matinpalo",
+  "pos": "D",
+  "pro_team": "OTT",
+  "injury_status": "OUT",
+  "injury_type": "Upper Body",
+  "expected_return": "2026-10-13",
+  "out_for_season": false,
+  "pct_owned": 0.07
  },
  {
   "espn_id": 4565270,

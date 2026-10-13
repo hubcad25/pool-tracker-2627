@@ -39,3 +39,15 @@ export function injuryText(i: Pick<Injury, 'expected_return' | 'games_missed'> &
   const missed = i.games_missed ? ` · manque ${i.games_missed} m.` : ''
   return `${status} · retour ~${shortDate(i.expected_return)}${missed}`
 }
+
+/** Probabilité → « 75 % », « 4,2 % », « <0,1 % » */
+export const prob = (x: number) => (x < 0.001 ? '<0,1 %' : `${dec(x * 100, x < 0.1 ? 1 : 0)} %`)
+
+/** Heure de Montréal d'un instant ISO : « 19 h », « 19 h 30 » */
+export function clock(iso: string) {
+  const [h, m] = new Date(iso)
+    .toLocaleTimeString('fr-CA', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Toronto' })
+    .split(/\D+/)
+    .map(Number)
+  return m ? `${h} h ${String(m).padStart(2, '0')}` : `${h} h`
+}
