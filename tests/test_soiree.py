@@ -168,3 +168,28 @@ def test_avant_doit_classer_les_rivaux_par_impact_en_equivalent_de_mes_points():
 def test_avant_ne_doit_pas_afficher_la_moyenne_de_la_ligue():
     e = soiree.build("avant", DAY, {"teams": [ME]}, 5, RATES, [], games(), {}, NHL_OF)
     assert "Moyenne" not in e.message and "P(1er)" not in e.title
+
+
+# --- alignements de ce soir dans today.json ---
+
+def today_json(day=DAY, players=(1, 2)):
+    return {"date": day.isoformat(), "teams": [{"team_id": 5, "players": [{"espn_id": i} for i in players]}]}
+
+
+def test_alignements_doit_reecrire_quand_un_joueur_est_active():
+    assert soiree.lineups(today_json(players=(1, 2))) != soiree.lineups(today_json(players=(1, 2, 3)))
+
+
+def test_alignements_ne_doit_pas_reecrire_quand_rien_ne_change():
+    assert soiree.lineups(today_json(players=(2, 1))) == soiree.lineups(today_json(players=(1, 2)))
+
+
+def test_alignements_doit_verifier_les_soirs_de_matchs():
+    assert soiree.should_refresh(at(9), today_json(), games())
+    assert soiree.should_refresh(at(13), today_json(day=date(2026, 10, 9)), games())
+    assert soiree.should_refresh(at(13), None, games())
+
+
+def test_alignements_ne_doit_pas_ecraser_le_bilan_du_matin_ni_verifier_sans_match():
+    assert not soiree.should_refresh(at(9), today_json(day=date(2026, 10, 9)), games())
+    assert not soiree.should_refresh(at(13), today_json(), [])

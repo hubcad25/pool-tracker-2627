@@ -10,6 +10,8 @@ qui peuvent me dépasser (ou que je peux dépasser) cette semaine.
 - Le bilan de 23 h ne compte que les matchs terminés. S'ils le sont tous, c'est le bilan final et le matin
   n'envoie rien.
 - Chaque notif envoyée réécrit aussi data/today.json (la soirée dans la PWA, avec les points réels).
+- Entre les notifs, chaque run réécrit data/today.json si un alignement de la ligue a changé pour ce soir
+  (ex. un joueur activé de l'IR). Pas avant midi si today.json est encore la soirée d'hier (bilan du matin).
 
 uv run python -m pipeline.soiree                                   # dry-run de la notif due maintenant
 uv run python -m pipeline.soiree --moment fin --day 2026-10-10     # force une notif (rien n'est enregistré)
@@ -278,6 +280,38 @@ def build(kind: str, day: date, league: dict, team_id: int, rates: dict[str, flo
     return Event("soiree", _key(day, "fin"), "\n".join(lines), LOW if morning else NORMAL, title)
 
 
+def lineups(data: dict | None) -> dict[int, list[int]]:
+    """team_id → joueurs de l'alignement qui jouent ce soir (ids ESPN), d'après un today.json."""
+    return {t["team_id"]: sorted(p["espn_id"] for p in t.get("players", [])) for t in (data or {}).get("teams", [])}
+
+
+def should_refresh(now: datetime, current: dict | None, today_games: list[dict]) -> bool:
+    """Vérifier les alignements maintenant ? Oui s'il y a des matchs ce soir, sauf si today.json montre encore
+    la soirée d'hier avant midi (le bilan du matin reste affiché)."""
+    if not today_games:
+        return False
+    return (current or {}).get("date") == now.date().isoformat() or now.hour >= MORNING_HOURS.stop
+
+
+def refresh(now: datetime, today_games: list[dict]) -> None:
+    """Réécrit data/today.json si un alignement de ce soir a changé depuis la dernière écriture."""
+    current = json.loads(today.PATH.read_text()) if today.PATH.exists() else None
+    if not should_refresh(now, current, today_games):
+        return
+    try:
+        league = espn.fetch_league()
+    except AuthError as e:
+        print(f"Ligue ESPN inaccessible ({e}) : alignements pas vérifiés")
+        return
+    data = today.build(now.date(), league, config.MY_TEAM_ID, json.loads(RATES.read_text()), today_games,
+                       fetch_points(today_games), nhl_ids(), today.load_odds(), today.load_history(), now)
+    if current and current.get("date") == data["date"] and lineups(current) == lineups(data):
+        print("Alignements inchangés")
+        return
+    print("Alignements changés : today.json réécrit")
+    today.write(data)
+
+
 def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] | None = None) -> None:
     if forced:
         _send(now, forced, nhl.fetch_games(forced[1].isoformat()), target=target, dry_run=dry_run, forced=True)
@@ -290,6 +324,8 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
     for due in dues:
         games = today_games if due[1] == now.date() else yesterday_games
         _send(now, due, games, target=target, dry_run=dry_run, forced=False)
+    if not dry_run:
+        refresh(now, today_games)
 
 
 def nhl_ids() -> dict[int, int]:
