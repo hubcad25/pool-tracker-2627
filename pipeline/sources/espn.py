@@ -77,7 +77,8 @@ def fetch_league() -> dict:
             "team_id": t["id"],
             "abbrev": t.get("abbrev"),
             "name": t.get("name") or f"{t.get('location', '')} {t.get('nickname', '')}".strip(),
-            "points": t.get("points"),
+            # + les points d'avant le draft, qu'ESPN n'ajoutera qu'à la fin de la saison
+            "points": (t.get("points") or 0) + config.PRE_DRAFT.get(t["id"], (0, 0))[1],
             # Signatures de FA de la saison (les moves sont limités)
             "acquisitions": t.get("transactionCounter", {}).get("acquisitions"),
             "roster": roster,

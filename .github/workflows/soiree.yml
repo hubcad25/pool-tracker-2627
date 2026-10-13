@@ -74,3 +74,17 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run pages.yml --ref main -R "${{ github.repository }}"
+
+      # Le cron de daily.yml saute parfois sa journée : passé midi, si dashboard.json n'est pas du jour et
+      # qu'aucune job quotidienne n'a été lancée aujourd'hui, on la lance (avec le topic du cron)
+      - name: Job quotidienne manquée
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET: ${{ vars.PIPELINE_TARGET || 'test' }}
+        run: |
+          today=$(TZ=America/Toronto date +%F)
+          if [ "$(jq -r .day data/dashboard.json)" = "$today" ] || [ "$(TZ=America/Toronto date +%-H)" -lt 12 ]; then exit 0; fi
+          last=$(gh run list -R "${{ github.repository }}" -w daily.yml -L 1 --json createdAt -q '.[0].createdAt')
+          if [ -n "$last" ] && [ "$(TZ=America/Toronto date -d "$last" +%F)" = "$today" ]; then exit 0; fi
+          gh workflow run daily.yml --ref main -R "${{ github.repository }}" -f target="$TARGET"
