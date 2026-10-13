@@ -17,7 +17,7 @@ from pipeline import config, soiree
 
 PATH = config.ROOT / "data" / "today.json"
 HISTORY = config.STATE_DIR / "p_first.json"
-HISTORY_DAYS = 10
+HISTORY_DAYS = 400       # toute la saison : la PWA écrase les vieux jours
 WATCH = 8
 # États LNH → ceux de la PWA
 STATES = {"FUT": "FUT", "PRE": "FUT", "LIVE": "LIVE", "CRIT": "LIVE", "OFF": "FINAL", "FINAL": "FINAL"}

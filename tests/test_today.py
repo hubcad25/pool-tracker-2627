@@ -89,7 +89,7 @@ def test_sans_odds_la_menace_est_inconnue_mais_la_soiree_reste():
     assert len(t["watch"]) == 3 and all(p["threat"] is None for p in t["watch"])
 
 
-def test_historique_10_derniers_jours_et_veille():
+def test_historique_toute_la_saison_jusqu_au_jour_et_veille():
     history = [{"day": f"2026-10-{d:02d}", "p_first": d / 100} for d in range(1, 12)]
     p = build(history=history)["p_first"]
     assert p["yesterday"] == 0.09
