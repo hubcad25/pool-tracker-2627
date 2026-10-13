@@ -1,3 +1,4 @@
+import Group from '../components/Group'
 import { BandScale } from '../components/Band'
 import PlayerCard from '../components/PlayerCard'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
@@ -76,13 +77,12 @@ export default function Team({ players, teamId, teams, myId }: { players: Player
         )
         if (!group.length) return null
         return (
-          <section key={slot} className="group">
-            <h2 className="group-title">{label}</h2>
+          <Group key={slot} id={`equipe-${slot}`} title={label}>
             <BandScale max={max} ticks={ticks} />
             {group.map((p) => (
               <PlayerCard key={p.espn_id} player={p} max={max} />
             ))}
-          </section>
+          </Group>
         )
       })}
     </>

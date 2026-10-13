@@ -1,6 +1,8 @@
 // La soirée en direct : pointage LNH via le proxy CORS (infra/aws/proxy_lnh.py, VITE_LNH_PROXY).
 // Sans proxy (ou s'il ne répond pas), tout se rabat sur today.json : points des matchs FINAL seulement.
 import { useEffect, useRef, useState } from 'react'
+import { goalieNight, type GoalieNight } from './goalie'
+import { atLeastOne } from './poisson'
 import type { GameState, Today, TodayTeam, TonightPlayer } from './types'
 
 const PROXY = (import.meta.env.VITE_LNH_PROXY as string | undefined)?.replace(/\/$/, '')
@@ -19,6 +21,10 @@ export type LiveGame = {
   points: Map<number, number>
   /** Les buts du match, dans l'ordre (fusillade exclue) */
   goals: Goal[]
+  /** Pointage, par abréviation LNH */
+  score: Record<string, number>
+  /** Gardiens qui ont joué (nhl_id), d'après le boxscore ; null tant qu'on ne le sait pas */
+  goalies: Set<number> | null
 }
 
 export type Goal = {
@@ -38,6 +44,8 @@ type ScoreGame = {
   period?: number
   periodDescriptor?: { number: number; periodType: string }
   clock?: { secondsRemaining: number; inIntermission: boolean; timeRemaining: string }
+  homeTeam?: { abbrev: string; score?: number }
+  awayTeam?: { abbrev: string; score?: number }
   goals?: {
     playerId: number
     name?: { default: string }
@@ -103,6 +111,13 @@ export function pointsFromBoxscore(box: { playerByGameStats?: Record<string, Box
   return out
 }
 
+/** Les gardiens qui ont joué dans un match (temps de jeu > 0) ; null si aucun encore */
+function goaliesIn(box: { playerByGameStats?: Record<string, BoxSide> }): Set<number> | null {
+  const ids = Object.values(box.playerByGameStats ?? {}).flatMap((side) =>
+    (side.goalies ?? []).filter((p) => (p.toi ?? '00:00') !== '00:00').map((p) => p.playerId))
+  return ids.length ? new Set(ids) : null
+}
+
 const periodName = (d?: { number: number; periodType: string }) =>
   d?.periodType === 'OT' || (d?.number ?? 1) > 3 ? 'Prol.' : d?.number === 1 ? '1re' : `${d?.number ?? 1}e`
 
@@ -133,7 +148,7 @@ function active(t: Today, live: Map<number, LiveGame>, now: number) {
 /** Interroge le proxy toutes les ~60 s tant qu'un match est en cours ou imminent, onglet visible seulement. */
 export function useLive(t: Today | null): Live {
   const [live, setLive] = useState<Live>({ games: new Map(), at: null, status: 'off' })
-  const finals = useRef(new Map<number, Map<number, number>>())
+  const finals = useRef(new Map<number, { points: Map<number, number>; goalies: Set<number> | null }>())
   const gamesRef = useRef(live.games)
 
   useEffect(() => {
@@ -159,11 +174,25 @@ export function useLive(t: Today | null): Live {
             if (!t.games.some((x) => x.id === g.id)) continue
             const state = STATES[g.gameState] ?? 'FUT'
             let points = pointsFromGoals(g)
-            if (state === 'FINAL' && ours.has(g.id)) {
-              if (!finals.current.has(g.id)) finals.current.set(g.id, pointsFromBoxscore(await getJson(`v1/gamecenter/${g.id}/boxscore`)))
-              points = finals.current.get(g.id)!
+            let goalies: Set<number> | null = null
+            // En cours : le boxscore dit quel gardien est devant le filet
+            if (state === 'LIVE' && ours.has(g.id)) {
+              try {
+                goalies = goaliesIn(await getJson(`v1/gamecenter/${g.id}/boxscore`))
+              } catch {
+                goalies = null
+              }
             }
-            games.set(g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points, goals: goalsOf(g) })
+            if (state === 'FINAL' && ours.has(g.id)) {
+              if (!finals.current.has(g.id)) {
+                const box = await getJson(`v1/gamecenter/${g.id}/boxscore`)
+                finals.current.set(g.id, { points: pointsFromBoxscore(box), goalies: goaliesIn(box) })
+              }
+              ;({ points, goalies } = finals.current.get(g.id)!)
+            }
+            const score: Record<string, number> = {}
+            for (const side of [g.homeTeam, g.awayTeam]) if (side) score[side.abbrev] = side.score ?? 0
+            games.set(g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points, goals: goalsOf(g), score, goalies })
           }
           gamesRef.current = games
           if (!stopped) setLive({ games, at: new Date(), status: 'ok' })
@@ -217,9 +246,15 @@ export async function fetchBoxLine(gameId: number, nhlId: number): Promise<BoxLi
 }
 
 /** La soirée d'un joueur : réel, attendu, ce qui reste possible et ce qui est perdu */
-export type Night = { actual: number; expected: number; left: number; lost: number; state: GameState; clock: string | null }
+/** `p1Start` / `p1` : P(1+ pt) avant le match / maintenant (0 à 1, 1 une fois le point acquis) */
+export type Night = {
+  actual: number; expected: number; left: number; lost: number; state: GameState; clock: string | null
+  p1Start: number; p1: number
+  /** Gardiens seulement : devant le filet ou pas, pointage, P(victoire), P(blanchissage) */
+  goalie?: GoalieNight
+}
 
-export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game_id' | 'nhl_id'>, t: Today, live: Live): Night {
+export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game_id' | 'nhl_id' | 'pos' | 'team'>, t: Today, live: Live): Night {
   const g = p.game_id != null ? live.games.get(p.game_id) : undefined
   const base = t.games.find((x) => x.id === p.game_id)
   // Vieux today.json sans game_id : un `actual` connu veut dire que le match est terminé
@@ -227,8 +262,24 @@ export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game
   // Sans direct, un match en cours garde tout son attendu « possible » (on ne sait pas où il en est)
   const leftFrac = g ? g.left : state === 'FINAL' ? 0 : 1
   const actual = g && p.nhl_id != null ? (g.points.get(p.nhl_id) ?? 0) : (p.actual ?? 0)
+  const clock = g?.clock ?? null
+  // Gardien : ses points viennent du résultat, pas du temps qui passe ; le pointage décide (goalie.ts)
+  if (p.pos === 'G' && base) {
+    const home = p.team === base.home
+    const odds = base.goals ? { for: base.goals[home ? 'home' : 'away'], against: base.goals[home ? 'away' : 'home'] } : null
+    const score = { for: g?.score[p.team] ?? 0, against: g?.score[home ? base.away : base.home] ?? 0 }
+    // Devant le filet ou pas, une fois le match commencé : on le sait par le boxscore
+    const inNet = g?.goalies && p.nhl_id != null ? g.goalies.has(p.nhl_id) : null
+    const gn = goalieNight(p.expected, odds, score, state === 'FINAL' ? 0 : leftFrac, inNet)
+    const done = state === 'FINAL'
+    return {
+      actual, expected: gn.expected, left: done ? 0 : gn.left, lost: Math.max(0, gn.expected - actual - (done ? 0 : gn.left)),
+      state, clock, p1Start: gn.p1Start, p1: done ? (actual >= 1 ? 1 : 0) : gn.p1, goalie: gn.goalie,
+    }
+  }
   const left = p.expected * leftFrac
-  return { actual, expected: p.expected, left, lost: Math.max(0, p.expected - actual - left), state, clock: g?.clock ?? null }
+  const p1Start = atLeastOne(0, p.expected)
+  return { actual, expected: p.expected, left, lost: Math.max(0, p.expected - actual - left), state, clock, p1Start, p1: atLeastOne(actual, left) }
 }
 
 export function sumNights(nights: Night[]) {
@@ -251,3 +302,41 @@ export function teamNight(r: TodayTeam, t: Today, live: Live) {
 
 /** Projection de la soirée : réel + encore possible (l'attendu avant le premier match) */
 export const projection = (n: { actual: number; left: number }) => n.actual + n.left
+
+/** Tirs au but (buts compris, fusillade exclue) d'un joueur par zone, d'après le play-by-play LNH */
+export type ShotZones = { hd: number; md: number; ld: number }
+
+type PbpPlay = {
+  typeDescKey: string
+  periodDescriptor?: { periodType: string }
+  details?: { xCoord?: number; yCoord?: number; zoneCode?: string; shootingPlayerId?: number; scoringPlayerId?: number; goalieInNetId?: number }
+}
+
+/** HD : enclave basse, ≤ 25 pi de la ligne des buts et |y| ≤ 9 ; MD : entre les points de mise au jeu (|y| ≤ 22)
+ *  jusqu'au haut des cercles (35 pi) ; LD : tout le reste (points, bandes, derrière le filet, hors zone). */
+export function shotZone(d: NonNullable<PbpPlay['details']>): keyof ShotZones {
+  if (d.xCoord == null || d.yCoord == null || (d.zoneCode != null && d.zoneCode !== 'O')) return 'ld'
+  // Filets à x = ±89 : en zone offensive, le filet attaqué est du côté du signe de x
+  const dx = 89 - Math.abs(d.xCoord)
+  const dy = Math.abs(d.yCoord)
+  if (dx < 0) return 'ld'
+  if (dx <= 25 && dy <= 9) return 'hd'
+  if (dx <= 35 && dy <= 22) return 'md'
+  return 'ld'
+}
+
+/** Tirs au but par zone et buts parmi eux : ceux du joueur, ou (gardien) ceux reçus pendant qu'il était devant le filet */
+export async function fetchShotZones(gameId: number, nhlId: number, goalie = false): Promise<{ shots: ShotZones; goals: ShotZones }> {
+  const pbp: { plays?: PbpPlay[] } = await getJson(`v1/gamecenter/${gameId}/play-by-play`)
+  const shots: ShotZones = { hd: 0, md: 0, ld: 0 }
+  const goals: ShotZones = { hd: 0, md: 0, ld: 0 }
+  for (const e of pbp.plays ?? []) {
+    if ((e.typeDescKey !== 'shot-on-goal' && e.typeDescKey !== 'goal') || e.periodDescriptor?.periodType === 'SO' || !e.details) continue
+    const who = goalie ? e.details.goalieInNetId : (e.details.shootingPlayerId ?? e.details.scoringPlayerId)
+    if (who !== nhlId) continue
+    const z = shotZone(e.details)
+    shots[z]++
+    if (e.typeDescKey === 'goal') goals[z]++
+  }
+  return { shots, goals }
+}

@@ -170,7 +170,7 @@ export type TonightPlayer = {
 export type Today = {
   date: string
   updated: string
-  games: { id: number; start: string; home: string; away: string; state: GameState }[]
+  games: { id: number; start: string; home: string; away: string; state: GameState; goals?: { home: number; away: number } | null }[]
   p_first: { now: number | null; yesterday: number | null; history: { day: string; p_first: number }[] } | null
   teams: TodayTeam[]
   my_players: (TonightPlayer & { injury: string | null })[]

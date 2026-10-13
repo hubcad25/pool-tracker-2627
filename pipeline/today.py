@@ -10,6 +10,7 @@ matchs terminés). Les deux jobs poussent ce fichier : un fichier à part évite
   Le delta est le même pour tous les joueurs d'une équipe ; menace = attendu × delta.
 - `teams[].players` : les joueurs de l'alignement de chaque équipe qui jouent ce soir (ids ESPN et LNH, match,
   attendu) : la PWA recalcule la soirée en direct à partir du pointage LNH (proxy `infra/aws/proxy_lnh.py`).
+- `games[].goals` : buts attendus de chaque équipe d'après les cotes d'avant le match (None sans cotes).
 - Historique de ma P(1er) : data/state/p_first.json, une valeur par jour, écrite par la job quotidienne.
 """
 import json
@@ -64,6 +65,14 @@ def _when(team: str, games: list[dict]) -> dict | None:
     return None
 
 
+def _goals(game: dict, goals: dict[str, tuple[float, float]]) -> dict | None:
+    """Buts attendus du match d'après les cotes, {away, home}, ou None sans cotes."""
+    away, home = game["teams"]
+    if away not in goals or home not in goals:
+        return None
+    return {"away": round(goals[away][0], 3), "home": round(goals[home][0], 3)}
+
+
 def _player(p: dict, rate: float, game: dict, points: dict[int, tuple[int, str]],
             nhl_of: dict[int, int]) -> dict:
     done = game["state"] in soiree.DONE
@@ -81,9 +90,12 @@ def build(day: date, league: dict, team_id: int, rates: dict[str, float], games:
           points: dict[int, tuple[int, str]], nhl_of: dict[int, int],
           team_odds: dict[int, tuple[float | None, float | None]], history: list[dict], now: datetime,
           factors: dict[str, tuple[float, float]] | None = None,
-          team_finals: dict[int, tuple[float | None, float | None]] | None = None) -> dict:
+          team_finals: dict[int, tuple[float | None, float | None]] | None = None,
+          goals: dict[str, tuple[float, float]] | None = None) -> dict:
     """`games` : nhl.fetch_games du jour ; `points` : points de pool des matchs terminés, par nhl_id ;
-    `factors` : contexte.factors du soir ; `team_finals` : total final du matin et écart-type (cf. finals)."""
+    `factors` : contexte.factors du soir ; `team_finals` : total final du matin et écart-type (cf. finals) ;
+    `goals` : contexte.load_goals, les buts attendus de chaque équipe d'après les cotes (la PWA en tire les
+    points des gardiens en direct, selon le pointage)."""
     started = any(g["state"] in soiree.DONE for g in games)
     teams, my_players, watch = [], [], []
     for t in league["teams"]:
@@ -119,7 +131,8 @@ def build(day: date, league: dict, team_id: int, rates: dict[str, float], games:
         "date": day.isoformat(),
         "updated": now.astimezone(config.TZ).isoformat(timespec="seconds"),
         "games": [{"id": g["game_id"], "start": g["start"], "away": g["teams"][0], "home": g["teams"][1],
-                   "state": STATES.get(g["state"], g["state"])} for g in sorted(games, key=lambda g: g["start"])],
+                   "state": STATES.get(g["state"], g["state"]), "goals": _goals(g, goals or {})}
+                  for g in sorted(games, key=lambda g: g["start"])],
         "p_first": {"now": me, "yesterday": next((h["p_first"] for h in past if h["day"] == yesterday), None),
                     "history": past[-HISTORY_DAYS:]},
         "teams": teams,

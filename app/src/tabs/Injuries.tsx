@@ -1,3 +1,4 @@
+import Group from '../components/Group'
 import TeamLogo from '../components/TeamLogo'
 import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
@@ -81,15 +82,13 @@ export default function Injuries({ injuries, teamIds = {} }: { injuries: LeagueI
     <>
       <p className="group-note">ROS ◆ et fourchette probable, à la même échelle pour tous. Touche un joueur pour sa chance.</p>
       <SortBar options={SORT} sort={sort} onChange={setSort} />
-      <section className="group">
-        <h2 className="group-title">Mon équipe</h2>
+      <Group id="blesses-moi" title="Mon équipe">
         {mine.length ? <ul className="rows">{mine.map(row)}</ul> : <p className="empty">Aucun blessé.</p>}
-      </section>
-      <section className="group">
-        <h2 className="group-title">Dans la ligue</h2>
+      </Group>
+      <Group id="blesses-ligue" title="Dans la ligue">
         <p className="group-note">Les blessés des autres équipes qui vont manquer des matchs.</p>
         {others.length ? <ul className="rows">{others.map(row)}</ul> : <p className="empty">Aucun blessé.</p>}
-      </section>
+      </Group>
     </>
   )
 }

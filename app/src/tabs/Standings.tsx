@@ -1,3 +1,4 @@
+import Group from '../components/Group'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
 import { dec, int, prob, signed } from '../format'
 import { teamNight, useLive } from '../live'
@@ -31,7 +32,7 @@ function SeasonBar({ r, max, tonight }: { r: Standing; max: number; tonight: num
   const hi = r.points + (r.ros_p90 ?? r.p90 - r.points)
   const night = Math.min(tonight, r.ros)
   const label = `${int(r.points)} pts acquis + ROS ${int(r.ros)} = ${int(r.final)} (${int(lo)}–${int(hi)})`
-    + (night > 0.005 ? ` · ${dec(night)} pts encore attendus ce soir` : '')
+    + (night > 0.005 ? ` · ${dec(night)} pts encore possibles ce soir` : '')
   return (
     <div className="seasonbar" role="img" aria-label={label} title={label}>
       <div className="seasonbar-track">
@@ -51,8 +52,7 @@ function Luck({ rows }: { rows: Standing[] }) {
   const maxAbs = Math.max(1, ...withLuck.map((r) => Math.abs(r.luck_points!)))
   const sorted = sortBy(withLuck, sort, (r, k) => (k === 'luck' ? r.luck_points! : name(r)))
   return (
-    <section className="group">
-      <h2 className="group-title">Chance de la saison</h2>
+    <Group id="classement-chance" title="Chance de la saison">
       <p className="group-note">
         Les points que la chance a donnés (+) ou enlevés (−) à chaque équipe cette saison, joueurs de l'alignement
         actuel.
@@ -90,7 +90,7 @@ function Luck({ rows }: { rows: Standing[] }) {
         <span>◀ malchanceuse</span>
         <span>chanceuse ▶</span>
       </div>
-    </section>
+    </Group>
   )
 }
 
@@ -107,15 +107,14 @@ export default function Standings({ rows, today }: { rows: Standing[]; today: To
   )
   return (
     <>
-      <section className="group">
-        <h2 className="group-title">Fin de saison projetée</h2>
+      <Group id="classement-fin" title="Fin de saison projetée">
         <p className="legend-line">
           <i className="lg-swatch" style={{ background: 'var(--text-dim)' }} /> points acquis +{' '}
           <i className="lg-swatch" style={{ background: 'color-mix(in oklab, var(--text-dim) 35%, var(--surface-1))' }} /> ROS =
           total estimé <i className="lg-range" /> fourchette.
           {anyTonight && (
             <>
-              {' '}<i className="lg-swatch is-tonight" style={{ background: 'var(--text-dim)' }} /> points encore attendus ce soir
+              {' '}<i className="lg-swatch is-tonight" style={{ background: 'var(--text-dim)' }} /> points encore possibles ce soir
               (pris dans la ROS).
             </>
           )}
@@ -145,7 +144,7 @@ export default function Standings({ rows, today }: { rows: Standing[]; today: To
             )
           })}
         </ol>
-      </section>
+      </Group>
       <Luck rows={rows} />
     </>
   )

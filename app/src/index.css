@@ -144,6 +144,29 @@ p {
   margin-bottom: 4px;
 }
 
+/* Module repliable : le titre sert de bouton, chevron à gauche */
+summary.group-title {
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  padding: 4px 0;
+}
+
+summary.group-title::-webkit-details-marker {
+  display: none;
+}
+
+summary.group-title::before {
+  content: '▾';
+  display: inline-block;
+  width: 1.1em;
+  transition: transform 0.15s;
+}
+
+.group:not([open]) > summary.group-title::before {
+  transform: rotate(-90deg);
+}
+
 .group-note {
   font-size: 12px;
   color: var(--text-faint);
@@ -1519,4 +1542,170 @@ b.season-mark {
 .dist-x.is-mode {
   color: var(--text);
   font-weight: 650;
+}
+
+/* Ce soir : repères sous la barre d'un joueur (points faits, prévu avant le match, fin estimée) */
+.night-marks .season-mark.is-tick {
+  transform: translateX(-50%);
+  padding: 0;
+}
+
+.night-marks .season-mark.is-tick.is-left {
+  transform: none;
+}
+
+.night-marks .season-mark.is-tick.is-right {
+  transform: translateX(-100%);
+}
+
+.night-marks .season-mark.is-actual {
+  color: var(--text);
+  font-weight: 650;
+}
+
+.night-marks .season-mark.is-proj {
+  color: var(--text-dim);
+  font-weight: 650;
+  transform: translateX(-100%);
+  padding: 0 2px 0 0;
+}
+
+/* Le joueur a son point */
+.one-point.is-done {
+  color: var(--good);
+  font-weight: 650;
+}
+
+/* Détail d'un joueur : au moins un point de pool, c'est gagné */
+.detail-ok {
+  color: var(--good);
+  font-weight: 600;
+}
+
+/* Gardien en direct : pointage, rôle, chances de chaque façon de faire des points */
+.goalie-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 10px;
+  margin-bottom: 6px;
+}
+
+.goalie-score {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.goalie-score small {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.goalie-role {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 1px 6px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-dim);
+}
+
+.goalie-role.is-in {
+  color: var(--good);
+}
+
+.goalie-role.is-out {
+  color: var(--danger);
+}
+
+.goalie-odds {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.goalie-odd {
+  display: flex;
+  flex-direction: column;
+}
+
+.goalie-odd-k {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.goalie-odd b {
+  font-size: 16px;
+  color: var(--text);
+}
+
+/* Tirs par zone : HD rouge, MD jaune, LD vert */
+.zones {
+  margin-top: 8px;
+}
+
+.zones-title {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-bottom: 3px;
+}
+
+.zones-bar {
+  display: flex;
+  gap: 2px;
+  height: 8px;
+  margin-bottom: 4px;
+}
+
+.zones-seg {
+  min-width: 4px;
+}
+
+.zones-seg:first-child {
+  border-radius: 3px 0 0 3px;
+}
+
+.zones-seg:last-child {
+  border-radius: 0 3px 3px 0;
+}
+
+.zones-seg.is-hd,
+.zones-dot.is-hd {
+  background: var(--danger);
+}
+
+.zones-seg.is-md,
+.zones-dot.is-md {
+  background: var(--gold);
+}
+
+.zones-seg.is-ld,
+.zones-dot.is-ld {
+  background: var(--good);
+}
+
+.zones-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.zones-legend b {
+  color: var(--text);
+}
+
+.zones-legend small {
+  color: var(--text-faint);
+}
+
+.zones-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
 }

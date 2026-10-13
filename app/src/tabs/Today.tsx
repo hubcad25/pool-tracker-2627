@@ -1,3 +1,4 @@
+import Group from '../components/Group'
 import TeamLogo from '../components/TeamLogo'
 import NightBar, { NightLegend } from '../components/NightBar'
 import DistBars from '../components/DistBars'
@@ -8,7 +9,6 @@ import { clock, dec, lastName, prob, shortDate, signed } from '../format'
 import { hasProxy, playerNight, projection, sumNights, teamNight, useLive, type Live, type Night } from '../live'
 import { teamColor, teamTint } from '../teams'
 import { firstPlaceOdds } from '../odds'
-import { atLeastOne } from '../poisson'
 import { arrow, tone } from '../tone'
 import { useState } from 'react'
 import type { Today as T, TodayTeam, TonightPlayer } from '../types'
@@ -21,19 +21,25 @@ const where = (p: TonightPlayer) => (
 )
 
 /** Heure du match, ou son état en direct (« 2e · 14:02 », « Final ») */
-const when = (p: TonightPlayer, n: Night) => n.clock ?? (n.state === 'FINAL' ? 'Final' : clock(p.start))
+const when = (p: TonightPlayer, n: Night) => {
+  const t = n.clock ?? (n.state === 'FINAL' ? 'Final' : clock(p.start))
+  // Gardien : le pointage de son équipe et s'il est sur le banc
+  const g = n.goalie
+  if (!g || n.state === 'FUT') return t
+  return `${g.score.for}-${g.score.against} · ${t}${g.inNet === false ? ' · banc' : ''}`
+}
 
 /** À droite d'une barre, lisible sans légende :
  *  avant le match « 1,2 / pts prévus » ; pendant « 2 pts / prévu 1,2 · fin ≈ 2,6 » ; fini « 2 pts / prévu 1,2 · ▲ +0,8 ».
  *  Fin ≈ fait + le prévu du temps qui reste. L'écart d'un match fini = réel − prévu. */
-function Score({ n, big }: { n: ReturnType<typeof sumNights> & { started: boolean }; big?: boolean }) {
+function Score({ n, big }: { n: Night & { started: boolean }; big?: boolean }) {
   const cls = `row-value num${big ? '' : ' is-small'}`
   if (!n.started) {
     return (
       <>
         <span className={`${cls} is-data`}>{dec(n.expected)}</span>
         <span className="row-sub">pts prévus</span>
-        <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.expected))}</span>
+        <OnePoint n={n} />
       </>
     )
   }
@@ -52,8 +58,44 @@ function Score({ n, big }: { n: ReturnType<typeof sumNights> & { started: boolea
           <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span>
         )}
       </span>
-      {playing && n.actual === 0 && <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.left))}</span>}
+      <OnePoint n={n} />
     </>
+  )
+}
+
+/** P(1+ pt) d'un joueur : avant le match, sa valeur ; ensuite « début → maintenant » tant qu'il a 0 pt et que
+ *  le match continue ; ✓ vert dès qu'il a son point. Rien une fois le match fini sans point. */
+function OnePoint({ n }: { n: Night }) {
+  if (n.actual >= 1) return <span className="row-sub one-point is-done">✓ 1+ pt</span>
+  if (n.state === 'FUT') return <span className="row-sub num">P(1+ pt) : {prob(n.p1Start)}</span>
+  if (n.state === 'FINAL') return null
+  return (
+    <span className="row-sub num">
+      P(1+ pt) : {prob(n.p1Start)} → <b>{prob(n.p1)}</b>
+    </span>
+  )
+}
+
+/** Sous la barre d'un joueur, chaque chiffre à son endroit : ses points au bout du plein, le prévu d'avant-match
+ *  sous le trait, la fin estimée au bout du clair (pendant le match). Une étiquette trop près d'une autre saute. */
+function NightMarks({ n, max }: { n: Night; max: number }) {
+  const marks: { x: number; text: string; cls: string }[] = []
+  if (n.state !== 'FUT' && n.actual > 0) marks.push({ x: n.actual, text: `${n.actual}`, cls: 'is-end is-actual' })
+  marks.push({ x: n.expected, text: `prévu ${dec(n.expected)}`, cls: 'is-tick' })
+  if (n.state !== 'FUT' && n.left > 0.005) marks.push({ x: projection(n), text: `fin ≈ ${dec(projection(n))}`, cls: 'is-proj' })
+  const shown = marks.filter((m, i) => marks.slice(0, i).every((o) => Math.abs(o.x - m.x) / max > 0.22))
+  // Le prévu, centré sous son trait, ne doit pas déborder : collé à gauche près de 0, à droite près du bout
+  const edge = (m: (typeof marks)[number]) => {
+    if (m.cls !== 'is-tick') return ''
+    const r = m.x / max
+    return r < 0.15 ? ' is-left' : r > 0.85 ? ' is-right' : ''
+  }
+  return (
+    <div className="season-marks night-marks num">
+      {shown.map((m) => (
+        <span key={m.cls} className={`season-mark ${m.cls}${edge(m)}`} style={{ left: `${(Math.max(0, m.x) / max) * 100}%` }}>{m.text}</span>
+      ))}
+    </div>
   )
 }
 
@@ -128,6 +170,7 @@ function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
               {where(p)} · <span className={n.state === 'LIVE' ? 'is-live' : undefined}>{when(p, n)}</span>
             </span>
             <NightBar n={n} max={max} teamId={r.team_id} thin />
+            <NightMarks n={n} max={max} />
           </div>
           <div className="row-side">
             <Score n={{ ...n, started: n.state !== 'FUT' }} />
@@ -142,9 +185,9 @@ function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
 
 type TeamKey = 'proj' | 'season' | 'expected' | 'actual' | 'p_first' | 'name'
 const TEAM_SORT: SortOption<TeamKey>[] = [
-  { key: 'proj', label: 'Projection', dir: 'desc' },
+  { key: 'proj', label: 'Fin ≈', dir: 'desc' },
   { key: 'season', label: 'Saison + ce soir', dir: 'desc' },
-  { key: 'expected', label: 'Attendu (avant-match)', dir: 'desc' },
+  { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'actual', label: 'Réel', dir: 'desc' },
   { key: 'p_first', label: 'P(1er)', dir: 'desc' },
   { key: 'name', label: 'Nom', dir: 'asc' },
@@ -178,8 +221,8 @@ function SeasonMarks({ now, proj, max }: { now: number; proj: number; max: numbe
 type PlayerKey = 'start' | 'proj' | 'expected' | 'actual' | 'name'
 const PLAYER_SORT: SortOption<PlayerKey>[] = [
   { key: 'start', label: 'Heure', dir: 'asc' },
-  { key: 'proj', label: 'Projection', dir: 'desc' },
-  { key: 'expected', label: 'Attendu', dir: 'desc' },
+  { key: 'proj', label: 'Fin ≈', dir: 'desc' },
+  { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'actual', label: 'Réel', dir: 'desc' },
   { key: 'name', label: 'Nom', dir: 'asc' },
 ]
@@ -203,7 +246,7 @@ function liveFirst(teams: { r: TodayTeam; n: ReturnType<typeof teamNight> }[]): 
 const CLOSE_PTS = 10
 const WATCH_SORT: SortOption<WatchKey>[] = [
   { key: 'threat', label: 'Menace', dir: 'asc' },
-  { key: 'expected', label: 'Attendu', dir: 'desc' },
+  { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'start', label: 'Heure', dir: 'asc' },
 ]
 
@@ -337,13 +380,12 @@ export default function Today({ today: t }: { today: T }) {
         <p className="empty">Pas de matchs ce soir.</p>
       ) : (
         <>
-          <section className="group">
-            <h2 className="group-title">Ce soir · {shortDate(t.date)}</h2>
+          <Group id="soir-equipes" title={`Ce soir · ${shortDate(t.date)}`}>
             <LiveStatus live={live} t={t} />
             <p className="group-note">Même échelle pour toutes les équipes.</p>
             <NightLegend />
             <p className="legend-line">
-              « ce soir » et « saison » n'ont pas la même échelle. Saison : les points d'avant ce soir (pâle), puis la soirée au bout. « 71 → 74,3 » : maintenant → avec la projection du soir.
+              « ce soir » et « saison » n'ont pas la même échelle. Saison : les points d'avant ce soir (pâle), puis la soirée au bout. « 71 → 74 » : maintenant → fin ≈ de la soirée.
             </p>
             <SortBar options={TEAM_SORT} sort={teamSort} onChange={setTeamSort} />
             <ul className="rows">
@@ -383,7 +425,7 @@ export default function Today({ today: t }: { today: T }) {
                       </div>
                     </div>
                     <span className="row-meta num season-meta">
-                      {ord(after)} avec la projection
+                      fin ≈ : {ord(after)}
                       {after !== before && (
                         <span className="seasonline-move" style={tone(before - after, 2)}>
                           {' '}
@@ -397,10 +439,9 @@ export default function Today({ today: t }: { today: T }) {
                 )
               })}
             </ul>
-          </section>
+          </Group>
 
-          <section className="group">
-            <h2 className="group-title">Mes joueurs</h2>
+          <Group id="soir-mes-joueurs" title="Mes joueurs">
             {mine.length ? (
               <>
                 <SortBar options={PLAYER_SORT} sort={playerSort} onChange={setPlayerSort} />
@@ -416,6 +457,7 @@ export default function Today({ today: t }: { today: T }) {
                           {where(p)} · <span className={n.state === 'LIVE' ? 'is-live' : undefined}>{when(p, n)}</span>
                         </span>
                         <NightBar n={n} max={playerMax} teamId={mineId} thin />
+                        <NightMarks n={n} max={playerMax} />
                       </div>
                       <div className="row-side">
                         <Score n={{ ...n, started: n.state !== 'FUT' }} />
@@ -428,11 +470,10 @@ export default function Today({ today: t }: { today: T }) {
             ) : (
               <p className="empty">Aucun de mes joueurs ne joue ce soir.</p>
             )}
-          </section>
+          </Group>
 
           {watch.length > 0 && (
-            <section className="group">
-              <h2 className="group-title">À surveiller</h2>
+            <Group id="soir-surveiller" title="À surveiller">
               <p className="group-note">
                 Les adversaires qui menacent le plus ma 1re place sur la saison, plus les meilleurs joueurs des équipes à
                 10 pts ou moins de moi ce soir. À droite : combien sa soirée me nuit, en points à moi (−0,5 = comme si
@@ -462,14 +503,12 @@ export default function Today({ today: t }: { today: T }) {
                       ) : (
                         <span className="row-sub num">prévu {dec(p.expected)}</span>
                       )}
-                      {n.actual === 0 && n.left > 0.005 && <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.left))}</span>}
+                      <OnePoint n={n} />
                     </div>
                     {open === `w-${p.espn_id}` && (
                       <PlayerDetail p={p} n={n} live={live}>
                         <p className="detail-line num">
-                          {n.state === 'FUT' ? <>Prévu {dec(p.expected)} pt</> : <>{n.actual} {n.actual >= 2 ? 'pts' : 'pt'} · prévu {dec(p.expected)}</>}
-                          {r != null && <> · 1 de ses pts ≈ {signed(r, 2)} de mes pts</>}
-                          {' · '}
+                          {r != null && <>1 de ses pts ≈ {signed(r, 2)} de mes pts · </>}
                           <a className="team-link" href={`#equipe/${p.owner.team_id}`} onClick={(e) => e.stopPropagation()}>
                             voir {p.owner.name ?? p.owner.abbrev}
                           </a>
@@ -479,7 +518,7 @@ export default function Today({ today: t }: { today: T }) {
                   </li>
                 ))}
               </ul>
-            </section>
+            </Group>
           )}
         </>
       )}

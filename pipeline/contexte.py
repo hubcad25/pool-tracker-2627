@@ -77,6 +77,11 @@ def factors(day: date, goals: dict[str, tuple[float, float]], history: dict[str,
     return out
 
 
+def load_goals(day: date) -> dict[str, tuple[float, float]]:
+    """Les buts attendus (pour, contre) gardés pour ce soir, par équipe LNH (vide sans cotes)."""
+    return {t: (f, a) for t, (f, a) in load_history().get(day.isoformat(), {}).items()}
+
+
 def load(day: date, schedule: list[dict], *, save: bool = False) -> dict[str, tuple[float, float]]:
     """Les facteurs de ce soir. `save` : garder les buts attendus du jour (job quotidienne seulement)."""
     history = load_history()

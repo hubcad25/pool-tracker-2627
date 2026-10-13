@@ -9,7 +9,7 @@ const pct = (x: number, max: number) => `${(Math.max(0, x) / max) * 100}%`
  *  encore possible, clair) ; au bout, le perdu hachuré et pâle ; trait = l'attendu d'avant-match. Avant le premier
  *  match, la projection est l'attendu. */
 export default function NightBar({ n, max, teamId, thin }: { n: Parts; max: number; teamId: number; thin?: boolean }) {
-  const label = `${n.actual} réel, projection ${dec(n.actual + n.left)}, ${dec(n.lost)} perdu, ${dec(n.expected)} attendu avant les matchs`
+  const label = `${n.actual} faits, fin ≈ ${dec(n.actual + n.left)}, ${dec(n.lost)} perdus, ${dec(n.expected)} prévus`
   return (
     <div className={`nightbar${thin ? ' is-thin' : ''}`} role="img" aria-label={label} title={label}>
       <div className="nightbar-track">
@@ -28,8 +28,8 @@ export function NightLegend() {
     <p className="legend-line">
       <i className="lg-swatch" style={{ background: 'var(--text-dim)' }} /> points faits +{' '}
       <i className="lg-swatch" style={{ background: 'color-mix(in oklab, var(--text-dim) 35%, var(--surface-1))' }} /> encore
-      possibles = projection ; <i className="lg-swatch is-lost" /> perdus ; <i className="lg-tick" /> attendu avant les matchs.
-      À droite : points faits, prévus avant les matchs, et fin estimée (faits + le prévu du temps qui reste).
+      possibles ; <i className="lg-swatch is-lost" /> perdus ; <i className="lg-tick" /> prévu.
+      <b>Prévu</b> : avant les matchs, ne bouge plus. <b>Fin ≈</b> : faits + ce qui reste à jouer.
     </p>
   )
 }

@@ -1,3 +1,4 @@
+import Group from '../components/Group'
 import TeamLogo from '../components/TeamLogo'
 import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
@@ -94,8 +95,7 @@ export default function FreeAgents({ fa }: { fa: FA }) {
         if (!players.length) return null
         const max = Math.max(1, ...players.map((f) => f.ros.p90), worst?.ros.p90 ?? 0)
         return (
-          <section key={pos} className="group">
-            <h2 className="group-title">{LABELS[pos]}</h2>
+          <Group key={pos} id={`agents-${pos}`} title={LABELS[pos]}>
             {worst && (
               <p className="group-note">
                 Mon pire : {lastName(worst.name)}, ROS <span className="num is-data">{int(worst.ros.mean)}</span>{' '}
@@ -114,7 +114,7 @@ export default function FreeAgents({ fa }: { fa: FA }) {
                 <Row key={f.espn_id} f={f} max={max} worst={worst} />
               ))}
             </ul>
-          </section>
+          </Group>
         )
       })}
     </>

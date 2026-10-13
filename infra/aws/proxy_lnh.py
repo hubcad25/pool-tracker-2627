@@ -1,6 +1,7 @@
 """Lambda AWS : relais CORS vers l'API de la LNH, pour le direct de la PWA (api-web.nhle.com n'envoie pas de CORS).
 
-Ne relaie que des GET en liste blanche : `v1/score/{date}`, `v1/score/now` et `v1/gamecenter/{id}/boxscore`.
+Ne relaie que des GET en liste blanche : `v1/score/{date}`, `v1/score/now`, `v1/gamecenter/{id}/boxscore` et
+`v1/gamecenter/{id}/play-by-play` (tirs par zone du détail d'un joueur).
 Réponse mise en cache ~20 s (comme la LNH). Python 3.13, aucune dépendance.
 
 Déploiement (console AWS, région au choix, ex. ca-central-1) :
@@ -33,7 +34,7 @@ import urllib.error
 import urllib.request
 
 UPSTREAM = "https://api-web.nhle.com/"
-ALLOWED = re.compile(r"^/?(v1/score/(now|\d{4}-\d{2}-\d{2})|v1/gamecenter/\d{10}/boxscore)$")
+ALLOWED = re.compile(r"^/?(v1/score/(now|\d{4}-\d{2}-\d{2})|v1/gamecenter/\d{10}/(boxscore|play-by-play))$")
 ORIGINS = {"https://hubcad25.github.io", "http://localhost:5173", "http://192.168.18.12:5173"}
 MAX_AGE = 20
 

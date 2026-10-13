@@ -146,3 +146,11 @@ def test_chaque_equipe_garde_son_total_final_du_matin_pour_la_p_premier_en_direc
 
 def test_sans_totaux_du_matin_final_et_sd_sont_vides():
     assert all((r["final"], r["sd"]) == (None, None) for r in build()["teams"])
+
+
+def test_buts_attendus_du_match_selon_les_cotes():
+    data = today.build(DAY, LEAGUE, 5, RATES, games(), {}, NHL_OF, ODDS, [], NOW,
+                       goals={"MTL": (2.8, 3.3), "TOR": (3.3, 2.8)})
+    east, west = data["games"]
+    assert east["goals"] == {"away": 2.8, "home": 3.3}
+    assert west["goals"] is None
