@@ -1458,3 +1458,65 @@ b.season-mark {
   margin: -6px -5px;
   vertical-align: middle;
 }
+
+/* Total de la soirée valeur par valeur (équipe dépliée) */
+.dist {
+  flex-basis: 100%;
+  padding: 8px 0 4px;
+  border-top: 1px dashed var(--border-soft);
+  cursor: auto;
+}
+
+.dist-head {
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.dist-mode {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--text);
+}
+
+.dist-head small {
+  color: var(--text);
+}
+
+.dist-plot {
+  display: flex;
+  gap: 2px;
+}
+
+.dist-col {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.dist-track {
+  height: 56px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.dist-bar {
+  width: 100%;
+  min-height: 1px;
+  border-radius: 3px 3px 0 0;
+}
+
+.dist-x {
+  margin-top: 2px;
+  font-size: 10px;
+  text-align: center;
+  color: var(--text-faint);
+}
+
+.dist-x.is-mode {
+  color: var(--text);
+  font-weight: 650;
+}

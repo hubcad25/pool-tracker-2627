@@ -1,5 +1,6 @@
 import TeamLogo from '../components/TeamLogo'
 import NightBar, { NightLegend } from '../components/NightBar'
+import DistBars from '../components/DistBars'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
 import PlayerDetail from '../components/PlayerDetail'
 import Sparkline from '../components/Sparkline'
@@ -7,6 +8,7 @@ import { clock, dec, lastName, prob, shortDate, signed } from '../format'
 import { hasProxy, playerNight, projection, sumNights, teamNight, useLive, type Live, type Night } from '../live'
 import { teamColor, teamTint } from '../teams'
 import { firstPlaceOdds } from '../odds'
+import { atLeastOne } from '../poisson'
 import { arrow, tone } from '../tone'
 import { useState } from 'react'
 import type { Today as T, TodayTeam, TonightPlayer } from '../types'
@@ -31,6 +33,7 @@ function Score({ n, big }: { n: ReturnType<typeof sumNights> & { started: boolea
       <>
         <span className={`${cls} is-data`}>{dec(n.expected)}</span>
         <span className="row-sub">pts prévus</span>
+        <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.expected))}</span>
       </>
     )
   }
@@ -49,6 +52,7 @@ function Score({ n, big }: { n: ReturnType<typeof sumNights> & { started: boolea
           <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span>
         )}
       </span>
+      {playing && n.actual === 0 && <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.left))}</span>}
     </>
   )
 }
@@ -110,7 +114,10 @@ function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
   const rows = (r.players ?? []).map((p) => ({ p, n: playerNight(p, t, live) })).sort((a, b) => projection(b.n) - projection(a.n))
   const max = Math.max(1, ...rows.map(({ n }) => Math.max(n.expected, n.actual + n.left + n.lost)))
   if (!rows.length) return <div className="player-detail">Aucun joueur ce soir.</div>
+  const total = sumNights(rows.map(({ n }) => n))
   return (
+    <>
+    <DistBars actual={total.actual} left={total.left} teamId={r.team_id} />
     <ul className="rows pooler-players" onClick={(e) => e.stopPropagation()}>
       {rows.map(({ p, n }) => (
         <li key={p.espn_id} className={`row is-clickable${open === p.espn_id ? ' is-open' : ''}`}
@@ -129,6 +136,7 @@ function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
         </li>
       ))}
     </ul>
+    </>
   )
 }
 
@@ -181,18 +189,16 @@ const WATCH_EACH = 5
 
 const nextDay = (iso: string) => new Date(Date.parse(`${iso}T12:00:00Z`) + 86_400_000).toISOString().slice(0, 10)
 
-/** Ma P(1er) avec la soirée : chaque total final du matin − l'attendu de ce soir + réel + encore possible.
- *  On ajoute à la P(1er) du matin l'écart entre les deux calculs (mêmes arrondis des deux côtés : 0 avant les matchs).
- *  null sans les totaux du matin (vieux today.json) ou avant le premier match. */
-function liveFirst(morning: number | null | undefined, teams: { r: TodayTeam; n: ReturnType<typeof teamNight> }[]) {
-  if (morning == null || !teams.some(({ n }) => n.started)) return null
-  if (teams.some(({ r }) => r.final == null || r.sd == null)) return null
-  const me = teams.findIndex(({ r }) => r.mine)
-  if (me < 0) return null
+/** P(1er) de chaque équipe avec la soirée (team_id → P) : chaque total final du matin − l'attendu de ce soir + réel
+ *  + encore possible. On ajoute à la P(1er) du matin l'écart entre les deux calculs (mêmes arrondis des deux côtés :
+ *  0 avant les matchs). Vide sans les totaux du matin (vieux today.json) ou avant le premier match. */
+function liveFirst(teams: { r: TodayTeam; n: ReturnType<typeof teamNight> }[]): Map<number, number> {
+  if (!teams.some(({ n }) => n.started)) return new Map()
+  if (teams.some(({ r }) => r.final == null || r.sd == null || r.p_first == null)) return new Map()
   const sds = teams.map(({ r }) => r.sd!)
-  const before = firstPlaceOdds(teams.map(({ r }) => r.final!), sds)[me]
-  const after = firstPlaceOdds(teams.map(({ r, n }) => r.final! - n.expected + projection(n)), sds)[me]
-  return Math.min(1, Math.max(0, morning + after - before))
+  const before = firstPlaceOdds(teams.map(({ r }) => r.final!), sds)
+  const after = firstPlaceOdds(teams.map(({ r, n }) => r.final! - n.expected + projection(n)), sds)
+  return new Map(teams.map(({ r }, i) => [r.team_id, Math.min(1, Math.max(0, r.p_first! + after[i] - before[i]))]))
 }
 const CLOSE_PTS = 10
 const WATCH_SORT: SortOption<WatchKey>[] = [
@@ -237,7 +243,8 @@ export default function Today({ today: t }: { today: T }) {
     const order = [...teams].sort((a, b) => b[key] - a[key])
     return new Map(teams.map((x) => [x.r.team_id, order.findIndex((y) => y[key] <= x[key]) + 1]))
   }
-  const pLive = liveFirst(pf?.now, teams)
+  const liveOdds = liveFirst(teams)
+  const pLive = liveOdds.get(t.teams.find((r) => r.mine)?.team_id ?? -1) ?? null
   const allDone = t.games.length > 0 && t.games.every((g) => (live.games.get(g.id)?.state ?? g.state) === 'FINAL')
   const liveDiff = pLive != null && pf?.now != null ? pLive - pf.now : null
   // Matchs terminés : la P(1er) d'après la soirée devient le point (provisoire) du lendemain, jusqu'à la job du midi
@@ -250,7 +257,7 @@ export default function Today({ today: t }: { today: T }) {
   const sortedTeams = sortBy(teams, teamSort, ({ r, n, proj }, k) =>
     k === 'proj' ? projection(n)
     : k === 'season' ? proj
-    : k === 'p_first' ? r.p_first
+    : k === 'p_first' ? (liveOdds.get(r.team_id) ?? r.p_first)
     : k === 'expected' ? n.expected
     : k === 'actual' ? n.actual
     : (r.name ?? r.abbrev ?? ''),
@@ -352,7 +359,9 @@ export default function Today({ today: t }: { today: T }) {
                       {r.name}
                     </a>
                     <span className="row-meta">
-                      {r.p_first != null && <>P(1er) {prob(r.p_first)} · </>}
+                      {r.p_first != null && (liveOdds.has(r.team_id)
+                        ? <>P(1er) {prob(r.p_first)} → {prob(liveOdds.get(r.team_id)!)} · </>
+                        : <>P(1er) {prob(r.p_first)} · </>)}
                       {r.playing_tonight} joueur{r.playing_tonight > 1 ? 's' : ''}
                       {n.started && <> · <ScoreSub n={n} /></>}
                     </span>
@@ -453,6 +462,7 @@ export default function Today({ today: t }: { today: T }) {
                       ) : (
                         <span className="row-sub num">prévu {dec(p.expected)}</span>
                       )}
+                      {n.actual === 0 && n.left > 0.005 && <span className="row-sub num">P(1+ pt) : {prob(atLeastOne(0, n.left))}</span>}
                     </div>
                     {open === `w-${p.espn_id}` && (
                       <PlayerDetail p={p} n={n} live={live}>
