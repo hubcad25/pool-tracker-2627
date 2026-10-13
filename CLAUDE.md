@@ -32,4 +32,7 @@ uv run python -m pipeline.soiree --moment fin --day 2026-10-10   # force avant|s
 - ESPN public : un `limit` exige un tri (`sortPercOwned`). L'API de la ligue n'a pas `injuryDetails` → on fusionne
   avec l'endpoint public (`espn.fetch_league`). Slots du roster : 3=F, 4=D, 5=G, 8=IR.
 - NHL : les rosters `current` omettent les blessés (on se rabat sur `search.d3.nhle.com`). Calendriers : `gameType == 2`.
+- Cron GitHub peu fiable (saute des heures) : `soiree.yml` est surtout lancé aux 15 min par la Lambda AWS
+  `pool-soiree` (`infra/aws/declencheur.py`, EventBridge Scheduler, compte de la startup, ca-central-1, tag
+  `projet=pool-tracker-2627`). Jeton GitHub fine-grained (Actions read/write) dans ses variables d'env.
 - Abréviations ESPN ≠ NHL (NJ, LA, SJ, TB) : `ids.ESPN_TO_NHL_TEAM`.
