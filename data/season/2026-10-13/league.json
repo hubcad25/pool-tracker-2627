@@ -4,7 +4,7 @@
    "team_id": 1,
    "abbrev": "GSP",
    "name": "GSP",
-   "points": 66.0,
+   "points": 72.0,
    "acquisitions": 0,
    "roster": [
     {
@@ -189,7 +189,7 @@
    "team_id": 2,
    "abbrev": "EMs",
    "name": "Estrie Monsters",
-   "points": 56.0,
+   "points": 60.0,
    "acquisitions": 0,
    "roster": [
     {
@@ -374,7 +374,7 @@
    "team_id": 3,
    "abbrev": "AC",
    "name": "Cuzo",
-   "points": 49.0,
+   "points": 53.0,
    "acquisitions": 2,
    "roster": [
     {
@@ -559,7 +559,7 @@
    "team_id": 4,
    "abbrev": "NWA",
    "name": "NWA",
-   "points": 69.0,
+   "points": 83.0,
    "acquisitions": 0,
    "roster": [
     {
@@ -744,7 +744,7 @@
    "team_id": 5,
    "abbrev": "HC25",
    "name": "hubcad25",
-   "points": 74.0,
+   "points": 78.0,
    "acquisitions": 2,
    "roster": [
     {
@@ -1125,7 +1125,7 @@
    "team_id": 7,
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
-   "points": 57.0,
+   "points": 62.0,
    "acquisitions": 3,
    "roster": [
     {
@@ -1321,7 +1321,7 @@
    "team_id": 8,
    "abbrev": "Nl",
    "name": "Nickla",
-   "points": 47.0,
+   "points": 52.0,
    "acquisitions": 0,
    "roster": [
     {
@@ -1506,7 +1506,7 @@
    "team_id": 9,
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
-   "points": 67.0,
+   "points": 73.0,
    "acquisitions": 2,
    "roster": [
     {
@@ -1898,7 +1898,7 @@
    "team_id": 11,
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
-   "points": 59.0,
+   "points": 63.0,
    "acquisitions": 0,
    "roster": [
     {
@@ -2083,7 +2083,7 @@
    "team_id": 12,
    "abbrev": "RICo",
    "name": "Rico",
-   "points": 63.0,
+   "points": 73.0,
    "acquisitions": 0,
    "roster": [
     {
