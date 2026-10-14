@@ -413,7 +413,8 @@ export default function Today({ today: t }: { today: T }) {
   const toWatch = t.games
     .map((g) => {
       const lg = live.games.get(g.id)
-      const ps = stakes.filter((x) => x.p.game_id === g.id && x.stake > 0.005).sort((a, b) => b.stake - a.stake)
+      // Tous les joueurs du pool dans le match, du plus important pour moi au moins important (à égalité : fin ≈)
+      const ps = stakes.filter((x) => x.p.game_id === g.id).sort((a, b) => b.stake - a.stake || projection(b.n) - projection(a.n))
       const forMe = ps.filter((x) => x.mine).reduce((s, x) => s + x.stake, 0)
       const against = ps.filter((x) => !x.mine).reduce((s, x) => s + x.stake, 0)
       return { g, state: lg?.state ?? g.state, clock: lg?.clock ?? null, score: lg?.score, ps, forMe, against, total: forMe + against }
