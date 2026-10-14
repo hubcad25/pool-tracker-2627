@@ -8,6 +8,7 @@ import Sparkline from '../components/Sparkline'
 import { clock, dec, lastName, prob, shortDate, signed } from '../format'
 import { hasProxy, playerNight, projection, sumNights, teamNight, useLive, type Live, type Night } from '../live'
 import { teamColor, teamTint } from '../teams'
+import PoolerIcon from '../components/PoolerIcon'
 import { firstPlaceOdds } from '../odds'
 import { arrow, tone } from '../tone'
 import { useState } from 'react'
@@ -30,7 +31,9 @@ const when = (p: TonightPlayer, n: Night) => {
 }
 
 /** À droite d'une barre, lisible sans légende :
- *  avant le match « 1,2 / pts prévus » ; pendant « 2 pts / prévu 1,2 · fin ≈ 2,6 » ; fini « 2 pts / prévu 1,2 · ▲ +0,8 ».
+ *  avant le match « 1,2 / pts prévus » ; pendant « 2 pts → 2,6 » (faits → fin ≈, aussi gros l'un que l'autre)
+ *  et « prévu 1,2 » effacé ; fini « 2 pts / prévu 1,2 · ▲ +0,8 ».
+ *  Une fois le match commencé, ce qui compte : les faits et la fin ≈ ; le prévu passe au second plan.
  *  Fin ≈ fait + le prévu du temps qui reste. L'écart d'un match fini = réel − prévu. */
 function Score({ n, big }: { n: Night & { started: boolean }; big?: boolean }) {
   const cls = `row-value num${big ? '' : ' is-small'}`
@@ -49,15 +52,18 @@ function Score({ n, big }: { n: Night & { started: boolean }; big?: boolean }) {
     <>
       <span className={cls}>
         {n.actual} <small>{n.actual >= 2 ? 'pts' : 'pt'}</small>
+        {playing && <> <small>→</small> <span className="fin">{dec(projection(n))}</span></>}
       </span>
-      <span className="row-sub num">
-        prévu <span className="is-data">{dec(n.expected)}</span> ·{' '}
-        {playing ? (
-          <>fin ≈ {dec(projection(n))}</>
-        ) : (
+      {playing ? (
+        <span className="row-sub num">
+          <span className="is-faded">faits → fin ≈ · prévu {dec(n.expected)}</span>
+        </span>
+      ) : (
+        <span className="row-sub num">
+          <span className="is-faded">prévu {dec(n.expected)}</span> ·{' '}
           <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span>
-        )}
-      </span>
+        </span>
+      )}
       <OnePoint n={n} />
     </>
   )
@@ -76,18 +82,20 @@ function OnePoint({ n }: { n: Night }) {
   )
 }
 
-/** Sous la barre d'un joueur, chaque chiffre à son endroit : ses points au bout du plein, le prévu d'avant-match
- *  sous le trait, la fin estimée au bout du clair (pendant le match). Une étiquette trop près d'une autre saute. */
+/** Sous la barre d'un joueur, chaque chiffre à son endroit : ses points au bout du plein, la fin estimée au bout
+ *  du clair (pendant le match) ; avant le match, le prévu sous le trait (ensuite, le trait seul). Une étiquette trop près d'une autre saute. */
 function NightMarks({ n, max }: { n: Night; max: number }) {
   const marks: { x: number; text: string; cls: string }[] = []
   if (n.state !== 'FUT' && n.actual > 0) marks.push({ x: n.actual, text: `${n.actual}`, cls: 'is-end is-actual' })
-  marks.push({ x: n.expected, text: `prévu ${dec(n.expected)}`, cls: 'is-tick' })
+  if (n.state === 'FUT') marks.push({ x: n.expected, text: `prévu ${dec(n.expected)}`, cls: 'is-tick' })
   if (n.state !== 'FUT' && n.left > 0.005) marks.push({ x: projection(n), text: `fin ≈ ${dec(projection(n))}`, cls: 'is-proj' })
   const shown = marks.filter((m, i) => marks.slice(0, i).every((o) => Math.abs(o.x - m.x) / max > 0.22))
-  // Le prévu, centré sous son trait, ne doit pas déborder : collé à gauche près de 0, à droite près du bout
+  // Le prévu, centré sous son trait, ne doit pas déborder : collé à gauche près de 0, à droite près du bout.
+  // La fin ≈, alignée à droite sur le bout du clair, part vers la droite quand elle est trop près de 0.
   const edge = (m: (typeof marks)[number]) => {
-    if (m.cls !== 'is-tick') return ''
     const r = m.x / max
+    if (m.cls === 'is-proj') return r < 0.3 ? ' is-left' : ''
+    if (m.cls !== 'is-tick') return ''
     return r < 0.15 ? ' is-left' : r > 0.85 ? ' is-right' : ''
   }
   return (
@@ -118,13 +126,15 @@ function NightLine({ n, max, teamId }: { n: ReturnType<typeof teamNight>; max: n
   )
 }
 
-/** Au bout de la barre « ce soir » d'une équipe : « 13,8 pts prévus » avant les matchs, « 2 pts » ensuite */
+/** Au bout de la barre « ce soir » d'une équipe : « 13,8 pts prévus » avant les matchs, « 2 pts → 13,1 »
+ *  pendant (faits → fin ≈), « 14 pts » une fois tout fini */
 function TeamScore({ n }: { n: ReturnType<typeof sumNights> & { started: boolean } }) {
   return (
     <span className="row-value num team-score">
       {n.started ? (
         <>
           {n.actual} <small>{n.actual >= 2 ? 'pts' : 'pt'}</small>
+          {n.left > 0.005 && <> <small>→</small> <span className="fin">{dec(projection(n))}</span></>}
         </>
       ) : (
         <>
@@ -135,16 +145,16 @@ function TeamScore({ n }: { n: ReturnType<typeof sumNights> & { started: boolean
   )
 }
 
-/** Pendant la soirée, sur la ligne du haut : « prévu 13,8 · fin ≈ 14,1 », ou l'écart une fois tout fini */
+/** Pendant la soirée, sur la ligne du haut : « fin ≈ 14,1 · prévu 13,8 », ou l'écart une fois tout fini */
 function ScoreSub({ n }: { n: ReturnType<typeof sumNights> }) {
   const gap = n.actual - (n.expected - n.left)
   return (
     <span className="num">
-      prévu <span className="is-data">{dec(n.expected)}</span> ·{' '}
       {n.left > 0.005 ? (
-        <>fin ≈ {dec(projection(n))}</>
+        <><b className="fin">fin ≈ {dec(projection(n))}</b> · <span className="is-faded">prévu {dec(n.expected)}</span></>
       ) : (
-        <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span>
+        <><span className="is-faded">prévu {dec(n.expected)}</span> ·{' '}
+          <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span></>
       )}
     </span>
   )
@@ -397,7 +407,7 @@ export default function Today({ today: t }: { today: T }) {
                   onClick={() => toggle(`t-${r.team_id}`)} aria-expanded={open === `t-${r.team_id}`}>
                   <div className="row-main">
                     <a className="row-name team-link" href={`#equipe/${r.team_id}`} onClick={(e) => e.stopPropagation()}>
-                      <i className="swatch" style={{ background: teamColor(r.team_id) }} />
+                      <PoolerIcon teamId={r.team_id} />
                       {r.name}
                     </a>
                     <span className="row-meta">
@@ -487,7 +497,7 @@ export default function Today({ today: t }: { today: T }) {
                     <div className="row-main">
                       <span className="row-name">{lastName(p.name)}</span>
                       <span className="row-meta">
-                        <i className="swatch" style={{ background: teamColor(p.owner.team_id) }} />
+                        <PoolerIcon teamId={p.owner.team_id} />
                         {p.owner.name ?? p.owner.abbrev} · {why === 'saison' ? 'menace ma 1re place' : gapText(gap)}
                       </span>
                       <span className="row-meta">
@@ -502,6 +512,12 @@ export default function Today({ today: t }: { today: T }) {
                         </>
                       ) : (
                         <span className="row-sub num">prévu {dec(p.expected)}</span>
+                      )}
+                      {n.state !== 'FUT' && (
+                        <span className="row-sub num">
+                          {n.actual} {n.actual >= 2 ? 'pts' : 'pt'}
+                          {n.left > 0.005 && <> · <b className="fin">fin ≈ {dec(projection(n))}</b></>}
+                        </span>
                       )}
                       <OnePoint n={n} />
                     </div>

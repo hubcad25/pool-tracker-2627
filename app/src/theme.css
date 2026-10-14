@@ -21,23 +21,23 @@
   --gold-wash-strong: rgba(214, 162, 30, 0.28);
   /* Données (validé avec le skill dataviz, voir teams.ts). --data : ROS et points attendus (marques) ;
      --data-text : la même teinte en texte (contraste ≥ 4,5:1). Gains / pertes : --good / --danger, toujours
-     avec un signe ou une flèche. Équipes du pool : palette catégorielle à 8 teintes dans un ordre fixe ; les
-     équipes 9 à 12 reprennent les teintes 2 à 5 un pas plus foncé (le nom est toujours écrit à côté). */
+     avec un signe ou une flèche. Équipes du pool : 12 teintes qui portent chacune un nom (bleu, rouge, orange,
+     vert, violet, or, rose, brun, turquoise, lime, encre, gris), un pas plus claires en sombre. */
   --data: #2a78d6;
   --data-text: #1c5cab;
   --lost: #939aa3;
   --team-1: #2a78d6;
-  --team-2: #eb6834;
-  --team-3: #1baf7a;
-  --team-4: #eda100;
-  --team-5: #e87ba4;
-  --team-6: #008300;
-  --team-7: #4a3aa7;
-  --team-8: #e34948;
-  --team-9: #b03000;
-  --team-10: #007a49;
-  --team-11: #b46c00;
-  --team-12: #ae4771;
+  --team-2: #ef7600;
+  --team-3: #7a3fd0;
+  --team-4: #c99a00;
+  --team-5: #e0509a;
+  --team-6: #0a9fae;
+  --team-7: #1e9e3c;
+  --team-8: #d62828;
+  --team-9: #7ab317;
+  --team-10: #2b3036;
+  --team-11: #8a5a2b;
+  --team-12: #8a929a;
   --radius: 3px;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
@@ -80,17 +80,17 @@
     --data-text: #6da7ec;
     --lost: #6f777f;
     --team-1: #3987e5;
-    --team-2: #d95926;
-    --team-3: #199e70;
-    --team-4: #c98500;
-    --team-5: #d55181;
-    --team-6: #008300;
-    --team-7: #9085e9;
-    --team-8: #e66767;
-    --team-9: #ac2e00;
-    --team-10: #00764b;
-    --team-11: #9f5e00;
-    --team-12: #a8255c;
+    --team-2: #f08a1c;
+    --team-3: #9a6ae8;
+    --team-4: #dcb020;
+    --team-5: #ea6aaa;
+    --team-6: #22b8c6;
+    --team-7: #2fb04e;
+    --team-8: #e04848;
+    --team-9: #8fc928;
+    --team-10: #e6e9ec;
+    --team-11: #a8743e;
+    --team-12: #8a929a;
   }
 }
 
@@ -118,16 +118,16 @@
   --data-text: #6da7ec;
   --lost: #6f777f;
   --team-1: #3987e5;
-  --team-2: #d95926;
-  --team-3: #199e70;
-  --team-4: #c98500;
-  --team-5: #d55181;
-  --team-6: #008300;
-  --team-7: #9085e9;
-  --team-8: #e66767;
-  --team-9: #ac2e00;
-  --team-10: #00764b;
-  --team-11: #9f5e00;
-  --team-12: #a8255c;
+  --team-2: #f08a1c;
+  --team-3: #9a6ae8;
+  --team-4: #dcb020;
+  --team-5: #ea6aaa;
+  --team-6: #22b8c6;
+  --team-7: #2fb04e;
+  --team-8: #e04848;
+  --team-9: #8fc928;
+  --team-10: #e6e9ec;
+  --team-11: #a8743e;
+  --team-12: #8a929a;
 }
 

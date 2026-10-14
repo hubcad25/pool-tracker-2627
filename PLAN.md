@@ -99,6 +99,11 @@ en back-to-back ; gardien : points d'équipe attendus selon les cotes ÷ ceux de
 stable (−0,3 % de déviance, facteurs ×0,9 à ×1,1). Main chaude (5 derniers matchs) : aucun effet, non retenue. Rivaux : P(échanger nos rangs d'ici 7 jours) ≥ 10 %, points ~ Poisson.
 Points réels : boxscores LNH (vérifiés : les 12 équipes identiques à ESPN pour le 2026-10-10).
 
+**Menaces** (`pipeline/menaces.py`, à chaque run de soirée, demandé le 2026-10-13) : chaque point d'un joueur de la
+liste « À surveiller » de la PWA (attendus d'avant-match, donc liste fixe), ≤ 15 min après. Une notif par pooler, avec
+son icône. Icône et couleur de chaque pooler : `app/src/poolers.json` (icônes Phosphor pleines, unicolores) →
+`npm run poolers` écrit `src/poolerIcons.ts` (app) et `public/poolers/<team_id>.png` (notifs, ntfy n'affiche pas le SVG).
+
 **Jamais (alertes) :** lignes de stats, « rien de neuf », DTD qui ne fait manquer aucun match, blessure dans une autre équipe
 (sauf comme cible de trade, et seulement dans le digest).
 

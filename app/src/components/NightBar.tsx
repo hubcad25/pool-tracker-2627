@@ -29,7 +29,7 @@ export function NightLegend() {
       <i className="lg-swatch" style={{ background: 'var(--text-dim)' }} /> points faits +{' '}
       <i className="lg-swatch" style={{ background: 'color-mix(in oklab, var(--text-dim) 35%, var(--surface-1))' }} /> encore
       possibles ; <i className="lg-swatch is-lost" /> perdus ; <i className="lg-tick" /> prévu.
-      <b>Prévu</b> : avant les matchs, ne bouge plus. <b>Fin ≈</b> : faits + ce qui reste à jouer.
+      <b>Fin ≈</b> : faits + ce qui reste à jouer. <b>Prévu</b> (le trait) : avant les matchs, ne bouge plus.
     </p>
   )
 }

@@ -810,13 +810,13 @@ summary.group-title::before {
   font-size: 14px;
 }
 
-.swatch {
+/* Icône d'une équipe du pool (components/PoolerIcon) */
+.pooler-icon {
   display: inline-block;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  margin-right: 6px;
-  vertical-align: 0;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  vertical-align: -2px;
   flex-shrink: 0;
 }
 
@@ -1220,9 +1220,9 @@ summary.group-title::before {
   color: var(--text);
 }
 
-.team-picker .swatch {
-  width: 12px;
-  height: 12px;
+.team-picker .pooler-icon {
+  width: 16px;
+  height: 16px;
   margin: 0;
 }
 
@@ -1579,8 +1579,10 @@ b.season-mark {
   padding: 0;
 }
 
-.night-marks .season-mark.is-tick.is-left {
+.night-marks .season-mark.is-tick.is-left,
+.night-marks .season-mark.is-proj.is-left {
   transform: none;
+  padding: 0 0 0 2px;
 }
 
 .night-marks .season-mark.is-tick.is-right {
@@ -1593,7 +1595,7 @@ b.season-mark {
 }
 
 .night-marks .season-mark.is-proj {
-  color: var(--text-dim);
+  color: var(--data-text);
   font-weight: 650;
   transform: translateX(-100%);
   padding: 0 2px 0 0;
@@ -1773,4 +1775,14 @@ b.season-mark {
 .player-detail > .detail-zones {
   padding-top: 8px;
   border-top: 1px solid var(--border-soft);
+}
+
+/* Aujourd'hui, une fois les matchs commencés : la fin ≈ en avant, le prévu d'avant-match en retrait */
+.fin {
+  color: var(--data-text);
+  font-weight: 650;
+}
+
+.is-faded {
+  color: var(--text-faint);
 }

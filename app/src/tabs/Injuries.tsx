@@ -5,8 +5,8 @@ import { LuckBlock, LuckSummary } from '../components/PlayerCard'
 import RosBar from '../components/RosBar'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
 import { injuryText, int, lastName } from '../format'
-import { teamColor } from '../teams'
 import type { LeagueInjury } from '../types'
+import PoolerIcon from '../components/PoolerIcon'
 
 type Key = 'ros' | 'missed' | 'return' | 'name'
 const SORT: SortOption<Key>[] = [
@@ -29,7 +29,7 @@ function Row({ i, teamId, max }: { i: LeagueInjury; teamId?: number; max: number
             {!i.mine && i.owner && (
               <>
                 {' · '}
-                {teamId != null && <i className="swatch" style={{ background: teamColor(teamId) }} />}
+                {teamId != null && <PoolerIcon teamId={teamId} />}
                 <b>{i.owner}</b>
               </>
             )}

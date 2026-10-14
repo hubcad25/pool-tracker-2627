@@ -3,6 +3,7 @@ import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
 import { dec, int, prob, signed } from '../format'
 import { teamNight, useLive } from '../live'
 import { teamColor, teamTint } from '../teams'
+import PoolerIcon from '../components/PoolerIcon'
 import { teamLuckPhrase } from '../luck'
 import { arrow, tone, toneFill } from '../tone'
 import type { Standing, Today } from '../types'
@@ -65,7 +66,7 @@ function Luck({ rows }: { rows: Standing[] }) {
           return (
             <li key={r.team_id} className={`row luckrow${r.mine ? ' is-mine' : ''}`} title={`${name(r)} : ${teamLuckPhrase(x)}`}>
               <a className="luckrow-name team-link" href={`#equipe/${r.team_id}`}>
-                <i className="swatch" style={{ background: teamColor(r.team_id) }} />
+                <PoolerIcon teamId={r.team_id} />
                 {name(r)}
               </a>
               <div className="diverge" aria-hidden="true">
@@ -127,7 +128,7 @@ export default function Standings({ rows, today }: { rows: Standing[]; today: To
               <li key={r.team_id} className={`row standing${r.mine ? ' is-mine' : ''}`}>
                 <div className="row-main">
                   <a className="row-name team-link" href={`#equipe/${r.team_id}`}>
-                    <i className="swatch" style={{ background: teamColor(r.team_id) }} />
+                    <PoolerIcon teamId={r.team_id} />
                     {name(r)}
                   </a>
                   <span className="row-meta num">

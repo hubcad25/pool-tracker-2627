@@ -1,0 +1,14 @@
+{
+  "5": { "abbrev": "HC25", "slot": 1, "icon": "star" },
+  "12": { "abbrev": "RICo", "slot": 8, "icon": "skull" },
+  "1": { "abbrev": "GSP", "slot": 2, "icon": "flame" },
+  "4": { "abbrev": "NWA", "slot": 7, "icon": "lightning" },
+  "7": { "abbrev": "VFTH", "slot": 3, "icon": "sword" },
+  "9": { "abbrev": "LLT", "slot": 4, "icon": "ghost" },
+  "3": { "abbrev": "AC", "slot": 5, "icon": "anchor" },
+  "11": { "abbrev": "GFF", "slot": 11, "icon": "paw-print" },
+  "2": { "abbrev": "EMs", "slot": 6, "icon": "snowflake" },
+  "6": { "abbrev": "POGo", "slot": 9, "icon": "moon" },
+  "8": { "abbrev": "Nl", "slot": 10, "icon": "leaf" },
+  "10": { "abbrev": "IGm", "slot": 12, "icon": "target" }
+}

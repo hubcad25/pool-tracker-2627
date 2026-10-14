@@ -38,13 +38,16 @@ def compose(events: list[Event]) -> dict | None:
     else:
         title = TITLES.get(events[0].kind, "Pool") if len(events) == 1 else f"Pool : {len(events)} événements"
         message = "\n".join(f"• {e.message}" for e in events)
-    return {
+    payload = {
         "title": title,
         "message": message,
         "priority": events[0].priority,
         "click": config.DASHBOARD_URL,
         "actions": [{"action": "view", "label": "Dashboard", "url": config.DASHBOARD_URL}],
     }
+    if len(events) == 1 and events[0].icon:
+        payload["icon"] = events[0].icon
+    return payload
 
 
 def send(events: list[Event], *, target: str = "test", dry_run: bool = True, record: bool = True,

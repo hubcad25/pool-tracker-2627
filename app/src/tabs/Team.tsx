@@ -4,8 +4,8 @@ import PlayerCard from '../components/PlayerCard'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
 import { lastName } from '../format'
 import { tone } from '../tone'
-import { teamColor } from '../teams'
 import type { Player, Standing } from '../types'
+import PoolerIcon from '../components/PoolerIcon'
 
 const GROUPS: { slot: Player['slot']; label: string }[] = [
   { slot: 'F', label: 'Attaquants' },
@@ -32,7 +32,7 @@ function TeamPicker({ teamId, teams, myId }: { teamId: number; teams: Standing[]
   const sorted = [...teams].sort((a, b) => (a.team_id === myId ? -1 : b.team_id === myId ? 1 : (a.name ?? '').localeCompare(b.name ?? '', 'fr')))
   return (
     <label className="team-picker">
-      <i className="swatch" style={{ background: teamColor(teamId) }} />
+      <PoolerIcon teamId={teamId} />
       <select
         aria-label="Équipe"
         value={teamId}

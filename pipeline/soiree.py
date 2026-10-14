@@ -22,7 +22,7 @@ import json
 import math
 from datetime import date, datetime, timedelta
 
-from pipeline import config, contexte, ids, notify, today
+from pipeline import config, contexte, ids, menaces, notify, today
 from pipeline.events import LOW, NORMAL, Event
 from pipeline.http import AuthError
 from pipeline.ids import ESPN_TO_NHL_TEAM
@@ -333,6 +333,7 @@ def run(now: datetime, *, target: str, dry_run: bool, forced: tuple[str, date] |
     for due in dues:
         games = today_games if due[1] == now.date() else yesterday_games
         _send(now, due, games, target=target, dry_run=dry_run, forced=False)
+    menaces.run(now, today_games, yesterday_games, target=target, dry_run=dry_run)
     if not dry_run:
         refresh(now, today_games)
 

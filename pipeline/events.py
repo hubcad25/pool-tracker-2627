@@ -7,11 +7,12 @@ LOW, NORMAL, HIGH, MAX = 2, 3, 4, 5
 
 @dataclass(frozen=True)
 class Event:
-    kind: str          # status, return_date, activation, fa_alert, digest, health, soiree
+    kind: str          # status, return_date, activation, fa_alert, digest, health, soiree, menace
     key: str           # clé de déduplication : (joueur, type, valeur)
     message: str
     priority: int = NORMAL
     title: str | None = None   # notif seule : ce titre, et le message tel quel (sans puce)
+    icon: str | None = None    # notif seule : URL d'une image PNG/JPEG (ntfy n'affiche pas le SVG)
 
 
 def unmatched_ids(missing: list[dict]) -> list[Event]:
