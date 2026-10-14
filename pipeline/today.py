@@ -4,6 +4,7 @@
 matchs terminés). Les deux jobs poussent ce fichier : un fichier à part évite les conflits sur dashboard.json.
 
 - Attendus : les mêmes que la notif « avant » (`soiree.night` : ROS ÷ matchs restants × facteur du match).
+  Gardiens : `p_start`, leur chance de commencer selon MoneyPuck (`pipeline/partants.py`), ou None.
 - P(1er) et son delta par point : ceux du classement (`dashboard.standings`), relus par la job de soirée dans
   le today.json précédent. Idem pour le total final projeté du matin (`final`) et son écart-type (`sd`) : la PWA
   recalcule la P(1er) en direct (total du matin − attendu ce soir + réel + encore possible).
@@ -74,16 +75,17 @@ def _goals(game: dict, goals: dict[str, tuple[float, float]]) -> dict | None:
 
 
 def _player(p: dict, rate: float, game: dict, points: dict[int, tuple[int, str]],
-            nhl_of: dict[int, int]) -> dict:
+            nhl_of: dict[int, int], starts: dict[int, tuple[float, float]]) -> dict:
     done = game["state"] in soiree.DONE
     nhl_id = nhl_of.get(p["espn_id"])
     return {"espn_id": p["espn_id"], "nhl_id": nhl_id, "name": p["name"], "pos": p.get("pos"),
             "team": soiree._nhl_team(p), "game_id": game["game_id"], "opp": game["opp"], "start": game["start"],
-            "expected": round(rate, 2), "actual": points.get(nhl_id, (0, ""))[0] if done else None}
+            "expected": round(rate, 2), "actual": points.get(nhl_id, (0, ""))[0] if done else None,
+            "p_start": round(starts[p["espn_id"]][0], 3) if p["espn_id"] in starts else None}
 
 
 # Champs d'un joueur dans `teams[].players` (de quoi recalculer la soirée en direct dans la PWA)
-LIVE_FIELDS = ("espn_id", "nhl_id", "name", "pos", "team", "game_id", "opp", "start", "expected", "actual")
+LIVE_FIELDS = ("espn_id", "nhl_id", "name", "pos", "team", "game_id", "opp", "start", "expected", "actual", "p_start")
 
 
 def build(day: date, league: dict, team_id: int, rates: dict[str, float], games: list[dict],
@@ -91,25 +93,26 @@ def build(day: date, league: dict, team_id: int, rates: dict[str, float], games:
           team_odds: dict[int, tuple[float | None, float | None]], history: list[dict], now: datetime,
           factors: dict[str, tuple[float, float]] | None = None,
           team_finals: dict[int, tuple[float | None, float | None]] | None = None,
-          goals: dict[str, tuple[float, float]] | None = None) -> dict:
+          goals: dict[str, tuple[float, float]] | None = None,
+          starts: dict[int, tuple[float, float]] | None = None) -> dict:
     """`games` : nhl.fetch_games du jour ; `points` : points de pool des matchs terminés, par nhl_id ;
     `factors` : contexte.factors du soir ; `team_finals` : total final du matin et écart-type (cf. finals) ;
     `goals` : contexte.load_goals, les buts attendus de chaque équipe d'après les cotes (la PWA en tire les
-    points des gardiens en direct, selon le pointage)."""
+    points des gardiens en direct, selon le pointage) ; `starts` : partants.load."""
     started = any(g["state"] in soiree.DONE for g in games)
     teams, my_players, watch = [], [], []
     for t in league["teams"]:
         mine = t["team_id"] == team_id
         p_first, delta = team_odds.get(t["team_id"], (None, None))
         final, sd = (team_finals or {}).get(t["team_id"], (None, None))
-        n = soiree.night(t, rates, games, points, nhl_of, factors)
+        n = soiree.night(t, rates, games, points, nhl_of, factors, starts)
         teams.append({"team_id": t["team_id"], "abbrev": t.get("abbrev"), "name": t.get("name"), "mine": mine,
                       "points": t.get("points") or 0, "p_first": p_first, "delta_p_first_per_point": delta,
                       "final": final, "sd": sd,
                       "expected_tonight": round(n["expected"], 1), "actual_tonight": n["actual"] if started else None,
                       "playing_tonight": len(n["players"]), "players": []})
         for p, rate in n["players"]:
-            card = _player(p, rate, _when(soiree._nhl_team(p), games), points, nhl_of)
+            card = _player(p, rate, _when(soiree._nhl_team(p), games), points, nhl_of, starts or {})
             teams[-1]["players"].append({k: card[k] for k in LIVE_FIELDS})
             if mine:
                 card["injury"] = None if p.get("injury_status", "ACTIVE") == "ACTIVE" else p["injury_status"]

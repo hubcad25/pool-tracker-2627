@@ -32,8 +32,12 @@ export function goalieOutlook(gf: number, ga: number, lf: number, la: number) {
 }
 
 export type GoalieNight = {
-  /** Devant le filet (true), sur le banc (false), pas encore connu (null) */
+  /** Partant (true), pas partant (false) ou pas encore connu (null) : figé dès le début du match */
+  started: boolean | null
+  /** Devant le filet maintenant (true), sur le banc (false), pas encore connu (null) */
   inNet: boolean | null
+  /** Sa chance de commencer selon MoneyPuck, avant le match (null sans info) */
+  pStart: number | null
   score: { for: number; against: number }
   /** P(victoire), P(défaite en prolongation) et P(blanchissage) de son équipe, d'après le pointage */
   win: number
@@ -41,19 +45,24 @@ export type GoalieNight = {
   shutout: number
 }
 
-/** La soirée d'un gardien. L'attendu d'avant-match compte la chance qu'il ne joue pas ; une fois le match
- *  commencé, on sait s'il joue : prévu = ses points s'il joue, ou 0 sur le banc. */
-export function goalieNight(expected: number, goals: { for: number; against: number } | null,
-  score: { for: number; against: number }, left: number, inNet: boolean | null) {
+/** La soirée d'un gardien. L'attendu d'avant-match compte la chance qu'il ne commence pas (MoneyPuck, sinon sa
+ *  part des départs). Le prévu se fige sur le partant : ses points s'il commence, 0 sinon (même s'il entre en
+ *  relève). Ce qui reste possible suit celui qui est devant le filet. */
+export function goalieNight(expected: number, pStart: number | null, goals: { for: number; against: number } | null,
+  score: { for: number; against: number }, left: number, role: { started: boolean | null; inNet: boolean | null }) {
+  const { started, inNet } = role
   const pre = goalieOutlook(0, 0, goals?.for ?? LEAGUE_GOALS, goals?.against ?? LEAGUE_GOALS)
-  const now = goalieOutlook(score.for, score.against, (goals?.for ?? LEAGUE_GOALS) * left, (goals?.against ?? LEAGUE_GOALS) * left)
-  const plays = inNet === false ? 0 : inNet === true ? 1 : Math.min(1, expected / pre.points)
-  const prevu = inNet === false ? 0 : inNet === true ? Math.max(expected, pre.points) : expected
+  const raw = goalieOutlook(score.for, score.against, (goals?.for ?? LEAGUE_GOALS) * left, (goals?.against ?? LEAGUE_GOALS) * left)
+  // Changement de gardien : plus de blanchissage possible (il faut être seul devant le filet)
+  const now = started === false || (started === true && inNet === false) ? { ...raw, points: raw.points - raw.shutout, shutout: 0 } : raw
+  const plays = started === null ? (pStart ?? Math.min(1, expected / pre.points)) : started ? 1 : 0
+  const prevu = started === null ? expected : started ? pre.points : 0
+  const here = inNet === null ? plays : inNet ? 1 : 0
   return {
     expected: prevu,
-    left: prevu * (now.points / pre.points),
+    left: inNet === null ? prevu * (now.points / pre.points) : here * now.points,
     p1Start: plays * (pre.win + pre.otl),
-    p1: plays * (now.win + now.otl),
-    goalie: { inNet, score, win: now.win, otl: now.otl, shutout: now.shutout } satisfies GoalieNight,
+    p1: here * (now.win + now.otl),
+    goalie: { started, inNet, pStart, score, win: now.win, otl: now.otl, shutout: now.shutout } satisfies GoalieNight,
   }
 }

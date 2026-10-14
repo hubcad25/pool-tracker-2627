@@ -23,9 +23,12 @@ export type LiveGame = {
   goals: Goal[]
   /** Pointage, par abréviation LNH */
   score: Record<string, number>
-  /** Gardiens qui ont joué (nhl_id), d'après le boxscore ; null tant qu'on ne le sait pas */
-  goalies: Set<number> | null
+  /** Gardiens de chaque équipe (abréviation LNH → nhl_id) : le partant, figé, et celui devant le filet
+   *  maintenant ; une équipe absente tant qu'on ne le sait pas */
+  goalies: Goalies
 }
+
+export type Goalies = { starter: Record<string, number>; now: Record<string, number> }
 
 export type Goal = {
   period: string
@@ -111,12 +114,53 @@ export function pointsFromBoxscore(box: { playerByGameStats?: Record<string, Box
   return out
 }
 
-/** Les gardiens qui ont joué dans un match (temps de jeu > 0) ; null si aucun encore */
-function goaliesIn(box: { playerByGameStats?: Record<string, BoxSide> }): Set<number> | null {
-  const ids = Object.values(box.playerByGameStats ?? {}).flatMap((side) =>
-    (side.goalies ?? []).filter((p) => (p.toi ?? '00:00') !== '00:00').map((p) => p.playerId))
-  return ids.length ? new Set(ids) : null
+type Box = { playerByGameStats?: Record<string, BoxSide>; awayTeam?: { abbrev: string }; homeTeam?: { abbrev: string } }
+type Pbp = {
+  homeTeam?: { id: number; abbrev: string }
+  awayTeam?: { id: number; abbrev: string }
+  rosterSpots?: { playerId: number; teamId: number }[]
+  plays?: { details?: { goalieInNetId?: number } }[]
 }
+
+/** Gardiens d'un match d'après le boxscore : une équipe dont un seul gardien a joué (temps de jeu > 0) l'a
+ *  comme partant et devant le filet. Si une équipe en a fait jouer deux, `relief` : il faut le play-by-play. */
+function goaliesFromBox(box: Box): { goalies: Goalies; relief: boolean } {
+  const goalies: Goalies = { starter: {}, now: {} }
+  let relief = false
+  for (const [key, side] of Object.entries(box.playerByGameStats ?? {})) {
+    const team = (key === 'homeTeam' ? box.homeTeam : box.awayTeam)?.abbrev
+    const used = (side.goalies ?? []).filter((p) => (p.toi ?? '00:00') !== '00:00')
+    if (!team || !used.length) continue
+    if (used.length > 1) relief = true
+    else goalies.starter[team] = goalies.now[team] = used[0].playerId
+  }
+  return { goalies, relief }
+}
+
+/** Gardiens d'un match d'après le play-by-play : le premier devant le filet de chaque équipe (le partant) et le
+ *  dernier (celui devant le filet maintenant) */
+function goaliesFromPbp(pbp: Pbp): Goalies {
+  const abbrev: Record<number, string> = {}
+  for (const t of [pbp.homeTeam, pbp.awayTeam]) if (t) abbrev[t.id] = t.abbrev
+  const teamOf = new Map((pbp.rosterSpots ?? []).map((r) => [r.playerId, abbrev[r.teamId]]))
+  const goalies: Goalies = { starter: {}, now: {} }
+  for (const e of pbp.plays ?? []) {
+    const id = e.details?.goalieInNetId
+    const team = id != null ? teamOf.get(id) : undefined
+    if (id == null || !team) continue
+    goalies.starter[team] ??= id
+    goalies.now[team] = id
+  }
+  return goalies
+}
+
+/** Gardiens d'un match : le boxscore suffit, sauf s'il y a eu un changement de gardien */
+async function goaliesOf(gameId: number, box: Box): Promise<Goalies> {
+  const { goalies, relief } = goaliesFromBox(box)
+  return relief ? goaliesFromPbp(await getJson(`v1/gamecenter/${gameId}/play-by-play`)) : goalies
+}
+
+const NO_GOALIES: Goalies = { starter: {}, now: {} }
 
 const periodName = (d?: { number: number; periodType: string }) =>
   d?.periodType === 'OT' || (d?.number ?? 1) > 3 ? 'Prol.' : d?.number === 1 ? '1re' : `${d?.number ?? 1}e`
@@ -148,7 +192,7 @@ function active(t: Today, live: Map<number, LiveGame>, now: number) {
 /** Interroge le proxy toutes les ~60 s tant qu'un match est en cours ou imminent, onglet visible seulement. */
 export function useLive(t: Today | null): Live {
   const [live, setLive] = useState<Live>({ games: new Map(), at: null, status: 'off' })
-  const finals = useRef(new Map<number, { points: Map<number, number>; goalies: Set<number> | null }>())
+  const finals = useRef(new Map<number, { points: Map<number, number>; goalies: Goalies }>())
   const gamesRef = useRef(live.games)
 
   useEffect(() => {
@@ -173,21 +217,26 @@ export function useLive(t: Today | null): Live {
           const read = async (g: ScoreGame): Promise<[number, LiveGame]> => {
             const state = STATES[g.gameState] ?? 'FUT'
             let points = pointsFromGoals(g)
-            let goalies: Set<number> | null = null
-            // En cours : le boxscore dit quel gardien est devant le filet
+            let goalies = NO_GOALIES
+            // En cours : le boxscore (et le play-by-play s'il y a eu un changement) dit qui a commencé et qui
+            // est devant le filet. Un échec ne coûte que les gardiens de ce match : le reste du direct s'affiche.
             if (state === 'LIVE' && ours.has(g.id)) {
               try {
-                goalies = goaliesIn(await getJson(`v1/gamecenter/${g.id}/boxscore`))
+                goalies = await goaliesOf(g.id, await getJson(`v1/gamecenter/${g.id}/boxscore`))
               } catch {
-                goalies = null
+                goalies = gamesRef.current.get(g.id)?.goalies ?? NO_GOALIES
               }
             }
             if (state === 'FINAL' && ours.has(g.id)) {
-              if (!finals.current.has(g.id)) {
-                const box = await getJson(`v1/gamecenter/${g.id}/boxscore`)
-                finals.current.set(g.id, { points: pointsFromBoxscore(box), goalies: goaliesIn(box) })
+              try {
+                if (!finals.current.has(g.id)) {
+                  const box: Box = await getJson(`v1/gamecenter/${g.id}/boxscore`)
+                  finals.current.set(g.id, { points: pointsFromBoxscore(box), goalies: await goaliesOf(g.id, box) })
+                }
+                ;({ points, goalies } = finals.current.get(g.id)!)
+              } catch {
+                goalies = gamesRef.current.get(g.id)?.goalies ?? NO_GOALIES
               }
-              ;({ points, goalies } = finals.current.get(g.id)!)
             }
             const score: Record<string, number> = {}
             for (const side of [g.homeTeam, g.awayTeam]) if (side) score[side.abbrev] = side.score ?? 0
@@ -254,7 +303,7 @@ export type Night = {
   goalie?: GoalieNight
 }
 
-export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game_id' | 'nhl_id' | 'pos' | 'team'>, t: Today, live: Live): Night {
+export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game_id' | 'nhl_id' | 'pos' | 'team' | 'p_start'>, t: Today, live: Live): Night {
   const g = p.game_id != null ? live.games.get(p.game_id) : undefined
   const base = t.games.find((x) => x.id === p.game_id)
   // Vieux today.json sans game_id : un `actual` connu veut dire que le match est terminé
@@ -268,9 +317,10 @@ export function playerNight(p: Pick<TonightPlayer, 'expected' | 'actual' | 'game
     const home = p.team === base.home
     const odds = base.goals ? { for: base.goals[home ? 'home' : 'away'], against: base.goals[home ? 'away' : 'home'] } : null
     const score = { for: g?.score[p.team] ?? 0, against: g?.score[home ? base.away : base.home] ?? 0 }
-    // Devant le filet ou pas, une fois le match commencé : on le sait par le boxscore
-    const inNet = g?.goalies && p.nhl_id != null ? g.goalies.has(p.nhl_id) : null
-    const gn = goalieNight(p.expected, odds, score, state === 'FINAL' ? 0 : leftFrac, inNet)
+    // Partant (figé) et devant le filet maintenant, une fois le match commencé : boxscore / play-by-play
+    const is = (who: Record<string, number> | undefined) => (who?.[p.team] != null && p.nhl_id != null ? who[p.team] === p.nhl_id : null)
+    const role = { started: is(g?.goalies.starter), inNet: is(g?.goalies.now) }
+    const gn = goalieNight(p.expected, p.p_start ?? null, odds, score, state === 'FINAL' ? 0 : leftFrac, role)
     const done = state === 'FINAL'
     return {
       actual, expected: gn.expected, left: done ? 0 : gn.left, lost: Math.max(0, gn.expected - actual - (done ? 0 : gn.left)),

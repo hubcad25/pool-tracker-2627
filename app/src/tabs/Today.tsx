@@ -24,10 +24,11 @@ const where = (p: TonightPlayer) => (
 /** Heure du match, ou son état en direct (« 2e · 14:02 », « Final ») */
 const when = (p: TonightPlayer, n: Night) => {
   const t = n.clock ?? (n.state === 'FINAL' ? 'Final' : clock(p.start))
-  // Gardien : le pointage de son équipe et s'il est sur le banc
+  // Gardien : le pointage de son équipe, et s'il est sur le banc ou entré en relève
   const g = n.goalie
   if (!g || n.state === 'FUT') return t
-  return `${g.score.for}-${g.score.against} · ${t}${g.inNet === false ? ' · banc' : ''}`
+  const role = g.started === false ? (g.inNet ? ' · relève' : ' · banc') : g.started && g.inNet === false ? ' · retiré' : ''
+  return `${g.score.for}-${g.score.against} · ${t}${role}`
 }
 
 /** À droite d'une barre, lisible sans légende :

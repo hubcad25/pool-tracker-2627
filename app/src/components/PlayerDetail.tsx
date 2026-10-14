@@ -35,26 +35,29 @@ export default function PlayerDetail({ p, n, live, children }: { p: TonightPlaye
   const b = box && box !== 'error' ? box : null
   const unavailable = started && (!hasProxy || box === 'error')
 
-  if (goalie && n.goalie)
+  if (goalie && n.goalie) {
+    // A joué : partant, ou entré en relève
+    const played = n.goalie.started !== false || n.goalie.inNet !== false
     return (
       <div className="player-detail" onClick={(e) => e.stopPropagation()}>
         <GoalieLive p={p} n={n} />
         {children}
         {unavailable && <p className="detail-line">Détails du match indisponibles (pas de direct LNH).</p>}
-        {b && n.goalie.inNet !== false && (
+        {b && played && (
           <dl className="detail-stats num">
             <Stat k="Arrêts" v={b.shotsAgainst != null ? `${b.saves}/${b.shotsAgainst}` : undefined} />
             <Stat k="% arrêts" v={b.savePctg != null ? b.savePctg.toFixed(3).replace(/^0/, '') : undefined} />
             <Stat k="TOI" v={b.toi} />
           </dl>
         )}
-        {zones && n.goalie.inNet !== false && (
+        {zones && played && (
           <div className="detail-zones">
             <ZoneBar title="Tirs contre" z={zones} max={40} />
           </div>
         )}
       </div>
     )
+  }
 
   return (
     <div className="player-detail" onClick={(e) => e.stopPropagation()}>
@@ -142,9 +145,12 @@ function GoalieLive({ p, n }: { p: TonightPlayer; n: Night }) {
   const opp = p.opp.replace('@', '')
   const done = n.state === 'FINAL'
   const role =
-    g.inNet === true ? { text: 'Devant le filet', cls: 'is-in' }
-    : g.inNet === false ? { text: 'Sur le banc', cls: 'is-out' }
-    : { text: n.state === 'FUT' ? 'Partant pas confirmé' : 'Partant inconnu', cls: '' }
+    n.state === 'FUT' ? { text: g.pStart != null ? `Commence à ${prob(g.pStart)} (MoneyPuck)` : 'Partant pas annoncé', cls: '' }
+    : g.started === true && g.inNet !== false ? { text: done ? 'Partant' : 'Partant · devant le filet', cls: 'is-in' }
+    : g.started === true ? { text: 'Partant · retiré', cls: 'is-out' }
+    : g.started === false && g.inNet === true ? { text: done ? 'Entré en relève' : 'En relève · devant le filet', cls: 'is-in' }
+    : g.started === false ? { text: 'Sur le banc', cls: 'is-out' }
+    : { text: 'Partant pas encore connu', cls: '' }
   return (
     <div className="goalie-live">
       <div className="goalie-head">
@@ -156,8 +162,8 @@ function GoalieLive({ p, n }: { p: TonightPlayer; n: Night }) {
         )}
         <span className={`goalie-role ${role.cls}`}>{role.text}</span>
       </div>
-      {g.inNet === false ? (
-        <p className="detail-line">0 pt ce soir.</p>
+      {g.inNet === false && !done ? (
+        <p className="detail-line num">{g.started ? `Plus devant le filet · prévu ${dec(n.expected)}` : '0 pt ce soir.'}</p>
       ) : done ? (
         <p className="detail-line num">
           <b>{pts(n.actual)}</b> · prévu {dec(n.expected)}
@@ -171,7 +177,7 @@ function GoalieLive({ p, n }: { p: TonightPlayer; n: Night }) {
           </div>
           <p className="detail-line num">
             Fin ≈ <b>{dec(n.actual + n.left)}</b> pt · prévu {dec(n.expected)}
-            {g.inNet == null && <span className="detail-fine"> · compte la chance qu'il ne joue pas</span>}
+            {g.started == null && <span className="detail-fine"> · compte la chance qu'il ne commence pas</span>}
           </p>
         </>
       )}

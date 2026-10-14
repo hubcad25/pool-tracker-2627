@@ -12,7 +12,7 @@ from datetime import date, datetime, timedelta
 import requests
 
 from model import ros
-from pipeline import config, contexte, dashboard, events, ids, notify, rules, snapshot, soiree, today
+from pipeline import config, contexte, dashboard, events, ids, notify, partants, rules, snapshot, soiree, today
 from pipeline.http import AuthError
 from pipeline.sources import espn, moneypuck, nhl
 
@@ -69,11 +69,14 @@ def run(day: date) -> list[events.Event]:
     if data["standings"]:
         today.record_p_first(day, next(r["p_first"] for r in data["standings"] if r["mine"]))
         games = nhl.fetch_games(day.isoformat())
+        factors = contexte.load(day, schedule, save=True)
+        goals = contexte.load_goals(day)
+        current = json.loads(today.PATH.read_text()) if today.PATH.exists() else None
         today.write(today.build(day, league or prev_league, config.MY_TEAM_ID, rates, games,
                                 soiree.fetch_points(games), soiree.nhl_ids(), today.odds(data["standings"]),
-                                today.load_history(), datetime.now(config.TZ),
-                                contexte.load(day, schedule, save=True), today.finals(data["standings"]),
-                                contexte.load_goals(day)))
+                                today.load_history(), datetime.now(config.TZ), factors,
+                                today.finals(data["standings"]), goals,
+                                partants.load(day, league or prev_league, goals, current)))
     return out
 
 

@@ -165,6 +165,8 @@ export type TonightPlayer = {
   start: string
   expected: number
   actual: number | null
+  /** Gardiens : sa chance de commencer selon MoneyPuck (pipeline/partants.py), null sans info */
+  p_start?: number | null
 }
 
 export type Today = {
