@@ -44,7 +44,7 @@ RIVAL_P = 0.10
 MAX_RIVALS = 4
 RIVALS_SHOWN = 3      # notif « avant » : équipes les plus menaçantes ce soir
 WATCH_SHOWN = 3       # et joueurs adverses à surveiller
-DONE = {"OFF", "FINAL"}
+DONE = {"OVER", "OFF", "FINAL"}
 LINEUP_SLOTS = {"F", "D", "G"}
 # Gardien sans rythme (sans prior) : ~1,15 pt par match d'équipe (2 la victoire, 1 la défaite en prolongation
 # dans ~22 % des matchs, 1 le blanchissage dans ~7 %, divisé entre les deux équipes), × ~60 % des départs

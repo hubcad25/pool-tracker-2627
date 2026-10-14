@@ -9,7 +9,7 @@ const PROXY = (import.meta.env.VITE_LNH_PROXY as string | undefined)?.replace(/\
 const POLL_MS = 60_000
 const SOON_MS = 30 * 60_000
 const REGULATION = 3 * 20 * 60
-const STATES: Record<string, GameState> = { FUT: 'FUT', PRE: 'FUT', LIVE: 'LIVE', CRIT: 'LIVE', OFF: 'FINAL', FINAL: 'FINAL' }
+const STATES: Record<string, GameState> = { FUT: 'FUT', PRE: 'FUT', LIVE: 'LIVE', CRIT: 'LIVE', OVER: 'FINAL', OFF: 'FINAL', FINAL: 'FINAL' }
 
 export type LiveGame = {
   state: GameState

@@ -17,7 +17,7 @@ from pipeline.sources import nhl
 SENT = config.STATE_DIR / "menaces.json"
 WATCH_EACH = 5
 CLOSE_PTS = 10
-STARTED = {"LIVE", "CRIT", "OFF", "FINAL"}
+STARTED = {"LIVE", "CRIT", "OVER", "OFF", "FINAL"}
 
 
 def watch_list(data: dict) -> list[dict]:

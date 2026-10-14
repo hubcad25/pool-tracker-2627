@@ -24,7 +24,7 @@ HISTORY = config.STATE_DIR / "p_first.json"
 HISTORY_DAYS = 400       # toute la saison : la PWA écrase les vieux jours
 WATCH = 8
 # États LNH → ceux de la PWA
-STATES = {"FUT": "FUT", "PRE": "FUT", "LIVE": "LIVE", "CRIT": "LIVE", "OFF": "FINAL", "FINAL": "FINAL"}
+STATES = {"FUT": "FUT", "PRE": "FUT", "LIVE": "LIVE", "CRIT": "LIVE", "OVER": "FINAL", "OFF": "FINAL", "FINAL": "FINAL"}
 
 
 def load_history() -> list[dict]:
