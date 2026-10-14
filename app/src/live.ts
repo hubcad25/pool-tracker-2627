@@ -169,9 +169,8 @@ export function useLive(t: Today | null): Live {
         first = false
         try {
           const score: { games: ScoreGame[] } = await getJson(`v1/score/${t.date}`)
-          const games = new Map<number, LiveGame>()
-          for (const g of score.games) {
-            if (!t.games.some((x) => x.id === g.id)) continue
+          // Les boxscores (gardiens en jeu, points des matchs finis) en parallèle : un par match, ~0,1 s chacun
+          const read = async (g: ScoreGame): Promise<[number, LiveGame]> => {
             const state = STATES[g.gameState] ?? 'FUT'
             let points = pointsFromGoals(g)
             let goalies: Set<number> | null = null
@@ -192,8 +191,9 @@ export function useLive(t: Today | null): Live {
             }
             const score: Record<string, number> = {}
             for (const side of [g.homeTeam, g.awayTeam]) if (side) score[side.abbrev] = side.score ?? 0
-            games.set(g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points, goals: goalsOf(g), score, goalies })
+            return [g.id, { state, left: regulationLeft(g), clock: clockLabel(g), points, goals: goalsOf(g), score, goalies }]
           }
+          const games = new Map(await Promise.all(score.games.filter((g) => t.games.some((x) => x.id === g.id)).map(read)))
           gamesRef.current = games
           if (!stopped) setLive({ games, at: new Date(), status: 'ok' })
         } catch {
