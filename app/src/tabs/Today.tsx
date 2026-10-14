@@ -367,6 +367,34 @@ export default function Today({ today: t }: { today: T }) {
     k === 'threat' ? w.threat : k === 'left' ? w.n.left : k === 'expected' ? w.p.expected : w.p.start,
   )
 
+  // Matchs à regarder : ce qui reste à jouer dans chaque match, en équivalent de MES points. Poids d'un joueur :
+  // 1 s'il est à moi ; pour un rival, le plus grand de sa menace sur ma P(1er) (|ratio|) et de sa proximité au
+  // classement (1 à égalité, 0 à CLOSE_PTS points ou plus). `left` fond déjà avec le temps réglementaire qui reste.
+  const weightOf = (r: TodayTeam) => {
+    if (r.mine) return 1
+    const now = teams.find((x) => x.r.team_id === r.team_id)?.now ?? r.points
+    const near = Math.max(0, 1 - Math.abs(now - myNow) / CLOSE_PTS)
+    return Math.max(Math.abs(ratio(r.delta_p_first_per_point ?? null) ?? 0), near)
+  }
+  const stakes = t.teams.flatMap((r) => {
+    const w = weightOf(r)
+    return (r.players ?? []).map((p) => {
+      const n = playerNight(p, t, live)
+      return { p, r, n, stake: w * n.left, mine: r.mine }
+    })
+  })
+  const toWatch = t.games
+    .map((g) => {
+      const lg = live.games.get(g.id)
+      const ps = stakes.filter((x) => x.p.game_id === g.id && x.stake > 0.005).sort((a, b) => b.stake - a.stake)
+      const forMe = ps.filter((x) => x.mine).reduce((s, x) => s + x.stake, 0)
+      const against = ps.filter((x) => !x.mine).reduce((s, x) => s + x.stake, 0)
+      return { g, state: lg?.state ?? g.state, clock: lg?.clock ?? null, score: lg?.score, ps, forMe, against, total: forMe + against }
+    })
+    .filter((x) => x.state !== 'FINAL' && x.total >= 0.05)
+    .sort((a, b) => b.total - a.total)
+  const watchMax = Math.max(0.01, ...toWatch.map((x) => x.total))
+
   return (
     <>
       {pf?.now != null && (
@@ -399,6 +427,51 @@ export default function Today({ today: t }: { today: T }) {
         <p className="empty">Pas de matchs ce soir.</p>
       ) : (
         <>
+          {toWatch.length > 0 && (
+            <Group id="soir-matchs" title="Matchs à regarder">
+              <p className="group-note">
+                Ce qui reste à jouer dans chaque match, en équivalent de mes points : mes joueurs (vert) plus ceux des
+                rivaux (rouge) qui menacent ma 1re place ou sont à 10 pts ou moins de moi. Fond avec le temps qui reste.
+              </p>
+              <ul className="rows">
+                {toWatch.map(({ g, state, clock: c, score, ps, forMe, against, total }) => (
+                  <li key={g.id} className="row">
+                    <div className="row-main">
+                      <span className="row-name">
+                        <TeamLogo team={g.away} /> {state !== 'FUT' && score ? `${score[g.away] ?? 0}-${score[g.home] ?? 0}` : '@'}{' '}
+                        <TeamLogo team={g.home} />
+                      </span>
+                      <span className="row-meta">
+                        <span className={state === 'LIVE' ? 'is-live' : undefined}>{c ?? clock(g.start)}</span>
+                      </span>
+                      <div className="nightbar-track watch-bar" role="img" aria-label={`${dec(forMe)} pour moi, ${dec(against)} contre`}>
+                        {forMe > 0 && <span className="nightbar-seg" style={{ width: `${(forMe / watchMax) * 100}%`, background: 'var(--good)' }} />}
+                        {against > 0 && <span className="nightbar-seg" style={{ width: `${(against / watchMax) * 100}%`, background: 'var(--danger)' }} />}
+                      </div>
+                      <span className="row-meta">
+                        {ps.slice(0, 3).map(({ p, r, mine: m }, i) => (
+                          <span key={p.espn_id}>
+                            {i > 0 && ' · '}
+                            <PoolerIcon teamId={r.team_id} />
+                            <span style={tone(m ? 1 : -1, 1)}>{lastName(p.name)}</span>
+                          </span>
+                        ))}
+                        {ps.length > 3 && <> · +{ps.length - 3}</>}
+                      </span>
+                    </div>
+                    <div className="row-side">
+                      <span className="row-value num is-small">{dec(total)}</span>
+                      <span className="row-sub">de mes pts en jeu</span>
+                      <span className="row-sub num">
+                        <span style={tone(1, 1)}>{dec(forMe)}</span> · <span style={tone(-1, 1)}>{dec(against)}</span>
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </Group>
+          )}
+
           <Group id="soir-equipes" title={`Ce soir · ${shortDate(t.date)}`}>
             <LiveStatus live={live} t={t} />
             <p className="group-note">Même échelle pour toutes les équipes.</p>

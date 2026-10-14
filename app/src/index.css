@@ -1786,3 +1786,13 @@ b.season-mark {
 .is-faded {
   color: var(--text-faint);
 }
+
+/* Matchs à regarder : mes points en jeu (vert) puis ceux des rivaux (rouge), même échelle pour tous les matchs */
+.watch-bar {
+  height: 8px;
+  margin: 6px 0 4px;
+}
+
+.watch-bar .nightbar-seg:first-child {
+  border-radius: 4px 0 0 4px;
+}
