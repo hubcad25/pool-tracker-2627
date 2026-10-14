@@ -199,7 +199,7 @@ function PoolerPlayers({ r, t, live, sort }: { r: TodayTeam; t: T; live: Live; s
 
 /** Un match à regarder, déplié : ses joueurs du pool comme ailleurs sur la page (pooler,
  *  faits → fin ≈, P(1+ pt)), sans les barres, du plus important pour moi au moins important ; toucher un joueur ouvre son détail */
-function GamePlayers({ ps, live }: { ps: { p: TonightPlayer; r: TodayTeam; n: Night }[]; live: Live }) {
+function GamePlayers({ ps, live, odds }: { ps: { p: TonightPlayer; r: TodayTeam; n: Night }[]; live: Live; odds: Map<number, number> }) {
   const [open, setOpen] = useState<number | null>(null)
   return (
     <ul className="rows pooler-players" onClick={(e) => e.stopPropagation()}>
@@ -210,7 +210,8 @@ function GamePlayers({ ps, live }: { ps: { p: TonightPlayer; r: TodayTeam; n: Ni
             <span className="row-name">{lastName(p.name)}</span>
             <span className="row-meta">
               <PoolerIcon teamId={r.team_id} />
-              {r.mine ? 'à moi' : (r.name ?? r.abbrev)} · {p.pos}
+              {r.mine ? 'à moi' : (r.name ?? r.abbrev)}
+              {(odds.get(r.team_id) ?? r.p_first) != null && <> · P(1er) {prob((odds.get(r.team_id) ?? r.p_first)!)}</>} · {p.pos}
             </span>
           </div>
           <div className="row-side">
@@ -493,7 +494,7 @@ export default function Today({ today: t }: { today: T }) {
                         <span style={tone(1, 1)}>{dec(forMe)}</span> · <span style={tone(-1, 1)}>{dec(against)}</span>
                       </span>
                     </div>
-                    {open === `g-${g.id}` && <GamePlayers ps={ps} live={live} />}
+                    {open === `g-${g.id}` && <GamePlayers ps={ps} live={live} odds={liveOdds} />}
                   </li>
                 ))}
               </ul>
