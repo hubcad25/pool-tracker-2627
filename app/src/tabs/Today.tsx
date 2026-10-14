@@ -57,7 +57,7 @@ function Score({ n, big }: { n: Night & { started: boolean }; big?: boolean }) {
       </span>
       {playing ? (
         <span className="row-sub num">
-          <b>reste {dec(n.left)}</b> <span className="is-faded">· faits → fin ≈ · prévu {dec(n.expected)}</span>
+          <b>reste {dec(n.left)}</b> <span className="is-faded">· prévu {dec(n.expected)}</span>
         </span>
       ) : (
         <span className="row-sub num">
@@ -463,6 +463,7 @@ export default function Today({ today: t }: { today: T }) {
           <Group id="soir-mes-joueurs" title="Mes joueurs">
             {mine.length ? (
               <>
+                <p className="legend-line">« 1 pt → 1,6 » : faits → fin ≈ du match.</p>
                 <SortBar options={PLAYER_SORT} sort={playerSort} onChange={setPlayerSort} />
                 <ul className="rows">
                   {sortedMine.map(({ p, n }) => (
