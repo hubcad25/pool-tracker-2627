@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { shortDate } from './format'
+import { setNumbers, shortDate } from './format'
 import FreeAgents from './tabs/FreeAgents'
 import Injuries from './tabs/Injuries'
 import Standings from './tabs/Standings'
@@ -45,6 +45,7 @@ export default function App() {
       fetch('dashboard.json', { cache: 'no-cache' })
         .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
         .then((d) => {
+          setNumbers(d.numbers)
           setData(d)
           setError(false)
         })

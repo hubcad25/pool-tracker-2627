@@ -76,3 +76,9 @@ def test_missing_signale_les_trous_et_ignore_le_prior_des_gardiens(paths):
     out = ids.update_map(players, [nhl(1, "Seth Jarvis", "R"), nhl(3, "Un Gardien", "G")])
     assert [(p["espn_id"], p["missing"]) for p in ids.missing(out, players)] == [
         (11, ["nhl_id", "canonical_id"])]
+
+
+def test_numeros_par_espn_id_seulement_pour_les_joueurs_associes():
+    id_map = {1: {"nhl_id": "8478402"}, 2: {"nhl_id": ""}, 3: {"nhl_id": "999"}}
+    rosters = [{"nhl_id": 8478402, "number": 97}, {"nhl_id": 999, "number": None}]
+    assert ids.numbers(id_map, rosters) == {1: 97}

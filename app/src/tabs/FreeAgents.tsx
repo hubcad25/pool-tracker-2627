@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
 import RosBar from '../components/RosBar'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
-import { injuryText, int, lastName, signed } from '../format'
+import { injuryText, int, lastName, playerName, signed } from '../format'
 import { arrow, tone } from '../tone'
 import type { FreeAgent, FreeAgents as FA, Interval } from '../types'
 
@@ -22,7 +22,7 @@ const SORT: SortOption<Key>[] = [
 
 const luckOf = (f: FreeAgent) => (f.luck ? (f.luck.net_points ?? (f.points ?? 0) - f.luck.expected_points) : null)
 
-function Row({ f, max, worst }: { f: FreeAgent; max: number; worst?: { name: string; ros: Interval } }) {
+function Row({ f, max, worst }: { f: FreeAgent; max: number; worst?: { espn_id: number; name: string; ros: Interval } }) {
   const [open, setOpen] = useState(false)
   const chip = f.verdict === 'chanceux' || f.verdict === 'malchanceux' ? f.verdict : null
   return (
@@ -30,7 +30,7 @@ function Row({ f, max, worst }: { f: FreeAgent; max: number; worst?: { name: str
       <div className="row-top">
         <div className="row-main">
           <span className="row-name">
-            {f.name} {chip && <span className={`chip is-${chip}`}>{chip === 'chanceux' ? 'Chanceux' : 'Malchanceux'}</span>}
+            {playerName(f.name, f.espn_id)} {chip && <span className={`chip is-${chip}`}>{chip === 'chanceux' ? 'Chanceux' : 'Malchanceux'}</span>}
           </span>
           <span className="row-meta">
             {f.pos} · <TeamLogo team={f.team} />
@@ -52,10 +52,10 @@ function Row({ f, max, worst }: { f: FreeAgent; max: number; worst?: { name: str
           )}
         </div>
       </div>
-      <RosBar ros={f.ros} max={max} mark={worst?.ros.mean} markLabel={worst ? lastName(worst.name) : undefined} />
+      <RosBar ros={f.ros} max={max} mark={worst?.ros.mean} markLabel={worst ? playerName(worst.name, worst.espn_id) : undefined} />
       {f.p_better != null && worst && (
         <span className="row-meta">
-          P(meilleur que {lastName(worst.name)}){' '}
+          P(meilleur que {playerName(worst.name, worst.espn_id)}){' '}
           <b className="num" style={tone(f.p_better - 0.5, 0.4)}>
             {Math.round(f.p_better * 100)} %
           </b>
@@ -98,7 +98,7 @@ export default function FreeAgents({ fa }: { fa: FA }) {
           <Group key={pos} id={`agents-${pos}`} title={LABELS[pos]}>
             {worst && (
               <p className="group-note">
-                Mon pire : {lastName(worst.name)}, ROS <span className="num is-data">{int(worst.ros.mean)}</span>{' '}
+                Mon pire : {playerName(worst.name, worst.espn_id)}, ROS <span className="num is-data">{int(worst.ros.mean)}</span>{' '}
                 <span className="num">({int(worst.ros.p10)}–{int(worst.ros.p90)})</span>
               </p>
             )}

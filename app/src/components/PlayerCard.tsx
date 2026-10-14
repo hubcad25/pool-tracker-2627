@@ -1,6 +1,6 @@
 import TeamLogo from './TeamLogo'
 import { useState } from 'react'
-import { dec, injuryText, int, lastName, minutes, pct, signed } from '../format'
+import { dec, injuryText, int, minutes, pct, playerName, signed } from '../format'
 import { luckPhrase, percentileText, pts } from '../luck'
 import { arrow, tone, toneFill } from '../tone'
 import type { Luck, Player, Verdict } from '../types'
@@ -118,7 +118,7 @@ export default function PlayerCard({ player: p, max }: { player: Player; max: nu
     <article className={`card${open ? ' is-open' : ''}`} onClick={() => setOpen(!open)}>
       <header className="card-head">
         <div className="card-who">
-          <span className="card-name">{lastName(p.name)}</span>
+          <span className="card-name">{playerName(p.name, p.espn_id)}</span>
           <span className="card-meta">
             {p.pos} · <TeamLogo team={p.team} />
           </span>

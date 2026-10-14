@@ -330,8 +330,8 @@ def team_cards(team: dict, schedule: list[dict], priors: dict[int, dict], today:
 
 
 def build(league: dict | None, team_id: int, schedule: list[dict], priors: dict[int, dict], today: date,
-          alerts: list[Event], players: list[dict] | None = None) -> dict:
-    """`players` : le bassin public ESPN (pour les FA)."""
+          alerts: list[Event], players: list[dict] | None = None, numbers: dict[int, int] | None = None) -> dict:
+    """`players` : le bassin public ESPN (pour les FA) ; `numbers` : numéro de chandail par espn_id."""
     team = next((t for t in (league or {}).get("teams", []) if t["team_id"] == team_id), None)
     teams_players = {str(t["team_id"]): team_cards(t, schedule, priors, today) for t in (league or {}).get("teams", [])}
     cards = teams_players.get(str(team_id), [])
@@ -344,6 +344,7 @@ def build(league: dict | None, team_id: int, schedule: list[dict], priors: dict[
         "injuries": injuries(league, team_id, schedule, priors, today) if team else [],
         "free_agents": free_agents(league, team_id, players or [], schedule, priors, today) if team else None,
         "standings": standings(league, team_id, schedule, priors, today) if team else [],
+        "numbers": {str(k): v for k, v in sorted((numbers or {}).items())},
     }
 
 

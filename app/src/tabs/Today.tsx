@@ -5,7 +5,7 @@ import DistBars from '../components/DistBars'
 import { SortBar, sortBy, useSort, type SortOption, type SortState } from '../components/Sort'
 import PlayerDetail from '../components/PlayerDetail'
 import Sparkline from '../components/Sparkline'
-import { clock, dec, lastName, prob, shortDate, signed } from '../format'
+import { clock, dec, lastName, playerName, prob, shortDate, signed } from '../format'
 import { hasProxy, playerNight, projection, sumNights, teamNight, useLive, type Live, type Night } from '../live'
 import { teamColor, teamTint } from '../teams'
 import PoolerIcon from '../components/PoolerIcon'
@@ -179,7 +179,7 @@ function PoolerPlayers({ r, t, live, sort }: { r: TodayTeam; t: T; live: Live; s
         <li key={p.espn_id} className={`row is-clickable${open === p.espn_id ? ' is-open' : ''}`}
           onClick={() => setOpen((o) => (o === p.espn_id ? null : p.espn_id))} aria-expanded={open === p.espn_id}>
           <div className="row-main">
-            <span className="row-name">{lastName(p.name)}</span>
+            <span className="row-name">{playerName(p.name, p.espn_id)}</span>
             <span className="row-meta">
               {where(p)} · <span className={n.state === 'LIVE' ? 'is-live' : undefined}>{when(p, n)}</span>
             </span>
@@ -207,7 +207,7 @@ function GamePlayers({ ps, live, odds }: { ps: { p: TonightPlayer; r: TodayTeam;
         <li key={p.espn_id} className={`row is-clickable${open === p.espn_id ? ' is-open' : ''}`}
           onClick={() => setOpen((o) => (o === p.espn_id ? null : p.espn_id))} aria-expanded={open === p.espn_id}>
           <div className="row-main">
-            <span className="row-name">{lastName(p.name)}</span>
+            <span className="row-name">{playerName(p.name, p.espn_id)}</span>
             <span className="row-meta">
               <PoolerIcon teamId={r.team_id} />
               {r.mine ? 'à moi' : (r.name ?? r.abbrev)}
@@ -482,7 +482,7 @@ export default function Today({ today: t }: { today: T }) {
                           <span key={p.espn_id}>
                             {i > 0 && ' · '}
                             <PoolerIcon teamId={r.team_id} />
-                            <span style={tone(m ? 1 : -1, 1)}>{lastName(p.name)}</span>
+                            <span style={tone(m ? 1 : -1, 1)}>{playerName(p.name, p.espn_id)}</span>
                           </span>
                         ))}
                         {ps.length > 3 && <> · +{ps.length - 3}</>}
@@ -574,7 +574,7 @@ export default function Today({ today: t }: { today: T }) {
                       onClick={() => toggle(`m-${p.espn_id}`)} aria-expanded={open === `m-${p.espn_id}`}>
                       <div className="row-main">
                         <span className="row-name">
-                          {lastName(p.name)} {p.injury && <span className="chip is-injury">DTD</span>}
+                          {playerName(p.name, p.espn_id)} {p.injury && <span className="chip is-injury">DTD</span>}
                         </span>
                         <span className="row-meta">
                           {where(p)} · <span className={n.state === 'LIVE' ? 'is-live' : undefined}>{when(p, n)}</span>
@@ -608,7 +608,7 @@ export default function Today({ today: t }: { today: T }) {
                   <li key={p.espn_id} className={`row is-clickable${open === `w-${p.espn_id}` ? ' is-open' : ''}`}
                     onClick={() => toggle(`w-${p.espn_id}`)} aria-expanded={open === `w-${p.espn_id}`}>
                     <div className="row-main">
-                      <span className="row-name">{lastName(p.name)}</span>
+                      <span className="row-name">{playerName(p.name, p.espn_id)}</span>
                       <span className="row-meta">
                         <PoolerIcon teamId={p.owner.team_id} />
                         {p.owner.name ?? p.owner.abbrev} · {why === 'saison' ? 'menace ma 1re place' : gapText(gap)}

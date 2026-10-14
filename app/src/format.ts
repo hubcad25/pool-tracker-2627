@@ -29,6 +29,18 @@ export function minutes(x: number) {
 /** Le nom de famille (« Leon Draisaitl » → « Draisaitl ») */
 export const lastName = (name: string) => name.split(' ').slice(1).join(' ') || name
 
+// Numéros de chandail par espn_id (dashboard.json, rosters LNH du jour) ; remplis par App au chargement
+let numbers: Record<string, number> = {}
+export const setNumbers = (n: Record<string, number> | undefined) => (numbers = n ?? {})
+
+/** Le nom affiché partout : « Leon Draisaitl » → « L. Draisaitl #29 » (sans numéro s'il est inconnu) */
+export function playerName(name: string, espnId?: number) {
+  const [first, ...rest] = name.split(' ')
+  const short = rest.length ? `${first.includes('.') ? first : `${first[0]}.`} ${rest.join(' ')}` : name
+  const n = espnId != null ? numbers[String(espnId)] : undefined
+  return n != null ? `${short} #${n}` : short
+}
+
 const STATUS: Record<string, string> = { DAY_TO_DAY: 'DTD', OUT: 'OUT', INJURY_RESERVE: 'IR', SUSPENSION: 'Suspendu' }
 
 /** « IR · retour ~7 nov · manque 15 m. » */

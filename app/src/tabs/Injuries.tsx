@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { LuckBlock, LuckSummary } from '../components/PlayerCard'
 import RosBar from '../components/RosBar'
 import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
-import { injuryText, int, lastName } from '../format'
+import { injuryText, int, lastName, playerName } from '../format'
 import type { LeagueInjury } from '../types'
 import PoolerIcon from '../components/PoolerIcon'
 
@@ -23,7 +23,7 @@ function Row({ i, teamId, max }: { i: LeagueInjury; teamId?: number; max: number
     <li className={`row is-stacked${luck ? ' is-clickable' : ''}`} onClick={() => luck && setOpen(!open)}>
       <div className="row-top">
         <div className="row-main">
-          <span className="row-name">{i.name}</span>
+          <span className="row-name">{playerName(i.name, i.espn_id)}</span>
           <span className="row-meta">
             {i.pos} · <TeamLogo team={i.team} />
             {!i.mine && i.owner && (

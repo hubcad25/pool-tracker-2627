@@ -45,8 +45,9 @@ def run(day: date) -> list[events.Event]:
     by_id = {p["espn_id"]: p for p in players}
     by_id.update({p["espn_id"]: p for p in rostered})
     rostered_ids = {p["espn_id"] for p in rostered}
+    rosters = nhl.fetch_rosters()
     id_map = ids.update_map(
-        list(by_id.values()), nhl.fetch_rosters(), search=nhl.search,
+        list(by_id.values()), rosters, search=nhl.search,
         worth_search=lambda p: p["espn_id"] in rostered_ids or p.get("pct_owned", 0) >= MIN_PCT_OWNED_SEARCH,
     )
     out += events.unmatched_ids(ids.missing(id_map, rostered))
@@ -64,7 +65,8 @@ def run(day: date) -> list[events.Event]:
                                lambda p: rules.ros(p, priors.get(p["espn_id"]), schedule, day),
                                lambda p: rules.games_left(p, schedule, day))
     # Sans la ligue du jour (cookies), le dashboard garde les rosters de la veille
-    data = dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out, players)
+    data = dashboard.build(league or prev_league, config.MY_TEAM_ID, schedule, priors, day, out, players,
+                           ids.numbers(id_map, rosters))
     dashboard.write(data)
     if data["standings"]:
         today.record_p_first(day, next(r["p_first"] for r in data["standings"] if r["mine"]))

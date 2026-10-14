@@ -23,6 +23,7 @@ def _roster(team: str) -> list[dict]:
             "pos": p["positionCode"],
             "team": team,
             "birth_date": p.get("birthDate"),
+            "number": p.get("sweaterNumber"),
         }
         for group in ("forwards", "defensemen", "goalies")
         for p in d.get(group, [])

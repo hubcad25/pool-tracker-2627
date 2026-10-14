@@ -88,6 +88,13 @@ def read_map(path: Path) -> dict[int, dict]:
         return {int(r["espn_id"]): r for r in csv.DictReader(f)}
 
 
+def numbers(id_map: dict[int, dict], nhl_players: list[dict]) -> dict[int, int]:
+    """Numéro de chandail de chaque joueur ESPN associé (espn_id → numéro), d'après les rosters LNH du jour."""
+    by_nhl = {p["nhl_id"]: p["number"] for p in nhl_players if p.get("number") is not None}
+    return {espn_id: by_nhl[int(r["nhl_id"])] for espn_id, r in id_map.items()
+            if r.get("nhl_id") and int(r["nhl_id"]) in by_nhl}
+
+
 def write_map(rows: dict[int, dict]) -> None:
     with open(ID_MAP, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS)

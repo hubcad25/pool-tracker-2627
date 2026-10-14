@@ -193,6 +193,8 @@ export type Dashboard = {
   injuries?: LeagueInjury[]
   free_agents?: FreeAgents | null
   standings?: Standing[]
+  // Numéro de chandail par espn_id (absent des vieux dashboard.json)
+  numbers?: Record<string, number>
   // Écrit à part dans data/today.json (servi à côté) ; gardé ici au cas où
   today?: Today | null
 }
