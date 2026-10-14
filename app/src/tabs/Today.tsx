@@ -380,7 +380,7 @@ export default function Today({ today: t }: { today: T }) {
     const w = weightOf(r)
     return (r.players ?? []).map((p) => {
       const n = playerNight(p, t, live)
-      return { p, r, n, w, stake: w * n.left, mine: r.mine }
+      return { p, r, n, stake: w * n.left, mine: r.mine }
     })
   })
   const toWatch = t.games
@@ -469,12 +469,16 @@ export default function Today({ today: t }: { today: T }) {
                     </div>
                     {open === `g-${g.id}` && (
                       <ul className="player-detail watch-players num">
-                        {ps.map(({ p, r, n, w, stake, mine: m }) => (
+                        {ps.map(({ p, r, n, mine: m }) => (
                           <li key={p.espn_id}>
                             <PoolerIcon teamId={r.team_id} />
                             <span style={tone(m ? 1 : -1, 1)}>{lastName(p.name)}</span>{' '}
                             <span className="is-faded">{m ? 'à moi' : (r.name ?? r.abbrev)}</span>
-                            <span className="watch-calc">reste {dec(n.left)} × {dec(w, 2)} = <b>{dec(stake)}</b></span>
+                            <span className="watch-calc">
+                              {n.state === 'FUT'
+                                ? <>prévu {dec(n.expected)} · P(1+ pt) {prob(n.p1)}</>
+                                : <><b>{n.actual} {n.actual >= 2 ? 'pts' : 'pt'}</b> → fin ≈ {dec(projection(n))}{n.actual < 1 && <> · P(1+ pt) {prob(n.p1)}</>}</>}
+                            </span>
                           </li>
                         ))}
                       </ul>
