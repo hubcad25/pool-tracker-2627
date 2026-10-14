@@ -380,7 +380,7 @@ export default function Today({ today: t }: { today: T }) {
     const w = weightOf(r)
     return (r.players ?? []).map((p) => {
       const n = playerNight(p, t, live)
-      return { p, r, n, stake: w * n.left, mine: r.mine }
+      return { p, r, n, w, stake: w * n.left, mine: r.mine }
     })
   })
   const toWatch = t.games
@@ -435,7 +435,8 @@ export default function Today({ today: t }: { today: T }) {
               </p>
               <ul className="rows">
                 {toWatch.map(({ g, state, clock: c, score, ps, forMe, against, total }) => (
-                  <li key={g.id} className="row">
+                  <li key={g.id} className={`row is-clickable${open === `g-${g.id}` ? ' is-open' : ''}`}
+                    onClick={() => toggle(`g-${g.id}`)} aria-expanded={open === `g-${g.id}`}>
                     <div className="row-main">
                       <span className="row-name">
                         <TeamLogo team={g.away} /> {state !== 'FUT' && score ? `${score[g.away] ?? 0}-${score[g.home] ?? 0}` : '@'}{' '}
@@ -466,6 +467,18 @@ export default function Today({ today: t }: { today: T }) {
                         <span style={tone(1, 1)}>{dec(forMe)}</span> · <span style={tone(-1, 1)}>{dec(against)}</span>
                       </span>
                     </div>
+                    {open === `g-${g.id}` && (
+                      <ul className="player-detail watch-players num">
+                        {ps.map(({ p, r, n, w, stake, mine: m }) => (
+                          <li key={p.espn_id}>
+                            <PoolerIcon teamId={r.team_id} />
+                            <span style={tone(m ? 1 : -1, 1)}>{lastName(p.name)}</span>{' '}
+                            <span className="is-faded">{m ? 'à moi' : (r.name ?? r.abbrev)}</span>
+                            <span className="watch-calc">reste {dec(n.left)} × {dec(w, 2)} = <b>{dec(stake)}</b></span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>

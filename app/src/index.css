@@ -1796,3 +1796,21 @@ b.season-mark {
 .watch-bar .nightbar-seg:first-child {
   border-radius: 4px 0 0 4px;
 }
+
+/* Matchs à regarder, déplié : chaque joueur, ce qui lui reste × son poids = sa part de l'enjeu */
+.watch-players {
+  list-style: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.watch-players li {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.watch-calc {
+  margin-left: auto;
+  white-space: nowrap;
+}
