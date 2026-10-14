@@ -1797,20 +1797,3 @@ b.season-mark {
   border-radius: 4px 0 0 4px;
 }
 
-/* Matchs à regarder, déplié : chaque joueur du pool dans le match, ses points et sa fin ≈ */
-.watch-players {
-  list-style: none;
-  padding: 0;
-  font-size: 0.85rem;
-}
-
-.watch-players li {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.watch-calc {
-  margin-left: auto;
-  white-space: nowrap;
-}

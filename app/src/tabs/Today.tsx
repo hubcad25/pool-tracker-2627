@@ -197,6 +197,35 @@ function PoolerPlayers({ r, t, live, sort }: { r: TodayTeam; t: T; live: Live; s
   )
 }
 
+/** Un match à regarder, déplié : ses joueurs du pool comme ailleurs sur la page (barre aux couleurs du pooler,
+ *  faits → fin ≈, P(1+ pt)), du plus important pour moi au moins important ; toucher un joueur ouvre son détail */
+function GamePlayers({ ps, live }: { ps: { p: TonightPlayer; r: TodayTeam; n: Night }[]; live: Live }) {
+  const [open, setOpen] = useState<number | null>(null)
+  const max = Math.max(1, ...ps.map(({ n }) => Math.max(n.expected, n.actual + n.left + n.lost)))
+  return (
+    <ul className="rows pooler-players" onClick={(e) => e.stopPropagation()}>
+      {ps.map(({ p, r, n }) => (
+        <li key={p.espn_id} className={`row is-clickable${open === p.espn_id ? ' is-open' : ''}`}
+          onClick={() => setOpen((o) => (o === p.espn_id ? null : p.espn_id))} aria-expanded={open === p.espn_id}>
+          <div className="row-main">
+            <span className="row-name">{lastName(p.name)}</span>
+            <span className="row-meta">
+              <PoolerIcon teamId={r.team_id} />
+              {r.mine ? 'à moi' : (r.name ?? r.abbrev)} · {p.pos}
+            </span>
+            <NightBar n={n} max={max} teamId={r.team_id} thin />
+            <NightMarks n={n} max={max} />
+          </div>
+          <div className="row-side">
+            <Score n={{ ...n, started: n.state !== 'FUT' }} />
+          </div>
+          {open === p.espn_id && <PlayerDetail p={p} n={n} live={live} />}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
 type TeamKey = 'proj' | 'left' | 'season' | 'expected' | 'actual' | 'p_first' | 'name'
 const TEAM_SORT: SortOption<TeamKey>[] = [
   { key: 'proj', label: 'Fin ≈', dir: 'desc' },
@@ -467,22 +496,7 @@ export default function Today({ today: t }: { today: T }) {
                         <span style={tone(1, 1)}>{dec(forMe)}</span> · <span style={tone(-1, 1)}>{dec(against)}</span>
                       </span>
                     </div>
-                    {open === `g-${g.id}` && (
-                      <ul className="player-detail watch-players num">
-                        {ps.map(({ p, r, n, mine: m }) => (
-                          <li key={p.espn_id}>
-                            <PoolerIcon teamId={r.team_id} />
-                            <span style={tone(m ? 1 : -1, 1)}>{lastName(p.name)}</span>{' '}
-                            <span className="is-faded">{m ? 'à moi' : (r.name ?? r.abbrev)}</span>
-                            <span className="watch-calc">
-                              {n.state === 'FUT'
-                                ? <>prévu {dec(n.expected)} · P(1+ pt) {prob(n.p1)}</>
-                                : <><b>{n.actual} {n.actual >= 2 ? 'pts' : 'pt'}</b> → fin ≈ {dec(projection(n))}{n.actual < 1 && <> · P(1+ pt) {prob(n.p1)}</>}</>}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    {open === `g-${g.id}` && <GamePlayers ps={ps} live={live} />}
                   </li>
                 ))}
               </ul>
