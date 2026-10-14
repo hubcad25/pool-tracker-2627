@@ -2,7 +2,7 @@ import Group from '../components/Group'
 import TeamLogo from '../components/TeamLogo'
 import NightBar, { NightLegend } from '../components/NightBar'
 import DistBars from '../components/DistBars'
-import { SortBar, sortBy, useSort, type SortOption } from '../components/Sort'
+import { SortBar, sortBy, useSort, type SortOption, type SortState } from '../components/Sort'
 import PlayerDetail from '../components/PlayerDetail'
 import Sparkline from '../components/Sparkline'
 import { clock, dec, lastName, prob, shortDate, signed } from '../format'
@@ -57,7 +57,7 @@ function Score({ n, big }: { n: Night & { started: boolean }; big?: boolean }) {
       </span>
       {playing ? (
         <span className="row-sub num">
-          <span className="is-faded">faits → fin ≈ · prévu {dec(n.expected)}</span>
+          <b>reste {dec(n.left)}</b> <span className="is-faded">· faits → fin ≈ · prévu {dec(n.expected)}</span>
         </span>
       ) : (
         <span className="row-sub num">
@@ -152,7 +152,7 @@ function ScoreSub({ n }: { n: ReturnType<typeof sumNights> }) {
   return (
     <span className="num">
       {n.left > 0.005 ? (
-        <><b className="fin">fin ≈ {dec(projection(n))}</b> · <span className="is-faded">prévu {dec(n.expected)}</span></>
+        <><b className="fin">fin ≈ {dec(projection(n))}</b> · reste {dec(n.left)} · <span className="is-faded">prévu {dec(n.expected)}</span></>
       ) : (
         <><span className="is-faded">prévu {dec(n.expected)}</span> ·{' '}
           <span style={tone(gap, 2)}>{Math.abs(gap) < 0.05 ? '= prévu' : `${arrow(gap)}${signed(gap)}`}</span></>
@@ -161,10 +161,13 @@ function ScoreSub({ n }: { n: ReturnType<typeof sumNights> }) {
   )
 }
 
-/** Les joueurs d'un pooler ce soir, les meilleurs d'abord (projection) ; chacun se déplie sur son match */
-function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
+/** Les joueurs d'un pooler ce soir, triés comme les équipes (« Saison + ce soir » et « P(1er) » : par fin ≈) ;
+ *  chacun se déplie sur son match */
+function PoolerPlayers({ r, t, live, sort }: { r: TodayTeam; t: T; live: Live; sort: SortState<TeamKey> }) {
   const [open, setOpen] = useState<number | null>(null)
-  const rows = (r.players ?? []).map((p) => ({ p, n: playerNight(p, t, live) })).sort((a, b) => projection(b.n) - projection(a.n))
+  const rows = sortBy((r.players ?? []).map((p) => ({ p, n: playerNight(p, t, live) })), sort, ({ p, n }, k) =>
+    k === 'left' ? n.left : k === 'expected' ? n.expected : k === 'actual' ? n.actual : k === 'name' ? lastName(p.name) : projection(n),
+  )
   const max = Math.max(1, ...rows.map(({ n }) => Math.max(n.expected, n.actual + n.left + n.lost)))
   if (!rows.length) return <div className="player-detail">Aucun joueur ce soir.</div>
   const total = sumNights(rows.map(({ n }) => n))
@@ -194,9 +197,10 @@ function PoolerPlayers({ r, t, live }: { r: TodayTeam; t: T; live: Live }) {
   )
 }
 
-type TeamKey = 'proj' | 'season' | 'expected' | 'actual' | 'p_first' | 'name'
+type TeamKey = 'proj' | 'left' | 'season' | 'expected' | 'actual' | 'p_first' | 'name'
 const TEAM_SORT: SortOption<TeamKey>[] = [
   { key: 'proj', label: 'Fin ≈', dir: 'desc' },
+  { key: 'left', label: 'Restant', dir: 'desc' },
   { key: 'season', label: 'Saison + ce soir', dir: 'desc' },
   { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'actual', label: 'Réel', dir: 'desc' },
@@ -229,16 +233,18 @@ function SeasonMarks({ now, proj, max }: { now: number; proj: number; max: numbe
   )
 }
 
-type PlayerKey = 'start' | 'proj' | 'expected' | 'actual' | 'name'
+// Restant : les points encore possibles ce soir (le prévu avant le match, 0 une fois fini)
+type PlayerKey = 'start' | 'left' | 'proj' | 'expected' | 'actual' | 'name'
 const PLAYER_SORT: SortOption<PlayerKey>[] = [
   { key: 'start', label: 'Heure', dir: 'asc' },
+  { key: 'left', label: 'Restant', dir: 'desc' },
   { key: 'proj', label: 'Fin ≈', dir: 'desc' },
   { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'actual', label: 'Réel', dir: 'desc' },
   { key: 'name', label: 'Nom', dir: 'asc' },
 ]
 
-type WatchKey = 'threat' | 'expected' | 'start'
+type WatchKey = 'threat' | 'left' | 'expected' | 'start'
 const WATCH_EACH = 5
 
 const nextDay = (iso: string) => new Date(Date.parse(`${iso}T12:00:00Z`) + 86_400_000).toISOString().slice(0, 10)
@@ -257,6 +263,7 @@ function liveFirst(teams: { r: TodayTeam; n: ReturnType<typeof teamNight> }[]): 
 const CLOSE_PTS = 10
 const WATCH_SORT: SortOption<WatchKey>[] = [
   { key: 'threat', label: 'Menace', dir: 'asc' },
+  { key: 'left', label: 'Restant', dir: 'desc' },
   { key: 'expected', label: 'Prévu', dir: 'desc' },
   { key: 'start', label: 'Heure', dir: 'asc' },
 ]
@@ -310,6 +317,7 @@ export default function Today({ today: t }: { today: T }) {
   const seasonMax = Math.max(1, ...teams.map((x) => x.proj)) * 1.08
   const sortedTeams = sortBy(teams, teamSort, ({ r, n, proj }, k) =>
     k === 'proj' ? projection(n)
+    : k === 'left' ? n.left
     : k === 'season' ? proj
     : k === 'p_first' ? (liveOdds.get(r.team_id) ?? r.p_first)
     : k === 'expected' ? n.expected
@@ -322,7 +330,7 @@ export default function Today({ today: t }: { today: T }) {
   const mine = t.my_players.map((p) => ({ p, n: playerNight(p, t, live) }))
   const playerMax = Math.max(1, ...mine.map(({ n }) => Math.max(n.expected, n.actual + n.left + n.lost)))
   const sortedMine = sortBy(mine, playerSort, ({ p, n }, k) =>
-    k === 'start' ? p.start : k === 'proj' ? projection(n) : k === 'expected' ? n.expected : k === 'actual' ? n.actual : lastName(p.name),
+    k === 'start' ? p.start : k === 'left' ? n.left : k === 'proj' ? projection(n) : k === 'expected' ? n.expected : k === 'actual' ? n.actual : lastName(p.name),
   )
 
   // Impact d'un point adverse en équivalent de MES points : delta de ma P(1er) quand il marque ÷ quand je marque
@@ -356,7 +364,7 @@ export default function Today({ today: t }: { today: T }) {
     ...close.map((w) => ({ ...w, why: 'classement' as const })),
   ]
   const sortedWatch = sortBy(watch, watchSort, (w, k) =>
-    k === 'threat' ? w.threat : k === 'expected' ? w.p.expected : w.p.start,
+    k === 'threat' ? w.threat : k === 'left' ? w.n.left : k === 'expected' ? w.p.expected : w.p.start,
   )
 
   return (
@@ -445,7 +453,7 @@ export default function Today({ today: t }: { today: T }) {
                       )}
                     </span>
                   </div>
-                  {open === `t-${r.team_id}` && <PoolerPlayers r={r} t={t} live={live} />}
+                  {open === `t-${r.team_id}` && <PoolerPlayers r={r} t={t} live={live} sort={teamSort} />}
                 </li>
                 )
               })}
@@ -517,7 +525,7 @@ export default function Today({ today: t }: { today: T }) {
                       {n.state !== 'FUT' && (
                         <span className="row-sub num">
                           {n.actual} {n.actual >= 2 ? 'pts' : 'pt'}
-                          {n.left > 0.005 && <> · <b className="fin">fin ≈ {dec(projection(n))}</b></>}
+                          {n.left > 0.005 && <> · reste {dec(n.left)} · <b className="fin">fin ≈ {dec(projection(n))}</b></>}
                         </span>
                       )}
                       <OnePoint n={n} />

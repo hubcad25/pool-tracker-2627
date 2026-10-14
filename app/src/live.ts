@@ -178,8 +178,29 @@ function goalsOf(g: ScoreGame): Goal[] {
     }))
 }
 
-const getJson = (path: string) =>
-  fetch(`${PROXY}/${path}`, { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+// Le proxy est plafonné à 20 exécutions simultanées (concurrence réservée de la Lambda, partagée par tous les
+// appareils) : au-delà, il répond 429.
+// D'où au plus PARALLEL requêtes à la fois, et quelques réessais espacés sur un 429.
+const PARALLEL = 4
+const RETRIES_429 = 3
+let inFlight = 0
+const waiting: (() => void)[] = []
+
+async function getJson(path: string) {
+  if (inFlight >= PARALLEL) await new Promise<void>((go) => waiting.push(go))
+  inFlight++
+  try {
+    for (let i = 0; ; i++) {
+      const r = await fetch(`${PROXY}/${path}`, { cache: 'no-cache' })
+      if (r.ok) return await r.json()
+      if (r.status !== 429 || i >= RETRIES_429) throw r.status
+      await new Promise((ok) => setTimeout(ok, 300 * (i + 1)))
+    }
+  } finally {
+    inFlight--
+    waiting.shift()?.()
+  }
+}
 
 /** Faut-il interroger la LNH ? Un match en cours, ou un match qui commence d'ici 30 min. */
 function active(t: Today, live: Map<number, LiveGame>, now: number) {
