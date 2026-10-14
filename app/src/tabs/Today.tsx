@@ -197,11 +197,10 @@ function PoolerPlayers({ r, t, live, sort }: { r: TodayTeam; t: T; live: Live; s
   )
 }
 
-/** Un match à regarder, déplié : ses joueurs du pool comme ailleurs sur la page (barre aux couleurs du pooler,
- *  faits → fin ≈, P(1+ pt)), du plus important pour moi au moins important ; toucher un joueur ouvre son détail */
+/** Un match à regarder, déplié : ses joueurs du pool comme ailleurs sur la page (pooler,
+ *  faits → fin ≈, P(1+ pt)), sans les barres, du plus important pour moi au moins important ; toucher un joueur ouvre son détail */
 function GamePlayers({ ps, live }: { ps: { p: TonightPlayer; r: TodayTeam; n: Night }[]; live: Live }) {
   const [open, setOpen] = useState<number | null>(null)
-  const max = Math.max(1, ...ps.map(({ n }) => Math.max(n.expected, n.actual + n.left + n.lost)))
   return (
     <ul className="rows pooler-players" onClick={(e) => e.stopPropagation()}>
       {ps.map(({ p, r, n }) => (
@@ -213,8 +212,6 @@ function GamePlayers({ ps, live }: { ps: { p: TonightPlayer; r: TodayTeam; n: Ni
               <PoolerIcon teamId={r.team_id} />
               {r.mine ? 'à moi' : (r.name ?? r.abbrev)} · {p.pos}
             </span>
-            <NightBar n={n} max={max} teamId={r.team_id} thin />
-            <NightMarks n={n} max={max} />
           </div>
           <div className="row-side">
             <Score n={{ ...n, started: n.state !== 'FUT' }} />
