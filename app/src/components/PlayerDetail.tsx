@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactNode } from 'react'
 import { dec, prob } from '../format'
-import { fetchBoxLine, fetchShotZones, hasProxy, type BoxLine, type Live, type Night, type ShotZones } from '../live'
+import { fetchBoxLine, fetchShotZones, hasProxy, type BoxLine, type Live, type Night, type OnIce, type ShotZones } from '../live'
 import type { TonightPlayer } from '../types'
 
 const STRENGTH: Record<string, string> = { pp: 'AN', sh: 'DN', en: 'filet désert' }
@@ -12,7 +12,7 @@ type Zones = { shots: ShotZones; goals: ShotZones }
 /** Le match d'un joueur, déplié sous sa ligne : sa soirée de pool, ses points et sa feuille de match */
 export default function PlayerDetail({ p, n, live, children }: { p: TonightPlayer; n: Night; live: Live; children?: ReactNode }) {
   const [box, setBox] = useState<BoxLine | null | 'error' | undefined>(undefined)
-  const [zones, setZones] = useState<Zones | null>(null)
+  const [zones, setZones] = useState<(Zones & { onIce: OnIce | null }) | null>(null)
   const started = n.state !== 'FUT'
   const goalie = p.pos === 'G'
   // Relu à chaque lecture du direct (~60 s) tant que le match est en cours
@@ -48,7 +48,11 @@ export default function PlayerDetail({ p, n, live, children }: { p: TonightPlaye
             <Stat k="TOI" v={b.toi} />
           </dl>
         )}
-        {zones && n.goalie.inNet !== false && <ZoneBar title="Tirs contre" z={zones} />}
+        {zones && n.goalie.inNet !== false && (
+          <div className="detail-zones">
+            <ZoneBar title="Tirs contre" z={zones} max={40} />
+          </div>
+        )}
       </div>
     )
 
@@ -60,16 +64,28 @@ export default function PlayerDetail({ p, n, live, children }: { p: TonightPlaye
         <p className="detail-line">Détails du match indisponibles (pas de direct LNH).</p>
       ) : (
         <>
-          <ul className="detail-goals">
-            {mine.length === 0 && <li>Aucun point pour l'instant.</li>}
-            {mine.map((g, i) => (
-              <li key={i} className="num">
-                <b>{g.scorer.id === p.nhl_id ? 'But' : 'Passe'}</b> · {g.period} {g.time}
-                {STRENGTH[g.strength] && <> · {STRENGTH[g.strength]}</>}
-                {g.scorer.id !== p.nhl_id && <span className="detail-fine"> · but de {g.scorer.name}</span>}
-              </li>
-            ))}
-          </ul>
+          <div className="detail-points">
+            <div className="zones-title">Ses points ce soir</div>
+            {mine.length === 0 ? (
+              <p className="detail-line">Aucun point pour l'instant.</p>
+            ) : (
+              <ol className="detail-goals">
+                {mine.map((g, i) => {
+                  const goal = g.scorer.id === p.nhl_id
+                  return (
+                    <li key={i} className="num">
+                      <span className={`point-chip${goal ? ' is-goal' : ''}`}>{goal ? 'But' : 'Passe'}</span>
+                      <span>
+                        {g.period} {g.time}
+                        {STRENGTH[g.strength] && <> · {STRENGTH[g.strength]}</>}
+                        {!goal && <span className="detail-fine"> · but de {g.scorer.name}</span>}
+                      </span>
+                    </li>
+                  )
+                })}
+              </ol>
+            )}
+          </div>
           {b && (
             <dl className="detail-stats num">
               <Stat k="TOI" v={b.toi} />
@@ -77,7 +93,14 @@ export default function PlayerDetail({ p, n, live, children }: { p: TonightPlaye
               <Stat k="Tirs" v={b.sog} />
             </dl>
           )}
-          {zones && <ZoneBar title="Tirs par zone" z={zones} />}
+          {zones && (
+            <div className="detail-zones">
+              <ZoneBar title="Tirs par zone" z={zones} />
+              {zones.onIce && (
+                <ZoneBar title="Coéquipiers (lui sur la glace)" z={zones.onIce.for} note={n.state === 'LIVE' ? `jusqu'à ${zones.onIce.upTo}` : undefined} />
+              )}
+            </div>
+          )}
           {box === undefined && <p className="detail-line">Chargement…</p>}
         </>
       )}
@@ -171,28 +194,37 @@ const ZONES: { key: keyof ShotZones; label: string }[] = [
   { key: 'ld', label: 'LD' },
 ]
 
-/** Tirs au but par zone en une barre (HD rouge, MD jaune, LD vert), les buts entre parenthèses */
-function ZoneBar({ title, z }: { title: string; z: Zones }) {
+/** Tirs au but par zone en barre empilée, à la même échelle pour tous (`max` tirs ; au-delà, la barre pleine
+ *  vaut son total) : HD rouge, MD jaune, LD vert, le nombre dans chaque segment ; les buts dans la légende */
+function ZoneBar({ title, z, note, max = 15 }: { title: string; z: Zones; note?: string; max?: number }) {
   const total = z.shots.hd + z.shots.md + z.shots.ld
+  const scale = Math.max(max, total)
+  const goals = ZONES.filter(({ key }) => z.goals[key] > 0)
   return (
     <div className="zones">
       <div className="zones-title">
-        {title} <span className="num">· {total}</span>
+        {title}
+        {note && <span className="detail-fine num"> · {note}</span>}
       </div>
-      {total > 0 && (
+      <div className="zones-line num">
         <div className="zones-bar" role="img" aria-label={ZONES.map(({ key, label }) => `${label} ${z.shots[key]}`).join(', ')}>
-          {ZONES.map(({ key }) => z.shots[key] > 0 && <span key={key} className={`zones-seg is-${key}`} style={{ flexGrow: z.shots[key] }} />)}
+          {total === 0 && <span className="zones-empty">aucun tir</span>}
+          {ZONES.map(({ key }) => z.shots[key] > 0 && (
+            <span key={key} className={`zones-seg is-${key}`} style={{ width: `${(z.shots[key] / scale) * 100}%` }}>{z.shots[key]}</span>
+          ))}
+        </div>
+        <b className="zones-total">{total}</b>
+      </div>
+      {goals.length > 0 && (
+        <div className="zones-legend num">
+          {goals.map(({ key, label }) => (
+            <span key={key}>
+              <i className={`zones-dot is-${key}`} />
+              {z.goals[key]} but{z.goals[key] > 1 ? 's' : ''} {label}
+            </span>
+          ))}
         </div>
       )}
-      <div className="zones-legend num">
-        {ZONES.map(({ key, label }) => (
-          <span key={key}>
-            <i className={`zones-dot is-${key}`} />
-            {label} <b>{z.shots[key]}</b>
-            {z.goals[key] > 0 && <small> ({z.goals[key]} but{z.goals[key] > 1 ? 's' : ''})</small>}
-          </span>
-        ))}
-      </div>
     </div>
   )
 }

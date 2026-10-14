@@ -1330,12 +1330,41 @@ summary.group-title::before {
 
 .detail-goals {
   list-style: none;
-  margin: 0 0 6px;
+  counter-reset: pt;
+  margin: 0;
   padding: 0;
 }
 
-.detail-goals b {
+.detail-goals li {
+  counter-increment: pt;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.detail-goals li::before {
+  content: counter(pt) ".";
+  min-width: 1.4em;
+  color: var(--text-faint);
+}
+
+.point-chip {
+  min-width: 3.6em;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 1px 6px;
+  border-radius: var(--radius);
+  background: var(--surface-2);
   color: var(--text);
+}
+
+.point-chip.is-goal {
+  background: var(--accent);
+  color: var(--accent-contrast);
 }
 
 .detail-fine {
@@ -1644,7 +1673,7 @@ b.season-mark {
 
 /* Tirs par zone : HD rouge, MD jaune, LD vert */
 .zones {
-  margin-top: 8px;
+  margin: 0;
 }
 
 .zones-title {
@@ -1653,23 +1682,36 @@ b.season-mark {
   margin-bottom: 3px;
 }
 
-.zones-bar {
+.zones-line {
   display: flex;
-  gap: 2px;
-  height: 8px;
-  margin-bottom: 4px;
+  align-items: center;
+  gap: 6px;
+}
+
+.zones-bar {
+  flex: 1;
+  display: flex;
+  gap: 1px;
+  height: 16px;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 .zones-seg {
-  min-width: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14px;
+  font-size: 10px;
+  font-weight: 650;
+  color: var(--surface-1);
 }
 
-.zones-seg:first-child {
-  border-radius: 3px 0 0 3px;
-}
-
-.zones-seg:last-child {
-  border-radius: 0 3px 3px 0;
+.zones-total {
+  min-width: 2ch;
+  font-size: 13px;
+  color: var(--text);
 }
 
 .zones-seg.is-hd,
@@ -1708,4 +1750,27 @@ b.season-mark {
   height: 8px;
   border-radius: 50%;
   margin-right: 4px;
+}
+
+.zones-empty {
+  padding-left: 6px;
+  font-size: 11px;
+  line-height: 16px;
+  color: var(--text-faint);
+}
+
+/* Détail d'un joueur : un peu d'air entre les sections (soirée, points, stats, tirs) */
+.player-detail > * + * {
+  margin-top: 10px;
+}
+
+.detail-zones > .zones + .zones {
+  margin-top: 8px;
+}
+
+.player-detail > .detail-points,
+.player-detail > .detail-stats,
+.player-detail > .detail-zones {
+  padding-top: 8px;
+  border-top: 1px solid var(--border-soft);
 }

@@ -308,9 +308,20 @@ export type ShotZones = { hd: number; md: number; ld: number }
 
 type PbpPlay = {
   typeDescKey: string
-  periodDescriptor?: { periodType: string }
-  details?: { xCoord?: number; yCoord?: number; zoneCode?: string; shootingPlayerId?: number; scoringPlayerId?: number; goalieInNetId?: number }
+  timeInPeriod?: string
+  periodDescriptor?: { number: number; periodType: string }
+  details?: {
+    xCoord?: number; yCoord?: number; zoneCode?: string; eventOwnerTeamId?: number
+    shootingPlayerId?: number; scoringPlayerId?: number; goalieInNetId?: number
+  }
 }
+
+/** Présence d'un joueur (shiftcharts LNH) : typeCode 517 ; les 505 sont des buts, ignorés */
+type Shift = { playerId: number; teamId: number; period: number; startTime: string; endTime: string; typeCode: number }
+
+/** Tirs au but par zone pendant qu'un joueur est sur la glace : ceux de ses coéquipiers (pas les siens) et contre.
+ *  `upTo` : fin de la dernière présence connue du match (« 2e 13:49 ») ; la LNH publie les présences en retard. */
+export type OnIce = { for: { shots: ShotZones; goals: ShotZones }; against: { shots: ShotZones; goals: ShotZones }; upTo: string }
 
 /** HD : enclave basse, ≤ 25 pi de la ligne des buts et |y| ≤ 9 ; MD : entre les points de mise au jeu (|y| ≤ 22)
  *  jusqu'au haut des cercles (35 pi) ; LD : tout le reste (points, bandes, derrière le filet, hors zone). */
@@ -325,18 +336,57 @@ export function shotZone(d: NonNullable<PbpPlay['details']>): keyof ShotZones {
   return 'ld'
 }
 
-/** Tirs au but par zone et buts parmi eux : ceux du joueur, ou (gardien) ceux reçus pendant qu'il était devant le filet */
-export async function fetchShotZones(gameId: number, nhlId: number, goalie = false): Promise<{ shots: ShotZones; goals: ShotZones }> {
-  const pbp: { plays?: PbpPlay[] } = await getJson(`v1/gamecenter/${gameId}/play-by-play`)
-  const shots: ShotZones = { hd: 0, md: 0, ld: 0 }
-  const goals: ShotZones = { hd: 0, md: 0, ld: 0 }
+const seconds = (mmss: string) => Number(mmss.slice(0, 2)) * 60 + Number(mmss.slice(3, 5))
+const zeros = (): ShotZones => ({ hd: 0, md: 0, ld: 0 })
+const isShot = (e: PbpPlay) =>
+  (e.typeDescKey === 'shot-on-goal' || e.typeDescKey === 'goal') && e.periodDescriptor?.periodType !== 'SO' && e.details != null
+
+/** Tirs pour et contre pendant les présences d'un joueur ; null s'il n'a encore aucune présence publiée.
+ *  Une présence couvre un tir si début < t ≤ fin : un tir à l'instant même d'un changement compte pour ceux qui
+ *  sortent (après un but, la présence se termine à la seconde du but, et la suivante commence à la mise au jeu). */
+export function onIceZones(plays: PbpPlay[], shifts: Shift[], nhlId: number): OnIce | null {
+  const all = shifts.filter((s) => s.typeCode === 517)
+  const mine = all.filter((s) => s.playerId === nhlId)
+  if (!mine.length) return null
+  const team = mine[0].teamId
+  const out: OnIce = { for: { shots: zeros(), goals: zeros() }, against: { shots: zeros(), goals: zeros() }, upTo: '' }
+  for (const e of plays) {
+    if (!isShot(e) || !e.timeInPeriod || !e.periodDescriptor) continue
+    const t = seconds(e.timeInPeriod)
+    const n = e.periodDescriptor.number
+    if (!mine.some((s) => s.period === n && seconds(s.startTime) < t && t <= seconds(s.endTime))) continue
+    // La zone se lit du point de vue du tireur (zoneCode et |x|), donc vaut aussi pour les tirs contre
+    const own = e.details!.eventOwnerTeamId === team
+    // « Pour » = ses coéquipiers : ses propres tirs sont déjà comptés à part
+    if (own && (e.details!.shootingPlayerId ?? e.details!.scoringPlayerId) === nhlId) continue
+    const side = own ? out.for : out.against
+    const z = shotZone(e.details!)
+    side.shots[z]++
+    if (e.typeDescKey === 'goal') side.goals[z]++
+  }
+  const last = all.reduce((a, s) => (s.period > a.period || (s.period === a.period && s.endTime > a.endTime) ? s : a))
+  out.upTo = `${periodName({ number: last.period, periodType: last.period > 3 ? 'OT' : 'REGULAR' })} ${last.endTime}`
+  return out
+}
+
+/** Tirs au but par zone et buts parmi eux : ceux du joueur, ou (gardien) ceux reçus pendant qu'il était devant le filet.
+ *  Patineur : aussi les tirs pendant qu'il est sur la glace (`onIce`, null sans présences publiées). */
+export async function fetchShotZones(
+  gameId: number, nhlId: number, goalie = false,
+): Promise<{ shots: ShotZones; goals: ShotZones; onIce: OnIce | null }> {
+  const [pbp, shifts] = await Promise.all([
+    getJson(`v1/gamecenter/${gameId}/play-by-play`) as Promise<{ plays?: PbpPlay[] }>,
+    goalie ? null : (getJson(`stats/rest/en/shiftcharts?cayenneExp=gameId=${gameId}`) as Promise<{ data?: Shift[] }>).catch(() => null),
+  ])
+  const shots = zeros()
+  const goals = zeros()
   for (const e of pbp.plays ?? []) {
-    if ((e.typeDescKey !== 'shot-on-goal' && e.typeDescKey !== 'goal') || e.periodDescriptor?.periodType === 'SO' || !e.details) continue
-    const who = goalie ? e.details.goalieInNetId : (e.details.shootingPlayerId ?? e.details.scoringPlayerId)
+    if (!isShot(e)) continue
+    const who = goalie ? e.details!.goalieInNetId : (e.details!.shootingPlayerId ?? e.details!.scoringPlayerId)
     if (who !== nhlId) continue
-    const z = shotZone(e.details)
+    const z = shotZone(e.details!)
     shots[z]++
     if (e.typeDescKey === 'goal') goals[z]++
   }
-  return { shots, goals }
+  return { shots, goals, onIce: shifts?.data ? onIceZones(pbp.plays ?? [], shifts.data, nhlId) : null }
 }

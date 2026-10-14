@@ -10,8 +10,9 @@ proxy = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(proxy)
 
 
-def event(path, method="GET", origin="https://hubcad25.github.io"):
-    return {"rawPath": path, "headers": {"origin": origin}, "requestContext": {"http": {"method": method}}}
+def event(path, method="GET", origin="https://hubcad25.github.io", query=""):
+    return {"rawPath": path, "rawQueryString": query, "headers": {"origin": origin},
+            "requestContext": {"http": {"method": method}}}
 
 
 class Reponse(io.BytesIO):
@@ -49,6 +50,30 @@ def test_relaie_les_chemins_permis_avec_cors_et_cache_court(lnh, path):
                                   "/v1/score/2026-10-12?x=1", "/"])
 def test_ne_relaie_rien_d_autre(lnh, path):
     assert proxy.handler(event(path), None)["statusCode"] == 404
+    assert lnh == []
+
+
+def test_ne_relaie_pas_de_query_vers_api_web(lnh):
+    assert proxy.handler(event("/v1/score/now", query="x=1"), None)["statusCode"] == 404
+    assert lnh == []
+
+
+def test_relaie_les_presences_d_un_match_vers_api_nhle(lnh):
+    r = proxy.handler(event("/stats/rest/en/shiftcharts", query="cayenneExp=gameId=2025020001"), None)
+    assert r["statusCode"] == 200 and r["headers"]["Cache-Control"] == "public, max-age=20"
+    assert r["headers"]["Access-Control-Allow-Origin"] == "https://hubcad25.github.io"
+    assert lnh == ["https://api.nhle.com/stats/rest/en/shiftcharts?cayenneExp=gameId=2025020001"]
+
+
+@pytest.mark.parametrize("path,query", [
+    ("/stats/rest/en/shiftcharts", ""),
+    ("/stats/rest/en/shiftcharts", "cayenneExp=gameId=2025020001&limit=5"),
+    ("/stats/rest/en/shiftcharts", "cayenneExp=playerId=8478402"),
+    ("/stats/rest/en/shiftcharts", "cayenneExp=gameId=1"),
+    ("/stats/rest/en/skater/summary", "cayenneExp=gameId=2025020001"),
+])
+def test_ne_relaie_pas_d_autres_presences_ni_d_autres_stats(lnh, path, query):
+    assert proxy.handler(event(path, query=query), None)["statusCode"] == 404
     assert lnh == []
 
 
