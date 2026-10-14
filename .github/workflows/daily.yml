@@ -2,7 +2,7 @@ name: daily
 
 on:
   schedule:
-    - cron: "0 16 * * *"   # 12 h (heure d'été) / 11 h (hiver) à Montréal
+    - cron: "7 9 * * *"    # 5 h (heure d'été) / 4 h (hiver) à Montréal ; :07 évite la cohue de l'heure pile
   workflow_dispatch:
     inputs:
       target:

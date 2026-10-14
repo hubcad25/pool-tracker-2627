@@ -21,7 +21,7 @@ sur Android + dashboard mobile (performance vs projection, indicateurs de chance
 | sujet | décision |
 |---|---|
 | Repo | `hubcad25/pool-tracker-2627`, **public**, séparé de `fantasy_projections_2627` (qui contient des données payantes) |
-| Runner | GitHub Actions, **1 exécution par jour vers midi** (cron `0 16 * * *` UTC, donc 12 h en heure d'été et 11 h l'hiver) |
+| Runner | GitHub Actions, **1 exécution par jour vers 5 h** (cron `7 9 * * *` UTC, donc 5 h en heure d'été et 4 h l'hiver) |
 | Notifs | ntfy (app Android), topic au nom aléatoire, deux topics : `test` et `prod` |
 | Dashboard | PWA React/Vite, déployée sur GitHub Pages |
 | Langage | Python pour le pipeline **et** le modèle ROS (le même code sert au backtest et en production). R reste correct pour l'exploration et les graphiques. |
