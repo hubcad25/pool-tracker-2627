@@ -363,7 +363,7 @@ espn_id,nhl_id,canonical_id,name,method
 3067862,8483575,,Matt Murray,name
 3067865,,,Jean-Sebastien Dea,unmatched
 3067868,,brock_mcginn,Brock McGinn,unmatched
-3067879,,justin_dowling,Justin Dowling,unmatched
+3067879,8475413,justin_dowling,Justin Dowling,name
 3067951,8477015,connor_brown,Connor Brown,name
 3068035,,andreas_athanasiou,Andreas Athanasiou,unmatched
 3068087,8476923,damon_severson,Damon Severson,search:name
@@ -1216,6 +1216,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080220,8483482,tristan_luneau,Tristan Luneau,name
 5080221,8483505,matthew_poitras,Matthew Poitras,name
 5080223,,elias_salomonsson,Elias Salomonsson,unmatched
+5080224,8483478,,Rieger Lorenz,name
 5080225,,,Nikke Kokko,unmatched
 5080227,8483450,ryan_greene,Ryan Greene,name
 5080230,8483457,lane_hutson,Lane Hutson,name
@@ -1257,7 +1258,7 @@ espn_id,nhl_id,canonical_id,name,method
 5125424,,,Matthew Berlin,unmatched
 5136605,8484428,charles_alexis_legault,Charles Alexis Legault,name
 5136607,8484911,collin_graf,Collin Graf,name
-5136614,,gavin_brindley,Gavin Brindley,unmatched
+5136614,8484149,gavin_brindley,Gavin Brindley,name
 5136616,8486171,,T.J. Hughes,name
 5136617,8484166,adam_fantilli,Adam Fantilli,name
 5136660,,quinn_hutson,Quinn Hutson,unmatched
@@ -1274,7 +1275,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149125,8484144,connor_bedard,Connor Bedard,name
 5149153,8484153,leo_carlsson,Leo Carlsson,name
 5149155,8484227,will_smith,Will Smith,name
-5149157,,david_reinbacher,David Reinbacher,unmatched
+5149157,8484220,david_reinbacher,David Reinbacher,name
 5149158,8484386,dmitri_simashev,Dmitri Simashev,name
 5149170,8484387,matvei_michkov,Matvei Michkov,name
 5149172,8484186,ryan_leonard,Ryan Leonard,name
@@ -1299,7 +1300,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149210,8484221,calum_ritchie,Calum Ritchie,name
 5149211,8484158,easton_cowan,Easton Cowan,name
 5149212,8484188,theo_lindstein,Theo Lindstein,name
-5149213,,bradly_nadeau,Bradly Nadeau,unmatched
+5149213,8484203,bradly_nadeau,Bradly Nadeau,name
 5149214,,,Mikhail Gulyayev,unmatched
 5149216,,,David Edstrom,unmatched
 5149221,,nico_myatovic,Nico Myatovic,unmatched
@@ -1495,6 +1496,7 @@ espn_id,nhl_id,canonical_id,name,method
 5291984,,,Daniil Prokhorov,unmatched
 5291985,,,Malcolm Spence,unmatched
 5291986,,,Eddie Genborg,unmatched
+5291987,,,Eric Nilson,unmatched
 5291988,,,Max Psenicka,unmatched
 5291989,,,Alexei Medvedev,unmatched
 5291990,,,Conrad Fondrk,unmatched
