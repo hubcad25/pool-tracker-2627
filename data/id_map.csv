@@ -629,7 +629,7 @@ espn_id,nhl_id,canonical_id,name,method
 4063491,,,Gage Quinney,unmatched
 4063495,,boris_katchouk,Boris Katchouk,unmatched
 4063496,,lane_pederson,Lane Pederson,unmatched
-4063502,,taylor_raddysh,Taylor Raddysh,unmatched
+4063502,8479390,taylor_raddysh,Taylor Raddysh,name
 4063504,,,Joshua Mahura,unmatched
 4063522,8478971,,Connor Ingram,search:name
 4063569,8479772,zack_macewen,Zack MacEwen,name
@@ -1334,7 +1334,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149246,,,Carey Terrance,unmatched
 5149247,,,Damian Clara,unmatched
 5149248,,,Tristan Bertucci,unmatched
-5149249,,felix_unger_sorum,Felix Unger Sorum,unmatched
+5149249,8484392,felix_unger_sorum,Felix Unger Sorum,name
 5149250,,,Gracyn Sawchyn,unmatched
 5149251,,,Riley Heidt,unmatched
 5149600,,,Marc Johnstone,unmatched

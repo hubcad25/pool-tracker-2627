@@ -1,6 +1,6 @@
 {
  "date": "2026-10-17",
- "updated": "2026-10-17T08:02:03-04:00",
+ "updated": "2026-10-17T08:55:37-04:00",
  "games": [
   {
    "id": 2026020121,
@@ -8,7 +8,10 @@
    "away": "NJD",
    "home": "WSH",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.094,
+    "home": 3.304
+   }
   },
   {
    "id": 2026020122,
@@ -16,7 +19,10 @@
    "away": "CAR",
    "home": "WPG",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.601,
+    "home": 2.797
+   }
   },
   {
    "id": 2026020123,
@@ -24,7 +30,10 @@
    "away": "VAN",
    "home": "TBL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.359,
+    "home": 4.241
+   }
   },
   {
    "id": 2026020124,
@@ -32,7 +41,10 @@
    "away": "SEA",
    "home": "FLA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.827,
+    "home": 3.635
+   }
   },
   {
    "id": 2026020125,
@@ -40,7 +52,10 @@
    "away": "NYI",
    "home": "TOR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.083,
+    "home": 3.42
+   }
   },
   {
    "id": 2026020126,
@@ -48,7 +63,10 @@
    "away": "BUF",
    "home": "MTL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.124,
+    "home": 3.545
+   }
   },
   {
    "id": 2026020127,
@@ -56,7 +74,10 @@
    "away": "SJS",
    "home": "DET",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.11,
+    "home": 3.448
+   }
   },
   {
    "id": 2026020128,
@@ -64,7 +85,10 @@
    "away": "OTT",
    "home": "PHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.077,
+    "home": 2.568
+   }
   },
   {
    "id": 2026020129,
@@ -72,7 +96,10 @@
    "away": "NYR",
    "home": "CBJ",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.064,
+    "home": 3.399
+   }
   },
   {
    "id": 2026020130,
@@ -80,7 +107,10 @@
    "away": "DAL",
    "home": "CHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.428,
+    "home": 2.554
+   }
   },
   {
    "id": 2026020131,
@@ -88,7 +118,10 @@
    "away": "STL",
    "home": "NSH",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.025,
+    "home": 2.957
+   }
   },
   {
    "id": 2026020132,
@@ -96,7 +129,10 @@
    "away": "BOS",
    "home": "LAK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.773,
+    "home": 3.093
+   }
   },
   {
    "id": 2026020133,
@@ -104,7 +140,10 @@
    "away": "EDM",
    "home": "UTA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.247,
+    "home": 3.592
+   }
   },
   {
    "id": 2026020134,
@@ -112,11 +151,14 @@
    "away": "PIT",
    "home": "VGK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.813,
+    "home": 3.969
+   }
   }
  ],
  "p_first": {
-  "now": 0.793,
+  "now": 0.784,
   "yesterday": 0.793,
   "history": [
    {
@@ -190,6 +232,10 @@
    {
     "day": "2026-10-16",
     "p_first": 0.793
+   },
+   {
+    "day": "2026-10-17",
+    "p_first": 0.784
    }
   ]
  },
@@ -200,11 +246,11 @@
    "name": "hubcad25",
    "mine": true,
    "points": 105.0,
-   "p_first": 0.793,
-   "delta_p_first_per_point": 0.00409,
-   "final": 1195.9,
-   "sd": 57.86,
-   "expected_tonight": 12.8,
+   "p_first": 0.784,
+   "delta_p_first_per_point": 0.00418,
+   "final": 1197.7,
+   "sd": 57.93,
+   "expected_tonight": 12.9,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -274,6 +320,19 @@
      "p_start": null
     },
     {
+     "espn_id": 4894366,
+     "nhl_id": 8482982,
+     "name": "Jet Greaves",
+     "pos": "G",
+     "team": "CBJ",
+     "game_id": 2026020129,
+     "opp": "NYR",
+     "start": "2026-10-17T23:00:00Z",
+     "expected": 1.03,
+     "actual": null,
+     "p_start": 0.837
+    },
+    {
      "espn_id": 5149125,
      "nhl_id": 8484144,
      "name": "Connor Bedard",
@@ -298,19 +357,6 @@
      "expected": 0.95,
      "actual": null,
      "p_start": null
-    },
-    {
-     "espn_id": 4894366,
-     "nhl_id": 8482982,
-     "name": "Jet Greaves",
-     "pos": "G",
-     "team": "CBJ",
-     "game_id": 2026020129,
-     "opp": "NYR",
-     "start": "2026-10-17T23:00:00Z",
-     "expected": 0.94,
-     "actual": null,
-     "p_start": 0.837
     },
     {
      "espn_id": 4697382,
@@ -411,10 +457,10 @@
    "name": "Rico",
    "mine": false,
    "points": 101.0,
-   "p_first": 0.077,
-   "delta_p_first_per_point": -0.00148,
-   "final": 1098.3,
-   "sd": 52.38,
+   "p_first": 0.093,
+   "delta_p_first_per_point": -0.00172,
+   "final": 1106.8,
+   "sd": 52.64,
    "expected_tonight": 10.7,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -480,7 +526,7 @@
      "game_id": 2026020124,
      "opp": "SEA",
      "start": "2026-10-17T22:00:00Z",
-     "expected": 0.06,
+     "expected": 0.07,
      "actual": null,
      "p_start": 0.05
     },
@@ -584,7 +630,7 @@
      "game_id": 2026020134,
      "opp": "PIT",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.81,
+     "expected": 0.82,
      "actual": null,
      "p_start": null
     },
@@ -609,11 +655,11 @@
    "name": "NWA",
    "mine": false,
    "points": 117.0,
-   "p_first": 0.068,
-   "delta_p_first_per_point": -0.00129,
-   "final": 1091.4,
-   "sd": 55.29,
-   "expected_tonight": 11.3,
+   "p_first": 0.066,
+   "delta_p_first_per_point": -0.00124,
+   "final": 1092.8,
+   "sd": 55.22,
+   "expected_tonight": 11.4,
    "actual_tonight": null,
    "playing_tonight": 14,
    "players": [
@@ -756,7 +802,7 @@
      "game_id": 2026020126,
      "opp": "BUF",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.39,
+     "expected": 0.44,
      "actual": null,
      "p_start": 0.35
     },
@@ -807,10 +853,10 @@
    "name": "GSP",
    "mine": false,
    "points": 86.0,
-   "p_first": 0.029,
-   "delta_p_first_per_point": -0.00062,
-   "final": 1068.6,
-   "sd": 53.31,
+   "p_first": 0.024,
+   "delta_p_first_per_point": -0.00052,
+   "final": 1065.9,
+   "sd": 53.29,
    "expected_tonight": 12.4,
    "actual_tonight": null,
    "playing_tonight": 15,
@@ -928,7 +974,7 @@
      "game_id": 2026020128,
      "opp": "@PHI",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.8,
+     "expected": 0.81,
      "actual": null,
      "p_start": null
     },
@@ -993,7 +1039,7 @@
      "game_id": 2026020132,
      "opp": "@LAK",
      "start": "2026-10-18T01:00:00Z",
-     "expected": 0.98,
+     "expected": 0.89,
      "actual": null,
      "p_start": 0.87
     },
@@ -1019,10 +1065,10 @@
    "mine": false,
    "points": 105.0,
    "p_first": 0.019,
-   "delta_p_first_per_point": -0.00043,
-   "final": 1059.6,
-   "sd": 51.58,
-   "expected_tonight": 12.2,
+   "delta_p_first_per_point": -0.00042,
+   "final": 1062.1,
+   "sd": 51.64,
+   "expected_tonight": 12.1,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -1074,7 +1120,7 @@
      "game_id": 2026020128,
      "opp": "@PHI",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 1.04,
+     "expected": 1.05,
      "actual": null,
      "p_start": null
     },
@@ -1087,7 +1133,7 @@
      "game_id": 2026020125,
      "opp": "@TOR",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.98,
+     "expected": 0.88,
      "actual": null,
      "p_start": 0.873
     },
@@ -1139,7 +1185,7 @@
      "game_id": 2026020132,
      "opp": "@LAK",
      "start": "2026-10-18T01:00:00Z",
-     "expected": 0.57,
+     "expected": 0.6,
      "actual": null,
      "p_start": null
     },
@@ -1204,7 +1250,7 @@
      "game_id": 2026020134,
      "opp": "@VGK",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.39,
+     "expected": 0.4,
      "actual": null,
      "p_start": null
     },
@@ -1231,9 +1277,9 @@
    "points": 85.0,
    "p_first": 0.012,
    "delta_p_first_per_point": -0.00028,
-   "final": 1047.4,
-   "sd": 51.85,
-   "expected_tonight": 9.8,
+   "final": 1050.7,
+   "sd": 51.89,
+   "expected_tonight": 10.0,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -1259,7 +1305,7 @@
      "game_id": 2026020122,
      "opp": "@WPG",
      "start": "2026-10-17T19:30:00Z",
-     "expected": 0.62,
+     "expected": 0.76,
      "actual": null,
      "p_start": 0.548
     },
@@ -1389,7 +1435,7 @@
      "game_id": 2026020134,
      "opp": "@VGK",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.87,
+     "expected": 0.88,
      "actual": null,
      "p_start": null
     },
@@ -1402,7 +1448,7 @@
      "game_id": 2026020134,
      "opp": "@VGK",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.69,
+     "expected": 0.7,
      "actual": null,
      "p_start": null
     }
@@ -1415,9 +1461,9 @@
    "mine": false,
    "points": 83.0,
    "p_first": 0.001,
-   "delta_p_first_per_point": -3e-05,
-   "final": 991.8,
-   "sd": 53.56,
+   "delta_p_first_per_point": -2e-05,
+   "final": 989.0,
+   "sd": 53.26,
    "expected_tonight": 10.1,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -1548,7 +1594,7 @@
      "game_id": 2026020132,
      "opp": "@LAK",
      "start": "2026-10-18T01:00:00Z",
-     "expected": 1.1,
+     "expected": 1.11,
      "actual": null,
      "p_start": null
     },
@@ -1574,7 +1620,7 @@
      "game_id": 2026020132,
      "opp": "@LAK",
      "start": "2026-10-18T01:00:00Z",
-     "expected": 0.61,
+     "expected": 0.6,
      "actual": null,
      "p_start": null
     },
@@ -1613,10 +1659,10 @@
    "mine": false,
    "points": 80.0,
    "p_first": 0.001,
-   "delta_p_first_per_point": -3e-05,
-   "final": 995.9,
-   "sd": 51.53,
-   "expected_tonight": 10.5,
+   "delta_p_first_per_point": -4e-05,
+   "final": 1003.6,
+   "sd": 52.33,
+   "expected_tonight": 10.6,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -1629,7 +1675,7 @@
      "game_id": 2026020121,
      "opp": "NJD",
      "start": "2026-10-17T17:00:00Z",
-     "expected": 0.97,
+     "expected": 1.03,
      "actual": null,
      "p_start": 0.863
     },
@@ -1694,7 +1740,7 @@
      "game_id": 2026020128,
      "opp": "OTT",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.55,
+     "expected": 0.54,
      "actual": null,
      "p_start": null
     },
@@ -1759,7 +1805,7 @@
      "game_id": 2026020132,
      "opp": "@LAK",
      "start": "2026-10-18T01:00:00Z",
-     "expected": 0.62,
+     "expected": 0.6,
      "actual": null,
      "p_start": null
     },
@@ -1799,9 +1845,9 @@
    "points": 86.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -1e-05,
-   "final": 988.6,
-   "sd": 46.37,
-   "expected_tonight": 11.3,
+   "final": 988.9,
+   "sd": 46.3,
+   "expected_tonight": 11.6,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -1866,7 +1912,7 @@
      "game_id": 2026020130,
      "opp": "@CHI",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.89,
+     "expected": 1.13,
      "actual": null,
      "p_start": 0.79
     },
@@ -1983,7 +2029,7 @@
      "game_id": 2026020134,
      "opp": "@VGK",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.72,
+     "expected": 0.73,
      "actual": null,
      "p_start": null
     },
@@ -2010,9 +2056,9 @@
    "points": 81.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 950.6,
+   "final": 952.6,
    "sd": 48.83,
-   "expected_tonight": 10.5,
+   "expected_tonight": 10.6,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -2207,7 +2253,7 @@
      "game_id": 2026020133,
      "opp": "EDM",
      "start": "2026-10-18T02:00:00Z",
-     "expected": 0.95,
+     "expected": 1.03,
      "actual": null,
      "p_start": 0.841
     }
@@ -2221,9 +2267,9 @@
    "points": 78.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 937.8,
+   "final": 938.8,
    "sd": 46.17,
-   "expected_tonight": 11.6,
+   "expected_tonight": 11.7,
    "actual_tonight": null,
    "playing_tonight": 16,
    "players": [
@@ -2379,7 +2425,7 @@
      "game_id": 2026020125,
      "opp": "NYI",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.68,
+     "expected": 0.75,
      "actual": null,
      "p_start": 0.607
     },
@@ -2445,9 +2491,9 @@
    "points": 68.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 933.0,
-   "sd": 48.79,
-   "expected_tonight": 9.4,
+   "final": 938.3,
+   "sd": 48.97,
+   "expected_tonight": 9.6,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -2486,7 +2532,7 @@
      "game_id": 2026020123,
      "opp": "VAN",
      "start": "2026-10-17T20:00:00Z",
-     "expected": 0.48,
+     "expected": 0.72,
      "actual": null,
      "p_start": 0.428
     },
@@ -2538,7 +2584,7 @@
      "game_id": 2026020128,
      "opp": "@PHI",
      "start": "2026-10-17T23:00:00Z",
-     "expected": 0.74,
+     "expected": 0.75,
      "actual": null,
      "p_start": null
     },
@@ -2695,6 +2741,20 @@
    "injury": null
   },
   {
+   "espn_id": 4894366,
+   "nhl_id": 8482982,
+   "name": "Jet Greaves",
+   "pos": "G",
+   "team": "CBJ",
+   "game_id": 2026020129,
+   "opp": "NYR",
+   "start": "2026-10-17T23:00:00Z",
+   "expected": 1.03,
+   "actual": null,
+   "p_start": 0.837,
+   "injury": null
+  },
+  {
    "espn_id": 5149125,
    "nhl_id": 8484144,
    "name": "Connor Bedard",
@@ -2720,20 +2780,6 @@
    "expected": 0.95,
    "actual": null,
    "p_start": null,
-   "injury": null
-  },
-  {
-   "espn_id": 4894366,
-   "nhl_id": 8482982,
-   "name": "Jet Greaves",
-   "pos": "G",
-   "team": "CBJ",
-   "game_id": 2026020129,
-   "opp": "NYR",
-   "start": "2026-10-17T23:00:00Z",
-   "expected": 0.94,
-   "actual": null,
-   "p_start": 0.837,
    "injury": null
   },
   {
@@ -2853,8 +2899,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00148,
-   "threat": -0.00193
+   "delta_p_first_per_point": -0.00172,
+   "threat": -0.00225
   },
   {
    "espn_id": 3114736,
@@ -2873,28 +2919,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00148,
-   "threat": -0.00179
-  },
-  {
-   "espn_id": 3904173,
-   "nhl_id": 8478427,
-   "name": "Sebastian Aho",
-   "pos": "C",
-   "team": "CAR",
-   "game_id": 2026020122,
-   "opp": "@WPG",
-   "start": "2026-10-17T19:30:00Z",
-   "expected": 1.25,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 4,
-    "abbrev": "NWA",
-    "name": "NWA"
-   },
-   "delta_p_first_per_point": -0.00129,
-   "threat": -0.00162
+   "delta_p_first_per_point": -0.00172,
+   "threat": -0.00208
   },
   {
    "espn_id": 4874740,
@@ -2913,8 +2939,28 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00148,
-   "threat": -0.0016
+   "delta_p_first_per_point": -0.00172,
+   "threat": -0.00186
+  },
+  {
+   "espn_id": 3904173,
+   "nhl_id": 8478427,
+   "name": "Sebastian Aho",
+   "pos": "C",
+   "team": "CAR",
+   "game_id": 2026020122,
+   "opp": "@WPG",
+   "start": "2026-10-17T19:30:00Z",
+   "expected": 1.25,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 4,
+    "abbrev": "NWA",
+    "name": "NWA"
+   },
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00155
   },
   {
    "espn_id": 5545,
@@ -2933,8 +2979,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00129,
-   "threat": -0.00159
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00153
   },
   {
    "espn_id": 4565222,
@@ -2953,8 +2999,28 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00129,
-   "threat": -0.00157
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00151
+  },
+  {
+   "espn_id": 3899946,
+   "nhl_id": 8478445,
+   "name": "Mathew Barzal",
+   "pos": "C",
+   "team": "NYI",
+   "game_id": 2026020125,
+   "opp": "@TOR",
+   "start": "2026-10-17T23:00:00Z",
+   "expected": 0.85,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 12,
+    "abbrev": "RICo",
+    "name": "Rico"
+   },
+   "delta_p_first_per_point": -0.00172,
+   "threat": -0.00146
   },
   {
    "espn_id": 4024854,
@@ -2973,28 +3039,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00129,
-   "threat": -0.00151
-  },
-  {
-   "espn_id": 4352722,
-   "nhl_id": 8480803,
-   "name": "Evan Bouchard",
-   "pos": "D",
-   "team": "EDM",
-   "game_id": 2026020133,
-   "opp": "@UTA",
-   "start": "2026-10-18T02:00:00Z",
-   "expected": 1.15,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 4,
-    "abbrev": "NWA",
-    "name": "NWA"
-   },
-   "delta_p_first_per_point": -0.00129,
-   "threat": -0.00149
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00145
   }
  ]
 }
