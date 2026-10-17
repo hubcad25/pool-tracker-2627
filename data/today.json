@@ -1,6 +1,6 @@
 {
  "date": "2026-10-16",
- "updated": "2026-10-16T23:47:02-04:00",
+ "updated": "2026-10-17T06:02:04-04:00",
  "games": [
   {
    "id": 2026020119,
@@ -18,7 +18,7 @@
    "start": "2026-10-17T02:00:00Z",
    "away": "BOS",
    "home": "ANA",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.245,
     "home": 3.217
@@ -124,13 +124,13 @@
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 96.0,
+   "points": 101.0,
    "p_first": 0.077,
    "delta_p_first_per_point": -0.00148,
    "final": 1098.3,
    "sd": 52.38,
    "expected_tonight": 3.0,
-   "actual_tonight": 4,
+   "actual_tonight": 5,
    "playing_tonight": 3,
    "players": [
     {
@@ -169,7 +169,7 @@
      "opp": "BOS",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.69,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -179,13 +179,13 @@
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 115.0,
+   "points": 117.0,
    "p_first": 0.068,
    "delta_p_first_per_point": -0.00129,
    "final": 1091.4,
    "sd": 55.29,
    "expected_tonight": 1.6,
-   "actual_tonight": 1,
+   "actual_tonight": 2,
    "playing_tonight": 2,
    "players": [
     {
@@ -211,7 +211,7 @@
      "opp": "BOS",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.8,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -240,7 +240,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.96,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.852
     }
    ]
@@ -250,13 +250,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 103.0,
+   "points": 105.0,
    "p_first": 0.019,
    "delta_p_first_per_point": -0.00043,
    "final": 1059.6,
    "sd": 51.58,
    "expected_tonight": 1.6,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -295,7 +295,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -305,7 +305,7 @@
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 81.0,
+   "points": 85.0,
    "p_first": 0.012,
    "delta_p_first_per_point": -0.00028,
    "final": 1047.4,
@@ -373,13 +373,13 @@
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 81.0,
+   "points": 83.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -3e-05,
    "final": 991.8,
    "sd": 53.56,
    "expected_tonight": 3.0,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -392,7 +392,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 1.27,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -405,7 +405,7 @@
      "opp": "BOS",
      "start": "2026-10-17T02:00:00Z",
      "expected": 1.05,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -418,7 +418,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.71,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -428,13 +428,13 @@
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 75.0,
+   "points": 80.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -3e-05,
    "final": 995.9,
    "sd": 51.53,
    "expected_tonight": 3.0,
-   "actual_tonight": 4,
+   "actual_tonight": 5,
    "playing_tonight": 4,
    "players": [
     {
@@ -473,7 +473,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.72,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -486,7 +486,7 @@
      "opp": "BOS",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.23,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -496,13 +496,13 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 84.0,
+   "points": 86.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -1e-05,
    "final": 988.6,
    "sd": 46.37,
    "expected_tonight": 1.6,
-   "actual_tonight": 1,
+   "actual_tonight": 2,
    "playing_tonight": 2,
    "players": [
     {
@@ -528,7 +528,7 @@
      "opp": "@ANA",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.84,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -538,7 +538,7 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 79.0,
+   "points": 81.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 950.6,
@@ -553,7 +553,7 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 77.0,
+   "points": 78.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 937.8,
@@ -568,13 +568,13 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 65.0,
+   "points": 68.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 933.0,
    "sd": 48.79,
    "expected_tonight": 1.6,
-   "actual_tonight": 2,
+   "actual_tonight": 3,
    "playing_tonight": 2,
    "players": [
     {
@@ -600,7 +600,7 @@
      "opp": "BOS",
      "start": "2026-10-17T02:00:00Z",
      "expected": 0.87,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -658,7 +658,7 @@
    "opp": "BOS",
    "start": "2026-10-17T02:00:00Z",
    "expected": 0.8,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -678,7 +678,7 @@
    "opp": "BOS",
    "start": "2026-10-17T02:00:00Z",
    "expected": 0.69,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -718,7 +718,7 @@
    "opp": "@ANA",
    "start": "2026-10-17T02:00:00Z",
    "expected": 0.96,
-   "actual": null,
+   "actual": 0,
    "p_start": 0.852,
    "owner": {
     "team_id": 1,
@@ -758,7 +758,7 @@
    "opp": "@ANA",
    "start": "2026-10-17T02:00:00Z",
    "expected": 0.66,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 9,
