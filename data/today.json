@@ -1,6 +1,6 @@
 {
  "date": "2026-10-18",
- "updated": "2026-10-18T13:02:02-04:00",
+ "updated": "2026-10-18T14:02:04-04:00",
  "games": [
   {
    "id": 2026020135,
@@ -161,9 +161,9 @@
      "game_id": 2026020135,
      "opp": "@MIN",
      "start": "2026-10-18T22:00:00Z",
-     "expected": 0.2,
+     "expected": 0.21,
      "actual": null,
-     "p_start": 0.237
+     "p_start": 0.242
     },
     {
      "espn_id": 3025662,
@@ -601,9 +601,9 @@
    "game_id": 2026020135,
    "opp": "@MIN",
    "start": "2026-10-18T22:00:00Z",
-   "expected": 0.2,
+   "expected": 0.21,
    "actual": null,
-   "p_start": 0.237,
+   "p_start": 0.242,
    "injury": null
   },
   {
