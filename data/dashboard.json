@@ -13639,16 +13639,16 @@
      "pos": "C",
      "team": "WSH",
      "status": "INJURY_RESERVE",
-     "expected_return": "2026-10-20",
-     "games_missed": 0,
+     "expected_return": "2026-10-24",
+     "games_missed": 1,
      "pct_owned": 12.33,
      "ros": {
-      "mean": 52.1,
-      "p10": 35.1,
-      "p90": 70.8
+      "mean": 51.4,
+      "p10": 34.7,
+      "p90": 69.9
      },
-     "gain": 7.0,
-     "p_better": 0.648,
+     "gain": 6.3,
+     "p_better": 0.635,
      "gp": 4.0,
      "points": 4.0,
      "luck": {
