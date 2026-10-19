@@ -1,6 +1,6 @@
 {
  "date": "2026-10-19",
- "updated": "2026-10-19T12:02:02-04:00",
+ "updated": "2026-10-19T12:02:28-04:00",
  "games": [
   {
    "id": 2026020137,
@@ -8,7 +8,10 @@
    "away": "ANA",
    "home": "NYR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.044,
+    "home": 3.459
+   }
   },
   {
    "id": 2026020138,
@@ -16,7 +19,10 @@
    "away": "COL",
    "home": "PHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.752,
+    "home": 2.59
+   }
   },
   {
    "id": 2026020139,
@@ -24,7 +30,10 @@
    "away": "SJS",
    "home": "TOR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.301,
+    "home": 3.648
+   }
   },
   {
    "id": 2026020140,
@@ -32,11 +41,14 @@
    "away": "PIT",
    "home": "UTA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.057,
+    "home": 3.893
+   }
   }
  ],
  "p_first": {
-  "now": 0.778,
+  "now": 0.733,
   "yesterday": 0.778,
   "history": [
    {
@@ -118,6 +130,10 @@
    {
     "day": "2026-10-18",
     "p_first": 0.778
+   },
+   {
+    "day": "2026-10-19",
+    "p_first": 0.733
    }
   ]
  },
@@ -128,10 +144,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 114.0,
-   "p_first": 0.778,
-   "delta_p_first_per_point": 0.00429,
-   "final": 1192.6,
-   "sd": 57.53,
+   "p_first": 0.733,
+   "delta_p_first_per_point": 0.00475,
+   "final": 1182.1,
+   "sd": 57.51,
    "expected_tonight": 3.5,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -196,10 +212,10 @@
    "name": "Rico",
    "mine": false,
    "points": 106.0,
-   "p_first": 0.095,
-   "delta_p_first_per_point": -0.00175,
-   "final": 1103.4,
-   "sd": 52.75,
+   "p_first": 0.111,
+   "delta_p_first_per_point": -0.00187,
+   "final": 1102.0,
+   "sd": 52.7,
    "expected_tonight": 6.4,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -303,10 +319,10 @@
    "name": "NWA",
    "mine": false,
    "points": 128.0,
-   "p_first": 0.061,
-   "delta_p_first_per_point": -0.00115,
-   "final": 1086.5,
-   "sd": 54.88,
+   "p_first": 0.075,
+   "delta_p_first_per_point": -0.0013,
+   "final": 1087.0,
+   "sd": 54.85,
    "expected_tonight": 2.9,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -371,8 +387,8 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 120.0,
-   "p_first": 0.027,
-   "delta_p_first_per_point": -0.00058,
+   "p_first": 0.034,
+   "delta_p_first_per_point": -0.00067,
    "final": 1067.9,
    "sd": 51.13,
    "expected_tonight": 2.0,
@@ -439,10 +455,10 @@
    "name": "GSP",
    "mine": false,
    "points": 98.0,
-   "p_first": 0.022,
+   "p_first": 0.024,
    "delta_p_first_per_point": -0.00049,
-   "final": 1061.3,
-   "sd": 52.35,
+   "final": 1057.8,
+   "sd": 52.17,
    "expected_tonight": 1.4,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -468,10 +484,10 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 97.0,
-   "p_first": 0.014,
-   "delta_p_first_per_point": -0.00031,
-   "final": 1050.4,
-   "sd": 51.41,
+   "p_first": 0.016,
+   "delta_p_first_per_point": -0.00035,
+   "final": 1048.9,
+   "sd": 51.34,
    "expected_tonight": 4.0,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -549,10 +565,10 @@
    "name": "Cuzo",
    "mine": false,
    "points": 89.0,
-   "p_first": 0.002,
-   "delta_p_first_per_point": -5e-05,
-   "final": 1007.4,
-   "sd": 50.97,
+   "p_first": 0.004,
+   "delta_p_first_per_point": -0.0001,
+   "final": 1018.7,
+   "sd": 50.89,
    "expected_tonight": 7.2,
    "actual_tonight": null,
    "playing_tonight": 9,
@@ -683,8 +699,8 @@
    "mine": false,
    "points": 103.0,
    "p_first": 0.001,
-   "delta_p_first_per_point": -2e-05,
-   "final": 1002.7,
+   "delta_p_first_per_point": -3e-05,
+   "final": 1003.6,
    "sd": 45.98,
    "expected_tonight": 1.3,
    "actual_tonight": null,
@@ -725,9 +741,9 @@
    "mine": false,
    "points": 95.0,
    "p_first": 0.001,
-   "delta_p_first_per_point": -2e-05,
-   "final": 989.7,
-   "sd": 52.84,
+   "delta_p_first_per_point": -3e-05,
+   "final": 990.5,
+   "sd": 52.71,
    "expected_tonight": 1.9,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -768,9 +784,9 @@
    "points": 90.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 952.1,
-   "sd": 47.79,
-   "expected_tonight": 4.0,
+   "final": 948.6,
+   "sd": 47.62,
+   "expected_tonight": 4.2,
    "actual_tonight": null,
    "playing_tonight": 5,
    "players": [
@@ -835,7 +851,7 @@
      "game_id": 2026020140,
      "opp": "PIT",
      "start": "2026-10-20T01:00:00Z",
-     "expected": 0.83,
+     "expected": 1.0,
      "actual": null,
      "p_start": 0.735
     }
@@ -849,9 +865,9 @@
    "points": 90.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 935.3,
-   "sd": 45.09,
-   "expected_tonight": 1.9,
+   "final": 934.6,
+   "sd": 45.12,
+   "expected_tonight": 2.2,
    "actual_tonight": null,
    "playing_tonight": 3,
    "players": [
@@ -864,7 +880,7 @@
      "game_id": 2026020138,
      "opp": "@PHI",
      "start": "2026-10-19T23:00:00Z",
-     "expected": 0.72,
+     "expected": 0.95,
      "actual": null,
      "p_start": 0.637
     },
@@ -904,8 +920,8 @@
    "points": 77.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 934.8,
-   "sd": 48.55,
+   "final": 938.0,
+   "sd": 47.87,
    "expected_tonight": 3.7,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -1054,8 +1070,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00312
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.00333
   },
   {
    "espn_id": 3114736,
@@ -1074,8 +1090,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00215
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.00229
   },
   {
    "espn_id": 2590852,
@@ -1094,8 +1110,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00152
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.00162
   },
   {
    "espn_id": 5149155,
@@ -1114,8 +1130,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00147
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.00157
   },
   {
    "espn_id": 2591155,
@@ -1134,8 +1150,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00131
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.0014
   },
   {
    "espn_id": 4565262,
@@ -1154,8 +1170,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00175,
-   "threat": -0.00119
+   "delta_p_first_per_point": -0.00187,
+   "threat": -0.00127
   },
   {
    "espn_id": 5798,
@@ -1174,8 +1190,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00115,
-   "threat": -0.00096
+   "delta_p_first_per_point": -0.0013,
+   "threat": -0.00108
   },
   {
    "espn_id": 5216858,
@@ -1194,8 +1210,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00115,
-   "threat": -0.00089
+   "delta_p_first_per_point": -0.0013,
+   "threat": -0.001
   }
  ]
 }

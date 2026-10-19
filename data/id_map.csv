@@ -392,7 +392,7 @@ espn_id,nhl_id,canonical_id,name,method
 3094261,8476826,yanni_gourde,Yanni Gourde,name
 3094544,,,Kevin Czuczman,unmatched
 3095330,,,Pheonix Copley,unmatched
-3095892,,vinni_lettieri,Vinni Lettieri,unmatched
+3095892,8479968,vinni_lettieri,Vinni Lettieri,name
 3095975,8479292,charlie_lindgren,Charlie Lindgren,name
 3096102,8479442,troy_stecher,Troy Stecher,name
 3096115,,,Mike Vecchione,unmatched
@@ -825,7 +825,7 @@ espn_id,nhl_id,canonical_id,name,method
 4419180,,,Brady Keeper,unmatched
 4419263,,,Brinson Pasichnuk,unmatched
 4419638,8480246,nick_perbix,Nick Perbix,name
-4419646,,mitchell_chaffee,Mitchell Chaffee,unmatched
+4419646,8482070,mitchell_chaffee,Mitchell Chaffee,name
 4419649,,marc_del_gaizo,Marc Del Gaizo,unmatched
 4419658,,john_leonard,John Leonard,unmatched
 4419662,8483575,,Matt Murray,name
@@ -1006,7 +1006,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697461,8482511,mason_lohrei,Mason Lohrei,name
 4697468,8482157,will_cuylle,Will Cuylle,name
 4697470,8482201,gage_goncalves,Gage Goncalves,name
-4697577,,,Artur Akhtyamov,unmatched
+4697577,8482515,,Artur Akhtyamov,name
 4697579,,nils_aman,Nils Aman,unmatched
 4697648,8482459,,Tyrel Bauer,name
 4697654,,brett_berard,Brett Berard,unmatched
@@ -1215,7 +1215,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080210,8483521,noah_warren,Noah Warren,name
 5080211,8483432,luca_del_bel_belluz,Luca Del Bel Belluz,name
 5080212,,seamus_casey,Seamus Casey,unmatched
-5080216,,hunter_haight,Hunter Haight,unmatched
+5080216,8483452,hunter_haight,Hunter Haight,name
 5080217,,jani_nyman,Jani Nyman,unmatched
 5080220,8483482,tristan_luneau,Tristan Luneau,name
 5080221,8483505,matthew_poitras,Matthew Poitras,name
@@ -1241,7 +1241,7 @@ espn_id,nhl_id,canonical_id,name,method
 5103698,,,Michael Milne,unmatched
 5103702,8482731,tyson_hinds,Tyson Hinds,name
 5103714,,ivan_ivan,Ivan Ivan,unmatched
-5103725,,hunter_mcdonald,Hunter McDonald,unmatched
+5103725,8483760,hunter_mcdonald,Hunter McDonald,name
 5103787,,,Nick Cicek,unmatched
 5103808,8482806,,William Trudeau,name
 5103809,,justin_robidas,Justin Robidas,unmatched
@@ -1288,7 +1288,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149180,8484240,tom_willander,Tom Willander,name
 5149183,8484388,daniil_but,Daniil But,name
 5149186,8484145,zach_benson,Zach Benson,name
-5149188,,brayden_yager,Brayden Yager,unmatched
+5149188,8484242,brayden_yager,Brayden Yager,name
 5149189,8484241,matthew_wood,Matthew Wood,name
 5149191,8484180,samuel_honzek,Samuel Honzek,name
 5149192,8484223,axel_sandin_pellikka,Axel Sandin-Pellikka,name
@@ -1299,7 +1299,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149199,8484148,oliver_bonk,Oliver Bonk,name
 5149204,8484210,gabe_perreault,Gabe Perreault,name
 5149206,,tanner_molendyk,Tanner Molendyk,unmatched
-5149208,,otto_stenberg,Otto Stenberg,unmatched
+5149208,8484230,otto_stenberg,Otto Stenberg,name
 5149209,,quentin_musty,Quentin Musty,unmatched
 5149210,8484221,calum_ritchie,Calum Ritchie,name
 5149211,8484158,easton_cowan,Easton Cowan,name
