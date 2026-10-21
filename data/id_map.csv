@@ -277,6 +277,7 @@ espn_id,nhl_id,canonical_id,name,method
 3020228,,jaycob_megna,Jaycob Megna,unmatched
 3020635,,,Matt Tennyson,unmatched
 3020803,8476931,jake_mccabe,Jake McCabe,name
+3024784,,travis_boyd,Travis Boyd,unmatched
 3024798,8477220,nate_schmidt,Nate Schmidt,name
 3024816,,,Austin Czarnik,unmatched
 3024837,,chad_ruhwedel,Chad Ruhwedel,unmatched
@@ -463,6 +464,7 @@ espn_id,nhl_id,canonical_id,name,method
 3150520,,juho_lammikko,Juho Lammikko,unmatched
 3151036,8477998,warren_foegele,Warren Foegele,name
 3151038,,elvis_merzlikins,Elvis Merzlikins,unmatched
+3151095,,,Max Willman,unmatched
 3151096,8478109,victor_olofsson,Victor Olofsson,name
 3151135,,,Jake Chelios,unmatched
 3151136,8478013,jake_walman,Jake Walman,name
@@ -553,6 +555,7 @@ espn_id,nhl_id,canonical_id,name,method
 3942073,8478916,joey_daccord,Joey Daccord,name
 3942205,,,Michael McNiven,unmatched
 3942292,8478882,vladislav_gavrikov,Vladislav Gavrikov,name
+3942294,,,Kole Sherwood,unmatched
 3942334,,,Ales Stezka,unmatched
 3942335,8478864,kirill_kaprizov,Kirill Kaprizov,name
 3942354,8478859,niko_mikkola,Niko Mikkola,name
@@ -1156,6 +1159,7 @@ espn_id,nhl_id,canonical_id,name,method
 4915347,,,Milos Kelemen,unmatched
 4915348,,pavol_regenda,Pavol Regenda,unmatched
 4915349,8483515,juraj_slafkovsky,Juraj Slafkovsky,name
+4915850,8482100,alexander_nikishin,Alexander Nikishin,search:name
 4915855,8481721,arseny_gritsyuk,Arseny Gritsyuk,name
 4915856,8481716,dmitri_voronkov,Dmitri Voronkov,name
 4996077,,,Ronnie Attard,unmatched
@@ -1371,6 +1375,7 @@ espn_id,nhl_id,canonical_id,name,method
 5188490,8483733,nikita_grebenkin,Nikita Grebenkin,name
 5188491,,dylan_duke,Dylan Duke,unmatched
 5188493,,ryan_ufko,Ryan Ufko,unmatched
+5188510,8483463,aleksanteri_kaskimaki,Aleksanteri Kaskimaki,name
 5188523,8482178,ian_moore,Ian Moore,name
 5188534,,,Nikita Tolopilo,unmatched
 5188544,,kirill_kudryavtsev,Kirill Kudryavtsev,unmatched
@@ -1520,6 +1525,7 @@ espn_id,nhl_id,canonical_id,name,method
 5292000,,,Lasse Boelius,unmatched
 5292001,,,Liam Pettersson,unmatched
 5292002,,,Ivan Ryabkin,unmatched
+5292003,,,Ben Kevan,unmatched
 5292004,,,Tinus Luc Koblar,unmatched
 5302535,8485702,maxim_shabanov,Maxim Shabanov,name
 5302558,8485467,luke_haymes,Luke Haymes,name
