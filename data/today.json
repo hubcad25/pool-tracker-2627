@@ -1,13 +1,13 @@
 {
  "date": "2026-10-21",
- "updated": "2026-10-21T14:32:05-04:00",
+ "updated": "2026-10-21T23:02:03-04:00",
  "games": [
   {
    "id": 2026020152,
    "start": "2026-10-21T23:30:00Z",
    "away": "PHI",
    "home": "BUF",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 2.602,
     "home": 3.38
@@ -18,7 +18,7 @@
    "start": "2026-10-21T23:30:00Z",
    "away": "FLA",
    "home": "OTT",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 2.946,
     "home": 2.919
@@ -135,7 +135,7 @@
    "final": 1184.4,
    "sd": 56.99,
    "expected_tonight": 0.7,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -148,7 +148,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.73,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -164,7 +164,7 @@
    "final": 1088.5,
    "sd": 51.16,
    "expected_tonight": 1.2,
-   "actual_tonight": null,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -177,7 +177,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.68,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -190,7 +190,7 @@
      "opp": "@BUF",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.27,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -203,7 +203,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.23,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.201
     }
    ]
@@ -219,7 +219,7 @@
    "final": 1082.1,
    "sd": 53.04,
    "expected_tonight": 1.0,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -232,7 +232,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 1.05,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -248,7 +248,7 @@
    "final": 1072.8,
    "sd": 52.24,
    "expected_tonight": 1.4,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 2,
    "players": [
     {
@@ -261,7 +261,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.79,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -274,7 +274,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.6,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -290,7 +290,7 @@
    "final": 1070.5,
    "sd": 50.55,
    "expected_tonight": 1.0,
-   "actual_tonight": null,
+   "actual_tonight": 2,
    "playing_tonight": 1,
    "players": [
     {
@@ -303,7 +303,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 1.02,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -319,7 +319,7 @@
    "final": 1047.0,
    "sd": 50.57,
    "expected_tonight": 0.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -332,7 +332,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.64,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -348,7 +348,7 @@
    "final": 1022.9,
    "sd": 47.15,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -361,7 +361,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.9,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -377,7 +377,7 @@
    "final": 1014.3,
    "sd": 49.87,
    "expected_tonight": 1.9,
-   "actual_tonight": null,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -390,7 +390,7 @@
      "opp": "@BUF",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.7,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -403,7 +403,7 @@
      "opp": "@BUF",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.63,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -416,7 +416,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.55,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -432,7 +432,7 @@
    "final": 983.5,
    "sd": 52.0,
    "expected_tonight": 3.4,
-   "actual_tonight": null,
+   "actual_tonight": 3,
    "playing_tonight": 5,
    "players": [
     {
@@ -445,7 +445,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.95,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -458,7 +458,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -471,7 +471,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.65,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -484,7 +484,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.6,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -497,7 +497,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.56,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -513,7 +513,7 @@
    "final": 954.3,
    "sd": 47.9,
    "expected_tonight": 2.2,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 4,
    "players": [
     {
@@ -526,7 +526,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 1.03,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -539,7 +539,7 @@
      "opp": "@BUF",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.44,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -552,7 +552,7 @@
      "opp": "PHI",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.38,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -565,7 +565,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.36,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -581,7 +581,7 @@
    "final": 932.5,
    "sd": 45.33,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -594,7 +594,7 @@
      "opp": "@OTT",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.86,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -610,7 +610,7 @@
    "final": 932.8,
    "sd": 45.65,
    "expected_tonight": 1.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -623,7 +623,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.72,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -636,7 +636,7 @@
      "opp": "FLA",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.48,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -649,7 +649,7 @@
      "opp": "@BUF",
      "start": "2026-10-21T23:30:00Z",
      "expected": 0.38,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -666,7 +666,7 @@
    "opp": "PHI",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.73,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   }
@@ -682,7 +682,7 @@
    "opp": "@OTT",
    "start": "2026-10-21T23:30:00Z",
    "expected": 1.05,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -702,7 +702,7 @@
    "opp": "@OTT",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.68,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -722,7 +722,7 @@
    "opp": "FLA",
    "start": "2026-10-21T23:30:00Z",
    "expected": 1.02,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -742,7 +742,7 @@
    "opp": "FLA",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.79,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -762,7 +762,7 @@
    "opp": "PHI",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.6,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -782,7 +782,7 @@
    "opp": "@BUF",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.27,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -802,7 +802,7 @@
    "opp": "@OTT",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.23,
-   "actual": null,
+   "actual": 0,
    "p_start": 0.201,
    "owner": {
     "team_id": 12,
@@ -822,7 +822,7 @@
    "opp": "@OTT",
    "start": "2026-10-21T23:30:00Z",
    "expected": 0.64,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 7,
