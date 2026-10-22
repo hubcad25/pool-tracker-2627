@@ -824,7 +824,7 @@ espn_id,nhl_id,canonical_id,name,method
 4393199,8481237,kyle_maclean,Kyle MacLean,name
 4393406,8481056,spencer_stastney,Spencer Stastney,name
 4393408,8481020,justus_annunen,Justus Annunen,name
-4393595,,skyler_brindamour,Skyler Brind'Amour,unmatched
+4393595,8480291,skyler_brindamour,Skyler Brind'Amour,name
 4419180,,,Brady Keeper,unmatched
 4419263,,,Brinson Pasichnuk,unmatched
 4419638,8480246,nick_perbix,Nick Perbix,name
@@ -1360,6 +1360,7 @@ espn_id,nhl_id,canonical_id,name,method
 5174951,,,Isaac Poulter,unmatched
 5188331,,,Aleksei Kolosov,unmatched
 5188334,8483768,victor_mancini,Victor Mancini,name
+5188341,8483787,,Cole Knuble,name
 5188343,,zakhar_bardakov,Zakhar Bardakov,unmatched
 5188348,8482877,jaroslav_chmelar,Jaroslav Chmelar,name
 5188356,8483731,alex_bump,Alex Bump,name
