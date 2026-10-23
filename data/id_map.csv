@@ -566,7 +566,7 @@ espn_id,nhl_id,canonical_id,name,method
 3942638,8478450,parker_wotherspoon,Parker Wotherspoon,name
 3942676,,,Cole Bardreau,unmatched
 3942685,,,Ivan Fedotov,unmatched
-3942714,,,Sam Montembeault,search:unmatched
+3942714,,,Sam Montembeault,unmatched
 3942747,,,Kenneth Appleby,unmatched
 3942809,8476952,dominic_toninato,Dominic Toninato,name
 3942866,8478465,,Guillaume Brisebois,name
@@ -970,7 +970,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697385,8482078,lucas_raymond,Lucas Raymond,name
 4697386,8482105,jake_sanderson,Jake Sanderson,name
 4697387,8482142,jamie_drysdale,Jamie Drysdale,name
-4697388,,alexander_holtz,Alexander Holtz,unmatched
+4697388,8482125,alexander_holtz,Alexander Holtz,name
 4697389,8482097,jack_quinn,Jack Quinn,name
 4697391,8482079,marco_rossi,Marco Rossi,name
 4697392,8482149,cole_perfetti,Cole Perfetti,name
@@ -1079,7 +1079,7 @@ espn_id,nhl_id,canonical_id,name,method
 4808819,,,Mike Hardman,unmatched
 4812385,,,Jackson Cates,unmatched
 4832877,,,Olle Alsing,unmatched
-4845286,,cole_schwindt,Cole Schwindt,unmatched
+4845286,8481655,cole_schwindt,Cole Schwindt,name
 4846923,,john_ludvig,John Ludvig,unmatched
 4867883,,juuso_parssinen,Juuso Parssinen,unmatched
 4874718,8482745,mason_mctavish,Mason McTavish,name
@@ -1138,7 +1138,7 @@ espn_id,nhl_id,canonical_id,name,method
 4894487,8482221,,Devon Levi,name
 4894618,,,James Malatesta,unmatched
 4894671,,,Daniil Misyul,unmatched
-4894702,,cole_reinhardt,Cole Reinhardt,unmatched
+4894702,8481133,cole_reinhardt,Cole Reinhardt,name
 4894703,8482447,,Leevi Merilainen,name
 4894726,8482807,ethan_del_mastro,Ethan Del Mastro,name
 4894729,8482821,arvid_soderblom,Arvid Soderblom,name
@@ -1198,7 +1198,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080155,8483447,conor_geekie,Conor Geekie,name
 5080156,8483485,denton_mateychuk,Denton Mateychuk,name
 5080157,8483493,frank_nazar,Frank Nazar,name
-5080158,,rutger_mcgroarty,Rutger McGroarty,unmatched
+5080158,8483487,rutger_mcgroarty,Rutger McGroarty,name
 5080159,8483476,jonathan_lekkerimaki,Jonathan Lekkerimaki,name
 5080160,8483500,noah_ostlund,Noah Ostlund,name
 5080161,,joakim_kemell,Joakim Kemell,unmatched
