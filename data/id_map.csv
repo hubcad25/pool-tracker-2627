@@ -166,7 +166,7 @@ espn_id,nhl_id,canonical_id,name,method
 2324167,,,Teemu Pulkkinen,unmatched
 2334821,,,Brad Hunt,unmatched
 2334909,,,Cameron  Schilling,unmatched
-2335062,,luke_glendening,Luke Glendening,unmatched
+2335062,8476822,luke_glendening,Luke Glendening,name
 2486598,,,Brandon Manning,unmatched
 2486992,,,Andrew Agozzino,unmatched
 2486993,,,Darren Archibald,unmatched
@@ -370,7 +370,7 @@ espn_id,nhl_id,canonical_id,name,method
 3068087,8476923,damon_severson,Damon Severson,search:name
 3068665,8476967,brett_kulak,Brett Kulak,name
 3069266,8476914,joonas_korpisalo,Joonas Korpisalo,name
-3069273,,dakota_mermis,Dakota Mermis,unmatched
+3069273,8477541,dakota_mermis,Dakota Mermis,name
 3069277,,oskar_sundqvist,Oskar Sundqvist,unmatched
 3069285,8476999,linus_ullmark,Linus Ullmark,name
 3069294,,alex_belzile,Alex Belzile,unmatched
@@ -1174,7 +1174,7 @@ espn_id,nhl_id,canonical_id,name,method
 4997026,8482802,carter_mazur,Carter Mazur,name
 4997033,8483752,dominic_james,Dominic James,name
 4997056,,jacob_quillan,Jacob Quillan,unmatched
-4997080,,taylor_makar,Taylor Makar,unmatched
+4997080,8482953,taylor_makar,Taylor Makar,name
 4997092,,brian_halonen,Brian Halonen,unmatched
 4997129,,,Lucas Condotta,unmatched
 4997131,8481732,andre_lee,Andre Lee,name
@@ -1273,7 +1273,7 @@ espn_id,nhl_id,canonical_id,name,method
 5136616,8486171,,T.J. Hughes,name
 5136617,8484166,adam_fantilli,Adam Fantilli,name
 5136660,,quinn_hutson,Quinn Hutson,unmatched
-5136696,,cole_mcward,Cole McWard,unmatched
+5136696,8484287,cole_mcward,Cole McWard,name
 5136706,8483676,stephen_halliday,Stephen Halliday,name
 5136731,,,Matt Stienburg,unmatched
 5136735,8484258,sam_malinski,Sam Malinski,name
