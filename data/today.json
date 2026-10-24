@@ -1,6 +1,6 @@
 {
  "date": "2026-10-23",
- "updated": "2026-10-23T23:02:03-04:00",
+ "updated": "2026-10-24T06:02:02-04:00",
  "games": [
   {
    "id": 2026020166,
@@ -18,7 +18,7 @@
    "start": "2026-10-24T01:00:00Z",
    "away": "TBL",
    "home": "COL",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.145,
     "home": 3.357
@@ -137,7 +137,7 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 149.0,
+   "points": 150.0,
    "p_first": 0.879,
    "delta_p_first_per_point": 0.00298,
    "final": 1209.5,
@@ -166,13 +166,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 147.0,
+   "points": 149.0,
    "p_first": 0.031,
    "delta_p_first_per_point": -0.00077,
    "final": 1080.4,
    "sd": 50.45,
    "expected_tonight": 1.0,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 2,
    "players": [
     {
@@ -198,7 +198,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.48,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -253,7 +253,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.75,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -282,7 +282,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.5,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -292,13 +292,13 @@
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 129.0,
+   "points": 134.0,
    "p_first": 0.023,
    "delta_p_first_per_point": -0.00058,
    "final": 1073.1,
    "sd": 49.82,
    "expected_tonight": 2.6,
-   "actual_tonight": 0,
+   "actual_tonight": 5,
    "playing_tonight": 2,
    "players": [
     {
@@ -311,7 +311,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 1.58,
-     "actual": null,
+     "actual": 4,
      "p_start": null
     },
     {
@@ -324,7 +324,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 1.06,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -334,13 +334,13 @@
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 122.0,
+   "points": 124.0,
    "p_first": 0.009,
    "delta_p_first_per_point": -0.00025,
    "final": 1050.3,
    "sd": 50.08,
    "expected_tonight": 2.3,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -353,7 +353,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 1.12,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -366,7 +366,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.82,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -379,7 +379,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.36,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -389,13 +389,13 @@
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 111.0,
+   "points": 115.0,
    "p_first": 0.002,
    "delta_p_first_per_point": -7e-05,
    "final": 1024.1,
    "sd": 48.35,
    "expected_tonight": 4.3,
-   "actual_tonight": 0,
+   "actual_tonight": 4,
    "playing_tonight": 4,
    "players": [
     {
@@ -421,7 +421,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 1.56,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -434,7 +434,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 1.14,
-     "actual": null,
+     "actual": 3,
      "p_start": null
     },
     {
@@ -447,7 +447,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.74,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -511,46 +511,17 @@
    ]
   },
   {
-   "team_id": 6,
-   "abbrev": "POGo",
-   "name": "POGO",
-   "mine": false,
-   "points": 108.0,
-   "p_first": 0.0,
-   "delta_p_first_per_point": -0.0,
-   "final": 941.1,
-   "sd": 46.96,
-   "expected_tonight": 0.6,
-   "actual_tonight": 0,
-   "playing_tonight": 1,
-   "players": [
-    {
-     "espn_id": 5080157,
-     "nhl_id": 8483493,
-     "name": "Frank Nazar",
-     "pos": "C",
-     "team": "CHI",
-     "game_id": 2026020166,
-     "opp": "MTL",
-     "start": "2026-10-24T00:00:00Z",
-     "expected": 0.63,
-     "actual": 0,
-     "p_start": null
-    }
-   ]
-  },
-  {
    "team_id": 8,
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 104.0,
+   "points": 109.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 932.5,
    "sd": 45.19,
    "expected_tonight": 3.6,
-   "actual_tonight": 1,
+   "actual_tonight": 5,
    "playing_tonight": 5,
    "players": [
     {
@@ -589,7 +560,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.89,
-     "actual": null,
+     "actual": 2,
      "p_start": 0.749
     },
     {
@@ -602,7 +573,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.67,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -615,7 +586,36 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.36,
-     "actual": null,
+     "actual": 2,
+     "p_start": null
+    }
+   ]
+  },
+  {
+   "team_id": 6,
+   "abbrev": "POGo",
+   "name": "POGO",
+   "mine": false,
+   "points": 108.0,
+   "p_first": 0.0,
+   "delta_p_first_per_point": -0.0,
+   "final": 941.1,
+   "sd": 46.96,
+   "expected_tonight": 0.6,
+   "actual_tonight": 0,
+   "playing_tonight": 1,
+   "players": [
+    {
+     "espn_id": 5080157,
+     "nhl_id": 8483493,
+     "name": "Frank Nazar",
+     "pos": "C",
+     "team": "CHI",
+     "game_id": 2026020166,
+     "opp": "MTL",
+     "start": "2026-10-24T00:00:00Z",
+     "expected": 0.63,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -625,13 +625,13 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 91.0,
+   "points": 95.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 926.3,
    "sd": 47.16,
    "expected_tonight": 3.6,
-   "actual_tonight": 0,
+   "actual_tonight": 4,
    "playing_tonight": 5,
    "players": [
     {
@@ -670,7 +670,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.98,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -683,7 +683,7 @@
      "opp": "@COL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.73,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.698
     },
     {
@@ -696,7 +696,7 @@
      "opp": "TBL",
      "start": "2026-10-24T01:00:00Z",
      "expected": 0.71,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -729,7 +729,7 @@
    "opp": "TBL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 1.58,
-   "actual": null,
+   "actual": 4,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -769,7 +769,7 @@
    "opp": "@COL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 1.06,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -789,7 +789,7 @@
    "opp": "TBL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 0.75,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -829,7 +829,7 @@
    "opp": "TBL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 0.48,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -849,7 +849,7 @@
    "opp": "@COL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 0.5,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -869,7 +869,7 @@
    "opp": "TBL",
    "start": "2026-10-24T01:00:00Z",
    "expected": 1.12,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 7,
