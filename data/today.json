@@ -1,13 +1,13 @@
 {
  "date": "2026-10-23",
- "updated": "2026-10-23T15:02:04-04:00",
+ "updated": "2026-10-23T23:02:03-04:00",
  "games": [
   {
    "id": 2026020166,
    "start": "2026-10-24T00:00:00Z",
    "away": "MTL",
    "home": "CHI",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 3.488,
     "home": 3.015
@@ -18,7 +18,7 @@
    "start": "2026-10-24T01:00:00Z",
    "away": "TBL",
    "home": "COL",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 3.145,
     "home": 3.357
@@ -143,7 +143,7 @@
    "final": 1209.5,
    "sd": 56.61,
    "expected_tonight": 1.1,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -156,7 +156,7 @@
      "opp": "MTL",
      "start": "2026-10-24T00:00:00Z",
      "expected": 1.06,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -172,7 +172,7 @@
    "final": 1080.4,
    "sd": 50.45,
    "expected_tonight": 1.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -185,7 +185,7 @@
      "opp": "MTL",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.49,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -214,7 +214,7 @@
    "final": 1075.5,
    "sd": 52.11,
    "expected_tonight": 2.1,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -227,7 +227,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.97,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -240,7 +240,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.38,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.299
     },
     {
@@ -269,7 +269,7 @@
    "final": 1075.7,
    "sd": 50.72,
    "expected_tonight": 0.5,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -298,7 +298,7 @@
    "final": 1073.1,
    "sd": 49.82,
    "expected_tonight": 2.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -340,7 +340,7 @@
    "final": 1050.3,
    "sd": 50.08,
    "expected_tonight": 2.3,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -395,7 +395,7 @@
    "final": 1024.1,
    "sd": 48.35,
    "expected_tonight": 4.3,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 4,
    "players": [
     {
@@ -408,7 +408,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.82,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -463,7 +463,7 @@
    "final": 1006.2,
    "sd": 44.84,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -476,7 +476,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.88,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -492,7 +492,7 @@
    "final": 981.8,
    "sd": 50.7,
    "expected_tonight": 0.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -505,7 +505,7 @@
      "opp": "MTL",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.57,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -521,7 +521,7 @@
    "final": 941.1,
    "sd": 46.96,
    "expected_tonight": 0.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -534,7 +534,7 @@
      "opp": "MTL",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.63,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -550,7 +550,7 @@
    "final": 932.5,
    "sd": 45.19,
    "expected_tonight": 3.6,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 5,
    "players": [
     {
@@ -563,7 +563,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.97,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -576,7 +576,7 @@
      "opp": "MTL",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.73,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -631,7 +631,7 @@
    "final": 926.3,
    "sd": 47.16,
    "expected_tonight": 3.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 5,
    "players": [
     {
@@ -644,7 +644,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.59,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -657,7 +657,7 @@
      "opp": "@CHI",
      "start": "2026-10-24T00:00:00Z",
      "expected": 0.56,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -713,7 +713,7 @@
    "opp": "MTL",
    "start": "2026-10-24T00:00:00Z",
    "expected": 1.06,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "injury": null
   }
@@ -749,7 +749,7 @@
    "opp": "@CHI",
    "start": "2026-10-24T00:00:00Z",
    "expected": 0.97,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -809,7 +809,7 @@
    "opp": "MTL",
    "start": "2026-10-24T00:00:00Z",
    "expected": 0.49,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 9,
