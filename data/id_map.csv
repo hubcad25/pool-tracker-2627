@@ -1223,10 +1223,10 @@ espn_id,nhl_id,canonical_id,name,method
 5080211,8483432,luca_del_bel_belluz,Luca Del Bel Belluz,name
 5080212,,seamus_casey,Seamus Casey,unmatched
 5080216,8483452,hunter_haight,Hunter Haight,name
-5080217,,jani_nyman,Jani Nyman,unmatched
+5080217,8483497,jani_nyman,Jani Nyman,name
 5080220,8483482,tristan_luneau,Tristan Luneau,name
 5080221,8483505,matthew_poitras,Matthew Poitras,name
-5080223,,elias_salomonsson,Elias Salomonsson,unmatched
+5080223,8483510,elias_salomonsson,Elias Salomonsson,name
 5080224,8483478,,Rieger Lorenz,name
 5080225,,,Nikke Kokko,unmatched
 5080227,8483450,ryan_greene,Ryan Greene,name
@@ -1347,7 +1347,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149600,,,Marc Johnstone,unmatched
 5149601,,,Pierrick Dube,unmatched
 5171570,,isaiah_george,Isaiah George,unmatched
-5172806,,avery_hayes,Avery Hayes,unmatched
+5172806,8482993,avery_hayes,Avery Hayes,name
 5173105,8484142,denver_barkey,Denver Barkey,name
 5173114,,parker_ford,Parker Ford,unmatched
 5173500,8483695,amadeus_lombardi,Amadeus Lombardi,name
@@ -1399,6 +1399,7 @@ espn_id,nhl_id,canonical_id,name,method
 5206840,8486161,owen_michaels,Owen Michaels,name
 5206895,,tyson_gross,Tyson Gross,unmatched
 5206898,,,Isak Posch,unmatched
+5206956,8484900,,Cooper Black,name
 5209557,,mikulas_hovorka,Mikulas Hovorka,unmatched
 5209793,8484938,arttu_hyry,Arttu Hyry,name
 5212753,8484958,maxim_tsyplakov,Maxim Tsyplakov,name
@@ -1530,6 +1531,7 @@ espn_id,nhl_id,canonical_id,name,method
 5292004,,,Tinus Luc Koblar,unmatched
 5302535,8485702,maxim_shabanov,Maxim Shabanov,name
 5302558,8485467,luke_haymes,Luke Haymes,name
+5302578,8485545,,Michal Postava,name
 5334662,8485957,,Alberts Smits,name
 5342440,,,Keaton Verhoeff,unmatched
 5342529,8486067,gavin_mckenna,Gavin McKenna,name
