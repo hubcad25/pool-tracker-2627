@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "updated": "2026-10-26T12:02:05-04:00",
+ "updated": "2026-10-26T12:02:34-04:00",
  "games": [
   {
    "id": 2026020185,
@@ -8,7 +8,10 @@
    "away": "LAK",
    "home": "NYR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.831,
+    "home": 3.098
+   }
   },
   {
    "id": 2026020186,
@@ -16,7 +19,10 @@
    "away": "TOR",
    "home": "CGY",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.684,
+    "home": 3.127
+   }
   },
   {
    "id": 2026020187,
@@ -24,11 +30,14 @@
    "away": "DET",
    "home": "EDM",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.999,
+    "home": 3.784
+   }
   }
  ],
  "p_first": {
-  "now": 0.879,
+  "now": 0.889,
   "yesterday": 0.879,
   "history": [
    {
@@ -138,6 +147,10 @@
    {
     "day": "2026-10-25",
     "p_first": 0.879
+   },
+   {
+    "day": "2026-10-26",
+    "p_first": 0.889
    }
   ]
  },
@@ -148,10 +161,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 167.0,
-   "p_first": 0.879,
-   "delta_p_first_per_point": 0.00299,
-   "final": 1210.2,
-   "sd": 56.57,
+   "p_first": 0.889,
+   "delta_p_first_per_point": 0.0028,
+   "final": 1213.6,
+   "sd": 56.53,
    "expected_tonight": 5.3,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -229,10 +242,10 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 162.0,
-   "p_first": 0.032,
+   "p_first": 0.031,
    "delta_p_first_per_point": -0.00078,
-   "final": 1082.3,
-   "sd": 50.04,
+   "final": 1084.1,
+   "sd": 49.96,
    "expected_tonight": 2.0,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -258,10 +271,10 @@
    "name": "Rico",
    "mine": false,
    "points": 146.0,
-   "p_first": 0.029,
-   "delta_p_first_per_point": -0.00072,
-   "final": 1080.5,
-   "sd": 49.49,
+   "p_first": 0.027,
+   "delta_p_first_per_point": -0.00068,
+   "final": 1079.9,
+   "sd": 49.91,
    "expected_tonight": 2.1,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -300,10 +313,10 @@
    "name": "GSP",
    "mine": false,
    "points": 135.0,
-   "p_first": 0.028,
-   "delta_p_first_per_point": -0.0007,
-   "final": 1078.3,
-   "sd": 50.52,
+   "p_first": 0.027,
+   "delta_p_first_per_point": -0.00068,
+   "final": 1079.3,
+   "sd": 50.47,
    "expected_tonight": 1.8,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -342,10 +355,10 @@
    "name": "NWA",
    "mine": false,
    "points": 160.0,
-   "p_first": 0.021,
-   "delta_p_first_per_point": -0.00053,
-   "final": 1069.0,
-   "sd": 51.41,
+   "p_first": 0.015,
+   "delta_p_first_per_point": -0.00039,
+   "final": 1061.0,
+   "sd": 52.12,
    "expected_tonight": 2.1,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -397,10 +410,10 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 136.0,
-   "p_first": 0.008,
-   "delta_p_first_per_point": -0.00022,
-   "final": 1048.2,
-   "sd": 49.47,
+   "p_first": 0.007,
+   "delta_p_first_per_point": -0.00021,
+   "final": 1049.6,
+   "sd": 49.19,
    "expected_tonight": 1.5,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -439,10 +452,10 @@
    "name": "Cuzo",
    "mine": false,
    "points": 130.0,
-   "p_first": 0.003,
-   "delta_p_first_per_point": -8e-05,
+   "p_first": 0.002,
+   "delta_p_first_per_point": -7e-05,
    "final": 1028.9,
-   "sd": 47.72,
+   "sd": 47.66,
    "expected_tonight": 1.6,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -482,9 +495,9 @@
    "mine": false,
    "points": 147.0,
    "p_first": 0.001,
-   "delta_p_first_per_point": -3e-05,
-   "final": 1014.6,
-   "sd": 44.62,
+   "delta_p_first_per_point": -5e-05,
+   "final": 1026.5,
+   "sd": 44.61,
    "expected_tonight": 1.6,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -537,9 +550,9 @@
    "mine": false,
    "points": 129.0,
    "p_first": 0.0,
-   "delta_p_first_per_point": -2e-05,
-   "final": 993.4,
-   "sd": 49.36,
+   "delta_p_first_per_point": -1e-05,
+   "final": 992.7,
+   "sd": 49.31,
    "expected_tonight": 0.6,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -567,8 +580,8 @@
    "points": 123.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 934.2,
-   "sd": 45.78,
+   "final": 933.9,
+   "sd": 45.53,
    "expected_tonight": 3.4,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -635,8 +648,8 @@
    "points": 121.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 929.3,
-   "sd": 44.25,
+   "final": 921.9,
+   "sd": 43.98,
    "expected_tonight": 2.4,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -690,8 +703,8 @@
    "points": 106.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 922.3,
-   "sd": 45.19,
+   "final": 924.8,
+   "sd": 45.13,
    "expected_tonight": 1.8,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -848,8 +861,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00072,
-   "threat": -0.00089
+   "delta_p_first_per_point": -0.00068,
+   "threat": -0.00084
   },
   {
    "espn_id": 4697385,
@@ -868,27 +881,7 @@
     "abbrev": "GSP",
     "name": "GSP"
    },
-   "delta_p_first_per_point": -0.0007,
-   "threat": -0.00068
-  },
-  {
-   "espn_id": 4352722,
-   "nhl_id": 8480803,
-   "name": "Evan Bouchard",
-   "pos": "D",
-   "team": "EDM",
-   "game_id": 2026020187,
-   "opp": "DET",
-   "start": "2026-10-27T01:30:00Z",
-   "expected": 1.24,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 4,
-    "abbrev": "NWA",
-    "name": "NWA"
-   },
-   "delta_p_first_per_point": -0.00053,
+   "delta_p_first_per_point": -0.00068,
    "threat": -0.00066
   },
   {
@@ -908,8 +901,8 @@
     "abbrev": "GSP",
     "name": "GSP"
    },
-   "delta_p_first_per_point": -0.0007,
-   "threat": -0.0006
+   "delta_p_first_per_point": -0.00068,
+   "threat": -0.00059
   },
   {
    "espn_id": 2590852,
@@ -928,8 +921,28 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00072,
-   "threat": -0.00058
+   "delta_p_first_per_point": -0.00068,
+   "threat": -0.00055
+  },
+  {
+   "espn_id": 4352722,
+   "nhl_id": 8480803,
+   "name": "Evan Bouchard",
+   "pos": "D",
+   "team": "EDM",
+   "game_id": 2026020187,
+   "opp": "DET",
+   "start": "2026-10-27T01:30:00Z",
+   "expected": 1.24,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 4,
+    "abbrev": "NWA",
+    "name": "NWA"
+   },
+   "delta_p_first_per_point": -0.00039,
+   "threat": -0.00048
   },
   {
    "espn_id": 5149204,
@@ -948,8 +961,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00053,
-   "threat": -0.00029
+   "delta_p_first_per_point": -0.00039,
+   "threat": -0.00021
   },
   {
    "espn_id": 3114755,
@@ -968,8 +981,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00022,
-   "threat": -0.00017
+   "delta_p_first_per_point": -0.00021,
+   "threat": -0.00016
   }
  ]
 }
