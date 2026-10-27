@@ -1,6 +1,6 @@
 {
  "date": "2026-10-26",
- "updated": "2026-10-26T23:02:02-04:00",
+ "updated": "2026-10-27T06:02:03-04:00",
  "games": [
   {
    "id": 2026020185,
@@ -18,7 +18,7 @@
    "start": "2026-10-27T00:30:00Z",
    "away": "TOR",
    "home": "CGY",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.684,
     "home": 3.127
@@ -29,7 +29,7 @@
    "start": "2026-10-27T01:30:00Z",
    "away": "DET",
    "home": "EDM",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 2.999,
     "home": 3.784
@@ -160,13 +160,13 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 167.0,
+   "points": 172.0,
    "p_first": 0.889,
    "delta_p_first_per_point": 0.0028,
    "final": 1213.6,
    "sd": 56.53,
    "expected_tonight": 5.3,
-   "actual_tonight": 4,
+   "actual_tonight": 5,
    "playing_tonight": 5,
    "players": [
     {
@@ -218,7 +218,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.78,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -231,7 +231,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 1.63,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -241,13 +241,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 162.0,
+   "points": 163.0,
    "p_first": 0.031,
    "delta_p_first_per_point": -0.00078,
    "final": 1084.1,
    "sd": 49.96,
    "expected_tonight": 2.0,
-   "actual_tonight": 0,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -260,7 +260,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 1.99,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -270,13 +270,13 @@
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 146.0,
+   "points": 148.0,
    "p_first": 0.027,
    "delta_p_first_per_point": -0.00068,
    "final": 1079.9,
    "sd": 49.91,
    "expected_tonight": 2.1,
-   "actual_tonight": 1,
+   "actual_tonight": 2,
    "playing_tonight": 2,
    "players": [
     {
@@ -302,7 +302,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 1.24,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -312,13 +312,13 @@
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 135.0,
+   "points": 137.0,
    "p_first": 0.027,
    "delta_p_first_per_point": -0.00068,
    "final": 1079.3,
    "sd": 50.47,
    "expected_tonight": 1.8,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 2,
    "players": [
     {
@@ -344,7 +344,7 @@
      "opp": "@EDM",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.96,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -354,13 +354,13 @@
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 160.0,
+   "points": 161.0,
    "p_first": 0.015,
    "delta_p_first_per_point": -0.00039,
    "final": 1061.0,
    "sd": 52.12,
    "expected_tonight": 2.1,
-   "actual_tonight": 0,
+   "actual_tonight": 1,
    "playing_tonight": 3,
    "players": [
     {
@@ -386,7 +386,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 1.24,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -399,7 +399,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.32,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -409,13 +409,13 @@
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 136.0,
+   "points": 137.0,
    "p_first": 0.007,
    "delta_p_first_per_point": -0.00021,
    "final": 1049.6,
    "sd": 49.19,
    "expected_tonight": 1.5,
-   "actual_tonight": 0,
+   "actual_tonight": 1,
    "playing_tonight": 2,
    "players": [
     {
@@ -428,7 +428,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.67,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -441,7 +441,7 @@
      "opp": "@EDM",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.78,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -483,7 +483,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 1.01,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -493,13 +493,13 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 147.0,
+   "points": 149.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -5e-05,
    "final": 1026.5,
    "sd": 44.61,
    "expected_tonight": 1.6,
-   "actual_tonight": 0,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -512,7 +512,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.58,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -525,7 +525,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.63,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -538,7 +538,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.41,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -548,7 +548,7 @@
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 129.0,
+   "points": 130.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -1e-05,
    "final": 992.7,
@@ -577,13 +577,13 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 123.0,
+   "points": 126.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 933.9,
    "sd": 45.53,
    "expected_tonight": 3.4,
-   "actual_tonight": 0,
+   "actual_tonight": 3,
    "playing_tonight": 4,
    "players": [
     {
@@ -609,7 +609,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 1.24,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -622,7 +622,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -635,7 +635,7 @@
      "opp": "@EDM",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.64,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -645,13 +645,13 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 121.0,
+   "points": 124.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 921.9,
    "sd": 43.98,
    "expected_tonight": 2.4,
-   "actual_tonight": 2,
+   "actual_tonight": 3,
    "playing_tonight": 3,
    "players": [
     {
@@ -677,7 +677,7 @@
      "opp": "@CGY",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.92,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -690,7 +690,7 @@
      "opp": "@EDM",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.94,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -700,13 +700,13 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 106.0,
+   "points": 108.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 924.8,
    "sd": 45.13,
    "expected_tonight": 1.8,
-   "actual_tonight": 1,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -732,7 +732,7 @@
      "opp": "TOR",
      "start": "2026-10-27T00:30:00Z",
      "expected": 0.31,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -745,7 +745,7 @@
      "opp": "DET",
      "start": "2026-10-27T01:30:00Z",
      "expected": 0.74,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -804,7 +804,7 @@
    "opp": "@CGY",
    "start": "2026-10-27T00:30:00Z",
    "expected": 0.78,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   },
@@ -818,7 +818,7 @@
    "opp": "DET",
    "start": "2026-10-27T01:30:00Z",
    "expected": 1.63,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "injury": null
   }
@@ -834,7 +834,7 @@
    "opp": "DET",
    "start": "2026-10-27T01:30:00Z",
    "expected": 1.99,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -854,7 +854,7 @@
    "opp": "@CGY",
    "start": "2026-10-27T00:30:00Z",
    "expected": 1.24,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -874,7 +874,7 @@
    "opp": "@EDM",
    "start": "2026-10-27T01:30:00Z",
    "expected": 0.96,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -934,7 +934,7 @@
    "opp": "DET",
    "start": "2026-10-27T01:30:00Z",
    "expected": 1.24,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -974,7 +974,7 @@
    "opp": "@EDM",
    "start": "2026-10-27T01:30:00Z",
    "expected": 0.78,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 7,
