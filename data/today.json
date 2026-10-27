@@ -1,13 +1,13 @@
 {
  "date": "2026-10-26",
- "updated": "2026-10-26T14:02:29-04:00",
+ "updated": "2026-10-26T23:02:02-04:00",
  "games": [
   {
    "id": 2026020185,
    "start": "2026-10-26T23:00:00Z",
    "away": "LAK",
    "home": "NYR",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 2.831,
     "home": 3.098
@@ -18,7 +18,7 @@
    "start": "2026-10-27T00:30:00Z",
    "away": "TOR",
    "home": "CGY",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 3.684,
     "home": 3.127
@@ -29,7 +29,7 @@
    "start": "2026-10-27T01:30:00Z",
    "away": "DET",
    "home": "EDM",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 2.999,
     "home": 3.784
@@ -166,7 +166,7 @@
    "final": 1213.6,
    "sd": 56.53,
    "expected_tonight": 5.3,
-   "actual_tonight": null,
+   "actual_tonight": 4,
    "playing_tonight": 5,
    "players": [
     {
@@ -179,7 +179,7 @@
      "opp": "@NYR",
      "start": "2026-10-26T23:00:00Z",
      "expected": 1.06,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -192,7 +192,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 1.01,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -205,7 +205,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.86,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -247,7 +247,7 @@
    "final": 1084.1,
    "sd": 49.96,
    "expected_tonight": 2.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -276,7 +276,7 @@
    "final": 1079.9,
    "sd": 49.91,
    "expected_tonight": 2.1,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 2,
    "players": [
     {
@@ -289,7 +289,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.81,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -318,7 +318,7 @@
    "final": 1079.3,
    "sd": 50.47,
    "expected_tonight": 1.8,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -331,7 +331,7 @@
      "opp": "@NYR",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.86,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -360,7 +360,7 @@
    "final": 1061.0,
    "sd": 52.12,
    "expected_tonight": 2.1,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -373,7 +373,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.55,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -415,7 +415,7 @@
    "final": 1049.6,
    "sd": 49.19,
    "expected_tonight": 1.5,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -457,7 +457,7 @@
    "final": 1028.9,
    "sd": 47.66,
    "expected_tonight": 1.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -470,7 +470,7 @@
      "opp": "@NYR",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.63,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -499,7 +499,7 @@
    "final": 1026.5,
    "sd": 44.61,
    "expected_tonight": 1.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -554,7 +554,7 @@
    "final": 992.7,
    "sd": 49.31,
    "expected_tonight": 0.6,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -567,7 +567,7 @@
      "opp": "@NYR",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.62,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -583,7 +583,7 @@
    "final": 933.9,
    "sd": 45.53,
    "expected_tonight": 3.4,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 4,
    "players": [
     {
@@ -596,7 +596,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.89,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -651,7 +651,7 @@
    "final": 921.9,
    "sd": 43.98,
    "expected_tonight": 2.4,
-   "actual_tonight": null,
+   "actual_tonight": 2,
    "playing_tonight": 3,
    "players": [
     {
@@ -664,7 +664,7 @@
      "opp": "@NYR",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.57,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -706,7 +706,7 @@
    "final": 924.8,
    "sd": 45.13,
    "expected_tonight": 1.8,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 3,
    "players": [
     {
@@ -719,7 +719,7 @@
      "opp": "LAK",
      "start": "2026-10-26T23:00:00Z",
      "expected": 0.75,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -762,7 +762,7 @@
    "opp": "@NYR",
    "start": "2026-10-26T23:00:00Z",
    "expected": 1.06,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "injury": null
   },
@@ -776,7 +776,7 @@
    "opp": "LAK",
    "start": "2026-10-26T23:00:00Z",
    "expected": 1.01,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "injury": null
   },
@@ -790,7 +790,7 @@
    "opp": "LAK",
    "start": "2026-10-26T23:00:00Z",
    "expected": 0.86,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "injury": null
   },
@@ -894,7 +894,7 @@
    "opp": "@NYR",
    "start": "2026-10-26T23:00:00Z",
    "expected": 0.86,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -914,7 +914,7 @@
    "opp": "LAK",
    "start": "2026-10-26T23:00:00Z",
    "expected": 0.81,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -954,7 +954,7 @@
    "opp": "LAK",
    "start": "2026-10-26T23:00:00Z",
    "expected": 0.55,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
