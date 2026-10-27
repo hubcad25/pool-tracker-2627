@@ -1073,6 +1073,7 @@ espn_id,nhl_id,canonical_id,name,method
 4781556,8482671,owen_power,Owen Power,name
 4781578,,,Owen Sillinger,unmatched
 4781635,,zac_jones,Zac Jones,unmatched
+4781650,8483406,taylor_ward,Taylor Ward,name
 4781665,,,Yaniv Perets,unmatched
 4781727,,wilmer_skoog,Wilmer Skoog,unmatched
 4799741,8482641,matt_kiersted,Matt Kiersted,name
@@ -1470,6 +1471,7 @@ espn_id,nhl_id,canonical_id,name,method
 5275522,,charlie_cerrato,Charlie Cerrato,unmatched
 5275543,,,Will Horcoff,unmatched
 5275548,,,Cullen Potter,unmatched
+5275580,8486130,,Dylan Hryckowian,name
 5278080,8484509,josh_samanski,Josh Samanski,name
 5291933,8485366,matthew_schaefer,Matthew Schaefer,name
 5291934,8485402,michael_misa,Michael Misa,name
