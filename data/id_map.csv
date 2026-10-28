@@ -765,6 +765,7 @@ espn_id,nhl_id,canonical_id,name,method
 4340228,,,Igor Ozhiganov,unmatched
 4341584,8480947,kevin_lankinen,Kevin Lankinen,name
 4342107,8480950,ilya_lyubushkin,Ilya Lyubushkin,name
+4347114,,,Jacob Nilsson,unmatched
 4352683,8480830,andrei_svechnikov,Andrei Svechnikov,name
 4352692,8480829,jesperi_kotkaniemi,Jesperi Kotkaniemi,name
 4352699,8480849,barrett_hayton,Barrett Hayton,name
@@ -802,6 +803,7 @@ espn_id,nhl_id,canonical_id,name,method
 4391789,,jakub_lauko,Jakub Lauko,unmatched
 4392072,8480015,owen_tippett,Owen Tippett,name
 4392137,,tanner_laczynski,Tanner Laczynski,unmatched
+4392158,,,Wade Allison,unmatched
 4392215,,michael_pezzetta,Michael Pezzetta,unmatched
 4392260,8479576,vincent_desharnais,Vincent Desharnais,name
 4392268,,egor_zamula,Egor Zamula,unmatched
@@ -963,6 +965,8 @@ espn_id,nhl_id,canonical_id,name,method
 4588338,,,Jakob  Lilja,unmatched
 4588638,,dakota_joshua,Dakota Joshua,unmatched
 4588693,,,Jakub Skarek,unmatched
+4588744,,,Lukas Rousek,unmatched
+4588749,,james_hamblin,James Hamblin,unmatched
 4588750,8481789,tye_kartye,Tye Kartye,name
 4697382,8482109,alexis_lafreniere,Alexis Lafreniere,name
 4697383,8482124,quinton_byfield,Quinton Byfield,name
@@ -1111,6 +1115,7 @@ espn_id,nhl_id,canonical_id,name,method
 4874870,8482659,josh_doan,Josh Doan,name
 4874881,8482859,zack_ostapchuk,Zack Ostapchuk,name
 4874882,8482666,scott_morrow,Scott Morrow,name
+4874893,,william_stromgren,William Stromgren,unmatched
 4874899,8482702,logan_stankoven,Logan Stankoven,name
 4874903,,nikita_chibrikov,Nikita Chibrikov,unmatched
 4874911,8482758,ville_koivunen,Ville Koivunen,name
@@ -1207,6 +1212,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080163,8483499,liam_ohgren,Liam Ohgren,name
 5080168,8483491,ivan_miroshnichenko,Ivan Miroshnichenko,name
 5080169,,owen_pickering,Owen Pickering,unmatched
+5080170,,nathan_gaucher,Nathan Gaucher,unmatched
 5080171,8483516,jimmy_snuggerud,Jimmy Snuggerud,name
 5080172,8483525,danila_yurov,Danila Yurov,name
 5080173,8483506,sam_rinzel,Sam Rinzel,name
@@ -1279,6 +1285,7 @@ espn_id,nhl_id,canonical_id,name,method
 5136731,,,Matt Stienburg,unmatched
 5136735,8484258,sam_malinski,Sam Malinski,name
 5136792,,,Cameron Butler,unmatched
+5137433,,,Hunter McKown,unmatched
 5142131,,ethan_cardwell,Ethan Cardwell,unmatched
 5142461,8484304,uvis_balinskis,Uvis Balinskis,name
 5144058,,,Georgi Romanov,unmatched
