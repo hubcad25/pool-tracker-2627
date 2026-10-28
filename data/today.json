@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "updated": "2026-10-28T14:32:07-04:00",
+ "updated": "2026-10-28T15:02:09-04:00",
  "games": [
   {
    "id": 2026020199,
@@ -660,10 +660,23 @@
    "delta_p_first_per_point": -6e-05,
    "final": 1019.5,
    "sd": 47.87,
-   "expected_tonight": 4.7,
+   "expected_tonight": 5.4,
    "actual_tonight": null,
    "playing_tonight": 6,
    "players": [
+    {
+     "espn_id": 4272888,
+     "nhl_id": 8480313,
+     "name": "Logan Thompson",
+     "pos": "G",
+     "team": "WSH",
+     "game_id": 2026020199,
+     "opp": "PHI",
+     "start": "2026-10-28T23:30:00Z",
+     "expected": 1.1,
+     "actual": null,
+     "p_start": 0.743
+    },
     {
      "espn_id": 4565230,
      "nhl_id": 8481533,
@@ -689,19 +702,6 @@
      "expected": 0.61,
      "actual": null,
      "p_start": null
-    },
-    {
-     "espn_id": 4272888,
-     "nhl_id": 8480313,
-     "name": "Logan Thompson",
-     "pos": "G",
-     "team": "WSH",
-     "game_id": 2026020199,
-     "opp": "PHI",
-     "start": "2026-10-28T23:30:00Z",
-     "expected": 0.44,
-     "actual": null,
-     "p_start": 0.295
     },
     {
      "espn_id": 4233586,
