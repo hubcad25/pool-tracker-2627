@@ -963,7 +963,7 @@ espn_id,nhl_id,canonical_id,name,method
 4588292,,,Jayden Halbgewachs,unmatched
 4588331,8480842,filip_hallander,Filip Hallander,name
 4588338,,,Jakob  Lilja,unmatched
-4588638,,dakota_joshua,Dakota Joshua,unmatched
+4588638,8478057,dakota_joshua,Dakota Joshua,name
 4588693,,,Jakub Skarek,unmatched
 4588744,,,Lukas Rousek,unmatched
 4588749,,james_hamblin,James Hamblin,unmatched
@@ -1165,6 +1165,7 @@ espn_id,nhl_id,canonical_id,name,method
 4915347,,,Milos Kelemen,unmatched
 4915348,,pavol_regenda,Pavol Regenda,unmatched
 4915349,8483515,juraj_slafkovsky,Juraj Slafkovsky,name
+4915846,,,Gustav Rydahl,unmatched
 4915850,8482100,alexander_nikishin,Alexander Nikishin,search:name
 4915855,8481721,arseny_gritsyuk,Arseny Gritsyuk,name
 4915856,8481716,dmitri_voronkov,Dmitri Voronkov,name
@@ -1217,7 +1218,7 @@ espn_id,nhl_id,canonical_id,name,method
 5080172,8483525,danila_yurov,Danila Yurov,name
 5080173,8483506,sam_rinzel,Sam Rinzel,name
 5080174,,,Filip Mesar,unmatched
-5080175,,filip_bystedt,Filip Bystedt,unmatched
+5080175,8483428,filip_bystedt,Filip Bystedt,name
 5080176,8483468,jiri_kulich,Jiri Kulich,name
 5080177,8483472,maveric_lamoureux,Maveric Lamoureux,name
 5080178,8483471,brad_lambert,Brad Lambert,name

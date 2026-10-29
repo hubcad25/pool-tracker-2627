@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "updated": "2026-10-29T12:02:05-04:00",
+ "updated": "2026-10-29T12:03:05-04:00",
  "games": [
   {
    "id": 2026020204,
@@ -8,7 +8,10 @@
    "away": "WPG",
    "home": "TBL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.426,
+    "home": 3.556
+   }
   },
   {
    "id": 2026020205,
@@ -16,7 +19,10 @@
    "away": "UTA",
    "home": "PIT",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.649,
+    "home": 3.359
+   }
   },
   {
    "id": 2026020206,
@@ -24,7 +30,10 @@
    "away": "CBJ",
    "home": "CAR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.372,
+    "home": 3.611
+   }
   },
   {
    "id": 2026020203,
@@ -32,7 +41,10 @@
    "away": "CHI",
    "home": "DET",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.671,
+    "home": 3.258
+   }
   },
   {
    "id": 2026020207,
@@ -40,7 +52,10 @@
    "away": "BOS",
    "home": "STL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.93,
+    "home": 2.998
+   }
   },
   {
    "id": 2026020208,
@@ -48,7 +63,10 @@
    "away": "WSH",
    "home": "NSH",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.314,
+    "home": 3.286
+   }
   },
   {
    "id": 2026020209,
@@ -56,7 +74,10 @@
    "away": "MTL",
    "home": "DAL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.676,
+    "home": 3.306
+   }
   },
   {
    "id": 2026020210,
@@ -64,7 +85,10 @@
    "away": "NYI",
    "home": "MIN",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.52,
+    "home": 3.346
+   }
   },
   {
    "id": 2026020211,
@@ -72,7 +96,10 @@
    "away": "BUF",
    "home": "ANA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.654,
+    "home": 3.227
+   }
   },
   {
    "id": 2026020212,
@@ -80,7 +107,10 @@
    "away": "OTT",
    "home": "LAK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.987,
+    "home": 2.879
+   }
   },
   {
    "id": 2026020213,
@@ -88,11 +118,14 @@
    "away": "VAN",
    "home": "SJS",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.057,
+    "home": 3.893
+   }
   }
  ],
  "p_first": {
-  "now": 0.868,
+  "now": 0.891,
   "yesterday": 0.868,
   "history": [
    {
@@ -214,6 +247,10 @@
    {
     "day": "2026-10-28",
     "p_first": 0.868
+   },
+   {
+    "day": "2026-10-29",
+    "p_first": 0.891
    }
   ]
  },
@@ -224,11 +261,11 @@
    "name": "hubcad25",
    "mine": true,
    "points": 183.0,
-   "p_first": 0.868,
-   "delta_p_first_per_point": 0.00318,
-   "final": 1205.8,
-   "sd": 56.4,
-   "expected_tonight": 8.5,
+   "p_first": 0.891,
+   "delta_p_first_per_point": 0.00284,
+   "final": 1208.7,
+   "sd": 54.6,
+   "expected_tonight": 8.3,
    "actual_tonight": null,
    "playing_tonight": 10,
    "players": [
@@ -254,20 +291,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.83,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4233583,
-     "nhl_id": 8480014,
-     "name": "Gabriel Vilardi",
-     "pos": "RW",
-     "team": "WPG",
-     "game_id": 2026020204,
-     "opp": "@TBL",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.73,
+     "expected": 0.84,
      "actual": null,
      "p_start": null
     },
@@ -281,6 +305,19 @@
      "opp": "CBJ",
      "start": "2026-10-29T23:00:00Z",
      "expected": 0.71,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4233583,
+     "nhl_id": 8480014,
+     "name": "Gabriel Vilardi",
+     "pos": "RW",
+     "team": "WPG",
+     "game_id": 2026020204,
+     "opp": "@TBL",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.7,
      "actual": null,
      "p_start": null
     },
@@ -306,7 +343,7 @@
      "game_id": 2026020206,
      "opp": "@CAR",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.56,
+     "expected": 0.35,
      "actual": null,
      "p_start": 0.493
     },
@@ -332,7 +369,7 @@
      "game_id": 2026020210,
      "opp": "NYI",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 1.29,
+     "expected": 1.32,
      "actual": null,
      "p_start": null
     },
@@ -370,11 +407,11 @@
    "name": "Rico",
    "mine": false,
    "points": 160.0,
-   "p_first": 0.041,
-   "delta_p_first_per_point": -0.00097,
-   "final": 1086.8,
-   "sd": 49.64,
-   "expected_tonight": 7.0,
+   "p_first": 0.03,
+   "delta_p_first_per_point": -0.00077,
+   "final": 1081.4,
+   "sd": 48.7,
+   "expected_tonight": 6.9,
    "actual_tonight": null,
    "playing_tonight": 8,
    "players": [
@@ -387,7 +424,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 1.17,
+     "expected": 1.13,
      "actual": null,
      "p_start": null
     },
@@ -465,7 +502,7 @@
      "game_id": 2026020213,
      "opp": "VAN",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.9,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -478,273 +515,7 @@
      "game_id": 2026020211,
      "opp": "BUF",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.7,
-     "actual": null,
-     "p_start": null
-    }
-   ]
-  },
-  {
-   "team_id": 4,
-   "abbrev": "NWA",
-   "name": "NWA",
-   "mine": false,
-   "points": 178.0,
-   "p_first": 0.029,
-   "delta_p_first_per_point": -0.0007,
-   "final": 1075.4,
-   "sd": 50.99,
-   "expected_tonight": 5.2,
-   "actual_tonight": null,
-   "playing_tonight": 7,
-   "players": [
-    {
-     "espn_id": 3904173,
-     "nhl_id": 8478427,
-     "name": "Sebastian Aho",
-     "pos": "C",
-     "team": "CAR",
-     "game_id": 2026020206,
-     "opp": "CBJ",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 1.21,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5080230,
-     "nhl_id": 8483457,
-     "name": "Lane Hutson",
-     "pos": "D",
-     "team": "MTL",
-     "game_id": 2026020209,
-     "opp": "@DAL",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.79,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5149172,
-     "nhl_id": 8484186,
-     "name": "Ryan Leonard",
-     "pos": "RW",
-     "team": "WSH",
-     "game_id": 2026020208,
-     "opp": "@NSH",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.63,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5188437,
-     "nhl_id": 8484170,
-     "name": "Jacob Fowler",
-     "pos": "G",
-     "team": "MTL",
-     "game_id": 2026020209,
-     "opp": "@DAL",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.51,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5216858,
-     "nhl_id": 8484762,
-     "name": "Beckett Sennecke",
-     "pos": "RW",
-     "team": "ANA",
-     "game_id": 2026020211,
-     "opp": "BUF",
-     "start": "2026-10-30T02:00:00Z",
      "expected": 0.74,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5361709,
-     "nhl_id": 8486103,
-     "name": "Ivar Stenberg",
-     "pos": "LW",
-     "team": "SJS",
-     "game_id": 2026020213,
-     "opp": "VAN",
-     "start": "2026-10-30T02:00:00Z",
-     "expected": 0.72,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4063607,
-     "nhl_id": 8479425,
-     "name": "Filip Hronek",
-     "pos": "D",
-     "team": "VAN",
-     "game_id": 2026020213,
-     "opp": "@SJS",
-     "start": "2026-10-30T02:00:00Z",
-     "expected": 0.56,
-     "actual": null,
-     "p_start": null
-    }
-   ]
-  },
-  {
-   "team_id": 9,
-   "abbrev": "LLT",
-   "name": "Laurent's Lucrative Team",
-   "mine": false,
-   "points": 173.0,
-   "p_first": 0.028,
-   "delta_p_first_per_point": -0.0007,
-   "final": 1077.4,
-   "sd": 49.23,
-   "expected_tonight": 8.2,
-   "actual_tonight": null,
-   "playing_tonight": 11,
-   "players": [
-    {
-     "espn_id": 2562632,
-     "nhl_id": 8476460,
-     "name": "Mark Scheifele",
-     "pos": "C",
-     "team": "WPG",
-     "game_id": 2026020204,
-     "opp": "@TBL",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.93,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 2563036,
-     "nhl_id": 8476389,
-     "name": "Vincent Trocheck",
-     "pos": "C",
-     "team": "UTA",
-     "game_id": 2026020205,
-     "opp": "@PIT",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.69,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3539,
-     "nhl_id": 8471724,
-     "name": "Kris Letang",
-     "pos": "D",
-     "team": "PIT",
-     "game_id": 2026020205,
-     "opp": "UTA",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.51,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3042269,
-     "nhl_id": 8477346,
-     "name": "MacKenzie Weegar",
-     "pos": "D",
-     "team": "UTA",
-     "game_id": 2026020205,
-     "opp": "@PIT",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.42,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4565225,
-     "nhl_id": 8481524,
-     "name": "Bowen Byram",
-     "pos": "D",
-     "team": "CHI",
-     "game_id": 2026020203,
-     "opp": "@DET",
-     "start": "2026-10-29T23:30:00Z",
-     "expected": 0.46,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3151981,
-     "nhl_id": 8478009,
-     "name": "Ilya Sorokin",
-     "pos": "G",
-     "team": "NYI",
-     "game_id": 2026020210,
-     "opp": "@MIN",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.93,
-     "actual": null,
-     "p_start": 0.826
-    },
-    {
-     "espn_id": 5037,
-     "nhl_id": 8474564,
-     "name": "Steven Stamkos",
-     "pos": "C",
-     "team": "NSH",
-     "game_id": 2026020208,
-     "opp": "WSH",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.9,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4233637,
-     "nhl_id": 8480023,
-     "name": "Robert Thomas",
-     "pos": "C",
-     "team": "STL",
-     "game_id": 2026020207,
-     "opp": "BOS",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.84,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3899949,
-     "nhl_id": 8478401,
-     "name": "Pavel Zacha",
-     "pos": "C",
-     "team": "BOS",
-     "game_id": 2026020207,
-     "opp": "@STL",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.66,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4697384,
-     "nhl_id": 8482116,
-     "name": "Tim Stutzle",
-     "pos": "C",
-     "team": "OTT",
-     "game_id": 2026020212,
-     "opp": "@LAK",
-     "start": "2026-10-30T02:00:00Z",
-     "expected": 1.04,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4233566,
-     "nhl_id": 8480012,
-     "name": "Elias Pettersson",
-     "pos": "C",
-     "team": "VAN",
-     "game_id": 2026020213,
-     "opp": "@SJS",
-     "start": "2026-10-30T02:00:00Z",
-     "expected": 0.8,
      "actual": null,
      "p_start": null
     }
@@ -756,10 +527,10 @@
    "name": "GSP",
    "mine": false,
    "points": 147.0,
-   "p_first": 0.024,
-   "delta_p_first_per_point": -0.0006,
-   "final": 1073.4,
-   "sd": 48.75,
+   "p_first": 0.027,
+   "delta_p_first_per_point": -0.00072,
+   "final": 1079.1,
+   "sd": 48.96,
    "expected_tonight": 9.7,
    "actual_tonight": null,
    "playing_tonight": 13,
@@ -799,7 +570,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.55,
+     "expected": 0.53,
      "actual": null,
      "p_start": null
     },
@@ -877,7 +648,7 @@
      "game_id": 2026020207,
      "opp": "BOS",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.41,
+     "expected": 0.4,
      "actual": null,
      "p_start": null
     },
@@ -890,7 +661,7 @@
      "game_id": 2026020213,
      "opp": "VAN",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 1.53,
+     "expected": 1.51,
      "actual": null,
      "p_start": null
     },
@@ -916,7 +687,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.63,
+     "expected": 0.68,
      "actual": null,
      "p_start": null
     },
@@ -929,7 +700,273 @@
      "game_id": 2026020213,
      "opp": "@SJS",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.36,
+     "expected": 0.37,
+     "actual": null,
+     "p_start": null
+    }
+   ]
+  },
+  {
+   "team_id": 9,
+   "abbrev": "LLT",
+   "name": "Laurent's Lucrative Team",
+   "mine": false,
+   "points": 173.0,
+   "p_first": 0.023,
+   "delta_p_first_per_point": -0.00062,
+   "final": 1074.6,
+   "sd": 48.91,
+   "expected_tonight": 7.9,
+   "actual_tonight": null,
+   "playing_tonight": 11,
+   "players": [
+    {
+     "espn_id": 2562632,
+     "nhl_id": 8476460,
+     "name": "Mark Scheifele",
+     "pos": "C",
+     "team": "WPG",
+     "game_id": 2026020204,
+     "opp": "@TBL",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.89,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 2563036,
+     "nhl_id": 8476389,
+     "name": "Vincent Trocheck",
+     "pos": "C",
+     "team": "UTA",
+     "game_id": 2026020205,
+     "opp": "@PIT",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.68,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3539,
+     "nhl_id": 8471724,
+     "name": "Kris Letang",
+     "pos": "D",
+     "team": "PIT",
+     "game_id": 2026020205,
+     "opp": "UTA",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.51,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3042269,
+     "nhl_id": 8477346,
+     "name": "MacKenzie Weegar",
+     "pos": "D",
+     "team": "UTA",
+     "game_id": 2026020205,
+     "opp": "@PIT",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.42,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4565225,
+     "nhl_id": 8481524,
+     "name": "Bowen Byram",
+     "pos": "D",
+     "team": "CHI",
+     "game_id": 2026020203,
+     "opp": "@DET",
+     "start": "2026-10-29T23:30:00Z",
+     "expected": 0.46,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5037,
+     "nhl_id": 8474564,
+     "name": "Steven Stamkos",
+     "pos": "C",
+     "team": "NSH",
+     "game_id": 2026020208,
+     "opp": "WSH",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.9,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4233637,
+     "nhl_id": 8480023,
+     "name": "Robert Thomas",
+     "pos": "C",
+     "team": "STL",
+     "game_id": 2026020207,
+     "opp": "BOS",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.84,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3151981,
+     "nhl_id": 8478009,
+     "name": "Ilya Sorokin",
+     "pos": "G",
+     "team": "NYI",
+     "game_id": 2026020210,
+     "opp": "@MIN",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.7,
+     "actual": null,
+     "p_start": 0.826
+    },
+    {
+     "espn_id": 3899949,
+     "nhl_id": 8478401,
+     "name": "Pavel Zacha",
+     "pos": "C",
+     "team": "BOS",
+     "game_id": 2026020207,
+     "opp": "@STL",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.66,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4697384,
+     "nhl_id": 8482116,
+     "name": "Tim Stutzle",
+     "pos": "C",
+     "team": "OTT",
+     "game_id": 2026020212,
+     "opp": "@LAK",
+     "start": "2026-10-30T02:00:00Z",
+     "expected": 1.01,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4233566,
+     "nhl_id": 8480012,
+     "name": "Elias Pettersson",
+     "pos": "C",
+     "team": "VAN",
+     "game_id": 2026020213,
+     "opp": "@SJS",
+     "start": "2026-10-30T02:00:00Z",
+     "expected": 0.81,
+     "actual": null,
+     "p_start": null
+    }
+   ]
+  },
+  {
+   "team_id": 4,
+   "abbrev": "NWA",
+   "name": "NWA",
+   "mine": false,
+   "points": 178.0,
+   "p_first": 0.018,
+   "delta_p_first_per_point": -0.00049,
+   "final": 1065.5,
+   "sd": 50.96,
+   "expected_tonight": 5.2,
+   "actual_tonight": null,
+   "playing_tonight": 7,
+   "players": [
+    {
+     "espn_id": 3904173,
+     "nhl_id": 8478427,
+     "name": "Sebastian Aho",
+     "pos": "C",
+     "team": "CAR",
+     "game_id": 2026020206,
+     "opp": "CBJ",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 1.21,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5080230,
+     "nhl_id": 8483457,
+     "name": "Lane Hutson",
+     "pos": "D",
+     "team": "MTL",
+     "game_id": 2026020209,
+     "opp": "@DAL",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.79,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5149172,
+     "nhl_id": 8484186,
+     "name": "Ryan Leonard",
+     "pos": "RW",
+     "team": "WSH",
+     "game_id": 2026020208,
+     "opp": "@NSH",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.62,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5188437,
+     "nhl_id": 8484170,
+     "name": "Jacob Fowler",
+     "pos": "G",
+     "team": "MTL",
+     "game_id": 2026020209,
+     "opp": "@DAL",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.51,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5216858,
+     "nhl_id": 8484762,
+     "name": "Beckett Sennecke",
+     "pos": "RW",
+     "team": "ANA",
+     "game_id": 2026020211,
+     "opp": "BUF",
+     "start": "2026-10-30T02:00:00Z",
+     "expected": 0.74,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5361709,
+     "nhl_id": 8486103,
+     "name": "Ivar Stenberg",
+     "pos": "LW",
+     "team": "SJS",
+     "game_id": 2026020213,
+     "opp": "VAN",
+     "start": "2026-10-30T02:00:00Z",
+     "expected": 0.72,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4063607,
+     "nhl_id": 8479425,
+     "name": "Filip Hronek",
+     "pos": "D",
+     "team": "VAN",
+     "game_id": 2026020213,
+     "opp": "@SJS",
+     "start": "2026-10-30T02:00:00Z",
+     "expected": 0.58,
      "actual": null,
      "p_start": null
     }
@@ -941,27 +978,14 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 144.0,
-   "p_first": 0.005,
-   "delta_p_first_per_point": -0.00015,
-   "final": 1039.2,
-   "sd": 48.49,
-   "expected_tonight": 9.4,
+   "p_first": 0.006,
+   "delta_p_first_per_point": -0.00019,
+   "final": 1044.7,
+   "sd": 48.5,
+   "expected_tonight": 9.3,
    "actual_tonight": null,
    "playing_tonight": 11,
    "players": [
-    {
-     "espn_id": 3899952,
-     "nhl_id": 8478398,
-     "name": "Kyle Connor",
-     "pos": "LW",
-     "team": "WPG",
-     "game_id": 2026020204,
-     "opp": "@TBL",
-     "start": "2026-10-29T23:00:00Z",
-     "expected": 0.96,
-     "actual": null,
-     "p_start": null
-    },
     {
      "espn_id": 3114,
      "nhl_id": 8471675,
@@ -984,7 +1008,20 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.96,
+     "expected": 0.93,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3899952,
+     "nhl_id": 8478398,
+     "name": "Kyle Connor",
+     "pos": "LW",
+     "team": "WPG",
+     "game_id": 2026020204,
+     "opp": "@TBL",
+     "start": "2026-10-29T23:00:00Z",
+     "expected": 0.92,
      "actual": null,
      "p_start": null
     },
@@ -1049,7 +1086,7 @@
      "game_id": 2026020210,
      "opp": "NYI",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 1.44,
+     "expected": 1.45,
      "actual": null,
      "p_start": null
     },
@@ -1102,8 +1139,8 @@
    "points": 158.0,
    "p_first": 0.002,
    "delta_p_first_per_point": -6e-05,
-   "final": 1026.7,
-   "sd": 44.43,
+   "final": 1029.6,
+   "sd": 44.34,
    "expected_tonight": 8.8,
    "actual_tonight": null,
    "playing_tonight": 11,
@@ -1148,6 +1185,19 @@
      "p_start": null
     },
     {
+     "espn_id": 3899933,
+     "nhl_id": 8478440,
+     "name": "Dylan Strome",
+     "pos": "C",
+     "team": "WSH",
+     "game_id": 2026020208,
+     "opp": "@NSH",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.86,
+     "actual": null,
+     "p_start": null
+    },
+    {
      "espn_id": 5208,
      "nhl_id": 8475158,
      "name": "Ryan O'Reilly",
@@ -1170,19 +1220,6 @@
      "opp": "NYI",
      "start": "2026-10-30T00:00:00Z",
      "expected": 0.83,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3899933,
-     "nhl_id": 8478440,
-     "name": "Dylan Strome",
-     "pos": "C",
-     "team": "WSH",
-     "game_id": 2026020208,
-     "opp": "@NSH",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.82,
      "actual": null,
      "p_start": null
     },
@@ -1247,7 +1284,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.8,
+     "expected": 0.79,
      "actual": null,
      "p_start": null
     }
@@ -1260,10 +1297,10 @@
    "mine": false,
    "points": 140.0,
    "p_first": 0.002,
-   "delta_p_first_per_point": -6e-05,
-   "final": 1019.5,
-   "sd": 47.87,
-   "expected_tonight": 7.5,
+   "delta_p_first_per_point": -5e-05,
+   "final": 1021.2,
+   "sd": 46.87,
+   "expected_tonight": 7.4,
    "actual_tonight": null,
    "playing_tonight": 11,
    "players": [
@@ -1276,7 +1313,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 1.66,
+     "expected": 1.6,
      "actual": null,
      "p_start": null
     },
@@ -1289,7 +1326,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 1.14,
+     "expected": 1.12,
      "actual": null,
      "p_start": null
     },
@@ -1302,7 +1339,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.9,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -1406,7 +1443,7 @@
      "game_id": 2026020211,
      "opp": "BUF",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.3,
+     "expected": 0.32,
      "actual": null,
      "p_start": null
     }
@@ -1418,11 +1455,11 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 141.0,
-   "p_first": 0.001,
+   "p_first": 0.0,
    "delta_p_first_per_point": -2e-05,
-   "final": 992.6,
-   "sd": 49.6,
-   "expected_tonight": 10.8,
+   "final": 991.9,
+   "sd": 49.46,
+   "expected_tonight": 11.0,
    "actual_tonight": null,
    "playing_tonight": 14,
    "players": [
@@ -1448,7 +1485,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.88,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -1487,7 +1524,7 @@
      "game_id": 2026020210,
      "opp": "NYI",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.9,
+     "expected": 1.13,
      "actual": null,
      "p_start": 0.798
     },
@@ -1539,7 +1576,7 @@
      "game_id": 2026020211,
      "opp": "BUF",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 1.05,
+     "expected": 1.06,
      "actual": null,
      "p_start": null
     },
@@ -1552,7 +1589,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.95,
+     "expected": 0.93,
      "actual": null,
      "p_start": null
     },
@@ -1565,7 +1602,7 @@
      "game_id": 2026020212,
      "opp": "@LAK",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.81,
+     "expected": 0.78,
      "actual": null,
      "p_start": null
     },
@@ -1591,7 +1628,7 @@
      "game_id": 2026020212,
      "opp": "@LAK",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.61,
+     "expected": 0.6,
      "actual": null,
      "p_start": null
     },
@@ -1604,7 +1641,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.57,
+     "expected": 0.56,
      "actual": null,
      "p_start": null
     }
@@ -1618,9 +1655,9 @@
    "points": 138.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 934.5,
-   "sd": 44.59,
-   "expected_tonight": 8.0,
+   "final": 937.7,
+   "sd": 44.5,
+   "expected_tonight": 8.1,
    "actual_tonight": null,
    "playing_tonight": 12,
    "players": [
@@ -1633,7 +1670,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.54,
+     "expected": 0.58,
      "actual": null,
      "p_start": 0.481
     },
@@ -1711,7 +1748,7 @@
      "game_id": 2026020208,
      "opp": "@NSH",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.46,
+     "expected": 0.45,
      "actual": null,
      "p_start": null
     },
@@ -1724,7 +1761,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 1.03,
+     "expected": 1.05,
      "actual": null,
      "p_start": null
     },
@@ -1737,7 +1774,7 @@
      "game_id": 2026020212,
      "opp": "@LAK",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.85,
+     "expected": 0.86,
      "actual": null,
      "p_start": null
     },
@@ -1750,7 +1787,7 @@
      "game_id": 2026020213,
      "opp": "VAN",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.61,
+     "expected": 0.6,
      "actual": null,
      "p_start": null
     },
@@ -1763,7 +1800,7 @@
      "game_id": 2026020211,
      "opp": "@ANA",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.42,
+     "expected": 0.43,
      "actual": null,
      "p_start": null
     },
@@ -1790,9 +1827,9 @@
    "points": 133.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 925.5,
-   "sd": 43.73,
-   "expected_tonight": 8.2,
+   "final": 928.5,
+   "sd": 43.54,
+   "expected_tonight": 8.1,
    "actual_tonight": null,
    "playing_tonight": 12,
    "players": [
@@ -1805,7 +1842,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.7,
+     "expected": 0.68,
      "actual": null,
      "p_start": null
     },
@@ -1818,7 +1855,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.45,
+     "expected": 0.44,
      "actual": null,
      "p_start": null
     },
@@ -1831,7 +1868,7 @@
      "game_id": 2026020204,
      "opp": "@TBL",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.41,
+     "expected": 0.4,
      "actual": null,
      "p_start": null
     },
@@ -1870,7 +1907,7 @@
      "game_id": 2026020208,
      "opp": "WSH",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.88,
+     "expected": 0.87,
      "actual": null,
      "p_start": null
     },
@@ -1888,6 +1925,19 @@
      "p_start": null
     },
     {
+     "espn_id": 3114766,
+     "nhl_id": 8477949,
+     "name": "Alex Tuch",
+     "pos": "RW",
+     "team": "WSH",
+     "game_id": 2026020208,
+     "opp": "@NSH",
+     "start": "2026-10-30T00:00:00Z",
+     "expected": 0.8,
+     "actual": null,
+     "p_start": null
+    },
+    {
      "espn_id": 3042002,
      "nhl_id": 8477500,
      "name": "Bo Horvat",
@@ -1901,19 +1951,6 @@
      "p_start": null
     },
     {
-     "espn_id": 3114766,
-     "nhl_id": 8477949,
-     "name": "Alex Tuch",
-     "pos": "RW",
-     "team": "WSH",
-     "game_id": 2026020208,
-     "opp": "@NSH",
-     "start": "2026-10-30T00:00:00Z",
-     "expected": 0.77,
-     "actual": null,
-     "p_start": null
-    },
-    {
      "espn_id": 2970615,
      "nhl_id": 8476880,
      "name": "Tom Wilson",
@@ -1922,7 +1959,7 @@
      "game_id": 2026020208,
      "opp": "@NSH",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.72,
+     "expected": 0.69,
      "actual": null,
      "p_start": null
     },
@@ -1948,7 +1985,7 @@
      "game_id": 2026020213,
      "opp": "VAN",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.32,
+     "expected": 0.31,
      "actual": null,
      "p_start": null
     }
@@ -1962,8 +1999,8 @@
    "points": 116.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 927.5,
-   "sd": 44.13,
+   "final": 928.7,
+   "sd": 43.98,
    "expected_tonight": 8.4,
    "actual_tonight": null,
    "playing_tonight": 11,
@@ -1977,7 +2014,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 1.16,
+     "expected": 1.17,
      "actual": null,
      "p_start": null
     },
@@ -1990,7 +2027,7 @@
      "game_id": 2026020204,
      "opp": "WPG",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 1.11,
+     "expected": 1.08,
      "actual": null,
      "p_start": null
     },
@@ -2003,7 +2040,7 @@
      "game_id": 2026020205,
      "opp": "@PIT",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.88,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -2016,7 +2053,7 @@
      "game_id": 2026020206,
      "opp": "@CAR",
      "start": "2026-10-29T23:00:00Z",
-     "expected": 0.82,
+     "expected": 0.83,
      "actual": null,
      "p_start": null
     },
@@ -2042,7 +2079,7 @@
      "game_id": 2026020208,
      "opp": "@NSH",
      "start": "2026-10-30T00:00:00Z",
-     "expected": 0.73,
+     "expected": 0.74,
      "actual": null,
      "p_start": null
     },
@@ -2081,7 +2118,7 @@
      "game_id": 2026020211,
      "opp": "BUF",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.83,
+     "expected": 0.84,
      "actual": null,
      "p_start": null
     },
@@ -2107,7 +2144,7 @@
      "game_id": 2026020213,
      "opp": "@SJS",
      "start": "2026-10-30T02:00:00Z",
-     "expected": 0.31,
+     "expected": 0.32,
      "actual": null,
      "p_start": null
     }
@@ -2138,21 +2175,7 @@
    "game_id": 2026020205,
    "opp": "@PIT",
    "start": "2026-10-29T23:00:00Z",
-   "expected": 0.83,
-   "actual": null,
-   "p_start": null,
-   "injury": null
-  },
-  {
-   "espn_id": 4233583,
-   "nhl_id": 8480014,
-   "name": "Gabriel Vilardi",
-   "pos": "RW",
-   "team": "WPG",
-   "game_id": 2026020204,
-   "opp": "@TBL",
-   "start": "2026-10-29T23:00:00Z",
-   "expected": 0.73,
+   "expected": 0.84,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2167,6 +2190,20 @@
    "opp": "CBJ",
    "start": "2026-10-29T23:00:00Z",
    "expected": 0.71,
+   "actual": null,
+   "p_start": null,
+   "injury": null
+  },
+  {
+   "espn_id": 4233583,
+   "nhl_id": 8480014,
+   "name": "Gabriel Vilardi",
+   "pos": "RW",
+   "team": "WPG",
+   "game_id": 2026020204,
+   "opp": "@TBL",
+   "start": "2026-10-29T23:00:00Z",
+   "expected": 0.7,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2194,7 +2231,7 @@
    "game_id": 2026020206,
    "opp": "@CAR",
    "start": "2026-10-29T23:00:00Z",
-   "expected": 0.56,
+   "expected": 0.35,
    "actual": null,
    "p_start": 0.493,
    "injury": null
@@ -2222,7 +2259,7 @@
    "game_id": 2026020210,
    "opp": "NYI",
    "start": "2026-10-30T00:00:00Z",
-   "expected": 1.29,
+   "expected": 1.32,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2258,6 +2295,26 @@
  ],
  "watch": [
   {
+   "espn_id": 5206628,
+   "nhl_id": 8484801,
+   "name": "Macklin Celebrini",
+   "pos": "C",
+   "team": "SJS",
+   "game_id": 2026020213,
+   "opp": "VAN",
+   "start": "2026-10-30T02:00:00Z",
+   "expected": 1.51,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 1,
+    "abbrev": "GSP",
+    "name": "GSP"
+   },
+   "delta_p_first_per_point": -0.00072,
+   "threat": -0.00109
+  },
+  {
    "espn_id": 4065019,
    "nhl_id": 8479542,
    "name": "Brandon Hagel",
@@ -2266,7 +2323,7 @@
    "game_id": 2026020204,
    "opp": "WPG",
    "start": "2026-10-29T23:00:00Z",
-   "expected": 1.17,
+   "expected": 1.13,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2274,8 +2331,28 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.00114
+   "delta_p_first_per_point": -0.00077,
+   "threat": -0.00087
+  },
+  {
+   "espn_id": 3899938,
+   "nhl_id": 8478420,
+   "name": "Mikko Rantanen",
+   "pos": "RW",
+   "team": "DAL",
+   "game_id": 2026020209,
+   "opp": "MTL",
+   "start": "2026-10-30T00:00:00Z",
+   "expected": 1.13,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 1,
+    "abbrev": "GSP",
+    "name": "GSP"
+   },
+   "delta_p_first_per_point": -0.00072,
+   "threat": -0.00081
   },
   {
    "espn_id": 4874740,
@@ -2294,19 +2371,19 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.001
+   "delta_p_first_per_point": -0.00077,
+   "threat": -0.0008
   },
   {
-   "espn_id": 5206628,
-   "nhl_id": 8484801,
-   "name": "Macklin Celebrini",
-   "pos": "C",
-   "team": "SJS",
-   "game_id": 2026020213,
-   "opp": "VAN",
-   "start": "2026-10-30T02:00:00Z",
-   "expected": 1.53,
+   "espn_id": 4697385,
+   "nhl_id": 8482078,
+   "name": "Lucas Raymond",
+   "pos": "LW",
+   "team": "DET",
+   "game_id": 2026020203,
+   "opp": "CHI",
+   "start": "2026-10-29T23:30:00Z",
+   "expected": 1.04,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2314,8 +2391,8 @@
     "abbrev": "GSP",
     "name": "GSP"
    },
-   "delta_p_first_per_point": -0.0006,
-   "threat": -0.00092
+   "delta_p_first_per_point": -0.00072,
+   "threat": -0.00075
   },
   {
    "espn_id": 5149155,
@@ -2326,7 +2403,7 @@
    "game_id": 2026020213,
    "opp": "VAN",
    "start": "2026-10-30T02:00:00Z",
-   "expected": 0.9,
+   "expected": 0.89,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2334,28 +2411,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.00088
-  },
-  {
-   "espn_id": 3904173,
-   "nhl_id": 8478427,
-   "name": "Sebastian Aho",
-   "pos": "C",
-   "team": "CAR",
-   "game_id": 2026020206,
-   "opp": "CBJ",
-   "start": "2026-10-29T23:00:00Z",
-   "expected": 1.21,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 4,
-    "abbrev": "NWA",
-    "name": "NWA"
-   },
-   "delta_p_first_per_point": -0.0007,
-   "threat": -0.00085
+   "delta_p_first_per_point": -0.00077,
+   "threat": -0.00068
   },
   {
    "espn_id": 5103645,
@@ -2374,8 +2431,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.00082
+   "delta_p_first_per_point": -0.00077,
+   "threat": -0.00065
   },
   {
    "espn_id": 2591155,
@@ -2394,28 +2451,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.00081
-  },
-  {
-   "espn_id": 3899946,
-   "nhl_id": 8478445,
-   "name": "Mathew Barzal",
-   "pos": "C",
-   "team": "NYI",
-   "game_id": 2026020210,
-   "opp": "@MIN",
-   "start": "2026-10-30T00:00:00Z",
-   "expected": 0.76,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 12,
-    "abbrev": "RICo",
-    "name": "Rico"
-   },
-   "delta_p_first_per_point": -0.00097,
-   "threat": -0.00074
+   "delta_p_first_per_point": -0.00077,
+   "threat": -0.00064
   }
  ]
 }
