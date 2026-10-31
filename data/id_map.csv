@@ -1115,7 +1115,7 @@ espn_id,nhl_id,canonical_id,name,method
 4874870,8482659,josh_doan,Josh Doan,name
 4874881,8482859,zack_ostapchuk,Zack Ostapchuk,name
 4874882,8482666,scott_morrow,Scott Morrow,name
-4874893,,william_stromgren,William Stromgren,unmatched
+4874893,8482766,william_stromgren,William Stromgren,name
 4874899,8482702,logan_stankoven,Logan Stankoven,name
 4874903,,nikita_chibrikov,Nikita Chibrikov,unmatched
 4874911,8482758,ville_koivunen,Ville Koivunen,name
@@ -1180,7 +1180,7 @@ espn_id,nhl_id,canonical_id,name,method
 4997019,,mike_benning,Mike Benning,unmatched
 4997026,8482802,carter_mazur,Carter Mazur,name
 4997033,8483752,dominic_james,Dominic James,name
-4997056,,jacob_quillan,Jacob Quillan,unmatched
+4997056,8484901,jacob_quillan,Jacob Quillan,name
 4997080,8482953,taylor_makar,Taylor Makar,name
 4997092,,brian_halonen,Brian Halonen,unmatched
 4997129,,,Lucas Condotta,unmatched
@@ -1267,7 +1267,7 @@ espn_id,nhl_id,canonical_id,name,method
 5104190,,kenny_connors,Kenny Connors,unmatched
 5104200,8483756,jared_wright,Jared Wright,name
 5104209,,abram_wiebe,Abram Wiebe,unmatched
-5104219,,,Arsenii Sergeev,unmatched
+5104219,8482949,,Arsenii Sergeev,name
 5104221,,cole_ohara,Cole O'Hara,unmatched
 5104231,,joel_nystrom,Joel Nystrom,unmatched
 5104602,8483532,,Clay Stevenson,name
@@ -1355,7 +1355,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149251,,,Riley Heidt,unmatched
 5149600,,,Marc Johnstone,unmatched
 5149601,,,Pierrick Dube,unmatched
-5171570,,isaiah_george,Isaiah George,unmatched
+5171570,8483448,isaiah_george,Isaiah George,name
 5172806,8482993,avery_hayes,Avery Hayes,name
 5173105,8484142,denver_barkey,Denver Barkey,name
 5173114,,parker_ford,Parker Ford,unmatched
