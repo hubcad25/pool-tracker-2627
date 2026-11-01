@@ -1,6 +1,6 @@
 {
  "date": "2026-11-01",
- "updated": "2026-11-01T10:57:27-05:00",
+ "updated": "2026-11-01T12:02:04-05:00",
  "games": [
   {
    "id": 2026020227,
@@ -846,7 +846,7 @@
    "delta_p_first_per_point": -3e-05,
    "final": 1018.2,
    "sd": 46.06,
-   "expected_tonight": 4.8,
+   "expected_tonight": 4.5,
    "actual_tonight": null,
    "playing_tonight": 6,
    "players": [
@@ -859,9 +859,9 @@
      "game_id": 2026020228,
      "opp": "MIN",
      "start": "2026-11-01T20:30:00Z",
-     "expected": 0.98,
+     "expected": 0.74,
      "actual": null,
-     "p_start": 0.878
+     "p_start": 0.67
     },
     {
      "espn_id": 4024857,
