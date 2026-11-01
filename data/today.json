@@ -1,13 +1,13 @@
 {
  "date": "2026-11-01",
- "updated": "2026-11-01T12:02:04-05:00",
+ "updated": "2026-11-01T15:02:07-05:00",
  "games": [
   {
    "id": 2026020227,
    "start": "2026-11-01T18:00:00Z",
    "away": "WPG",
    "home": "CAR",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 2.507,
     "home": 3.89
@@ -994,7 +994,7 @@
      "start": "2026-11-01T21:00:00Z",
      "expected": 0.97,
      "actual": null,
-     "p_start": 0.732
+     "p_start": 0.733
     },
     {
      "espn_id": 5291941,
