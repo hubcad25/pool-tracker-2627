@@ -385,7 +385,13 @@
    "group": "F",
    "team": "BUF",
    "slot": "F",
-   "injury": null,
+   "injury": {
+    "status": "DAY_TO_DAY",
+    "type": "Undisclosed",
+    "expected_return": "2026-11-04",
+    "out_for_season": false,
+    "games_missed": 0
+   },
    "gp": 14.0,
    "g": 2.0,
    "a": 11.0,
@@ -1965,9 +1971,9 @@
     "injury": {
      "status": "INJURY_RESERVE",
      "type": "Wrist",
-     "expected_return": "2026-11-10",
+     "expected_return": "2026-11-08",
      "out_for_season": false,
-     "games_missed": 3
+     "games_missed": 2
     },
     "gp": 4.0,
     "g": 0.0,
@@ -1975,25 +1981,25 @@
     "points": 3.0,
     "pace": 63.0,
     "prior": {
-     "p10": 49.2,
-     "p50": 52.2,
-     "p90": 55.3
+     "p10": 49.9,
+     "p50": 52.9,
+     "p90": 56.1
     },
     "ros_prior": {
-     "p10": 46.4,
-     "p50": 49.2,
-     "p90": 52.2
+     "p10": 47.1,
+     "p50": 50.0,
+     "p90": 52.9
     },
     "ros": {
-     "mean": 52.2,
-     "p10": 36.4,
-     "p90": 68.2,
-     "games_left": 66
+     "mean": 53.0,
+     "p10": 36.9,
+     "p90": 69.2,
+     "games_left": 67
     },
     "final": {
-     "mean": 55.2,
-     "p10": 39.4,
-     "p90": 71.2
+     "mean": 56.0,
+     "p10": 39.9,
+     "p90": 72.2
     },
     "luck": {
      "expected_points": 4.5,
@@ -5406,7 +5412,13 @@
     "group": "F",
     "team": "BUF",
     "slot": "F",
-    "injury": null,
+    "injury": {
+     "status": "DAY_TO_DAY",
+     "type": "Undisclosed",
+     "expected_return": "2026-11-04",
+     "out_for_season": false,
+     "games_missed": 0
+    },
     "gp": 14.0,
     "g": 2.0,
     "a": 11.0,
@@ -7962,7 +7974,7 @@
     "slot": "IR",
     "injury": {
      "status": "INJURY_RESERVE",
-     "type": "Lower Body",
+     "type": "Knee",
      "expected_return": "2026-11-27",
      "out_for_season": false,
      "games_missed": 11
@@ -9759,11 +9771,11 @@
     "team": "CHI",
     "slot": "D",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "OUT",
      "type": "Upper Body",
-     "expected_return": "2026-11-02",
+     "expected_return": "2026-11-04",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 6.0,
     "g": 0.0,
@@ -9771,25 +9783,25 @@
     "points": 1.0,
     "pace": 14.0,
     "prior": {
-     "p10": 36.0,
-     "p50": 43.0,
-     "p90": 50.2
+     "p10": 35.5,
+     "p50": 42.4,
+     "p90": 49.5
     },
     "ros_prior": {
-     "p10": 33.1,
-     "p50": 39.6,
-     "p90": 46.2
+     "p10": 32.6,
+     "p50": 39.0,
+     "p90": 45.6
     },
     "ros": {
-     "mean": 34.8,
-     "p10": 21.4,
-     "p90": 47.0,
-     "games_left": 70
+     "mean": 34.3,
+     "p10": 21.1,
+     "p90": 46.3,
+     "games_left": 69
     },
     "final": {
-     "mean": 35.8,
-     "p10": 22.4,
-     "p90": 48.0
+     "mean": 35.3,
+     "p10": 22.1,
+     "p90": 47.3
     },
     "luck": {
      "expected_points": 1.9,
@@ -13083,7 +13095,7 @@
    "owner": "VFTH",
    "mine": false,
    "status": "INJURY_RESERVE",
-   "type": "Lower Body",
+   "type": "Knee",
    "expected_return": "2026-11-27",
    "out_for_season": false,
    "games_missed": 11,
@@ -13170,6 +13182,53 @@
    "verdict": "conforme"
   },
   {
+   "espn_id": 3042016,
+   "name": "Josh Morrissey",
+   "pos": "D",
+   "team": "WPG",
+   "owner": "GSP",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Wrist",
+   "expected_return": "2026-11-08",
+   "out_for_season": false,
+   "games_missed": 2,
+   "ros": {
+    "mean": 53.0,
+    "p10": 36.9,
+    "p90": 69.2
+   },
+   "gp": 4.0,
+   "points": 3.0,
+   "luck": {
+    "expected_points": 4.5,
+    "net_points": -1.5,
+    "goals": {
+     "obs": 0,
+     "expected": 0.6,
+     "shots": 12,
+     "sh_obs": 0.0,
+     "sh_expected": 0.051,
+     "percentile": 0.268
+    },
+    "assists": {
+     "shots": 41,
+     "sh_obs": 0.122,
+     "sh_expected": 0.158,
+     "percentile": 0.278,
+     "obs_goals": 5,
+     "expected_goals": 6.5
+    },
+    "sh": 0.0,
+    "sh_career": 0.068,
+    "g_minus_ixg": -0.6,
+    "oish": 0.122,
+    "oish_career": 0.117,
+    "toi": 20.1
+   },
+   "verdict": "petit_echantillon"
+  },
+  {
    "espn_id": 5216860,
    "name": "Ivan Demidov",
    "pos": "RW",
@@ -13213,53 +13272,6 @@
     "oish": 0.111,
     "oish_career": 0.169,
     "toi": 15.6
-   },
-   "verdict": "petit_echantillon"
-  },
-  {
-   "espn_id": 3042016,
-   "name": "Josh Morrissey",
-   "pos": "D",
-   "team": "WPG",
-   "owner": "GSP",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Wrist",
-   "expected_return": "2026-11-10",
-   "out_for_season": false,
-   "games_missed": 3,
-   "ros": {
-    "mean": 52.2,
-    "p10": 36.4,
-    "p90": 68.2
-   },
-   "gp": 4.0,
-   "points": 3.0,
-   "luck": {
-    "expected_points": 4.5,
-    "net_points": -1.5,
-    "goals": {
-     "obs": 0,
-     "expected": 0.6,
-     "shots": 12,
-     "sh_obs": 0.0,
-     "sh_expected": 0.051,
-     "percentile": 0.268
-    },
-    "assists": {
-     "shots": 41,
-     "sh_obs": 0.122,
-     "sh_expected": 0.158,
-     "percentile": 0.278,
-     "obs_goals": 5,
-     "expected_goals": 6.5
-    },
-    "sh": 0.0,
-    "sh_career": 0.068,
-    "g_minus_ixg": -0.6,
-    "oish": 0.122,
-    "oish_career": 0.117,
-    "toi": 20.1
    },
    "verdict": "petit_echantillon"
   },
@@ -13452,6 +13464,53 @@
    "verdict": "petit_echantillon"
   },
   {
+   "espn_id": 4565225,
+   "name": "Bowen Byram",
+   "pos": "D",
+   "team": "CHI",
+   "owner": "LLT",
+   "mine": false,
+   "status": "OUT",
+   "type": "Upper Body",
+   "expected_return": "2026-11-04",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 34.3,
+    "p10": 21.1,
+    "p90": 46.3
+   },
+   "gp": 6.0,
+   "points": 1.0,
+   "luck": {
+    "expected_points": 1.9,
+    "net_points": -0.9,
+    "goals": {
+     "obs": 0,
+     "expected": 0.4,
+     "shots": 5,
+     "sh_obs": 0.0,
+     "sh_expected": 0.083,
+     "percentile": 0.324
+    },
+    "assists": {
+     "shots": 50,
+     "sh_obs": 0.08,
+     "sh_expected": 0.115,
+     "percentile": 0.23,
+     "obs_goals": 4,
+     "expected_goals": 5.8
+    },
+    "sh": 0.0,
+    "sh_career": 0.104,
+    "g_minus_ixg": -0.4,
+    "oish": 0.08,
+    "oish_career": 0.112,
+    "toi": 24.7
+   },
+   "verdict": "petit_echantillon"
+  },
+  {
    "espn_id": 3114777,
    "name": "Jared McCann",
    "pos": "LW",
@@ -13609,7 +13668,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 54.59,
+     "pct_owned": 55.16,
      "ros": {
       "mean": 56.6,
       "p10": 43.3,
@@ -13655,7 +13714,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 70.45,
+     "pct_owned": 70.5,
      "ros": {
       "mean": 53.8,
       "p10": 41.2,
@@ -13701,7 +13760,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-06",
      "games_missed": 2,
-     "pct_owned": 10.64,
+     "pct_owned": 10.67,
      "ros": {
       "mean": 53.4,
       "p10": 40.9,
@@ -13722,7 +13781,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.34,
+     "pct_owned": 12.26,
      "ros": {
       "mean": 49.8,
       "p10": 38.1,
@@ -13768,7 +13827,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 35.1,
+     "pct_owned": 35.46,
      "ros": {
       "mean": 49.7,
       "p10": 38.0,
@@ -13814,7 +13873,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-07",
      "games_missed": 1,
-     "pct_owned": 51.03,
+     "pct_owned": 51.0,
      "ros": {
       "mean": 49.4,
       "p10": 37.8,
@@ -13835,7 +13894,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 61.03,
+     "pct_owned": 60.96,
      "ros": {
       "mean": 48.8,
       "p10": 33.0,
@@ -13881,7 +13940,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 77.65,
+     "pct_owned": 77.77,
      "ros": {
       "mean": 48.4,
       "p10": 37.1,
@@ -13927,7 +13986,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 53.31,
+     "pct_owned": 54.2,
      "ros": {
       "mean": 47.1,
       "p10": 31.8,
@@ -13973,7 +14032,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 66.73,
+     "pct_owned": 66.76,
      "ros": {
       "mean": 46.6,
       "p10": 31.5,
@@ -14021,7 +14080,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-03",
      "games_missed": 0,
-     "pct_owned": 74.26,
+     "pct_owned": 74.3,
      "ros": {
       "mean": 38.2,
       "p10": 25.5,
@@ -14042,7 +14101,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 3.7,
+     "pct_owned": 3.68,
      "ros": {
       "mean": 32.1,
       "p10": 19.8,
@@ -14088,7 +14147,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 88.38,
+     "pct_owned": 88.42,
      "ros": {
       "mean": 30.2,
       "p10": 18.6,
@@ -14134,7 +14193,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 7.4,
+     "pct_owned": 7.36,
      "ros": {
       "mean": 30.2,
       "p10": 18.6,
@@ -14180,7 +14239,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 10.6,
+     "pct_owned": 10.61,
      "ros": {
       "mean": 29.5,
       "p10": 18.1,
@@ -14228,7 +14287,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 79.64,
+     "pct_owned": 79.84,
      "ros": {
       "mean": 61.1,
       "p10": 46.6,
@@ -14249,7 +14308,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-07",
      "games_missed": 1,
-     "pct_owned": 90.74,
+     "pct_owned": 90.73,
      "ros": {
       "mean": 53.7,
       "p10": 39.4,
@@ -14270,7 +14329,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 69.19,
+     "pct_owned": 69.09,
      "ros": {
       "mean": 53.3,
       "p10": 38.5,
@@ -14291,7 +14350,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 83.14,
+     "pct_owned": 83.16,
      "ros": {
       "mean": 51.6,
       "p10": 36.8,
@@ -14312,7 +14371,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 29.04,
+     "pct_owned": 28.99,
      "ros": {
       "mean": 50.5,
       "p10": 35.7,
@@ -14343,7 +14402,7 @@
    "p90": 1277.7,
    "ros_p10": 931.9,
    "ros_p90": 1068.7,
-   "p_first": 0.872,
+   "p_first": 0.873,
    "delta_p_first_per_point": 0.00321
   },
   {
@@ -14369,16 +14428,16 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 200.0,
-   "ros": 883.2,
-   "final": 1083.2,
-   "sd": 47.86,
+   "ros": 882.7,
+   "final": 1082.7,
+   "sd": 47.83,
    "luck_points": 20.6,
-   "p10": 1021.9,
-   "p90": 1144.5,
-   "ros_p10": 821.9,
-   "ros_p90": 944.5,
+   "p10": 1021.4,
+   "p90": 1144.0,
+   "ros_p10": 821.4,
+   "ros_p90": 944.0,
    "p_first": 0.026,
-   "delta_p_first_per_point": -0.0007
+   "delta_p_first_per_point": -0.00068
   },
   {
    "team_id": 4,
@@ -14403,16 +14462,16 @@
    "name": "GSP",
    "mine": false,
    "points": 159.0,
-   "ros": 896.4,
-   "final": 1055.4,
-   "sd": 49.2,
+   "ros": 897.2,
+   "final": 1056.2,
+   "sd": 49.25,
    "luck_points": -3.9,
-   "p10": 992.3,
-   "p90": 1118.5,
-   "ros_p10": 833.3,
-   "ros_p90": 959.5,
+   "p10": 993.1,
+   "p90": 1119.3,
+   "ros_p10": 834.1,
+   "ros_p90": 960.3,
    "p_first": 0.009,
-   "delta_p_first_per_point": -0.00026
+   "delta_p_first_per_point": -0.00027
   },
   {
    "team_id": 7,
@@ -15263,6 +15322,7 @@
   "5149210": 64,
   "5149211": 53,
   "5149212": 4,
+  "5149221": 48,
   "5149231": 80,
   "5173105": 86,
   "5173500": 93,

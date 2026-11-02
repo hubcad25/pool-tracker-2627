@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "updated": "2026-11-02T14:02:04-05:00",
+ "updated": "2026-11-02T14:25:36-05:00",
  "games": [
   {
    "id": 2026020232,
@@ -48,7 +48,7 @@
   }
  ],
  "p_first": {
-  "now": 0.872,
+  "now": 0.873,
   "yesterday": 0.874,
   "history": [
    {
@@ -189,7 +189,7 @@
    },
    {
     "day": "2026-11-02",
-    "p_first": 0.872
+    "p_first": 0.873
    }
   ]
  },
@@ -200,7 +200,7 @@
    "name": "hubcad25",
    "mine": true,
    "points": 209.0,
-   "p_first": 0.872,
+   "p_first": 0.873,
    "delta_p_first_per_point": 0.00321,
    "final": 1209.3,
    "sd": 53.37,
@@ -311,9 +311,9 @@
    "mine": false,
    "points": 200.0,
    "p_first": 0.026,
-   "delta_p_first_per_point": -0.0007,
-   "final": 1083.2,
-   "sd": 47.86,
+   "delta_p_first_per_point": -0.00068,
+   "final": 1082.7,
+   "sd": 47.83,
    "expected_tonight": 3.3,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -460,9 +460,9 @@
    "mine": false,
    "points": 159.0,
    "p_first": 0.009,
-   "delta_p_first_per_point": -0.00026,
-   "final": 1055.4,
-   "sd": 49.2,
+   "delta_p_first_per_point": -0.00027,
+   "final": 1056.2,
+   "sd": 49.25,
    "expected_tonight": 4.3,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -1093,8 +1093,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0007,
-   "threat": -0.00077
+   "delta_p_first_per_point": -0.00068,
+   "threat": -0.00075
   },
   {
    "espn_id": 3899949,
@@ -1113,8 +1113,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0007,
-   "threat": -0.00048
+   "delta_p_first_per_point": -0.00068,
+   "threat": -0.00046
   },
   {
    "espn_id": 4024854,

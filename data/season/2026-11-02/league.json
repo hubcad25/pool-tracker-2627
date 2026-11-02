@@ -47,7 +47,7 @@
      "pro_team": "WPG",
      "injury_status": "INJURY_RESERVE",
      "injury_type": "Wrist",
-     "expected_return": "2026-11-10",
+     "expected_return": "2026-11-08",
      "out_for_season": false,
      "slot": "IR"
     },
@@ -906,9 +906,9 @@
      "name": "Zach Benson",
      "pos": "LW",
      "pro_team": "BUF",
-     "injury_status": "ACTIVE",
-     "injury_type": null,
-     "expected_return": null,
+     "injury_status": "DAY_TO_DAY",
+     "injury_type": "Undisclosed",
+     "expected_return": "2026-11-04",
      "out_for_season": false,
      "slot": "F"
     },
@@ -1200,7 +1200,7 @@
      "pos": "C",
      "pro_team": "FLA",
      "injury_status": "INJURY_RESERVE",
-     "injury_type": "Lower Body",
+     "injury_type": "Knee",
      "expected_return": "2026-11-27",
      "out_for_season": false,
      "slot": "IR"
@@ -1580,9 +1580,9 @@
      "name": "Bowen Byram",
      "pos": "D",
      "pro_team": "CHI",
-     "injury_status": "DAY_TO_DAY",
+     "injury_status": "OUT",
      "injury_type": "Upper Body",
-     "expected_return": "2026-11-02",
+     "expected_return": "2026-11-04",
      "out_for_season": false,
      "slot": "D"
     },
