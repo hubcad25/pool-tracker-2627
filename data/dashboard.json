@@ -1,5 +1,5 @@
 {
- "day": "2026-11-02",
+ "day": "2026-11-03",
  "team": {
   "id": 5,
   "name": "hubcad25"
@@ -138,57 +138,57 @@
    "team": "CHI",
    "slot": "F",
    "injury": null,
-   "gp": 8.0,
+   "gp": 9.0,
    "g": 4.0,
-   "a": 5.0,
-   "points": 9.0,
-   "pace": 94.5,
+   "a": 6.0,
+   "points": 10.0,
+   "pace": 93.3,
    "prior": {
     "p10": 70.2,
     "p50": 83.5,
     "p90": 96.6
    },
    "ros_prior": {
-    "p10": 63.0,
-    "p50": 74.9,
-    "p90": 86.6
+    "p10": 62.1,
+    "p50": 73.9,
+    "p90": 85.4
    },
    "ros": {
-    "mean": 76.5,
-    "p10": 58.6,
-    "p90": 93.5,
-    "games_left": 70
+    "mean": 74.7,
+    "p10": 57.2,
+    "p90": 91.3,
+    "games_left": 69
    },
    "final": {
-    "mean": 85.5,
-    "p10": 67.6,
-    "p90": 102.5
+    "mean": 84.7,
+    "p10": 67.2,
+    "p90": 101.3
    },
    "luck": {
-    "expected_points": 9.6,
-    "net_points": -0.6,
+    "expected_points": 10.1,
+    "net_points": -0.1,
     "goals": {
      "obs": 4,
-     "expected": 4.1,
-     "shots": 24,
-     "sh_obs": 0.167,
-     "sh_expected": 0.172,
-     "percentile": 0.493
+     "expected": 4.5,
+     "shots": 28,
+     "sh_obs": 0.143,
+     "sh_expected": 0.161,
+     "percentile": 0.423
     },
     "assists": {
-     "shots": 54,
-     "sh_obs": 0.111,
-     "sh_expected": 0.122,
-     "percentile": 0.421,
-     "obs_goals": 6,
-     "expected_goals": 6.6
+     "shots": 63,
+     "sh_obs": 0.127,
+     "sh_expected": 0.119,
+     "percentile": 0.593,
+     "obs_goals": 8,
+     "expected_goals": 7.5
     },
-    "sh": 0.167,
+    "sh": 0.143,
     "sh_career": 0.12,
-    "g_minus_ixg": 0.0,
-    "oish": 0.111,
+    "g_minus_ixg": -0.3,
+    "oish": 0.127,
     "oish_career": 0.123,
-    "toi": 20.5
+    "toi": 20.6
    },
    "verdict": "petit_echantillon"
   },
@@ -993,55 +993,55 @@
     "team": "SJ",
     "slot": "F",
     "injury": null,
-    "gp": 13.0,
+    "gp": 14.0,
     "g": 5.0,
     "a": 11.0,
     "points": 16.0,
-    "pace": 103.4,
+    "pace": 96.0,
     "prior": {
      "p10": 97.7,
      "p50": 105.3,
      "p90": 113.2
     },
     "ros_prior": {
-     "p10": 82.3,
-     "p50": 88.6,
-     "p90": 95.2
+     "p10": 81.1,
+     "p50": 87.3,
+     "p90": 93.8
     },
     "ros": {
-     "mean": 88.5,
-     "p10": 67.8,
-     "p90": 108.1,
-     "games_left": 69
+     "mean": 85.9,
+     "p10": 65.8,
+     "p90": 105.0,
+     "games_left": 68
     },
     "final": {
-     "mean": 104.5,
-     "p10": 83.8,
-     "p90": 124.1
+     "mean": 101.9,
+     "p10": 81.8,
+     "p90": 121.0
     },
     "luck": {
-     "expected_points": 17.2,
-     "net_points": -1.2,
+     "expected_points": 18.3,
+     "net_points": -2.3,
      "goals": {
       "obs": 5,
-      "expected": 6.5,
-      "shots": 52,
-      "sh_obs": 0.096,
-      "sh_expected": 0.124,
-      "percentile": 0.284
+      "expected": 6.7,
+      "shots": 54,
+      "sh_obs": 0.093,
+      "sh_expected": 0.123,
+      "percentile": 0.258
      },
      "assists": {
-      "shots": 118,
-      "sh_obs": 0.144,
-      "sh_expected": 0.141,
-      "percentile": 0.553,
+      "shots": 130,
+      "sh_obs": 0.131,
+      "sh_expected": 0.138,
+      "percentile": 0.417,
       "obs_goals": 17,
-      "expected_goals": 16.6
+      "expected_goals": 17.9
      },
-     "sh": 0.096,
+     "sh": 0.093,
      "sh_career": 0.134,
-     "g_minus_ixg": -1.1,
-     "oish": 0.144,
+     "g_minus_ixg": -1.3,
+     "oish": 0.131,
      "oish_career": 0.122,
      "toi": 22.7
     },
@@ -1055,57 +1055,57 @@
     "team": "VGK",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 7.0,
     "a": 13.0,
     "points": 20.0,
-    "pace": 112.0,
+    "pace": 105.0,
     "prior": {
      "p10": 93.1,
      "p50": 99.8,
      "p90": 105.7
     },
     "ros_prior": {
-     "p10": 76.5,
-     "p50": 82.0,
-     "p90": 86.8
+     "p10": 75.4,
+     "p50": 80.8,
+     "p90": 85.6
     },
     "ros": {
-     "mean": 82.2,
-     "p10": 62.9,
-     "p90": 100.4,
-     "games_left": 69
+     "mean": 79.2,
+     "p10": 60.7,
+     "p90": 96.8,
+     "games_left": 68
     },
     "final": {
-     "mean": 102.2,
-     "p10": 82.9,
-     "p90": 120.4
+     "mean": 99.2,
+     "p10": 80.7,
+     "p90": 116.8
     },
     "luck": {
-     "expected_points": 16.0,
-     "net_points": 4.0,
+     "expected_points": 16.2,
+     "net_points": 3.8,
      "goals": {
       "obs": 7,
-      "expected": 5.4,
-      "shots": 38,
-      "sh_obs": 0.184,
+      "expected": 5.5,
+      "shots": 39,
+      "sh_obs": 0.179,
       "sh_expected": 0.142,
-      "percentile": 0.774
+      "percentile": 0.752
      },
      "assists": {
-      "shots": 135,
-      "sh_obs": 0.163,
-      "sh_expected": 0.133,
-      "percentile": 0.849,
-      "obs_goals": 22,
-      "expected_goals": 17.9
+      "shots": 144,
+      "sh_obs": 0.16,
+      "sh_expected": 0.131,
+      "percentile": 0.841,
+      "obs_goals": 23,
+      "expected_goals": 18.9
      },
-     "sh": 0.184,
+     "sh": 0.179,
      "sh_career": 0.109,
-     "g_minus_ixg": 2.1,
-     "oish": 0.163,
+     "g_minus_ixg": 2.0,
+     "oish": 0.16,
      "oish_career": 0.117,
-     "toi": 19.7
+     "toi": 20.0
     },
     "verdict": "chanceux"
    },
@@ -1179,10 +1179,10 @@
     "team": "DET",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 5.0,
-    "a": 9.0,
-    "points": 14.0,
+    "a": 10.0,
+    "points": 15.0,
     "pace": 84.0,
     "prior": {
      "p10": 75.3,
@@ -1190,46 +1190,46 @@
      "p90": 90.3
     },
     "ros_prior": {
-     "p10": 62.8,
-     "p50": 69.0,
-     "p90": 75.2
+     "p10": 61.9,
+     "p50": 68.1,
+     "p90": 74.2
     },
     "ros": {
-     "mean": 72.4,
-     "p10": 55.5,
-     "p90": 88.5,
-     "games_left": 70
+     "mean": 71.7,
+     "p10": 54.9,
+     "p90": 87.7,
+     "games_left": 69
     },
     "final": {
-     "mean": 86.4,
-     "p10": 69.5,
-     "p90": 102.5
+     "mean": 86.7,
+     "p10": 69.9,
+     "p90": 102.7
     },
     "luck": {
-     "expected_points": 17.4,
-     "net_points": -3.4,
+     "expected_points": 18.8,
+     "net_points": -3.8,
      "goals": {
       "obs": 5,
-      "expected": 6.2,
-      "shots": 43,
-      "sh_obs": 0.116,
-      "sh_expected": 0.144,
-      "percentile": 0.32
+      "expected": 6.4,
+      "shots": 45,
+      "sh_obs": 0.111,
+      "sh_expected": 0.143,
+      "percentile": 0.287
      },
      "assists": {
-      "shots": 128,
+      "shots": 138,
       "sh_obs": 0.094,
-      "sh_expected": 0.116,
-      "percentile": 0.22,
-      "obs_goals": 12,
-      "expected_goals": 14.9
+      "sh_expected": 0.117,
+      "percentile": 0.208,
+      "obs_goals": 13,
+      "expected_goals": 16.1
      },
-     "sh": 0.116,
+     "sh": 0.111,
      "sh_career": 0.145,
-     "g_minus_ixg": -0.7,
+     "g_minus_ixg": -0.9,
      "oish": 0.094,
      "oish_career": 0.112,
-     "toi": 20.4
+     "toi": 20.3
     },
     "verdict": "malchanceux"
    },
@@ -1929,34 +1929,34 @@
     "team": "BOS",
     "slot": "G",
     "injury": null,
-    "gp": 11,
+    "gp": 12,
     "g": 0,
     "a": 0,
-    "points": 16,
-    "w": 7,
+    "points": 18,
+    "w": 8,
     "otl": 1,
     "so": 1,
-    "pace": 89.6,
+    "pace": 94.5,
     "prior": {
      "p10": 53.2,
      "p50": 63.4,
      "p90": 73.7
     },
     "ros_prior": {
-     "p10": 43.7,
-     "p50": 52.1,
-     "p90": 60.5
+     "p10": 43.1,
+     "p50": 51.3,
+     "p90": 59.6
     },
     "ros": {
-     "mean": 59.3,
-     "p10": 44.6,
-     "p90": 73.9,
-     "games_left": 69
+     "mean": 60.1,
+     "p10": 45.6,
+     "p90": 74.6,
+     "games_left": 68
     },
     "final": {
-     "mean": 75.3,
-     "p10": 60.6,
-     "p90": 89.9
+     "mean": 78.1,
+     "p10": 63.6,
+     "p90": 92.6
     },
     "luck": null,
     "verdict": null
@@ -2039,55 +2039,55 @@
     "team": "FLA",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
-    "g": 7.0,
+    "gp": 15.0,
+    "g": 8.0,
     "a": 5.0,
-    "points": 12.0,
-    "pace": 72.0,
+    "points": 13.0,
+    "pace": 72.8,
     "prior": {
      "p10": 74.1,
      "p50": 80.4,
      "p90": 86.8
     },
     "ros_prior": {
-     "p10": 61.8,
-     "p50": 67.0,
-     "p90": 72.4
+     "p10": 60.9,
+     "p50": 66.0,
+     "p90": 71.3
     },
     "ros": {
-     "mean": 64.9,
-     "p10": 49.7,
-     "p90": 79.3,
-     "games_left": 70
+     "mean": 63.9,
+     "p10": 48.9,
+     "p90": 78.0,
+     "games_left": 69
     },
     "final": {
      "mean": 76.9,
-     "p10": 61.7,
-     "p90": 91.3
+     "p10": 61.9,
+     "p90": 91.0
     },
     "luck": {
-     "expected_points": 12.4,
-     "net_points": -0.4,
+     "expected_points": 13.2,
+     "net_points": -0.2,
      "goals": {
-      "obs": 7,
-      "expected": 7.8,
-      "shots": 43,
-      "sh_obs": 0.163,
-      "sh_expected": 0.181,
-      "percentile": 0.398
+      "obs": 8,
+      "expected": 8.5,
+      "shots": 46,
+      "sh_obs": 0.174,
+      "sh_expected": 0.185,
+      "percentile": 0.436
      },
      "assists": {
-      "shots": 115,
-      "sh_obs": 0.13,
-      "sh_expected": 0.121,
-      "percentile": 0.627,
-      "obs_goals": 15,
-      "expected_goals": 14.0
+      "shots": 121,
+      "sh_obs": 0.132,
+      "sh_expected": 0.122,
+      "percentile": 0.641,
+      "obs_goals": 16,
+      "expected_goals": 14.8
      },
-     "sh": 0.163,
+     "sh": 0.174,
      "sh_career": 0.16,
-     "g_minus_ixg": -0.5,
-     "oish": 0.13,
+     "g_minus_ixg": -0.3,
+     "oish": 0.132,
      "oish_career": 0.095,
      "toi": 20.2
     },
@@ -2473,55 +2473,55 @@
     "team": "BOS",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
-    "g": 2.0,
+    "gp": 16.0,
+    "g": 3.0,
     "a": 8.0,
-    "points": 10.0,
-    "pace": 56.0,
+    "points": 11.0,
+    "pace": 57.8,
     "prior": {
      "p10": 61.2,
      "p50": 65.6,
      "p90": 69.9
     },
     "ros_prior": {
-     "p10": 50.2,
-     "p50": 53.9,
-     "p90": 57.4
+     "p10": 49.5,
+     "p50": 53.1,
+     "p90": 56.6
     },
     "ros": {
-     "mean": 52.4,
-     "p10": 40.1,
-     "p90": 64.0,
-     "games_left": 69
+     "mean": 51.6,
+     "p10": 39.5,
+     "p90": 63.0,
+     "games_left": 68
     },
     "final": {
-     "mean": 62.4,
-     "p10": 50.1,
+     "mean": 62.6,
+     "p10": 50.5,
      "p90": 74.0
     },
     "luck": {
-     "expected_points": 11.7,
-     "net_points": -1.7,
+     "expected_points": 12.2,
+     "net_points": -1.2,
      "goals": {
-      "obs": 2,
-      "expected": 4.9,
-      "shots": 20,
-      "sh_obs": 0.1,
-      "sh_expected": 0.244,
-      "percentile": 0.065
+      "obs": 3,
+      "expected": 5.0,
+      "shots": 22,
+      "sh_obs": 0.136,
+      "sh_expected": 0.225,
+      "percentile": 0.167
      },
      "assists": {
-      "shots": 98,
-      "sh_obs": 0.143,
-      "sh_expected": 0.122,
-      "percentile": 0.745,
+      "shots": 107,
+      "sh_obs": 0.131,
+      "sh_expected": 0.118,
+      "percentile": 0.673,
       "obs_goals": 14,
-      "expected_goals": 11.9
+      "expected_goals": 12.6
      },
-     "sh": 0.1,
+     "sh": 0.136,
      "sh_career": 0.165,
-     "g_minus_ixg": -2.1,
-     "oish": 0.143,
+     "g_minus_ixg": -1.2,
+     "oish": 0.131,
      "oish_career": 0.105,
      "toi": 17.0
     },
@@ -2535,57 +2535,57 @@
     "team": "VGK",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 5.0,
-    "a": 3.0,
-    "points": 8.0,
-    "pace": 44.8,
+    "a": 4.0,
+    "points": 9.0,
+    "pace": 47.2,
     "prior": {
      "p10": 54.4,
      "p50": 60.0,
      "p90": 65.6
     },
     "ros_prior": {
-     "p10": 44.7,
-     "p50": 49.3,
-     "p90": 53.9
+     "p10": 44.0,
+     "p50": 48.5,
+     "p90": 53.1
     },
     "ros": {
      "mean": 45.0,
-     "p10": 30.3,
-     "p90": 61.1,
-     "games_left": 69
+     "p10": 30.4,
+     "p90": 61.3,
+     "games_left": 68
     },
     "final": {
-     "mean": 53.0,
-     "p10": 38.3,
-     "p90": 69.1
+     "mean": 54.0,
+     "p10": 39.4,
+     "p90": 70.3
     },
     "luck": {
-     "expected_points": 8.4,
-     "net_points": -0.4,
+     "expected_points": 9.6,
+     "net_points": -0.6,
      "goals": {
       "obs": 5,
-      "expected": 5.9,
-      "shots": 35,
-      "sh_obs": 0.143,
-      "sh_expected": 0.168,
-      "percentile": 0.363
+      "expected": 6.3,
+      "shots": 39,
+      "sh_obs": 0.128,
+      "sh_expected": 0.16,
+      "percentile": 0.309
      },
      "assists": {
-      "shots": 107,
-      "sh_obs": 0.121,
-      "sh_expected": 0.103,
-      "percentile": 0.742,
-      "obs_goals": 13,
-      "expected_goals": 11.0
+      "shots": 111,
+      "sh_obs": 0.126,
+      "sh_expected": 0.106,
+      "percentile": 0.758,
+      "obs_goals": 14,
+      "expected_goals": 11.8
      },
-     "sh": 0.143,
+     "sh": 0.128,
      "sh_career": 0.137,
-     "g_minus_ixg": -1.3,
-     "oish": 0.121,
+     "g_minus_ixg": -1.7,
+     "oish": 0.126,
      "oish_career": 0.097,
-     "toi": 15.6
+     "toi": 15.5
     },
     "verdict": "conforme"
    },
@@ -3147,57 +3147,57 @@
     "team": "COL",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 7.0,
     "a": 11.0,
     "points": 18.0,
-    "pace": 108.0,
+    "pace": 100.8,
     "prior": {
      "p10": 92.3,
      "p50": 96.8,
      "p90": 101.1
     },
     "ros_prior": {
-     "p10": 76.9,
-     "p50": 80.7,
-     "p90": 84.3
+     "p10": 75.8,
+     "p50": 79.5,
+     "p90": 83.1
     },
     "ros": {
-     "mean": 79.2,
-     "p10": 60.6,
-     "p90": 96.7,
-     "games_left": 70
+     "mean": 76.3,
+     "p10": 58.4,
+     "p90": 93.2,
+     "games_left": 69
     },
     "final": {
-     "mean": 97.2,
-     "p10": 78.6,
-     "p90": 114.7
+     "mean": 94.3,
+     "p10": 76.4,
+     "p90": 111.2
     },
     "luck": {
-     "expected_points": 12.6,
-     "net_points": 5.4,
+     "expected_points": 12.8,
+     "net_points": 5.2,
      "goals": {
       "obs": 7,
-      "expected": 4.5,
-      "shots": 30,
-      "sh_obs": 0.233,
+      "expected": 4.6,
+      "shots": 31,
+      "sh_obs": 0.226,
       "sh_expected": 0.15,
-      "percentile": 0.888
+      "percentile": 0.873
      },
      "assists": {
-      "shots": 144,
-      "sh_obs": 0.153,
-      "sh_expected": 0.112,
-      "percentile": 0.931,
-      "obs_goals": 22,
-      "expected_goals": 16.2
+      "shots": 149,
+      "sh_obs": 0.154,
+      "sh_expected": 0.115,
+      "percentile": 0.93,
+      "obs_goals": 23,
+      "expected_goals": 17.1
      },
-     "sh": 0.233,
+     "sh": 0.226,
      "sh_career": 0.131,
-     "g_minus_ixg": 3.0,
-     "oish": 0.153,
+     "g_minus_ixg": 2.8,
+     "oish": 0.154,
      "oish_career": 0.106,
-     "toi": 19.9
+     "toi": 19.7
     },
     "verdict": "chanceux"
    },
@@ -3394,6 +3394,68 @@
     "verdict": "conforme"
    },
    {
+    "espn_id": 5349,
+    "name": "Nazem Kadri",
+    "pos": "C",
+    "group": "F",
+    "team": "COL",
+    "slot": "F",
+    "injury": null,
+    "gp": 15.0,
+    "g": 4.0,
+    "a": 9.0,
+    "points": 13.0,
+    "pace": 72.8,
+    "prior": {
+     "p10": 49.2,
+     "p50": 57.7,
+     "p90": 66.5
+    },
+    "ros_prior": {
+     "p10": 40.4,
+     "p50": 47.4,
+     "p90": 54.6
+    },
+    "ros": {
+     "mean": 52.6,
+     "p10": 40.3,
+     "p90": 64.3,
+     "games_left": 69
+    },
+    "final": {
+     "mean": 65.6,
+     "p10": 53.3,
+     "p90": 77.3
+    },
+    "luck": {
+     "expected_points": 13.6,
+     "net_points": -0.6,
+     "goals": {
+      "obs": 4,
+      "expected": 4.8,
+      "shots": 39,
+      "sh_obs": 0.103,
+      "sh_expected": 0.124,
+      "percentile": 0.367
+     },
+     "assists": {
+      "shots": 138,
+      "sh_obs": 0.13,
+      "sh_expected": 0.128,
+      "percentile": 0.55,
+      "obs_goals": 18,
+      "expected_goals": 17.6
+     },
+     "sh": 0.103,
+     "sh_career": 0.108,
+     "g_minus_ixg": -1.0,
+     "oish": 0.13,
+     "oish_career": 0.1,
+     "toi": 19.1
+    },
+    "verdict": "conforme"
+   },
+   {
     "espn_id": 4874723,
     "name": "Dylan Guenther",
     "pos": "RW",
@@ -3452,68 +3514,6 @@
      "oish": 0.176,
      "oish_career": 0.117,
      "toi": 17.3
-    },
-    "verdict": "conforme"
-   },
-   {
-    "espn_id": 5349,
-    "name": "Nazem Kadri",
-    "pos": "C",
-    "group": "F",
-    "team": "COL",
-    "slot": "F",
-    "injury": null,
-    "gp": 14.0,
-    "g": 2.0,
-    "a": 9.0,
-    "points": 11.0,
-    "pace": 66.0,
-    "prior": {
-     "p10": 49.2,
-     "p50": 57.7,
-     "p90": 66.5
-    },
-    "ros_prior": {
-     "p10": 41.0,
-     "p50": 48.1,
-     "p90": 55.4
-    },
-    "ros": {
-     "mean": 52.0,
-     "p10": 39.8,
-     "p90": 63.6,
-     "games_left": 70
-    },
-    "final": {
-     "mean": 63.0,
-     "p10": 50.8,
-     "p90": 74.6
-    },
-    "luck": {
-     "expected_points": 12.6,
-     "net_points": -1.6,
-     "goals": {
-      "obs": 2,
-      "expected": 4.4,
-      "shots": 35,
-      "sh_obs": 0.057,
-      "sh_expected": 0.127,
-      "percentile": 0.108
-     },
-     "assists": {
-      "shots": 131,
-      "sh_obs": 0.137,
-      "sh_expected": 0.124,
-      "percentile": 0.682,
-      "obs_goals": 18,
-      "expected_goals": 16.3
-     },
-     "sh": 0.057,
-     "sh_career": 0.108,
-     "g_minus_ixg": -2.6,
-     "oish": 0.137,
-     "oish_career": 0.1,
-     "toi": 19.3
     },
     "verdict": "conforme"
    },
@@ -3717,59 +3717,59 @@
     "team": "BOS",
     "slot": "D",
     "injury": null,
-    "gp": 9.0,
+    "gp": 10.0,
     "g": 1.0,
     "a": 7.0,
     "points": 8.0,
-    "pace": 74.7,
+    "pace": 67.2,
     "prior": {
      "p10": 48.5,
      "p50": 55.3,
      "p90": 62.3
     },
     "ros_prior": {
-     "p10": 42.9,
-     "p50": 48.9,
-     "p90": 55.1
+     "p10": 42.2,
+     "p50": 48.2,
+     "p90": 54.3
     },
     "ros": {
-     "mean": 51.7,
-     "p10": 36.0,
-     "p90": 67.6,
-     "games_left": 69
+     "mean": 49.5,
+     "p10": 34.5,
+     "p90": 64.7,
+     "games_left": 68
     },
     "final": {
-     "mean": 59.7,
-     "p10": 44.0,
-     "p90": 75.6
+     "mean": 57.5,
+     "p10": 42.5,
+     "p90": 72.7
     },
     "luck": {
-     "expected_points": 7.3,
-     "net_points": 0.7,
+     "expected_points": 7.5,
+     "net_points": 0.5,
      "goals": {
       "obs": 1,
-      "expected": 1.4,
-      "shots": 17,
-      "sh_obs": 0.059,
-      "sh_expected": 0.082,
-      "percentile": 0.413
+      "expected": 1.5,
+      "shots": 18,
+      "sh_obs": 0.056,
+      "sh_expected": 0.085,
+      "percentile": 0.371
      },
      "assists": {
-      "shots": 93,
-      "sh_obs": 0.172,
-      "sh_expected": 0.146,
-      "percentile": 0.765,
-      "obs_goals": 16,
-      "expected_goals": 13.6
+      "shots": 102,
+      "sh_obs": 0.167,
+      "sh_expected": 0.142,
+      "percentile": 0.769,
+      "obs_goals": 17,
+      "expected_goals": 14.4
      },
-     "sh": 0.059,
+     "sh": 0.056,
      "sh_career": 0.074,
-     "g_minus_ixg": -0.3,
-     "oish": 0.172,
+     "g_minus_ixg": -0.5,
+     "oish": 0.167,
      "oish_career": 0.115,
-     "toi": 25.1
+     "toi": 25.2
     },
-    "verdict": "petit_echantillon"
+    "verdict": "conforme"
    },
    {
     "espn_id": 4378656,
@@ -4193,57 +4193,57 @@
     "team": "FLA",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 4.0,
-    "a": 16.0,
-    "points": 20.0,
-    "pace": 120.0,
+    "a": 17.0,
+    "points": 21.0,
+    "pace": 117.6,
     "prior": {
      "p10": 63.4,
      "p50": 80.3,
      "p90": 98.3
     },
     "ros_prior": {
-     "p10": 52.8,
-     "p50": 66.9,
-     "p90": 81.9
+     "p10": 52.1,
+     "p50": 66.0,
+     "p90": 80.7
     },
     "ros": {
-     "mean": 76.5,
-     "p10": 58.6,
-     "p90": 93.5,
-     "games_left": 70
+     "mean": 75.7,
+     "p10": 58.0,
+     "p90": 92.5,
+     "games_left": 69
     },
     "final": {
-     "mean": 96.5,
-     "p10": 78.6,
+     "mean": 96.7,
+     "p10": 79.0,
      "p90": 113.5
     },
     "luck": {
-     "expected_points": 17.3,
-     "net_points": 2.7,
+     "expected_points": 18.8,
+     "net_points": 2.2,
      "goals": {
       "obs": 4,
-      "expected": 3.5,
-      "shots": 29,
-      "sh_obs": 0.138,
+      "expected": 3.6,
+      "shots": 30,
+      "sh_obs": 0.133,
       "sh_expected": 0.12,
-      "percentile": 0.635
+      "percentile": 0.611
      },
      "assists": {
-      "shots": 137,
-      "sh_obs": 0.175,
-      "sh_expected": 0.151,
-      "percentile": 0.787,
-      "obs_goals": 24,
-      "expected_goals": 20.7
+      "shots": 146,
+      "sh_obs": 0.171,
+      "sh_expected": 0.153,
+      "percentile": 0.729,
+      "obs_goals": 25,
+      "expected_goals": 22.4
      },
-     "sh": 0.138,
+     "sh": 0.133,
      "sh_career": 0.128,
-     "g_minus_ixg": 0.4,
-     "oish": 0.175,
+     "g_minus_ixg": 0.3,
+     "oish": 0.171,
      "oish_career": 0.112,
-     "toi": 18.8
+     "toi": 18.9
     },
     "verdict": "conforme"
    },
@@ -4255,57 +4255,57 @@
     "team": "VGK",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
-    "g": 9.0,
+    "gp": 16.0,
+    "g": 10.0,
     "a": 8.0,
-    "points": 17.0,
-    "pace": 95.2,
+    "points": 18.0,
+    "pace": 94.5,
     "prior": {
      "p10": 73.6,
      "p50": 89.7,
      "p90": 105.7
     },
     "ros_prior": {
-     "p10": 60.5,
-     "p50": 73.7,
-     "p90": 86.8
+     "p10": 59.6,
+     "p50": 72.6,
+     "p90": 85.6
     },
     "ros": {
-     "mean": 72.6,
-     "p10": 55.6,
-     "p90": 88.7,
-     "games_left": 69
+     "mean": 71.3,
+     "p10": 54.6,
+     "p90": 87.1,
+     "games_left": 68
     },
     "final": {
-     "mean": 89.6,
+     "mean": 89.3,
      "p10": 72.6,
-     "p90": 105.7
+     "p90": 105.1
     },
     "luck": {
-     "expected_points": 13.9,
-     "net_points": 3.1,
+     "expected_points": 14.6,
+     "net_points": 3.4,
      "goals": {
-      "obs": 9,
-      "expected": 6.2,
-      "shots": 30,
-      "sh_obs": 0.3,
+      "obs": 10,
+      "expected": 6.7,
+      "shots": 32,
+      "sh_obs": 0.312,
       "sh_expected": 0.208,
-      "percentile": 0.886
+      "percentile": 0.918
      },
      "assists": {
-      "shots": 117,
-      "sh_obs": 0.128,
-      "sh_expected": 0.122,
-      "percentile": 0.588,
+      "shots": 124,
+      "sh_obs": 0.121,
+      "sh_expected": 0.12,
+      "percentile": 0.521,
       "obs_goals": 15,
-      "expected_goals": 14.3
+      "expected_goals": 14.9
      },
-     "sh": 0.3,
+     "sh": 0.312,
      "sh_career": 0.158,
-     "g_minus_ixg": 3.2,
-     "oish": 0.128,
+     "g_minus_ixg": 3.8,
+     "oish": 0.121,
      "oish_career": 0.109,
-     "toi": 18.3
+     "toi": 18.5
     },
     "verdict": "chanceux"
    },
@@ -4441,57 +4441,57 @@
     "team": "COL",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 4.0,
     "a": 5.0,
     "points": 9.0,
-    "pace": 54.0,
+    "pace": 50.4,
     "prior": {
      "p10": 53.9,
      "p50": 59.6,
      "p90": 65.3
     },
     "ros_prior": {
-     "p10": 44.9,
-     "p50": 49.7,
-     "p90": 54.4
+     "p10": 44.3,
+     "p50": 49.0,
+     "p90": 53.6
     },
     "ros": {
-     "mean": 48.5,
-     "p10": 32.8,
-     "p90": 66.0,
-     "games_left": 70
+     "mean": 46.9,
+     "p10": 31.7,
+     "p90": 63.8,
+     "games_left": 69
     },
     "final": {
-     "mean": 57.5,
-     "p10": 41.8,
-     "p90": 75.0
+     "mean": 55.9,
+     "p10": 40.7,
+     "p90": 72.8
     },
     "luck": {
-     "expected_points": 9.6,
-     "net_points": -0.6,
+     "expected_points": 9.9,
+     "net_points": -0.9,
      "goals": {
       "obs": 4,
-      "expected": 5.1,
-      "shots": 27,
-      "sh_obs": 0.148,
-      "sh_expected": 0.187,
-      "percentile": 0.319
+      "expected": 5.2,
+      "shots": 28,
+      "sh_obs": 0.143,
+      "sh_expected": 0.186,
+      "percentile": 0.295
      },
      "assists": {
-      "shots": 76,
+      "shots": 85,
       "sh_obs": 0.118,
-      "sh_expected": 0.107,
-      "percentile": 0.636,
-      "obs_goals": 9,
-      "expected_goals": 8.2
+      "sh_expected": 0.11,
+      "percentile": 0.608,
+      "obs_goals": 10,
+      "expected_goals": 9.3
      },
-     "sh": 0.148,
+     "sh": 0.143,
      "sh_career": 0.145,
-     "g_minus_ixg": -0.5,
+     "g_minus_ixg": -0.6,
      "oish": 0.118,
      "oish_career": 0.093,
-     "toi": 17.9
+     "toi": 17.8
     },
     "verdict": "conforme"
    },
@@ -4565,59 +4565,59 @@
     "team": "SJ",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 3.0,
     "a": 6.0,
     "points": 9.0,
-    "pace": 50.4,
+    "pace": 47.2,
     "prior": {
      "p10": 34.7,
      "p50": 44.9,
      "p90": 55.5
     },
     "ros_prior": {
-     "p10": 28.5,
-     "p50": 36.9,
-     "p90": 45.6
+     "p10": 28.1,
+     "p50": 36.4,
+     "p90": 44.9
     },
     "ros": {
-     "mean": 41.0,
-     "p10": 27.7,
-     "p90": 55.8,
-     "games_left": 69
+     "mean": 40.0,
+     "p10": 27.0,
+     "p90": 54.4,
+     "games_left": 68
     },
     "final": {
-     "mean": 50.0,
-     "p10": 36.7,
-     "p90": 64.8
+     "mean": 49.0,
+     "p10": 36.0,
+     "p90": 63.4
     },
     "luck": {
-     "expected_points": 11.8,
-     "net_points": -2.8,
+     "expected_points": 12.5,
+     "net_points": -3.5,
      "goals": {
       "obs": 3,
-      "expected": 3.5,
-      "shots": 20,
-      "sh_obs": 0.15,
-      "sh_expected": 0.175,
-      "percentile": 0.41
+      "expected": 3.9,
+      "shots": 22,
+      "sh_obs": 0.136,
+      "sh_expected": 0.176,
+      "percentile": 0.337
      },
      "assists": {
-      "shots": 102,
-      "sh_obs": 0.078,
-      "sh_expected": 0.108,
-      "percentile": 0.169,
+      "shots": 105,
+      "sh_obs": 0.076,
+      "sh_expected": 0.109,
+      "percentile": 0.139,
       "obs_goals": 8,
-      "expected_goals": 11.1
+      "expected_goals": 11.5
      },
-     "sh": 0.15,
+     "sh": 0.136,
      "sh_career": null,
-     "g_minus_ixg": -0.5,
-     "oish": 0.078,
+     "g_minus_ixg": -0.9,
+     "oish": 0.076,
      "oish_career": null,
      "toi": 16.3
     },
-    "verdict": "conforme"
+    "verdict": "malchanceux"
    },
    {
     "espn_id": 5149204,
@@ -5165,57 +5165,57 @@
     "team": "CHI",
     "slot": "F",
     "injury": null,
-    "gp": 8.0,
+    "gp": 9.0,
     "g": 4.0,
-    "a": 5.0,
-    "points": 9.0,
-    "pace": 94.5,
+    "a": 6.0,
+    "points": 10.0,
+    "pace": 93.3,
     "prior": {
      "p10": 70.2,
      "p50": 83.5,
      "p90": 96.6
     },
     "ros_prior": {
-     "p10": 63.0,
-     "p50": 74.9,
-     "p90": 86.6
+     "p10": 62.1,
+     "p50": 73.9,
+     "p90": 85.4
     },
     "ros": {
-     "mean": 76.5,
-     "p10": 58.6,
-     "p90": 93.5,
-     "games_left": 70
+     "mean": 74.7,
+     "p10": 57.2,
+     "p90": 91.3,
+     "games_left": 69
     },
     "final": {
-     "mean": 85.5,
-     "p10": 67.6,
-     "p90": 102.5
+     "mean": 84.7,
+     "p10": 67.2,
+     "p90": 101.3
     },
     "luck": {
-     "expected_points": 9.6,
-     "net_points": -0.6,
+     "expected_points": 10.1,
+     "net_points": -0.1,
      "goals": {
       "obs": 4,
-      "expected": 4.1,
-      "shots": 24,
-      "sh_obs": 0.167,
-      "sh_expected": 0.172,
-      "percentile": 0.493
+      "expected": 4.5,
+      "shots": 28,
+      "sh_obs": 0.143,
+      "sh_expected": 0.161,
+      "percentile": 0.423
      },
      "assists": {
-      "shots": 54,
-      "sh_obs": 0.111,
-      "sh_expected": 0.122,
-      "percentile": 0.421,
-      "obs_goals": 6,
-      "expected_goals": 6.6
+      "shots": 63,
+      "sh_obs": 0.127,
+      "sh_expected": 0.119,
+      "percentile": 0.593,
+      "obs_goals": 8,
+      "expected_goals": 7.5
      },
-     "sh": 0.167,
+     "sh": 0.143,
      "sh_career": 0.12,
-     "g_minus_ixg": 0.0,
-     "oish": 0.111,
+     "g_minus_ixg": -0.3,
+     "oish": 0.127,
      "oish_career": 0.123,
-     "toi": 20.5
+     "toi": 20.6
     },
     "verdict": "petit_echantillon"
    },
@@ -6453,121 +6453,59 @@
     "team": "CHI",
     "slot": "F",
     "injury": null,
-    "gp": 12.0,
+    "gp": 13.0,
     "g": 3.0,
     "a": 2.0,
     "points": 5.0,
-    "pace": 35.0,
+    "pace": 32.3,
     "prior": {
      "p10": 47.3,
      "p50": 52.6,
      "p90": 58.1
     },
     "ros_prior": {
-     "p10": 40.4,
-     "p50": 44.9,
-     "p90": 49.6
+     "p10": 39.8,
+     "p50": 44.3,
+     "p90": 48.9
     },
     "ros": {
-     "mean": 43.0,
-     "p10": 29.0,
-     "p90": 58.5,
-     "games_left": 70
-    },
-    "final": {
-     "mean": 48.0,
-     "p10": 34.0,
-     "p90": 63.5
-    },
-    "luck": {
-     "expected_points": 8.3,
-     "net_points": -3.3,
-     "goals": {
-      "obs": 3,
-      "expected": 3.8,
-      "shots": 19,
-      "sh_obs": 0.158,
-      "sh_expected": 0.201,
-      "percentile": 0.342
-     },
-     "assists": {
-      "shots": 64,
-      "sh_obs": 0.047,
-      "sh_expected": 0.106,
-      "percentile": 0.056,
-      "obs_goals": 3,
-      "expected_goals": 6.8
-     },
-     "sh": 0.158,
-     "sh_career": 0.122,
-     "g_minus_ixg": -1.0,
-     "oish": 0.047,
-     "oish_career": 0.106,
-     "toi": 17.3
-    },
-    "verdict": "malchanceux"
-   },
-   {
-    "espn_id": 5291934,
-    "name": "Michael Misa",
-    "pos": "C",
-    "group": "F",
-    "team": "SJ",
-    "slot": "F",
-    "injury": null,
-    "gp": 15.0,
-    "g": 3.0,
-    "a": 4.0,
-    "points": 7.0,
-    "pace": 39.2,
-    "prior": {
-     "p10": 33.1,
-     "p50": 48.4,
-     "p90": 64.3
-    },
-    "ros_prior": {
-     "p10": 27.2,
-     "p50": 39.7,
-     "p90": 52.8
-    },
-    "ros": {
-     "mean": 35.8,
-     "p10": 24.1,
-     "p90": 48.6,
+     "mean": 42.1,
+     "p10": 28.4,
+     "p90": 57.3,
      "games_left": 69
     },
     "final": {
-     "mean": 42.8,
-     "p10": 31.1,
-     "p90": 55.6
+     "mean": 47.1,
+     "p10": 33.4,
+     "p90": 62.3
     },
     "luck": {
-     "expected_points": 5.5,
-     "net_points": 1.5,
+     "expected_points": 9.3,
+     "net_points": -4.3,
      "goals": {
       "obs": 3,
-      "expected": 2.9,
-      "shots": 17,
-      "sh_obs": 0.176,
-      "sh_expected": 0.17,
-      "percentile": 0.554
+      "expected": 4.1,
+      "shots": 22,
+      "sh_obs": 0.136,
+      "sh_expected": 0.187,
+      "percentile": 0.29
      },
      "assists": {
-      "shots": 72,
-      "sh_obs": 0.125,
-      "sh_expected": 0.082,
-      "percentile": 0.896,
-      "obs_goals": 9,
-      "expected_goals": 5.9
+      "shots": 76,
+      "sh_obs": 0.039,
+      "sh_expected": 0.101,
+      "percentile": 0.028,
+      "obs_goals": 3,
+      "expected_goals": 7.7
      },
-     "sh": 0.176,
-     "sh_career": 0.155,
-     "g_minus_ixg": 0.1,
-     "oish": 0.125,
-     "oish_career": 0.103,
-     "toi": 13.6
+     "sh": 0.136,
+     "sh_career": 0.122,
+     "g_minus_ixg": -1.3,
+     "oish": 0.039,
+     "oish_career": 0.106,
+     "toi": 17.7
     },
-    "verdict": "conforme"
+    "verdict": "malchanceux"
    },
    {
     "espn_id": 5291941,
@@ -6632,6 +6570,68 @@
     "verdict": "conforme"
    },
    {
+    "espn_id": 5291934,
+    "name": "Michael Misa",
+    "pos": "C",
+    "group": "F",
+    "team": "SJ",
+    "slot": "F",
+    "injury": null,
+    "gp": 16.0,
+    "g": 3.0,
+    "a": 4.0,
+    "points": 7.0,
+    "pace": 36.8,
+    "prior": {
+     "p10": 33.1,
+     "p50": 48.4,
+     "p90": 64.3
+    },
+    "ros_prior": {
+     "p10": 26.8,
+     "p50": 39.2,
+     "p90": 52.1
+    },
+    "ros": {
+     "mean": 34.6,
+     "p10": 23.3,
+     "p90": 47.0,
+     "games_left": 68
+    },
+    "final": {
+     "mean": 41.6,
+     "p10": 30.3,
+     "p90": 54.0
+    },
+    "luck": {
+     "expected_points": 5.7,
+     "net_points": 1.3,
+     "goals": {
+      "obs": 3,
+      "expected": 3.0,
+      "shots": 18,
+      "sh_obs": 0.167,
+      "sh_expected": 0.166,
+      "percentile": 0.528
+     },
+     "assists": {
+      "shots": 81,
+      "sh_obs": 0.123,
+      "sh_expected": 0.085,
+      "percentile": 0.885,
+      "obs_goals": 10,
+      "expected_goals": 6.9
+     },
+     "sh": 0.167,
+     "sh_career": 0.155,
+     "g_minus_ixg": -0.0,
+     "oish": 0.123,
+     "oish_career": 0.103,
+     "toi": 13.9
+    },
+    "verdict": "conforme"
+   },
+   {
     "espn_id": 4565227,
     "name": "Moritz Seider",
     "pos": "D",
@@ -6639,57 +6639,57 @@
     "team": "DET",
     "slot": "D",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 0.0,
-    "a": 8.0,
-    "points": 8.0,
-    "pace": 48.0,
+    "a": 10.0,
+    "points": 10.0,
+    "pace": 56.0,
     "prior": {
      "p10": 53.1,
      "p50": 57.8,
      "p90": 62.5
     },
     "ros_prior": {
-     "p10": 44.3,
-     "p50": 48.2,
-     "p90": 52.1
+     "p10": 43.6,
+     "p50": 47.5,
+     "p90": 51.3
     },
     "ros": {
-     "mean": 47.7,
-     "p10": 31.9,
-     "p90": 66.9,
-     "games_left": 70
+     "mean": 49.5,
+     "p10": 34.5,
+     "p90": 64.7,
+     "games_left": 69
     },
     "final": {
-     "mean": 55.7,
-     "p10": 39.9,
-     "p90": 74.9
+     "mean": 59.5,
+     "p10": 44.5,
+     "p90": 74.7
     },
     "luck": {
-     "expected_points": 10.0,
-     "net_points": -2.0,
+     "expected_points": 11.9,
+     "net_points": -1.9,
      "goals": {
       "obs": 0,
-      "expected": 1.2,
-      "shots": 27,
+      "expected": 1.3,
+      "shots": 29,
       "sh_obs": 0.0,
-      "sh_expected": 0.046,
-      "percentile": 0.142
+      "sh_expected": 0.045,
+      "percentile": 0.13
      },
      "assists": {
-      "shots": 163,
-      "sh_obs": 0.117,
-      "sh_expected": 0.128,
-      "percentile": 0.341,
-      "obs_goals": 19,
-      "expected_goals": 20.9
+      "shots": 173,
+      "sh_obs": 0.121,
+      "sh_expected": 0.129,
+      "percentile": 0.4,
+      "obs_goals": 21,
+      "expected_goals": 22.2
      },
      "sh": 0.0,
      "sh_career": 0.048,
-     "g_minus_ixg": -1.2,
-     "oish": 0.117,
+     "g_minus_ixg": -1.3,
+     "oish": 0.121,
      "oish_career": 0.129,
-     "toi": 25.8
+     "toi": 25.9
     },
     "verdict": "conforme"
    },
@@ -7301,11 +7301,11 @@
     "team": "PIT",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "OUT",
      "type": "Lower Body",
-     "expected_return": "2026-11-03",
+     "expected_return": "2026-11-05",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 13.0,
     "g": 6.0,
@@ -7313,25 +7313,25 @@
     "points": 11.0,
     "pace": 71.1,
     "prior": {
-     "p10": 51.6,
-     "p50": 64.8,
-     "p90": 78.8
+     "p10": 51.0,
+     "p50": 64.0,
+     "p90": 77.8
     },
     "ros_prior": {
-     "p10": 43.5,
-     "p50": 54.6,
-     "p90": 66.4
+     "p10": 42.9,
+     "p50": 53.8,
+     "p90": 65.5
     },
     "ros": {
-     "mean": 55.8,
-     "p10": 42.7,
-     "p90": 68.1,
-     "games_left": 70
+     "mean": 55.0,
+     "p10": 42.1,
+     "p90": 67.2,
+     "games_left": 69
     },
     "final": {
-     "mean": 66.8,
-     "p10": 53.7,
-     "p90": 79.1
+     "mean": 66.0,
+     "p10": 53.1,
+     "p90": 78.2
     },
     "luck": {
      "expected_points": 10.4,
@@ -7435,7 +7435,7 @@
      "type": "Suspension",
      "expected_return": "2026-11-14",
      "out_for_season": false,
-     "games_missed": 6
+     "games_missed": 5
     },
     "gp": 10.0,
     "g": 2.0,
@@ -7561,57 +7561,57 @@
     "team": "FLA",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
-    "g": 3.0,
+    "gp": 15.0,
+    "g": 4.0,
     "a": 3.0,
-    "points": 6.0,
-    "pace": 36.0,
+    "points": 7.0,
+    "pace": 39.2,
     "prior": {
      "p10": 50.0,
      "p50": 56.7,
      "p90": 63.5
     },
     "ros_prior": {
-     "p10": 41.6,
-     "p50": 47.2,
-     "p90": 52.9
+     "p10": 41.0,
+     "p50": 46.6,
+     "p90": 52.1
     },
     "ros": {
-     "mean": 42.3,
-     "p10": 28.6,
-     "p90": 57.6,
-     "games_left": 70
+     "mean": 42.2,
+     "p10": 28.5,
+     "p90": 57.4,
+     "games_left": 69
     },
     "final": {
-     "mean": 48.3,
-     "p10": 34.6,
-     "p90": 63.6
+     "mean": 49.2,
+     "p10": 35.5,
+     "p90": 64.4
     },
     "luck": {
-     "expected_points": 7.4,
-     "net_points": -1.4,
+     "expected_points": 8.1,
+     "net_points": -1.1,
      "goals": {
-      "obs": 3,
-      "expected": 3.8,
-      "shots": 34,
-      "sh_obs": 0.088,
+      "obs": 4,
+      "expected": 4.3,
+      "shots": 39,
+      "sh_obs": 0.103,
       "sh_expected": 0.111,
-      "percentile": 0.362
+      "percentile": 0.462
      },
      "assists": {
-      "shots": 109,
-      "sh_obs": 0.101,
-      "sh_expected": 0.122,
-      "percentile": 0.262,
+      "shots": 114,
+      "sh_obs": 0.096,
+      "sh_expected": 0.123,
+      "percentile": 0.197,
       "obs_goals": 11,
-      "expected_goals": 13.3
+      "expected_goals": 14.1
      },
-     "sh": 0.088,
+     "sh": 0.103,
      "sh_career": 0.106,
-     "g_minus_ixg": -1.3,
-     "oish": 0.101,
+     "g_minus_ixg": -0.9,
+     "oish": 0.096,
      "oish_career": 0.087,
-     "toi": 17.7
+     "toi": 17.8
     },
     "verdict": "conforme"
    },
@@ -7623,55 +7623,55 @@
     "team": "COL",
     "slot": "D",
     "injury": null,
-    "gp": 13.0,
+    "gp": 14.0,
     "g": 3.0,
-    "a": 12.0,
-    "points": 15.0,
-    "pace": 96.9,
+    "a": 13.0,
+    "points": 16.0,
+    "pace": 96.0,
     "prior": {
      "p10": 85.4,
      "p50": 90.0,
      "p90": 94.1
     },
     "ros_prior": {
-     "p10": 72.0,
-     "p50": 75.9,
-     "p90": 79.4
+     "p10": 71.0,
+     "p50": 74.8,
+     "p90": 78.3
     },
     "ros": {
-     "mean": 75.8,
-     "p10": 52.8,
-     "p90": 99.0,
-     "games_left": 70
+     "mean": 73.2,
+     "p10": 51.0,
+     "p90": 95.7,
+     "games_left": 69
     },
     "final": {
-     "mean": 90.8,
-     "p10": 67.8,
-     "p90": 114.0
+     "mean": 89.2,
+     "p10": 67.0,
+     "p90": 111.7
     },
     "luck": {
-     "expected_points": 13.6,
-     "net_points": 1.4,
+     "expected_points": 13.7,
+     "net_points": 2.3,
      "goals": {
       "obs": 3,
-      "expected": 2.5,
-      "shots": 37,
-      "sh_obs": 0.081,
-      "sh_expected": 0.068,
-      "percentile": 0.646
+      "expected": 2.6,
+      "shots": 39,
+      "sh_obs": 0.077,
+      "sh_expected": 0.066,
+      "percentile": 0.631
      },
      "assists": {
-      "shots": 149,
-      "sh_obs": 0.141,
-      "sh_expected": 0.131,
-      "percentile": 0.652,
-      "obs_goals": 21,
-      "expected_goals": 19.5
+      "shots": 159,
+      "sh_obs": 0.157,
+      "sh_expected": 0.135,
+      "percentile": 0.796,
+      "obs_goals": 25,
+      "expected_goals": 21.4
      },
-     "sh": 0.081,
+     "sh": 0.077,
      "sh_career": 0.103,
-     "g_minus_ixg": 0.7,
-     "oish": 0.141,
+     "g_minus_ixg": 0.6,
+     "oish": 0.157,
      "oish_career": 0.127,
      "toi": 22.6
     },
@@ -7871,57 +7871,57 @@
     "team": "COL",
     "slot": "D",
     "injury": null,
-    "gp": 13.0,
+    "gp": 14.0,
     "g": 0.0,
-    "a": 5.0,
-    "points": 5.0,
-    "pace": 32.3,
+    "a": 6.0,
+    "points": 6.0,
+    "pace": 36.0,
     "prior": {
      "p10": 27.8,
      "p50": 34.2,
      "p90": 40.5
     },
     "ros_prior": {
-     "p10": 23.5,
-     "p50": 28.9,
-     "p90": 34.2
+     "p10": 23.1,
+     "p50": 28.4,
+     "p90": 33.7
     },
     "ros": {
-     "mean": 26.5,
-     "p10": 16.3,
-     "p90": 35.7,
-     "games_left": 70
+     "mean": 27.1,
+     "p10": 16.7,
+     "p90": 36.6,
+     "games_left": 69
     },
     "final": {
-     "mean": 31.5,
-     "p10": 21.3,
-     "p90": 40.7
+     "mean": 33.1,
+     "p10": 22.7,
+     "p90": 42.6
     },
     "luck": {
-     "expected_points": 3.9,
-     "net_points": 1.1,
+     "expected_points": 4.7,
+     "net_points": 1.3,
      "goals": {
       "obs": 0,
-      "expected": 0.7,
-      "shots": 17,
+      "expected": 0.9,
+      "shots": 19,
       "sh_obs": 0.0,
-      "sh_expected": 0.043,
-      "percentile": 0.235
+      "sh_expected": 0.046,
+      "percentile": 0.203
      },
      "assists": {
-      "shots": 88,
+      "shots": 100,
       "sh_obs": 0.17,
-      "sh_expected": 0.107,
-      "percentile": 0.964,
-      "obs_goals": 15,
-      "expected_goals": 9.5
+      "sh_expected": 0.109,
+      "percentile": 0.969,
+      "obs_goals": 17,
+      "expected_goals": 10.9
      },
      "sh": 0.0,
      "sh_career": 0.052,
-     "g_minus_ixg": -0.7,
+     "g_minus_ixg": -0.9,
      "oish": 0.17,
      "oish_career": 0.108,
-     "toi": 17.4
+     "toi": 17.3
     },
     "verdict": "conforme"
    },
@@ -7977,7 +7977,7 @@
      "type": "Knee",
      "expected_return": "2026-11-27",
      "out_for_season": false,
-     "games_missed": 11
+     "games_missed": 10
     },
     "gp": 2.0,
     "g": 0.0,
@@ -8043,57 +8043,57 @@
     "team": "DET",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
-    "g": 6.0,
+    "gp": 15.0,
+    "g": 7.0,
     "a": 9.0,
-    "points": 15.0,
-    "pace": 90.0,
+    "points": 16.0,
+    "pace": 89.6,
     "prior": {
      "p10": 73.0,
      "p50": 77.8,
      "p90": 82.4
     },
     "ros_prior": {
-     "p10": 60.8,
-     "p50": 64.8,
-     "p90": 68.6
+     "p10": 60.0,
+     "p50": 63.9,
+     "p90": 67.7
     },
     "ros": {
-     "mean": 68.3,
-     "p10": 52.3,
-     "p90": 83.4,
-     "games_left": 70
+     "mean": 67.0,
+     "p10": 51.3,
+     "p90": 81.9,
+     "games_left": 69
     },
     "final": {
-     "mean": 83.3,
+     "mean": 83.0,
      "p10": 67.3,
-     "p90": 98.4
+     "p90": 97.9
     },
     "luck": {
-     "expected_points": 14.8,
-     "net_points": 0.2,
+     "expected_points": 15.4,
+     "net_points": 0.6,
      "goals": {
-      "obs": 6,
-      "expected": 7.4,
-      "shots": 51,
-      "sh_obs": 0.118,
-      "sh_expected": 0.145,
-      "percentile": 0.306
+      "obs": 7,
+      "expected": 7.7,
+      "shots": 55,
+      "sh_obs": 0.127,
+      "sh_expected": 0.141,
+      "percentile": 0.406
      },
      "assists": {
-      "shots": 120,
-      "sh_obs": 0.175,
-      "sh_expected": 0.144,
-      "percentile": 0.832,
+      "shots": 128,
+      "sh_obs": 0.164,
+      "sh_expected": 0.14,
+      "percentile": 0.782,
       "obs_goals": 21,
-      "expected_goals": 17.3
+      "expected_goals": 18.0
      },
-     "sh": 0.118,
+     "sh": 0.127,
      "sh_career": 0.142,
-     "g_minus_ixg": -0.5,
-     "oish": 0.175,
+     "g_minus_ixg": 0.2,
+     "oish": 0.164,
      "oish_career": 0.105,
-     "toi": 19.9
+     "toi": 19.8
     },
     "verdict": "conforme"
    },
@@ -8105,57 +8105,57 @@
     "team": "FLA",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 8.0,
-    "a": 7.0,
-    "points": 15.0,
-    "pace": 90.0,
+    "a": 8.0,
+    "points": 16.0,
+    "pace": 89.6,
     "prior": {
      "p10": 63.6,
      "p50": 73.8,
      "p90": 84.1
     },
     "ros_prior": {
-     "p10": 53.0,
-     "p50": 61.5,
-     "p90": 70.1
+     "p10": 52.3,
+     "p50": 60.6,
+     "p90": 69.1
     },
     "ros": {
-     "mean": 62.7,
-     "p10": 48.0,
-     "p90": 76.6,
-     "games_left": 70
+     "mean": 62.3,
+     "p10": 47.7,
+     "p90": 76.1,
+     "games_left": 69
     },
     "final": {
-     "mean": 77.7,
-     "p10": 63.0,
-     "p90": 91.6
+     "mean": 78.3,
+     "p10": 63.7,
+     "p90": 92.1
     },
     "luck": {
-     "expected_points": 11.0,
-     "net_points": 4.0,
+     "expected_points": 12.3,
+     "net_points": 3.7,
      "goals": {
       "obs": 8,
-      "expected": 5.5,
-      "shots": 46,
-      "sh_obs": 0.174,
-      "sh_expected": 0.121,
-      "percentile": 0.86
+      "expected": 5.9,
+      "shots": 48,
+      "sh_obs": 0.167,
+      "sh_expected": 0.122,
+      "percentile": 0.825
      },
      "assists": {
-      "shots": 110,
-      "sh_obs": 0.164,
-      "sh_expected": 0.126,
-      "percentile": 0.875,
-      "obs_goals": 18,
-      "expected_goals": 13.9
+      "shots": 119,
+      "sh_obs": 0.16,
+      "sh_expected": 0.129,
+      "percentile": 0.84,
+      "obs_goals": 19,
+      "expected_goals": 15.3
      },
-     "sh": 0.174,
+     "sh": 0.167,
      "sh_career": 0.097,
-     "g_minus_ixg": 1.7,
-     "oish": 0.164,
+     "g_minus_ixg": 1.3,
+     "oish": 0.16,
      "oish_career": 0.106,
-     "toi": 16.4
+     "toi": 16.6
     },
     "verdict": "chanceux"
    },
@@ -8346,68 +8346,6 @@
     "verdict": "conforme"
    },
    {
-    "espn_id": 3735,
-    "name": "Patrick Kane",
-    "pos": "RW",
-    "group": "F",
-    "team": "CHI",
-    "slot": "F",
-    "injury": null,
-    "gp": 14.0,
-    "g": 1.0,
-    "a": 8.0,
-    "points": 9.0,
-    "pace": 54.0,
-    "prior": {
-     "p10": 51.8,
-     "p50": 62.7,
-     "p90": 74.3
-    },
-    "ros_prior": {
-     "p10": 43.1,
-     "p50": 52.3,
-     "p90": 61.9
-    },
-    "ros": {
-     "mean": 52.7,
-     "p10": 40.4,
-     "p90": 64.4,
-     "games_left": 70
-    },
-    "final": {
-     "mean": 61.7,
-     "p10": 49.4,
-     "p90": 73.4
-    },
-    "luck": {
-     "expected_points": 12.3,
-     "net_points": -3.3,
-     "goals": {
-      "obs": 1,
-      "expected": 3.7,
-      "shots": 25,
-      "sh_obs": 0.04,
-      "sh_expected": 0.147,
-      "percentile": 0.06
-     },
-     "assists": {
-      "shots": 100,
-      "sh_obs": 0.1,
-      "sh_expected": 0.108,
-      "percentile": 0.411,
-      "obs_goals": 10,
-      "expected_goals": 10.8
-     },
-     "sh": 0.04,
-     "sh_career": 0.116,
-     "g_minus_ixg": -2.1,
-     "oish": 0.1,
-     "oish_career": 0.11,
-     "toi": 18.6
-    },
-    "verdict": "malchanceux"
-   },
-   {
     "espn_id": 5160,
     "name": "John Tavares",
     "pos": "C",
@@ -8415,11 +8353,11 @@
     "team": "TOR",
     "slot": "F",
     "injury": {
-     "status": "INJURY_RESERVE",
+     "status": "OUT",
      "type": "Lower Body",
-     "expected_return": "2026-11-27",
+     "expected_return": "2026-11-07",
      "out_for_season": false,
-     "games_missed": 10
+     "games_missed": 1
     },
     "gp": 7.0,
     "g": 2.0,
@@ -8427,25 +8365,25 @@
     "points": 7.0,
     "pace": 84.0,
     "prior": {
-     "p10": 48.9,
-     "p50": 52.9,
-     "p90": 57.2
+     "p10": 55.7,
+     "p50": 60.2,
+     "p90": 65.1
     },
     "ros_prior": {
-     "p10": 43.6,
-     "p50": 47.2,
-     "p90": 51.0
+     "p10": 50.4,
+     "p50": 54.5,
+     "p90": 58.9
     },
     "ros": {
-     "mean": 48.9,
-     "p10": 36.2,
-     "p90": 61.0,
-     "games_left": 58
+     "mean": 56.5,
+     "p10": 43.3,
+     "p90": 69.0,
+     "games_left": 67
     },
     "final": {
-     "mean": 55.9,
-     "p10": 43.2,
-     "p90": 68.0
+     "mean": 63.5,
+     "p10": 50.3,
+     "p90": 76.0
     },
     "luck": {
      "expected_points": 6.2,
@@ -8474,6 +8412,74 @@
      "toi": 16.5
     },
     "verdict": "petit_echantillon"
+   },
+   {
+    "espn_id": 3735,
+    "name": "Patrick Kane",
+    "pos": "RW",
+    "group": "F",
+    "team": "CHI",
+    "slot": "F",
+    "injury": {
+     "status": "OUT",
+     "type": "Upper Body",
+     "expected_return": "2026-11-12",
+     "out_for_season": false,
+     "games_missed": 3
+    },
+    "gp": 15.0,
+    "g": 1.0,
+    "a": 8.0,
+    "points": 9.0,
+    "pace": 50.4,
+    "prior": {
+     "p10": 49.9,
+     "p50": 60.5,
+     "p90": 71.7
+    },
+    "ros_prior": {
+     "p10": 40.7,
+     "p50": 49.3,
+     "p90": 58.4
+    },
+    "ros": {
+     "mean": 48.7,
+     "p10": 37.3,
+     "p90": 59.5,
+     "games_left": 66
+    },
+    "final": {
+     "mean": 57.7,
+     "p10": 46.3,
+     "p90": 68.5
+    },
+    "luck": {
+     "expected_points": 12.6,
+     "net_points": -3.6,
+     "goals": {
+      "obs": 1,
+      "expected": 3.7,
+      "shots": 25,
+      "sh_obs": 0.04,
+      "sh_expected": 0.147,
+      "percentile": 0.059
+     },
+     "assists": {
+      "shots": 104,
+      "sh_obs": 0.096,
+      "sh_expected": 0.107,
+      "percentile": 0.373,
+      "obs_goals": 10,
+      "expected_goals": 11.1
+     },
+     "sh": 0.04,
+     "sh_career": 0.116,
+     "g_minus_ixg": -2.1,
+     "oish": 0.096,
+     "oish_career": 0.11,
+     "toi": 18.0
+    },
+    "verdict": "malchanceux"
    },
    {
     "espn_id": 4697725,
@@ -8923,55 +8929,55 @@
     "team": "SJ",
     "slot": "D",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 1.0,
     "a": 1.0,
     "points": 2.0,
-    "pace": 12.0,
+    "pace": 11.2,
     "prior": {
      "p10": 24.0,
      "p50": 27.0,
      "p90": 29.9
     },
     "ros_prior": {
-     "p10": 19.9,
-     "p50": 22.4,
-     "p90": 24.8
+     "p10": 19.7,
+     "p50": 22.1,
+     "p90": 24.5
     },
     "ros": {
-     "mean": 17.8,
-     "p10": 10.9,
-     "p90": 32.4,
-     "games_left": 69
+     "mean": 17.2,
+     "p10": 10.5,
+     "p90": 31.3,
+     "games_left": 68
     },
     "final": {
-     "mean": 19.8,
-     "p10": 12.9,
-     "p90": 34.4
+     "mean": 19.2,
+     "p10": 12.5,
+     "p90": 33.3
     },
     "luck": {
-     "expected_points": 2.4,
-     "net_points": -0.4,
+     "expected_points": 2.5,
+     "net_points": -0.5,
      "goals": {
       "obs": 1,
       "expected": 1.1,
       "shots": 25,
       "sh_obs": 0.04,
       "sh_expected": 0.044,
-      "percentile": 0.511
+      "percentile": 0.508
      },
      "assists": {
-      "shots": 83,
-      "sh_obs": 0.096,
-      "sh_expected": 0.124,
-      "percentile": 0.234,
+      "shots": 89,
+      "sh_obs": 0.09,
+      "sh_expected": 0.127,
+      "percentile": 0.15,
       "obs_goals": 8,
-      "expected_goals": 10.3
+      "expected_goals": 11.3
      },
      "sh": 0.04,
      "sh_career": 0.047,
      "g_minus_ixg": -0.1,
-     "oish": 0.096,
+     "oish": 0.09,
      "oish_career": 0.109,
      "toi": 21.4
     },
@@ -8985,34 +8991,34 @@
     "team": "COL",
     "slot": "G",
     "injury": null,
-    "gp": 10,
+    "gp": 11,
     "g": 0,
     "a": 0,
-    "points": 14,
-    "w": 7,
+    "points": 16,
+    "w": 8,
     "otl": 0,
     "so": 0,
-    "pace": 84.0,
+    "pace": 89.6,
     "prior": {
      "p10": 39.5,
      "p50": 47.5,
      "p90": 55.5
     },
     "ros_prior": {
-     "p10": 32.9,
-     "p50": 39.6,
-     "p90": 46.3
+     "p10": 32.4,
+     "p50": 39.0,
+     "p90": 45.6
     },
     "ros": {
-     "mean": 49.3,
-     "p10": 34.5,
-     "p90": 64.1,
-     "games_left": 70
+     "mean": 50.5,
+     "p10": 35.9,
+     "p90": 65.2,
+     "games_left": 69
     },
     "final": {
-     "mean": 63.3,
-     "p10": 48.5,
-     "p90": 78.1
+     "mean": 66.5,
+     "p10": 51.9,
+     "p90": 81.2
     },
     "luck": null,
     "verdict": null
@@ -9151,57 +9157,57 @@
     "team": "VGK",
     "slot": "F",
     "injury": null,
-    "gp": 13.0,
+    "gp": 14.0,
     "g": 2.0,
-    "a": 13.0,
-    "points": 15.0,
-    "pace": 96.9,
+    "a": 15.0,
+    "points": 17.0,
+    "pace": 102.0,
     "prior": {
      "p10": 83.2,
      "p50": 87.8,
      "p90": 92.1
     },
     "ros_prior": {
-     "p10": 70.0,
-     "p50": 73.8,
-     "p90": 77.5
+     "p10": 69.0,
+     "p50": 72.8,
+     "p90": 76.4
     },
     "ros": {
-     "mean": 75.6,
-     "p10": 57.9,
-     "p90": 92.4,
-     "games_left": 69
+     "mean": 75.8,
+     "p10": 58.0,
+     "p90": 92.6,
+     "games_left": 68
     },
     "final": {
-     "mean": 90.6,
-     "p10": 72.9,
-     "p90": 107.4
+     "mean": 92.8,
+     "p10": 75.0,
+     "p90": 109.6
     },
     "luck": {
-     "expected_points": 14.8,
-     "net_points": 0.2,
+     "expected_points": 16.4,
+     "net_points": 0.6,
      "goals": {
       "obs": 2,
-      "expected": 3.8,
-      "shots": 31,
-      "sh_obs": 0.065,
-      "sh_expected": 0.122,
-      "percentile": 0.173
+      "expected": 4.2,
+      "shots": 32,
+      "sh_obs": 0.062,
+      "sh_expected": 0.13,
+      "percentile": 0.132
      },
      "assists": {
-      "shots": 109,
-      "sh_obs": 0.156,
+      "shots": 118,
+      "sh_obs": 0.161,
       "sh_expected": 0.132,
-      "percentile": 0.773,
-      "obs_goals": 17,
-      "expected_goals": 14.4
+      "percentile": 0.825,
+      "obs_goals": 19,
+      "expected_goals": 15.6
      },
-     "sh": 0.065,
+     "sh": 0.062,
      "sh_career": 0.134,
-     "g_minus_ixg": -1.4,
-     "oish": 0.156,
+     "g_minus_ixg": -1.7,
+     "oish": 0.161,
      "oish_career": 0.126,
-     "toi": 19.7
+     "toi": 20.0
     },
     "verdict": "conforme"
    },
@@ -9523,57 +9529,57 @@
     "team": "BOS",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 3.0,
-    "a": 6.0,
-    "points": 9.0,
-    "pace": 54.0,
+    "a": 7.0,
+    "points": 10.0,
+    "pace": 56.0,
     "prior": {
      "p10": 52.7,
      "p50": 58.3,
      "p90": 63.9
     },
     "ros_prior": {
-     "p10": 43.8,
-     "p50": 48.4,
-     "p90": 53.1
+     "p10": 43.1,
+     "p50": 47.7,
+     "p90": 52.3
     },
     "ros": {
-     "mean": 46.7,
-     "p10": 31.6,
-     "p90": 63.6,
-     "games_left": 69
+     "mean": 46.6,
+     "p10": 31.5,
+     "p90": 63.4,
+     "games_left": 68
     },
     "final": {
-     "mean": 55.7,
-     "p10": 40.6,
-     "p90": 72.6
+     "mean": 56.6,
+     "p10": 41.5,
+     "p90": 73.4
     },
     "luck": {
-     "expected_points": 8.7,
+     "expected_points": 9.7,
      "net_points": 0.3,
      "goals": {
       "obs": 3,
-      "expected": 3.8,
-      "shots": 24,
-      "sh_obs": 0.125,
+      "expected": 3.9,
+      "shots": 25,
+      "sh_obs": 0.12,
       "sh_expected": 0.157,
-      "percentile": 0.36
+      "percentile": 0.328
      },
      "assists": {
-      "shots": 99,
-      "sh_obs": 0.162,
-      "sh_expected": 0.134,
-      "percentile": 0.792,
-      "obs_goals": 16,
-      "expected_goals": 13.3
+      "shots": 109,
+      "sh_obs": 0.156,
+      "sh_expected": 0.129,
+      "percentile": 0.801,
+      "obs_goals": 17,
+      "expected_goals": 14.0
      },
-     "sh": 0.125,
+     "sh": 0.12,
      "sh_career": 0.13,
-     "g_minus_ixg": -0.7,
-     "oish": 0.162,
+     "g_minus_ixg": -0.9,
+     "oish": 0.156,
      "oish_career": 0.104,
-     "toi": 19.0
+     "toi": 19.2
     },
     "verdict": "conforme"
    },
@@ -9647,55 +9653,55 @@
     "team": "COL",
     "slot": "D",
     "injury": null,
-    "gp": 14.0,
-    "g": 4.0,
-    "a": 9.0,
-    "points": 13.0,
-    "pace": 78.0,
+    "gp": 15.0,
+    "g": 5.0,
+    "a": 10.0,
+    "points": 15.0,
+    "pace": 84.0,
     "prior": {
      "p10": 32.3,
      "p50": 37.0,
      "p90": 41.8
     },
     "ros_prior": {
-     "p10": 26.9,
-     "p50": 30.8,
-     "p90": 34.8
+     "p10": 26.6,
+     "p50": 30.4,
+     "p90": 34.3
     },
     "ros": {
-     "mean": 37.3,
-     "p10": 24.9,
-     "p90": 52.3,
-     "games_left": 70
+     "mean": 38.9,
+     "p10": 26.0,
+     "p90": 54.6,
+     "games_left": 69
     },
     "final": {
-     "mean": 50.3,
-     "p10": 37.9,
-     "p90": 65.3
+     "mean": 53.9,
+     "p10": 41.0,
+     "p90": 69.6
     },
     "luck": {
-     "expected_points": 7.7,
-     "net_points": 5.3,
+     "expected_points": 9.2,
+     "net_points": 5.8,
      "goals": {
-      "obs": 4,
-      "expected": 1.5,
-      "shots": 22,
-      "sh_obs": 0.182,
-      "sh_expected": 0.068,
-      "percentile": 0.963
+      "obs": 5,
+      "expected": 2.1,
+      "shots": 24,
+      "sh_obs": 0.208,
+      "sh_expected": 0.087,
+      "percentile": 0.967
      },
      "assists": {
-      "shots": 118,
-      "sh_obs": 0.169,
-      "sh_expected": 0.117,
-      "percentile": 0.955,
-      "obs_goals": 20,
-      "expected_goals": 13.8
+      "shots": 125,
+      "sh_obs": 0.168,
+      "sh_expected": 0.119,
+      "percentile": 0.947,
+      "obs_goals": 21,
+      "expected_goals": 14.9
      },
-     "sh": 0.182,
+     "sh": 0.208,
      "sh_career": 0.061,
-     "g_minus_ixg": 2.6,
-     "oish": 0.169,
+     "g_minus_ixg": 3.0,
+     "oish": 0.168,
      "oish_career": 0.117,
      "toi": 20.7
     },
@@ -9775,7 +9781,7 @@
      "type": "Upper Body",
      "expected_return": "2026-11-04",
      "out_for_season": false,
-     "games_missed": 1
+     "games_missed": 0
     },
     "gp": 6.0,
     "g": 0.0,
@@ -9839,57 +9845,57 @@
     "team": "VGK",
     "slot": "D",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 2.0,
     "a": 3.0,
     "points": 5.0,
-    "pace": 28.0,
+    "pace": 26.2,
     "prior": {
      "p10": 33.2,
      "p50": 38.8,
      "p90": 44.4
     },
     "ros_prior": {
-     "p10": 27.3,
-     "p50": 31.9,
-     "p90": 36.5
+     "p10": 26.9,
+     "p50": 31.4,
+     "p90": 36.0
     },
     "ros": {
-     "mean": 29.3,
-     "p10": 18.1,
-     "p90": 39.6,
-     "games_left": 69
+     "mean": 28.7,
+     "p10": 17.7,
+     "p90": 38.8,
+     "games_left": 68
     },
     "final": {
-     "mean": 34.3,
-     "p10": 23.1,
-     "p90": 44.6
+     "mean": 33.7,
+     "p10": 22.7,
+     "p90": 43.8
     },
     "luck": {
-     "expected_points": 5.9,
-     "net_points": -0.9,
+     "expected_points": 6.4,
+     "net_points": -1.4,
      "goals": {
       "obs": 2,
-      "expected": 1.6,
-      "shots": 26,
-      "sh_obs": 0.077,
-      "sh_expected": 0.06,
-      "percentile": 0.662
+      "expected": 1.8,
+      "shots": 28,
+      "sh_obs": 0.071,
+      "sh_expected": 0.064,
+      "percentile": 0.597
      },
      "assists": {
-      "shots": 110,
-      "sh_obs": 0.073,
-      "sh_expected": 0.105,
-      "percentile": 0.134,
+      "shots": 114,
+      "sh_obs": 0.07,
+      "sh_expected": 0.107,
+      "percentile": 0.098,
       "obs_goals": 8,
-      "expected_goals": 11.6
+      "expected_goals": 12.2
      },
-     "sh": 0.077,
+     "sh": 0.071,
      "sh_career": 0.056,
-     "g_minus_ixg": 0.4,
-     "oish": 0.073,
+     "g_minus_ixg": 0.2,
+     "oish": 0.07,
      "oish_career": 0.106,
-     "toi": 19.3
+     "toi": 19.5
     },
     "verdict": "conforme"
    },
@@ -10253,57 +10259,57 @@
     "team": "COL",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 12.0,
     "a": 5.0,
     "points": 17.0,
-    "pace": 102.0,
+    "pace": 95.2,
     "prior": {
      "p10": 45.4,
      "p50": 53.2,
      "p90": 61.1
     },
     "ros_prior": {
-     "p10": 37.8,
-     "p50": 44.3,
-     "p90": 50.9
+     "p10": 37.3,
+     "p50": 43.7,
+     "p90": 50.2
     },
     "ros": {
-     "mean": 51.2,
-     "p10": 39.2,
-     "p90": 62.6,
-     "games_left": 70
+     "mean": 49.5,
+     "p10": 37.9,
+     "p90": 60.5,
+     "games_left": 69
     },
     "final": {
-     "mean": 68.2,
-     "p10": 56.2,
-     "p90": 79.6
+     "mean": 66.5,
+     "p10": 54.9,
+     "p90": 77.5
     },
     "luck": {
-     "expected_points": 8.4,
-     "net_points": 8.6,
+     "expected_points": 8.7,
+     "net_points": 8.3,
      "goals": {
       "obs": 12,
-      "expected": 5.4,
-      "shots": 28,
-      "sh_obs": 0.429,
-      "sh_expected": 0.193,
-      "percentile": 0.998
+      "expected": 5.6,
+      "shots": 30,
+      "sh_obs": 0.4,
+      "sh_expected": 0.188,
+      "percentile": 0.996
      },
      "assists": {
-      "shots": 100,
-      "sh_obs": 0.16,
-      "sh_expected": 0.096,
-      "percentile": 0.978,
-      "obs_goals": 16,
-      "expected_goals": 9.6
+      "shots": 105,
+      "sh_obs": 0.162,
+      "sh_expected": 0.1,
+      "percentile": 0.975,
+      "obs_goals": 17,
+      "expected_goals": 10.5
      },
-     "sh": 0.429,
+     "sh": 0.4,
      "sh_career": 0.116,
-     "g_minus_ixg": 6.3,
-     "oish": 0.16,
+     "g_minus_ixg": 6.0,
+     "oish": 0.162,
      "oish_career": 0.092,
-     "toi": 18.7
+     "toi": 18.8
     },
     "verdict": "chanceux"
    },
@@ -10432,74 +10438,6 @@
     "verdict": "malchanceux"
    },
    {
-    "espn_id": 5509,
-    "name": "Zach Hyman",
-    "pos": "RW",
-    "group": "F",
-    "team": "EDM",
-    "slot": "F",
-    "injury": {
-     "status": "INJURY_RESERVE",
-     "type": "Neck",
-     "expected_return": "2026-11-03",
-     "out_for_season": false,
-     "games_missed": 0
-    },
-    "gp": 6.0,
-    "g": 1.0,
-    "a": 0.0,
-    "points": 1.0,
-    "pace": 14.0,
-    "prior": {
-     "p10": 50.9,
-     "p50": 57.2,
-     "p90": 63.7
-    },
-    "ros_prior": {
-     "p10": 46.8,
-     "p50": 52.7,
-     "p90": 58.6
-    },
-    "ros": {
-     "mean": 45.4,
-     "p10": 30.7,
-     "p90": 61.8,
-     "games_left": 69
-    },
-    "final": {
-     "mean": 46.4,
-     "p10": 31.7,
-     "p90": 62.8
-    },
-    "luck": {
-     "expected_points": 1.6,
-     "net_points": -0.6,
-     "goals": {
-      "obs": 1,
-      "expected": 1.6,
-      "shots": 12,
-      "sh_obs": 0.083,
-      "sh_expected": 0.135,
-      "percentile": 0.338
-     },
-     "assists": {
-      "shots": 53,
-      "sh_obs": 0.226,
-      "sh_expected": 0.125,
-      "percentile": 0.98,
-      "obs_goals": 12,
-      "expected_goals": 6.6
-     },
-     "sh": 0.083,
-     "sh_career": 0.14,
-     "g_minus_ixg": -0.8,
-     "oish": 0.226,
-     "oish_career": 0.113,
-     "toi": 17.9
-    },
-    "verdict": "petit_echantillon"
-   },
-   {
     "espn_id": 5833,
     "name": "Chris Kreider",
     "pos": "LW",
@@ -10560,6 +10498,74 @@
      "toi": 13.9
     },
     "verdict": "conforme"
+   },
+   {
+    "espn_id": 5509,
+    "name": "Zach Hyman",
+    "pos": "RW",
+    "group": "F",
+    "team": "EDM",
+    "slot": "F",
+    "injury": {
+     "status": "INJURY_RESERVE",
+     "type": "Neck",
+     "expected_return": "2026-11-07",
+     "out_for_season": false,
+     "games_missed": 2
+    },
+    "gp": 6.0,
+    "g": 1.0,
+    "a": 0.0,
+    "points": 1.0,
+    "pace": 14.0,
+    "prior": {
+     "p10": 49.5,
+     "p50": 55.7,
+     "p90": 62.0
+    },
+    "ros_prior": {
+     "p10": 45.5,
+     "p50": 51.1,
+     "p90": 56.9
+    },
+    "ros": {
+     "mean": 44.1,
+     "p10": 29.8,
+     "p90": 60.0,
+     "games_left": 67
+    },
+    "final": {
+     "mean": 45.1,
+     "p10": 30.8,
+     "p90": 61.0
+    },
+    "luck": {
+     "expected_points": 1.6,
+     "net_points": -0.6,
+     "goals": {
+      "obs": 1,
+      "expected": 1.6,
+      "shots": 12,
+      "sh_obs": 0.083,
+      "sh_expected": 0.135,
+      "percentile": 0.338
+     },
+     "assists": {
+      "shots": 53,
+      "sh_obs": 0.226,
+      "sh_expected": 0.125,
+      "percentile": 0.98,
+      "obs_goals": 12,
+      "expected_goals": 6.6
+     },
+     "sh": 0.083,
+     "sh_career": 0.14,
+     "g_minus_ixg": -0.8,
+     "oish": 0.226,
+     "oish_career": 0.113,
+     "toi": 17.9
+    },
+    "verdict": "petit_echantillon"
    },
    {
     "espn_id": 4331579,
@@ -10879,55 +10885,55 @@
     "team": "CGY",
     "slot": "D",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 1.0,
     "a": 4.0,
     "points": 5.0,
-    "pace": 30.0,
+    "pace": 28.0,
     "prior": {
      "p10": 17.5,
      "p50": 24.0,
      "p90": 31.3
     },
     "ros_prior": {
-     "p10": 14.6,
-     "p50": 20.0,
-     "p90": 26.1
+     "p10": 14.4,
+     "p50": 19.7,
+     "p90": 25.7
     },
     "ros": {
-     "mean": 22.8,
-     "p10": 14.0,
-     "p90": 30.8,
-     "games_left": 70
+     "mean": 22.0,
+     "p10": 13.6,
+     "p90": 29.7,
+     "games_left": 69
     },
     "final": {
-     "mean": 27.8,
-     "p10": 19.0,
-     "p90": 35.8
+     "mean": 27.0,
+     "p10": 18.6,
+     "p90": 34.7
     },
     "luck": {
-     "expected_points": 5.5,
-     "net_points": -0.5,
+     "expected_points": 5.6,
+     "net_points": -0.6,
      "goals": {
       "obs": 1,
       "expected": 2.1,
       "shots": 25,
       "sh_obs": 0.04,
-      "sh_expected": 0.083,
-      "percentile": 0.244
+      "sh_expected": 0.084,
+      "percentile": 0.239
      },
      "assists": {
-      "shots": 115,
-      "sh_obs": 0.13,
+      "shots": 118,
+      "sh_obs": 0.127,
       "sh_expected": 0.11,
-      "percentile": 0.76,
+      "percentile": 0.725,
       "obs_goals": 15,
-      "expected_goals": 12.7
+      "expected_goals": 13.0
      },
      "sh": 0.04,
      "sh_career": 0.098,
      "g_minus_ixg": -1.1,
-     "oish": 0.13,
+     "oish": 0.127,
      "oish_career": 0.086,
      "toi": 17.6
     },
@@ -11094,57 +11100,57 @@
     "team": "BOS",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 8.0,
-    "a": 11.0,
-    "points": 19.0,
-    "pace": 106.4,
+    "a": 12.0,
+    "points": 20.0,
+    "pace": 105.0,
     "prior": {
      "p10": 101.8,
      "p50": 107.4,
      "p90": 112.7
     },
     "ros_prior": {
-     "p10": 83.7,
-     "p50": 88.2,
-     "p90": 92.6
+     "p10": 82.4,
+     "p50": 86.9,
+     "p90": 91.3
     },
     "ros": {
-     "mean": 85.9,
-     "p10": 65.8,
-     "p90": 104.9,
-     "games_left": 69
+     "mean": 84.5,
+     "p10": 64.7,
+     "p90": 103.3,
+     "games_left": 68
     },
     "final": {
-     "mean": 104.9,
-     "p10": 84.8,
-     "p90": 123.9
+     "mean": 104.5,
+     "p10": 84.7,
+     "p90": 123.3
     },
     "luck": {
-     "expected_points": 16.7,
-     "net_points": 2.3,
+     "expected_points": 18.0,
+     "net_points": 2.0,
      "goals": {
       "obs": 8,
-      "expected": 6.2,
-      "shots": 50,
-      "sh_obs": 0.16,
-      "sh_expected": 0.125,
-      "percentile": 0.778
+      "expected": 6.9,
+      "shots": 57,
+      "sh_obs": 0.14,
+      "sh_expected": 0.121,
+      "percentile": 0.686
      },
      "assists": {
-      "shots": 108,
-      "sh_obs": 0.148,
-      "sh_expected": 0.141,
-      "percentile": 0.599,
-      "obs_goals": 16,
-      "expected_goals": 15.2
+      "shots": 113,
+      "sh_obs": 0.15,
+      "sh_expected": 0.14,
+      "percentile": 0.64,
+      "obs_goals": 17,
+      "expected_goals": 15.8
      },
-     "sh": 0.16,
+     "sh": 0.14,
      "sh_career": 0.136,
-     "g_minus_ixg": 2.9,
-     "oish": 0.148,
+     "g_minus_ixg": 2.3,
+     "oish": 0.15,
      "oish_career": 0.118,
-     "toi": 20.3
+     "toi": 20.4
     },
     "verdict": "conforme"
    },
@@ -11342,55 +11348,55 @@
     "team": "FLA",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 8.0,
-    "a": 4.0,
-    "points": 12.0,
-    "pace": 72.0,
+    "a": 5.0,
+    "points": 13.0,
+    "pace": 72.8,
     "prior": {
      "p10": 50.0,
      "p50": 57.7,
      "p90": 65.7
     },
     "ros_prior": {
-     "p10": 41.7,
-     "p50": 48.1,
-     "p90": 54.8
+     "p10": 41.1,
+     "p50": 47.4,
+     "p90": 54.0
     },
     "ros": {
-     "mean": 48.7,
-     "p10": 32.9,
-     "p90": 66.3,
-     "games_left": 70
+     "mean": 48.6,
+     "p10": 37.2,
+     "p90": 59.4,
+     "games_left": 69
     },
     "final": {
-     "mean": 60.7,
-     "p10": 44.9,
-     "p90": 78.3
+     "mean": 61.6,
+     "p10": 50.2,
+     "p90": 72.4
     },
     "luck": {
-     "expected_points": 7.9,
+     "expected_points": 8.9,
      "net_points": 4.1,
      "goals": {
       "obs": 8,
-      "expected": 4.8,
-      "shots": 28,
-      "sh_obs": 0.286,
-      "sh_expected": 0.173,
-      "percentile": 0.931
+      "expected": 5.2,
+      "shots": 30,
+      "sh_obs": 0.267,
+      "sh_expected": 0.172,
+      "percentile": 0.905
      },
      "assists": {
-      "shots": 112,
-      "sh_obs": 0.188,
-      "sh_expected": 0.143,
-      "percentile": 0.907,
-      "obs_goals": 21,
-      "expected_goals": 16.0
+      "shots": 119,
+      "sh_obs": 0.193,
+      "sh_expected": 0.145,
+      "percentile": 0.928,
+      "obs_goals": 23,
+      "expected_goals": 17.2
      },
-     "sh": 0.286,
+     "sh": 0.267,
      "sh_career": 0.134,
-     "g_minus_ixg": 3.4,
-     "oish": 0.188,
+     "g_minus_ixg": 3.1,
+     "oish": 0.193,
      "oish_career": 0.091,
      "toi": 18.3
     },
@@ -11404,57 +11410,57 @@
     "team": "BOS",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 4.0,
     "a": 7.0,
     "points": 11.0,
-    "pace": 61.6,
+    "pace": 57.8,
     "prior": {
      "p10": 54.6,
      "p50": 58.5,
      "p90": 62.5
     },
     "ros_prior": {
-     "p10": 44.8,
-     "p50": 48.1,
-     "p90": 51.4
+     "p10": 44.2,
+     "p50": 47.4,
+     "p90": 50.6
     },
     "ros": {
-     "mean": 49.4,
-     "p10": 37.9,
-     "p90": 60.4,
-     "games_left": 69
+     "mean": 48.0,
+     "p10": 36.8,
+     "p90": 58.6,
+     "games_left": 68
     },
     "final": {
-     "mean": 60.4,
-     "p10": 48.9,
-     "p90": 71.4
+     "mean": 59.0,
+     "p10": 47.8,
+     "p90": 69.6
     },
     "luck": {
-     "expected_points": 11.5,
-     "net_points": -0.5,
+     "expected_points": 12.0,
+     "net_points": -1.0,
      "goals": {
       "obs": 4,
-      "expected": 5.5,
+      "expected": 5.6,
       "shots": 30,
       "sh_obs": 0.133,
-      "sh_expected": 0.183,
-      "percentile": 0.255
+      "sh_expected": 0.186,
+      "percentile": 0.243
      },
      "assists": {
-      "shots": 106,
-      "sh_obs": 0.123,
+      "shots": 114,
+      "sh_obs": 0.114,
       "sh_expected": 0.105,
-      "percentile": 0.734,
+      "percentile": 0.637,
       "obs_goals": 13,
-      "expected_goals": 11.1
+      "expected_goals": 12.0
      },
      "sh": 0.133,
      "sh_career": 0.134,
-     "g_minus_ixg": -1.0,
-     "oish": 0.123,
+     "g_minus_ixg": -1.1,
+     "oish": 0.114,
      "oish_career": 0.106,
-     "toi": 17.5
+     "toi": 17.6
     },
     "verdict": "conforme"
    },
@@ -11590,57 +11596,57 @@
     "team": "CHI",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 3.0,
     "a": 5.0,
     "points": 8.0,
-    "pace": 48.0,
+    "pace": 44.8,
     "prior": {
      "p10": 23.3,
      "p50": 45.3,
      "p90": 69.7
     },
     "ros_prior": {
-     "p10": 19.4,
-     "p50": 37.7,
-     "p90": 58.1
+     "p10": 19.1,
+     "p50": 37.2,
+     "p90": 57.3
     },
     "ros": {
-     "mean": 39.2,
-     "p10": 26.5,
-     "p90": 53.3,
-     "games_left": 70
+     "mean": 38.1,
+     "p10": 25.7,
+     "p90": 51.8,
+     "games_left": 69
     },
     "final": {
-     "mean": 47.2,
-     "p10": 34.5,
-     "p90": 61.3
+     "mean": 46.1,
+     "p10": 33.7,
+     "p90": 59.8
     },
     "luck": {
-     "expected_points": 8.3,
-     "net_points": -0.3,
+     "expected_points": 8.8,
+     "net_points": -0.8,
      "goals": {
       "obs": 3,
-      "expected": 3.2,
-      "shots": 29,
-      "sh_obs": 0.103,
-      "sh_expected": 0.112,
-      "percentile": 0.475
+      "expected": 3.4,
+      "shots": 31,
+      "sh_obs": 0.097,
+      "sh_expected": 0.11,
+      "percentile": 0.439
      },
      "assists": {
-      "shots": 64,
-      "sh_obs": 0.125,
-      "sh_expected": 0.126,
-      "percentile": 0.509,
+      "shots": 70,
+      "sh_obs": 0.114,
+      "sh_expected": 0.122,
+      "percentile": 0.436,
       "obs_goals": 8,
-      "expected_goals": 8.1
+      "expected_goals": 8.6
      },
-     "sh": 0.103,
+     "sh": 0.097,
      "sh_career": 0.083,
-     "g_minus_ixg": -0.3,
-     "oish": 0.125,
+     "g_minus_ixg": -0.4,
+     "oish": 0.114,
      "oish_career": 0.134,
-     "toi": 16.7
+     "toi": 16.8
     },
     "verdict": "conforme"
    },
@@ -11962,31 +11968,31 @@
     "team": "VGK",
     "slot": "D",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 2.0,
     "a": 3.0,
     "points": 5.0,
-    "pace": 28.0,
+    "pace": 26.2,
     "prior": {
      "p10": 47.9,
      "p50": 58.2,
      "p90": 69.3
     },
     "ros_prior": {
-     "p10": 39.4,
-     "p50": 47.8,
-     "p90": 56.9
+     "p10": 38.8,
+     "p50": 47.1,
+     "p90": 56.1
     },
     "ros": {
-     "mean": 37.1,
-     "p10": 24.9,
-     "p90": 52.1,
-     "games_left": 69
+     "mean": 35.7,
+     "p10": 23.9,
+     "p90": 50.0,
+     "games_left": 68
     },
     "final": {
-     "mean": 42.1,
-     "p10": 29.9,
-     "p90": 57.1
+     "mean": 40.7,
+     "p10": 28.9,
+     "p90": 55.0
     },
     "luck": {
      "expected_points": 4.9,
@@ -12000,19 +12006,19 @@
       "percentile": 0.509
      },
      "assists": {
-      "shots": 140,
-      "sh_obs": 0.164,
-      "sh_expected": 0.152,
-      "percentile": 0.667,
+      "shots": 146,
+      "sh_obs": 0.158,
+      "sh_expected": 0.148,
+      "percentile": 0.632,
       "obs_goals": 23,
-      "expected_goals": 21.2
+      "expected_goals": 21.6
      },
      "sh": 0.059,
      "sh_career": 0.058,
      "g_minus_ixg": -0.0,
-     "oish": 0.164,
+     "oish": 0.158,
      "oish_career": 0.106,
-     "toi": 21.6
+     "toi": 21.8
     },
     "verdict": "conforme"
    },
@@ -12066,55 +12072,55 @@
     "team": "COL",
     "slot": "F",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 9.0,
-    "a": 15.0,
-    "points": 24.0,
-    "pace": 144.0,
+    "a": 16.0,
+    "points": 25.0,
+    "pace": 140.0,
     "prior": {
      "p10": 121.0,
      "p50": 127.4,
      "p90": 133.4
     },
     "ros_prior": {
-     "p10": 100.8,
-     "p50": 106.1,
-     "p90": 111.2
+     "p10": 99.4,
+     "p50": 104.6,
+     "p90": 109.6
     },
     "ros": {
-     "mean": 106.9,
-     "p10": 81.9,
-     "p90": 130.6,
-     "games_left": 70
+     "mean": 104.1,
+     "p10": 79.8,
+     "p90": 127.3,
+     "games_left": 69
     },
     "final": {
-     "mean": 130.9,
-     "p10": 105.9,
-     "p90": 154.6
+     "mean": 129.1,
+     "p10": 104.8,
+     "p90": 152.3
     },
     "luck": {
-     "expected_points": 19.3,
-     "net_points": 4.7,
+     "expected_points": 20.0,
+     "net_points": 5.0,
      "goals": {
       "obs": 9,
-      "expected": 7.1,
-      "shots": 57,
-      "sh_obs": 0.158,
-      "sh_expected": 0.124,
-      "percentile": 0.781
+      "expected": 7.5,
+      "shots": 59,
+      "sh_obs": 0.153,
+      "sh_expected": 0.128,
+      "percentile": 0.724
      },
      "assists": {
-      "shots": 135,
-      "sh_obs": 0.156,
-      "sh_expected": 0.127,
-      "percentile": 0.841,
-      "obs_goals": 21,
-      "expected_goals": 17.1
+      "shots": 143,
+      "sh_obs": 0.168,
+      "sh_expected": 0.13,
+      "percentile": 0.903,
+      "obs_goals": 24,
+      "expected_goals": 18.6
      },
-     "sh": 0.158,
+     "sh": 0.153,
      "sh_career": 0.11,
-     "g_minus_ixg": 2.7,
-     "oish": 0.156,
+     "g_minus_ixg": 2.3,
+     "oish": 0.168,
      "oish_career": 0.126,
      "toi": 20.6
     },
@@ -12438,119 +12444,57 @@
     "team": "SJ",
     "slot": "F",
     "injury": null,
-    "gp": 15.0,
+    "gp": 16.0,
     "g": 6.0,
     "a": 4.0,
     "points": 10.0,
-    "pace": 56.0,
+    "pace": 52.5,
     "prior": {
      "p10": 56.3,
      "p50": 68.1,
      "p90": 79.6
     },
     "ros_prior": {
-     "p10": 46.2,
-     "p50": 56.0,
-     "p90": 65.4
+     "p10": 45.6,
+     "p50": 55.1,
+     "p90": 64.4
     },
     "ros": {
-     "mean": 53.7,
-     "p10": 41.2,
-     "p90": 65.7,
-     "games_left": 69
+     "mean": 52.4,
+     "p10": 40.1,
+     "p90": 64.0,
+     "games_left": 68
     },
     "final": {
-     "mean": 63.7,
-     "p10": 51.2,
-     "p90": 75.7
+     "mean": 62.4,
+     "p10": 50.1,
+     "p90": 74.0
     },
     "luck": {
-     "expected_points": 11.8,
-     "net_points": -1.8,
+     "expected_points": 12.7,
+     "net_points": -2.7,
      "goals": {
       "obs": 6,
-      "expected": 6.5,
-      "shots": 41,
-      "sh_obs": 0.146,
-      "sh_expected": 0.158,
-      "percentile": 0.438
+      "expected": 7.0,
+      "shots": 43,
+      "sh_obs": 0.14,
+      "sh_expected": 0.162,
+      "percentile": 0.362
      },
      "assists": {
-      "shots": 113,
-      "sh_obs": 0.097,
-      "sh_expected": 0.13,
-      "percentile": 0.151,
+      "shots": 125,
+      "sh_obs": 0.088,
+      "sh_expected": 0.125,
+      "percentile": 0.102,
       "obs_goals": 11,
-      "expected_goals": 14.7
+      "expected_goals": 15.7
      },
-     "sh": 0.146,
+     "sh": 0.14,
      "sh_career": 0.143,
-     "g_minus_ixg": -0.1,
-     "oish": 0.097,
+     "g_minus_ixg": -0.6,
+     "oish": 0.088,
      "oish_career": 0.111,
-     "toi": 19.2
-    },
-    "verdict": "conforme"
-   },
-   {
-    "espn_id": 3114985,
-    "name": "Ivan Barbashev",
-    "pos": "LW",
-    "group": "F",
-    "team": "VGK",
-    "slot": "F",
-    "injury": null,
-    "gp": 15.0,
-    "g": 2.0,
-    "a": 9.0,
-    "points": 11.0,
-    "pace": 61.6,
-    "prior": {
-     "p10": 52.0,
-     "p50": 56.5,
-     "p90": 61.1
-    },
-    "ros_prior": {
-     "p10": 42.7,
-     "p50": 46.4,
-     "p90": 50.2
-    },
-    "ros": {
-     "mean": 47.9,
-     "p10": 32.3,
-     "p90": 65.1,
-     "games_left": 69
-    },
-    "final": {
-     "mean": 58.9,
-     "p10": 43.3,
-     "p90": 76.1
-    },
-    "luck": {
-     "expected_points": 10.8,
-     "net_points": 0.2,
-     "goals": {
-      "obs": 2,
-      "expected": 3.0,
-      "shots": 20,
-      "sh_obs": 0.1,
-      "sh_expected": 0.152,
-      "percentile": 0.283
-     },
-     "assists": {
-      "shots": 101,
-      "sh_obs": 0.139,
-      "sh_expected": 0.12,
-      "percentile": 0.722,
-      "obs_goals": 14,
-      "expected_goals": 12.1
-     },
-     "sh": 0.1,
-     "sh_career": 0.176,
-     "g_minus_ixg": -0.8,
-     "oish": 0.139,
-     "oish_career": 0.094,
-     "toi": 16.2
+     "toi": 19.1
     },
     "verdict": "conforme"
    },
@@ -12596,6 +12540,68 @@
     },
     "luck": null,
     "verdict": "petit_echantillon"
+   },
+   {
+    "espn_id": 3114985,
+    "name": "Ivan Barbashev",
+    "pos": "LW",
+    "group": "F",
+    "team": "VGK",
+    "slot": "F",
+    "injury": null,
+    "gp": 16.0,
+    "g": 2.0,
+    "a": 9.0,
+    "points": 11.0,
+    "pace": 57.8,
+    "prior": {
+     "p10": 52.0,
+     "p50": 56.5,
+     "p90": 61.1
+    },
+    "ros_prior": {
+     "p10": 42.1,
+     "p50": 45.7,
+     "p90": 49.5
+    },
+    "ros": {
+     "mean": 46.3,
+     "p10": 31.3,
+     "p90": 63.0,
+     "games_left": 68
+    },
+    "final": {
+     "mean": 57.3,
+     "p10": 42.3,
+     "p90": 74.0
+    },
+    "luck": {
+     "expected_points": 11.2,
+     "net_points": -0.2,
+     "goals": {
+      "obs": 2,
+      "expected": 3.2,
+      "shots": 21,
+      "sh_obs": 0.095,
+      "sh_expected": 0.153,
+      "percentile": 0.252
+     },
+     "assists": {
+      "shots": 108,
+      "sh_obs": 0.13,
+      "sh_expected": 0.115,
+      "percentile": 0.686,
+      "obs_goals": 14,
+      "expected_goals": 12.5
+     },
+     "sh": 0.095,
+     "sh_career": 0.176,
+     "g_minus_ixg": -0.9,
+     "oish": 0.13,
+     "oish_career": 0.094,
+     "toi": 16.2
+    },
+    "verdict": "conforme"
    },
    {
     "espn_id": 2591155,
@@ -12673,57 +12679,57 @@
     "team": "FLA",
     "slot": "D",
     "injury": null,
-    "gp": 14.0,
+    "gp": 15.0,
     "g": 2.0,
     "a": 16.0,
     "points": 18.0,
-    "pace": 108.0,
+    "pace": 100.8,
     "prior": {
      "p10": 36.0,
      "p50": 45.1,
      "p90": 54.4
     },
     "ros_prior": {
-     "p10": 30.0,
-     "p50": 37.5,
-     "p90": 45.3
+     "p10": 29.6,
+     "p50": 37.0,
+     "p90": 44.7
     },
     "ros": {
-     "mean": 56.8,
-     "p10": 39.6,
-     "p90": 74.3,
-     "games_left": 70
+     "mean": 55.5,
+     "p10": 38.7,
+     "p90": 72.5,
+     "games_left": 69
     },
     "final": {
-     "mean": 74.8,
-     "p10": 57.6,
-     "p90": 92.3
+     "mean": 73.5,
+     "p10": 56.7,
+     "p90": 90.5
     },
     "luck": {
-     "expected_points": 16.3,
-     "net_points": 1.7,
+     "expected_points": 17.1,
+     "net_points": 0.9,
      "goals": {
       "obs": 2,
       "expected": 2.7,
       "shots": 37,
       "sh_obs": 0.054,
-      "sh_expected": 0.072,
-      "percentile": 0.37
+      "sh_expected": 0.073,
+      "percentile": 0.365
      },
      "assists": {
-      "shots": 159,
-      "sh_obs": 0.17,
-      "sh_expected": 0.145,
-      "percentile": 0.811,
-      "obs_goals": 27,
-      "expected_goals": 23.1
+      "shots": 173,
+      "sh_obs": 0.162,
+      "sh_expected": 0.146,
+      "percentile": 0.726,
+      "obs_goals": 28,
+      "expected_goals": 25.3
      },
      "sh": 0.054,
      "sh_career": 0.055,
      "g_minus_ixg": -0.6,
-     "oish": 0.17,
+     "oish": 0.162,
      "oish_career": 0.098,
-     "toi": 24.9
+     "toi": 25.0
     },
     "verdict": "conforme"
    },
@@ -12983,34 +12989,34 @@
     "team": "FLA",
     "slot": "G",
     "injury": null,
-    "gp": 6,
+    "gp": 7,
     "g": 0,
     "a": 0,
     "points": 8,
     "w": 3,
     "otl": 1,
     "so": 1,
-    "pace": 48.0,
+    "pace": 44.8,
     "prior": {
      "p10": 57.2,
      "p50": 67.0,
      "p90": 76.9
     },
     "ros_prior": {
-     "p10": 47.6,
-     "p50": 55.8,
-     "p90": 64.1
+     "p10": 46.9,
+     "p50": 55.0,
+     "p90": 63.1
     },
     "ros": {
-     "mean": 50.8,
-     "p10": 36.0,
-     "p90": 65.6,
-     "games_left": 70
+     "mean": 49.0,
+     "p10": 34.3,
+     "p90": 63.6,
+     "games_left": 69
     },
     "final": {
-     "mean": 58.8,
-     "p10": 44.0,
-     "p90": 73.6
+     "mean": 57.0,
+     "p10": 42.3,
+     "p90": 71.6
     },
     "luck": null,
     "verdict": null
@@ -13098,7 +13104,7 @@
    "type": "Knee",
    "expected_return": "2026-11-27",
    "out_for_season": false,
-   "games_missed": 11,
+   "games_missed": 10,
    "ros": {
     "mean": 57.8,
     "p10": 42.9,
@@ -13131,6 +13137,53 @@
     "oish": 0.0,
     "oish_career": 0.107,
     "toi": 14.9
+   },
+   "verdict": "petit_echantillon"
+  },
+  {
+   "espn_id": 5160,
+   "name": "John Tavares",
+   "pos": "C",
+   "team": "TOR",
+   "owner": "Nl",
+   "mine": false,
+   "status": "OUT",
+   "type": "Lower Body",
+   "expected_return": "2026-11-07",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 56.5,
+    "p10": 43.3,
+    "p90": 69.0
+   },
+   "gp": 7.0,
+   "points": 7.0,
+   "luck": {
+    "expected_points": 6.2,
+    "net_points": 0.8,
+    "goals": {
+     "obs": 2,
+     "expected": 2.4,
+     "shots": 17,
+     "sh_obs": 0.118,
+     "sh_expected": 0.142,
+     "percentile": 0.418
+    },
+    "assists": {
+     "shots": 49,
+     "sh_obs": 0.143,
+     "sh_expected": 0.108,
+     "percentile": 0.787,
+     "obs_goals": 7,
+     "expected_goals": 5.3
+    },
+    "sh": 0.118,
+    "sh_career": 0.133,
+    "g_minus_ixg": -0.5,
+    "oish": 0.143,
+    "oish_career": 0.106,
+    "toi": 16.5
    },
    "verdict": "petit_echantillon"
   },
@@ -13178,6 +13231,53 @@
     "oish": 0.13,
     "oish_career": 0.106,
     "toi": 17.6
+   },
+   "verdict": "conforme"
+  },
+  {
+   "espn_id": 3124,
+   "name": "Evgeni Malkin",
+   "pos": "C",
+   "team": "PIT",
+   "owner": "VFTH",
+   "mine": false,
+   "status": "OUT",
+   "type": "Lower Body",
+   "expected_return": "2026-11-05",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 55.0,
+    "p10": 42.1,
+    "p90": 67.2
+   },
+   "gp": 13.0,
+   "points": 11.0,
+   "luck": {
+    "expected_points": 10.4,
+    "net_points": 0.6,
+    "goals": {
+     "obs": 6,
+     "expected": 3.8,
+     "shots": 27,
+     "sh_obs": 0.222,
+     "sh_expected": 0.142,
+     "percentile": 0.873
+    },
+    "assists": {
+     "shots": 89,
+     "sh_obs": 0.09,
+     "sh_expected": 0.117,
+     "percentile": 0.219,
+     "obs_goals": 8,
+     "expected_goals": 10.4
+    },
+    "sh": 0.222,
+    "sh_career": 0.131,
+    "g_minus_ixg": 2.5,
+    "oish": 0.09,
+    "oish_career": 0.109,
+    "toi": 17.0
    },
    "verdict": "conforme"
   },
@@ -13286,7 +13386,7 @@
    "type": "Suspension",
    "expected_return": "2026-11-14",
    "out_for_season": false,
-   "games_missed": 6,
+   "games_missed": 5,
    "ros": {
     "mean": 51.8,
     "p10": 39.6,
@@ -13323,98 +13423,51 @@
    "verdict": "conforme"
   },
   {
-   "espn_id": 5160,
-   "name": "John Tavares",
-   "pos": "C",
-   "team": "TOR",
+   "espn_id": 3735,
+   "name": "Patrick Kane",
+   "pos": "RW",
+   "team": "CHI",
    "owner": "Nl",
    "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Lower Body",
-   "expected_return": "2026-11-27",
+   "status": "OUT",
+   "type": "Upper Body",
+   "expected_return": "2026-11-12",
    "out_for_season": false,
-   "games_missed": 10,
+   "games_missed": 3,
    "ros": {
-    "mean": 48.9,
-    "p10": 36.2,
-    "p90": 61.0
+    "mean": 48.7,
+    "p10": 37.3,
+    "p90": 59.5
    },
-   "gp": 7.0,
-   "points": 7.0,
+   "gp": 15.0,
+   "points": 9.0,
    "luck": {
-    "expected_points": 6.2,
-    "net_points": 0.8,
-    "goals": {
-     "obs": 2,
-     "expected": 2.4,
-     "shots": 17,
-     "sh_obs": 0.118,
-     "sh_expected": 0.142,
-     "percentile": 0.418
-    },
-    "assists": {
-     "shots": 49,
-     "sh_obs": 0.143,
-     "sh_expected": 0.108,
-     "percentile": 0.787,
-     "obs_goals": 7,
-     "expected_goals": 5.3
-    },
-    "sh": 0.118,
-    "sh_career": 0.133,
-    "g_minus_ixg": -0.5,
-    "oish": 0.143,
-    "oish_career": 0.106,
-    "toi": 16.5
-   },
-   "verdict": "petit_echantillon"
-  },
-  {
-   "espn_id": 5509,
-   "name": "Zach Hyman",
-   "pos": "RW",
-   "team": "EDM",
-   "owner": "IGm",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Neck",
-   "expected_return": "2026-11-03",
-   "out_for_season": false,
-   "games_missed": 0,
-   "ros": {
-    "mean": 45.4,
-    "p10": 30.7,
-    "p90": 61.8
-   },
-   "gp": 6.0,
-   "points": 1.0,
-   "luck": {
-    "expected_points": 1.6,
-    "net_points": -0.6,
+    "expected_points": 12.6,
+    "net_points": -3.6,
     "goals": {
      "obs": 1,
-     "expected": 1.6,
-     "shots": 12,
-     "sh_obs": 0.083,
-     "sh_expected": 0.135,
-     "percentile": 0.338
+     "expected": 3.7,
+     "shots": 25,
+     "sh_obs": 0.04,
+     "sh_expected": 0.147,
+     "percentile": 0.059
     },
     "assists": {
-     "shots": 53,
-     "sh_obs": 0.226,
-     "sh_expected": 0.125,
-     "percentile": 0.98,
-     "obs_goals": 12,
-     "expected_goals": 6.6
+     "shots": 104,
+     "sh_obs": 0.096,
+     "sh_expected": 0.107,
+     "percentile": 0.373,
+     "obs_goals": 10,
+     "expected_goals": 11.1
     },
-    "sh": 0.083,
-    "sh_career": 0.14,
-    "g_minus_ixg": -0.8,
-    "oish": 0.226,
-    "oish_career": 0.113,
-    "toi": 17.9
+    "sh": 0.04,
+    "sh_career": 0.116,
+    "g_minus_ixg": -2.1,
+    "oish": 0.096,
+    "oish_career": 0.11,
+    "toi": 18.0
    },
-   "verdict": "petit_echantillon"
+   "verdict": "malchanceux"
   },
   {
    "espn_id": 2591155,
@@ -13464,6 +13517,53 @@
    "verdict": "petit_echantillon"
   },
   {
+   "espn_id": 5509,
+   "name": "Zach Hyman",
+   "pos": "RW",
+   "team": "EDM",
+   "owner": "IGm",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Neck",
+   "expected_return": "2026-11-07",
+   "out_for_season": false,
+   "games_missed": 2,
+   "ros": {
+    "mean": 44.1,
+    "p10": 29.8,
+    "p90": 60.0
+   },
+   "gp": 6.0,
+   "points": 1.0,
+   "luck": {
+    "expected_points": 1.6,
+    "net_points": -0.6,
+    "goals": {
+     "obs": 1,
+     "expected": 1.6,
+     "shots": 12,
+     "sh_obs": 0.083,
+     "sh_expected": 0.135,
+     "percentile": 0.338
+    },
+    "assists": {
+     "shots": 53,
+     "sh_obs": 0.226,
+     "sh_expected": 0.125,
+     "percentile": 0.98,
+     "obs_goals": 12,
+     "expected_goals": 6.6
+    },
+    "sh": 0.083,
+    "sh_career": 0.14,
+    "g_minus_ixg": -0.8,
+    "oish": 0.226,
+    "oish_career": 0.113,
+    "toi": 17.9
+   },
+   "verdict": "petit_echantillon"
+  },
+  {
    "espn_id": 4565225,
    "name": "Bowen Byram",
    "pos": "D",
@@ -13474,7 +13574,7 @@
    "type": "Upper Body",
    "expected_return": "2026-11-04",
    "out_for_season": false,
-   "games_missed": 1,
+   "games_missed": 0,
    "ros": {
     "mean": 34.3,
     "p10": 21.1,
@@ -13668,39 +13768,39 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 55.16,
+     "pct_owned": 57.9,
      "ros": {
-      "mean": 56.6,
-      "p10": 43.3,
-      "p90": 69.2
+      "mean": 56.4,
+      "p10": 43.2,
+      "p90": 68.9
      },
-     "gain": 9.5,
-     "p_better": 0.722,
-     "gp": 14.0,
-     "points": 14.0,
+     "gain": 9.3,
+     "p_better": 0.719,
+     "gp": 15.0,
+     "points": 15.0,
      "luck": {
-      "expected_points": 15.6,
-      "net_points": -1.6,
+      "expected_points": 16.9,
+      "net_points": -1.9,
       "goals": {
        "obs": 8,
-       "expected": 7.9,
-       "shots": 39,
-       "sh_obs": 0.205,
-       "sh_expected": 0.202,
-       "percentile": 0.532
+       "expected": 8.3,
+       "shots": 44,
+       "sh_obs": 0.182,
+       "sh_expected": 0.189,
+       "percentile": 0.471
       },
       "assists": {
-       "shots": 124,
-       "sh_obs": 0.089,
-       "sh_expected": 0.114,
-       "percentile": 0.194,
-       "obs_goals": 11,
-       "expected_goals": 14.1
+       "shots": 132,
+       "sh_obs": 0.091,
+       "sh_expected": 0.112,
+       "percentile": 0.232,
+       "obs_goals": 12,
+       "expected_goals": 14.7
       },
-      "sh": 0.205,
+      "sh": 0.182,
       "sh_career": 0.111,
-      "g_minus_ixg": 0.3,
-      "oish": 0.089,
+      "g_minus_ixg": -0.1,
+      "oish": 0.091,
       "oish_career": 0.097,
       "toi": 18.8
      },
@@ -13714,7 +13814,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 70.5,
+     "pct_owned": 70.93,
      "ros": {
       "mean": 53.8,
       "p10": 41.2,
@@ -13760,7 +13860,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-06",
      "games_missed": 2,
-     "pct_owned": 10.67,
+     "pct_owned": 10.78,
      "ros": {
       "mean": 53.4,
       "p10": 40.9,
@@ -13781,7 +13881,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.26,
+     "pct_owned": 11.94,
      "ros": {
       "mean": 49.8,
       "p10": 38.1,
@@ -13820,52 +13920,6 @@
      "verdict": "petit_echantillon"
     },
     {
-     "espn_id": 4874730,
-     "name": "Matt Coronato",
-     "pos": "RW",
-     "team": "CGY",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 35.46,
-     "ros": {
-      "mean": 49.7,
-      "p10": 38.0,
-      "p90": 60.7
-     },
-     "gain": 2.6,
-     "p_better": 0.567,
-     "gp": 14.0,
-     "points": 14.0,
-     "luck": {
-      "expected_points": 11.2,
-      "net_points": 2.8,
-      "goals": {
-       "obs": 3,
-       "expected": 3.1,
-       "shots": 32,
-       "sh_obs": 0.094,
-       "sh_expected": 0.098,
-       "percentile": 0.502
-      },
-      "assists": {
-       "shots": 108,
-       "sh_obs": 0.139,
-       "sh_expected": 0.101,
-       "percentile": 0.895,
-       "obs_goals": 15,
-       "expected_goals": 11.0
-      },
-      "sh": 0.094,
-      "sh_career": 0.103,
-      "g_minus_ixg": -0.2,
-      "oish": 0.139,
-      "oish_career": 0.094,
-      "toi": 17.2
-     },
-     "verdict": "conforme"
-    },
-    {
      "espn_id": 3114743,
      "name": "Kevin Fiala",
      "pos": "LW",
@@ -13873,7 +13927,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-07",
      "games_missed": 1,
-     "pct_owned": 51.0,
+     "pct_owned": 50.81,
      "ros": {
       "mean": 49.4,
       "p10": 37.8,
@@ -13894,7 +13948,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 60.96,
+     "pct_owned": 60.85,
      "ros": {
       "mean": 48.8,
       "p10": 33.0,
@@ -13940,7 +13994,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 77.77,
+     "pct_owned": 78.51,
      "ros": {
       "mean": 48.4,
       "p10": 37.1,
@@ -13979,48 +14033,48 @@
      "verdict": "conforme"
     },
     {
-     "espn_id": 4352750,
-     "name": "Joel Farabee",
-     "pos": "LW",
+     "espn_id": 4874730,
+     "name": "Matt Coronato",
+     "pos": "RW",
      "team": "CGY",
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 54.2,
+     "pct_owned": 36.3,
      "ros": {
-      "mean": 47.1,
-      "p10": 31.8,
-      "p90": 64.1
+      "mean": 48.0,
+      "p10": 32.4,
+      "p90": 65.2
      },
-     "gain": 0.0,
-     "p_better": 0.5,
-     "gp": 14.0,
-     "points": 15.0,
+     "gain": 0.9,
+     "p_better": 0.52,
+     "gp": 15.0,
+     "points": 14.0,
      "luck": {
-      "expected_points": 14.5,
-      "net_points": 0.5,
+      "expected_points": 11.4,
+      "net_points": 2.6,
       "goals": {
-       "obs": 5,
-       "expected": 4.5,
-       "shots": 33,
-       "sh_obs": 0.152,
-       "sh_expected": 0.136,
-       "percentile": 0.617
+       "obs": 3,
+       "expected": 3.1,
+       "shots": 32,
+       "sh_obs": 0.094,
+       "sh_expected": 0.098,
+       "percentile": 0.502
       },
       "assists": {
-       "shots": 112,
-       "sh_obs": 0.107,
-       "sh_expected": 0.107,
-       "percentile": 0.512,
-       "obs_goals": 12,
-       "expected_goals": 12.0
+       "shots": 114,
+       "sh_obs": 0.132,
+       "sh_expected": 0.099,
+       "percentile": 0.87,
+       "obs_goals": 15,
+       "expected_goals": 11.3
       },
-      "sh": 0.152,
-      "sh_career": 0.12,
-      "g_minus_ixg": 0.6,
-      "oish": 0.107,
-      "oish_career": 0.086,
-      "toi": 18.5
+      "sh": 0.094,
+      "sh_career": 0.103,
+      "g_minus_ixg": -0.2,
+      "oish": 0.132,
+      "oish_career": 0.094,
+      "toi": 17.3
      },
      "verdict": "conforme"
     },
@@ -14032,7 +14086,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 66.76,
+     "pct_owned": 67.17,
      "ros": {
       "mean": 46.6,
       "p10": 31.5,
@@ -14069,6 +14123,52 @@
       "toi": 18.5
      },
      "verdict": "chanceux"
+    },
+    {
+     "espn_id": 2562629,
+     "name": "Rickard Rakell",
+     "pos": "RW",
+     "team": "PIT",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 58.77,
+     "ros": {
+      "mean": 46.6,
+      "p10": 31.4,
+      "p90": 63.4
+     },
+     "gain": -0.5,
+     "p_better": 0.489,
+     "gp": 14.0,
+     "points": 8.0,
+     "luck": {
+      "expected_points": 8.6,
+      "net_points": -0.6,
+      "goals": {
+       "obs": 4,
+       "expected": 5.1,
+       "shots": 35,
+       "sh_obs": 0.114,
+       "sh_expected": 0.147,
+       "percentile": 0.314
+      },
+      "assists": {
+       "shots": 100,
+       "sh_obs": 0.15,
+       "sh_expected": 0.13,
+       "percentile": 0.734,
+       "obs_goals": 15,
+       "expected_goals": 13.0
+      },
+      "sh": 0.114,
+      "sh_career": 0.119,
+      "g_minus_ixg": -1.1,
+      "oish": 0.15,
+      "oish_career": 0.104,
+      "toi": 19.7
+     },
+     "verdict": "conforme"
     }
    ],
    "D": [
@@ -14078,66 +14178,20 @@
      "pos": "D",
      "team": "MIN",
      "status": "INJURY_RESERVE",
-     "expected_return": "2026-11-03",
-     "games_missed": 0,
-     "pct_owned": 74.3,
+     "expected_return": "2026-11-23",
+     "games_missed": 9,
+     "pct_owned": 74.54,
      "ros": {
-      "mean": 38.2,
-      "p10": 25.5,
-      "p90": 53.6
+      "mean": 33.1,
+      "p10": 21.0,
+      "p90": 43.5
      },
-     "gain": -5.5,
-     "p_better": 0.371,
+     "gain": -10.6,
+     "p_better": 0.244,
      "gp": 0,
      "points": 0,
      "luck": null,
      "verdict": "petit_echantillon"
-    },
-    {
-     "espn_id": 4915344,
-     "name": "Simon Nemec",
-     "pos": "D",
-     "team": "CGY",
-     "status": "ACTIVE",
-     "expected_return": null,
-     "games_missed": null,
-     "pct_owned": 3.68,
-     "ros": {
-      "mean": 32.1,
-      "p10": 19.8,
-      "p90": 43.3
-     },
-     "gain": -11.6,
-     "p_better": 0.227,
-     "gp": 14.0,
-     "points": 5.0,
-     "luck": {
-      "expected_points": 7.3,
-      "net_points": -2.3,
-      "goals": {
-       "obs": 0,
-       "expected": 2.2,
-       "shots": 21,
-       "sh_obs": 0.0,
-       "sh_expected": 0.107,
-       "percentile": 0.047
-      },
-      "assists": {
-       "shots": 123,
-       "sh_obs": 0.098,
-       "sh_expected": 0.099,
-       "percentile": 0.5,
-       "obs_goals": 12,
-       "expected_goals": 12.1
-      },
-      "sh": 0.0,
-      "sh_career": 0.08,
-      "g_minus_ixg": -2.2,
-      "oish": 0.098,
-      "oish_career": 0.097,
-      "toi": 21.6
-     },
-     "verdict": "conforme"
     },
     {
      "espn_id": 2976839,
@@ -14147,133 +14201,179 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 88.42,
+     "pct_owned": 88.46,
      "ros": {
-      "mean": 30.2,
-      "p10": 18.6,
-      "p90": 40.8
+      "mean": 31.0,
+      "p10": 19.1,
+      "p90": 41.9
      },
-     "gain": -13.5,
-     "p_better": 0.188,
-     "gp": 15.0,
-     "points": 9.0,
+     "gain": -12.7,
+     "p_better": 0.204,
+     "gp": 16.0,
+     "points": 10.0,
      "luck": {
-      "expected_points": 9.2,
-      "net_points": -0.2,
+      "expected_points": 10.4,
+      "net_points": -0.4,
       "goals": {
        "obs": 2,
-       "expected": 1.2,
-       "shots": 21,
-       "sh_obs": 0.095,
-       "sh_expected": 0.058,
-       "percentile": 0.769
+       "expected": 1.4,
+       "shots": 27,
+       "sh_obs": 0.074,
+       "sh_expected": 0.051,
+       "percentile": 0.717
       },
       "assists": {
-       "shots": 121,
+       "shots": 131,
        "sh_obs": 0.099,
-       "sh_expected": 0.114,
-       "percentile": 0.321,
-       "obs_goals": 12,
-       "expected_goals": 13.7
+       "sh_expected": 0.111,
+       "percentile": 0.344,
+       "obs_goals": 13,
+       "expected_goals": 14.6
       },
-      "sh": 0.095,
+      "sh": 0.074,
       "sh_career": 0.044,
-      "g_minus_ixg": 0.7,
+      "g_minus_ixg": 0.6,
       "oish": 0.099,
       "oish_career": 0.108,
-      "toi": 22.5
+      "toi": 22.6
      },
      "verdict": "conforme"
     },
     {
-     "espn_id": 3068087,
-     "name": "Damon Severson",
+     "espn_id": 4915344,
+     "name": "Simon Nemec",
      "pos": "D",
-     "team": "CBJ",
+     "team": "CGY",
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 7.36,
+     "pct_owned": 3.62,
      "ros": {
-      "mean": 30.2,
-      "p10": 18.6,
-      "p90": 40.7
+      "mean": 30.9,
+      "p10": 19.0,
+      "p90": 41.7
      },
-     "gain": -13.5,
-     "p_better": 0.187,
-     "gp": 10.0,
+     "gain": -12.8,
+     "p_better": 0.202,
+     "gp": 15.0,
      "points": 5.0,
      "luck": {
-      "expected_points": 4.1,
-      "net_points": 0.9,
+      "expected_points": 7.4,
+      "net_points": -2.4,
       "goals": {
-       "obs": 2,
-       "expected": 0.9,
-       "shots": 7,
-       "sh_obs": 0.286,
-       "sh_expected": 0.132,
-       "percentile": 0.856
+       "obs": 0,
+       "expected": 2.3,
+       "shots": 23,
+       "sh_obs": 0.0,
+       "sh_expected": 0.098,
+       "percentile": 0.046
       },
       "assists": {
-       "shots": 85,
-       "sh_obs": 0.106,
-       "sh_expected": 0.113,
-       "percentile": 0.431,
-       "obs_goals": 9,
-       "expected_goals": 9.6
+       "shots": 130,
+       "sh_obs": 0.1,
+       "sh_expected": 0.103,
+       "percentile": 0.468,
+       "obs_goals": 13,
+       "expected_goals": 13.4
       },
-      "sh": 0.286,
-      "sh_career": 0.061,
-      "g_minus_ixg": 1.1,
-      "oish": 0.106,
-      "oish_career": 0.093,
-      "toi": 23.2
+      "sh": 0.0,
+      "sh_career": 0.08,
+      "g_minus_ixg": -2.3,
+      "oish": 0.1,
+      "oish_career": 0.097,
+      "toi": 21.4
      },
      "verdict": "conforme"
     },
     {
-     "espn_id": 3114717,
-     "name": "Aaron Ekblad",
+     "espn_id": 3652964,
+     "name": "Noah Hanifin",
      "pos": "D",
-     "team": "FLA",
+     "team": "VGK",
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 10.61,
+     "pct_owned": 69.18,
      "ros": {
-      "mean": 29.5,
-      "p10": 18.1,
-      "p90": 39.8
+      "mean": 30.8,
+      "p10": 19.0,
+      "p90": 41.6
      },
-     "gain": -14.2,
-     "p_better": 0.174,
-     "gp": 12.0,
-     "points": 4.0,
+     "gain": -12.9,
+     "p_better": 0.2,
+     "gp": 16.0,
+     "points": 6.0,
      "luck": {
-      "expected_points": 6.8,
-      "net_points": -2.8,
+      "expected_points": 8.3,
+      "net_points": -2.3,
       "goals": {
-       "obs": 0,
-       "expected": 1.1,
-       "shots": 16,
-       "sh_obs": 0.0,
-       "sh_expected": 0.069,
-       "percentile": 0.16
+       "obs": 2,
+       "expected": 1.6,
+       "shots": 26,
+       "sh_obs": 0.077,
+       "sh_expected": 0.062,
+       "percentile": 0.65
       },
       "assists": {
-       "shots": 96,
-       "sh_obs": 0.083,
-       "sh_expected": 0.118,
-       "percentile": 0.147,
+       "shots": 123,
+       "sh_obs": 0.065,
+       "sh_expected": 0.108,
+       "percentile": 0.056,
        "obs_goals": 8,
-       "expected_goals": 11.3
+       "expected_goals": 13.3
       },
-      "sh": 0.0,
-      "sh_career": 0.064,
-      "g_minus_ixg": -1.1,
-      "oish": 0.083,
-      "oish_career": 0.11,
-      "toi": 20.9
+      "sh": 0.077,
+      "sh_career": 0.049,
+      "g_minus_ixg": 0.4,
+      "oish": 0.065,
+      "oish_career": 0.101,
+      "toi": 20.7
+     },
+     "verdict": "conforme"
+    },
+    {
+     "espn_id": 5746,
+     "name": "Justin Faulk",
+     "pos": "D",
+     "team": "DET",
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 63.87,
+     "ros": {
+      "mean": 30.5,
+      "p10": 18.8,
+      "p90": 41.1
+     },
+     "gain": -13.2,
+     "p_better": 0.193,
+     "gp": 15.0,
+     "points": 8.0,
+     "luck": {
+      "expected_points": 6.5,
+      "net_points": 1.5,
+      "goals": {
+       "obs": 3,
+       "expected": 1.0,
+       "shots": 20,
+       "sh_obs": 0.15,
+       "sh_expected": 0.048,
+       "percentile": 0.96
+      },
+      "assists": {
+       "shots": 119,
+       "sh_obs": 0.101,
+       "sh_expected": 0.111,
+       "percentile": 0.375,
+       "obs_goals": 12,
+       "expected_goals": 13.2
+      },
+      "sh": 0.15,
+      "sh_career": 0.06,
+      "g_minus_ixg": 2.1,
+      "oish": 0.101,
+      "oish_career": 0.102,
+      "toi": 19.9
      },
      "verdict": "conforme"
     }
@@ -14287,7 +14387,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 79.84,
+     "pct_owned": 81.16,
      "ros": {
       "mean": 61.1,
       "p10": 46.6,
@@ -14308,7 +14408,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-07",
      "games_missed": 1,
-     "pct_owned": 90.73,
+     "pct_owned": 90.61,
      "ros": {
       "mean": 53.7,
       "p10": 39.4,
@@ -14329,7 +14429,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 69.09,
+     "pct_owned": 68.78,
      "ros": {
       "mean": 53.3,
       "p10": 38.5,
@@ -14350,7 +14450,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 83.16,
+     "pct_owned": 83.38,
      "ros": {
       "mean": 51.6,
       "p10": 36.8,
@@ -14371,7 +14471,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 28.99,
+     "pct_owned": 29.3,
      "ros": {
       "mean": 50.5,
       "p10": 35.7,
@@ -14393,151 +14493,151 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 209.0,
-   "ros": 1000.3,
-   "final": 1209.3,
-   "sd": 53.37,
-   "luck_points": 1.8,
-   "p10": 1140.9,
-   "p90": 1277.7,
-   "ros_p10": 931.9,
-   "ros_p90": 1068.7,
-   "p_first": 0.873,
-   "delta_p_first_per_point": 0.00321
+   "points": 210.0,
+   "ros": 998.5,
+   "final": 1208.5,
+   "sd": 53.29,
+   "luck_points": 2.3,
+   "p10": 1140.2,
+   "p90": 1276.8,
+   "ros_p10": 930.2,
+   "ros_p90": 1066.8,
+   "p_first": 0.88,
+   "delta_p_first_per_point": 0.0031
   },
   {
    "team_id": 12,
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 188.0,
-   "ros": 920.7,
-   "final": 1108.7,
-   "sd": 48.09,
-   "luck_points": 10.7,
-   "p10": 1047.1,
-   "p90": 1170.3,
-   "ros_p10": 859.1,
-   "ros_p90": 982.3,
-   "p_first": 0.068,
-   "delta_p_first_per_point": -0.00161
+   "points": 189.0,
+   "ros": 911.9,
+   "final": 1100.9,
+   "sd": 47.62,
+   "luck_points": 8.9,
+   "p10": 1039.9,
+   "p90": 1161.9,
+   "ros_p10": 850.9,
+   "ros_p90": 972.9,
+   "p_first": 0.053,
+   "delta_p_first_per_point": -0.00132
   },
   {
    "team_id": 9,
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 200.0,
-   "ros": 882.7,
-   "final": 1082.7,
-   "sd": 47.83,
-   "luck_points": 20.6,
-   "p10": 1021.4,
-   "p90": 1144.0,
-   "ros_p10": 821.4,
-   "ros_p90": 944.0,
-   "p_first": 0.026,
-   "delta_p_first_per_point": -0.00068
+   "points": 205.0,
+   "ros": 883.8,
+   "final": 1088.8,
+   "sd": 47.91,
+   "luck_points": 21.0,
+   "p10": 1027.4,
+   "p90": 1150.2,
+   "ros_p10": 822.4,
+   "ros_p90": 945.2,
+   "p_first": 0.034,
+   "delta_p_first_per_point": -0.0009
   },
   {
    "team_id": 4,
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 198.0,
-   "ros": 866.2,
-   "final": 1064.2,
-   "sd": 49.21,
-   "luck_points": 12.8,
-   "p10": 1001.1,
-   "p90": 1127.3,
-   "ros_p10": 803.1,
-   "ros_p90": 929.3,
-   "p_first": 0.013,
-   "delta_p_first_per_point": -0.00037
+   "points": 200.0,
+   "ros": 861.5,
+   "final": 1061.5,
+   "sd": 48.93,
+   "luck_points": 11.6,
+   "p10": 998.8,
+   "p90": 1124.2,
+   "ros_p10": 798.8,
+   "ros_p90": 924.2,
+   "p_first": 0.012,
+   "delta_p_first_per_point": -0.00035
   },
   {
    "team_id": 1,
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 159.0,
-   "ros": 897.2,
-   "final": 1056.2,
-   "sd": 49.25,
-   "luck_points": -3.9,
-   "p10": 993.1,
-   "p90": 1119.3,
-   "ros_p10": 834.1,
-   "ros_p90": 960.3,
+   "points": 162.0,
+   "ros": 891.7,
+   "final": 1053.7,
+   "sd": 48.91,
+   "luck_points": -5.6,
+   "p10": 991.0,
+   "p90": 1116.4,
+   "ros_p10": 829.0,
+   "ros_p90": 954.4,
    "p_first": 0.009,
-   "delta_p_first_per_point": -0.00027
-  },
-  {
-   "team_id": 7,
-   "abbrev": "VFTH",
-   "name": "Vincenzo for the win",
-   "mine": false,
-   "points": 168.0,
-   "ros": 877.4,
-   "final": 1045.4,
-   "sd": 47.6,
-   "luck_points": -3.5,
-   "p10": 984.4,
-   "p90": 1106.4,
-   "ros_p10": 816.4,
-   "ros_p90": 938.4,
-   "p_first": 0.005,
-   "delta_p_first_per_point": -0.00015
+   "delta_p_first_per_point": -0.00025
   },
   {
    "team_id": 2,
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 185.0,
-   "ros": 859.7,
-   "final": 1044.7,
-   "sd": 43.87,
-   "luck_points": -4.4,
-   "p10": 988.5,
-   "p90": 1100.9,
-   "ros_p10": 803.5,
-   "ros_p90": 915.9,
-   "p_first": 0.003,
-   "delta_p_first_per_point": -0.0001
+   "points": 188.0,
+   "ros": 857.9,
+   "final": 1045.9,
+   "sd": 43.79,
+   "luck_points": -3.9,
+   "p10": 989.8,
+   "p90": 1102.0,
+   "ros_p10": 801.8,
+   "ros_p90": 914.0,
+   "p_first": 0.004,
+   "delta_p_first_per_point": -0.00012
+  },
+  {
+   "team_id": 7,
+   "abbrev": "VFTH",
+   "name": "Vincenzo for the win",
+   "mine": false,
+   "points": 171.0,
+   "ros": 874.6,
+   "final": 1045.6,
+   "sd": 47.38,
+   "luck_points": -2.1,
+   "p10": 984.9,
+   "p90": 1106.3,
+   "ros_p10": 813.9,
+   "ros_p90": 935.3,
+   "p_first": 0.005,
+   "delta_p_first_per_point": -0.00016
   },
   {
    "team_id": 11,
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 181.0,
-   "ros": 848.6,
-   "final": 1029.6,
-   "sd": 48.77,
-   "luck_points": 3.7,
-   "p10": 967.1,
-   "p90": 1092.1,
-   "ros_p10": 786.1,
-   "ros_p90": 911.1,
-   "p_first": 0.003,
-   "delta_p_first_per_point": -8e-05
+   "points": 183.0,
+   "ros": 843.2,
+   "final": 1026.2,
+   "sd": 47.52,
+   "luck_points": 2.4,
+   "p10": 965.3,
+   "p90": 1087.1,
+   "ros_p10": 782.3,
+   "ros_p90": 904.1,
+   "p_first": 0.002,
+   "delta_p_first_per_point": -6e-05
   },
   {
    "team_id": 3,
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 161.0,
-   "ros": 856.9,
-   "final": 1017.9,
-   "sd": 45.93,
-   "luck_points": 7.6,
-   "p10": 959.0,
-   "p90": 1076.8,
-   "ros_p10": 798.0,
-   "ros_p90": 915.8,
+   "points": 163.0,
+   "ros": 852.4,
+   "final": 1015.4,
+   "sd": 45.65,
+   "luck_points": 8.2,
+   "p10": 956.9,
+   "p90": 1073.9,
+   "ros_p10": 793.9,
+   "ros_p90": 910.9,
    "p_first": 0.001,
    "delta_p_first_per_point": -3e-05
   },
@@ -14546,15 +14646,15 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 166.0,
-   "ros": 787.8,
-   "final": 953.8,
-   "sd": 44.03,
-   "luck_points": -0.2,
-   "p10": 897.4,
-   "p90": 1010.2,
-   "ros_p10": 731.4,
-   "ros_p90": 844.2,
+   "points": 168.0,
+   "ros": 787.5,
+   "final": 955.5,
+   "sd": 43.36,
+   "luck_points": -1.3,
+   "p10": 899.9,
+   "p90": 1011.1,
+   "ros_p10": 731.9,
+   "ros_p90": 843.1,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0
   },
@@ -14564,14 +14664,14 @@
    "name": "Yan The Man",
    "mine": false,
    "points": 145.0,
-   "ros": 808.2,
-   "final": 953.2,
-   "sd": 43.7,
-   "luck_points": 4.0,
-   "p10": 897.2,
-   "p90": 1009.2,
-   "ros_p10": 752.2,
-   "ros_p90": 864.2,
+   "ros": 804.4,
+   "final": 949.4,
+   "sd": 43.5,
+   "luck_points": 3.6,
+   "p10": 893.7,
+   "p90": 1005.1,
+   "ros_p10": 748.7,
+   "ros_p90": 860.1,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0
   },
@@ -14580,15 +14680,15 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 152.0,
-   "ros": 779.7,
-   "final": 931.7,
-   "sd": 43.78,
-   "luck_points": -3.4,
-   "p10": 875.6,
-   "p90": 987.8,
-   "ros_p10": 723.6,
-   "ros_p90": 835.8,
+   "points": 156.0,
+   "ros": 782.2,
+   "final": 938.2,
+   "sd": 43.56,
+   "luck_points": -3.7,
+   "p10": 882.4,
+   "p90": 994.0,
+   "ros_p10": 726.4,
+   "ros_p90": 838.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0
   }
@@ -14740,9 +14840,9 @@
   "3025524": 57,
   "3025535": 22,
   "3025540": 1,
-  "3025608": 4,
   "3025616": 26,
   "3025662": 4,
+  "3026526": 31,
   "3036851": 31,
   "3041969": 29,
   "3041970": 16,
@@ -14939,7 +15039,6 @@
   "4063401": 49,
   "4063433": 93,
   "4063449": 5,
-  "4063502": 14,
   "4063569": 19,
   "4063605": 16,
   "4063606": 52,
@@ -15158,6 +15257,7 @@
   "4697468": 50,
   "4697470": 93,
   "4697648": 77,
+  "4697667": 42,
   "4697681": 46,
   "4697683": 35,
   "4697686": 75,
@@ -15183,7 +15283,6 @@
   "4781552": 10,
   "4781553": 91,
   "4781556": 25,
-  "4781650": 17,
   "4799741": 26,
   "4845286": 79,
   "4874718": 83,
@@ -15202,7 +15301,6 @@
   "4874740": 53,
   "4874741": 11,
   "4874744": 68,
-  "4874748": 23,
   "4874749": 5,
   "4874863": 8,
   "4874864": 41,
@@ -15315,6 +15413,7 @@
   "5149178": 15,
   "5149180": 5,
   "5149186": 6,
+  "5149189": 71,
   "5149191": 29,
   "5149194": 11,
   "5149199": 59,
@@ -15331,6 +15430,7 @@
   "5174232": 33,
   "5188334": 90,
   "5188341": 54,
+  "5188348": 49,
   "5188366": 1,
   "5188370": 42,
   "5188393": 21,
@@ -15345,10 +15445,10 @@
   "5188608": 38,
   "5188613": 61,
   "5206628": 71,
+  "5206630": 4,
   "5206642": 8,
   "5206648": 55,
   "5206840": 43,
-  "5206956": 31,
   "5209793": 25,
   "5212753": 72,
   "5216858": 45,
@@ -15380,7 +15480,6 @@
   "5334662": 12,
   "5342529": 92,
   "5346852": 51,
-  "5361658": 40,
   "5361709": 41,
   "5361711": 61
  }

@@ -1020,6 +1020,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697648,8482459,,Tyrel Bauer,name
 4697654,,brett_berard,Brett Berard,unmatched
 4697664,,,Chase Bradley,unmatched
+4697667,8482160,,Martin Chromiak,name
 4697678,,lukas_cormier,Lukas Cormier,unmatched
 4697681,8481806,louis_crevier,Louis Crevier,name
 4697683,8482076,nico_daws,Nico Daws,name
@@ -1401,7 +1402,7 @@ espn_id,nhl_id,canonical_id,name,method
 5188640,,ty_mueller,Ty Mueller,unmatched
 5188656,,,Thomas Milic,unmatched
 5206628,8484801,macklin_celebrini,Macklin Celebrini,name
-5206630,,jake_livanavage,Jake Livanavage,unmatched
+5206630,8486169,jake_livanavage,Jake Livanavage,name
 5206642,8484798,zeev_buium,Zeev Buium,name
 5206648,8484783,artyom_levshunov,Artyom Levshunov,name
 5206691,,,Victor Ostman,unmatched
