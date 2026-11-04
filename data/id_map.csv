@@ -385,6 +385,7 @@ espn_id,nhl_id,canonical_id,name,method
 3069448,8476891,matt_grzelcyk,Matt Grzelcyk,name
 3069449,,matt_benning,Matt Benning,unmatched
 3069613,,vinnie_hinostroza,Vinnie Hinostroza,unmatched
+3069614,8477035,,Matt Tomkins,name
 3069621,8476917,adam_pelech,Adam Pelech,name
 3069687,8476981,josh_anderson,Josh Anderson,name
 3069833,,,Zack Mitchell,unmatched
@@ -1265,7 +1266,7 @@ espn_id,nhl_id,canonical_id,name,method
 5103825,8483398,declan_carlile,Declan Carlile,name
 5103873,,shane_lachance,Shane Lachance,unmatched
 5104158,8481848,jacob_gaucher,Jacob Gaucher,name
-5104190,,kenny_connors,Kenny Connors,unmatched
+5104190,8483675,kenny_connors,Kenny Connors,name
 5104200,8483756,jared_wright,Jared Wright,name
 5104209,,abram_wiebe,Abram Wiebe,unmatched
 5104219,8482949,,Arsenii Sergeev,name

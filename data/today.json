@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "updated": "2026-11-04T12:02:05-05:00",
+ "updated": "2026-11-04T12:02:39-05:00",
  "games": [
   {
    "id": 2026020247,
@@ -8,7 +8,10 @@
    "away": "OTT",
    "home": "BUF",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.277,
+    "home": 3.563
+   }
   },
   {
    "id": 2026020248,
@@ -16,7 +19,10 @@
    "away": "CHI",
    "home": "FLA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.5,
+    "home": 3.767
+   }
   },
   {
    "id": 2026020249,
@@ -24,7 +30,10 @@
    "away": "SJS",
    "home": "LAK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.904,
+    "home": 3.558
+   }
   },
   {
    "id": 2026020250,
@@ -32,11 +41,14 @@
    "away": "CGY",
    "home": "SEA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.032,
+    "home": 3.366
+   }
   }
  ],
  "p_first": {
-  "now": 0.88,
+  "now": 0.881,
   "yesterday": 0.88,
   "history": [
    {
@@ -182,6 +194,10 @@
    {
     "day": "2026-11-03",
     "p_first": 0.88
+   },
+   {
+    "day": "2026-11-04",
+    "p_first": 0.881
    }
   ]
  },
@@ -192,10 +208,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 221.0,
-   "p_first": 0.88,
-   "delta_p_first_per_point": 0.0031,
-   "final": 1208.5,
-   "sd": 53.29,
+   "p_first": 0.881,
+   "delta_p_first_per_point": 0.00311,
+   "final": 1209.5,
+   "sd": 52.9,
    "expected_tonight": 3.7,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -260,10 +276,10 @@
    "name": "Rico",
    "mine": false,
    "points": 200.0,
-   "p_first": 0.053,
-   "delta_p_first_per_point": -0.00132,
-   "final": 1100.9,
-   "sd": 47.62,
+   "p_first": 0.056,
+   "delta_p_first_per_point": -0.0014,
+   "final": 1104.4,
+   "sd": 47.14,
    "expected_tonight": 2.5,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -315,10 +331,10 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 212.0,
-   "p_first": 0.034,
-   "delta_p_first_per_point": -0.0009,
-   "final": 1088.8,
-   "sd": 47.91,
+   "p_first": 0.025,
+   "delta_p_first_per_point": -0.00067,
+   "final": 1082.5,
+   "sd": 47.1,
    "expected_tonight": 1.6,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -357,10 +373,10 @@
    "name": "NWA",
    "mine": false,
    "points": 215.0,
-   "p_first": 0.012,
-   "delta_p_first_per_point": -0.00035,
-   "final": 1061.5,
-   "sd": 48.93,
+   "p_first": 0.017,
+   "delta_p_first_per_point": -0.00048,
+   "final": 1071.7,
+   "sd": 48.56,
    "expected_tonight": 1.8,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -394,15 +410,57 @@
    ]
   },
   {
+   "team_id": 7,
+   "abbrev": "VFTH",
+   "name": "Vincenzo for the win",
+   "mine": false,
+   "points": 186.0,
+   "p_first": 0.008,
+   "delta_p_first_per_point": -0.00023,
+   "final": 1057.2,
+   "sd": 46.16,
+   "expected_tonight": 1.2,
+   "actual_tonight": null,
+   "playing_tonight": 2,
+   "players": [
+    {
+     "espn_id": 3114732,
+     "nhl_id": 8477935,
+     "name": "Sam Bennett",
+     "pos": "C",
+     "team": "FLA",
+     "game_id": 2026020248,
+     "opp": "CHI",
+     "start": "2026-11-05T00:30:00Z",
+     "expected": 0.67,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3115032,
+     "nhl_id": 8477986,
+     "name": "Brandon Montour",
+     "pos": "D",
+     "team": "SEA",
+     "game_id": 2026020250,
+     "opp": "CGY",
+     "start": "2026-11-05T03:00:00Z",
+     "expected": 0.53,
+     "actual": null,
+     "p_start": null
+    }
+   ]
+  },
+  {
    "team_id": 1,
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
    "points": 168.0,
-   "p_first": 0.009,
-   "delta_p_first_per_point": -0.00025,
-   "final": 1053.7,
-   "sd": 48.91,
+   "p_first": 0.006,
+   "delta_p_first_per_point": -0.00018,
+   "final": 1048.0,
+   "sd": 48.23,
    "expected_tonight": 3.4,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -462,57 +520,15 @@
    ]
   },
   {
-   "team_id": 7,
-   "abbrev": "VFTH",
-   "name": "Vincenzo for the win",
-   "mine": false,
-   "points": 186.0,
-   "p_first": 0.005,
-   "delta_p_first_per_point": -0.00016,
-   "final": 1045.6,
-   "sd": 47.38,
-   "expected_tonight": 1.2,
-   "actual_tonight": null,
-   "playing_tonight": 2,
-   "players": [
-    {
-     "espn_id": 3114732,
-     "nhl_id": 8477935,
-     "name": "Sam Bennett",
-     "pos": "C",
-     "team": "FLA",
-     "game_id": 2026020248,
-     "opp": "CHI",
-     "start": "2026-11-05T00:30:00Z",
-     "expected": 0.67,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3115032,
-     "nhl_id": 8477986,
-     "name": "Brandon Montour",
-     "pos": "D",
-     "team": "SEA",
-     "game_id": 2026020250,
-     "opp": "CGY",
-     "start": "2026-11-05T03:00:00Z",
-     "expected": 0.53,
-     "actual": null,
-     "p_start": null
-    }
-   ]
-  },
-  {
    "team_id": 2,
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
    "points": 199.0,
-   "p_first": 0.004,
-   "delta_p_first_per_point": -0.00012,
-   "final": 1045.9,
-   "sd": 43.79,
+   "p_first": 0.005,
+   "delta_p_first_per_point": -0.00015,
+   "final": 1052.7,
+   "sd": 43.5,
    "expected_tonight": 1.8,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -551,10 +567,10 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 188.0,
-   "p_first": 0.002,
-   "delta_p_first_per_point": -6e-05,
-   "final": 1026.2,
-   "sd": 47.52,
+   "p_first": 0.001,
+   "delta_p_first_per_point": -5e-05,
+   "final": 1023.1,
+   "sd": 47.07,
    "expected_tonight": 5.1,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -660,8 +676,8 @@
    "points": 174.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -3e-05,
-   "final": 1015.4,
-   "sd": 45.65,
+   "final": 1021.9,
+   "sd": 44.46,
    "expected_tonight": 1.3,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -702,8 +718,8 @@
    "points": 177.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 955.5,
-   "sd": 43.36,
+   "final": 957.7,
+   "sd": 43.02,
    "expected_tonight": 3.9,
    "actual_tonight": null,
    "playing_tonight": 6,
@@ -796,8 +812,8 @@
    "points": 163.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 949.4,
-   "sd": 43.5,
+   "final": 965.4,
+   "sd": 43.36,
    "expected_tonight": 0.9,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -838,8 +854,8 @@
    "points": 161.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 938.2,
-   "sd": 43.56,
+   "final": 935.2,
+   "sd": 43.13,
    "expected_tonight": 3.4,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -988,8 +1004,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00132,
-   "threat": -0.00119
+   "delta_p_first_per_point": -0.0014,
+   "threat": -0.00126
   },
   {
    "espn_id": 3041992,
@@ -1008,28 +1024,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00132,
-   "threat": -0.00116
-  },
-  {
-   "espn_id": 4697384,
-   "nhl_id": 8482116,
-   "name": "Tim Stutzle",
-   "pos": "C",
-   "team": "OTT",
-   "game_id": 2026020247,
-   "opp": "@BUF",
-   "start": "2026-11-05T00:30:00Z",
-   "expected": 1.11,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 9,
-    "abbrev": "LLT",
-    "name": "Laurent's Lucrative Team"
-   },
-   "delta_p_first_per_point": -0.0009,
-   "threat": -0.001
+   "delta_p_first_per_point": -0.0014,
+   "threat": -0.00123
   },
   {
    "espn_id": 5149155,
@@ -1048,8 +1044,28 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00132,
-   "threat": -0.00097
+   "delta_p_first_per_point": -0.0014,
+   "threat": -0.00103
+  },
+  {
+   "espn_id": 4697384,
+   "nhl_id": 8482116,
+   "name": "Tim Stutzle",
+   "pos": "C",
+   "team": "OTT",
+   "game_id": 2026020247,
+   "opp": "@BUF",
+   "start": "2026-11-05T00:30:00Z",
+   "expected": 1.11,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 9,
+    "abbrev": "LLT",
+    "name": "Laurent's Lucrative Team"
+   },
+   "delta_p_first_per_point": -0.00067,
+   "threat": -0.00074
   },
   {
    "espn_id": 4024854,
@@ -1068,8 +1084,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00035,
-   "threat": -0.00042
+   "delta_p_first_per_point": -0.00048,
+   "threat": -0.00058
   },
   {
    "espn_id": 4565225,
@@ -1088,8 +1104,28 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0009,
-   "threat": -0.0004
+   "delta_p_first_per_point": -0.00067,
+   "threat": -0.0003
+  },
+  {
+   "espn_id": 5361709,
+   "nhl_id": 8486103,
+   "name": "Ivar Stenberg",
+   "pos": "LW",
+   "team": "SJS",
+   "game_id": 2026020249,
+   "opp": "@LAK",
+   "start": "2026-11-05T03:00:00Z",
+   "expected": 0.56,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 4,
+    "abbrev": "NWA",
+    "name": "NWA"
+   },
+   "delta_p_first_per_point": -0.00048,
+   "threat": -0.00027
   },
   {
    "espn_id": 5206628,
@@ -1108,28 +1144,8 @@
     "abbrev": "GSP",
     "name": "GSP"
    },
-   "delta_p_first_per_point": -0.00025,
-   "threat": -0.0003
-  },
-  {
-   "espn_id": 3114802,
-   "nhl_id": 8477960,
-   "name": "Adrian Kempe",
-   "pos": "RW",
-   "team": "LAK",
-   "game_id": 2026020249,
-   "opp": "SJS",
-   "start": "2026-11-05T03:00:00Z",
-   "expected": 0.96,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 1,
-    "abbrev": "GSP",
-    "name": "GSP"
-   },
-   "delta_p_first_per_point": -0.00025,
-   "threat": -0.00024
+   "delta_p_first_per_point": -0.00018,
+   "threat": -0.00022
   }
  ]
 }
