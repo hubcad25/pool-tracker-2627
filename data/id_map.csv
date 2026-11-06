@@ -481,7 +481,7 @@ espn_id,nhl_id,canonical_id,name,method
 3151784,8478055,gustav_forsling,Gustav Forsling,name
 3151981,8478009,ilya_sorokin,Ilya Sorokin,name
 3527554,8478366,frank_vatrano,Frank Vatrano,name
-3571762,,ben_hutton,Ben Hutton,unmatched
+3571762,8477018,ben_hutton,Ben Hutton,name
 3648002,8478403,jack_eichel,Jack Eichel,name
 3648008,8478542,evan_rodrigues,Evan Rodrigues,name
 3648015,8478421,aj_greer,A.J. Greer,name
@@ -534,7 +534,7 @@ espn_id,nhl_id,canonical_id,name,method
 3904189,8478407,vince_dunn,Vince Dunn,name
 3904190,8478399,jonas_siegenthaler,Jonas Siegenthaler,name
 3904191,8478831,kevin_stenlund,Kevin Stenlund,name
-3939658,,steven_lorentz,Steven Lorentz,unmatched
+3939658,8478904,steven_lorentz,Steven Lorentz,name
 3939714,8478499,adin_hill,Adin Hill,name
 3939716,8478476,kyle_capobianco,Kyle Capobianco,name
 3939718,8478856,conor_garland,Conor Garland,name
@@ -1402,6 +1402,7 @@ espn_id,nhl_id,canonical_id,name,method
 5188609,,luca_pinelli,Luca Pinelli,unmatched
 5188613,8484234,aydar_suniev,Aydar Suniev,name
 5188640,,ty_mueller,Ty Mueller,unmatched
+5188651,8484421,eric_pohlkamp,Eric Pohlkamp,name
 5188656,,,Thomas Milic,unmatched
 5206628,8484801,macklin_celebrini,Macklin Celebrini,name
 5206630,8486169,jake_livanavage,Jake Livanavage,name
