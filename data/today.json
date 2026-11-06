@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "updated": "2026-11-05T23:02:04-05:00",
+ "updated": "2026-11-06T06:02:04-05:00",
  "games": [
   {
    "id": 2026020251,
@@ -117,7 +117,7 @@
    "start": "2026-11-06T02:30:00Z",
    "away": "NSH",
    "home": "COL",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 2.751,
     "home": 3.807
@@ -288,7 +288,7 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 228.0,
+   "points": 236.0,
    "p_first": 0.902,
    "delta_p_first_per_point": 0.0027,
    "final": 1218.2,
@@ -447,7 +447,7 @@
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 203.0,
+   "points": 211.0,
    "p_first": 0.046,
    "delta_p_first_per_point": -0.00121,
    "final": 1105.4,
@@ -609,7 +609,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 1.65,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -619,13 +619,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 213.0,
+   "points": 225.0,
    "p_first": 0.019,
    "delta_p_first_per_point": -0.00055,
    "final": 1082.7,
    "sd": 47.07,
    "expected_tonight": 11.8,
-   "actual_tonight": 11,
+   "actual_tonight": 12,
    "playing_tonight": 15,
    "players": [
     {
@@ -807,7 +807,7 @@
      "opp": "@COL",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.79,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -820,7 +820,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.61,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -830,13 +830,13 @@
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 217.0,
+   "points": 231.0,
    "p_first": 0.014,
    "delta_p_first_per_point": -0.0004,
    "final": 1072.3,
    "sd": 48.5,
    "expected_tonight": 10.5,
-   "actual_tonight": 13,
+   "actual_tonight": 14,
    "playing_tonight": 13,
    "players": [
     {
@@ -1005,7 +1005,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.72,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -1015,13 +1015,13 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 202.0,
+   "points": 211.0,
    "p_first": 0.006,
    "delta_p_first_per_point": -0.00021,
    "final": 1063.7,
    "sd": 43.96,
    "expected_tonight": 7.6,
-   "actual_tonight": 7,
+   "actual_tonight": 9,
    "playing_tonight": 11,
    "players": [
     {
@@ -1164,7 +1164,7 @@
      "opp": "@COL",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.77,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -1174,7 +1174,7 @@
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 187.0,
+   "points": 194.0,
    "p_first": 0.006,
    "delta_p_first_per_point": -0.00019,
    "final": 1058.4,
@@ -1323,7 +1323,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 1.17,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1336,7 +1336,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.44,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1346,7 +1346,7 @@
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 174.0,
+   "points": 178.0,
    "p_first": 0.006,
    "delta_p_first_per_point": -0.00018,
    "final": 1054.1,
@@ -1505,7 +1505,7 @@
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 191.0,
+   "points": 203.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -2e-05,
    "final": 1016.5,
@@ -1625,13 +1625,13 @@
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 176.0,
+   "points": 180.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -2e-05,
    "final": 1020.3,
    "sd": 44.3,
    "expected_tonight": 10.0,
-   "actual_tonight": 3,
+   "actual_tonight": 4,
    "playing_tonight": 12,
    "players": [
     {
@@ -1774,7 +1774,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 1.17,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -1787,7 +1787,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.83,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1797,15 +1797,28 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 182.0,
+   "points": 184.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 959.1,
    "sd": 42.86,
-   "expected_tonight": 4.8,
+   "expected_tonight": 4.9,
    "actual_tonight": 2,
    "playing_tonight": 7,
    "players": [
+    {
+     "espn_id": 4565259,
+     "nhl_id": 8481611,
+     "name": "Pyotr Kochetkov",
+     "pos": "G",
+     "team": "CAR",
+     "game_id": 2026020255,
+     "opp": "@NYI",
+     "start": "2026-11-06T00:00:00Z",
+     "expected": 0.97,
+     "actual": 0,
+     "p_start": null
+    },
     {
      "espn_id": 2562637,
      "nhl_id": 8476459,
@@ -1818,19 +1831,6 @@
      "expected": 0.87,
      "actual": 1,
      "p_start": null
-    },
-    {
-     "espn_id": 3942065,
-     "nhl_id": 8478872,
-     "name": "Karel Vejmelka",
-     "pos": "G",
-     "team": "UTA",
-     "game_id": 2026020251,
-     "opp": "@MTL",
-     "start": "2026-11-06T00:00:00Z",
-     "expected": 0.87,
-     "actual": 0,
-     "p_start": 0.745
     },
     {
      "espn_id": 4565227,
@@ -1894,7 +1894,7 @@
      "opp": "@COL",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.97,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1904,7 +1904,7 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 164.0,
+   "points": 176.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 965.9,
@@ -2079,7 +2079,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.76,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -2089,13 +2089,13 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 163.0,
+   "points": 167.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 935.0,
    "sd": 42.97,
    "expected_tonight": 7.2,
-   "actual_tonight": 2,
+   "actual_tonight": 4,
    "playing_tonight": 9,
    "players": [
     {
@@ -2199,7 +2199,7 @@
      "opp": "NSH",
      "start": "2026-11-06T02:30:00Z",
      "expected": 1.25,
-     "actual": null,
+     "actual": 1,
      "p_start": 0.859
     },
     {
@@ -2212,7 +2212,7 @@
      "opp": "@COL",
      "start": "2026-11-06T02:30:00Z",
      "expected": 0.84,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -2385,7 +2385,7 @@
    "opp": "NSH",
    "start": "2026-11-06T02:30:00Z",
    "expected": 1.65,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 12,
