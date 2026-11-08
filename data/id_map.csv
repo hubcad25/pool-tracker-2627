@@ -1178,7 +1178,7 @@ espn_id,nhl_id,canonical_id,name,method
 4996097,8483548,brandon_bussi,Brandon Bussi,name
 4996099,8484136,max_sasson,Max Sasson,name
 4996312,,aidan_mcdonough,Aidan McDonough,unmatched
-4997013,,jack_devine,Jack Devine,unmatched
+4997013,8483433,jack_devine,Jack Devine,name
 4997019,,mike_benning,Mike Benning,unmatched
 4997026,8482802,carter_mazur,Carter Mazur,name
 4997033,8483752,dominic_james,Dominic James,name
@@ -1187,7 +1187,7 @@ espn_id,nhl_id,canonical_id,name,method
 4997092,,brian_halonen,Brian Halonen,unmatched
 4997129,,,Lucas Condotta,unmatched
 4997131,8481732,andre_lee,Andre Lee,name
-4997138,,henry_thrun,Henry Thrun,unmatched
+4997138,8481567,henry_thrun,Henry Thrun,name
 5012030,,joshua_roy,Joshua Roy,unmatched
 5048894,8482259,bobby_mcmann,Bobby McMann,name
 5050068,,,Tom Hodges,unmatched
@@ -1546,6 +1546,7 @@ espn_id,nhl_id,canonical_id,name,method
 5302535,8485702,maxim_shabanov,Maxim Shabanov,name
 5302558,8485467,luke_haymes,Luke Haymes,name
 5302578,8485545,,Michal Postava,name
+5302584,,,Trey Taylor,unmatched
 5334662,8485957,,Alberts Smits,name
 5342440,,,Keaton Verhoeff,unmatched
 5342529,8486067,gavin_mckenna,Gavin McKenna,name
