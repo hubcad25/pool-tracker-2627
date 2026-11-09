@@ -832,7 +832,7 @@ espn_id,nhl_id,canonical_id,name,method
 4419263,,,Brinson Pasichnuk,unmatched
 4419638,8480246,nick_perbix,Nick Perbix,name
 4419646,8482070,mitchell_chaffee,Mitchell Chaffee,name
-4419649,,marc_del_gaizo,Marc Del Gaizo,unmatched
+4419649,8481743,marc_del_gaizo,Marc Del Gaizo,name
 4419658,8481077,john_leonard,John Leonard,name
 4419662,8483575,,Matt Murray,name
 4419668,,,Wyatt Aamodt,unmatched
@@ -920,6 +920,7 @@ espn_id,nhl_id,canonical_id,name,method
 4587855,,,Cayden Primeau,unmatched
 4587864,,,Anton Wedin,unmatched
 4587871,,josiah_slavin,Josiah Slavin,unmatched
+4587901,,nathan_legare,Nathan Legare,unmatched
 4587904,8481006,tyler_tucker,Tyler Tucker,name
 4587909,8480981,joel_hofer,Joel Hofer,name
 4587910,8481641,joel_kiviranta,Joel Kiviranta,name
@@ -1008,7 +1009,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697447,8482476,emil_heineman,Emil Heineman,name
 4697448,8482095,tyler_kleven,Tyler Kleven,name
 4697449,8482122,brock_faber,Brock Faber,name
-4697450,,,Drew Commesso,unmatched
+4697450,8482123,,Drew Commesso,name
 4697453,8482165,yan_kuznetsov,Yan Kuznetsov,name
 4697455,,,Joel Blomqvist,unmatched
 4697457,8482126,emil_andrae,Emil Andrae,name
@@ -1152,7 +1153,7 @@ espn_id,nhl_id,canonical_id,name,method
 4894729,8482821,arvid_soderblom,Arvid Soderblom,name
 4894747,8482874,jacob_melanson,Jacob Melanson,name
 4894820,,daniil_miromanov,Daniil Miromanov,unmatched
-4894822,,,Logan Morrison,unmatched
+4894822,8483012,,Logan Morrison,name
 4894857,,,Hugo Alnefelt,unmatched
 4894860,,valtteri_puustinen,Valtteri Puustinen,unmatched
 4894928,8482751,ryan_winterton,Ryan Winterton,name
