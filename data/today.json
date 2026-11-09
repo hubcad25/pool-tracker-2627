@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "updated": "2026-11-09T12:02:36-05:00",
+ "updated": "2026-11-09T14:43:54-05:00",
  "games": [
   {
    "id": 2026020283,
@@ -37,7 +37,7 @@
   }
  ],
  "p_first": {
-  "now": 0.874,
+  "now": 0.872,
   "yesterday": 0.882,
   "history": [
    {
@@ -206,7 +206,7 @@
    },
    {
     "day": "2026-11-09",
-    "p_first": 0.874
+    "p_first": 0.872
    }
   ]
  },
@@ -217,8 +217,8 @@
    "name": "hubcad25",
    "mine": true,
    "points": 259.0,
-   "p_first": 0.874,
-   "delta_p_first_per_point": 0.00328,
+   "p_first": 0.872,
+   "delta_p_first_per_point": 0.0033,
    "final": 1221.9,
    "sd": 52.51,
    "expected_tonight": 3.4,
@@ -260,7 +260,7 @@
      "game_id": 2026020283,
      "opp": "@EDM",
      "start": "2026-11-10T01:00:00Z",
-     "expected": 0.83,
+     "expected": 0.82,
      "actual": null,
      "p_start": null
     }
@@ -272,10 +272,10 @@
    "name": "Rico",
    "mine": false,
    "points": 231.0,
-   "p_first": 0.044,
-   "delta_p_first_per_point": -0.00113,
-   "final": 1112.6,
-   "sd": 46.02,
+   "p_first": 0.046,
+   "delta_p_first_per_point": -0.00116,
+   "final": 1113.5,
+   "sd": 46.05,
    "expected_tonight": 3.0,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -756,7 +756,7 @@
      "game_id": 2026020284,
      "opp": "@VAN",
      "start": "2026-11-10T02:30:00Z",
-     "expected": 0.44,
+     "expected": 0.45,
      "actual": null,
      "p_start": null
     },
@@ -798,7 +798,7 @@
      "game_id": 2026020285,
      "opp": "@SJS",
      "start": "2026-11-10T03:00:00Z",
-     "expected": 0.99,
+     "expected": 1.0,
      "actual": null,
      "p_start": null
     },
@@ -856,7 +856,7 @@
    "game_id": 2026020283,
    "opp": "@EDM",
    "start": "2026-11-10T01:00:00Z",
-   "expected": 0.83,
+   "expected": 0.82,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -900,8 +900,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00113,
-   "threat": -0.00105
+   "delta_p_first_per_point": -0.00116,
+   "threat": -0.00108
   },
   {
    "espn_id": 2590852,
@@ -920,8 +920,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00113,
-   "threat": -0.00094
+   "delta_p_first_per_point": -0.00116,
+   "threat": -0.00096
   },
   {
    "espn_id": 5149155,
@@ -940,8 +940,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00113,
-   "threat": -0.0009
+   "delta_p_first_per_point": -0.00116,
+   "threat": -0.00092
   },
   {
    "espn_id": 3151981,
@@ -1020,8 +1020,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00113,
-   "threat": -0.00053
+   "delta_p_first_per_point": -0.00116,
+   "threat": -0.00054
   }
  ]
 }

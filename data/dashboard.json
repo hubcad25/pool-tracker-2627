@@ -12472,9 +12472,9 @@
     "injury": {
      "status": "INJURY_RESERVE",
      "type": "Knee",
-     "expected_return": "2026-11-14",
+     "expected_return": "2026-11-12",
      "out_for_season": false,
-     "games_missed": 2
+     "games_missed": 1
     },
     "gp": 0,
     "g": 0,
@@ -12482,25 +12482,25 @@
     "points": 0,
     "pace": null,
     "prior": {
-     "p10": 49.4,
-     "p50": 56.0,
-     "p90": 62.7
+     "p10": 50.1,
+     "p50": 56.9,
+     "p90": 63.7
     },
     "ros_prior": {
-     "p10": 49.4,
-     "p50": 56.0,
-     "p90": 62.7
+     "p10": 50.1,
+     "p50": 56.9,
+     "p90": 63.7
     },
     "ros": {
-     "mean": 56.0,
-     "p10": 42.9,
-     "p90": 68.5,
-     "games_left": 66
+     "mean": 56.9,
+     "p10": 43.6,
+     "p90": 69.5,
+     "games_left": 67
     },
     "final": {
-     "mean": 56.0,
-     "p10": 42.9,
-     "p90": 68.5
+     "mean": 56.9,
+     "p10": 43.6,
+     "p90": 69.5
     },
     "luck": null,
     "verdict": "petit_echantillon"
@@ -12980,6 +12980,28 @@
    "verdict": "petit_echantillon"
   },
   {
+   "espn_id": 3899946,
+   "name": "Mathew Barzal",
+   "pos": "C",
+   "team": "NYI",
+   "owner": "RICo",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Knee",
+   "expected_return": "2026-11-12",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 56.9,
+    "p10": 43.6,
+    "p90": 69.5
+   },
+   "gp": 0,
+   "points": 0,
+   "luck": null,
+   "verdict": "petit_echantillon"
+  },
+  {
    "espn_id": 4587996,
    "name": "Kirill Marchenko",
    "pos": "LW",
@@ -13025,28 +13047,6 @@
     "toi": 17.6
    },
    "verdict": "conforme"
-  },
-  {
-   "espn_id": 3899946,
-   "name": "Mathew Barzal",
-   "pos": "C",
-   "team": "NYI",
-   "owner": "RICo",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Knee",
-   "expected_return": "2026-11-14",
-   "out_for_season": false,
-   "games_missed": 2,
-   "ros": {
-    "mean": 56.0,
-    "p10": 42.9,
-    "p90": 68.5
-   },
-   "gp": 0,
-   "points": 0,
-   "luck": null,
-   "verdict": "petit_echantillon"
   },
   {
    "espn_id": 3042016,
@@ -13488,7 +13488,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 69.56,
+     "pct_owned": 70.16,
      "ros": {
       "mean": 53.5,
       "p10": 41.0,
@@ -13531,10 +13531,10 @@
      "name": "Ryan Nugent-Hopkins",
      "pos": "C",
      "team": "EDM",
-     "status": "DAY_TO_DAY",
-     "expected_return": "2026-11-09",
-     "games_missed": 0,
-     "pct_owned": 72.54,
+     "status": "ACTIVE",
+     "expected_return": null,
+     "games_missed": null,
+     "pct_owned": 72.62,
      "ros": {
       "mean": 53.3,
       "p10": 40.9,
@@ -13580,7 +13580,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 56.2,
+     "pct_owned": 56.04,
      "ros": {
       "mean": 52.4,
       "p10": 40.1,
@@ -13647,7 +13647,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 10.13,
+     "pct_owned": 10.14,
      "ros": {
       "mean": 48.3,
       "p10": 37.0,
@@ -13693,7 +13693,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 41.4,
+     "pct_owned": 41.89,
      "ros": {
       "mean": 47.7,
       "p10": 32.2,
@@ -13739,7 +13739,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-14",
      "games_missed": 2,
-     "pct_owned": 50.4,
+     "pct_owned": 50.37,
      "ros": {
       "mean": 47.3,
       "p10": 36.2,
@@ -13760,7 +13760,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 80.7,
+     "pct_owned": 80.73,
      "ros": {
       "mean": 47.0,
       "p10": 36.0,
@@ -13806,7 +13806,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 82.58,
+     "pct_owned": 82.64,
      "ros": {
       "mean": 45.7,
       "p10": 35.0,
@@ -13852,7 +13852,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 64.98,
+     "pct_owned": 65.16,
      "ros": {
       "mean": 45.6,
       "p10": 30.8,
@@ -13900,7 +13900,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-14",
      "games_missed": 2,
-     "pct_owned": 75.83,
+     "pct_owned": 75.85,
      "ros": {
       "mean": 35.4,
       "p10": 23.7,
@@ -13921,7 +13921,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 3.32,
+     "pct_owned": 3.31,
      "ros": {
       "mean": 31.3,
       "p10": 19.3,
@@ -13967,7 +13967,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 65.85,
+     "pct_owned": 65.81,
      "ros": {
       "mean": 30.0,
       "p10": 18.5,
@@ -14013,7 +14013,7 @@
      "status": "OUT",
      "expected_return": "2026-11-14",
      "games_missed": 2,
-     "pct_owned": 67.99,
+     "pct_owned": 67.88,
      "ros": {
       "mean": 29.1,
       "p10": 17.9,
@@ -14059,7 +14059,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.66,
+     "pct_owned": 12.72,
      "ros": {
       "mean": 28.7,
       "p10": 17.7,
@@ -14107,7 +14107,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 70.9,
+     "pct_owned": 71.04,
      "ros": {
       "mean": 53.5,
       "p10": 39.1,
@@ -14128,7 +14128,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.08,
+     "pct_owned": 93.1,
      "ros": {
       "mean": 51.6,
       "p10": 37.4,
@@ -14170,7 +14170,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 80.25,
+     "pct_owned": 79.99,
      "ros": {
       "mean": 50.7,
       "p10": 36.5,
@@ -14191,7 +14191,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 83.66,
+     "pct_owned": 83.63,
      "ros": {
       "mean": 46.3,
       "p10": 31.9,
@@ -14222,8 +14222,8 @@
    "p90": 1289.2,
    "ros_p10": 895.6,
    "ros_p90": 1030.2,
-   "p_first": 0.874,
-   "delta_p_first_per_point": 0.00328
+   "p_first": 0.872,
+   "delta_p_first_per_point": 0.0033
   },
   {
    "team_id": 12,
@@ -14231,16 +14231,16 @@
    "name": "Rico",
    "mine": false,
    "points": 231.0,
-   "ros": 881.6,
-   "final": 1112.6,
-   "sd": 46.02,
+   "ros": 882.5,
+   "final": 1113.5,
+   "sd": 46.05,
    "luck_points": 8.0,
-   "p10": 1053.6,
-   "p90": 1171.6,
-   "ros_p10": 822.6,
-   "ros_p90": 940.6,
-   "p_first": 0.044,
-   "delta_p_first_per_point": -0.00113
+   "p10": 1054.5,
+   "p90": 1172.5,
+   "ros_p10": 823.5,
+   "ros_p90": 941.5,
+   "p_first": 0.046,
+   "delta_p_first_per_point": -0.00116
   },
   {
    "team_id": 9,
@@ -14481,6 +14481,7 @@
   "5734": 33,
   "5738": 2,
   "5746": 72,
+  "5763": 4,
   "5793": 72,
   "5798": 11,
   "5831": 64,
@@ -15086,7 +15087,6 @@
   "5080171": 21,
   "5080172": 22,
   "5080173": 6,
-  "5080175": 18,
   "5080176": 20,
   "5080177": 10,
   "5080179": 53,
@@ -15139,7 +15139,6 @@
   "5149204": 94,
   "5149210": 64,
   "5149211": 53,
-  "5149212": 4,
   "5149221": 48,
   "5149231": 80,
   "5173105": 86,
@@ -15178,7 +15177,6 @@
   "5216880": 6,
   "5216882": 94,
   "5216883": 28,
-  "5216884": 36,
   "5216887": 24,
   "5216897": 92,
   "5216907": 92,
