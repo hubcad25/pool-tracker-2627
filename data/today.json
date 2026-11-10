@@ -1,6 +1,6 @@
 {
  "date": "2026-11-10",
- "updated": "2026-11-10T11:59:25-05:00",
+ "updated": "2026-11-10T12:32:03-05:00",
  "games": [
   {
    "id": 2026020286,
@@ -360,7 +360,7 @@
      "game_id": 2026020292,
      "opp": "NSH",
      "start": "2026-11-11T03:00:00Z",
-     "expected": 1.29,
+     "expected": 1.3,
      "actual": null,
      "p_start": null
     }
@@ -564,7 +564,7 @@
      "game_id": 2026020291,
      "opp": "@WPG",
      "start": "2026-11-11T00:00:00Z",
-     "expected": 1.35,
+     "expected": 1.36,
      "actual": null,
      "p_start": null
     },
@@ -723,7 +723,7 @@
      "game_id": 2026020286,
      "opp": "COL",
      "start": "2026-11-11T00:00:00Z",
-     "expected": 0.61,
+     "expected": 0.62,
      "actual": null,
      "p_start": null
     },
@@ -937,10 +937,23 @@
    "delta_p_first_per_point": -0.0001,
    "final": 1049.3,
    "sd": 46.89,
-   "expected_tonight": 5.1,
+   "expected_tonight": 5.5,
    "actual_tonight": null,
    "playing_tonight": 7,
    "players": [
+    {
+     "espn_id": 3042016,
+     "nhl_id": 8477504,
+     "name": "Josh Morrissey",
+     "pos": "D",
+     "team": "WPG",
+     "game_id": 2026020291,
+     "opp": "NJD",
+     "start": "2026-11-11T00:00:00Z",
+     "expected": 0.81,
+     "actual": null,
+     "p_start": null
+    },
     {
      "espn_id": 4024950,
      "nhl_id": 8479345,
@@ -1003,19 +1016,6 @@
      "opp": "DET",
      "start": "2026-11-11T01:00:00Z",
      "expected": 0.69,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5495,
-     "nhl_id": 8475764,
-     "name": "Cam Fowler",
-     "pos": "D",
-     "team": "STL",
-     "game_id": 2026020290,
-     "opp": "DET",
-     "start": "2026-11-11T01:00:00Z",
-     "expected": 0.38,
      "actual": null,
      "p_start": null
     },
@@ -1690,7 +1690,7 @@
    "game_id": 2026020292,
    "opp": "NSH",
    "start": "2026-11-11T03:00:00Z",
-   "expected": 1.29,
+   "expected": 1.3,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -1846,7 +1846,7 @@
    "game_id": 2026020291,
    "opp": "@WPG",
    "start": "2026-11-11T00:00:00Z",
-   "expected": 1.35,
+   "expected": 1.36,
    "actual": null,
    "p_start": null,
    "owner": {
