@@ -13479,7 +13479,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 75.22,
+     "pct_owned": 75.28,
      "ros": {
       "mean": 54.6,
       "p10": 41.8,
@@ -13525,7 +13525,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 54.79,
+     "pct_owned": 54.77,
      "ros": {
       "mean": 50.6,
       "p10": 38.8,
@@ -13571,7 +13571,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 72.72,
+     "pct_owned": 72.69,
      "ros": {
       "mean": 49.3,
       "p10": 37.7,
@@ -13617,7 +13617,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 15.81,
+     "pct_owned": 15.83,
      "ros": {
       "mean": 49.1,
       "p10": 37.6,
@@ -13656,7 +13656,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-12",
      "games_missed": 0,
-     "pct_owned": 51.05,
+     "pct_owned": 51.08,
      "ros": {
       "mean": 48.0,
       "p10": 36.8,
@@ -13677,7 +13677,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 10.69,
+     "pct_owned": 10.71,
      "ros": {
       "mean": 47.4,
       "p10": 32.0,
@@ -13723,7 +13723,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 68.97,
+     "pct_owned": 69.01,
      "ros": {
       "mean": 46.5,
       "p10": 35.6,
@@ -13769,7 +13769,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 46.11,
+     "pct_owned": 46.14,
      "ros": {
       "mean": 46.5,
       "p10": 31.4,
@@ -13815,7 +13815,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 22.38,
+     "pct_owned": 22.44,
      "ros": {
       "mean": 46.1,
       "p10": 31.1,
@@ -13861,7 +13861,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 83.54,
+     "pct_owned": 83.55,
      "ros": {
       "mean": 45.5,
       "p10": 34.8,
@@ -13909,7 +13909,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-14",
      "games_missed": 1,
-     "pct_owned": 76.76,
+     "pct_owned": 76.8,
      "ros": {
       "mean": 35.4,
       "p10": 23.7,
@@ -13930,7 +13930,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 3.23,
+     "pct_owned": 3.22,
      "ros": {
       "mean": 30.6,
       "p10": 18.8,
@@ -14022,7 +14022,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 66.24,
+     "pct_owned": 66.25,
      "ros": {
       "mean": 28.6,
       "p10": 17.6,
@@ -14068,7 +14068,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.49,
+     "pct_owned": 12.46,
      "ros": {
       "mean": 28.6,
       "p10": 17.6,
@@ -14116,7 +14116,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 73.21,
+     "pct_owned": 73.24,
      "ros": {
       "mean": 53.7,
       "p10": 39.7,
@@ -14179,7 +14179,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 77.96,
+     "pct_owned": 77.92,
      "ros": {
       "mean": 48.9,
       "p10": 34.9,
@@ -14200,7 +14200,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 83.96,
+     "pct_owned": 83.95,
      "ros": {
       "mean": 47.4,
       "p10": 33.2,

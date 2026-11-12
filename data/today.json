@@ -1,13 +1,13 @@
 {
  "date": "2026-11-12",
- "updated": "2026-11-12T12:02:34-05:00",
+ "updated": "2026-11-12T12:31:28-05:00",
  "games": [
   {
    "id": 2026020309,
    "start": "2026-11-12T17:00:00Z",
    "away": "CAR",
    "home": "SEA",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 4.121,
     "home": 2.577
@@ -1775,7 +1775,7 @@
      "game_id": 2026020304,
      "opp": "TBL",
      "start": "2026-11-13T00:00:00Z",
-     "expected": 0.45,
+     "expected": 0.44,
      "actual": null,
      "p_start": null
     },
