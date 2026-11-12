@@ -996,7 +996,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697408,8482111,justin_barron,Justin Barron,name
 4697409,8482089,jake_neighbours,Jake Neighbours,name
 4697411,8482092,ridly_greig,Ridly Greig,name
-4697412,,brendan_brisson,Brendan Brisson,unmatched
+4697412,8482153,brendan_brisson,Brendan Brisson,name
 4697413,8482145,mavrik_bourque,Mavrik Bourque,name
 4697414,,ozzy_wiesblatt,Ozzy Wiesblatt,unmatched
 4697436,8482171,william_wallinder,William Wallinder,name
@@ -1351,7 +1351,7 @@ espn_id,nhl_id,canonical_id,name,method
 5149242,,,Martin Misiak,unmatched
 5149243,,,Beau Akey,unmatched
 5149244,,,Lukas Dragicevic,unmatched
-5149245,,lenni_hameenaho,Lenni Hameenaho,unmatched
+5149245,8484177,lenni_hameenaho,Lenni Hameenaho,name
 5149246,,,Carey Terrance,unmatched
 5149247,,,Damian Clara,unmatched
 5149248,,,Tristan Bertucci,unmatched
