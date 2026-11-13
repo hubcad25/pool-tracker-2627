@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "updated": "2026-11-13T12:02:03-05:00",
+ "updated": "2026-11-13T12:02:31-05:00",
  "games": [
   {
    "id": 2026020310,
@@ -8,7 +8,10 @@
    "away": "NYR",
    "home": "VAN",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.852,
+    "home": 2.748
+   }
   },
   {
    "id": 2026020311,
@@ -16,11 +19,14 @@
    "away": "NSH",
    "home": "VGK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.868,
+    "home": 3.475
+   }
   }
  ],
  "p_first": {
-  "now": 0.855,
+  "now": 0.826,
   "yesterday": 0.855,
   "history": [
    {
@@ -202,6 +208,10 @@
    {
     "day": "2026-11-12",
     "p_first": 0.855
+   },
+   {
+    "day": "2026-11-13",
+    "p_first": 0.826
    }
   ]
  },
@@ -212,10 +222,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 275.0,
-   "p_first": 0.855,
-   "delta_p_first_per_point": 0.00373,
-   "final": 1209.9,
-   "sd": 50.66,
+   "p_first": 0.826,
+   "delta_p_first_per_point": 0.00425,
+   "final": 1200.5,
+   "sd": 50.52,
    "expected_tonight": 2.1,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -249,57 +259,15 @@
    ]
   },
   {
-   "team_id": 12,
-   "abbrev": "RICo",
-   "name": "Rico",
-   "mine": false,
-   "points": 246.0,
-   "p_first": 0.053,
-   "delta_p_first_per_point": -0.00134,
-   "final": 1110.2,
-   "sd": 45.06,
-   "expected_tonight": 1.7,
-   "actual_tonight": null,
-   "playing_tonight": 2,
-   "players": [
-    {
-     "espn_id": 2590852,
-     "nhl_id": 8476468,
-     "name": "J.T. Miller",
-     "pos": "C",
-     "team": "NYR",
-     "game_id": 2026020310,
-     "opp": "@VAN",
-     "start": "2026-11-14T02:00:00Z",
-     "expected": 0.96,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3114985,
-     "nhl_id": 8477964,
-     "name": "Ivan Barbashev",
-     "pos": "LW",
-     "team": "VGK",
-     "game_id": 2026020311,
-     "opp": "NSH",
-     "start": "2026-11-14T03:00:00Z",
-     "expected": 0.73,
-     "actual": null,
-     "p_start": null
-    }
-   ]
-  },
-  {
    "team_id": 9,
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 269.0,
-   "p_first": 0.048,
-   "delta_p_first_per_point": -0.00123,
-   "final": 1107.9,
-   "sd": 44.81,
+   "p_first": 0.06,
+   "delta_p_first_per_point": -0.00145,
+   "final": 1107.7,
+   "sd": 44.41,
    "expected_tonight": 3.2,
    "actual_tonight": null,
    "playing_tonight": 4,
@@ -359,15 +327,57 @@
    ]
   },
   {
+   "team_id": 12,
+   "abbrev": "RICo",
+   "name": "Rico",
+   "mine": false,
+   "points": 246.0,
+   "p_first": 0.05,
+   "delta_p_first_per_point": -0.00124,
+   "final": 1103.0,
+   "sd": 44.43,
+   "expected_tonight": 1.7,
+   "actual_tonight": null,
+   "playing_tonight": 2,
+   "players": [
+    {
+     "espn_id": 2590852,
+     "nhl_id": 8476468,
+     "name": "J.T. Miller",
+     "pos": "C",
+     "team": "NYR",
+     "game_id": 2026020310,
+     "opp": "@VAN",
+     "start": "2026-11-14T02:00:00Z",
+     "expected": 0.96,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3114985,
+     "nhl_id": 8477964,
+     "name": "Ivan Barbashev",
+     "pos": "LW",
+     "team": "VGK",
+     "game_id": 2026020311,
+     "opp": "NSH",
+     "start": "2026-11-14T03:00:00Z",
+     "expected": 0.73,
+     "actual": null,
+     "p_start": null
+    }
+   ]
+  },
+  {
    "team_id": 4,
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
    "points": 274.0,
-   "p_first": 0.024,
-   "delta_p_first_per_point": -0.00064,
-   "final": 1087.4,
-   "sd": 46.98,
+   "p_first": 0.031,
+   "delta_p_first_per_point": -0.00079,
+   "final": 1088.3,
+   "sd": 46.53,
    "expected_tonight": 2.2,
    "actual_tonight": null,
    "playing_tonight": 3,
@@ -419,10 +429,10 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 241.0,
-   "p_first": 0.013,
-   "delta_p_first_per_point": -0.00038,
-   "final": 1075.3,
-   "sd": 46.19,
+   "p_first": 0.022,
+   "delta_p_first_per_point": -0.00059,
+   "final": 1081.5,
+   "sd": 45.72,
    "expected_tonight": 0.0,
    "actual_tonight": null,
    "playing_tonight": 0,
@@ -434,10 +444,10 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 241.0,
-   "p_first": 0.003,
-   "delta_p_first_per_point": -8e-05,
-   "final": 1045.5,
-   "sd": 44.54,
+   "p_first": 0.007,
+   "delta_p_first_per_point": -0.00019,
+   "final": 1057.8,
+   "sd": 44.33,
    "expected_tonight": 0.5,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -464,9 +474,9 @@
    "mine": false,
    "points": 239.0,
    "p_first": 0.002,
-   "delta_p_first_per_point": -8e-05,
-   "final": 1050.2,
-   "sd": 41.67,
+   "delta_p_first_per_point": -5e-05,
+   "final": 1039.7,
+   "sd": 40.9,
    "expected_tonight": 0.8,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -492,10 +502,10 @@
    "name": "GSP",
    "mine": false,
    "points": 208.0,
-   "p_first": 0.002,
-   "delta_p_first_per_point": -6e-05,
-   "final": 1039.5,
-   "sd": 44.98,
+   "p_first": 0.001,
+   "delta_p_first_per_point": -4e-05,
+   "final": 1026.2,
+   "sd": 44.99,
    "expected_tonight": 1.5,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -536,8 +546,8 @@
    "points": 221.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 945.1,
-   "sd": 41.56,
+   "final": 956.9,
+   "sd": 40.94,
    "expected_tonight": 2.0,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -578,8 +588,8 @@
    "points": 212.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 1001.1,
-   "sd": 43.56,
+   "final": 994.8,
+   "sd": 43.02,
    "expected_tonight": 0.0,
    "actual_tonight": null,
    "playing_tonight": 0,
@@ -593,8 +603,8 @@
    "points": 212.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 986.5,
-   "sd": 43.1,
+   "final": 976.5,
+   "sd": 42.27,
    "expected_tonight": 1.2,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -635,8 +645,8 @@
    "points": 204.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 954.0,
-   "sd": 41.32,
+   "final": 942.1,
+   "sd": 40.57,
    "expected_tonight": 0.9,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -705,28 +715,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00123,
-   "threat": -0.00148
-  },
-  {
-   "espn_id": 2590852,
-   "nhl_id": 8476468,
-   "name": "J.T. Miller",
-   "pos": "C",
-   "team": "NYR",
-   "game_id": 2026020310,
-   "opp": "@VAN",
-   "start": "2026-11-14T02:00:00Z",
-   "expected": 0.96,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 12,
-    "abbrev": "RICo",
-    "name": "Rico"
-   },
-   "delta_p_first_per_point": -0.00134,
-   "threat": -0.00128
+   "delta_p_first_per_point": -0.00145,
+   "threat": -0.00174
   },
   {
    "espn_id": 5037,
@@ -745,19 +735,19 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00123,
-   "threat": -0.00103
+   "delta_p_first_per_point": -0.00145,
+   "threat": -0.00121
   },
   {
-   "espn_id": 3114985,
-   "nhl_id": 8477964,
-   "name": "Ivan Barbashev",
-   "pos": "LW",
-   "team": "VGK",
-   "game_id": 2026020311,
-   "opp": "NSH",
-   "start": "2026-11-14T03:00:00Z",
-   "expected": 0.73,
+   "espn_id": 2590852,
+   "nhl_id": 8476468,
+   "name": "J.T. Miller",
+   "pos": "C",
+   "team": "NYR",
+   "game_id": 2026020310,
+   "opp": "@VAN",
+   "start": "2026-11-14T02:00:00Z",
+   "expected": 0.96,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -765,8 +755,8 @@
     "abbrev": "RICo",
     "name": "Rico"
    },
-   "delta_p_first_per_point": -0.00134,
-   "threat": -0.00098
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00118
   },
   {
    "espn_id": 4233566,
@@ -785,8 +775,28 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00123,
-   "threat": -0.00095
+   "delta_p_first_per_point": -0.00145,
+   "threat": -0.00112
+  },
+  {
+   "espn_id": 3114985,
+   "nhl_id": 8477964,
+   "name": "Ivan Barbashev",
+   "pos": "LW",
+   "team": "VGK",
+   "game_id": 2026020311,
+   "opp": "NSH",
+   "start": "2026-11-14T03:00:00Z",
+   "expected": 0.73,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 12,
+    "abbrev": "RICo",
+    "name": "Rico"
+   },
+   "delta_p_first_per_point": -0.00124,
+   "threat": -0.00091
   },
   {
    "espn_id": 5545,
@@ -805,8 +815,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00064,
-   "threat": -0.00066
+   "delta_p_first_per_point": -0.00079,
+   "threat": -0.00082
   },
   {
    "espn_id": 3904186,
@@ -825,8 +835,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00123,
-   "threat": -0.00053
+   "delta_p_first_per_point": -0.00145,
+   "threat": -0.00063
   },
   {
    "espn_id": 5149204,
@@ -845,8 +855,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00064,
-   "threat": -0.00037
+   "delta_p_first_per_point": -0.00079,
+   "threat": -0.00045
   }
  ]
 }
