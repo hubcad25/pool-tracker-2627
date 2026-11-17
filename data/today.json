@@ -1,6 +1,6 @@
 {
  "date": "2026-11-17",
- "updated": "2026-11-17T12:02:03-05:00",
+ "updated": "2026-11-17T12:02:37-05:00",
  "games": [
   {
    "id": 2026020333,
@@ -8,7 +8,10 @@
    "away": "LAK",
    "home": "BOS",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.928,
+    "home": 3.469
+   }
   },
   {
    "id": 2026020335,
@@ -16,7 +19,10 @@
    "away": "EDM",
    "home": "FLA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.067,
+    "home": 3.276
+   }
   },
   {
    "id": 2026020336,
@@ -24,7 +30,10 @@
    "away": "CBJ",
    "home": "NYI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.691,
+    "home": 3.083
+   }
   },
   {
    "id": 2026020337,
@@ -32,7 +41,10 @@
    "away": "BUF",
    "home": "PHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.093,
+    "home": 2.889
+   }
   },
   {
    "id": 2026020341,
@@ -40,7 +52,10 @@
    "away": "OTT",
    "home": "WPG",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.125,
+    "home": 2.803
+   }
   },
   {
    "id": 2026020334,
@@ -48,7 +63,10 @@
    "away": "WSH",
    "home": "TBL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.991,
+    "home": 3.609
+   }
   },
   {
    "id": 2026020338,
@@ -56,7 +74,10 @@
    "away": "TOR",
    "home": "CHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.538,
+    "home": 3.062
+   }
   },
   {
    "id": 2026020339,
@@ -64,7 +85,10 @@
    "away": "ANA",
    "home": "STL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.151,
+    "home": 3.491
+   }
   },
   {
    "id": 2026020340,
@@ -72,7 +96,10 @@
    "away": "NSH",
    "home": "MIN",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.696,
+    "home": 3.647
+   }
   },
   {
    "id": 2026020342,
@@ -80,7 +107,10 @@
    "away": "DAL",
    "home": "VGK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.754,
+    "home": 3.073
+   }
   },
   {
    "id": 2026020343,
@@ -88,11 +118,14 @@
    "away": "CGY",
    "home": "SJS",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.857,
+    "home": 3.125
+   }
   }
  ],
  "p_first": {
-  "now": 0.871,
+  "now": 0.861,
   "yesterday": 0.871,
   "history": [
    {
@@ -290,6 +323,10 @@
    {
     "day": "2026-11-16",
     "p_first": 0.871
+   },
+   {
+    "day": "2026-11-17",
+    "p_first": 0.861
    }
   ]
  },
@@ -300,10 +337,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 296.0,
-   "p_first": 0.871,
-   "delta_p_first_per_point": 0.00351,
-   "final": 1209.8,
-   "sd": 49.45,
+   "p_first": 0.861,
+   "delta_p_first_per_point": 0.00372,
+   "final": 1205.7,
+   "sd": 49.18,
    "expected_tonight": 8.4,
    "actual_tonight": null,
    "playing_tonight": 9,
@@ -433,10 +470,10 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 291.0,
-   "p_first": 0.061,
-   "delta_p_first_per_point": -0.0016,
-   "final": 1114.9,
-   "sd": 43.69,
+   "p_first": 0.066,
+   "delta_p_first_per_point": -0.00169,
+   "final": 1114.0,
+   "sd": 43.63,
    "expected_tonight": 9.4,
    "actual_tonight": null,
    "playing_tonight": 10,
@@ -580,9 +617,9 @@
    "mine": false,
    "points": 296.0,
    "p_first": 0.027,
-   "delta_p_first_per_point": -0.00077,
-   "final": 1092.4,
-   "sd": 45.58,
+   "delta_p_first_per_point": -0.00075,
+   "final": 1089.5,
+   "sd": 45.43,
    "expected_tonight": 5.5,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -686,10 +723,10 @@
    "name": "Rico",
    "mine": false,
    "points": 265.0,
-   "p_first": 0.022,
-   "delta_p_first_per_point": -0.00063,
-   "final": 1090.3,
-   "sd": 43.15,
+   "p_first": 0.025,
+   "delta_p_first_per_point": -0.00071,
+   "final": 1090.6,
+   "sd": 43.12,
    "expected_tonight": 9.6,
    "actual_tonight": null,
    "playing_tonight": 12,
@@ -858,8 +895,8 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 250.0,
-   "p_first": 0.014,
-   "delta_p_first_per_point": -0.00041,
+   "p_first": 0.015,
+   "delta_p_first_per_point": -0.00045,
    "final": 1078.1,
    "sd": 44.44,
    "expected_tonight": 7.7,
@@ -991,10 +1028,10 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 254.0,
-   "p_first": 0.003,
-   "delta_p_first_per_point": -0.00011,
-   "final": 1052.6,
-   "sd": 43.4,
+   "p_first": 0.004,
+   "delta_p_first_per_point": -0.00014,
+   "final": 1053.7,
+   "sd": 43.41,
    "expected_tonight": 10.2,
    "actual_tonight": null,
    "playing_tonight": 13,
@@ -1177,10 +1214,10 @@
    "mine": false,
    "points": 259.0,
    "p_first": 0.002,
-   "delta_p_first_per_point": -7e-05,
-   "final": 1048.9,
-   "sd": 40.32,
-   "expected_tonight": 8.6,
+   "delta_p_first_per_point": -6e-05,
+   "final": 1045.8,
+   "sd": 40.17,
+   "expected_tonight": 8.5,
    "actual_tonight": null,
    "playing_tonight": 12,
    "players": [
@@ -1336,7 +1373,7 @@
      "game_id": 2026020342,
      "opp": "@VGK",
      "start": "2026-11-18T03:00:00Z",
-     "expected": 0.91,
+     "expected": 0.83,
      "actual": null,
      "p_start": 0.805
     }
@@ -1350,8 +1387,8 @@
    "points": 222.0,
    "p_first": 0.001,
    "delta_p_first_per_point": -2e-05,
-   "final": 1020.0,
-   "sd": 44.03,
+   "final": 1019.4,
+   "sd": 44.01,
    "expected_tonight": 10.4,
    "actual_tonight": null,
    "playing_tonight": 13,
@@ -1535,8 +1572,8 @@
    "points": 231.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 949.5,
-   "sd": 40.55,
+   "final": 947.3,
+   "sd": 40.44,
    "expected_tonight": 8.6,
    "actual_tonight": null,
    "playing_tonight": 12,
@@ -1707,8 +1744,8 @@
    "points": 222.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 958.3,
-   "sd": 39.57,
+   "final": 958.4,
+   "sd": 39.54,
    "expected_tonight": 7.6,
    "actual_tonight": null,
    "playing_tonight": 10,
@@ -1853,9 +1890,9 @@
    "points": 220.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 984.1,
-   "sd": 41.2,
-   "expected_tonight": 7.5,
+   "final": 985.0,
+   "sd": 41.19,
+   "expected_tonight": 7.4,
    "actual_tonight": null,
    "playing_tonight": 10,
    "players": [
@@ -1951,19 +1988,6 @@
      "p_start": null
     },
     {
-     "espn_id": 4272888,
-     "nhl_id": 8480313,
-     "name": "Logan Thompson",
-     "pos": "G",
-     "team": "WSH",
-     "game_id": 2026020334,
-     "opp": "@TBL",
-     "start": "2026-11-18T00:30:00Z",
-     "expected": 0.99,
-     "actual": null,
-     "p_start": 0.875
-    },
-    {
      "espn_id": 4587996,
      "nhl_id": 8480893,
      "name": "Kirill Marchenko",
@@ -1975,6 +1999,19 @@
      "expected": 0.96,
      "actual": null,
      "p_start": null
+    },
+    {
+     "espn_id": 4272888,
+     "nhl_id": 8480313,
+     "name": "Logan Thompson",
+     "pos": "G",
+     "team": "WSH",
+     "game_id": 2026020334,
+     "opp": "@TBL",
+     "start": "2026-11-18T00:30:00Z",
+     "expected": 0.8,
+     "actual": null,
+     "p_start": 0.875
     },
     {
      "espn_id": 5080220,
@@ -1999,8 +2036,8 @@
    "points": 217.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 943.7,
-   "sd": 39.87,
+   "final": 942.0,
+   "sd": 39.78,
    "expected_tonight": 8.2,
    "actual_tonight": null,
    "playing_tonight": 12,
@@ -2310,8 +2347,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00266
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.0028
   },
   {
    "espn_id": 2562632,
@@ -2330,8 +2367,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00184
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00195
   },
   {
    "espn_id": 3899937,
@@ -2350,8 +2387,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00179
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00189
   },
   {
    "espn_id": 4697384,
@@ -2370,8 +2407,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00166
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00175
   },
   {
    "espn_id": 4233637,
@@ -2390,8 +2427,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00154
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00163
   },
   {
    "espn_id": 3151981,
@@ -2410,8 +2447,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00146
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00154
   },
   {
    "espn_id": 5037,
@@ -2430,8 +2467,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00129
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00136
   },
   {
    "espn_id": 3899949,
@@ -2450,8 +2487,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.0016,
-   "threat": -0.00124
+   "delta_p_first_per_point": -0.00169,
+   "threat": -0.00131
   }
  ]
 }
