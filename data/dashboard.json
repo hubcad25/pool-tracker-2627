@@ -2714,13 +2714,7 @@
     "group": "D",
     "team": "TOR",
     "slot": "D",
-    "injury": {
-     "status": "DAY_TO_DAY",
-     "type": "Lower Body",
-     "expected_return": "2026-11-17",
-     "out_for_season": false,
-     "games_missed": 0
-    },
+    "injury": null,
     "gp": 18.0,
     "g": 0.0,
     "a": 12.0,
@@ -6818,7 +6812,13 @@
     "group": "G",
     "team": "CAR",
     "slot": "G",
-    "injury": null,
+    "injury": {
+     "status": "DAY_TO_DAY",
+     "type": "Illness",
+     "expected_return": "2026-11-19",
+     "out_for_season": false,
+     "games_missed": 0
+    },
     "gp": 13,
     "g": 0,
     "a": 0,
@@ -6984,13 +6984,7 @@
     "group": "F",
     "team": "TB",
     "slot": "F",
-    "injury": {
-     "status": "INJURY_RESERVE",
-     "type": "Undisclosed",
-     "expected_return": "2026-11-17",
-     "out_for_season": false,
-     "games_missed": 0
-    },
+    "injury": null,
     "gp": 17.0,
     "g": 5.0,
     "a": 11.0,
@@ -13108,53 +13102,6 @@
    "verdict": "petit_echantillon"
   },
   {
-   "espn_id": 3151187,
-   "name": "Brayden Point",
-   "pos": "C",
-   "team": "TB",
-   "owner": "VFTH",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Undisclosed",
-   "expected_return": "2026-11-17",
-   "out_for_season": false,
-   "games_missed": 0,
-   "ros": {
-    "mean": 57.7,
-    "p10": 44.2,
-    "p90": 70.6
-   },
-   "gp": 17.0,
-   "points": 16.0,
-   "luck": {
-    "expected_points": 16.7,
-    "net_points": -0.7,
-    "goals": {
-     "obs": 5,
-     "expected": 7.4,
-     "shots": 36,
-     "sh_obs": 0.139,
-     "sh_expected": 0.205,
-     "percentile": 0.168
-    },
-    "assists": {
-     "shots": 166,
-     "sh_obs": 0.157,
-     "sh_expected": 0.132,
-     "percentile": 0.825,
-     "obs_goals": 26,
-     "expected_goals": 21.9
-    },
-    "sh": 0.139,
-    "sh_career": 0.183,
-    "g_minus_ixg": -1.7,
-    "oish": 0.157,
-    "oish_career": 0.121,
-    "toi": 18.7
-   },
-   "verdict": "conforme"
-  },
-  {
    "espn_id": 4587996,
    "name": "Kirill Marchenko",
    "pos": "LW",
@@ -13594,7 +13541,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 79.22,
+     "pct_owned": 79.25,
      "ros": {
       "mean": 52.9,
       "p10": 40.5,
@@ -13640,7 +13587,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 14.17,
+     "pct_owned": 14.15,
      "ros": {
       "mean": 47.4,
       "p10": 36.3,
@@ -13686,7 +13633,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 74.58,
+     "pct_owned": 74.61,
      "ros": {
       "mean": 46.9,
       "p10": 35.9,
@@ -13732,7 +13679,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 47.07,
+     "pct_owned": 46.99,
      "ros": {
       "mean": 46.8,
       "p10": 35.8,
@@ -13778,7 +13725,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 47.56,
+     "pct_owned": 47.6,
      "ros": {
       "mean": 46.7,
       "p10": 35.8,
@@ -13824,7 +13771,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 72.71,
+     "pct_owned": 72.73,
      "ros": {
       "mean": 46.6,
       "p10": 35.7,
@@ -13867,17 +13814,17 @@
      "name": "Ryan Nugent-Hopkins",
      "pos": "C",
      "team": "EDM",
-     "status": "DAY_TO_DAY",
-     "expected_return": "2026-11-17",
-     "games_missed": 0,
-     "pct_owned": 69.72,
+     "status": "OUT",
+     "expected_return": "2026-11-19",
+     "games_missed": 1,
+     "pct_owned": 69.6,
      "ros": {
-      "mean": 46.6,
-      "p10": 35.7,
-      "p90": 57.0
+      "mean": 45.9,
+      "p10": 35.1,
+      "p90": 56.1
      },
-     "gain": 4.8,
-     "p_better": 0.635,
+     "gain": 4.1,
+     "p_better": 0.616,
      "gp": 12.0,
      "points": 11.0,
      "luck": {
@@ -13916,7 +13863,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 53.16,
+     "pct_owned": 53.17,
      "ros": {
       "mean": 45.8,
       "p10": 30.9,
@@ -13962,7 +13909,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.16,
+     "pct_owned": 12.18,
      "ros": {
       "mean": 45.7,
       "p10": 30.8,
@@ -14056,7 +14003,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-21",
      "games_missed": 2,
-     "pct_owned": 56.38,
+     "pct_owned": 56.37,
      "ros": {
       "mean": 30.8,
       "p10": 19.0,
@@ -14102,7 +14049,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 21.46,
+     "pct_owned": 21.6,
      "ros": {
       "mean": 30.2,
       "p10": 18.6,
@@ -14194,7 +14141,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 6.04,
+     "pct_owned": 6.06,
      "ros": {
       "mean": 28.3,
       "p10": 17.4,
@@ -14240,7 +14187,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 65.83,
+     "pct_owned": 65.81,
      "ros": {
       "mean": 27.3,
       "p10": 16.8,
@@ -14309,7 +14256,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.77,
+     "pct_owned": 93.76,
      "ros": {
       "mean": 51.3,
       "p10": 37.6,
@@ -14330,7 +14277,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 91.58,
+     "pct_owned": 91.59,
      "ros": {
       "mean": 50.5,
       "p10": 36.8,
@@ -14372,7 +14319,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 76.63,
+     "pct_owned": 76.55,
      "ros": {
       "mean": 47.5,
       "p10": 34.0,

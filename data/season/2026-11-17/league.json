@@ -307,9 +307,9 @@
      "name": "Morgan Rielly",
      "pos": "D",
      "pro_team": "TOR",
-     "injury_status": "DAY_TO_DAY",
-     "injury_type": "Lower Body",
-     "expected_return": "2026-11-17",
+     "injury_status": "ACTIVE",
+     "injury_type": null,
+     "expected_return": null,
      "out_for_season": false,
      "slot": "D"
     },
@@ -1102,9 +1102,9 @@
      "name": "Pyotr Kochetkov",
      "pos": "G",
      "pro_team": "CAR",
-     "injury_status": "ACTIVE",
-     "injury_type": null,
-     "expected_return": null,
+     "injury_status": "DAY_TO_DAY",
+     "injury_type": "Illness",
+     "expected_return": "2026-11-19",
      "out_for_season": false,
      "slot": "G"
     }
@@ -1166,9 +1166,9 @@
      "name": "Brayden Point",
      "pos": "C",
      "pro_team": "TB",
-     "injury_status": "INJURY_RESERVE",
-     "injury_type": "Undisclosed",
-     "expected_return": "2026-11-17",
+     "injury_status": "ACTIVE",
+     "injury_type": null,
+     "expected_return": null,
      "out_for_season": false,
      "slot": "F"
     },
