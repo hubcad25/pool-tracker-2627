@@ -1,13 +1,13 @@
 {
  "date": "2026-11-16",
- "updated": "2026-11-16T14:32:07-05:00",
+ "updated": "2026-11-16T23:02:03-05:00",
  "games": [
   {
    "id": 2026020331,
    "start": "2026-11-17T00:30:00Z",
    "away": "MTL",
    "home": "NYR",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 3.206,
     "home": 3.136
@@ -18,7 +18,7 @@
    "start": "2026-11-17T02:30:00Z",
    "away": "VAN",
    "home": "UTA",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 2.503,
     "home": 4.195
@@ -239,7 +239,7 @@
    "final": 1209.8,
    "sd": 49.45,
    "expected_tonight": 2.8,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 3,
    "players": [
     {
@@ -252,7 +252,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 1.03,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -265,7 +265,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.86,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -294,7 +294,7 @@
    "final": 1114.9,
    "sd": 43.69,
    "expected_tonight": 1.8,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -349,7 +349,7 @@
    "final": 1092.4,
    "sd": 45.58,
    "expected_tonight": 2.9,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 4,
    "players": [
     {
@@ -362,7 +362,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.96,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.838
     },
     {
@@ -375,7 +375,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.93,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -388,7 +388,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.53,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -417,7 +417,7 @@
    "final": 1090.3,
    "sd": 43.15,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -430,7 +430,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.87,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -446,7 +446,7 @@
    "final": 1078.1,
    "sd": 44.44,
    "expected_tonight": 0.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 0,
    "players": []
   },
@@ -461,7 +461,7 @@
    "final": 1052.6,
    "sd": 43.4,
    "expected_tonight": 1.1,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -490,7 +490,7 @@
    "final": 1048.9,
    "sd": 40.32,
    "expected_tonight": 1.9,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 2,
    "players": [
     {
@@ -503,7 +503,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 1.14,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -516,7 +516,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.79,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -532,7 +532,7 @@
    "final": 1020.0,
    "sd": 44.03,
    "expected_tonight": 0.3,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -561,7 +561,7 @@
    "final": 949.5,
    "sd": 40.55,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -574,7 +574,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.91,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -590,7 +590,7 @@
    "final": 958.3,
    "sd": 39.57,
    "expected_tonight": 3.1,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 5,
    "players": [
     {
@@ -603,7 +603,7 @@
      "opp": "MTL",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.76,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -616,7 +616,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.6,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -629,7 +629,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.53,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -671,7 +671,7 @@
    "final": 984.1,
    "sd": 41.2,
    "expected_tonight": 3.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 3,
    "players": [
     {
@@ -684,7 +684,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.78,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -726,7 +726,7 @@
    "final": 943.7,
    "sd": 39.87,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -739,7 +739,7 @@
      "opp": "@NYR",
      "start": "2026-11-17T00:30:00Z",
      "expected": 0.94,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -756,7 +756,7 @@
    "opp": "MTL",
    "start": "2026-11-17T00:30:00Z",
    "expected": 1.03,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "injury": null
   },
@@ -770,7 +770,7 @@
    "opp": "MTL",
    "start": "2026-11-17T00:30:00Z",
    "expected": 0.86,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   },
@@ -840,7 +840,7 @@
    "opp": "@NYR",
    "start": "2026-11-17T00:30:00Z",
    "expected": 0.96,
-   "actual": null,
+   "actual": 0,
    "p_start": 0.838,
    "owner": {
     "team_id": 4,
@@ -860,7 +860,7 @@
    "opp": "@NYR",
    "start": "2026-11-17T00:30:00Z",
    "expected": 0.93,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -900,7 +900,7 @@
    "opp": "MTL",
    "start": "2026-11-17T00:30:00Z",
    "expected": 0.87,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -920,7 +920,7 @@
    "opp": "MTL",
    "start": "2026-11-17T00:30:00Z",
    "expected": 0.53,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
