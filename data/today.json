@@ -1,6 +1,6 @@
 {
  "date": "2026-11-18",
- "updated": "2026-11-18T23:02:08-05:00",
+ "updated": "2026-11-19T06:02:04-05:00",
  "games": [
   {
    "id": 2026020344,
@@ -29,7 +29,7 @@
    "start": "2026-11-19T03:00:00Z",
    "away": "COL",
    "home": "UTA",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.244,
     "home": 3.315
@@ -252,7 +252,7 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 304.0,
+   "points": 305.0,
    "p_first": 0.855,
    "delta_p_first_per_point": 0.00387,
    "final": 1204.0,
@@ -284,7 +284,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.8,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -294,13 +294,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 301.0,
+   "points": 307.0,
    "p_first": 0.068,
    "delta_p_first_per_point": -0.00175,
    "final": 1114.8,
    "sd": 43.06,
    "expected_tonight": 3.1,
-   "actual_tonight": 3,
+   "actual_tonight": 6,
    "playing_tonight": 5,
    "players": [
     {
@@ -339,7 +339,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.61,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -352,7 +352,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.58,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -365,7 +365,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.36,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -407,7 +407,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 1.43,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -417,7 +417,7 @@
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 300.0,
+   "points": 306.0,
    "p_first": 0.024,
    "delta_p_first_per_point": -0.00066,
    "final": 1086.3,
@@ -501,7 +501,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -543,7 +543,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 1.07,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -556,7 +556,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.39,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -566,7 +566,7 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 272.0,
+   "points": 276.0,
    "p_first": 0.003,
    "delta_p_first_per_point": -0.0001,
    "final": 1053.4,
@@ -621,13 +621,13 @@
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 262.0,
+   "points": 266.0,
    "p_first": 0.003,
    "delta_p_first_per_point": -0.0001,
    "final": 1049.1,
    "sd": 42.66,
    "expected_tonight": 2.8,
-   "actual_tonight": 3,
+   "actual_tonight": 4,
    "playing_tonight": 3,
    "players": [
     {
@@ -666,7 +666,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.92,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -750,7 +750,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.84,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -763,7 +763,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.69,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -773,7 +773,7 @@
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 228.0,
+   "points": 231.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -1e-05,
    "final": 1007.9,
@@ -860,7 +860,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.89,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.815
     }
    ]
@@ -870,13 +870,13 @@
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 225.0,
+   "points": 226.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 982.0,
    "sd": 40.72,
    "expected_tonight": 5.1,
-   "actual_tonight": 0,
+   "actual_tonight": 1,
    "playing_tonight": 6,
    "players": [
     {
@@ -915,7 +915,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 1.13,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -928,7 +928,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 1.07,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -941,7 +941,7 @@
      "opp": "COL",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.78,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -954,7 +954,7 @@
      "opp": "@UTA",
      "start": "2026-11-19T03:00:00Z",
      "expected": 0.75,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -985,7 +985,7 @@
    "opp": "COL",
    "start": "2026-11-19T03:00:00Z",
    "expected": 0.8,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   }
@@ -1041,7 +1041,7 @@
    "opp": "@UTA",
    "start": "2026-11-19T03:00:00Z",
    "expected": 1.43,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 12,
@@ -1061,7 +1061,7 @@
    "opp": "COL",
    "start": "2026-11-19T03:00:00Z",
    "expected": 0.61,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -1081,7 +1081,7 @@
    "opp": "@UTA",
    "start": "2026-11-19T03:00:00Z",
    "expected": 0.58,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -1121,7 +1121,7 @@
    "opp": "COL",
    "start": "2026-11-19T03:00:00Z",
    "expected": 0.36,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 9,
