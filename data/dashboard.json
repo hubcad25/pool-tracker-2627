@@ -199,74 +199,6 @@
    "verdict": "conforme"
   },
   {
-   "espn_id": 5149125,
-   "name": "Connor Bedard",
-   "pos": "C",
-   "group": "F",
-   "team": "CHI",
-   "slot": "F",
-   "injury": {
-    "status": "OUT",
-    "type": "Shoulder",
-    "expected_return": "2026-11-27",
-    "out_for_season": false,
-    "games_missed": 3
-   },
-   "gp": 15.0,
-   "g": 7.0,
-   "a": 11.0,
-   "points": 18.0,
-   "pace": 100.8,
-   "prior": {
-    "p10": 66.6,
-    "p50": 79.2,
-    "p90": 91.6
-   },
-   "ros_prior": {
-    "p10": 53.1,
-    "p50": 63.2,
-    "p90": 73.0
-   },
-   "ros": {
-    "mean": 63.5,
-    "p10": 47.1,
-    "p90": 79.3,
-    "games_left": 59
-   },
-   "final": {
-    "mean": 81.5,
-    "p10": 65.1,
-    "p90": 97.3
-   },
-   "luck": {
-    "expected_points": 14.7,
-    "net_points": 3.3,
-    "goals": {
-     "obs": 7,
-     "expected": 6.4,
-     "shots": 44,
-     "sh_obs": 0.159,
-     "sh_expected": 0.146,
-     "percentile": 0.613
-    },
-    "assists": {
-     "shots": 100,
-     "sh_obs": 0.15,
-     "sh_expected": 0.113,
-     "percentile": 0.877,
-     "obs_goals": 15,
-     "expected_goals": 11.3
-    },
-    "sh": 0.159,
-    "sh_career": 0.12,
-    "g_minus_ixg": 0.9,
-    "oish": 0.15,
-    "oish_career": 0.123,
-    "toi": 20.1
-   },
-   "verdict": "chanceux"
-  },
-  {
    "espn_id": 4697382,
    "name": "Alexis Lafreniere",
    "pos": "LW",
@@ -639,6 +571,68 @@
    "verdict": "conforme"
   },
   {
+   "espn_id": 5216887,
+   "name": "Trevor Connelly",
+   "pos": "LW",
+   "group": "F",
+   "team": "VGK",
+   "slot": "F",
+   "injury": null,
+   "gp": 24.0,
+   "g": 7.0,
+   "a": 8.0,
+   "points": 15.0,
+   "pace": 52.5,
+   "prior": {
+    "p10": 0.0,
+    "p50": 2.3,
+    "p90": 16.7
+   },
+   "ros_prior": {
+    "p10": 0.0,
+    "p50": 1.6,
+    "p90": 12.0
+   },
+   "ros": {
+    "mean": 21.0,
+    "p10": 14.6,
+    "p90": 32.5,
+    "games_left": 60
+   },
+   "final": {
+    "mean": 36.0,
+    "p10": 29.6,
+    "p90": 47.5
+   },
+   "luck": {
+    "expected_points": 15.9,
+    "net_points": -0.9,
+    "goals": {
+     "obs": 7,
+     "expected": 6.5,
+     "shots": 53,
+     "sh_obs": 0.132,
+     "sh_expected": 0.122,
+     "percentile": 0.606
+    },
+    "assists": {
+     "shots": 154,
+     "sh_obs": 0.097,
+     "sh_expected": 0.115,
+     "percentile": 0.25,
+     "obs_goals": 15,
+     "expected_goals": 17.8
+    },
+    "sh": 0.132,
+    "sh_career": null,
+    "g_minus_ixg": 0.6,
+    "oish": 0.097,
+    "oish_career": null,
+    "toi": 14.5
+   },
+   "verdict": "conforme"
+  },
+  {
    "espn_id": 4320548,
    "name": "Quinn Hughes",
    "pos": "D",
@@ -993,6 +987,74 @@
    },
    "luck": null,
    "verdict": null
+  },
+  {
+   "espn_id": 5149125,
+   "name": "Connor Bedard",
+   "pos": "C",
+   "group": "F",
+   "team": "CHI",
+   "slot": "IR",
+   "injury": {
+    "status": "OUT",
+    "type": "Shoulder",
+    "expected_return": "2026-11-27",
+    "out_for_season": false,
+    "games_missed": 3
+   },
+   "gp": 15.0,
+   "g": 7.0,
+   "a": 11.0,
+   "points": 18.0,
+   "pace": 100.8,
+   "prior": {
+    "p10": 66.6,
+    "p50": 79.2,
+    "p90": 91.6
+   },
+   "ros_prior": {
+    "p10": 53.1,
+    "p50": 63.2,
+    "p90": 73.0
+   },
+   "ros": {
+    "mean": 63.5,
+    "p10": 47.1,
+    "p90": 79.3,
+    "games_left": 59
+   },
+   "final": {
+    "mean": 81.5,
+    "p10": 65.1,
+    "p90": 97.3
+   },
+   "luck": {
+    "expected_points": 14.7,
+    "net_points": 3.3,
+    "goals": {
+     "obs": 7,
+     "expected": 6.4,
+     "shots": 44,
+     "sh_obs": 0.159,
+     "sh_expected": 0.146,
+     "percentile": 0.613
+    },
+    "assists": {
+     "shots": 100,
+     "sh_obs": 0.15,
+     "sh_expected": 0.113,
+     "percentile": 0.877,
+     "obs_goals": 15,
+     "expected_goals": 11.3
+    },
+    "sh": 0.159,
+    "sh_career": 0.12,
+    "g_minus_ixg": 0.9,
+    "oish": 0.15,
+    "oish_career": 0.123,
+    "toi": 20.1
+   },
+   "verdict": "chanceux"
   }
  ],
  "teams_players": {
@@ -5096,74 +5158,6 @@
     "verdict": "conforme"
    },
    {
-    "espn_id": 5149125,
-    "name": "Connor Bedard",
-    "pos": "C",
-    "group": "F",
-    "team": "CHI",
-    "slot": "F",
-    "injury": {
-     "status": "OUT",
-     "type": "Shoulder",
-     "expected_return": "2026-11-27",
-     "out_for_season": false,
-     "games_missed": 3
-    },
-    "gp": 15.0,
-    "g": 7.0,
-    "a": 11.0,
-    "points": 18.0,
-    "pace": 100.8,
-    "prior": {
-     "p10": 66.6,
-     "p50": 79.2,
-     "p90": 91.6
-    },
-    "ros_prior": {
-     "p10": 53.1,
-     "p50": 63.2,
-     "p90": 73.0
-    },
-    "ros": {
-     "mean": 63.5,
-     "p10": 47.1,
-     "p90": 79.3,
-     "games_left": 59
-    },
-    "final": {
-     "mean": 81.5,
-     "p10": 65.1,
-     "p90": 97.3
-    },
-    "luck": {
-     "expected_points": 14.7,
-     "net_points": 3.3,
-     "goals": {
-      "obs": 7,
-      "expected": 6.4,
-      "shots": 44,
-      "sh_obs": 0.159,
-      "sh_expected": 0.146,
-      "percentile": 0.613
-     },
-     "assists": {
-      "shots": 100,
-      "sh_obs": 0.15,
-      "sh_expected": 0.113,
-      "percentile": 0.877,
-      "obs_goals": 15,
-      "expected_goals": 11.3
-     },
-     "sh": 0.159,
-     "sh_career": 0.12,
-     "g_minus_ixg": 0.9,
-     "oish": 0.15,
-     "oish_career": 0.123,
-     "toi": 20.1
-    },
-    "verdict": "chanceux"
-   },
-   {
     "espn_id": 4697382,
     "name": "Alexis Lafreniere",
     "pos": "LW",
@@ -5536,6 +5530,68 @@
     "verdict": "conforme"
    },
    {
+    "espn_id": 5216887,
+    "name": "Trevor Connelly",
+    "pos": "LW",
+    "group": "F",
+    "team": "VGK",
+    "slot": "F",
+    "injury": null,
+    "gp": 24.0,
+    "g": 7.0,
+    "a": 8.0,
+    "points": 15.0,
+    "pace": 52.5,
+    "prior": {
+     "p10": 0.0,
+     "p50": 2.3,
+     "p90": 16.7
+    },
+    "ros_prior": {
+     "p10": 0.0,
+     "p50": 1.6,
+     "p90": 12.0
+    },
+    "ros": {
+     "mean": 21.0,
+     "p10": 14.6,
+     "p90": 32.5,
+     "games_left": 60
+    },
+    "final": {
+     "mean": 36.0,
+     "p10": 29.6,
+     "p90": 47.5
+    },
+    "luck": {
+     "expected_points": 15.9,
+     "net_points": -0.9,
+     "goals": {
+      "obs": 7,
+      "expected": 6.5,
+      "shots": 53,
+      "sh_obs": 0.132,
+      "sh_expected": 0.122,
+      "percentile": 0.606
+     },
+     "assists": {
+      "shots": 154,
+      "sh_obs": 0.097,
+      "sh_expected": 0.115,
+      "percentile": 0.25,
+      "obs_goals": 15,
+      "expected_goals": 17.8
+     },
+     "sh": 0.132,
+     "sh_career": null,
+     "g_minus_ixg": 0.6,
+     "oish": 0.097,
+     "oish_career": null,
+     "toi": 14.5
+    },
+    "verdict": "conforme"
+   },
+   {
     "espn_id": 4320548,
     "name": "Quinn Hughes",
     "pos": "D",
@@ -5890,6 +5946,74 @@
     },
     "luck": null,
     "verdict": null
+   },
+   {
+    "espn_id": 5149125,
+    "name": "Connor Bedard",
+    "pos": "C",
+    "group": "F",
+    "team": "CHI",
+    "slot": "IR",
+    "injury": {
+     "status": "OUT",
+     "type": "Shoulder",
+     "expected_return": "2026-11-27",
+     "out_for_season": false,
+     "games_missed": 3
+    },
+    "gp": 15.0,
+    "g": 7.0,
+    "a": 11.0,
+    "points": 18.0,
+    "pace": 100.8,
+    "prior": {
+     "p10": 66.6,
+     "p50": 79.2,
+     "p90": 91.6
+    },
+    "ros_prior": {
+     "p10": 53.1,
+     "p50": 63.2,
+     "p90": 73.0
+    },
+    "ros": {
+     "mean": 63.5,
+     "p10": 47.1,
+     "p90": 79.3,
+     "games_left": 59
+    },
+    "final": {
+     "mean": 81.5,
+     "p10": 65.1,
+     "p90": 97.3
+    },
+    "luck": {
+     "expected_points": 14.7,
+     "net_points": 3.3,
+     "goals": {
+      "obs": 7,
+      "expected": 6.4,
+      "shots": 44,
+      "sh_obs": 0.159,
+      "sh_expected": 0.146,
+      "percentile": 0.613
+     },
+     "assists": {
+      "shots": 100,
+      "sh_obs": 0.15,
+      "sh_expected": 0.113,
+      "percentile": 0.877,
+      "obs_goals": 15,
+      "expected_goals": 11.3
+     },
+     "sh": 0.159,
+     "sh_career": 0.12,
+     "g_minus_ixg": 0.9,
+     "oish": 0.15,
+     "oish_career": 0.123,
+     "toi": 20.1
+    },
+    "verdict": "chanceux"
    }
   ],
   "6": [
@@ -13613,15 +13737,15 @@
   }
  ],
  "free_agents": {
-  "moves_left": 1,
+  "moves_left": 0,
   "worst": {
    "F": {
-    "espn_id": 5342529,
-    "name": "Gavin McKenna",
+    "espn_id": 5216887,
+    "name": "Trevor Connelly",
     "ros": {
-     "mean": 39.9,
-     "p10": 27.0,
-     "p90": 54.3
+     "mean": 21.0,
+     "p10": 14.6,
+     "p90": 32.5
     }
    },
    "D": {
@@ -13653,14 +13777,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 81.37,
+     "pct_owned": 81.38,
      "ros": {
       "mean": 51.2,
       "p10": 39.2,
       "p90": 62.6
      },
-     "gain": 11.3,
-     "p_better": 0.79,
+     "gain": 30.2,
+     "p_better": 0.996,
      "gp": 22.0,
      "points": 26.0,
      "luck": {
@@ -13699,14 +13823,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 76.44,
+     "pct_owned": 76.46,
      "ros": {
       "mean": 46.8,
       "p10": 35.9,
       "p90": 57.2
      },
-     "gain": 6.9,
-     "p_better": 0.695,
+     "gain": 25.8,
+     "p_better": 0.991,
      "gp": 24.0,
      "points": 24.0,
      "luck": {
@@ -13745,14 +13869,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 49.92,
+     "pct_owned": 49.98,
      "ros": {
       "mean": 46.6,
       "p10": 35.7,
       "p90": 56.9
      },
-     "gain": 6.7,
-     "p_better": 0.69,
+     "gain": 25.6,
+     "p_better": 0.991,
      "gp": 20.0,
      "points": 21.0,
      "luck": {
@@ -13791,14 +13915,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 44.56,
+     "pct_owned": 44.52,
      "ros": {
       "mean": 45.5,
       "p10": 34.8,
       "p90": 55.5
      },
-     "gain": 5.6,
-     "p_better": 0.662,
+     "gain": 24.5,
+     "p_better": 0.989,
      "gp": 22.0,
      "points": 15.0,
      "luck": {
@@ -13837,14 +13961,14 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-21",
      "games_missed": 0,
-     "pct_owned": 51.71,
+     "pct_owned": 51.72,
      "ros": {
       "mean": 45.2,
       "p10": 34.6,
       "p90": 55.2
      },
-     "gain": 5.3,
-     "p_better": 0.654,
+     "gain": 24.2,
+     "p_better": 0.988,
      "gp": 2.0,
      "points": 1.0,
      "luck": {
@@ -13883,14 +14007,14 @@
      "status": "DAY_TO_DAY",
      "expected_return": "2026-11-21",
      "games_missed": 0,
-     "pct_owned": 67.73,
+     "pct_owned": 67.72,
      "ros": {
       "mean": 45.1,
       "p10": 34.6,
       "p90": 55.1
      },
-     "gain": 5.2,
-     "p_better": 0.652,
+     "gain": 24.1,
+     "p_better": 0.988,
      "gp": 12.0,
      "points": 11.0,
      "luck": {
@@ -13935,8 +14059,8 @@
       "p10": 33.2,
       "p90": 56.0
      },
-     "gain": 5.0,
-     "p_better": 0.641,
+     "gain": 23.9,
+     "p_better": 0.983,
      "gp": 7.0,
      "points": 5.0,
      "luck": {
@@ -13975,14 +14099,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 73.54,
+     "pct_owned": 73.56,
      "ros": {
       "mean": 44.8,
       "p10": 34.3,
       "p90": 54.8
      },
-     "gain": 4.9,
-     "p_better": 0.644,
+     "gain": 23.8,
+     "p_better": 0.988,
      "gp": 23.0,
      "points": 20.0,
      "luck": {
@@ -14021,14 +14145,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 13.02,
+     "pct_owned": 13.0,
      "ros": {
       "mean": 43.6,
       "p10": 33.4,
       "p90": 53.3
      },
-     "gain": 3.7,
-     "p_better": 0.611,
+     "gain": 22.6,
+     "p_better": 0.985,
      "gp": 5.0,
      "points": 2.0,
      "luck": {
@@ -14067,14 +14191,14 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 84.33,
+     "pct_owned": 84.32,
      "ros": {
       "mean": 43.4,
       "p10": 33.2,
       "p90": 53.0
      },
-     "gain": 3.5,
-     "p_better": 0.605,
+     "gain": 22.4,
+     "p_better": 0.984,
      "gp": 24.0,
      "points": 18.0,
      "luck": {
@@ -14115,7 +14239,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-21",
      "games_missed": 0,
-     "pct_owned": 55.84,
+     "pct_owned": 55.83,
      "ros": {
       "mean": 30.8,
       "p10": 19.0,
@@ -14161,7 +14285,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 21.46,
+     "pct_owned": 21.45,
      "ros": {
       "mean": 28.9,
       "p10": 17.8,
@@ -14253,7 +14377,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 42.39,
+     "pct_owned": 42.4,
      "ros": {
       "mean": 28.1,
       "p10": 17.3,
@@ -14299,7 +14423,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 9.49,
+     "pct_owned": 9.63,
      "ros": {
       "mean": 27.0,
       "p10": 16.7,
@@ -14368,7 +14492,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.97,
+     "pct_owned": 93.98,
      "ros": {
       "mean": 49.5,
       "p10": 36.0,
@@ -14389,7 +14513,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 92.12,
+     "pct_owned": 92.13,
      "ros": {
       "mean": 49.4,
       "p10": 36.0,
@@ -14431,7 +14555,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 74.8,
+     "pct_owned": 74.79,
      "ros": {
       "mean": 45.9,
       "p10": 32.5,
@@ -14457,7 +14581,7 @@
    "ros": 881.0,
    "final": 1193.0,
    "sd": 48.48,
-   "luck_points": 8.5,
+   "luck_points": 4.3,
    "p10": 1130.9,
    "p90": 1255.1,
    "ros_p10": 818.9,

@@ -745,7 +745,7 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "points": 312.0,
-   "acquisitions": 2,
+   "acquisitions": 3,
    "roster": [
     {
      "espn_id": 3114727,
@@ -822,7 +822,7 @@
      "injury_type": "Shoulder",
      "expected_return": "2026-11-27",
      "out_for_season": false,
-     "slot": "F"
+     "slot": "IR"
     },
     {
      "espn_id": 3025662,
@@ -917,6 +917,17 @@
      "name": "Valeri Nichushkin",
      "pos": "RW",
      "pro_team": "CBJ",
+     "injury_status": "ACTIVE",
+     "injury_type": null,
+     "expected_return": null,
+     "out_for_season": false,
+     "slot": "F"
+    },
+    {
+     "espn_id": 5216887,
+     "name": "Trevor Connelly",
+     "pos": "LW",
+     "pro_team": "VGK",
      "injury_status": "ACTIVE",
      "injury_type": null,
      "expected_return": null,
