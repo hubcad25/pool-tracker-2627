@@ -452,7 +452,7 @@ espn_id,nhl_id,canonical_id,name,method
 3149633,8477903,garnet_hathaway,Garnet Hathaway,name
 3149649,8477919,frederick_gaudreau,Frederick Gaudreau,name
 3149659,8477993,justin_kirkland,Justin Kirkland,name
-3149697,,sammy_blais,Sammy Blais,unmatched
+3149697,8478104,sammy_blais,Sammy Blais,name
 3149715,,,Jack Rodewald,unmatched
 3149716,,,Clark Bishop,unmatched
 3149827,,conor_sheary,Conor Sheary,unmatched
@@ -783,7 +783,7 @@ espn_id,nhl_id,canonical_id,name,method
 4352757,,,Ty Smith,unmatched
 4352762,,rasmus_kupari,Rasmus Kupari,unmatched
 4352770,8480817,kandre_miller,K'Andre Miller,name
-4352775,,isac_lundestrom,Isac Lundestrom,unmatched
+4352775,8480806,isac_lundestrom,Isac Lundestrom,name
 4352782,,,Filip Johansson,unmatched
 4352798,8480879,jacob_bernard_docker,Jacob Bernard-Docker,name
 4352800,8480878,nils_lundkvist,Nils Lundkvist,name
@@ -875,7 +875,7 @@ espn_id,nhl_id,canonical_id,name,method
 4565242,,sam_poulin,Sam Poulin,unmatched
 4565243,,tobias_bjornfot,Tobias Bjornfot,unmatched
 4565244,8481601,simon_holmstrom,Simon Holmstrom,name
-4565245,,philip_tomasino,Philip Tomasino,unmatched
+4565245,8481577,philip_tomasino,Philip Tomasino,name
 4565246,8481580,connor_mcmichael,Connor McMichael,name
 4565247,,jakob_pelletier,Jakob Pelletier,unmatched
 4565248,,nolan_foote,Nolan Foote,unmatched
@@ -1106,6 +1106,7 @@ espn_id,nhl_id,canonical_id,name,method
 4874721,8482667,william_eklund,William Eklund,name
 4874722,8482730,brandt_clarke,Brandt Clarke,name
 4874723,8482699,dylan_guenther,Dylan Guenther,name
+4874724,8482674,,Tyler Boucher,name
 4874725,8482705,cole_sillinger,Cole Sillinger,name
 4874730,8482679,matt_coronato,Matt Coronato,name
 4874731,8482765,isak_rosen,Isak Rosen,name
