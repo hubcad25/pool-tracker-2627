@@ -1,5 +1,5 @@
 {
- "day": "2026-11-20",
+ "day": "2026-11-21",
  "team": {
   "id": 5,
   "name": "hubcad25"
@@ -3199,9 +3199,9 @@
     "injury": {
      "status": "INJURY_RESERVE",
      "type": "Lower Body",
-     "expected_return": "2026-11-27",
+     "expected_return": "2026-11-23",
      "out_for_season": false,
-     "games_missed": 2
+     "games_missed": 1
     },
     "gp": 14.0,
     "g": 6.0,
@@ -3209,25 +3209,25 @@
     "points": 14.0,
     "pace": 84.0,
     "prior": {
-     "p10": 59.0,
-     "p50": 62.6,
-     "p90": 66.3
+     "p10": 59.8,
+     "p50": 63.5,
+     "p90": 67.2
     },
     "ros_prior": {
-     "p10": 47.5,
-     "p50": 50.4,
-     "p90": 53.4
+     "p10": 48.3,
+     "p50": 51.3,
+     "p90": 54.3
     },
     "ros": {
-     "mean": 52.5,
-     "p10": 38.9,
-     "p90": 65.5,
-     "games_left": 58
+     "mean": 53.4,
+     "p10": 39.6,
+     "p90": 66.7,
+     "games_left": 59
     },
     "final": {
-     "mean": 66.5,
-     "p10": 52.9,
-     "p90": 79.5
+     "mean": 67.4,
+     "p10": 53.6,
+     "p90": 80.7
     },
     "luck": {
      "expected_points": 13.2,
@@ -3382,6 +3382,74 @@
     "verdict": "conforme"
    },
    {
+    "espn_id": 4874723,
+    "name": "Dylan Guenther",
+    "pos": "RW",
+    "group": "F",
+    "team": "UTA",
+    "slot": "F",
+    "injury": {
+     "status": "INJURY_RESERVE",
+     "type": "Upper Body",
+     "expected_return": "2026-11-21",
+     "out_for_season": false,
+     "games_missed": 0
+    },
+    "gp": 18.0,
+    "g": 6.0,
+    "a": 6.0,
+    "points": 12.0,
+    "pace": 56.0,
+    "prior": {
+     "p10": 64.8,
+     "p50": 70.8,
+     "p90": 76.8
+    },
+    "ros_prior": {
+     "p10": 50.0,
+     "p50": 54.7,
+     "p90": 59.3
+    },
+    "ros": {
+     "mean": 48.2,
+     "p10": 36.9,
+     "p90": 58.9,
+     "games_left": 61
+    },
+    "final": {
+     "mean": 60.2,
+     "p10": 48.9,
+     "p90": 70.9
+    },
+    "luck": {
+     "expected_points": 11.1,
+     "net_points": 0.9,
+     "goals": {
+      "obs": 6,
+      "expected": 6.8,
+      "shots": 46,
+      "sh_obs": 0.13,
+      "sh_expected": 0.147,
+      "percentile": 0.392
+     },
+     "assists": {
+      "shots": 126,
+      "sh_obs": 0.183,
+      "sh_expected": 0.132,
+      "percentile": 0.949,
+      "obs_goals": 23,
+      "expected_goals": 16.6
+     },
+     "sh": 0.13,
+     "sh_career": 0.147,
+     "g_minus_ixg": -0.2,
+     "oish": 0.183,
+     "oish_career": 0.117,
+     "toi": 17.2
+    },
+    "verdict": "conforme"
+   },
+   {
     "espn_id": 4565230,
     "name": "Trevor Zegras",
     "pos": "C",
@@ -3442,74 +3510,6 @@
      "toi": 18.1
     },
     "verdict": "malchanceux"
-   },
-   {
-    "espn_id": 4874723,
-    "name": "Dylan Guenther",
-    "pos": "RW",
-    "group": "F",
-    "team": "UTA",
-    "slot": "F",
-    "injury": {
-     "status": "INJURY_RESERVE",
-     "type": "Upper Body",
-     "expected_return": "2026-11-27",
-     "out_for_season": false,
-     "games_missed": 3
-    },
-    "gp": 18.0,
-    "g": 6.0,
-    "a": 6.0,
-    "points": 12.0,
-    "pace": 56.0,
-    "prior": {
-     "p10": 62.3,
-     "p50": 68.2,
-     "p90": 73.9
-    },
-    "ros_prior": {
-     "p10": 47.5,
-     "p50": 52.0,
-     "p90": 56.4
-    },
-    "ros": {
-     "mean": 45.8,
-     "p10": 33.9,
-     "p90": 57.2,
-     "games_left": 58
-    },
-    "final": {
-     "mean": 57.8,
-     "p10": 45.9,
-     "p90": 69.2
-    },
-    "luck": {
-     "expected_points": 11.1,
-     "net_points": 0.9,
-     "goals": {
-      "obs": 6,
-      "expected": 6.8,
-      "shots": 46,
-      "sh_obs": 0.13,
-      "sh_expected": 0.147,
-      "percentile": 0.392
-     },
-     "assists": {
-      "shots": 126,
-      "sh_obs": 0.183,
-      "sh_expected": 0.132,
-      "percentile": 0.949,
-      "obs_goals": 23,
-      "expected_goals": 16.6
-     },
-     "sh": 0.13,
-     "sh_career": 0.147,
-     "g_minus_ixg": -0.2,
-     "oish": 0.183,
-     "oish_career": 0.117,
-     "toi": 17.2
-    },
-    "verdict": "conforme"
    },
    {
     "espn_id": 5216860,
@@ -7987,9 +7987,9 @@
     "injury": {
      "status": "INJURY_RESERVE",
      "type": "Knee",
-     "expected_return": "2026-11-21",
+     "expected_return": "2026-11-27",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 2
     },
     "gp": 2.0,
     "g": 0.0,
@@ -7997,25 +7997,25 @@
     "points": 0.0,
     "pace": 0.0,
     "prior": {
-     "p10": 60.4,
-     "p50": 66.7,
-     "p90": 72.7
-    },
-    "ros_prior": {
      "p10": 58.4,
      "p50": 64.6,
      "p90": 70.4
     },
+    "ros_prior": {
+     "p10": 56.5,
+     "p50": 62.5,
+     "p90": 68.1
+    },
     "ros": {
-     "mean": 59.8,
-     "p10": 45.8,
-     "p90": 73.1,
-     "games_left": 61
+     "mean": 57.8,
+     "p10": 42.9,
+     "p90": 72.2,
+     "games_left": 59
     },
     "final": {
-     "mean": 59.8,
-     "p10": 45.8,
-     "p90": 73.1
+     "mean": 57.8,
+     "p10": 42.9,
+     "p90": 72.2
     },
     "luck": {
      "expected_points": 0.1,
@@ -10383,7 +10383,7 @@
     "team": "NYR",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "INJURY_RESERVE",
      "type": "Lower Body",
      "expected_return": "2026-11-22",
      "out_for_season": false,
@@ -13252,13 +13252,13 @@
    "mine": false,
    "status": "INJURY_RESERVE",
    "type": "Knee",
-   "expected_return": "2026-11-21",
+   "expected_return": "2026-11-27",
    "out_for_season": false,
-   "games_missed": 0,
+   "games_missed": 2,
    "ros": {
-    "mean": 59.8,
-    "p10": 45.8,
-    "p90": 73.1
+    "mean": 57.8,
+    "p10": 42.9,
+    "p90": 72.2
    },
    "gp": 2.0,
    "points": 0.0,
@@ -13289,6 +13289,53 @@
     "toi": 14.9
    },
    "verdict": "petit_echantillon"
+  },
+  {
+   "espn_id": 4587996,
+   "name": "Kirill Marchenko",
+   "pos": "LW",
+   "team": "TOR",
+   "owner": "AC",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Lower Body",
+   "expected_return": "2026-11-23",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 53.4,
+    "p10": 39.6,
+    "p90": 66.7
+   },
+   "gp": 14.0,
+   "points": 14.0,
+   "luck": {
+    "expected_points": 13.2,
+    "net_points": 0.8,
+    "goals": {
+     "obs": 6,
+     "expected": 5.3,
+     "shots": 35,
+     "sh_obs": 0.171,
+     "sh_expected": 0.151,
+     "percentile": 0.647
+    },
+    "assists": {
+     "shots": 108,
+     "sh_obs": 0.13,
+     "sh_expected": 0.128,
+     "percentile": 0.539,
+     "obs_goals": 14,
+     "expected_goals": 13.8
+    },
+    "sh": 0.171,
+    "sh_career": 0.136,
+    "g_minus_ixg": 1.2,
+    "oish": 0.13,
+    "oish_career": 0.106,
+    "toi": 17.6
+   },
+   "verdict": "conforme"
   },
   {
    "espn_id": 3124,
@@ -13334,53 +13381,6 @@
     "oish": 0.114,
     "oish_career": 0.109,
     "toi": 17.7
-   },
-   "verdict": "conforme"
-  },
-  {
-   "espn_id": 4587996,
-   "name": "Kirill Marchenko",
-   "pos": "LW",
-   "team": "TOR",
-   "owner": "AC",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Lower Body",
-   "expected_return": "2026-11-27",
-   "out_for_season": false,
-   "games_missed": 2,
-   "ros": {
-    "mean": 52.5,
-    "p10": 38.9,
-    "p90": 65.5
-   },
-   "gp": 14.0,
-   "points": 14.0,
-   "luck": {
-    "expected_points": 13.2,
-    "net_points": 0.8,
-    "goals": {
-     "obs": 6,
-     "expected": 5.3,
-     "shots": 35,
-     "sh_obs": 0.171,
-     "sh_expected": 0.151,
-     "percentile": 0.647
-    },
-    "assists": {
-     "shots": 108,
-     "sh_obs": 0.13,
-     "sh_expected": 0.128,
-     "percentile": 0.539,
-     "obs_goals": 14,
-     "expected_goals": 13.8
-    },
-    "sh": 0.171,
-    "sh_career": 0.136,
-    "g_minus_ixg": 1.2,
-    "oish": 0.13,
-    "oish_career": 0.106,
-    "toi": 17.6
    },
    "verdict": "conforme"
   },
@@ -13479,6 +13479,100 @@
    "verdict": "conforme"
   },
   {
+   "espn_id": 4874723,
+   "name": "Dylan Guenther",
+   "pos": "RW",
+   "team": "UTA",
+   "owner": "AC",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Upper Body",
+   "expected_return": "2026-11-21",
+   "out_for_season": false,
+   "games_missed": 0,
+   "ros": {
+    "mean": 48.2,
+    "p10": 36.9,
+    "p90": 58.9
+   },
+   "gp": 18.0,
+   "points": 12.0,
+   "luck": {
+    "expected_points": 11.1,
+    "net_points": 0.9,
+    "goals": {
+     "obs": 6,
+     "expected": 6.8,
+     "shots": 46,
+     "sh_obs": 0.13,
+     "sh_expected": 0.147,
+     "percentile": 0.392
+    },
+    "assists": {
+     "shots": 126,
+     "sh_obs": 0.183,
+     "sh_expected": 0.132,
+     "percentile": 0.949,
+     "obs_goals": 23,
+     "expected_goals": 16.6
+    },
+    "sh": 0.13,
+    "sh_career": 0.147,
+    "g_minus_ixg": -0.2,
+    "oish": 0.183,
+    "oish_career": 0.117,
+    "toi": 17.2
+   },
+   "verdict": "conforme"
+  },
+  {
+   "espn_id": 4587588,
+   "name": "Pavel Dorofeyev",
+   "pos": "RW",
+   "team": "NYR",
+   "owner": "IGm",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Lower Body",
+   "expected_return": "2026-11-22",
+   "out_for_season": false,
+   "games_missed": 0,
+   "ros": {
+    "mean": 47.2,
+    "p10": 36.2,
+    "p90": 57.7
+   },
+   "gp": 21.0,
+   "points": 12.0,
+   "luck": {
+    "expected_points": 20.4,
+    "net_points": -8.4,
+    "goals": {
+     "obs": 6,
+     "expected": 9.8,
+     "shots": 64,
+     "sh_obs": 0.094,
+     "sh_expected": 0.153,
+     "percentile": 0.092
+    },
+    "assists": {
+     "shots": 137,
+     "sh_obs": 0.066,
+     "sh_expected": 0.116,
+     "percentile": 0.027,
+     "obs_goals": 9,
+     "expected_goals": 15.9
+    },
+    "sh": 0.094,
+    "sh_career": 0.148,
+    "g_minus_ixg": -3.2,
+    "oish": 0.066,
+    "oish_career": 0.097,
+    "toi": 16.8
+   },
+   "verdict": "malchanceux"
+  },
+  {
    "espn_id": 5216860,
    "name": "Ivan Demidov",
    "pos": "RW",
@@ -13524,53 +13618,6 @@
     "toi": 15.6
    },
    "verdict": "petit_echantillon"
-  },
-  {
-   "espn_id": 4874723,
-   "name": "Dylan Guenther",
-   "pos": "RW",
-   "team": "UTA",
-   "owner": "AC",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Upper Body",
-   "expected_return": "2026-11-27",
-   "out_for_season": false,
-   "games_missed": 3,
-   "ros": {
-    "mean": 45.8,
-    "p10": 33.9,
-    "p90": 57.2
-   },
-   "gp": 18.0,
-   "points": 12.0,
-   "luck": {
-    "expected_points": 11.1,
-    "net_points": 0.9,
-    "goals": {
-     "obs": 6,
-     "expected": 6.8,
-     "shots": 46,
-     "sh_obs": 0.13,
-     "sh_expected": 0.147,
-     "percentile": 0.392
-    },
-    "assists": {
-     "shots": 126,
-     "sh_obs": 0.183,
-     "sh_expected": 0.132,
-     "percentile": 0.949,
-     "obs_goals": 23,
-     "expected_goals": 16.6
-    },
-    "sh": 0.13,
-    "sh_career": 0.147,
-    "g_minus_ixg": -0.2,
-    "oish": 0.183,
-    "oish_career": 0.117,
-    "toi": 17.2
-   },
-   "verdict": "conforme"
   },
   {
    "espn_id": 3114777,
@@ -13777,7 +13824,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 81.38,
+     "pct_owned": 81.59,
      "ros": {
       "mean": 51.2,
       "p10": 39.2,
@@ -13823,7 +13870,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 76.46,
+     "pct_owned": 76.67,
      "ros": {
       "mean": 46.8,
       "p10": 35.9,
@@ -13869,7 +13916,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 49.98,
+     "pct_owned": 50.79,
      "ros": {
       "mean": 46.6,
       "p10": 35.7,
@@ -13915,7 +13962,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 44.52,
+     "pct_owned": 43.97,
      "ros": {
       "mean": 45.5,
       "p10": 34.8,
@@ -13954,52 +14001,6 @@
      "verdict": "malchanceux"
     },
     {
-     "espn_id": 3852,
-     "name": "Brad Marchand",
-     "pos": "LW",
-     "team": "FLA",
-     "status": "INJURY_RESERVE",
-     "expected_return": "2026-11-21",
-     "games_missed": 0,
-     "pct_owned": 51.72,
-     "ros": {
-      "mean": 45.2,
-      "p10": 34.6,
-      "p90": 55.2
-     },
-     "gain": 24.2,
-     "p_better": 0.988,
-     "gp": 2.0,
-     "points": 1.0,
-     "luck": {
-      "expected_points": 0.6,
-      "net_points": 0.4,
-      "goals": {
-       "obs": 1,
-       "expected": 0.6,
-       "shots": 5,
-       "sh_obs": 0.2,
-       "sh_expected": 0.122,
-       "percentile": 0.704
-      },
-      "assists": {
-       "shots": 7,
-       "sh_obs": 0.0,
-       "sh_expected": 0.084,
-       "percentile": 0.27,
-       "obs_goals": 0,
-       "expected_goals": 0.6
-      },
-      "sh": 0.2,
-      "sh_career": 0.153,
-      "g_minus_ixg": 0.5,
-      "oish": 0.0,
-      "oish_career": 0.1,
-      "toi": 11.4
-     },
-     "verdict": "petit_echantillon"
-    },
-    {
      "espn_id": 2562624,
      "name": "Ryan Nugent-Hopkins",
      "pos": "C",
@@ -14007,7 +14008,7 @@
      "status": "DAY_TO_DAY",
      "expected_return": "2026-11-21",
      "games_missed": 0,
-     "pct_owned": 67.72,
+     "pct_owned": 67.55,
      "ros": {
       "mean": 45.1,
       "p10": 34.6,
@@ -14099,7 +14100,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 73.56,
+     "pct_owned": 73.71,
      "ros": {
       "mean": 44.8,
       "p10": 34.3,
@@ -14145,7 +14146,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 13.0,
+     "pct_owned": 12.79,
      "ros": {
       "mean": 43.6,
       "p10": 33.4,
@@ -14191,7 +14192,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 84.32,
+     "pct_owned": 84.31,
      "ros": {
       "mean": 43.4,
       "p10": 33.2,
@@ -14228,6 +14229,52 @@
       "toi": 15.8
      },
      "verdict": "conforme"
+    },
+    {
+     "espn_id": 3852,
+     "name": "Brad Marchand",
+     "pos": "LW",
+     "team": "FLA",
+     "status": "INJURY_RESERVE",
+     "expected_return": "2026-11-28",
+     "games_missed": 3,
+     "pct_owned": 51.77,
+     "ros": {
+      "mean": 42.9,
+      "p10": 31.8,
+      "p90": 53.6
+     },
+     "gain": 21.9,
+     "p_better": 0.977,
+     "gp": 2.0,
+     "points": 1.0,
+     "luck": {
+      "expected_points": 0.6,
+      "net_points": 0.4,
+      "goals": {
+       "obs": 1,
+       "expected": 0.6,
+       "shots": 5,
+       "sh_obs": 0.2,
+       "sh_expected": 0.122,
+       "percentile": 0.704
+      },
+      "assists": {
+       "shots": 7,
+       "sh_obs": 0.0,
+       "sh_expected": 0.084,
+       "percentile": 0.27,
+       "obs_goals": 0,
+       "expected_goals": 0.6
+      },
+      "sh": 0.2,
+      "sh_career": 0.153,
+      "g_minus_ixg": 0.5,
+      "oish": 0.0,
+      "oish_career": 0.1,
+      "toi": 11.4
+     },
+     "verdict": "petit_echantillon"
     }
    ],
    "D": [
@@ -14239,7 +14286,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-21",
      "games_missed": 0,
-     "pct_owned": 55.83,
+     "pct_owned": 55.75,
      "ros": {
       "mean": 30.8,
       "p10": 19.0,
@@ -14285,7 +14332,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 21.45,
+     "pct_owned": 21.49,
      "ros": {
       "mean": 28.9,
       "p10": 17.8,
@@ -14331,7 +14378,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 3.42,
+     "pct_owned": 3.6,
      "ros": {
       "mean": 28.3,
       "p10": 17.4,
@@ -14377,7 +14424,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 42.4,
+     "pct_owned": 42.51,
      "ros": {
       "mean": 28.1,
       "p10": 17.3,
@@ -14423,7 +14470,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 9.63,
+     "pct_owned": 11.59,
      "ros": {
       "mean": 27.0,
       "p10": 16.7,
@@ -14471,7 +14518,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 76.53,
+     "pct_owned": 76.71,
      "ros": {
       "mean": 50.7,
       "p10": 37.2,
@@ -14492,7 +14539,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.98,
+     "pct_owned": 94.02,
      "ros": {
       "mean": 49.5,
       "p10": 36.0,
@@ -14513,7 +14560,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 92.13,
+     "pct_owned": 92.2,
      "ros": {
       "mean": 49.4,
       "p10": 36.0,
@@ -14534,7 +14581,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 84.97,
+     "pct_owned": 85.05,
      "ros": {
       "mean": 47.0,
       "p10": 33.5,
@@ -14555,7 +14602,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 74.79,
+     "pct_owned": 74.67,
      "ros": {
       "mean": 45.9,
       "p10": 32.5,
@@ -14586,8 +14633,8 @@
    "p90": 1255.1,
    "ros_p10": 818.9,
    "ros_p90": 943.1,
-   "p_first": 0.783,
-   "delta_p_first_per_point": 0.00503
+   "p_first": 0.784,
+   "delta_p_first_per_point": 0.00501
   },
   {
    "team_id": 9,
@@ -14604,7 +14651,7 @@
    "ros_p10": 751.7,
    "ros_p90": 860.9,
    "p_first": 0.115,
-   "delta_p_first_per_point": -0.00251
+   "delta_p_first_per_point": -0.00252
   },
   {
    "team_id": 4,
@@ -14621,24 +14668,7 @@
    "ros_p10": 719.7,
    "ros_p90": 833.7,
    "p_first": 0.034,
-   "delta_p_first_per_point": -0.00083
-  },
-  {
-   "team_id": 7,
-   "abbrev": "VFTH",
-   "name": "Vincenzo for the win",
-   "mine": false,
-   "points": 274.0,
-   "ros": 815.2,
-   "final": 1089.2,
-   "sd": 43.55,
-   "luck_points": -0.9,
-   "p10": 1033.4,
-   "p90": 1145.0,
-   "ros_p10": 759.4,
-   "ros_p90": 871.0,
-   "p_first": 0.03,
-   "delta_p_first_per_point": -0.00075
+   "delta_p_first_per_point": -0.00084
   },
   {
    "team_id": 12,
@@ -14655,7 +14685,24 @@
    "ros_p10": 750.8,
    "ros_p90": 861.2,
    "p_first": 0.029,
-   "delta_p_first_per_point": -0.00073
+   "delta_p_first_per_point": -0.00074
+  },
+  {
+   "team_id": 7,
+   "abbrev": "VFTH",
+   "name": "Vincenzo for the win",
+   "mine": false,
+   "points": 274.0,
+   "ros": 813.2,
+   "final": 1087.2,
+   "sd": 43.74,
+   "luck_points": -0.9,
+   "p10": 1031.1,
+   "p90": 1143.3,
+   "ros_p10": 757.1,
+   "ros_p90": 869.3,
+   "p_first": 0.028,
+   "delta_p_first_per_point": -0.00071
   },
   {
    "team_id": 2,
@@ -14688,7 +14735,7 @@
    "p90": 1107.1,
    "ros_p10": 721.1,
    "ros_p90": 831.1,
-   "p_first": 0.004,
+   "p_first": 0.005,
    "delta_p_first_per_point": -0.00013
   },
   {
@@ -14714,14 +14761,14 @@
    "name": "Cuzo",
    "mine": false,
    "points": 230.0,
-   "ros": 737.0,
-   "final": 967.0,
-   "sd": 40.22,
+   "ros": 740.3,
+   "final": 970.3,
+   "sd": 40.16,
    "luck_points": 2.7,
-   "p10": 915.5,
-   "p90": 1018.5,
-   "ros_p10": 685.5,
-   "ros_p90": 788.5,
+   "p10": 918.8,
+   "p90": 1021.8,
+   "ros_p10": 688.8,
+   "ros_p90": 791.8,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0
   },
@@ -14832,7 +14879,6 @@
   "5511": 62,
   "5517": 21,
   "5524": 31,
-  "5526": 19,
   "5545": 61,
   "5550": 73,
   "5560": 36,
@@ -15126,6 +15172,7 @@
   "4063401": 49,
   "4063433": 93,
   "4063449": 5,
+  "4063502": 14,
   "4063569": 19,
   "4063605": 16,
   "4063606": 52,
@@ -15349,6 +15396,7 @@
   "4697577": 70,
   "4697648": 77,
   "4697654": 37,
+  "4697678": 51,
   "4697681": 46,
   "4697683": 35,
   "4697686": 75,
@@ -15530,6 +15578,7 @@
   "5188490": 17,
   "5188510": 41,
   "5188523": 3,
+  "5188534": 60,
   "5188582": 42,
   "5188599": 58,
   "5188608": 38,
@@ -15546,11 +15595,11 @@
   "5216868": 26,
   "5216877": 27,
   "5216878": 19,
-  "5216879": 52,
   "5216880": 6,
   "5216882": 94,
   "5216883": 28,
   "5216887": 24,
+  "5216891": 50,
   "5216897": 92,
   "5216901": 23,
   "5216907": 92,
