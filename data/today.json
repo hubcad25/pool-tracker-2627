@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23T14:02:05-05:00",
+ "updated": "2026-11-23T16:13:45-05:00",
  "games": [
   {
    "id": 2026020378,
@@ -81,7 +81,7 @@
   }
  ],
  "p_first": {
-  "now": 0.499,
+  "now": 0.49,
   "yesterday": 0.452,
   "history": [
    {
@@ -306,7 +306,7 @@
    },
    {
     "day": "2026-11-23",
-    "p_first": 0.499
+    "p_first": 0.49
    }
   ]
  },
@@ -317,10 +317,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 326.0,
-   "p_first": 0.499,
-   "delta_p_first_per_point": 0.00721,
-   "final": 1144.6,
-   "sd": 46.0,
+   "p_first": 0.49,
+   "delta_p_first_per_point": 0.00722,
+   "final": 1143.3,
+   "sd": 45.89,
    "expected_tonight": 7.4,
    "actual_tonight": null,
    "playing_tonight": 9,
@@ -450,8 +450,8 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 335.0,
-   "p_first": 0.269,
-   "delta_p_first_per_point": -0.00349,
+   "p_first": 0.273,
+   "delta_p_first_per_point": -0.00348,
    "final": 1123.4,
    "sd": 42.99,
    "expected_tonight": 5.8,
@@ -557,8 +557,8 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 292.0,
-   "p_first": 0.097,
-   "delta_p_first_per_point": -0.00147,
+   "p_first": 0.099,
+   "delta_p_first_per_point": -0.00148,
    "final": 1093.5,
    "sd": 43.31,
    "expected_tonight": 5.5,
@@ -651,7 +651,7 @@
    "name": "NWA",
    "mine": false,
    "points": 329.0,
-   "p_first": 0.08,
+   "p_first": 0.082,
    "delta_p_first_per_point": -0.00125,
    "final": 1088.1,
    "sd": 43.8,
@@ -1027,7 +1027,7 @@
    "name": "GSP",
    "mine": false,
    "points": 272.0,
-   "p_first": 0.01,
+   "p_first": 0.011,
    "delta_p_first_per_point": -0.00021,
    "final": 1046.4,
    "sd": 42.13,
@@ -1217,8 +1217,8 @@
    "points": 250.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 954.9,
-   "sd": 39.95,
+   "final": 952.9,
+   "sd": 39.79,
    "expected_tonight": 4.9,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -1431,8 +1431,8 @@
    "points": 238.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 970.5,
-   "sd": 39.29,
+   "final": 968.8,
+   "sd": 39.41,
    "expected_tonight": 5.0,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -1656,7 +1656,7 @@
    "expected": 1.35,
    "actual": null,
    "p_start": null,
-   "injury": "OUT"
+   "injury": "INJURY_RESERVE"
   }
  ],
  "watch": [
@@ -1677,8 +1677,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
-   "threat": -0.0044
+   "delta_p_first_per_point": -0.00348,
+   "threat": -0.00438
   },
   {
    "espn_id": 4697384,
@@ -1697,8 +1697,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
-   "threat": -0.004
+   "delta_p_first_per_point": -0.00348,
+   "threat": -0.00399
   },
   {
    "espn_id": 3151981,
@@ -1717,7 +1717,7 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
+   "delta_p_first_per_point": -0.00348,
    "threat": -0.00337
   },
   {
@@ -1737,8 +1737,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
-   "threat": -0.00302
+   "delta_p_first_per_point": -0.00348,
+   "threat": -0.00301
   },
   {
    "espn_id": 3942335,
@@ -1757,8 +1757,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00147,
-   "threat": -0.00231
+   "delta_p_first_per_point": -0.00148,
+   "threat": -0.00233
   },
   {
    "espn_id": 2563036,
@@ -1777,8 +1777,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
-   "threat": -0.00222
+   "delta_p_first_per_point": -0.00348,
+   "threat": -0.00221
   },
   {
    "espn_id": 4697449,
@@ -1797,8 +1797,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00349,
-   "threat": -0.00197
+   "delta_p_first_per_point": -0.00348,
+   "threat": -0.00196
   },
   {
    "espn_id": 3899952,
@@ -1817,8 +1817,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00147,
-   "threat": -0.00178
+   "delta_p_first_per_point": -0.00148,
+   "threat": -0.00179
   }
  ]
 }

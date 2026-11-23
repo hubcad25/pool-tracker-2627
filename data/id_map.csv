@@ -820,6 +820,7 @@ espn_id,nhl_id,canonical_id,name,method
 4392454,8480281,alexei_toropchenko,Alexey Toropchenko,name
 4392471,8479525,ross_colton,Ross Colton,name
 4392541,,philipp_kurashev,Philipp Kurashev,unmatched
+4392640,,,Alexander True,unmatched
 4392642,8481122,simon_benoit,Simon Benoit,name
 4392740,,,Austin Strand,unmatched
 4392765,8480022,michael_dipietro,Michael DiPietro,name
@@ -1305,6 +1306,7 @@ espn_id,nhl_id,canonical_id,name,method
 5136735,8484258,sam_malinski,Sam Malinski,name
 5136792,,,Cameron Butler,unmatched
 5137433,,,Hunter McKown,unmatched
+5139042,,,Matthew Seminoff,unmatched
 5142131,,ethan_cardwell,Ethan Cardwell,unmatched
 5142461,8484304,uvis_balinskis,Uvis Balinskis,name
 5144058,,,Georgi Romanov,unmatched
