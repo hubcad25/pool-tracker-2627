@@ -421,6 +421,7 @@ espn_id,nhl_id,canonical_id,name,method
 3114736,8477939,william_nylander,William Nylander,name
 3114741,8477940,nikolaj_ehlers,Nikolaj Ehlers,name
 3114743,8477942,kevin_fiala,Kevin Fiala,name
+3114747,,jakub_vrana,Jakub Vrana,unmatched
 3114755,8477946,dylan_larkin,Dylan Larkin,search:name
 3114756,,sonny_milano,Sonny Milano,unmatched
 3114757,8477948,travis_sanheim,Travis Sanheim,name
@@ -1057,7 +1058,7 @@ espn_id,nhl_id,canonical_id,name,method
 4697791,,donovan_sebrango,Donovan Sebrango,unmatched
 4697820,8482460,matt_rempe,Matt Rempe,name
 4697822,,,Adam Raska,unmatched
-4697824,,mikael_pyyhtia,Mikael Pyyhtia,unmatched
+4697824,8482451,mikael_pyyhtia,Mikael Pyyhtia,name
 4697831,,isaak_phillips,Isaak Phillips,unmatched
 4711944,,,Alexei Melnichuk,unmatched
 4711949,,,Radim Zohorna,unmatched
@@ -1077,7 +1078,7 @@ espn_id,nhl_id,canonical_id,name,method
 4755704,,marc_mclaughlin,Marc McLaughlin,unmatched
 4755729,8483570,ben_meyers,Ben Meyers,name
 4755752,,,Akito Hirose,unmatched
-4755753,,sam_morton,Sam Morton,unmatched
+4755753,8484821,sam_morton,Sam Morton,name
 4755758,,,Ondrej Pavel,unmatched
 4755761,,,Jake Livingstone,unmatched
 4775334,,,Vladislav Provolnev,unmatched

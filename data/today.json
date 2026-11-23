@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "updated": "2026-11-23T12:02:04-05:00",
+ "updated": "2026-11-23T12:02:34-05:00",
  "games": [
   {
    "id": 2026020378,
@@ -8,7 +8,10 @@
    "away": "CBJ",
    "home": "NJD",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.696,
+    "home": 3.647
+   }
   },
   {
    "id": 2026020379,
@@ -16,7 +19,10 @@
    "away": "LAK",
    "home": "MTL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.96,
+    "home": 3.503
+   }
   },
   {
    "id": 2026020380,
@@ -24,7 +30,10 @@
    "away": "CGY",
    "home": "OTT",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.325,
+    "home": 3.475
+   }
   },
   {
    "id": 2026020381,
@@ -32,7 +41,10 @@
    "away": "TOR",
    "home": "NYI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.011,
+    "home": 3.631
+   }
   },
   {
    "id": 2026020382,
@@ -40,7 +52,10 @@
    "away": "UTA",
    "home": "WPG",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.357,
+    "home": 3.243
+   }
   },
   {
    "id": 2026020383,
@@ -48,7 +63,10 @@
    "away": "ANA",
    "home": "SEA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.445,
+    "home": 3.563
+   }
   },
   {
    "id": 2026020384,
@@ -56,11 +74,14 @@
    "away": "MIN",
    "home": "SJS",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.715,
+    "home": 2.843
+   }
   }
  ],
  "p_first": {
-  "now": 0.452,
+  "now": 0.499,
   "yesterday": 0.452,
   "history": [
    {
@@ -282,6 +303,10 @@
    {
     "day": "2026-11-22",
     "p_first": 0.452
+   },
+   {
+    "day": "2026-11-23",
+    "p_first": 0.499
    }
   ]
  },
@@ -292,11 +317,11 @@
    "name": "hubcad25",
    "mine": true,
    "points": 326.0,
-   "p_first": 0.452,
-   "delta_p_first_per_point": 0.00713,
-   "final": 1140.3,
-   "sd": 46.19,
-   "expected_tonight": 7.6,
+   "p_first": 0.499,
+   "delta_p_first_per_point": 0.00721,
+   "final": 1144.6,
+   "sd": 46.0,
+   "expected_tonight": 7.4,
    "actual_tonight": null,
    "playing_tonight": 9,
    "players": [
@@ -335,7 +360,7 @@
      "game_id": 2026020378,
      "opp": "@NJD",
      "start": "2026-11-24T00:00:00Z",
-     "expected": 0.55,
+     "expected": 0.4,
      "actual": null,
      "p_start": 0.488
     },
@@ -425,10 +450,10 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 335.0,
-   "p_first": 0.295,
-   "delta_p_first_per_point": -0.00344,
-   "final": 1125.9,
-   "sd": 43.31,
+   "p_first": 0.269,
+   "delta_p_first_per_point": -0.00349,
+   "final": 1123.4,
+   "sd": 42.99,
    "expected_tonight": 5.8,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -532,10 +557,10 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 292.0,
-   "p_first": 0.112,
-   "delta_p_first_per_point": -0.00153,
-   "final": 1096.5,
-   "sd": 43.9,
+   "p_first": 0.097,
+   "delta_p_first_per_point": -0.00147,
+   "final": 1093.5,
+   "sd": 43.31,
    "expected_tonight": 5.5,
    "actual_tonight": null,
    "playing_tonight": 6,
@@ -626,10 +651,10 @@
    "name": "NWA",
    "mine": false,
    "points": 329.0,
-   "p_first": 0.087,
-   "delta_p_first_per_point": -0.00124,
-   "final": 1090.1,
-   "sd": 43.61,
+   "p_first": 0.08,
+   "delta_p_first_per_point": -0.00125,
+   "final": 1088.1,
+   "sd": 43.8,
    "expected_tonight": 5.9,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -733,10 +758,10 @@
    "name": "Estrie Monsters",
    "mine": false,
    "points": 305.0,
-   "p_first": 0.017,
-   "delta_p_first_per_point": -0.00031,
-   "final": 1060.5,
-   "sd": 38.98,
+   "p_first": 0.018,
+   "delta_p_first_per_point": -0.00036,
+   "final": 1062.5,
+   "sd": 38.74,
    "expected_tonight": 4.5,
    "actual_tonight": null,
    "playing_tonight": 5,
@@ -814,11 +839,11 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 293.0,
-   "p_first": 0.016,
-   "delta_p_first_per_point": -0.00028,
-   "final": 1055.1,
-   "sd": 41.47,
-   "expected_tonight": 4.8,
+   "p_first": 0.014,
+   "delta_p_first_per_point": -0.00027,
+   "final": 1053.0,
+   "sd": 41.24,
+   "expected_tonight": 5.0,
    "actual_tonight": null,
    "playing_tonight": 6,
    "players": [
@@ -896,7 +921,7 @@
      "game_id": 2026020384,
      "opp": "@SJS",
      "start": "2026-11-24T03:00:00Z",
-     "expected": 0.58,
+     "expected": 0.72,
      "actual": null,
      "p_start": 0.519
     }
@@ -908,10 +933,10 @@
    "name": "Rico",
    "mine": false,
    "points": 295.0,
-   "p_first": 0.012,
-   "delta_p_first_per_point": -0.00022,
-   "final": 1049.8,
-   "sd": 41.58,
+   "p_first": 0.013,
+   "delta_p_first_per_point": -0.00026,
+   "final": 1051.9,
+   "sd": 41.48,
    "expected_tonight": 4.7,
    "actual_tonight": null,
    "playing_tonight": 6,
@@ -1002,10 +1027,10 @@
    "name": "GSP",
    "mine": false,
    "points": 272.0,
-   "p_first": 0.011,
-   "delta_p_first_per_point": -0.0002,
-   "final": 1044.8,
-   "sd": 43.17,
+   "p_first": 0.01,
+   "delta_p_first_per_point": -0.00021,
+   "final": 1046.4,
+   "sd": 42.13,
    "expected_tonight": 4.8,
    "actual_tonight": null,
    "playing_tonight": 6,
@@ -1098,8 +1123,8 @@
    "points": 270.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 956.6,
-   "sd": 39.86,
+   "final": 956.4,
+   "sd": 39.7,
    "expected_tonight": 4.6,
    "actual_tonight": null,
    "playing_tonight": 6,
@@ -1192,8 +1217,8 @@
    "points": 250.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 958.5,
-   "sd": 40.2,
+   "final": 954.9,
+   "sd": 39.95,
    "expected_tonight": 4.9,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -1299,8 +1324,8 @@
    "points": 245.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 934.8,
-   "sd": 38.27,
+   "final": 936.8,
+   "sd": 38.22,
    "expected_tonight": 4.8,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -1406,8 +1431,8 @@
    "points": 238.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 973.4,
-   "sd": 39.54,
+   "final": 970.5,
+   "sd": 39.29,
    "expected_tonight": 5.0,
    "actual_tonight": null,
    "playing_tonight": 7,
@@ -1544,7 +1569,7 @@
    "game_id": 2026020378,
    "opp": "@NJD",
    "start": "2026-11-24T00:00:00Z",
-   "expected": 0.55,
+   "expected": 0.4,
    "actual": null,
    "p_start": 0.488,
    "injury": null
@@ -1652,8 +1677,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00433
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.0044
   },
   {
    "espn_id": 4697384,
@@ -1672,8 +1697,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00394
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.004
   },
   {
    "espn_id": 3151981,
@@ -1692,8 +1717,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00333
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.00337
   },
   {
    "espn_id": 4233555,
@@ -1712,8 +1737,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00298
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.00302
   },
   {
    "espn_id": 3942335,
@@ -1732,8 +1757,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00153,
-   "threat": -0.00241
+   "delta_p_first_per_point": -0.00147,
+   "threat": -0.00231
   },
   {
    "espn_id": 2563036,
@@ -1752,8 +1777,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00219
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.00222
   },
   {
    "espn_id": 4697449,
@@ -1772,8 +1797,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00344,
-   "threat": -0.00194
+   "delta_p_first_per_point": -0.00349,
+   "threat": -0.00197
   },
   {
    "espn_id": 3899952,
@@ -1792,8 +1817,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00153,
-   "threat": -0.00185
+   "delta_p_first_per_point": -0.00147,
+   "threat": -0.00178
   }
  ]
 }
