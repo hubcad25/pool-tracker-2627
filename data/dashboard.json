@@ -1376,7 +1376,13 @@
     "group": "F",
     "team": "STL",
     "slot": "F",
-    "injury": null,
+    "injury": {
+     "status": "DAY_TO_DAY",
+     "type": "Undisclosed",
+     "expected_return": "2026-11-25",
+     "out_for_season": false,
+     "games_missed": 0
+    },
     "gp": 24.0,
     "g": 14.0,
     "a": 6.0,
@@ -2163,11 +2169,11 @@
     "team": "CAR",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "OUT",
      "type": "Lower Body",
-     "expected_return": "2026-11-25",
+     "expected_return": "2026-11-28",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 23.0,
     "g": 6.0,
@@ -2175,25 +2181,25 @@
     "points": 22.0,
     "pace": 80.3,
     "prior": {
-     "p10": 66.9,
-     "p50": 71.2,
-     "p90": 75.4
+     "p10": 66.1,
+     "p50": 70.4,
+     "p90": 74.5
     },
     "ros_prior": {
-     "p10": 48.4,
-     "p50": 51.5,
-     "p90": 54.5
+     "p10": 47.6,
+     "p50": 50.6,
+     "p90": 53.6
     },
     "ros": {
-     "mean": 54.1,
-     "p10": 41.5,
-     "p90": 66.2,
-     "games_left": 60
+     "mean": 53.2,
+     "p10": 39.4,
+     "p90": 66.4,
+     "games_left": 59
     },
     "final": {
-     "mean": 76.1,
-     "p10": 63.5,
-     "p90": 88.2
+     "mean": 75.2,
+     "p10": 61.4,
+     "p90": 88.4
     },
     "luck": {
      "expected_points": 21.7,
@@ -7625,9 +7631,9 @@
     "injury": {
      "status": "INJURY_RESERVE",
      "type": "Lower Body",
-     "expected_return": "2026-11-28",
+     "expected_return": "2026-11-25",
      "out_for_season": false,
-     "games_missed": 2
+     "games_missed": 0
     },
     "gp": 19.0,
     "g": 5.0,
@@ -7635,25 +7641,25 @@
     "points": 23.0,
     "pace": 101.7,
     "prior": {
-     "p10": 80.3,
-     "p50": 84.5,
-     "p90": 88.5
+     "p10": 82.3,
+     "p50": 86.7,
+     "p90": 90.7
     },
     "ros_prior": {
-     "p10": 60.7,
-     "p50": 63.9,
-     "p90": 66.9
+     "p10": 62.8,
+     "p50": 66.1,
+     "p90": 69.2
     },
     "ros": {
-     "mean": 64.7,
+     "mean": 66.9,
      "p10": 46.6,
-     "p90": 84.5,
-     "games_left": 59
+     "p90": 87.4,
+     "games_left": 61
     },
     "final": {
-     "mean": 87.7,
+     "mean": 89.9,
      "p10": 69.6,
-     "p90": 107.5
+     "p90": 110.4
     },
     "luck": {
      "expected_points": 20.3,
@@ -10457,11 +10463,11 @@
     "team": "EDM",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
-     "type": "Illness",
-     "expected_return": "2026-11-24",
+     "status": "OUT",
+     "type": "Impaired Vision",
+     "expected_return": "2026-11-27",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 14.0,
     "g": 4.0,
@@ -10469,25 +10475,25 @@
     "points": 6.0,
     "pace": 36.0,
     "prior": {
-     "p10": 48.9,
-     "p50": 55.0,
-     "p90": 61.2
+     "p10": 48.2,
+     "p50": 54.2,
+     "p90": 60.3
     },
     "ros_prior": {
-     "p10": 39.4,
-     "p50": 44.3,
-     "p90": 49.3
+     "p10": 38.7,
+     "p50": 43.5,
+     "p90": 48.4
     },
     "ros": {
-     "mean": 37.0,
-     "p10": 23.8,
-     "p90": 49.8,
-     "games_left": 58
+     "mean": 36.4,
+     "p10": 23.4,
+     "p90": 48.9,
+     "games_left": 57
     },
     "final": {
-     "mean": 43.0,
-     "p10": 29.8,
-     "p90": 55.8
+     "mean": 42.4,
+     "p10": 29.4,
+     "p90": 54.9
     },
     "luck": {
      "expected_points": 5.6,
@@ -13174,6 +13180,53 @@
    "verdict": "chanceux"
   },
   {
+   "espn_id": 4233563,
+   "name": "Cale Makar",
+   "pos": "D",
+   "team": "COL",
+   "owner": "VFTH",
+   "mine": false,
+   "status": "INJURY_RESERVE",
+   "type": "Lower Body",
+   "expected_return": "2026-11-25",
+   "out_for_season": false,
+   "games_missed": 0,
+   "ros": {
+    "mean": 66.9,
+    "p10": 46.6,
+    "p90": 87.4
+   },
+   "gp": 19.0,
+   "points": 23.0,
+   "luck": {
+    "expected_points": 20.3,
+    "net_points": 2.7,
+    "goals": {
+     "obs": 5,
+     "expected": 3.3,
+     "shots": 49,
+     "sh_obs": 0.102,
+     "sh_expected": 0.068,
+     "percentile": 0.823
+    },
+    "assists": {
+     "shots": 223,
+     "sh_obs": 0.143,
+     "sh_expected": 0.135,
+     "percentile": 0.652,
+     "obs_goals": 32,
+     "expected_goals": 30.1
+    },
+    "sh": 0.102,
+    "sh_career": 0.103,
+    "g_minus_ixg": 2.0,
+    "oish": 0.143,
+    "oish_career": 0.127,
+    "toi": 22.4
+   },
+   "verdict": "conforme"
+  },
+  {
    "espn_id": 4065019,
    "name": "Brandon Hagel",
    "pos": "LW",
@@ -13217,53 +13270,6 @@
     "oish": 0.125,
     "oish_career": 0.115,
     "toi": 20.5
-   },
-   "verdict": "conforme"
-  },
-  {
-   "espn_id": 4233563,
-   "name": "Cale Makar",
-   "pos": "D",
-   "team": "COL",
-   "owner": "VFTH",
-   "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Lower Body",
-   "expected_return": "2026-11-28",
-   "out_for_season": false,
-   "games_missed": 2,
-   "ros": {
-    "mean": 64.7,
-    "p10": 46.6,
-    "p90": 84.5
-   },
-   "gp": 19.0,
-   "points": 23.0,
-   "luck": {
-    "expected_points": 20.3,
-    "net_points": 2.7,
-    "goals": {
-     "obs": 5,
-     "expected": 3.3,
-     "shots": 49,
-     "sh_obs": 0.102,
-     "sh_expected": 0.068,
-     "percentile": 0.823
-    },
-    "assists": {
-     "shots": 223,
-     "sh_obs": 0.143,
-     "sh_expected": 0.135,
-     "percentile": 0.652,
-     "obs_goals": 32,
-     "expected_goals": 30.1
-    },
-    "sh": 0.102,
-    "sh_career": 0.103,
-    "g_minus_ixg": 2.0,
-    "oish": 0.143,
-    "oish_career": 0.127,
-    "toi": 22.4
    },
    "verdict": "conforme"
   },
@@ -13313,6 +13319,53 @@
     "toi": 14.9
    },
    "verdict": "petit_echantillon"
+  },
+  {
+   "espn_id": 3114741,
+   "name": "Nikolaj Ehlers",
+   "pos": "LW",
+   "team": "CAR",
+   "owner": "EMs",
+   "mine": false,
+   "status": "OUT",
+   "type": "Lower Body",
+   "expected_return": "2026-11-28",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 53.2,
+    "p10": 39.4,
+    "p90": 66.4
+   },
+   "gp": 23.0,
+   "points": 22.0,
+   "luck": {
+    "expected_points": 21.7,
+    "net_points": 0.3,
+    "goals": {
+     "obs": 6,
+     "expected": 6.9,
+     "shots": 53,
+     "sh_obs": 0.113,
+     "sh_expected": 0.13,
+     "percentile": 0.377
+    },
+    "assists": {
+     "shots": 178,
+     "sh_obs": 0.152,
+     "sh_expected": 0.141,
+     "percentile": 0.671,
+     "obs_goals": 27,
+     "expected_goals": 25.0
+    },
+    "sh": 0.113,
+    "sh_career": 0.119,
+    "g_minus_ixg": 0.1,
+    "oish": 0.152,
+    "oish_career": 0.102,
+    "toi": 16.1
+   },
+   "verdict": "conforme"
   },
   {
    "espn_id": 4587996,
@@ -13644,6 +13697,53 @@
    "verdict": "chanceux"
   },
   {
+   "espn_id": 5509,
+   "name": "Zach Hyman",
+   "pos": "RW",
+   "team": "EDM",
+   "owner": "IGm",
+   "mine": false,
+   "status": "OUT",
+   "type": "Impaired Vision",
+   "expected_return": "2026-11-27",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 36.4,
+    "p10": 23.4,
+    "p90": 48.9
+   },
+   "gp": 14.0,
+   "points": 6.0,
+   "luck": {
+    "expected_points": 5.6,
+    "net_points": 0.4,
+    "goals": {
+     "obs": 4,
+     "expected": 4.3,
+     "shots": 25,
+     "sh_obs": 0.16,
+     "sh_expected": 0.174,
+     "percentile": 0.452
+    },
+    "assists": {
+     "shots": 99,
+     "sh_obs": 0.192,
+     "sh_expected": 0.12,
+     "percentile": 0.981,
+     "obs_goals": 19,
+     "expected_goals": 11.9
+    },
+    "sh": 0.16,
+    "sh_career": 0.14,
+    "g_minus_ixg": -0.9,
+    "oish": 0.192,
+    "oish_career": 0.113,
+    "toi": 17.2
+   },
+   "verdict": "conforme"
+  },
+  {
    "espn_id": 3114777,
    "name": "Jared McCann",
    "pos": "LW",
@@ -13848,7 +13948,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 82.75,
+     "pct_owned": 82.73,
      "ros": {
       "mean": 48.1,
       "p10": 35.6,
@@ -13894,7 +13994,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 80.0,
+     "pct_owned": 80.04,
      "ros": {
       "mean": 47.5,
       "p10": 35.2,
@@ -13940,7 +14040,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-12-05",
      "games_missed": 5,
-     "pct_owned": 56.08,
+     "pct_owned": 56.07,
      "ros": {
       "mean": 44.9,
       "p10": 33.2,
@@ -13986,7 +14086,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 54.07,
+     "pct_owned": 54.04,
      "ros": {
       "mean": 44.6,
       "p10": 34.2,
@@ -14025,6 +14125,52 @@
      "verdict": "conforme"
     },
     {
+     "espn_id": 3852,
+     "name": "Brad Marchand",
+     "pos": "LW",
+     "team": "FLA",
+     "status": "INJURY_RESERVE",
+     "expected_return": "2026-11-25",
+     "games_missed": 0,
+     "pct_owned": 51.77,
+     "ros": {
+      "mean": 44.4,
+      "p10": 34.0,
+      "p90": 54.3
+     },
+     "gain": 22.9,
+     "p_better": 0.982,
+     "gp": 2.0,
+     "points": 1.0,
+     "luck": {
+      "expected_points": 0.6,
+      "net_points": 0.4,
+      "goals": {
+       "obs": 1,
+       "expected": 0.6,
+       "shots": 5,
+       "sh_obs": 0.2,
+       "sh_expected": 0.122,
+       "percentile": 0.704
+      },
+      "assists": {
+       "shots": 7,
+       "sh_obs": 0.0,
+       "sh_expected": 0.084,
+       "percentile": 0.27,
+       "obs_goals": 0,
+       "expected_goals": 0.6
+      },
+      "sh": 0.2,
+      "sh_career": 0.153,
+      "g_minus_ixg": 0.5,
+      "oish": 0.0,
+      "oish_career": 0.1,
+      "toi": 11.4
+     },
+     "verdict": "petit_echantillon"
+    },
+    {
      "espn_id": 2976844,
      "name": "Tomas Hertl",
      "pos": "C",
@@ -14032,7 +14178,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 85.04,
+     "pct_owned": 85.1,
      "ros": {
       "mean": 44.2,
       "p10": 32.7,
@@ -14078,7 +14224,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 38.59,
+     "pct_owned": 38.43,
      "ros": {
       "mean": 43.9,
       "p10": 33.6,
@@ -14124,7 +14270,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 66.2,
+     "pct_owned": 66.57,
      "ros": {
       "mean": 43.6,
       "p10": 32.3,
@@ -14163,52 +14309,6 @@
      "verdict": "conforme"
     },
     {
-     "espn_id": 3852,
-     "name": "Brad Marchand",
-     "pos": "LW",
-     "team": "FLA",
-     "status": "INJURY_RESERVE",
-     "expected_return": "2026-11-28",
-     "games_missed": 2,
-     "pct_owned": 51.76,
-     "ros": {
-      "mean": 42.9,
-      "p10": 31.8,
-      "p90": 53.6
-     },
-     "gain": 21.4,
-     "p_better": 0.971,
-     "gp": 2.0,
-     "points": 1.0,
-     "luck": {
-      "expected_points": 0.6,
-      "net_points": 0.4,
-      "goals": {
-       "obs": 1,
-       "expected": 0.6,
-       "shots": 5,
-       "sh_obs": 0.2,
-       "sh_expected": 0.122,
-       "percentile": 0.704
-      },
-      "assists": {
-       "shots": 7,
-       "sh_obs": 0.0,
-       "sh_expected": 0.084,
-       "percentile": 0.27,
-       "obs_goals": 0,
-       "expected_goals": 0.6
-      },
-      "sh": 0.2,
-      "sh_career": 0.153,
-      "g_minus_ixg": 0.5,
-      "oish": 0.0,
-      "oish_career": 0.1,
-      "toi": 11.4
-     },
-     "verdict": "petit_echantillon"
-    },
-    {
      "espn_id": 4024833,
      "name": "Pierre-Luc Dubois",
      "pos": "C",
@@ -14216,7 +14316,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.23,
+     "pct_owned": 12.24,
      "ros": {
       "mean": 42.6,
       "p10": 28.7,
@@ -14262,7 +14362,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 58.59,
+     "pct_owned": 58.79,
      "ros": {
       "mean": 42.0,
       "p10": 28.4,
@@ -14310,7 +14410,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-27",
      "games_missed": 1,
-     "pct_owned": 54.26,
+     "pct_owned": 54.22,
      "ros": {
       "mean": 29.3,
       "p10": 17.0,
@@ -14356,7 +14456,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 26.63,
+     "pct_owned": 26.67,
      "ros": {
       "mean": 29.2,
       "p10": 18.5,
@@ -14402,7 +14502,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 5.14,
+     "pct_owned": 5.17,
      "ros": {
       "mean": 29.0,
       "p10": 16.8,
@@ -14448,7 +14548,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 28.89,
+     "pct_owned": 28.99,
      "ros": {
       "mean": 27.6,
       "p10": 17.0,
@@ -14494,7 +14594,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 48.89,
+     "pct_owned": 48.98,
      "ros": {
       "mean": 27.5,
       "p10": 16.9,
@@ -14563,7 +14663,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 92.92,
+     "pct_owned": 92.94,
      "ros": {
       "mean": 50.3,
       "p10": 37.3,
@@ -14626,7 +14726,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 73.06,
+     "pct_owned": 72.98,
      "ros": {
       "mean": 42.8,
       "p10": 29.7,
@@ -14657,8 +14757,8 @@
    "p90": 1200.2,
    "ros_p10": 750.6,
    "ros_p90": 868.2,
-   "p_first": 0.484,
-   "delta_p_first_per_point": 0.0072
+   "p_first": 0.478,
+   "delta_p_first_per_point": 0.00719
   },
   {
    "team_id": 9,
@@ -14674,8 +14774,8 @@
    "p90": 1173.8,
    "ros_p10": 724.2,
    "ros_p90": 835.8,
-   "p_first": 0.244,
-   "delta_p_first_per_point": -0.00312
+   "p_first": 0.24,
+   "delta_p_first_per_point": -0.00306
   },
   {
    "team_id": 7,
@@ -14683,16 +14783,16 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 303.0,
-   "ros": 801.4,
-   "final": 1104.4,
-   "sd": 43.59,
+   "ros": 803.6,
+   "final": 1106.6,
+   "sd": 43.99,
    "luck_points": 6.0,
-   "p10": 1048.5,
-   "p90": 1160.3,
-   "ros_p10": 745.5,
-   "ros_p90": 857.3,
-   "p_first": 0.156,
-   "delta_p_first_per_point": -0.00215
+   "p10": 1050.2,
+   "p90": 1163.0,
+   "ros_p10": 747.2,
+   "ros_p90": 860.0,
+   "p_first": 0.167,
+   "delta_p_first_per_point": -0.00225
   },
   {
    "team_id": 4,
@@ -14708,8 +14808,8 @@
    "p90": 1138.8,
    "ros_p10": 695.0,
    "ros_p90": 807.8,
-   "p_first": 0.07,
-   "delta_p_first_per_point": -0.00108
+   "p_first": 0.069,
+   "delta_p_first_per_point": -0.00106
   },
   {
    "team_id": 2,
@@ -14717,16 +14817,16 @@
    "name": "Estrie Monsters",
    "mine": false,
    "points": 308.0,
-   "ros": 751.7,
-   "final": 1059.7,
-   "sd": 39.0,
+   "ros": 750.8,
+   "final": 1058.8,
+   "sd": 39.23,
    "luck_points": -1.0,
-   "p10": 1009.7,
-   "p90": 1109.7,
-   "ros_p10": 701.7,
-   "ros_p90": 801.7,
+   "p10": 1008.5,
+   "p90": 1109.1,
+   "ros_p10": 700.5,
+   "ros_p90": 801.1,
    "p_first": 0.017,
-   "delta_p_first_per_point": -0.00034
+   "delta_p_first_per_point": -0.00032
   },
   {
    "team_id": 12,
@@ -14742,7 +14842,7 @@
    "p90": 1099.7,
    "ros_p10": 696.5,
    "ros_p90": 801.7,
-   "p_first": 0.011,
+   "p_first": 0.01,
    "delta_p_first_per_point": -0.00021
   },
   {
@@ -14759,8 +14859,8 @@
    "p90": 1099.1,
    "ros_p10": 698.7,
    "ros_p90": 805.1,
-   "p_first": 0.011,
-   "delta_p_first_per_point": -0.00021
+   "p_first": 0.01,
+   "delta_p_first_per_point": -0.0002
   },
   {
    "team_id": 1,
@@ -14819,14 +14919,14 @@
    "name": "Yan The Man",
    "mine": false,
    "points": 252.0,
-   "ros": 698.1,
-   "final": 950.1,
-   "sd": 39.55,
+   "ros": 697.5,
+   "final": 949.5,
+   "sd": 39.5,
    "luck_points": 13.4,
-   "p10": 899.4,
-   "p90": 1000.8,
-   "ros_p10": 647.4,
-   "ros_p90": 748.8,
+   "p10": 898.9,
+   "p90": 1000.1,
+   "ros_p10": 646.9,
+   "ros_p90": 748.1,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0
   },
@@ -15486,6 +15586,7 @@
   "4894366": 73,
   "4894398": 10,
   "4894487": 27,
+  "4894702": 29,
   "4894703": 31,
   "4894726": 38,
   "4894747": 63,

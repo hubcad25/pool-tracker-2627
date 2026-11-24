@@ -1,6 +1,6 @@
 {
  "date": "2026-11-24",
- "updated": "2026-11-24T15:02:02-05:00",
+ "updated": "2026-11-24T15:06:05-05:00",
  "games": [
   {
    "id": 2026020385,
@@ -15,7 +15,7 @@
   }
  ],
  "p_first": {
-  "now": 0.484,
+  "now": 0.478,
   "yesterday": 0.49,
   "history": [
    {
@@ -244,7 +244,7 @@
    },
    {
     "day": "2026-11-24",
-    "p_first": 0.484
+    "p_first": 0.478
    }
   ]
  },
@@ -255,8 +255,8 @@
    "name": "hubcad25",
    "mine": true,
    "points": 332.0,
-   "p_first": 0.484,
-   "delta_p_first_per_point": 0.0072,
+   "p_first": 0.478,
+   "delta_p_first_per_point": 0.00719,
    "final": 1141.4,
    "sd": 45.87,
    "expected_tonight": 1.8,
@@ -297,8 +297,8 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 338.0,
-   "p_first": 0.244,
-   "delta_p_first_per_point": -0.00312,
+   "p_first": 0.24,
+   "delta_p_first_per_point": -0.00306,
    "final": 1118.0,
    "sd": 43.57,
    "expected_tonight": 3.2,
@@ -352,10 +352,10 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 303.0,
-   "p_first": 0.156,
-   "delta_p_first_per_point": -0.00215,
-   "final": 1104.4,
-   "sd": 43.59,
+   "p_first": 0.167,
+   "delta_p_first_per_point": -0.00225,
+   "final": 1106.6,
+   "sd": 43.99,
    "expected_tonight": 0.0,
    "actual_tonight": null,
    "playing_tonight": 0,
@@ -367,8 +367,8 @@
    "name": "NWA",
    "mine": false,
    "points": 331.0,
-   "p_first": 0.07,
-   "delta_p_first_per_point": -0.00108,
+   "p_first": 0.069,
+   "delta_p_first_per_point": -0.00106,
    "final": 1082.4,
    "sd": 44.03,
    "expected_tonight": 2.3,
@@ -423,9 +423,9 @@
    "mine": false,
    "points": 308.0,
    "p_first": 0.017,
-   "delta_p_first_per_point": -0.00034,
-   "final": 1059.7,
-   "sd": 39.0,
+   "delta_p_first_per_point": -0.00032,
+   "final": 1058.8,
+   "sd": 39.23,
    "expected_tonight": 0.9,
    "actual_tonight": null,
    "playing_tonight": 2,
@@ -464,7 +464,7 @@
    "name": "Rico",
    "mine": false,
    "points": 298.0,
-   "p_first": 0.011,
+   "p_first": 0.01,
    "delta_p_first_per_point": -0.00021,
    "final": 1047.1,
    "sd": 41.02,
@@ -493,8 +493,8 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 294.0,
-   "p_first": 0.011,
-   "delta_p_first_per_point": -0.00021,
+   "p_first": 0.01,
+   "delta_p_first_per_point": -0.0002,
    "final": 1045.9,
    "sd": 41.53,
    "expected_tonight": 0.5,
@@ -568,8 +568,8 @@
    "points": 252.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 950.1,
-   "sd": 39.55,
+   "final": 949.5,
+   "sd": 39.5,
    "expected_tonight": 0.6,
    "actual_tonight": null,
    "playing_tonight": 1,
@@ -668,8 +668,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00312,
-   "threat": -0.00523
+   "delta_p_first_per_point": -0.00306,
+   "threat": -0.00513
   },
   {
    "espn_id": 3899937,
@@ -688,8 +688,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00312,
-   "threat": -0.00354
+   "delta_p_first_per_point": -0.00306,
+   "threat": -0.00348
   },
   {
    "espn_id": 3904186,
@@ -708,8 +708,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00312,
-   "threat": -0.00119
+   "delta_p_first_per_point": -0.00306,
+   "threat": -0.00117
   },
   {
    "espn_id": 4352722,
@@ -728,8 +728,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00108,
-   "threat": -0.00112
+   "delta_p_first_per_point": -0.00106,
+   "threat": -0.0011
   },
   {
    "espn_id": 5545,
@@ -748,8 +748,8 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00108,
-   "threat": -0.00105
+   "delta_p_first_per_point": -0.00106,
+   "threat": -0.00103
   },
   {
    "espn_id": 3942033,
@@ -768,7 +768,7 @@
     "abbrev": "NWA",
     "name": "NWA"
    },
-   "delta_p_first_per_point": -0.00108,
+   "delta_p_first_per_point": -0.00106,
    "threat": -0.0003
   },
   {
@@ -808,8 +808,8 @@
     "abbrev": "EMs",
     "name": "Estrie Monsters"
    },
-   "delta_p_first_per_point": -0.00034,
-   "threat": -0.00019
+   "delta_p_first_per_point": -0.00032,
+   "threat": -0.00018
   }
  ]
 }
