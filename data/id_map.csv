@@ -275,6 +275,7 @@ espn_id,nhl_id,canonical_id,name,method
 2993474,8476925,colton_sissons,Colton Sissons,name
 3020225,8476945,connor_hellebuyck,Connor Hellebuyck,name
 3020228,,jaycob_megna,Jaycob Megna,unmatched
+3020618,,,Jayson Megna,unmatched
 3020635,,,Matt Tennyson,unmatched
 3020803,8476931,jake_mccabe,Jake McCabe,name
 3024784,,travis_boyd,Travis Boyd,unmatched
@@ -650,6 +651,7 @@ espn_id,nhl_id,canonical_id,name,method
 4064781,8479671,mathieu_olivier,Mathieu Olivier,name
 4064872,,,Luke Philp,unmatched
 4064936,8479369,andrew_peeke,Andrew Peeke,name
+4064976,,rodrigo_abols,Rodrigo Abols,unmatched
 4065019,8479542,brandon_hagel,Brandon Hagel,name
 4195214,,,Gavin Bayreuther,unmatched
 4196898,,,Shane Starrett,unmatched
