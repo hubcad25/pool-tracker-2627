@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25T12:02:31-05:00",
+ "updated": "2026-11-25T14:02:02-05:00",
  "games": [
   {
    "id": 2026020386,
@@ -419,7 +419,7 @@
      "game_id": 2026020387,
      "opp": "@BUF",
      "start": "2026-11-26T00:00:00Z",
-     "expected": 1.05,
+     "expected": 1.04,
      "actual": null,
      "p_start": null
     },
@@ -2744,7 +2744,7 @@
    "game_id": 2026020387,
    "opp": "@BUF",
    "start": "2026-11-26T00:00:00Z",
-   "expected": 1.05,
+   "expected": 1.04,
    "actual": null,
    "p_start": null,
    "injury": null
