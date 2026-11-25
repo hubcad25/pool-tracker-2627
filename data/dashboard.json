@@ -1371,11 +1371,11 @@
     "team": "STL",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "OUT",
      "type": "Upper Body",
-     "expected_return": "2026-11-25",
+     "expected_return": "2026-11-27",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 24.0,
     "g": 14.0,
@@ -1383,25 +1383,25 @@
     "points": 20.0,
     "pace": 70.0,
     "prior": {
-     "p10": 51.9,
-     "p50": 61.2,
-     "p90": 70.9
+     "p10": 51.3,
+     "p50": 60.4,
+     "p90": 70.0
     },
     "ros_prior": {
-     "p10": 37.1,
-     "p50": 43.7,
-     "p90": 50.6
+     "p10": 36.4,
+     "p50": 43.0,
+     "p90": 49.8
     },
     "ros": {
-     "mean": 42.7,
-     "p10": 32.7,
-     "p90": 52.2,
-     "games_left": 60
+     "mean": 42.0,
+     "p10": 31.1,
+     "p90": 52.4,
+     "games_left": 59
     },
     "final": {
-     "mean": 62.7,
-     "p10": 52.7,
-     "p90": 72.2
+     "mean": 62.0,
+     "p10": 51.1,
+     "p90": 72.4
     },
     "luck": {
      "expected_points": 13.3,
@@ -6774,7 +6774,13 @@
     "group": "D",
     "team": "CAR",
     "slot": "D",
-    "injury": null,
+    "injury": {
+     "status": "DAY_TO_DAY",
+     "type": "Illness",
+     "expected_return": "2026-11-25",
+     "out_for_season": false,
+     "games_missed": 0
+    },
     "gp": 24.0,
     "g": 1.0,
     "a": 7.0,
@@ -7622,13 +7628,7 @@
     "group": "D",
     "team": "COL",
     "slot": "D",
-    "injury": {
-     "status": "INJURY_RESERVE",
-     "type": "Lower Body",
-     "expected_return": "2026-11-25",
-     "out_for_season": false,
-     "games_missed": 0
-    },
+    "injury": null,
     "gp": 19.0,
     "g": 5.0,
     "a": 18.0,
@@ -11174,11 +11174,11 @@
     "team": "ANA",
     "slot": "F",
     "injury": {
-     "status": "DAY_TO_DAY",
+     "status": "OUT",
      "type": "Upper Body",
-     "expected_return": "2026-11-25",
+     "expected_return": "2026-11-27",
      "out_for_season": false,
-     "games_missed": 0
+     "games_missed": 1
     },
     "gp": 24.0,
     "g": 7.0,
@@ -11186,25 +11186,25 @@
     "points": 29.0,
     "pace": 101.5,
     "prior": {
-     "p10": 71.9,
-     "p50": 78.4,
-     "p90": 85.1
+     "p10": 71.0,
+     "p50": 77.4,
+     "p90": 84.1
     },
     "ros_prior": {
-     "p10": 51.1,
-     "p50": 55.7,
-     "p90": 60.5
+     "p10": 50.2,
+     "p50": 54.8,
+     "p90": 59.5
     },
     "ros": {
-     "mean": 60.9,
-     "p10": 45.2,
-     "p90": 76.1,
-     "games_left": 59
+     "mean": 59.9,
+     "p10": 44.4,
+     "p90": 74.8,
+     "games_left": 58
     },
     "final": {
-     "mean": 89.9,
-     "p10": 74.2,
-     "p90": 105.1
+     "mean": 88.9,
+     "p10": 73.4,
+     "p90": 103.8
     },
     "luck": {
      "expected_points": 25.0,
@@ -13162,51 +13162,51 @@
    "verdict": "chanceux"
   },
   {
-   "espn_id": 4233563,
-   "name": "Cale Makar",
-   "pos": "D",
-   "team": "COL",
-   "owner": "VFTH",
+   "espn_id": 5149153,
+   "name": "Leo Carlsson",
+   "pos": "C",
+   "team": "ANA",
+   "owner": "GFF",
    "mine": false,
-   "status": "INJURY_RESERVE",
-   "type": "Lower Body",
-   "expected_return": "2026-11-25",
+   "status": "OUT",
+   "type": "Upper Body",
+   "expected_return": "2026-11-27",
    "out_for_season": false,
-   "games_missed": 0,
+   "games_missed": 1,
    "ros": {
-    "mean": 66.9,
-    "p10": 46.6,
-    "p90": 87.4
+    "mean": 59.9,
+    "p10": 44.4,
+    "p90": 74.8
    },
-   "gp": 19.0,
-   "points": 23.0,
+   "gp": 24.0,
+   "points": 29.0,
    "luck": {
-    "expected_points": 20.3,
-    "net_points": 2.7,
+    "expected_points": 25.0,
+    "net_points": 4.0,
     "goals": {
-     "obs": 5,
-     "expected": 3.3,
-     "shots": 49,
-     "sh_obs": 0.102,
-     "sh_expected": 0.068,
-     "percentile": 0.823
+     "obs": 7,
+     "expected": 6.1,
+     "shots": 41,
+     "sh_obs": 0.171,
+     "sh_expected": 0.148,
+     "percentile": 0.67
     },
     "assists": {
-     "shots": 223,
-     "sh_obs": 0.143,
-     "sh_expected": 0.135,
-     "percentile": 0.652,
-     "obs_goals": 32,
-     "expected_goals": 30.1
+     "shots": 211,
+     "sh_obs": 0.156,
+     "sh_expected": 0.134,
+     "percentile": 0.825,
+     "obs_goals": 33,
+     "expected_goals": 28.4
     },
-    "sh": 0.102,
-    "sh_career": 0.103,
-    "g_minus_ixg": 2.0,
-    "oish": 0.143,
-    "oish_career": 0.127,
-    "toi": 22.4
+    "sh": 0.171,
+    "sh_career": 0.147,
+    "g_minus_ixg": 1.3,
+    "oish": 0.156,
+    "oish_career": 0.094,
+    "toi": 19.8
    },
-   "verdict": "conforme"
+   "verdict": "chanceux"
   },
   {
    "espn_id": 3114741,
@@ -13538,6 +13538,53 @@
    "verdict": "chanceux"
   },
   {
+   "espn_id": 5080171,
+   "name": "Jimmy Snuggerud",
+   "pos": "RW",
+   "team": "STL",
+   "owner": "GSP",
+   "mine": false,
+   "status": "OUT",
+   "type": "Upper Body",
+   "expected_return": "2026-11-27",
+   "out_for_season": false,
+   "games_missed": 1,
+   "ros": {
+    "mean": 42.0,
+    "p10": 31.1,
+    "p90": 52.4
+   },
+   "gp": 24.0,
+   "points": 20.0,
+   "luck": {
+    "expected_points": 13.3,
+    "net_points": 6.7,
+    "goals": {
+     "obs": 14,
+     "expected": 7.4,
+     "shots": 53,
+     "sh_obs": 0.264,
+     "sh_expected": 0.14,
+     "percentile": 0.992
+    },
+    "assists": {
+     "shots": 166,
+     "sh_obs": 0.12,
+     "sh_expected": 0.119,
+     "percentile": 0.542,
+     "obs_goals": 20,
+     "expected_goals": 19.7
+    },
+    "sh": 0.264,
+    "sh_career": 0.123,
+    "g_minus_ixg": 7.0,
+    "oish": 0.12,
+    "oish_career": 0.144,
+    "toi": 17.7
+   },
+   "verdict": "chanceux"
+  },
+  {
    "espn_id": 4062251,
    "name": "Jordan Kyrou",
    "pos": "RW",
@@ -13836,7 +13883,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 82.84,
+     "pct_owned": 82.83,
      "ros": {
       "mean": 48.0,
       "p10": 35.6,
@@ -13882,7 +13929,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 80.58,
+     "pct_owned": 80.63,
      "ros": {
       "mean": 47.5,
       "p10": 35.2,
@@ -13974,7 +14021,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 54.16,
+     "pct_owned": 54.13,
      "ros": {
       "mean": 44.6,
       "p10": 34.2,
@@ -14020,7 +14067,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 52.67,
+     "pct_owned": 53.41,
      "ros": {
       "mean": 44.4,
       "p10": 34.0,
@@ -14066,7 +14113,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 37.74,
+     "pct_owned": 37.58,
      "ros": {
       "mean": 43.9,
       "p10": 33.6,
@@ -14112,7 +14159,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 85.14,
+     "pct_owned": 85.1,
      "ros": {
       "mean": 42.5,
       "p10": 31.5,
@@ -14158,7 +14205,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.3,
+     "pct_owned": 12.28,
      "ros": {
       "mean": 42.5,
       "p10": 28.7,
@@ -14204,7 +14251,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 67.05,
+     "pct_owned": 66.94,
      "ros": {
       "mean": 42.0,
       "p10": 31.1,
@@ -14250,7 +14297,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 60.09,
+     "pct_owned": 60.25,
      "ros": {
       "mean": 42.0,
       "p10": 28.4,
@@ -14298,7 +14345,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-27",
      "games_missed": 1,
-     "pct_owned": 54.05,
+     "pct_owned": 54.01,
      "ros": {
       "mean": 29.3,
       "p10": 17.0,
@@ -14344,7 +14391,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 27.24,
+     "pct_owned": 27.31,
      "ros": {
       "mean": 29.2,
       "p10": 18.5,
@@ -14390,7 +14437,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 5.46,
+     "pct_owned": 5.5,
      "ros": {
       "mean": 29.0,
       "p10": 16.8,
@@ -14436,7 +14483,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 30.09,
+     "pct_owned": 30.18,
      "ros": {
       "mean": 27.6,
       "p10": 17.0,
@@ -14482,7 +14529,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 49.7,
+     "pct_owned": 49.83,
      "ros": {
       "mean": 27.5,
       "p10": 16.9,
@@ -14551,7 +14598,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.12,
+     "pct_owned": 93.13,
      "ros": {
       "mean": 50.3,
       "p10": 37.3,
@@ -14593,7 +14640,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 85.75,
+     "pct_owned": 85.77,
      "ros": {
       "mean": 46.1,
       "p10": 32.9,
@@ -14614,7 +14661,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 72.63,
+     "pct_owned": 72.59,
      "ros": {
       "mean": 42.8,
       "p10": 29.7,
@@ -14663,7 +14710,7 @@
    "ros_p10": 717.8,
    "ros_p90": 828.4,
    "p_first": 0.211,
-   "delta_p_first_per_point": -0.00289
+   "delta_p_first_per_point": -0.0029
   },
   {
    "team_id": 7,
@@ -14680,7 +14727,7 @@
    "ros_p10": 747.1,
    "ros_p90": 859.9,
    "p_first": 0.167,
-   "delta_p_first_per_point": -0.00235
+   "delta_p_first_per_point": -0.00236
   },
   {
    "team_id": 4,
@@ -14722,16 +14769,16 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 295.0,
-   "ros": 751.8,
-   "final": 1046.8,
-   "sd": 41.29,
+   "ros": 750.8,
+   "final": 1045.8,
+   "sd": 41.23,
    "luck_points": 7.7,
-   "p10": 993.9,
-   "p90": 1099.7,
-   "ros_p10": 698.9,
-   "ros_p90": 804.7,
-   "p_first": 0.011,
-   "delta_p_first_per_point": -0.00022
+   "p10": 993.0,
+   "p90": 1098.6,
+   "ros_p10": 698.0,
+   "ros_p90": 803.6,
+   "p_first": 0.01,
+   "delta_p_first_per_point": -0.00021
   },
   {
    "team_id": 12,
@@ -14756,16 +14803,16 @@
    "name": "GSP",
    "mine": false,
    "points": 277.0,
-   "ros": 766.1,
-   "final": 1043.1,
-   "sd": 41.59,
+   "ros": 765.4,
+   "final": 1042.4,
+   "sd": 41.73,
    "luck_points": -3.5,
-   "p10": 989.8,
-   "p90": 1096.4,
-   "ros_p10": 712.8,
-   "ros_p90": 819.4,
+   "p10": 988.9,
+   "p90": 1095.9,
+   "ros_p10": 711.9,
+   "ros_p90": 818.9,
    "p_first": 0.009,
-   "delta_p_first_per_point": -0.00019
+   "delta_p_first_per_point": -0.00018
   },
   {
    "team_id": 3,
@@ -15406,7 +15453,6 @@
   "4697577": 70,
   "4697648": 77,
   "4697654": 37,
-  "4697678": 51,
   "4697681": 46,
   "4697683": 35,
   "4697686": 75,
