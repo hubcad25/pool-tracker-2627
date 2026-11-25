@@ -1,13 +1,13 @@
 {
  "date": "2026-11-24",
- "updated": "2026-11-24T15:06:05-05:00",
+ "updated": "2026-11-24T23:02:02-05:00",
  "games": [
   {
    "id": 2026020385,
    "start": "2026-11-25T01:00:00Z",
    "away": "VGK",
    "home": "EDM",
-   "state": "FUT",
+   "state": "FINAL",
    "goals": {
     "away": 3.288,
     "home": 3.175
@@ -260,7 +260,7 @@
    "final": 1141.4,
    "sd": 45.87,
    "expected_tonight": 1.8,
-   "actual_tonight": null,
+   "actual_tonight": 3,
    "playing_tonight": 2,
    "players": [
     {
@@ -273,7 +273,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 1.43,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -286,7 +286,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.36,
-     "actual": null,
+     "actual": 3,
      "p_start": null
     }
    ]
@@ -302,7 +302,7 @@
    "final": 1118.0,
    "sd": 43.57,
    "expected_tonight": 3.2,
-   "actual_tonight": null,
+   "actual_tonight": 3,
    "playing_tonight": 3,
    "players": [
     {
@@ -315,7 +315,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 1.68,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -328,7 +328,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 1.14,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -341,7 +341,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.38,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -357,7 +357,7 @@
    "final": 1106.6,
    "sd": 43.99,
    "expected_tonight": 0.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 0,
    "players": []
   },
@@ -372,7 +372,7 @@
    "final": 1082.4,
    "sd": 44.03,
    "expected_tonight": 2.3,
-   "actual_tonight": null,
+   "actual_tonight": 3,
    "playing_tonight": 3,
    "players": [
     {
@@ -385,7 +385,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 1.03,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -398,7 +398,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.97,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -411,7 +411,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.28,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -427,7 +427,7 @@
    "final": 1058.8,
    "sd": 39.23,
    "expected_tonight": 0.9,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 2,
    "players": [
     {
@@ -440,7 +440,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.56,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -453,7 +453,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.37,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -469,7 +469,7 @@
    "final": 1047.1,
    "sd": 41.02,
    "expected_tonight": 0.7,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -482,7 +482,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.68,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -498,7 +498,7 @@
    "final": 1045.9,
    "sd": 41.53,
    "expected_tonight": 0.5,
-   "actual_tonight": null,
+   "actual_tonight": 1,
    "playing_tonight": 1,
    "players": [
     {
@@ -511,7 +511,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.49,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -527,7 +527,7 @@
    "final": 1042.1,
    "sd": 41.66,
    "expected_tonight": 1.2,
-   "actual_tonight": null,
+   "actual_tonight": 2,
    "playing_tonight": 1,
    "players": [
     {
@@ -540,7 +540,7 @@
      "opp": "@EDM",
      "start": "2026-11-25T01:00:00Z",
      "expected": 1.19,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -556,7 +556,7 @@
    "final": 958.6,
    "sd": 39.81,
    "expected_tonight": 0.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 0,
    "players": []
   },
@@ -571,7 +571,7 @@
    "final": 949.5,
    "sd": 39.5,
    "expected_tonight": 0.6,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 1,
    "players": [
     {
@@ -584,7 +584,7 @@
      "opp": "VGK",
      "start": "2026-11-25T01:00:00Z",
      "expected": 0.62,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -600,7 +600,7 @@
    "final": 929.9,
    "sd": 38.21,
    "expected_tonight": 0.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 0,
    "players": []
   },
@@ -615,7 +615,7 @@
    "final": 963.2,
    "sd": 39.59,
    "expected_tonight": 0.0,
-   "actual_tonight": null,
+   "actual_tonight": 0,
    "playing_tonight": 0,
    "players": []
   }
@@ -631,7 +631,7 @@
    "opp": "VGK",
    "start": "2026-11-25T01:00:00Z",
    "expected": 1.43,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   },
@@ -645,7 +645,7 @@
    "opp": "@EDM",
    "start": "2026-11-25T01:00:00Z",
    "expected": 0.36,
-   "actual": null,
+   "actual": 3,
    "p_start": null,
    "injury": null
   }
@@ -661,7 +661,7 @@
    "opp": "VGK",
    "start": "2026-11-25T01:00:00Z",
    "expected": 1.68,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -681,7 +681,7 @@
    "opp": "@EDM",
    "start": "2026-11-25T01:00:00Z",
    "expected": 1.14,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -701,7 +701,7 @@
    "opp": "@EDM",
    "start": "2026-11-25T01:00:00Z",
    "expected": 0.38,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 9,
@@ -721,7 +721,7 @@
    "opp": "VGK",
    "start": "2026-11-25T01:00:00Z",
    "expected": 1.03,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -741,7 +741,7 @@
    "opp": "@EDM",
    "start": "2026-11-25T01:00:00Z",
    "expected": 0.97,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -761,7 +761,7 @@
    "opp": "VGK",
    "start": "2026-11-25T01:00:00Z",
    "expected": 0.28,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 4,
@@ -781,7 +781,7 @@
    "opp": "@EDM",
    "start": "2026-11-25T01:00:00Z",
    "expected": 1.19,
-   "actual": null,
+   "actual": 2,
    "p_start": null,
    "owner": {
     "team_id": 1,
@@ -801,7 +801,7 @@
    "opp": "VGK",
    "start": "2026-11-25T01:00:00Z",
    "expected": 0.56,
-   "actual": null,
+   "actual": 1,
    "p_start": null,
    "owner": {
     "team_id": 2,
