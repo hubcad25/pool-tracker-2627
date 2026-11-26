@@ -1,6 +1,6 @@
 {
  "date": "2026-11-25",
- "updated": "2026-11-25T23:02:07-05:00",
+ "updated": "2026-11-26T06:02:09-05:00",
  "games": [
   {
    "id": 2026020386,
@@ -128,7 +128,7 @@
    "start": "2026-11-26T02:30:00Z",
    "away": "MTL",
    "home": "COL",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.208,
     "home": 3.35
@@ -139,7 +139,7 @@
    "start": "2026-11-26T02:40:00Z",
    "away": "CHI",
    "home": "SEA",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.006,
     "home": 3.553
@@ -150,7 +150,7 @@
    "start": "2026-11-26T03:00:00Z",
    "away": "SJS",
    "home": "ANA",
-   "state": "LIVE",
+   "state": "FINAL",
    "goals": {
     "away": 3.179,
     "home": 3.603
@@ -401,7 +401,7 @@
    "abbrev": "HC25",
    "name": "hubcad25",
    "mine": true,
-   "points": 335.0,
+   "points": 341.0,
    "p_first": 0.506,
    "delta_p_first_per_point": 0.00722,
    "final": 1143.5,
@@ -563,7 +563,7 @@
      "opp": "CHI",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -573,13 +573,13 @@
    "abbrev": "LLT",
    "name": "Laurent's Lucrative Team",
    "mine": false,
-   "points": 341.0,
+   "points": 351.0,
    "p_first": 0.211,
    "delta_p_first_per_point": -0.0029,
    "final": 1114.1,
    "sd": 43.14,
    "expected_tonight": 9.7,
-   "actual_tonight": 8,
+   "actual_tonight": 10,
    "playing_tonight": 13,
    "players": [
     {
@@ -748,7 +748,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.59,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     }
    ]
@@ -758,13 +758,13 @@
    "abbrev": "VFTH",
    "name": "Vincenzo for the win",
    "mine": false,
-   "points": 303.0,
+   "points": 317.0,
    "p_first": 0.167,
    "delta_p_first_per_point": -0.00236,
    "final": 1106.5,
    "sd": 43.98,
    "expected_tonight": 12.6,
-   "actual_tonight": 10,
+   "actual_tonight": 14,
    "playing_tonight": 15,
    "players": [
     {
@@ -920,7 +920,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 1.09,
-     "actual": null,
+     "actual": 3,
      "p_start": null
     },
     {
@@ -933,7 +933,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.82,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -946,7 +946,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.39,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -959,7 +959,7 @@
      "opp": "CHI",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.62,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -969,13 +969,13 @@
    "abbrev": "NWA",
    "name": "NWA",
    "mine": false,
-   "points": 334.0,
+   "points": 341.0,
    "p_first": 0.07,
    "delta_p_first_per_point": -0.00112,
    "final": 1082.8,
    "sd": 43.93,
    "expected_tonight": 10.6,
-   "actual_tonight": 5,
+   "actual_tonight": 7,
    "playing_tonight": 13,
    "players": [
     {
@@ -1092,7 +1092,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.98,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1105,7 +1105,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.84,
-     "actual": null,
+     "actual": 0,
      "p_start": 0.786
     },
     {
@@ -1118,7 +1118,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.69,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -1131,7 +1131,7 @@
      "opp": "SJS",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.92,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1144,7 +1144,7 @@
      "opp": "@ANA",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.6,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1154,7 +1154,7 @@
    "abbrev": "EMs",
    "name": "Estrie Monsters",
    "mine": false,
-   "points": 309.0,
+   "points": 315.0,
    "p_first": 0.017,
    "delta_p_first_per_point": -0.00034,
    "final": 1058.9,
@@ -1316,7 +1316,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 1.13,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1329,7 +1329,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.76,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1339,13 +1339,13 @@
    "abbrev": "RICo",
    "name": "Rico",
    "mine": false,
-   "points": 298.0,
+   "points": 306.0,
    "p_first": 0.01,
    "delta_p_first_per_point": -0.0002,
    "final": 1045.7,
    "sd": 40.91,
    "expected_tonight": 11.6,
-   "actual_tonight": 7,
+   "actual_tonight": 8,
    "playing_tonight": 14,
    "players": [
     {
@@ -1501,7 +1501,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 1.45,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1514,7 +1514,7 @@
      "opp": "SJS",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.83,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -1527,7 +1527,7 @@
      "opp": "@ANA",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.81,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1537,7 +1537,7 @@
    "abbrev": "GFF",
    "name": "Gucci Flip Flops",
    "mine": false,
-   "points": 295.0,
+   "points": 304.0,
    "p_first": 0.01,
    "delta_p_first_per_point": -0.00021,
    "final": 1045.8,
@@ -1712,7 +1712,7 @@
      "opp": "@SEA",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.53,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -1725,7 +1725,7 @@
      "opp": "SJS",
      "start": "2026-11-26T03:00:00Z",
      "expected": 1.1,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1735,13 +1735,13 @@
    "abbrev": "GSP",
    "name": "GSP",
    "mine": false,
-   "points": 277.0,
+   "points": 283.0,
    "p_first": 0.009,
    "delta_p_first_per_point": -0.00018,
    "final": 1042.4,
    "sd": 41.73,
    "expected_tonight": 11.1,
-   "actual_tonight": 5,
+   "actual_tonight": 6,
    "playing_tonight": 14,
    "players": [
     {
@@ -1910,7 +1910,7 @@
      "opp": "CHI",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.68,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -1923,7 +1923,7 @@
      "opp": "@ANA",
      "start": "2026-11-26T03:00:00Z",
      "expected": 1.33,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -1933,7 +1933,7 @@
    "abbrev": "POGo",
    "name": "POGO",
    "mine": false,
-   "points": 276.0,
+   "points": 283.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 958.3,
@@ -2108,7 +2108,7 @@
      "opp": "@SEA",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.66,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2121,7 +2121,7 @@
      "opp": "@ANA",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.56,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -2131,13 +2131,13 @@
    "abbrev": "IGm",
    "name": "Yan The Man",
    "mine": false,
-   "points": 252.0,
+   "points": 258.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 949.0,
    "sd": 39.48,
    "expected_tonight": 10.7,
-   "actual_tonight": 3,
+   "actual_tonight": 6,
    "playing_tonight": 15,
    "players": [
     {
@@ -2293,7 +2293,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.68,
-     "actual": null,
+     "actual": 2,
      "p_start": null
     },
     {
@@ -2306,7 +2306,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.57,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2319,7 +2319,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.53,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2332,7 +2332,7 @@
      "opp": "SJS",
      "start": "2026-11-26T03:00:00Z",
      "expected": 1.04,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     }
    ]
@@ -2342,13 +2342,13 @@
    "abbrev": "Nl",
    "name": "Nickla",
    "mine": false,
-   "points": 246.0,
+   "points": 255.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 929.8,
    "sd": 38.19,
    "expected_tonight": 10.3,
-   "actual_tonight": 5,
+   "actual_tonight": 9,
    "playing_tonight": 14,
    "players": [
     {
@@ -2478,7 +2478,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.91,
-     "actual": null,
+     "actual": 3,
      "p_start": 0.779
     },
     {
@@ -2491,7 +2491,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.9,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2504,7 +2504,7 @@
      "opp": "@SEA",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.8,
-     "actual": null,
+     "actual": 1,
      "p_start": null
     },
     {
@@ -2517,7 +2517,7 @@
      "opp": "CHI",
      "start": "2026-11-26T02:40:00Z",
      "expected": 0.79,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2530,7 +2530,7 @@
      "opp": "@ANA",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.24,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -2540,13 +2540,13 @@
    "abbrev": "AC",
    "name": "Cuzo",
    "mine": false,
-   "points": 239.0,
+   "points": 247.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
    "final": 963.1,
    "sd": 39.57,
    "expected_tonight": 10.6,
-   "actual_tonight": 5,
+   "actual_tonight": 8,
    "playing_tonight": 14,
    "players": [
     {
@@ -2689,7 +2689,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 1.08,
-     "actual": null,
+     "actual": 3,
      "p_start": null
     },
     {
@@ -2702,7 +2702,7 @@
      "opp": "@COL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.78,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2715,7 +2715,7 @@
      "opp": "MTL",
      "start": "2026-11-26T02:30:00Z",
      "expected": 0.76,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     },
     {
@@ -2728,7 +2728,7 @@
      "opp": "SJS",
      "start": "2026-11-26T03:00:00Z",
      "expected": 0.41,
-     "actual": null,
+     "actual": 0,
      "p_start": null
     }
    ]
@@ -2899,7 +2899,7 @@
    "opp": "CHI",
    "start": "2026-11-26T02:40:00Z",
    "expected": 0.66,
-   "actual": null,
+   "actual": 0,
    "p_start": null,
    "injury": null
   }
@@ -3015,7 +3015,7 @@
    "opp": "MTL",
    "start": "2026-11-26T02:30:00Z",
    "expected": 1.09,
-   "actual": null,
+   "actual": 3,
    "p_start": null,
    "owner": {
     "team_id": 7,
