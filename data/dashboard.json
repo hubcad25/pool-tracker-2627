@@ -4582,32 +4582,38 @@
     "group": "F",
     "team": "NYR",
     "slot": "F",
-    "injury": null,
+    "injury": {
+     "status": "OUT",
+     "type": "Lower Body",
+     "expected_return": "2026-12-31",
+     "out_for_season": false,
+     "games_missed": 16
+    },
     "gp": 24.0,
     "g": 7.0,
     "a": 4.0,
     "points": 11.0,
     "pace": 38.5,
     "prior": {
-     "p10": 36.9,
-     "p50": 45.9,
-     "p90": 55.2
+     "p10": 29.9,
+     "p50": 37.2,
+     "p90": 44.7
     },
     "ros_prior": {
-     "p10": 26.4,
-     "p50": 32.8,
-     "p90": 39.4
+     "p10": 19.3,
+     "p50": 24.1,
+     "p90": 28.9
     },
     "ros": {
-     "mean": 30.5,
-     "p10": 20.6,
-     "p90": 41.4,
-     "games_left": 60
+     "mean": 22.3,
+     "p10": 14.4,
+     "p90": 30.0,
+     "games_left": 44
     },
     "final": {
-     "mean": 41.5,
-     "p10": 31.6,
-     "p90": 52.4
+     "mean": 33.3,
+     "p10": 25.4,
+     "p90": 41.0
     },
     "luck": {
      "expected_points": 11.4,
@@ -13643,6 +13649,53 @@
     "toi": 13.3
    },
    "verdict": "conforme"
+  },
+  {
+   "espn_id": 5149204,
+   "name": "Gabe Perreault",
+   "pos": "RW",
+   "team": "NYR",
+   "owner": "NWA",
+   "mine": false,
+   "status": "OUT",
+   "type": "Lower Body",
+   "expected_return": "2026-12-31",
+   "out_for_season": false,
+   "games_missed": 16,
+   "ros": {
+    "mean": 22.3,
+    "p10": 14.4,
+    "p90": 30.0
+   },
+   "gp": 24.0,
+   "points": 11.0,
+   "luck": {
+    "expected_points": 11.4,
+    "net_points": -0.4,
+    "goals": {
+     "obs": 7,
+     "expected": 6.8,
+     "shots": 46,
+     "sh_obs": 0.152,
+     "sh_expected": 0.148,
+     "percentile": 0.552
+    },
+    "assists": {
+     "shots": 151,
+     "sh_obs": 0.093,
+     "sh_expected": 0.106,
+     "percentile": 0.311,
+     "obs_goals": 14,
+     "expected_goals": 16.0
+    },
+    "sh": 0.152,
+    "sh_career": 0.154,
+    "g_minus_ixg": 0.1,
+    "oish": 0.093,
+    "oish_career": 0.103,
+    "toi": 16.6
+   },
+   "verdict": "conforme"
   }
  ],
  "free_agents": {
@@ -13686,7 +13739,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 82.78,
+     "pct_owned": 82.8,
      "ros": {
       "mean": 48.9,
       "p10": 36.3,
@@ -13732,7 +13785,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 59.07,
+     "pct_owned": 59.51,
      "ros": {
       "mean": 47.8,
       "p10": 35.4,
@@ -13778,7 +13831,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 80.59,
+     "pct_owned": 80.58,
      "ros": {
       "mean": 46.2,
       "p10": 34.2,
@@ -13870,7 +13923,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 37.33,
+     "pct_owned": 37.31,
      "ros": {
       "mean": 44.8,
       "p10": 34.3,
@@ -14008,7 +14061,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 66.45,
+     "pct_owned": 66.43,
      "ros": {
       "mean": 42.0,
       "p10": 31.1,
@@ -14054,7 +14107,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 47.58,
+     "pct_owned": 47.57,
      "ros": {
       "mean": 41.5,
       "p10": 28.0,
@@ -14100,7 +14153,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 12.19,
+     "pct_owned": 12.17,
      "ros": {
       "mean": 41.1,
       "p10": 27.7,
@@ -14148,7 +14201,7 @@
      "status": "INJURY_RESERVE",
      "expected_return": "2026-11-27",
      "games_missed": 0,
-     "pct_owned": 53.86,
+     "pct_owned": 53.85,
      "ros": {
       "mean": 29.3,
       "p10": 17.0,
@@ -14194,7 +14247,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 5.94,
+     "pct_owned": 5.97,
      "ros": {
       "mean": 28.6,
       "p10": 16.6,
@@ -14240,7 +14293,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 27.61,
+     "pct_owned": 27.64,
      "ros": {
       "mean": 28.4,
       "p10": 16.5,
@@ -14286,7 +14339,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 31.15,
+     "pct_owned": 31.32,
      "ros": {
       "mean": 27.9,
       "p10": 16.2,
@@ -14332,7 +14385,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 20.36,
+     "pct_owned": 20.51,
      "ros": {
       "mean": 26.9,
       "p10": 15.6,
@@ -14380,7 +14433,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 77.65,
+     "pct_owned": 77.66,
      "ros": {
       "mean": 51.7,
       "p10": 38.5,
@@ -14422,7 +14475,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 93.15,
+     "pct_owned": 93.16,
      "ros": {
       "mean": 48.6,
       "p10": 35.7,
@@ -14443,7 +14496,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 85.84,
+     "pct_owned": 85.85,
      "ros": {
       "mean": 45.5,
       "p10": 32.5,
@@ -14464,7 +14517,7 @@
      "status": "ACTIVE",
      "expected_return": null,
      "games_missed": null,
-     "pct_owned": 72.41,
+     "pct_owned": 72.38,
      "ros": {
       "mean": 43.4,
       "p10": 30.5,
@@ -14495,7 +14548,7 @@
    "p90": 1192.1,
    "ros_p10": 733.7,
    "ros_p90": 851.1,
-   "p_first": 0.446,
+   "p_first": 0.454,
    "delta_p_first_per_point": 0.00716
   },
   {
@@ -14512,8 +14565,8 @@
    "p90": 1169.4,
    "ros_p10": 708.0,
    "ros_p90": 818.4,
-   "p_first": 0.25,
-   "delta_p_first_per_point": -0.003
+   "p_first": 0.255,
+   "delta_p_first_per_point": -0.00311
   },
   {
    "team_id": 7,
@@ -14529,8 +14582,8 @@
    "p90": 1161.1,
    "ros_p10": 732.5,
    "ros_p90": 844.1,
-   "p_first": 0.189,
-   "delta_p_first_per_point": -0.00237
+   "p_first": 0.193,
+   "delta_p_first_per_point": -0.00246
   },
   {
    "team_id": 4,
@@ -14538,16 +14591,16 @@
    "name": "NWA",
    "mine": false,
    "points": 341.0,
-   "ros": 738.2,
-   "final": 1079.2,
-   "sd": 43.66,
+   "ros": 730.0,
+   "final": 1071.0,
+   "sd": 43.33,
    "luck_points": 21.6,
-   "p10": 1023.2,
-   "p90": 1135.2,
-   "ros_p10": 682.2,
-   "ros_p90": 794.2,
-   "p_first": 0.073,
-   "delta_p_first_per_point": -0.00106
+   "p10": 1015.5,
+   "p90": 1126.5,
+   "ros_p10": 674.5,
+   "ros_p90": 785.5,
+   "p_first": 0.053,
+   "delta_p_first_per_point": -0.00082
   },
   {
    "team_id": 2,
@@ -14563,8 +14616,8 @@
    "p90": 1102.2,
    "ros_p10": 687.0,
    "ros_p90": 787.2,
-   "p_first": 0.015,
-   "delta_p_first_per_point": -0.00028
+   "p_first": 0.016,
+   "delta_p_first_per_point": -0.0003
   },
   {
    "team_id": 11,
@@ -14581,7 +14634,7 @@
    "ros_p10": 686.7,
    "ros_p90": 792.3,
    "p_first": 0.012,
-   "delta_p_first_per_point": -0.00022
+   "delta_p_first_per_point": -0.00023
   },
   {
    "team_id": 12,
@@ -14598,7 +14651,7 @@
    "ros_p10": 681.7,
    "ros_p90": 785.9,
    "p_first": 0.009,
-   "delta_p_first_per_point": -0.00017
+   "delta_p_first_per_point": -0.00018
   },
   {
    "team_id": 1,
@@ -14615,7 +14668,7 @@
    "ros_p10": 699.0,
    "ros_p90": 803.6,
    "p_first": 0.007,
-   "delta_p_first_per_point": -0.00013
+   "delta_p_first_per_point": -0.00014
   },
   {
    "team_id": 3,
@@ -15182,7 +15235,6 @@
   "4565270": 14,
   "4565272": 29,
   "4565275": 14,
-  "4565278": 17,
   "4565282": 20,
   "4576894": 37,
   "4587566": 49,
@@ -15340,6 +15392,7 @@
   "4996099": 63,
   "4997026": 34,
   "4997056": 62,
+  "4997080": 16,
   "4997131": 47,
   "4997137": 3,
   "4997138": 8,
@@ -15371,6 +15424,7 @@
   "5080177": 10,
   "5080180": 49,
   "5080202": 62,
+  "5080203": 46,
   "5080205": 84,
   "5080207": 93,
   "5080211": 93,
@@ -15440,6 +15494,7 @@
   "5188510": 41,
   "5188523": 3,
   "5188582": 42,
+  "5188591": 42,
   "5188599": 58,
   "5188608": 38,
   "5188613": 61,

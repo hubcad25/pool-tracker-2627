@@ -655,9 +655,9 @@
      "name": "Gabe Perreault",
      "pos": "RW",
      "pro_team": "NYR",
-     "injury_status": "ACTIVE",
-     "injury_type": null,
-     "expected_return": null,
+     "injury_status": "OUT",
+     "injury_type": "Lower Body",
+     "expected_return": "2026-12-31",
      "out_for_season": false,
      "slot": "F"
     },
