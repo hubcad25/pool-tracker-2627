@@ -719,6 +719,7 @@ espn_id,nhl_id,canonical_id,name,method
 4268768,,jacob_macdonald,Jacob MacDonald,unmatched
 4268771,8479407,jesper_bratt,Jesper Bratt,name
 4270247,8479591,michael_eyssimont,Michael Eyssimont,name
+4270546,,ben_jones,Ben Jones,unmatched
 4270820,8479718,alex_barre_boulet,Alex Barre-Boulet,name
 4271212,,,Jiri Patera,unmatched
 4271557,8479387,keaton_middleton,Keaton Middleton,name
@@ -1092,6 +1093,7 @@ espn_id,nhl_id,canonical_id,name,method
 4781556,8482671,owen_power,Owen Power,name
 4781578,,,Owen Sillinger,unmatched
 4781635,8481708,zac_jones,Zac Jones,name
+4781641,,,Brandon Scanlin,unmatched
 4781650,8483406,taylor_ward,Taylor Ward,name
 4781665,,,Yaniv Perets,unmatched
 4781712,,,Dylan Peterson,unmatched
@@ -1203,6 +1205,7 @@ espn_id,nhl_id,canonical_id,name,method
 4997092,,brian_halonen,Brian Halonen,unmatched
 4997129,,,Lucas Condotta,unmatched
 4997131,8481732,andre_lee,Andre Lee,name
+4997137,8482178,ian_moore,Ian Moore,name
 4997138,8481567,henry_thrun,Henry Thrun,name
 5012030,,joshua_roy,Joshua Roy,unmatched
 5048894,8482259,bobby_mcmann,Bobby McMann,name
