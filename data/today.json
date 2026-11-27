@@ -1,13 +1,13 @@
 {
  "date": "2026-11-27",
- "updated": "2026-11-27T12:02:27-05:00",
+ "updated": "2026-11-27T13:52:01-05:00",
  "games": [
   {
    "id": 2026020400,
    "start": "2026-11-27T18:00:00Z",
    "away": "TOR",
    "home": "BOS",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 3.093,
     "home": 3.647
@@ -18,7 +18,7 @@
    "start": "2026-11-27T18:00:00Z",
    "away": "CGY",
    "home": "NJD",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 2.606,
     "home": 3.896
@@ -29,7 +29,7 @@
    "start": "2026-11-27T18:00:00Z",
    "away": "UTA",
    "home": "NSH",
-   "state": "FUT",
+   "state": "LIVE",
    "goals": {
     "away": 3.378,
     "home": 3.264
@@ -503,7 +503,7 @@
      "game_id": 2026020409,
      "opp": "@ANA",
      "start": "2026-11-27T21:00:00Z",
-     "expected": 1.27,
+     "expected": 1.28,
      "actual": null,
      "p_start": null
     },
@@ -619,8 +619,8 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 351.0,
-   "p_first": 0.237,
-   "delta_p_first_per_point": -0.00274,
+   "p_first": 0.238,
+   "delta_p_first_per_point": -0.00275,
    "final": 1114.2,
    "sd": 43.09,
    "expected_tonight": 13.5,
@@ -844,7 +844,7 @@
    "mine": false,
    "points": 317.0,
    "p_first": 0.179,
-   "delta_p_first_per_point": -0.00215,
+   "delta_p_first_per_point": -0.00216,
    "final": 1105.3,
    "sd": 43.51,
    "expected_tonight": 11.8,
@@ -1041,7 +1041,7 @@
    "name": "NWA",
    "mine": false,
    "points": 341.0,
-   "p_first": 0.125,
+   "p_first": 0.126,
    "delta_p_first_per_point": -0.0016,
    "final": 1094.9,
    "sd": 43.86,
@@ -1411,10 +1411,10 @@
    "name": "Gucci Flip Flops",
    "mine": false,
    "points": 304.0,
-   "p_first": 0.011,
-   "delta_p_first_per_point": -0.00019,
-   "final": 1043.5,
-   "sd": 41.23,
+   "p_first": 0.009,
+   "delta_p_first_per_point": -0.00017,
+   "final": 1041.4,
+   "sd": 41.11,
    "expected_tonight": 10.8,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -1820,10 +1820,10 @@
    "name": "GSP",
    "mine": false,
    "points": 283.0,
-   "p_first": 0.006,
-   "delta_p_first_per_point": -0.00011,
-   "final": 1034.3,
-   "sd": 40.79,
+   "p_first": 0.005,
+   "delta_p_first_per_point": -0.0001,
+   "final": 1032.9,
+   "sd": 40.72,
    "expected_tonight": 12.7,
    "actual_tonight": null,
    "playing_tonight": 16,
@@ -2244,8 +2244,8 @@
    "points": 258.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 940.4,
-   "sd": 38.02,
+   "final": 938.4,
+   "sd": 37.88,
    "expected_tonight": 10.4,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -2653,8 +2653,8 @@
    "points": 247.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 957.7,
-   "sd": 39.44,
+   "final": 957.0,
+   "sd": 39.41,
    "expected_tonight": 11.6,
    "actual_tonight": null,
    "playing_tonight": 15,
@@ -2937,7 +2937,7 @@
    "game_id": 2026020409,
    "opp": "@ANA",
    "start": "2026-11-27T21:00:00Z",
-   "expected": 1.27,
+   "expected": 1.28,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -3073,8 +3073,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00513
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.00514
   },
   {
    "espn_id": 3899937,
@@ -3093,8 +3093,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00348
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.00349
   },
   {
    "espn_id": 2562632,
@@ -3113,8 +3113,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00344
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.00345
   },
   {
    "espn_id": 3942335,
@@ -3133,28 +3133,8 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00215,
-   "threat": -0.00318
-  },
-  {
-   "espn_id": 4697384,
-   "nhl_id": 8482116,
-   "name": "Tim Stutzle",
-   "pos": "C",
-   "team": "OTT",
-   "game_id": 2026020404,
-   "opp": "@TBL",
-   "start": "2026-11-27T20:00:00Z",
-   "expected": 0.98,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 9,
-    "abbrev": "LLT",
-    "name": "Laurent's Lucrative Team"
-   },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00269
+   "delta_p_first_per_point": -0.00216,
+   "threat": -0.00319
   },
   {
    "espn_id": 3899952,
@@ -3173,8 +3153,28 @@
     "abbrev": "VFTH",
     "name": "Vincenzo for the win"
    },
-   "delta_p_first_per_point": -0.00215,
-   "threat": -0.00268
+   "delta_p_first_per_point": -0.00216,
+   "threat": -0.0027
+  },
+  {
+   "espn_id": 4697384,
+   "nhl_id": 8482116,
+   "name": "Tim Stutzle",
+   "pos": "C",
+   "team": "OTT",
+   "game_id": 2026020404,
+   "opp": "@TBL",
+   "start": "2026-11-27T20:00:00Z",
+   "expected": 0.98,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 9,
+    "abbrev": "LLT",
+    "name": "Laurent's Lucrative Team"
+   },
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.0027
   },
   {
    "espn_id": 4233637,
@@ -3193,8 +3193,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00247
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.00248
   },
   {
    "espn_id": 5037,
@@ -3213,8 +3213,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00274,
-   "threat": -0.00247
+   "delta_p_first_per_point": -0.00275,
+   "threat": -0.00248
   }
  ]
 }
