@@ -1,6 +1,6 @@
 {
  "date": "2026-11-28",
- "updated": "2026-11-28T11:02:04-05:00",
+ "updated": "2026-11-28T12:02:27-05:00",
  "games": [
   {
    "id": 2026020415,
@@ -8,7 +8,10 @@
    "away": "MTL",
    "home": "VGK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.286,
+    "home": 3.314
+   }
   },
   {
    "id": 2026020416,
@@ -16,7 +19,10 @@
    "away": "TBL",
    "home": "FLA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.266,
+    "home": 3.196
+   }
   },
   {
    "id": 2026020417,
@@ -24,7 +30,10 @@
    "away": "NSH",
    "home": "DET",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.951,
+    "home": 2.978
+   }
   },
   {
    "id": 2026020418,
@@ -32,7 +41,10 @@
    "away": "WPG",
    "home": "NJD",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.859,
+    "home": 3.671
+   }
   },
   {
    "id": 2026020419,
@@ -40,7 +52,10 @@
    "away": "CGY",
    "home": "NYR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.547,
+    "home": 3.318
+   }
   },
   {
    "id": 2026020420,
@@ -48,7 +63,10 @@
    "away": "TOR",
    "home": "PIT",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.33,
+    "home": 3.678
+   }
   },
   {
    "id": 2026020421,
@@ -56,7 +74,10 @@
    "away": "OTT",
    "home": "CAR",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.632,
+    "home": 3.968
+   }
   },
   {
    "id": 2026020422,
@@ -64,7 +85,10 @@
    "away": "WSH",
    "home": "STL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.633,
+    "home": 3.515
+   }
   },
   {
    "id": 2026020423,
@@ -72,7 +96,10 @@
    "away": "NYI",
    "home": "PHI",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.018,
+    "home": 2.91
+   }
   },
   {
    "id": 2026020424,
@@ -80,7 +107,10 @@
    "away": "UTA",
    "home": "DAL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.704,
+    "home": 3.225
+   }
   },
   {
    "id": 2026020425,
@@ -88,7 +118,10 @@
    "away": "SJS",
    "home": "COL",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 2.669,
+    "home": 3.972
+   }
   },
   {
    "id": 2026020426,
@@ -96,7 +129,10 @@
    "away": "ANA",
    "home": "LAK",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.091,
+    "home": 3.509
+   }
   },
   {
    "id": 2026020427,
@@ -104,11 +140,14 @@
    "away": "EDM",
    "home": "SEA",
    "state": "FUT",
-   "goals": null
+   "goals": {
+    "away": 3.666,
+    "home": 2.976
+   }
   }
  ],
  "p_first": {
-  "now": 0.421,
+  "now": 0.376,
   "yesterday": 0.421,
   "history": [
    {
@@ -350,6 +389,10 @@
    {
     "day": "2026-11-27",
     "p_first": 0.421
+   },
+   {
+    "day": "2026-11-28",
+    "p_first": 0.376
    }
   ]
  },
@@ -360,10 +403,10 @@
    "name": "hubcad25",
    "mine": true,
    "points": 350.0,
-   "p_first": 0.421,
-   "delta_p_first_per_point": 0.00712,
-   "final": 1132.7,
-   "sd": 45.78,
+   "p_first": 0.376,
+   "delta_p_first_per_point": 0.00695,
+   "final": 1131.0,
+   "sd": 45.22,
    "expected_tonight": 10.1,
    "actual_tonight": null,
    "playing_tonight": 12,
@@ -403,7 +446,7 @@
      "game_id": 2026020418,
      "opp": "WPG",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.99,
+     "expected": 0.97,
      "actual": null,
      "p_start": null
     },
@@ -429,7 +472,20 @@
      "game_id": 2026020419,
      "opp": "CGY",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.8,
+     "expected": 0.79,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4233583,
+     "nhl_id": 8480014,
+     "name": "Gabriel Vilardi",
+     "pos": "RW",
+     "team": "WPG",
+     "game_id": 2026020418,
+     "opp": "@NJD",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.77,
      "actual": null,
      "p_start": null
     },
@@ -447,19 +503,6 @@
      "p_start": null
     },
     {
-     "espn_id": 4233583,
-     "nhl_id": 8480014,
-     "name": "Gabriel Vilardi",
-     "pos": "RW",
-     "team": "WPG",
-     "game_id": 2026020418,
-     "opp": "@NJD",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.74,
-     "actual": null,
-     "p_start": null
-    },
-    {
      "espn_id": 5342529,
      "nhl_id": 8486067,
      "name": "Gavin McKenna",
@@ -468,7 +511,7 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.65,
+     "expected": 0.64,
      "actual": null,
      "p_start": null
     },
@@ -481,7 +524,7 @@
      "game_id": 2026020424,
      "opp": "@DAL",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.63,
+     "expected": 0.64,
      "actual": null,
      "p_start": null
     },
@@ -507,7 +550,7 @@
      "game_id": 2026020427,
      "opp": "@SEA",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 1.46,
+     "expected": 1.45,
      "actual": null,
      "p_start": null
     },
@@ -520,7 +563,7 @@
      "game_id": 2026020427,
      "opp": "EDM",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 0.55,
+     "expected": 0.54,
      "actual": null,
      "p_start": null
     }
@@ -532,11 +575,11 @@
    "name": "Laurent's Lucrative Team",
    "mine": false,
    "points": 367.0,
-   "p_first": 0.238,
-   "delta_p_first_per_point": -0.00275,
-   "final": 1114.2,
-   "sd": 43.09,
-   "expected_tonight": 10.6,
+   "p_first": 0.275,
+   "delta_p_first_per_point": -0.00287,
+   "final": 1121.2,
+   "sd": 42.89,
+   "expected_tonight": 10.7,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -575,7 +618,7 @@
      "game_id": 2026020418,
      "opp": "@NJD",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 1.09,
+     "expected": 1.1,
      "actual": null,
      "p_start": null
     },
@@ -588,7 +631,7 @@
      "game_id": 2026020422,
      "opp": "WSH",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 1.01,
+     "expected": 1.03,
      "actual": null,
      "p_start": null
     },
@@ -601,7 +644,7 @@
      "game_id": 2026020421,
      "opp": "@CAR",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.9,
+     "expected": 0.91,
      "actual": null,
      "p_start": null
     },
@@ -627,7 +670,7 @@
      "game_id": 2026020417,
      "opp": "@DET",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.8,
+     "expected": 0.79,
      "actual": null,
      "p_start": null
     },
@@ -653,7 +696,7 @@
      "game_id": 2026020423,
      "opp": "@PHI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.86,
+     "expected": 0.85,
      "actual": null,
      "p_start": null
     },
@@ -679,7 +722,7 @@
      "game_id": 2026020424,
      "opp": "@DAL",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.3,
+     "expected": 0.35,
      "actual": null,
      "p_start": null
     },
@@ -705,7 +748,7 @@
      "game_id": 2026020427,
      "opp": "@SEA",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 1.72,
+     "expected": 1.71,
      "actual": null,
      "p_start": null
     }
@@ -717,11 +760,11 @@
    "name": "Vincenzo for the win",
    "mine": false,
    "points": 330.0,
-   "p_first": 0.179,
-   "delta_p_first_per_point": -0.00216,
-   "final": 1105.3,
-   "sd": 43.51,
-   "expected_tonight": 11.4,
+   "p_first": 0.169,
+   "delta_p_first_per_point": -0.0019,
+   "final": 1105.6,
+   "sd": 43.89,
+   "expected_tonight": 11.6,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -747,7 +790,7 @@
      "game_id": 2026020416,
      "opp": "TBL",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.92,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -760,7 +803,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.82,
+     "expected": 0.8,
      "actual": null,
      "p_start": null
     },
@@ -786,20 +829,7 @@
      "game_id": 2026020418,
      "opp": "@NJD",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 1.08,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3114,
-     "nhl_id": 8471675,
-     "name": "Sidney Crosby",
-     "pos": "C",
-     "team": "PIT",
-     "game_id": 2026020420,
-     "opp": "TOR",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.9,
+     "expected": 1.13,
      "actual": null,
      "p_start": null
     },
@@ -807,6 +837,19 @@
      "espn_id": 3124,
      "nhl_id": 8471215,
      "name": "Evgeni Malkin",
+     "pos": "C",
+     "team": "PIT",
+     "game_id": 2026020420,
+     "opp": "TOR",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.93,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3114,
+     "nhl_id": 8471675,
+     "name": "Sidney Crosby",
      "pos": "C",
      "team": "PIT",
      "game_id": 2026020420,
@@ -825,7 +868,7 @@
      "game_id": 2026020422,
      "opp": "WSH",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.87,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -838,7 +881,7 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.69,
+     "expected": 0.67,
      "actual": null,
      "p_start": null
     },
@@ -864,7 +907,7 @@
      "game_id": 2026020421,
      "opp": "OTT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.38,
+     "expected": 0.51,
      "actual": null,
      "p_start": 0.334
     },
@@ -877,7 +920,7 @@
      "game_id": 2026020424,
      "opp": "UTA",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.79,
+     "expected": 0.81,
      "actual": null,
      "p_start": null
     },
@@ -916,7 +959,7 @@
      "game_id": 2026020427,
      "opp": "EDM",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 0.52,
+     "expected": 0.51,
      "actual": null,
      "p_start": null
     }
@@ -928,10 +971,10 @@
    "name": "NWA",
    "mine": false,
    "points": 355.0,
-   "p_first": 0.126,
-   "delta_p_first_per_point": -0.0016,
-   "final": 1094.9,
-   "sd": 43.86,
+   "p_first": 0.154,
+   "delta_p_first_per_point": -0.00177,
+   "final": 1103.1,
+   "sd": 43.7,
    "expected_tonight": 11.5,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -958,7 +1001,7 @@
      "game_id": 2026020415,
      "opp": "MTL",
      "start": "2026-11-28T21:00:00Z",
-     "expected": 0.9,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -984,7 +1027,20 @@
      "game_id": 2026020416,
      "opp": "TBL",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 1.05,
+     "expected": 1.06,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4565222,
+     "nhl_id": 8481559,
+     "name": "Jack Hughes",
+     "pos": "C",
+     "team": "NJD",
+     "game_id": 2026020418,
+     "opp": "WPG",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 1.29,
      "actual": null,
      "p_start": null
     },
@@ -1002,19 +1058,6 @@
      "p_start": null
     },
     {
-     "espn_id": 4565222,
-     "nhl_id": 8481559,
-     "name": "Jack Hughes",
-     "pos": "C",
-     "team": "NJD",
-     "game_id": 2026020418,
-     "opp": "WPG",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 1.26,
-     "actual": null,
-     "p_start": null
-    },
-    {
      "espn_id": 5149172,
      "nhl_id": 8484186,
      "name": "Ryan Leonard",
@@ -1023,7 +1066,7 @@
      "game_id": 2026020422,
      "opp": "@STL",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.69,
+     "expected": 0.7,
      "actual": null,
      "p_start": null
     },
@@ -1036,7 +1079,7 @@
      "game_id": 2026020418,
      "opp": "WPG",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.68,
+     "expected": 0.66,
      "actual": null,
      "p_start": null
     },
@@ -1049,7 +1092,7 @@
      "game_id": 2026020418,
      "opp": "WPG",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.56,
+     "expected": 0.58,
      "actual": null,
      "p_start": null
     },
@@ -1075,7 +1118,7 @@
      "game_id": 2026020425,
      "opp": "SJS",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.75,
+     "expected": 0.76,
      "actual": null,
      "p_start": null
     },
@@ -1088,7 +1131,7 @@
      "game_id": 2026020425,
      "opp": "@COL",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.51,
+     "expected": 0.52,
      "actual": null,
      "p_start": null
     },
@@ -1126,11 +1169,11 @@
    "name": "Estrie Monsters",
    "mine": false,
    "points": 324.0,
-   "p_first": 0.014,
-   "delta_p_first_per_point": -0.00025,
-   "final": 1052.1,
-   "sd": 39.11,
-   "expected_tonight": 9.9,
+   "p_first": 0.009,
+   "delta_p_first_per_point": -0.00015,
+   "final": 1047.2,
+   "sd": 38.6,
+   "expected_tonight": 10.0,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -1169,7 +1212,7 @@
      "game_id": 2026020416,
      "opp": "TBL",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.9,
+     "expected": 0.89,
      "actual": null,
      "p_start": null
     },
@@ -1195,7 +1238,7 @@
      "game_id": 2026020422,
      "opp": "@STL",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.86,
+     "expected": 0.85,
      "actual": null,
      "p_start": null
     },
@@ -1247,7 +1290,7 @@
      "game_id": 2026020422,
      "opp": "WSH",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.34,
+     "expected": 0.32,
      "actual": null,
      "p_start": null
     },
@@ -1260,7 +1303,7 @@
      "game_id": 2026020423,
      "opp": "@PHI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.89,
+     "expected": 0.87,
      "actual": null,
      "p_start": null
     },
@@ -1273,7 +1316,7 @@
      "game_id": 2026020424,
      "opp": "UTA",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 1.02,
+     "expected": 1.19,
      "actual": null,
      "p_start": 0.902
     },
@@ -1299,166 +1342,7 @@
      "game_id": 2026020427,
      "opp": "@SEA",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 0.37,
-     "actual": null,
-     "p_start": null
-    }
-   ]
-  },
-  {
-   "team_id": 11,
-   "abbrev": "GFF",
-   "name": "Gucci Flip Flops",
-   "mine": false,
-   "points": 311.0,
-   "p_first": 0.009,
-   "delta_p_first_per_point": -0.00017,
-   "final": 1041.4,
-   "sd": 41.11,
-   "expected_tonight": 7.8,
-   "actual_tonight": null,
-   "playing_tonight": 11,
-   "players": [
-    {
-     "espn_id": 3042055,
-     "nhl_id": 8477447,
-     "name": "Shea Theodore",
-     "pos": "D",
-     "team": "VGK",
-     "game_id": 2026020415,
-     "opp": "MTL",
-     "start": "2026-11-28T21:00:00Z",
-     "expected": 0.48,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3042088,
-     "nhl_id": 8477409,
-     "name": "Carter Verhaeghe",
-     "pos": "LW",
-     "team": "FLA",
-     "game_id": 2026020416,
-     "opp": "TBL",
-     "start": "2026-11-28T23:00:00Z",
-     "expected": 0.7,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4352683,
-     "nhl_id": 8480830,
-     "name": "Andrei Svechnikov",
-     "pos": "LW",
-     "team": "CAR",
-     "game_id": 2026020421,
-     "opp": "OTT",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.92,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4874899,
-     "nhl_id": 8482702,
-     "name": "Logan Stankoven",
-     "pos": "C",
-     "team": "CAR",
-     "game_id": 2026020421,
-     "opp": "OTT",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.82,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4697386,
-     "nhl_id": 8482105,
-     "name": "Jake Sanderson",
-     "pos": "D",
-     "team": "OTT",
-     "game_id": 2026020421,
-     "opp": "@CAR",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.68,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4587943,
-     "nhl_id": 8481656,
-     "name": "Aliaksei Protas",
-     "pos": "LW",
-     "team": "WSH",
-     "game_id": 2026020422,
-     "opp": "@STL",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.65,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4565228,
-     "nhl_id": 8481528,
-     "name": "Dylan Cozens",
-     "pos": "C",
-     "team": "OTT",
-     "game_id": 2026020421,
-     "opp": "@CAR",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.6,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5080143,
-     "nhl_id": 8483431,
-     "name": "Logan Cooley",
-     "pos": "C",
-     "team": "UTA",
-     "game_id": 2026020424,
-     "opp": "@DAL",
-     "start": "2026-11-29T01:00:00Z",
-     "expected": 0.81,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4565239,
-     "nhl_id": 8481581,
-     "name": "Thomas Harley",
-     "pos": "D",
-     "team": "DAL",
-     "game_id": 2026020424,
-     "opp": "UTA",
-     "start": "2026-11-29T01:00:00Z",
-     "expected": 0.56,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 5149153,
-     "nhl_id": 8484153,
-     "name": "Leo Carlsson",
-     "pos": "C",
-     "team": "ANA",
-     "game_id": 2026020426,
-     "opp": "@LAK",
-     "start": "2026-11-29T02:00:00Z",
-     "expected": 0.95,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 4874722,
-     "nhl_id": 8482730,
-     "name": "Brandt Clarke",
-     "pos": "D",
-     "team": "LAK",
-     "game_id": 2026020426,
-     "opp": "ANA",
-     "start": "2026-11-29T02:00:00Z",
-     "expected": 0.67,
+     "expected": 0.38,
      "actual": null,
      "p_start": null
     }
@@ -1470,11 +1354,11 @@
    "name": "Rico",
    "mine": false,
    "points": 316.0,
-   "p_first": 0.008,
-   "delta_p_first_per_point": -0.00015,
-   "final": 1039.8,
-   "sd": 40.62,
-   "expected_tonight": 12.2,
+   "p_first": 0.007,
+   "delta_p_first_per_point": -0.00012,
+   "final": 1038.6,
+   "sd": 40.93,
+   "expected_tonight": 12.1,
    "actual_tonight": null,
    "playing_tonight": 16,
    "players": [
@@ -1487,7 +1371,7 @@
      "game_id": 2026020415,
      "opp": "MTL",
      "start": "2026-11-28T21:00:00Z",
-     "expected": 0.64,
+     "expected": 0.63,
      "actual": null,
      "p_start": null
     },
@@ -1500,7 +1384,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.99,
+     "expected": 0.98,
      "actual": null,
      "p_start": null
     },
@@ -1513,7 +1397,7 @@
      "game_id": 2026020416,
      "opp": "TBL",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.76,
+     "expected": 0.75,
      "actual": null,
      "p_start": null
     },
@@ -1539,7 +1423,7 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.98,
+     "expected": 0.94,
      "actual": null,
      "p_start": null
     },
@@ -1604,7 +1488,7 @@
      "game_id": 2026020423,
      "opp": "@PHI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.78,
+     "expected": 0.76,
      "actual": null,
      "p_start": null
     },
@@ -1617,7 +1501,7 @@
      "game_id": 2026020423,
      "opp": "NYI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.45,
+     "expected": 0.46,
      "actual": null,
      "p_start": null
     },
@@ -1630,7 +1514,7 @@
      "game_id": 2026020424,
      "opp": "UTA",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.99,
+     "expected": 1.0,
      "actual": null,
      "p_start": null
     },
@@ -1643,7 +1527,7 @@
      "game_id": 2026020424,
      "opp": "UTA",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.65,
+     "expected": 0.66,
      "actual": null,
      "p_start": null
     },
@@ -1669,7 +1553,7 @@
      "game_id": 2026020426,
      "opp": "@LAK",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.71,
+     "expected": 0.72,
      "actual": null,
      "p_start": null
     },
@@ -1682,7 +1566,7 @@
      "game_id": 2026020425,
      "opp": "@COL",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.68,
+     "expected": 0.67,
      "actual": null,
      "p_start": null
     }
@@ -1694,11 +1578,11 @@
    "name": "GSP",
    "mine": false,
    "points": 296.0,
-   "p_first": 0.005,
-   "delta_p_first_per_point": -0.0001,
-   "final": 1032.9,
-   "sd": 40.72,
-   "expected_tonight": 9.0,
+   "p_first": 0.006,
+   "delta_p_first_per_point": -0.00011,
+   "final": 1036.3,
+   "sd": 41.05,
+   "expected_tonight": 9.1,
    "actual_tonight": null,
    "playing_tonight": 11,
    "players": [
@@ -1711,7 +1595,7 @@
      "game_id": 2026020415,
      "opp": "MTL",
      "start": "2026-11-28T21:00:00Z",
-     "expected": 1.14,
+     "expected": 1.13,
      "actual": null,
      "p_start": null
     },
@@ -1724,7 +1608,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.37,
+     "expected": 0.36,
      "actual": null,
      "p_start": null
     },
@@ -1776,7 +1660,7 @@
      "game_id": 2026020418,
      "opp": "@NJD",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.64,
+     "expected": 0.69,
      "actual": null,
      "p_start": null
     },
@@ -1789,7 +1673,7 @@
      "game_id": 2026020423,
      "opp": "NYI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.79,
+     "expected": 0.8,
      "actual": null,
      "p_start": null
     },
@@ -1815,7 +1699,7 @@
      "game_id": 2026020425,
      "opp": "@COL",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 1.12,
+     "expected": 1.14,
      "actual": null,
      "p_start": null
     },
@@ -1828,7 +1712,7 @@
      "game_id": 2026020426,
      "opp": "ANA",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.86,
+     "expected": 0.87,
      "actual": null,
      "p_start": null
     },
@@ -1841,7 +1725,166 @@
      "game_id": 2026020427,
      "opp": "EDM",
      "start": "2026-11-29T03:00:00Z",
-     "expected": 0.59,
+     "expected": 0.61,
+     "actual": null,
+     "p_start": null
+    }
+   ]
+  },
+  {
+   "team_id": 11,
+   "abbrev": "GFF",
+   "name": "Gucci Flip Flops",
+   "mine": false,
+   "points": 311.0,
+   "p_first": 0.005,
+   "delta_p_first_per_point": -9e-05,
+   "final": 1032.9,
+   "sd": 40.82,
+   "expected_tonight": 7.8,
+   "actual_tonight": null,
+   "playing_tonight": 11,
+   "players": [
+    {
+     "espn_id": 3042055,
+     "nhl_id": 8477447,
+     "name": "Shea Theodore",
+     "pos": "D",
+     "team": "VGK",
+     "game_id": 2026020415,
+     "opp": "MTL",
+     "start": "2026-11-28T21:00:00Z",
+     "expected": 0.47,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 3042088,
+     "nhl_id": 8477409,
+     "name": "Carter Verhaeghe",
+     "pos": "LW",
+     "team": "FLA",
+     "game_id": 2026020416,
+     "opp": "TBL",
+     "start": "2026-11-28T23:00:00Z",
+     "expected": 0.7,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4352683,
+     "nhl_id": 8480830,
+     "name": "Andrei Svechnikov",
+     "pos": "LW",
+     "team": "CAR",
+     "game_id": 2026020421,
+     "opp": "OTT",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.92,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4874899,
+     "nhl_id": 8482702,
+     "name": "Logan Stankoven",
+     "pos": "C",
+     "team": "CAR",
+     "game_id": 2026020421,
+     "opp": "OTT",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.82,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4697386,
+     "nhl_id": 8482105,
+     "name": "Jake Sanderson",
+     "pos": "D",
+     "team": "OTT",
+     "game_id": 2026020421,
+     "opp": "@CAR",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.66,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4587943,
+     "nhl_id": 8481656,
+     "name": "Aliaksei Protas",
+     "pos": "LW",
+     "team": "WSH",
+     "game_id": 2026020422,
+     "opp": "@STL",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.65,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4565228,
+     "nhl_id": 8481528,
+     "name": "Dylan Cozens",
+     "pos": "C",
+     "team": "OTT",
+     "game_id": 2026020421,
+     "opp": "@CAR",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.61,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5080143,
+     "nhl_id": 8483431,
+     "name": "Logan Cooley",
+     "pos": "C",
+     "team": "UTA",
+     "game_id": 2026020424,
+     "opp": "@DAL",
+     "start": "2026-11-29T01:00:00Z",
+     "expected": 0.8,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4565239,
+     "nhl_id": 8481581,
+     "name": "Thomas Harley",
+     "pos": "D",
+     "team": "DAL",
+     "game_id": 2026020424,
+     "opp": "UTA",
+     "start": "2026-11-29T01:00:00Z",
+     "expected": 0.55,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 5149153,
+     "nhl_id": 8484153,
+     "name": "Leo Carlsson",
+     "pos": "C",
+     "team": "ANA",
+     "game_id": 2026020426,
+     "opp": "@LAK",
+     "start": "2026-11-29T02:00:00Z",
+     "expected": 0.95,
+     "actual": null,
+     "p_start": null
+    },
+    {
+     "espn_id": 4874722,
+     "nhl_id": 8482730,
+     "name": "Brandt Clarke",
+     "pos": "D",
+     "team": "LAK",
+     "game_id": 2026020426,
+     "opp": "ANA",
+     "start": "2026-11-29T02:00:00Z",
+     "expected": 0.65,
      "actual": null,
      "p_start": null
     }
@@ -1855,9 +1898,9 @@
    "points": 293.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 952.2,
-   "sd": 39.74,
-   "expected_tonight": 7.8,
+   "final": 951.1,
+   "sd": 39.39,
+   "expected_tonight": 8.0,
    "actual_tonight": null,
    "playing_tonight": 12,
    "players": [
@@ -1870,9 +1913,22 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 1.13,
+     "expected": 1.09,
      "actual": null,
      "p_start": null
+    },
+    {
+     "espn_id": 4565259,
+     "nhl_id": 8481611,
+     "name": "Pyotr Kochetkov",
+     "pos": "G",
+     "team": "CAR",
+     "game_id": 2026020421,
+     "opp": "OTT",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 1.02,
+     "actual": null,
+     "p_start": 0.666
     },
     {
      "espn_id": 2968772,
@@ -1901,19 +1957,6 @@
      "p_start": null
     },
     {
-     "espn_id": 4565259,
-     "nhl_id": 8481611,
-     "name": "Pyotr Kochetkov",
-     "pos": "G",
-     "team": "CAR",
-     "game_id": 2026020421,
-     "opp": "OTT",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.75,
-     "actual": null,
-     "p_start": 0.666
-    },
-    {
      "espn_id": 4271734,
      "nhl_id": 8480208,
      "name": "Drake Batherson",
@@ -1922,7 +1965,7 @@
      "game_id": 2026020421,
      "opp": "@CAR",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.71,
+     "expected": 0.7,
      "actual": null,
      "p_start": null
     },
@@ -1935,7 +1978,7 @@
      "game_id": 2026020417,
      "opp": "NSH",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.65,
+     "expected": 0.66,
      "actual": null,
      "p_start": null
     },
@@ -1948,7 +1991,7 @@
      "game_id": 2026020422,
      "opp": "@STL",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.57,
+     "expected": 0.59,
      "actual": null,
      "p_start": null
     },
@@ -2013,7 +2056,7 @@
      "game_id": 2026020425,
      "opp": "@COL",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.47,
+     "expected": 0.48,
      "actual": null,
      "p_start": null
     }
@@ -2027,8 +2070,8 @@
    "points": 266.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 938.4,
-   "sd": 37.88,
+   "final": 940.5,
+   "sd": 38.6,
    "expected_tonight": 9.8,
    "actual_tonight": null,
    "playing_tonight": 14,
@@ -2068,7 +2111,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 1.02,
+     "expected": 1.04,
      "actual": null,
      "p_start": 0.909
     },
@@ -2120,7 +2163,7 @@
      "game_id": 2026020421,
      "opp": "@CAR",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.45,
+     "expected": 0.46,
      "actual": null,
      "p_start": null
     },
@@ -2146,7 +2189,7 @@
      "game_id": 2026020423,
      "opp": "NYI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.38,
+     "expected": 0.37,
      "actual": null,
      "p_start": null
     },
@@ -2159,7 +2202,7 @@
      "game_id": 2026020424,
      "opp": "UTA",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 1.04,
+     "expected": 1.07,
      "actual": null,
      "p_start": null
     },
@@ -2172,7 +2215,7 @@
      "game_id": 2026020424,
      "opp": "@DAL",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.72,
+     "expected": 0.71,
      "actual": null,
      "p_start": null
     },
@@ -2185,7 +2228,7 @@
      "game_id": 2026020426,
      "opp": "@LAK",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.89,
+     "expected": 0.88,
      "actual": null,
      "p_start": null
     },
@@ -2198,7 +2241,7 @@
      "game_id": 2026020425,
      "opp": "SJS",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.74,
+     "expected": 0.76,
      "actual": null,
      "p_start": null
     },
@@ -2225,9 +2268,9 @@
    "points": 261.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 931.3,
-   "sd": 38.06,
-   "expected_tonight": 9.9,
+   "final": 922.1,
+   "sd": 37.46,
+   "expected_tonight": 10.0,
    "actual_tonight": null,
    "playing_tonight": 15,
    "players": [
@@ -2253,7 +2296,7 @@
      "game_id": 2026020416,
      "opp": "TBL",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.84,
+     "expected": 0.85,
      "actual": null,
      "p_start": null
     },
@@ -2266,7 +2309,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.73,
+     "expected": 0.72,
      "actual": null,
      "p_start": null
     },
@@ -2279,7 +2322,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 0.42,
+     "expected": 0.41,
      "actual": null,
      "p_start": null
     },
@@ -2292,20 +2335,7 @@
      "game_id": 2026020417,
      "opp": "@DET",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.85,
-     "actual": null,
-     "p_start": null
-    },
-    {
-     "espn_id": 3114766,
-     "nhl_id": 8477949,
-     "name": "Alex Tuch",
-     "pos": "RW",
-     "team": "WSH",
-     "game_id": 2026020422,
-     "opp": "@STL",
-     "start": "2026-11-29T00:00:00Z",
-     "expected": 0.81,
+     "expected": 0.84,
      "actual": null,
      "p_start": null
     },
@@ -2323,6 +2353,19 @@
      "p_start": null
     },
     {
+     "espn_id": 3114766,
+     "nhl_id": 8477949,
+     "name": "Alex Tuch",
+     "pos": "RW",
+     "team": "WSH",
+     "game_id": 2026020422,
+     "opp": "@STL",
+     "start": "2026-11-29T00:00:00Z",
+     "expected": 0.8,
+     "actual": null,
+     "p_start": null
+    },
+    {
      "espn_id": 5160,
      "nhl_id": 8475166,
      "name": "John Tavares",
@@ -2331,7 +2374,7 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.75,
+     "expected": 0.72,
      "actual": null,
      "p_start": null
     },
@@ -2344,7 +2387,7 @@
      "game_id": 2026020422,
      "opp": "@STL",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.62,
+     "expected": 0.61,
      "actual": null,
      "p_start": null
     },
@@ -2357,7 +2400,7 @@
      "game_id": 2026020418,
      "opp": "@NJD",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.42,
+     "expected": 0.43,
      "actual": null,
      "p_start": null
     },
@@ -2370,7 +2413,7 @@
      "game_id": 2026020423,
      "opp": "@PHI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.82,
+     "expected": 0.81,
      "actual": null,
      "p_start": null
     },
@@ -2383,7 +2426,7 @@
      "game_id": 2026020426,
      "opp": "ANA",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.67,
+     "expected": 0.66,
      "actual": null,
      "p_start": null
     },
@@ -2396,7 +2439,7 @@
      "game_id": 2026020425,
      "opp": "SJS",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.44,
+     "expected": 0.59,
      "actual": null,
      "p_start": 0.386
     },
@@ -2436,9 +2479,9 @@
    "points": 253.0,
    "p_first": 0.0,
    "delta_p_first_per_point": -0.0,
-   "final": 957.0,
-   "sd": 39.41,
-   "expected_tonight": 9.5,
+   "final": 949.4,
+   "sd": 40.48,
+   "expected_tonight": 9.4,
    "actual_tonight": null,
    "playing_tonight": 13,
    "players": [
@@ -2464,7 +2507,7 @@
      "game_id": 2026020416,
      "opp": "@FLA",
      "start": "2026-11-28T23:00:00Z",
-     "expected": 1.36,
+     "expected": 1.34,
      "actual": null,
      "p_start": null
     },
@@ -2477,7 +2520,7 @@
      "game_id": 2026020420,
      "opp": "@PIT",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.89,
+     "expected": 0.86,
      "actual": null,
      "p_start": null
     },
@@ -2503,7 +2546,7 @@
      "game_id": 2026020422,
      "opp": "@STL",
      "start": "2026-11-29T00:00:00Z",
-     "expected": 0.2,
+     "expected": 0.21,
      "actual": null,
      "p_start": 0.181
     },
@@ -2529,7 +2572,7 @@
      "game_id": 2026020423,
      "opp": "NYI",
      "start": "2026-11-29T00:30:00Z",
-     "expected": 0.67,
+     "expected": 0.65,
      "actual": null,
      "p_start": null
     },
@@ -2542,7 +2585,7 @@
      "game_id": 2026020424,
      "opp": "@DAL",
      "start": "2026-11-29T01:00:00Z",
-     "expected": 0.91,
+     "expected": 0.92,
      "actual": null,
      "p_start": null
     },
@@ -2594,7 +2637,7 @@
      "game_id": 2026020426,
      "opp": "ANA",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.65,
+     "expected": 0.63,
      "actual": null,
      "p_start": null
     },
@@ -2607,7 +2650,7 @@
      "game_id": 2026020426,
      "opp": "@LAK",
      "start": "2026-11-29T02:00:00Z",
-     "expected": 0.35,
+     "expected": 0.36,
      "actual": null,
      "p_start": null
     }
@@ -2652,7 +2695,7 @@
    "game_id": 2026020418,
    "opp": "WPG",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 0.99,
+   "expected": 0.97,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2680,7 +2723,21 @@
    "game_id": 2026020419,
    "opp": "CGY",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 0.8,
+   "expected": 0.79,
+   "actual": null,
+   "p_start": null,
+   "injury": null
+  },
+  {
+   "espn_id": 4233583,
+   "nhl_id": 8480014,
+   "name": "Gabriel Vilardi",
+   "pos": "RW",
+   "team": "WPG",
+   "game_id": 2026020418,
+   "opp": "@NJD",
+   "start": "2026-11-29T00:00:00Z",
+   "expected": 0.77,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2700,20 +2757,6 @@
    "injury": null
   },
   {
-   "espn_id": 4233583,
-   "nhl_id": 8480014,
-   "name": "Gabriel Vilardi",
-   "pos": "RW",
-   "team": "WPG",
-   "game_id": 2026020418,
-   "opp": "@NJD",
-   "start": "2026-11-29T00:00:00Z",
-   "expected": 0.74,
-   "actual": null,
-   "p_start": null,
-   "injury": null
-  },
-  {
    "espn_id": 5342529,
    "nhl_id": 8486067,
    "name": "Gavin McKenna",
@@ -2722,7 +2765,7 @@
    "game_id": 2026020420,
    "opp": "@PIT",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 0.65,
+   "expected": 0.64,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2736,7 +2779,7 @@
    "game_id": 2026020424,
    "opp": "@DAL",
    "start": "2026-11-29T01:00:00Z",
-   "expected": 0.63,
+   "expected": 0.64,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2764,7 +2807,7 @@
    "game_id": 2026020427,
    "opp": "@SEA",
    "start": "2026-11-29T03:00:00Z",
-   "expected": 1.46,
+   "expected": 1.45,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2778,7 +2821,7 @@
    "game_id": 2026020427,
    "opp": "EDM",
    "start": "2026-11-29T03:00:00Z",
-   "expected": 0.55,
+   "expected": 0.54,
    "actual": null,
    "p_start": null,
    "injury": null
@@ -2794,7 +2837,7 @@
    "game_id": 2026020427,
    "opp": "@SEA",
    "start": "2026-11-29T03:00:00Z",
-   "expected": 1.72,
+   "expected": 1.71,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2802,8 +2845,28 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.00473
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.0049
+  },
+  {
+   "espn_id": 2562632,
+   "nhl_id": 8476460,
+   "name": "Mark Scheifele",
+   "pos": "C",
+   "team": "WPG",
+   "game_id": 2026020418,
+   "opp": "@NJD",
+   "start": "2026-11-29T00:00:00Z",
+   "expected": 1.1,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 9,
+    "abbrev": "LLT",
+    "name": "Laurent's Lucrative Team"
+   },
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.00317
   },
   {
    "espn_id": 3899937,
@@ -2822,28 +2885,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.003
-  },
-  {
-   "espn_id": 2562632,
-   "nhl_id": 8476460,
-   "name": "Mark Scheifele",
-   "pos": "C",
-   "team": "WPG",
-   "game_id": 2026020418,
-   "opp": "@NJD",
-   "start": "2026-11-29T00:00:00Z",
-   "expected": 1.09,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 9,
-    "abbrev": "LLT",
-    "name": "Laurent's Lucrative Team"
-   },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.00299
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.00314
   },
   {
    "espn_id": 4233637,
@@ -2854,7 +2897,7 @@
    "game_id": 2026020422,
    "opp": "WSH",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 1.01,
+   "expected": 1.03,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2862,28 +2905,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.00278
-  },
-  {
-   "espn_id": 4233563,
-   "nhl_id": 8480069,
-   "name": "Cale Makar",
-   "pos": "D",
-   "team": "COL",
-   "game_id": 2026020425,
-   "opp": "SJS",
-   "start": "2026-11-29T02:00:00Z",
-   "expected": 1.17,
-   "actual": null,
-   "p_start": null,
-   "owner": {
-    "team_id": 7,
-    "abbrev": "VFTH",
-    "name": "Vincenzo for the win"
-   },
-   "delta_p_first_per_point": -0.00216,
-   "threat": -0.00254
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.00296
   },
   {
    "espn_id": 4697384,
@@ -2894,7 +2917,7 @@
    "game_id": 2026020421,
    "opp": "@CAR",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 0.9,
+   "expected": 0.91,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2902,8 +2925,8 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.00248
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.00261
   },
   {
    "espn_id": 3151981,
@@ -2914,7 +2937,7 @@
    "game_id": 2026020423,
    "opp": "@PHI",
    "start": "2026-11-29T00:30:00Z",
-   "expected": 0.86,
+   "expected": 0.85,
    "actual": null,
    "p_start": null,
    "owner": {
@@ -2922,28 +2945,48 @@
     "abbrev": "LLT",
     "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00275,
-   "threat": -0.00237
+   "delta_p_first_per_point": -0.00287,
+   "threat": -0.00243
   },
   {
-   "espn_id": 3899952,
-   "nhl_id": 8478398,
-   "name": "Kyle Connor",
-   "pos": "LW",
-   "team": "WPG",
+   "espn_id": 4233555,
+   "nhl_id": 8480002,
+   "name": "Nico Hischier",
+   "pos": "C",
+   "team": "NJD",
    "game_id": 2026020418,
-   "opp": "@NJD",
+   "opp": "WPG",
    "start": "2026-11-29T00:00:00Z",
-   "expected": 1.08,
+   "expected": 0.82,
    "actual": null,
    "p_start": null,
    "owner": {
-    "team_id": 7,
-    "abbrev": "VFTH",
-    "name": "Vincenzo for the win"
+    "team_id": 9,
+    "abbrev": "LLT",
+    "name": "Laurent's Lucrative Team"
    },
-   "delta_p_first_per_point": -0.00216,
+   "delta_p_first_per_point": -0.00287,
    "threat": -0.00234
+  },
+  {
+   "espn_id": 4565222,
+   "nhl_id": 8481559,
+   "name": "Jack Hughes",
+   "pos": "C",
+   "team": "NJD",
+   "game_id": 2026020418,
+   "opp": "WPG",
+   "start": "2026-11-29T00:00:00Z",
+   "expected": 1.29,
+   "actual": null,
+   "p_start": null,
+   "owner": {
+    "team_id": 4,
+    "abbrev": "NWA",
+    "name": "NWA"
+   },
+   "delta_p_first_per_point": -0.00177,
+   "threat": -0.00228
   }
  ]
 }
